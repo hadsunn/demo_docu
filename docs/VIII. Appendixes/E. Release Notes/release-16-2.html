@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-VIII. Appendixes/E. Release Notes/release-16-2" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">E.8. Release 16.2 | Postgres Документация</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="E.8. Release 16.2 | Postgres Документация"><meta data-rh="true" name="description" content="Supported versions: 13 / 14 / 15 / 16 / 17"><meta data-rh="true" property="og:description" content="Supported versions: 13 / 14 / 15 / 16 / 17"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Part VIII. Appendixes","item":"https://hadsunn.github.io/demo_docu/VIII. Appendixes/"},{"@type":"ListItem","position":2,"name":"Appendix E. Release Notes","item":"https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/"},{"@type":"ListItem","position":3,"name":"E.8. Release 16.2","item":"https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.827c52cd.css">
+<script src="/demo_docu/assets/js/runtime~main.8918983b.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.a0e88019.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Документация Postgresql</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">PostgreSQL 16.9 Documentation Test5</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Preface">Preface</a><button aria-label="Expand sidebar category &#x27;Preface&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/I. Tutorial">Part I. Tutorial</a><button aria-label="Expand sidebar category &#x27;Part I. Tutorial&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/II. The SQL Language">Part II. The SQL Language</a><button aria-label="Expand sidebar category &#x27;Part II. The SQL Language&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/III. Server Administration">Part III. Server Administration</a><button aria-label="Expand sidebar category &#x27;Part III. Server Administration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/IV. Client Interfaces">Part IV. Client Interfaces</a><button aria-label="Expand sidebar category &#x27;Part IV. Client Interfaces&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/V. Server Programming">Part V. Server Programming</a><button aria-label="Expand sidebar category &#x27;Part V. Server Programming&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/VI. Reference">Part VI. Reference</a><button aria-label="Expand sidebar category &#x27;Part VI. Reference&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/VII. Internals">Part VII. Internals</a><button aria-label="Expand sidebar category &#x27;Part VII. Internals&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/demo_docu/VIII. Appendixes">Part VIII. Appendixes</a><button aria-label="Collapse sidebar category &#x27;Part VIII. Appendixes&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/B. DateTime Support">Appendix B. Date/Time Support</a><button aria-label="Expand sidebar category &#x27;Appendix B. Date/Time Support&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/C. SQL Key Words">Appendix C. SQL Key Words</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/D. SQL Conformance">Appendix D. SQL Conformance</a><button aria-label="Expand sidebar category &#x27;Appendix D. SQL Conformance&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes">Appendix E. Release Notes</a><button aria-label="Collapse sidebar category &#x27;Appendix E. Release Notes&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-1">E.9. Release 16.1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2">E.8. Release 16.2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-3">E.7. Release 16.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-4">E.6. Release 16.4</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-5">E.5. Release 16.5</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-6">E.4. Release 16.6</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-7">E.3. Release 16.7</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-8">E.2. Release 16.8</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-9">E.1. Release 16.9</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16">E.10. Release 16</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-prior">E.11. Prior Releases</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions">Appendix F. Additional Supplied Modules and Extensions</a><button aria-label="Expand sidebar category &#x27;Appendix F. Additional Supplied Modules and Extensions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/G. Additional Supplied Programs">Appendix G. Additional Supplied Programs</a><button aria-label="Expand sidebar category &#x27;Appendix G. Additional Supplied Programs&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/H. External Projects">Appendix H. External Projects</a><button aria-label="Expand sidebar category &#x27;Appendix H. External Projects&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/I. The Source Code Repository">Appendix I. The Source Code Repository</a><button aria-label="Expand sidebar category &#x27;Appendix I. The Source Code Repository&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/J. Documentation">Appendix J. Documentation</a><button aria-label="Expand sidebar category &#x27;Appendix J. Documentation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/N. Color Support">Appendix N. Color Support</a><button aria-label="Expand sidebar category &#x27;Appendix N. Color Support&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/O. Obsolete or Renamed Features">Appendix O. Obsolete or Renamed Features</a><button aria-label="Expand sidebar category &#x27;Appendix O. Obsolete or Renamed Features&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/acronyms">Appendix L. Acronyms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/errcodes-appendix">Appendix A. PostgreSQL Error Codes</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/glossary">Appendix M. Glossary</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/limits">Appendix K. PostgreSQL Limits</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/biblio">Bibliography</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/bookindex">Index</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/samples/json_algoritm">samples</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/VIII. Appendixes"><span>Part VIII. Appendixes</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/VIII. Appendixes/E. Release Notes"><span>Appendix E. Release Notes</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">E.8. Release 16.2</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>E.8. Release 16.2</h1></header><p>Supported versions: 13 / 14 / 15 / 16 / 17</p>
+<hr>
+<p><a href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2#e81-migration-to-version-162">E.8.1. Migration to Version 16.2</a></p>
+<p><a href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2#e82-changes">E.8.2. Changes</a></p>
+<p>**Release date:  **2024-02-08</p>
+<p>This release contains a variety of fixes from 16.1. For information about new features in major release 16, see <a href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16">Section E.10</a>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="e81-migration-to-version-162">E.8.1. Migration to Version 16.2<a href="#e81-migration-to-version-162" class="hash-link" aria-label="Direct link to E.8.1. Migration to Version 16.2" title="Direct link to E.8.1. Migration to Version 16.2">​</a></h3>
+<p>A dump/restore is not required for those running 16.X.</p>
+<p>However, one bug was fixed that could have resulted in corruption of GIN indexes during concurrent updates. If you suspect such corruption, reindex affected indexes after installing this update.</p>
+<p>Also, if you are upgrading from a version earlier than 16.1, see <a href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-1">Section E.9</a>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="e82-changes">E.8.2. Changes<a href="#e82-changes" class="hash-link" aria-label="Direct link to E.8.2. Changes" title="Direct link to E.8.2. Changes">​</a></h3>
+<ul>
+<li>Tighten security restrictions within <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code> (Heikki Linnakangas) <a href="https://postgr.es/c/d6a61cb3b" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/fb3836855" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>One step of a concurrent refresh command was run under weak security restrictions. If a materialized view&#x27;s owner could persuade a superuser or other high-privileged user to perform a concurrent refresh on that view, the view&#x27;s owner could control code executed with the privileges of the user running <code>REFRESH</code>. Fix things so that all user-determined code is run as the view&#x27;s owner, as expected.</p>
+<p>The only known exploit for this error does not work in PostgreSQL 16.0 and later, so it may be that v16 is not vulnerable in practice.</p>
+<p>The PostgreSQL Project thanks Pedro Gallegos for reporting this problem. (CVE-2024-0985)</p>
+<ul>
+<li>Fix memory leak when performing JIT inlining (Andres Freund, Daniel Gustafsson) <a href="https://postgr.es/c/2cf50585e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>There have been multiple reports of backend processes suffering out-of-memory conditions after sufficiently many JIT compilations. This fix should resolve that.</p>
+<ul>
+<li>Avoid generating incorrect partitioned-join plans (Richard Guo) <a href="https://postgr.es/c/62f120203" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Some uncommon situations involving lateral references could create incorrect plans. Affected queries could produce wrong answers, or odd failures such as “variable not found in subplan target list”, or executor crashes.</p>
+<ul>
+<li>Fix incorrect wrapping of subquery output expressions in PlaceHolderVars (Tom Lane) <a href="https://postgr.es/c/80bece312" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This fixes incorrect results when a subquery is underneath an outer join and has an output column that laterally references something outside the outer join&#x27;s scope. The output column might not appear as NULL when it should do so due to the action of the outer join.</p>
+<ul>
+<li>Fix misprocessing of window function run conditions (Richard Guo) <a href="https://postgr.es/c/ee9553218" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This oversight could lead to “WindowFunc not found in subplan target lists” errors.</p>
+<ul>
+<li>Fix detection of inner-side uniqueness for Memoize plans (Richard Guo) <a href="https://postgr.es/c/74f770ef2" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This mistake could lead to “cache entry already complete” errors.</p>
+<ul>
+<li>Fix computation of nullingrels when constant-folding field selection (Richard Guo) <a href="https://postgr.es/c/6bf2efb38" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Failure to do this led to errors like “wrong varnullingrels (b) (expected (b 3)) for Var 2/2”.</p>
+<ul>
+<li>Skip inappropriate actions when <code>MERGE</code> causes a cross-partition update (Dean Rasheed) <a href="https://postgr.es/c/06a546382" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>When executing a <code>MERGE UPDATE</code> action on a partitioned table, if the <code>UPDATE</code> is turned into a <code>DELETE</code> and <code>INSERT</code> due to changing a partition key column, skip firing <code>AFTER UPDATE ROW</code> triggers, as well as other post-update actions such as RLS checks. These actions would typically fail, which is why a regular <code>UPDATE</code> doesn&#x27;t do them in such cases; <code>MERGE</code> shouldn&#x27;t either.</p>
+<ul>
+<li>Cope with <code>BEFORE ROW DELETE</code> triggers in cross-partition <code>MERGE</code> updates (Dean Rasheed) <a href="https://postgr.es/c/7f07384dc" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>If such a trigger attempted to prevent the update by returning NULL, <code>MERGE</code> would suffer an error or assertion failure.</p>
+<ul>
+<li>Prevent access to a no-longer-pinned buffer in <code>BEFORE ROW UPDATE</code> triggers (Alexander Lakhin, Tom Lane) <a href="https://postgr.es/c/23e0ba59c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>If the tuple being updated had just been updated and moved to another page by another session, there was a narrow window where we would attempt to fetch data from the new tuple version without any pin on its buffer. In principle this could result in garbage data appearing in non-updated columns of the proposed new tuple. The odds of problems in practice seem rather low, however.</p>
+<ul>
+<li>Avoid requesting an oversize shared-memory area in parallel hash join (Thomas Munro, Andrei Lepikhov, Alexander Korotkov) <a href="https://postgr.es/c/714a987bc" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/20a566cd4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The limiting value was too large, allowing “invalid DSA memory alloc request size” errors to occur with sufficiently large expected hash table sizes.</p>
+<ul>
+<li>
+<p>Fix corruption of local buffer state when an error occurs while trying to extend a temporary table (Tender Wang) <a href="https://postgr.es/c/37c551663" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Fix use of wrong tuple slot while evaluating <code>DISTINCT</code> aggregates that have multiple arguments (David Rowley) <a href="https://postgr.es/c/6298673f4" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This mistake could lead to errors such as “attribute 1 of type record has wrong type”.</p>
+<ul>
+<li>Avoid assertion failures in <code>heap_update()</code> and <code>heap_delete()</code> when a tuple to be updated by a foreign-key enforcement trigger fails the extra visibility crosscheck (Alexander Lakhin) <a href="https://postgr.es/c/9fee3232a" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This error had no impact in non-assert builds.</p>
+<ul>
+<li>Fix overly tight assertion about <code>false_positive_rate</code> parameter of BRIN bloom operator classes (Alexander Lakhin) <a href="https://postgr.es/c/4dccf9575" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This error had no impact in non-assert builds, either.</p>
+<ul>
+<li>Fix possible failure during <code>ALTER TABLE ADD COLUMN</code> on a complex inheritance tree (Tender Wang) <a href="https://postgr.es/c/51193e7a7" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>If a grandchild table would inherit the new column via multiple intermediate parents, the command failed with “tuple already updated by self”.</p>
+<ul>
+<li>
+<p>Fix problems with duplicate token names in <code>ALTER TEXT SEARCH CONFIGURATION ... MAPPING</code> commands (Tender Wang, Michael Paquier) <a href="https://postgr.es/c/f33e83285" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Fix <code>DROP ROLE</code> with duplicate role names (Michael Paquier) <a href="https://postgr.es/c/f57a580fd" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously this led to a “tuple already updated by self” failure. Instead, ignore the duplicate.</p>
+<ul>
+<li>Properly lock the associated table during <code>DROP STATISTICS</code> (Tomas Vondra) <a href="https://postgr.es/c/ee32b824d" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Failure to acquire the lock could result in “tuple concurrently deleted” errors if the <code>DROP</code> executes concurrently with <code>ANALYZE</code>.</p>
+<ul>
+<li>Fix function volatility checking for <code>GENERATED</code> and <code>DEFAULT</code> expressions (Tom Lane) <a href="https://postgr.es/c/f07a3039c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>These places could fail to detect insertion of a volatile function default-argument expression, or decide that a polymorphic function is volatile although it is actually immutable on the datatype of interest. This could lead to improperly rejecting or accepting a <code>GENERATED</code> clause, or to mistakenly applying the constant-default-value optimization in <code>ALTER TABLE ADD COLUMN</code>.</p>
+<ul>
+<li>Detect that a new catalog cache entry became stale while detoasting its fields (Tom Lane) <a href="https://postgr.es/c/7e2561e1a" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/56dcd71de" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>We expand any out-of-line fields in a catalog tuple before inserting it into the catalog caches. That involves database access which might cause invalidation of catalog cache entries — but the new entry isn&#x27;t in the cache yet, so we would miss noticing that it should get invalidated. The result is a race condition in which an already-stale cache entry could get made, and then persist indefinitely. This would lead to hard-to-predict misbehavior. Fix by rechecking the tuple&#x27;s visibility after detoasting.</p>
+<ul>
+<li>Fix edge-case integer overflow detection bug on some platforms (Dean Rasheed) <a href="https://postgr.es/c/c396aca2b" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Computing <code>0 - INT64_MIN</code> should result in an overflow error, and did on most platforms. However, platforms with neither integer overflow builtins nor 128-bit integers would fail to spot the overflow, instead returning <code>INT64_MIN</code>.</p>
+<ul>
+<li>Detect Julian-date overflow when adding or subtracting an <code>interval</code> to/from a <code>timestamp</code> (Tom Lane) <a href="https://postgr.es/c/7204aea83" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Some cases that should cause an out-of-range error produced an incorrect result instead.</p>
+<ul>
+<li>Add more checks for overflow in <code>interval_mul()</code> and <code>interval_div()</code> (Dean Rasheed) <a href="https://postgr.es/c/72d0c135b" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Some cases that should cause an out-of-range error produced an incorrect result instead.</p>
+<ul>
+<li>Allow <code>scram_SaltedPassword()</code> to be interrupted (Bowen Shi) <a href="https://postgr.es/c/07cb7bc1c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>With large <code>scram_iterations</code> values, this function could take a long time to run. Allow it to be interrupted by query cancel requests.</p>
+<ul>
+<li>Ensure cached statistics are discarded after a change to <code>stats_fetch_consistency</code> (Shinya Kato) <a href="https://postgr.es/c/781bc121d" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>In some code paths, it was possible for stale statistics to be returned.</p>
+<ul>
+<li>Make the <code>pg_file_settings</code> view check validity of unapplied values for settings with <code>backend</code> or <code>superuser-backend</code> context (Tom Lane) <a href="https://postgr.es/c/e87252ceb" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Invalid values were not noted in the view as intended. This escaped detection because there are very few settings in these groups.</p>
+<ul>
+<li>Match collation too when matching an existing index to a new partitioned index (Peter Eisentraut) <a href="https://postgr.es/c/267f33f68" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously we could accept an index that has a different collation from the corresponding element of the partition key, possibly leading to misbehavior.</p>
+<ul>
+<li>
+<p>Avoid failure if a child index is dropped concurrently with <code>REINDEX INDEX</code> on a partitioned index (Fei Changhong) <a href="https://postgr.es/c/c030e263e" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/7ce65c6f7" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Fix insufficient locking when cleaning up an incomplete split of a GIN index&#x27;s internal page (Fei Changhong, Heikki Linnakangas) <a href="https://postgr.es/c/b899e00e7" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>The code tried to do this with shared rather than exclusive lock on the buffer. This could lead to index corruption if two processes attempted the cleanup concurrently.</p>
+<ul>
+<li>Avoid premature release of buffer pin in GIN index insertion (Tom Lane) <a href="https://postgr.es/c/f76b975d5" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>If an index root page split occurs concurrently with our own insertion, the code could fail with “buffer NNNN is not owned by resource owner”.</p>
+<ul>
+<li>Avoid failure with partitioned SP-GiST indexes (Tom Lane) <a href="https://postgr.es/c/0977bd64e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Trying to use an index of this kind could lead to “No such file or directory” errors.</p>
+<ul>
+<li>Fix ownership tests for large objects (Tom Lane) <a href="https://postgr.es/c/152bfc0af" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Operations on large objects that require ownership privilege failed with “unrecognized class ID: 2613”, unless run by a superuser.</p>
+<ul>
+<li>Fix ownership change reporting for large objects (Tom Lane) <a href="https://postgr.es/c/152bfc0af" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>A no-op <code>ALTER LARGE OBJECT OWNER</code> command (that is, one selecting the existing owner) passed the wrong class ID to the <code>PostAlterHook</code>, probably confusing any extension using that hook.</p>
+<ul>
+<li>Fix reporting of I/O timing data in <code>EXPLAIN (BUFFERS)</code> (Michael Paquier) <a href="https://postgr.es/c/db69101a1" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The numbers labeled as “shared/local” actually refer only to shared buffers, so change that label to “shared”.</p>
+<ul>
+<li>Ensure durability of <code>CREATE DATABASE</code> (Noah Misch) <a href="https://postgr.es/c/6d423e9ff" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/48a6bf5c4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>If an operating system crash occurred during or shortly after <code>CREATE DATABASE</code>, recovery could fail, or subsequent connections to the new database could fail. If a base backup was taken in that window, similar problems could be observed when trying to use the backup. The symptom would be that the database directory, <code>PG_VERSION</code> file, or <code>pg_filenode.map</code> file was missing or empty.</p>
+<ul>
+<li>Add more <code>LOG</code> messages when starting and ending recovery from a backup (Andres Freund) <a href="https://postgr.es/c/edbd1b41a" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This change provides additional information in the postmaster log that may be useful for diagnosing recovery problems.</p>
+<ul>
+<li>Prevent standby servers from incorrectly processing dead index tuples during subtransactions (Fei Changhong) <a href="https://postgr.es/c/0e2c05af9" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The <code>startedInRecovery</code> flag was not correctly set for a subtransaction. This affects only processing of dead index tuples. It could allow a query in a subtransaction to ignore index entries that it should return (if they are already dead on the primary server, but not dead to the standby transaction), or to prematurely mark index entries as dead that are not yet dead on the primary. It is not clear that the latter case has any serious consequences, but it&#x27;s not the intended behavior.</p>
+<ul>
+<li>Fix signal handling in walreceiver processes (Heikki Linnakangas) <a href="https://postgr.es/c/c5a6d5337" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Revert a change that made walreceivers non-responsive to SIGTERM while waiting for the replication connection to be established.</p>
+<ul>
+<li>Fix integer overflow hazard in checking whether a record will fit into the WAL decoding buffer (Thomas Munro) <a href="https://postgr.es/c/8ca56620c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This bug appears to be only latent except when running a 32-bit PostgreSQL build on a 64-bit platform.</p>
+<ul>
+<li>Fix deadlock between a logical replication apply worker, its tablesync worker, and a session process trying to alter the subscription (Shlok Kyal) <a href="https://postgr.es/c/01cc92fa6" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>One edge of the deadlock loop did not involve a lock wait, so the deadlock went undetected and would persist until manual intervention.</p>
+<ul>
+<li>Ensure that column default values are correctly transmitted by the pgoutput logical replication plugin (Nikhil Benesch) <a href="https://postgr.es/c/d7ca9209c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p><code>ALTER TABLE ADD COLUMN</code> with a constant default value for the new column avoids rewriting existing tuples, instead expecting that reading code will insert the correct default into a tuple that lacks that column. If replication was subsequently initiated on the table, pgoutput would transmit NULL instead of the correct default for such a column, causing incorrect replication on the subscriber.</p>
+<ul>
+<li>Fix failure of logical replication&#x27;s initial sync for a table with no columns (Vignesh C) <a href="https://postgr.es/c/1b6da28e0" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This case generated an improperly-formatted <code>COPY</code> command.</p>
+<ul>
+<li>Re-validate a subscription&#x27;s connection string before use (Vignesh C) <a href="https://postgr.es/c/4c03ac7e2" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/5b5318c38" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is meant to detect cases where a subscription was created without a password (which is allowed to superusers) but then the subscription owner is changed to a non-superuser.</p>
+<ul>
+<li>Return the correct status code when a new client disconnects without responding to the server&#x27;s password challenge (Liu Lang, Tom Lane) <a href="https://postgr.es/c/fb464a1ae" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>In some cases we&#x27;d treat this as a loggable error, which was not the intention and tends to create log spam, since common clients like psql frequently do this. It may also confuse extensions that use <code>ClientAuthentication_hook</code>.</p>
+<ul>
+<li>Fix incompatibility with OpenSSL 3.2 (Tristan Partin, Bo Andreson) <a href="https://postgr.es/c/efa8f6064" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Use the BIO “app_data” field for our private storage, instead of assuming it&#x27;s okay to use the “data” field. This mistake didn&#x27;t cause problems before, but with 3.2 it leads to crashes and complaints about double frees.</p>
+<ul>
+<li>Be more wary about OpenSSL not setting <code>errno</code> on error (Tom Lane) <a href="https://postgr.es/c/ebbd499d4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>If <code>errno</code> isn&#x27;t set, assume the cause of the reported failure is read EOF. This fixes rare cases of strange error reports like “could not accept SSL connection: Success”.</p>
+<ul>
+<li>
+<p>Fix file descriptor leakage when a foreign data wrapper&#x27;s <code>ForeignAsyncRequest</code> function fails (Heikki Linnakangas) <a href="https://postgr.es/c/501cfd07d" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Fix minor memory leak in connection string validation for <code>CREATE SUBSCRIPTION</code> (Jeff Davis) <a href="https://postgr.es/c/41820e640" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Report ENOMEM errors from file-related system calls as <code>ERRCODE_OUT_OF_MEMORY</code>, not <code>ERRCODE_INTERNAL_ERROR</code> (Alexander Kuzmenkov) <a href="https://postgr.es/c/a15378100" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>In PL/pgSQL, support SQL commands that are <code>CREATE FUNCTION</code>/<code>CREATE PROCEDURE</code> with SQL-standard bodies (Tom Lane) <a href="https://postgr.es/c/00f941356" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously, such cases failed with parsing errors due to the semicolon(s) appearing in the function body.</p>
+<ul>
+<li>Fix libpq&#x27;s handling of errors in pipelines (Álvaro Herrera) <a href="https://postgr.es/c/878aa41f8" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/39aab1108" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The pipeline state could get out of sync if an error is returned for reasons other than a query problem (for example, if the connection is lost). Potentially this would lead to a busy-loop in the calling application.</p>
+<ul>
+<li>Make libpq&#x27;s <code>PQsendFlushRequest()</code> function flush the client output buffer under the same rules as other <code>PQsend</code> functions (Jelte Fennema-Nio) <a href="https://postgr.es/c/42f832685" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>In pipeline mode, it may still be necessary to call <code>PQflush()</code> as well; but this change removes some inconsistency.</p>
+<ul>
+<li>
+<p>Avoid race condition when libpq initializes OpenSSL support concurrently in two different threads (Willi Mann, Michael Paquier) <a href="https://postgr.es/c/8984480b5" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Fix timing-dependent failure in GSSAPI data transmission (Tom Lane) <a href="https://postgr.es/c/85eb77185" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>When using GSSAPI encryption in non-blocking mode, libpq sometimes failed with “GSSAPI caller failed to retransmit all data needing to be retried”.</p>
+<ul>
+<li>Change initdb to always un-comment the <code>postgresql.conf</code> entries for the <code>lc__</code>xxx<code>_</code> parameters (Kyotaro Horiguchi) <a href="https://postgr.es/c/ba33775fd" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>initdb used to work this way before v16, and now it does again. The change caused initdb&#x27;s <code>--no-locale</code> option to not have the intended effect on <code>lc_messages</code>.</p>
+<ul>
+<li>In pg_dump, don&#x27;t dump RLS policies or security labels for extension member objects (Tom Lane, Jacob Champion) <a href="https://postgr.es/c/64d2467fc" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/f1674ac6b" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously, commands would be included in the dump to set these properties, which is really incorrect since they should be considered as internal affairs of the extension. Moreover, the restoring user might not have adequate privilege to set them, and indeed the dumping user might not have enough privilege to dump them (since dumping RLS policies requires acquiring lock on their table).</p>
+<ul>
+<li>In pg_dump, don&#x27;t dump an extended statistics object if its underlying table isn&#x27;t being dumped (Rian McGuire, Tom Lane) <a href="https://postgr.es/c/b2c9936a7" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This conforms to the behavior for other dependent objects such as indexes.</p>
+<ul>
+<li>
+<p>Properly detect out-of-memory in one code path in pg_dump (Daniel Gustafsson) <a href="https://postgr.es/c/5b5db413d" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Make it an error for a pgbench script to end with an open pipeline (Anthonin Bonnefoy) <a href="https://postgr.es/c/07b53de70" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously, pgbench would behave oddly if a <code>\startpipeline</code> command lacked a matching <code>\endpipeline</code>. This seems like a scripting mistake rather than a case that pgbench needs to handle nicely, so throw an error.</p>
+<ul>
+<li>
+<p>Fix crash in <code>contrib/intarray</code> if an array with an element equal to <code>INT_MAX</code> is inserted into a <code>gist__int_ops</code> index (Alexander Lakhin, Tom Lane) <a href="https://postgr.es/c/cf6f802bf" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Report a better error when <code>contrib/pageinspect</code>&#x27;s <code>hash_bitmap_info()</code> function is applied to a partitioned hash index (Alexander Lakhin, Michael Paquier) <a href="https://postgr.es/c/7f68b1462" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Report a better error when <code>contrib/pgstattuple</code>&#x27;s <code>pgstathashindex()</code> function is applied to a partitioned hash index (Alexander Lakhin) <a href="https://postgr.es/c/b4948ed66" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>On Windows, suppress autorun options when launching subprocesses in pg_ctl and pg_regress (Kyotaro Horiguchi) <a href="https://postgr.es/c/714bfb781" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/506c77f9b" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>When launching a child process via <code>cmd.exe</code>, pass the <code>/D</code> flag to prevent executing any autorun commands specified in the registry. This avoids possibly-surprising side effects.</p>
+<ul>
+<li>Move <code>is_valid_ascii()</code> from <code>mb/pg_wchar.h</code> to <code>utils/ascii.h</code> (Jubilee Young) <a href="https://postgr.es/c/1b924a86e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This change avoids the need to include <code>&lt;simd.h&gt;</code> in <code>pg_wchar.h</code>, which was causing problems for some third-party code.</p>
+<ul>
+<li>
+<p>Fix compilation failures with libxml2 version 2.12.0 and later (Tom Lane) <a href="https://postgr.es/c/e02fea093" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Fix compilation failure of <code>WAL_DEBUG</code> code on Windows (Bharath Rupireddy) <a href="https://postgr.es/c/6248a2bb9" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Suppress compiler warnings from Python&#x27;s header files (Peter Eisentraut, Tom Lane) <a href="https://postgr.es/c/b0115e7e2" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/c72049dbc" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Our preferred compiler options provoke warnings about constructs appearing in recent versions of Python&#x27;s header files. When using gcc, we can suppress these warnings with a pragma.</p>
+<ul>
+<li>
+<p>Avoid deprecation warning when compiling with LLVM 18 (Thomas Munro) <a href="https://postgr.es/c/60ba7cae7" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Update time zone data files to tzdata release 2024a for DST law changes in Greenland, Kazakhstan, and Palestine, plus corrections for the Antarctic stations Casey and Vostok. Also historical corrections for Vietnam, Toronto, and Miquelon. (Tom Lane) <a href="https://postgr.es/c/b4fb76fb5" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-1"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">E.9. Release 16.1</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-3"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">E.7. Release 16.3</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#e81-migration-to-version-162" class="table-of-contents__link toc-highlight">E.8.1. Migration to Version 16.2</a></li><li><a href="#e82-changes" class="table-of-contents__link toc-highlight">E.8.2. Changes</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

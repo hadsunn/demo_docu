@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-samples/json_profperevod" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">json_profperevod | Postgres Документация</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/samples/json_profperevod"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="json_profperevod | Postgres Документация"><meta data-rh="true" name="description" content="[]{.navbar-toggler-icon}"><meta data-rh="true" property="og:description" content="[]{.navbar-toggler-icon}"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/samples/json_profperevod"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/samples/json_profperevod" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/samples/json_profperevod" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"json_profperevod","item":"https://hadsunn.github.io/demo_docu/samples/json_profperevod"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.827c52cd.css">
+<script src="/demo_docu/assets/js/runtime~main.8918983b.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.a0e88019.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Документация Postgresql</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">PostgreSQL 16.9 Documentation Test5</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Preface">Preface</a><button aria-label="Expand sidebar category &#x27;Preface&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/I. Tutorial">Part I. Tutorial</a><button aria-label="Expand sidebar category &#x27;Part I. Tutorial&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/II. The SQL Language">Part II. The SQL Language</a><button aria-label="Expand sidebar category &#x27;Part II. The SQL Language&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/III. Server Administration">Part III. Server Administration</a><button aria-label="Expand sidebar category &#x27;Part III. Server Administration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/IV. Client Interfaces">Part IV. Client Interfaces</a><button aria-label="Expand sidebar category &#x27;Part IV. Client Interfaces&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/V. Server Programming">Part V. Server Programming</a><button aria-label="Expand sidebar category &#x27;Part V. Server Programming&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/VI. Reference">Part VI. Reference</a><button aria-label="Expand sidebar category &#x27;Part VI. Reference&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/VII. Internals">Part VII. Internals</a><button aria-label="Expand sidebar category &#x27;Part VII. Internals&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/VIII. Appendixes">Part VIII. Appendixes</a><button aria-label="Expand sidebar category &#x27;Part VIII. Appendixes&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/biblio">Bibliography</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/bookindex">Index</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/samples/json_algoritm">samples</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/samples/json_algoritm">json_algoritm</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/samples/json_janus">json_janus</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/samples/json_profperevod">json_profperevod</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">samples</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">json_profperevod</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>json_profperevod</h1></header><p>::: container-fluid
+::: {.row .justify-content-md-center}
+::: col</p>
+<p>[]{.navbar-toggler-icon}</p>
+<p>::: {#pgNavbar .collapse .navbar-collapse}</p>
+<ul>
+<li><a title="Начало" href="/demo_docu/">Начало</a></li>
+<li><a title="О нас" href="/demo_docu/about">О нас</a></li>
+<li><a title="Скачать" href="/demo_docu/download">Скачать</a></li>
+<li><a title="Документация" href="/demo_docu/docs">Документация</a></li>
+<li><a title="Сообщество" href="/demo_docu/community">Сообщество</a></li>
+<li><a title="Разработчики" href="/demo_docu/developer">Разработчики</a></li>
+<li><a title="Поддержка" href="/demo_docu/support">Поддержка</a></li>
+<li><a title="Сделать пожертвование" href="/demo_docu/about/donate">Сделать пожертвование</a></li>
+<li><a title="Личный кабинет" href="/demo_docu/account">Личный кабинет</a></li>
+</ul>
+<p>::: input-group
+:::
+:::
+:::
+:::</p>
+<p>::: {.row .justify-content-center .pg-shout-box}
+::: {.col .text-white .text-center}
+8 мая 2025: <a href="/demo_docu/about/news/postgresql-175-169-1513-1418-and-1321-released-3072">Опубликованы версии PostgreSQL 17.5, 16.9, 15.13, 14.18 и
+13.21!</a>
+| <a href="/demo_docu/about/news/postgresql-18-beta-1-released-3070">Опубликована версия PostgreSQL 18 Beta
+1!</a>
+:::
+:::
+:::</p>
+<p>::: {.container-fluid .margin}
+::: row
+::: {#pgContentWrap .col-11}
+::: row
+::: {.col-md-6 .mb-2}
+::: row
+::: col</p>
+<div>
+<p><a title="Документация" href="/demo_docu/docs">Документация</a> → [PostgreSQL</p>
+</div>
+:::
+:::
+<p>::: row
+::: col
+Поддерживаемые версии:
+<a href="/demo_docu/docs/current/datatype-json">Текущая</a>
+17
+16
+/ <a href="/demo_docu/docs/15/datatype-json">15</a> /
+14
+13
+:::
+:::</p>
+<p>::: row
+::: col
+Разрабатываемые версии:
+18
+/
+devel
+:::
+:::</p>
+<p>::: row
+::: col-12
+Неподдерживаемые версии:
+12
+/
+11
+/
+10
+/
+9.6
+/
+9.5
+/
+9.4
+/
+9.3
+/
+9.2
+:::
+:::
+:::</p>
+<p>::: {.col-md-6 .col-lg-5 .offset-lg-1}
+::: input-group
+:::
+:::
+:::</p>
+<p>::: {#docContent}
+::: navheader
+8.14. Типы JSON</p>
+<hr>
+<p><a href="/demo_docu/II. The SQL Language/Data Types/datatype-xml">Назад</a>{accesskey=&quot;n&quot;}</p>
+<hr>
+<p>:::</p>
+<p>::: {#DATATYPE-JSON .sect1}
+::: titlepage</p>
+<div>
+<div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="типы-json .title style=&quot;clear: both&quot;">8.14. Типы JSON <a href="#DATATYPE-JSON">#</a>{.id_link}<a href="#типы-json .title style=&quot;clear: both&quot;" class="hash-link" aria-label="Direct link to типы-json .title style=&quot;clear: both&quot;" title="Direct link to типы-json .title style=&quot;clear: both&quot;">​</a></h2>
+</div>
+</div>
+:::
+<p>::: toc
+[<a href="/demo_docu/samples/datatype-json.html#JSON-KEYS-ELEMENTS">8.14.1. Синтаксис ввода и вывода
+JSON</a>]{.sect2}</p>
+<p>[<a href="/demo_docu/samples/datatype-json.html#JSON-DOC-DESIGN">8.14.2. Проектирование
+JSON-документов</a>]{.sect2}</p>
+<p>[<a href="/demo_docu/samples/datatype-json.html#JSON-CONTAINMENT">8.14.3. <code>jsonb</code>{.type} операторы Containment и
+Existence</a>]{.sect2}</p>
+<p>[<a href="/demo_docu/samples/datatype-json.html#JSON-INDEXING">8.14.4. Индексирование
+<code>jsonb</code>{.type}</a>]{.sect2}</p>
+<p>[<a href="/demo_docu/samples/datatype-json.html#JSONB-SUBSCRIPTING">8.14.5. Индексация
+<code>jsonb</code>{.type}</a>]{.sect2}</p>
+<p>[<a href="/demo_docu/samples/datatype-json.html#DATATYPE-JSON-TRANSFORMS">8.14.6.
+Преобразования</a>]{.sect2}</p>
+<p>[<a href="/demo_docu/samples/datatype-json.html#DATATYPE-JSONPATH">8.14.7. Тип
+<code>jsonpath</code>{.type}</a>]{.sect2}
+:::</p>
+<p>[]{#id-1.5.7.22.2 .indexterm}[]{#id-1.5.7.22.3 .indexterm}</p>
+<p>Типы данных JSON предназначены для хранения данных в формате JSON
+(JavaScript Object Notation), как описано в <a href="https://datatracker.ietf.org/doc/html/rfc7159" target="_blank" rel="noopener noreferrer">RFC
+7159</a>{.ulink
+target=&quot;_top&quot;}. Такие данные также можно хранить в виде <code>text</code>{.type},
+но типы JSON имеют преимущество: они гарантируют, что каждое сохраненное
+значение соответствует правилам JSON. Кроме того, для данных, хранящихся
+в этих типах, доступны различные специализированные функции и операторы
+JSON (см. <a title="9.16. Функции и операции JSON" href="/demo_docu/samples/functions-json.html">Раздел
+9.16)</a>{.xref}.</p>
+<p>[PostgreSQL]{.productname} предлагает два типа данных для хранения JSON:
+<code>json</code>{.type} и <code>jsonb</code>{.type}. Для реализации эффективных механизмов
+запросов к этим типам данных [PostgreSQL]{.productname} также
+предоставляет тип <code>jsonpath</code>{.type}, описанный в <a title="8.14.7. Тип jsonpath" href="/demo_docu/samples/datatype-json.html#DATATYPE-JSONPATH">Разделе
+8.14.7</a>{.xref}.</p>
+<p>Типы <code>json</code>{.type} и <code>jsonb</code>{.type} принимают [<em>практически</em>]{.emphasis}
+идентичные наборы значений на вход. Основное практическое различие
+заключается в эффективности. Тип <code>json</code>{.type} хранит точную копию
+входного текста, который функциям обработки приходится повторно
+разбирать при каждом выполнении, тогда как <code>jsonb</code>{.type} хранит данные
+в декомпонованном бинарном формате. Это делает ввод данных немного
+медленнее из-за дополнительных затрат на преобразование, но обработка
+происходит значительно быстрее, так как не требует повторного разбора.
+Кроме того, <code>jsonb</code>{.type} поддерживает индексацию, что может стать
+существенным преимуществом.</p>
+<p>Поскольку тип <code>json</code>{.type} хранит точную копию входного текста, он
+сохраняет семантически незначимые пробелы между токенами, а также
+порядок ключей в JSON-объектах. Кроме того, если JSON-объект в значении
+содержит одинаковый ключ более одного раза, сохраняются все пары
+ключ/значение. (Обрабатывающие функции считают последнее значение
+актуальным.) В отличие от этого, <code>jsonb</code>{.type} не сохраняет пробелы,
+порядок ключей объекта или дублирующиеся ключи. Если во входных данных
+указаны дублирующиеся ключи, сохраняется только последнее значение.</p>
+<p>Как правило, большинству приложений следует хранить JSON-данные в
+формате<code> jsonb</code>{.type}, если только нет узкоспециализированных
+требований, таких как унаследованные допущения о порядке ключей в
+объекте.</p>
+<p>RFC 7159 предписывает, что строки JSON должны кодироваться в UTF-8.
+Следовательно, JSON-типы не могут строго соответствовать спецификации
+JSON, если кодировка базы данных не является UTF-8. Попытки напрямую
+включить символы, которые не могут быть представлены в текущей кодировке
+базы данных, завершатся ошибкой. И наоборот, символы, которые могут быть
+представлены в кодировке базы данных, но не в UTF-8, будут разрешены.</p>
+<p>RFC 7159 допускает наличие в JSON-строках Unicode-последовательностей,
+обозначаемых как <code>\uXXXX</code>{.literal}. Во входной функции для типа
+<code>json</code>{.type} Unicode-экранирование разрешено независимо от кодировки
+базы данных и проверяется только на синтаксическую корректность (то есть
+что после <code>\u</code>{.literal} следуют четыре шестнадцатеричные цифры). Однако
+входная функция для <code>jsonb</code>{.type} более строгая: она запрещает
+Unicode-экранирование для символов, которые не могут быть представлены в
+кодировке базы данных. Тип <code>jsonb</code>{.type} также отклоняет
+последовательность <code>\u0000</code>{.literal} (поскольку она не может быть
+представлена в типе <code>text</code>{.type}[PostgreSQL]{.productname}) и требует,
+чтобы любые использования суррогатных пар Unicode для обозначения
+символов вне базовой многоязыковой плоскости Unicode (BMP) были
+корректными. Допустимые Unicode-последовательности преобразуются в
+эквивалентные одиночные символы для хранения, включая объединение
+суррогатных пар в один символ.</p>
+<p>::: note</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="примечание .title">Примечание<a href="#примечание .title" class="hash-link" aria-label="Direct link to Примечание" title="Direct link to Примечание">​</a></h3>
+<p>Многие функции обработки JSON, описанные
+в <a href="/demo_docu/II. The SQL Language/Functions and Operators/functions-json">Разделе 9.16</a>{.xref}
+преобразуют символы Unicode в обычные символы и будут выбрасывать те же
+типы ошибок, описанные ранее, даже если их входные данные имеют
+тип <code>json</code>{.type}, а не <code>jsonb</code>{.type}. Тот факт, что функция
+ввода <code>json</code>{.type} не выполняет эти проверки, может рассматриваться как
+исторический артефакт, хотя она позволяет просто хранить (без обработки)
+символы Unicode JSON в кодировке базы данных, которая не поддерживает
+представленные символы.
+:::</p>
+<p>При преобразовании текстового ввода JSON в тип <code>jsonb</code>{.type},
+примитивные типы, описанные в RFC 7159, эффективно отображаются на
+собственные типы [PostgreSQL]{.productname}, как показано в
+<a title="Таблица 8.23. Типы примитивов JSON и соответствующие типы в  PostgreSQL" href="/demo_docu/samples/datatype-json.html#JSON-TYPE-MAPPING-TABLE">Таблице 8.23</a>{.xref}.
+Поэтому существуют некоторые незначительные дополнительные ограничения
+на то, что является допустимыми данными типа <code>jsonb</code>{.type}, которые не
+применяются к типу <code>json</code>{.type} или к JSON в абстрактном смысле,
+соответствующие ограничениям на то, что может быть представлено базовым
+типом данных. В частности, <code>jsonb</code>{.type} будет отклонять числа,
+выходящие за пределы диапазона числовых данных типа 
+[PostgreSQL]{.productname} <code>numeric</code>{.type}, в то время
+как <code>json</code>{.type} этого не делает. Такие ограничения, определенные
+реализацией, разрешены RFC7159. Однако на практике такие проблемы
+гораздо более вероятно возникают в других реализациях, так как обычно
+примитивный тип <code>числа</code>{.type} JSON представляется двойной точностью с
+плавающей запятой IEEE 754 (что явно предусмотрено и
+разрешено RFC 7159). При использовании JSON в качестве формата обмена
+данными с такими системами следует учитывать опасность потери числовой
+точности по сравнению с данными, изначально сохраненными
+в [PostgreSQL]{.productname}.</p>
+<p>Наоборот, как указано в таблице, существуют некоторые незначительные
+ограничения на формат ввода примитивных типов JSON, которые не
+применяются к соответствующим типам [PostgreSQL]{.productname}.</p>
+<p>::: {#JSON-TYPE-MAPPING-TABLE .table}
+<strong>Таблица 8.23. Типы примитивов JSON и соответствующие типы в 
+[PostgreSQL]{.productname}</strong></p>
+<p>::: table-contents
+Тип примитива JSON   Тип [PostgreSQL]{.productname}   Примечания</p>
+<hr>
+<p><code>string</code>{.type}      <code>text</code>{.type}                    <code>\u0000</code>{.literal} запрещен, также запрещены Unicode-последовательности, представляющие символы, недоступные в кодировке базы данных
+<code>number</code>{.type}      <code>numeric</code>{.type}                 <code>NaN</code>{.literal} и значения <code>infinity</code>{.literal} запрещены
+<code>boolean</code>{.type}     <code>boolean</code>{.type}                 Принимаются только строчные написания <code>true</code>{.literal} и <code>false</code>{.literal}
+<code>null</code>{.type}        (нет)                            SQL <code>NULL</code>{.literal} - это другая концепция
+:::
+:::</p>
+<p>\</p>
+<p>::: {#JSON-KEYS-ELEMENTS .sect2}
+::: titlepage</p>
+<div>
+<div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="синтаксис-ввода-и-вывода-json .title">8.14.1. Синтаксис ввода и вывода JSON <a href="#JSON-KEYS-ELEMENTS">#</a>{.id_link}<a href="#синтаксис-ввода-и-вывода-json .title" class="hash-link" aria-label="Direct link to синтаксис-ввода-и-вывода-json .title" title="Direct link to синтаксис-ввода-и-вывода-json .title">​</a></h3>
+</div>
+</div>
+:::
+<p>Синтаксис ввода/вывода для типов данных JSON соответствует спецификации
+в RFC 7159.</p>
+<p>Следующие выражения <code>json</code>{.type} (или <code>jsonb</code>{.type}) являются
+допустимыми:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Простое скалярное/примитивное значение</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Примитивные значения могут быть числами, строками в кавычках, true, false или null</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;5&#x27;::json;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Массив из нуля или более элементов (элементы могут быть разных типов)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;[1, 2, &quot;foo&quot;, null]&#x27;::json;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Объект, содержащий пары ключ-значение</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Обратите внимание, что ключи объектов всегда должны быть строками в кавычках</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;bar&quot;: &quot;baz&quot;, &quot;balance&quot;: 7.77, &quot;active&quot;: false}&#x27;::json;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Массивы и объекты могут быть вложены друг в друга произвольным образом</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;foo&quot;: [true, &quot;bar&quot;], &quot;tags&quot;: {&quot;a&quot;: 1, &quot;b&quot;: null}}&#x27;::json;</span><br></span></code></pre></div></div>
+<p>Как уже упоминалось ранее, когда значение JSON вводится и затем
+выводится без дополнительной обработки, <code>json</code>{.type} выводит тот же
+текст, который был введен, в то время как <code>jsonb</code>{.type} не сохраняет
+семантически незначимые детали, такие как пробелы. Например, обратите
+внимание на различия здесь:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;bar&quot;: &quot;baz&quot;, &quot;balance&quot;: 7.77, &quot;active&quot;:false}&#x27;::json;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                      json</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-------------------------------------------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> {&quot;bar&quot;: &quot;baz&quot;, &quot;balance&quot;: 7.77, &quot;active&quot;:false}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">(1 строка)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;bar&quot;: &quot;baz&quot;, &quot;balance&quot;: 7.77, &quot;active&quot;:false}&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                      jsonb</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">--------------------------------------------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> {&quot;bar&quot;: &quot;baz&quot;, &quot;active&quot;: false, &quot;balance&quot;: 7.77}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">(1 строка)</span><br></span></code></pre></div></div>
+<p>Одна семантически незначимая деталь, которую стоит отметить, заключается
+в том, что в типе <code>jsonb</code>{.type} числа будут выводиться в соответствии с
+поведением базового типа <code>numeric</code>{.type}. На практике это означает, что
+числа, введенные с использованием обозначения <code>E</code>{.literal}, будут
+выводиться без него, например:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;reading&quot;: 1.230e-5}&#x27;::json, &#x27;{&quot;reading&quot;: 1.230e-5}&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">         json          |          jsonb</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-----------------------+-------------------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> {&quot;reading&quot;: 1.230e-5} | {&quot;reading&quot;: 0.00001230}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">(1 строка)</span><br></span></code></pre></div></div>
+<p>Однако, <code>jsonb</code>{.type} сохранит конечные дробные нули, как видно в этом
+примере, даже если они семантически несущественны для целей, таких как
+проверка равенства.</p>
+<p>Для списка встроенных функций и операторов, доступных для создания и
+обработки значений JSON,
+см. <a href="/demo_docu/II. The SQL Language/Functions and Operators/functions-json">Раздел 9.16</a>{.xref}.
+:::</p>
+<p>::: {#JSON-DOC-DESIGN .sect2}
+::: titlepage</p>
+<div>
+<div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="проектирование-json-документов .title">8.14.2. Проектирование JSON-документов <a href="#JSON-DOC-DESIGN">#</a>{.id_link}<a href="#проектирование-json-документов .title" class="hash-link" aria-label="Direct link to проектирование-json-документов .title" title="Direct link to проектирование-json-документов .title">​</a></h3>
+</div>
+</div>
+:::
+<p>Представление данных в формате JSON может быть гораздо более гибким, чем
+традиционная реляционная модель данных, что является привлекательным в
+средах, где требования постоянно меняются. Возможно сосуществование и
+взаимодополняемость обоих подходов в рамках одного приложения. Однако,
+даже для приложений, где требуется максимальная гибкость, рекомендуется,
+чтобы JSON-документы имели относительно фиксированную структуру. Обычно
+структура не является обязательной (хотя возможно декларативное
+применение некоторых бизнес-правил), но наличие предсказуемой структуры
+упрощает написание запросов, которые полезно резюмируют набор
+[&quot;[документов]{.quote}&quot;]{.quote} (данных) в таблице.</p>
+<p>JSON-данные подчиняются тем же правилам контроля параллелизма, что и
+любой другой тип данных при хранении в таблице. Хотя хранение больших
+документов является практичным, имейте в виду, что любое обновление
+приобретает блокировку на уровне строки для всей строки. Рассмотрите
+возможность ограничения размера JSON-документов для уменьшения
+конкуренции блокировок между обновляющими транзакциями. Идеально
+JSON-документы должны представлять собой атомарные данные, которые
+бизнес-правила определяют как неразделимые на более мелкие данные,
+которые могут быть изменены независимо.
+:::</p>
+<p>::: {#JSON-CONTAINMENT .sect2}
+::: titlepage</p>
+<div>
+<div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="jsonb-операторы-containment-и-existence .title">8.14.3. <code>jsonb</code>{.type}  операторы Containment и Existence <a href="#JSON-CONTAINMENT">#</a>{.id_link}<a href="#jsonb-операторы-containment-и-existence .title" class="hash-link" aria-label="Direct link to jsonb-операторы-containment-и-existence .title" title="Direct link to jsonb-операторы-containment-и-existence .title">​</a></h3>
+</div>
+</div>
+:::
+<p>[]{#id-1.5.7.22.17.2 .indexterm}[]{#id-1.5.7.22.17.3 .indexterm}</p>
+<p>Тестирование <em>containment (содержимого)</em> является важной
+возможностью <code>jsonb</code>{.type}. Для типа <code>json</code>{.type} нет аналогичного
+набора функций. Проверка содержимого определяет, содержит ли один
+документ <code>jsonb</code>{.type} другой. Эти примеры возвращают true, за
+исключением указанных случаев:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Простые скалярные/примитивные значения содержат только идентичное значение:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;&quot;foo&quot;&#x27;::jsonb @&gt; &#x27;&quot;foo&quot;&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Массив справа содержится в массиве слева:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;[1, 2, 3]&#x27;::jsonb @&gt; &#x27;[1, 3]&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Порядок элементов в массиве не имеет значения, поэтому следующее выражение также верно:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;[1, 2, 3]&#x27;::jsonb @&gt; &#x27;[3, 1]&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Повторяющиеся элементы массива также не имеют значения:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;[1, 2, 3]&#x27;::jsonb @&gt; &#x27;[1, 2, 2]&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Объект с одной парой в правой части содержится</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- внутри объекта слева:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;product&quot;: &quot;PostgreSQL&quot;, &quot;version&quot;: 9.4, &quot;jsonb&quot;: true}&#x27;::jsonb @&gt; &#x27;{&quot;version&quot;: 9.4}&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Массив справа не  считается входящим в</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">--  массив слева, даже если похожий массив вложен в него:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;[1, 2, [1, 3]]&#x27;::jsonb @&gt; &#x27;[1, 3]&#x27;::jsonb;  -- возвращает false</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Однако при добавлении уровня вложенности проблема локализуется:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;[1, 2, [1, 3]]&#x27;::jsonb @&gt; &#x27;[[1, 3]]&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Аналогично, здесь не проверяется содержание.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;foo&quot;: {&quot;bar&quot;: &quot;baz&quot;}}&#x27;::jsonb @&gt; &#x27;{&quot;bar&quot;: &quot;baz&quot;}&#x27;::jsonb;  -- возвращает false</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Содержит ключ верхнего уровня и пустой объект:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;foo&quot;: {&quot;bar&quot;: &quot;baz&quot;}}&#x27;::jsonb @&gt; &#x27;{&quot;foo&quot;: {}}&#x27;::jsonb;</span><br></span></code></pre></div></div>
+<p>Общий принцип заключается в том, что содержащийся объект должен
+соответствовать структуре и содержанию данных содержащего объекта,
+возможно после отбрасывания некоторых несоответствующих элементов
+массива или пар ключ/значение объекта из содержащего объекта. Но
+помните, что порядок элементов массива не имеет значения при
+сопоставлении содержимого, и дублирующиеся элементы массива эффективно
+считаются только один раз.</p>
+<p>В качестве особого исключения из общего принципа, что структуры должны
+совпадать, массив может содержать примитивное значение:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Этот массив содержит примитивное строковое значение:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;[&quot;foo&quot;, &quot;bar&quot;]&#x27;::jsonb @&gt; &#x27;&quot;bar&quot;&#x27;::jsonb;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Это исключение не является взаимным  -- здесь сообщается об отсутствии содержания:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;&quot;bar&quot;&#x27;::jsonb @&gt; &#x27;[&quot;bar&quot;]&#x27;::jsonb;  -- возвращает false</span><br></span></code></pre></div></div>
+<p><code>jsonb</code>{.type} также имеет оператор <em>existence</em>, который является
+вариацией на тему содержания: он проверяет, появляется ли строка
+(заданная как значение <code>text</code>{.type}) в качестве ключа объекта или
+элемента массива на верхнем уровне значения <code>jsonb</code>{.type}. Эти примеры
+возвращают true, за исключением указанных случаев:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Строка существует как элемент массива:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;[&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;]&#x27;::jsonb ? &#x27;bar&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Строка существует как ключ объекта:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;foo&quot;: &quot;bar&quot;}&#x27;::jsonb ? &#x27;foo&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Значения объектов не учитываются:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;foo&quot;: &quot;bar&quot;}&#x27;::jsonb ? &#x27;bar&#x27;;  -- возвращает false</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Как и в случае с проверкой содержания, проверка существования должна совпадать на верхнем уровне:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;{&quot;foo&quot;: {&quot;bar&quot;: &quot;baz&quot;}}&#x27;::jsonb ? &#x27;bar&#x27;; -- возвращает false</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Строка считается существующей, если она соответствует примитивной JSON-строке:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;&quot;foo&quot;&#x27;::jsonb ? &#x27;foo&#x27;;</span><br></span></code></pre></div></div>
+<p>JSON-объекты лучше подходят для проверки наличия или содержания, когда
+вовлечено много ключей или элементов, потому что, в отличие от массивов,
+они внутренне оптимизированы для поиска и не требуют линейного поиска.</p>
+<p>::: tip</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="подсказка .title">Подсказка<a href="#подсказка .title" class="hash-link" aria-label="Direct link to Подсказка" title="Direct link to Подсказка">​</a></h3>
+<p>Поскольку JSON-контейнеры являются вложенными, соответствующий запрос
+может пропустить явный выбор подобъектов. Например, предположим, что у
+нас есть столбец <code>doc</code>{.structfield}, содержащий объекты на верхнем
+уровне, большинство из которых содержат поля <code>tags</code>{.literal},
+содержащие массивы подобъектов. Этот запрос находит записи, в которых
+подобъекты, содержащие и <code>&quot;term&quot;:&quot;paris&quot;</code>{.literal},
+и <code>&quot;term&quot;:&quot;food&quot;</code>{.literal}, появляются, игнорируя любые такие ключи вне
+массива <code>tags</code>{.literal}:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SELECT doc-&gt;&#x27;site_name&#x27; FROM websites</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  WHERE doc @&gt; &#x27;{&quot;tags&quot;:[{&quot;term&quot;:&quot;paris&quot;}, {&quot;term&quot;:&quot;food&quot;}]}&#x27;;</span><br></span></code></pre></div></div>
+<p>То же самое можно сделать, скажем,</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SELECT doc-&gt;&#x27;site_name&#x27; FROM websites</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  WHERE doc-&gt;&#x27;tags&#x27; @&gt; &#x27;[{&quot;term&quot;:&quot;paris&quot;}, {&quot;term&quot;:&quot;food&quot;}]&#x27;;</span><br></span></code></pre></div></div>
+<p>но такой подход менее гибкий и часто менее эффективный.</p>
+<p>С другой стороны, оператор существования JSON не является вложенным: он
+будет искать только указанный ключ или элемент массива на верхнем уровне
+значения JSON.
+:::</p>
+<p>Различные операторы содержания и существования, а также все остальные
+операторы и функции JSON документированы
+в <a href="/demo_docu/II. The SQL Language/Functions and Operators/functions-json">Разделе 9.16</a>{.xref}.
+:::</p>
+<p>::: {#JSON-INDEXING .sect2}
+::: titlepage</p>
+<div>
+<div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="индексирование-jsonb .title">8.14.4.  Индексирование <code>jsonb</code>{.type} <a href="#JSON-INDEXING">#</a>{.id_link}<a href="#индексирование-jsonb .title" class="hash-link" aria-label="Direct link to индексирование-jsonb .title" title="Direct link to индексирование-jsonb .title">​</a></h3>
+</div>
+</div>
+:::
+<p>[]{#id-1.5.7.22.18.2 .indexterm}</p>
+<p>GIN индексы могут быть использованы для эффективного поиска ключей или
+пар ключ/значение, встречающихся в большом количестве
+документов <code>jsonb</code>{.type} (датумов). Предоставляются два [&quot;[класса
+операторов]{.quote}&quot;]{.quote} GIN, предлагающих различные компромиссы
+между производительностью и гибкостью.</p>
+<p>Класс операторов GIN по умолчанию для <code>jsonb</code>{.type} поддерживает
+запросы с использованием операторов проверки наличия ключа
+<code>?</code>{.literal}, <code>?|</code>{.literal} и <code>?&amp;</code>{.literal}, оператора
+содержания <code>@&gt;</code>{.literal} и операторов сопоставления <code>jsonpath</code>{.type}
+<code>@?</code>{.literal} и <code>@@</code>{.literal}. (Подробнее о семантике, реализуемой
+этими операторами,
+см. <a title="Таблица 9.46. Дополнительные операторы jsonb" href="/demo_docu/samples/functions-json.html#FUNCTIONS-JSONB-OP-TABLE">Таблице 9.46</a>{.xref}).
+Пример создания индекса с использованием этого класса операторов:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">CREATE INDEX idxgin ON api USING GIN (jdoc);</span><br></span></code></pre></div></div>
+<p>Нестандартный класс операторов <code>jsonb_path_ops</code>{.literal} не
+поддерживает операторы проверки наличия ключа, но поддерживает
+операторы  <code>@&gt;</code>{.literal}, <code>@?</code>{.literal}и <code>@@</code>{.literal}. Пример
+создания индекса с использованием этого класса операторов:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">CREATE INDEX idxginp ON api USING GIN (jdoc jsonb_path_ops);</span><br></span></code></pre></div></div>
+<p>Рассмотрим пример таблицы, которая хранит JSON-документы, полученные из
+стороннего веб-сервиса, с задокументированной схемой определения.
+Типичный документ выглядит так:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">{</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;guid&quot;: &quot;9c36adc1-7fb5-4d5b-83b4-90356a46061a&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;name&quot;: &quot;Angela Barton&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;is_active&quot;: true,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;company&quot;: &quot;Magnafone&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;address&quot;: &quot;178 Howard Place, Gulf, Washington, 702&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;registered&quot;: &quot;2009-11-07T08:53:22 +08:00&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;latitude&quot;: 19.793713,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;longitude&quot;: 86.513373,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &quot;tags&quot;: [</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        &quot;enim&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        &quot;aliquip&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        &quot;qui&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<p>Мы храним эти документы в таблице с именем <code>api</code>{.structname}, в
+столбце <code>jsonb</code>{.type} с именем <code>jdoc</code>{.structfield}. Если на этом
+столбце создан индекс GIN, запросы, подобные следующим, могут
+использовать индекс:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Найти документы, в которых ключ &quot;company&quot; имеет значение &quot;Magnafone&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT jdoc-&gt;&#x27;guid&#x27;, jdoc-&gt;&#x27;name&#x27; FROM api WHERE jdoc @&gt; &#x27;{&quot;company&quot;: &quot;Magnafone&quot;}&#x27;;</span><br></span></code></pre></div></div>
+<p>Однако индекс не может использоваться для запросов, подобных следующим,
+потому что, хотя оператор <code>?</code>{.literal}является индексируемым, он не
+применяется непосредственно к индексированному
+столбцу <code>jdoc</code>{.structfield}:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Найти документы, в которых ключ &quot;tags&quot; содержит ключ или элемент массива &quot;qui&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT jdoc-&gt;&#x27;guid&#x27;, jdoc-&gt;&#x27;name&#x27; FROM api WHERE jdoc -&gt; &#x27;tags&#x27; ? &#x27;qui&#x27;;</span><br></span></code></pre></div></div>
+<p>Все же, с правильным использованием индексов выражений, вышеприведенный
+запрос может использовать индекс. Если часто выполняются запросы для
+определенных элементов в ключе <code>&quot;tags&quot;</code>{.literal}, то определение
+индекса вот таким образом может быть целесообразным:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">CREATE INDEX idxgintags ON api USING GIN ((jdoc -&gt; &#x27;tags&#x27;));</span><br></span></code></pre></div></div>
+<p>Теперь,
+предложение <code>WHERE</code>{.literal} <code>jdoc -&gt; &#x27;tags&#x27; ? &#x27;qui&#x27;</code>{.literal} будет
+распознано как применение индексируемого оператора <code>?</code>{.literal} к
+индексированному выражению <code>jdoc -&gt; &#x27;tags&#x27;</code>{.literal}. (Более подробную
+информацию о выражениях-индексах можно найти
+в <a href="/demo_docu/II. The SQL Language/Indexes/indexes-expressional">Разделе 11.7</a>{.xref}).</p>
+<p>Другой подход к запросам - это использование вложенности, например:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Найти документы, в которых ключ &quot;tags&quot; содержит элемент массива &quot;qui&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT jdoc-&gt;&#x27;guid&#x27;, jdoc-&gt;&#x27;name&#x27; FROM api WHERE jdoc @&gt; &#x27;{&quot;tags&quot;: [&quot;qui&quot;]}&#x27;;</span><br></span></code></pre></div></div>
+<p>Простой индекс GIN на столбце <code>jdoc</code>{.structfield} может поддерживать
+этот запрос. Но обратите внимание, что такой индекс будет хранить копии
+каждого ключа и значения в столбце <code>jdoc</code>{.structfield}, в то время как
+индекс выражений из предыдущего примера хранит только данные, найденные
+под ключом <code>tags</code>{.literal}. В то время как простой подход к
+индексированию гораздо более гибкий (поскольку он поддерживает запросы
+по любому ключу), целевые индексы выражений, скорее всего, будут меньше
+и быстрее для поиска, чем простой индекс.</p>
+<p>GIN-индексы также поддерживают
+операторы <code>@?</code>{.literal} и <code>@@</code>{.literal}, которые выполняют
+сопоставление <code>jsonpath</code>{.type}. Примеры:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SELECT jdoc-&gt;&#x27;guid&#x27;, jdoc-&gt;&#x27;name&#x27; FROM api WHERE jdoc @? &#x27;$.tags[*] ? (@ == &quot;qui&quot;)&#x27;;</span><br></span></code></pre></div></div>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SELECT jdoc-&gt;&#x27;guid&#x27;, jdoc-&gt;&#x27;name&#x27; FROM api WHERE jdoc @@ &#x27;$.tags[*] == &quot;qui&quot;&#x27;;</span><br></span></code></pre></div></div>
+<p>Для этих операторов индекс GIN извлекает предложения
+<code>accessors_chain</code>{.literal} = <em><code>constant</code></em> из
+шаблона <code>jsonpath</code>{.type} и выполняет поиск по индексу на основе ключей
+и значений, указанных в этих предложениях. Цепочка аксессоров может
+включать <code>.key</code>{.literal}, <code>[*]</code>{.literal} и <code>[index</code>{.literal}].
+Операторный класс <code>jsonb_ops</code>{.literal} также поддерживает
+аксессоры <code>.*</code>{.literal} и <code>.**</code>{.literal}, но операторный
+класс <code>jsonb_path_ops</code>{.literal} - нет.</p>
+<p>Хотя класс операторов <code>jsonb_path_ops </code>{.literal}поддерживает только
+запросы с операторами  <code>@&gt;</code>{.literal}, <code>@?</code>{.literal} и <code>@@</code>{.literal},
+он имеет заметные преимущества производительности по сравнению с классом
+операторов по умолчанию <code>jsonb_ops</code>{.literal}.
+Индекс <code>jsonb_path_ops</code>{.literal} обычно значительно меньше, чем
+индекс <code>jsonb_ops</code>{.literal} для тех же данных, и специфичность поиска
+лучше, особенно когда запросы содержат ключи, которые часто встречаются
+в данных. Поэтому операции поиска обычно выполняются лучше, чем с
+классом операторов по умолчанию.</p>
+<p>Разница между техническими индексами GIN  <code>jsonb_ops</code>{.literal} и
+<code>jsonb_path_ops</code>{.literal} заключается в том, что первый создает
+независимые элементы индекса для каждого ключа и значения в данных, в то
+время как второй создает элементы индекса только для каждого значения в
+данных. <a href="#ftn.id-1.5.7.22.18.9.3">^[7]^</a>{.footnote} В основном, каждый
+элемент индекса <code>jsonb_path_ops</code>{.literal} представляет собой
+хеш-значение и ключ(и), ведущие к нему; например, для индексации
+<code>{&quot;foo&quot;: {&quot;bar&quot;: &quot;baz&quot;}}</code>{.literal} будет создан один элемент индекса,
+включающий все три значения  <code>foo</code>{.literal}, <code>bar</code>{.literal} и
+<code>baz</code>{.literal}. Таким образом, запрос на содержание этой структуры
+приведет к крайне точному поиску по индексу; однако нет никакого способа
+узнать, появляется ли <code>foo</code>{.literal} в качестве ключа. С другой
+стороны, индекс <code>jsonb_ops</code>{.literal} создаст три элемента индекса,
+представляющих отдельно <code>foo</code>{.literal}, <code>bar</code>{.literal}, и
+<code>baz</code>{.literal}; затем для выполнения запроса на содержание он будет
+искать строки, содержащие все три элемента. Хотя индексы GIN могут
+выполнять такой поиск с использованием оператора AND достаточно
+эффективно, он все равно будет менее точным и медленнее, чем
+эквивалентный поиск с использованием  <code>jsonb_path_ops</code>{.literal},
+особенно если имеется очень большое количество строк, содержащих любой
+из трех элементов индекса.</p>
+<p>Одним из недостатков подхода <code>jsonb_path_ops</code>{.literal} является
+отсутствие индексных записей для JSON-структур, не содержащих значения,
+например, <code>{&quot;a&quot;: {}}</code>{.literal}. Если требуется поиск документов,
+содержащих такую структуру, потребуется полное сканирование индекса, что
+довольно медленно. Поэтому <code>jsonb_path_ops</code>{.literal} не подходит для
+приложений, которые часто выполняют такие поиски.</p>
+<p><code>jsonb</code>{.type} также поддерживает
+индексы <code>btree</code>{.literal} и <code>hash</code>{.literal}. Они обычно полезны только
+в том случае, если важно проверить равенство полных JSON-документов.
+Порядок <code>btree</code>{.literal} для данных типа <code>jsonb</code>{.type} редко
+представляет большой интерес, но для полноты он следующий:</p>
+<div class="language-synopsis codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-synopsis codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Object &gt; Array &gt; Boolean &gt; Number &gt; String &gt; null</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Object with n pairs &gt; object with n - 1 pairs</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Array with n elements &gt; array with n - 1 elements</span><br></span></code></pre></div></div>
+<p>за исключением того, что (по историческим причинам) пустой массив
+верхнего уровня сортируется меньше, чем  <em><code>null</code></em>. Объекты с равным
+количеством пар сравниваются в следующем порядке:</p>
+<div class="language-synopsis codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-synopsis codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">key-1, value-1, key-2 ...</span><br></span></code></pre></div></div>
+<p>Обратите внимание, что ключи объектов сравниваются в их порядке
+хранения; в частности, поскольку более короткие ключи хранятся перед
+более длинными ключами, это может привести к результатам, которые могут
+быть неочевидными, например:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">{ &quot;aa&quot;: 1, &quot;c&quot;: 1} &gt; {&quot;b&quot;: 1, &quot;d&quot;: 1}</span><br></span></code></pre></div></div>
+<p>Аналогично, массивы с одинаковым количеством элементов сравниваются в
+порядке:</p>
+<div class="language-synopsis codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-synopsis codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">element-1, element-2 ...</span><br></span></code></pre></div></div>
+<p>Примитивные значения JSON сравниваются с использованием тех же правил
+сравнения, что и для базового типа данных [PostgreSQL]{.productname}.
+Строки сравниваются с использованием сортировки базы данных по
+умолчанию.
+:::</p>
+<p>::: {#JSONB-SUBSCRIPTING .sect2}
+::: titlepage</p>
+<div>
+<div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="индексация-jsonb .title">8.14.5. Индексация <code>jsonb</code>{.type} <a href="#JSONB-SUBSCRIPTING">#</a>{.id_link}<a href="#индексация-jsonb .title" class="hash-link" aria-label="Direct link to индексация-jsonb .title" title="Direct link to индексация-jsonb .title">​</a></h3>
+</div>
+</div>
+:::
+<p>Тип данных <code>jsonb</code>{.type} поддерживает выражения индексов в стиле
+массива для извлечения и изменения элементов. Вложенные значения можно
+указать путем цепочки выражений индексов, следуя тем же правилам, что и
+аргумент <code>path</code>{.literal} в функции <code>jsonb_set</code>{.literal}. Если
+значение <code>jsonb</code>{.type} является массивом, числовые индексы начинаются с
+нуля, а отрицательные целые числа считаются в обратном порядке от
+последнего элемента массива. Выражения среза не поддерживаются.
+Результатом выражения индекса всегда является тип данных jsonb.</p>
+<p><code>UPDATE</code>{.command} операторы могут использовать индексацию
+в <code>SET</code>{.literal} разделе для изменения значений типа <code>jsonb</code>{.type}.
+Индексные пути должны быть доступны для всех затронутых значений,
+насколько они существуют. Например,
+путь <code>val[&#x27;a&#x27;][&#x27;b&#x27;][&#x27;c&#x27;]</code>{.literal} может быть пройден до <code>c</code>{.literal},
+если каждый  <code>val</code>{.literal}, <code>val[&#x27;a&#x27;]</code>{.literal} и
+<code>val[&#x27;a&#x27;][&#x27;b&#x27;]</code>{.literal} являются объектами. Если <code>val[&#x27;a&#x27;]</code>{.literal}
+или <code>val[&#x27;a&#x27;][&#x27;b&#x27;]</code>{.literal} не определены, они будут созданы как
+пустые объекты и заполнены по мере необходимости. Однако, если
+сам <code>val</code>{.literal} или одно из промежуточных значений определено как не
+объект, такой как строка, число или <code>jsonb</code>{.literal} <code>null</code>{.literal},
+процесс обхода не может продолжаться, поэтому возникает ошибка и
+транзакция прерывается.</p>
+<p>Пример синтаксиса индексации:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Извлечь значение объекта по ключу</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT (&#x27;{&quot;a&quot;: 1}&#x27;::jsonb)[&#x27;a&#x27;];</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Извлечь значение вложенного объекта по цепочке ключей</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT (&#x27;{&quot;a&quot;: {&quot;b&quot;: {&quot;c&quot;: 1}}}&#x27;::jsonb)[&#x27;a&#x27;][&#x27;b&#x27;][&#x27;c&#x27;];</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Извлечь элемент массива по индексу</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT (&#x27;[1, &quot;2&quot;, null]&#x27;::jsonb)[1];</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Обновить значение объекта по ключу.Обратите внимание на кавычки у &#x27;1&#x27;: здесь присваивается</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- значение также должно быть типа jsonb</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">UPDATE table_name SET jsonb_field[&#x27;key&#x27;] = &#x27;1&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Эта команда вызовет ошибку, если jsonb_field[&#x27;a&#x27;][&#x27;b&#x27;] для любой записи содержит что-либо,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- кроме объекта.Например, значение {&quot;a&quot;: 1} содержит числовое значение </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- по ключу &#x27;a&#x27;.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">UPDATE table_name SET jsonb_field[&#x27;a&#x27;][&#x27;b&#x27;][&#x27;c&#x27;] = &#x27;1&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Фильтрация записей с помощью WHERE и обращения по индексу.Поскольку результат</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- обращения по индексу имеет тип jsonb, сравниваемое значение также должно быть типа jsonb.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Двойные кавычки делают &quot;value&quot; также допустимой строкой jsonb.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT * FROM table_name WHERE jsonb_field[&#x27;key&#x27;] = &#x27;&quot;value&quot;&#x27;;</span><br></span></code></pre></div></div>
+<p><code>jsonb</code>{.type} присваивание через индексирование обрабатывает несколько
+крайних случаев по-разному по сравнению с <code>jsonb_set</code>{.literal}. Когда
+исходное значение <code>jsonb</code>{.type} равно <code>NULL</code>{.literal}, присваивание
+через индексирование будет выполняться так, как если бы это было пустое
+значение JSON типа (объект или массив), подразумеваемого ключом
+индексирования:</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Где поле jsonb_field было NULL, теперь оно содержит {&quot;a&quot;: 1}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">UPDATE table_name SET jsonb_field[&#x27;a&#x27;] = &#x27;1&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Где поле jsonb_field было NULL, теперь оно содержит [1].</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">UPDATE table_name SET jsonb_field[0] = &#x27;1&#x27;;</span><br></span></code></pre></div></div>
+<p>Если для массива, содержащего недостаточное количество элементов, указан
+индекс, будут добавлены элементы <code>NULL</code>{.literal} до тех пор, пока
+индекс не станет доступным, и значение не сможет быть установлено.</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Где поле jsonb_field было пустым массивом [], теперь оно содержит [null, null, 2];</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- где поле jsonb_field изменилось с [0] на [0, null, 2]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">UPDATE table_name SET jsonb_field[2] = &#x27;2&#x27;;</span><br></span></code></pre></div></div>
+<p>Значение <code>jsonb</code>{.type} будет принимать присваивания для несуществующих
+подскриптовых путей, пока последний существующий элемент, который будет
+пройден, является объектом или массивом, как это подразумевается
+соответствующим подскриптом (элемент, указанный последним подскриптом в
+пути, не проходится и может быть чем угодно). Вложенные массивы и
+объектные структуры будут созданы, а в первом случае
+заполнены <code>null</code>{.literal}, как указано в подскриптовом пути, пока не
+будет размещено присвоенное значение.</p>
+<div class="language-programlisting codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-programlisting codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">-- Где поле jsonb_field было {}, теперь оно {&quot;a&quot;: [{&quot;b&quot;: 1}]}.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">UPDATE table_name SET jsonb_field[&#x27;a&#x27;][0][&#x27;b&#x27;] = &#x27;1&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">-- Где поле jsonb_field было пустым массивом [], теперь оно содержит [null, {&quot;a&quot;: 1}]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">UPDATE table_name SET jsonb_field[1][&#x27;a&#x27;] = &#x27;1&#x27;;</span><br></span></code></pre></div></div>
+<p>:::</p>
+<p>::: {#DATATYPE-JSON-TRANSFORMS .sect2}
+::: titlepage</p>
+<div>
+<div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="преобразования .title">8.14.6. Преобразования <a href="#DATATYPE-JSON-TRANSFORMS">#</a>{.id_link}<a href="#преобразования .title" class="hash-link" aria-label="Direct link to преобразования .title" title="Direct link to преобразования .title">​</a></h3>
+</div>
+</div>
+:::
+<p>Дополнительные расширения доступны, которые реализуют преобразования для
+типа <code>jsonb</code>{.type} для различных процедурных языков.</p>
+<p>Расширения для PL/Perl
+называются <code>jsonb_plperl</code>{.literal} и <code>jsonb_plperlu</code>{.literal}. Если вы
+их используете, значения <code>jsonb</code>{.type} будут отображаться на
+соответствующие массивы, хеши и скаляры Perl.</p>
+<p>Расширение для PL/Python называется <code>jsonb_plpython3u</code>{.literal}. Если
+вы его используете, значения <code>jsonb</code>{.type} отображаются на словари,
+списки и скаляры Python, в зависимости от контекста.</p>
+<p>Из этих расширений, <code>jsonb_plperl</code>{.literal}
+считается [&quot;[trusted]{.quote}&quot;]{.quote}, то есть его можно установить
+несуперпользователям, у которых есть привилегия <code>CREATE</code>{.literal} в
+текущей базе данных. Для установки остальных требуется привилегия
+суперпользователя.
+:::</p>
+<p>::: {#DATATYPE-JSONPATH .sect2}
+::: titlepage</p>
+<div>
+<div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="тип-jsonpath .title">8.14.7. Тип jsonpath <a href="#DATATYPE-JSONPATH">#</a>{.id_link}<a href="#тип-jsonpath .title" class="hash-link" aria-label="Direct link to тип-jsonpath .title" title="Direct link to тип-jsonpath .title">​</a></h3>
+</div>
+</div>
+:::
+<p>[]{#id-1.5.7.22.21.2 .indexterm}</p>
+<p>Тип <code>jsonpath</code>{.type} реализует поддержку языка выражения пути SQL/JSON
+в [PostgreSQL]{.productname} для эффективного запроса данных JSON. Он
+предоставляет двоичное представление разобранного выражения пути
+SQL/JSON, которое указывает элементы, которые должны быть извлечены из
+данных JSON для дальнейшей обработки с помощью функций запроса SQL/JSON.</p>
+<p>Семантика предикатов и операторов SQL/JSON пути в целом соответствует
+SQL. В то же время, для обеспечения естественного способа работы с
+данными JSON, синтаксис SQL/JSON пути использует некоторые соглашения
+JavaScript:</p>
+<p>::: itemizedlist</p>
+<ul>
+<li>
+<p>Точка (<code>.</code>{.literal}) используется для доступа к членам.</p>
+</li>
+<li>
+<p>Квадратные скобки (<code>[]</code>{.literal}) используются для доступа к
+массиву.</p>
+</li>
+<li>
+<p>Массивы SQL/JSON начинаются с 0, в отличие от обычных массивов SQL,
+которые начинаются с 1.
+:::</p>
+</li>
+</ul>
+<p>Числовые литералы в выражениях пути SQL/JSON следуют правилам
+JavaScript, которые в некоторых деталях отличаются как от SQL, так и от
+JSON. Например, выражение пути SQL/JSON разрешает  <code>.1</code>{.literal} и
+<code>1.</code>{.literal}, что недопустимо в JSON. Поддерживаются целочисленные
+литералы в недесятичном формате и разделители в виде подчеркиваний,
+например: <code>1_000_000</code>{.literal}, <code>0x1EEE_FFFF</code>{.literal},
+<code>0o273</code>{.literal}, <code>0b100101</code>{.literal}. В выражении пути SQL/JSON (а
+также в JavaScript, но не в самом SQL) не должно быть разделителя в виде
+подчеркивания сразу после префикса системы счисления.</p>
+<p>Выражение пути SQL/JSON обычно записывается в SQL-запросе как строковый
+литерал SQL, поэтому оно должно заключаться в одинарные кавычки, а любые
+внутренние одинарные кавычки в значении необходимо удваивать
+(см. <a title="4.1.2.1. Строковые константы" href="/demo_docu/samples/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS">Раздел 4.1.2.1</a>{.xref}).
+Некоторые виды выражений пути требуют наличия строковых литералов в их
+составе. Эти встроенные строковые литералы следуют соглашениям
+JavaScript/ECMAScript: они должны быть окружены двойными кавычками, и в
+них могут использоваться экранирования обратной косой чертой для
+представления символов, которые иначе трудно ввести. В частности, способ
+записи двойной кавычки внутри встроенного строкового литерала --- это
+<code>\&quot;</code>{.literal}, а для записи самой обратной косой черты необходимо
+написать <code>\\</code>{.literal}. Другие специальные последовательности с
+обратной косой чертой включают те, которые распознаются в строках
+JavaScript: <code>\b</code>{.literal}, <code>\f</code>{.literal}, <code>\n</code>{.literal},
+<code>\r</code>{.literal}, <code>\t</code>{.literal}, <code>\v</code>{.literal} для различных управляющих
+символов <code>\xNN</code>{.literal} для кода символа, записанного с использованием
+только двух шестнадцатеричных цифр, <code>\uNNNN</code>{.literal} для символа
+Unicode, идентифицированного его 4-шестнадцатеричным кодом,
+и <code>\u{N...</code>{.literal}} для кода символа Unicode, записанного с
+использованием от 1 до 6 шестнадцатеричных цифр.</p>
+<p>Выражение пути состоит из последовательности элементов пути, которые
+могут быть любыми из следующих:</p>
+<p>::: itemizedlist</p>
+<ul>
+<li>
+<p>Путь литералов JSON примитивных типов: текст Unicode, числовой,
+true, false или null.</p>
+</li>
+<li>
+<p>Все переменные пути перечислены
+в <a title="Таблица 8.24. Переменные jsonpath" href="/demo_docu/samples/datatype-json.html#TYPE-JSONPATH-VARIABLES">Таблице 8.24</a>{.xref}.</p>
+</li>
+<li>
+<p>Все операторы доступа перечислены
+в <a title="Таблица 8.25. Аксессоры jsonpath" href="/demo_docu/samples/datatype-json.html#TYPE-JSONPATH-ACCESSORS">Таблице 8.25</a>{.xref}.</p>
+</li>
+<li>
+<p><code>jsonpath</code>{.type} операторы и методы перечислены в
+<a title="9.16.2.2. Операторы и методы выражения пути SQL/JSON" href="/demo_docu/samples/functions-json.html#FUNCTIONS-SQLJSON-PATH-OPERATORS">Разделе 9.16.2.2</a>{.xref}.</p>
+</li>
+<li>
+<p>Круглые скобки, которые можно использовать для задания выражений
+фильтрации или определения порядка вычисления пути.
+:::</p>
+</li>
+</ul>
+<p>Для получения подробной информации о использовании
+выражений <code>jsonpath</code>{.type} с функциями запросов SQL/JSON
+см. <a title="9.16.2. Операторы и методы выражения пути SQL/JSON" href="/demo_docu/samples/functions-json.html#FUNCTIONS-SQLJSON-PATH">Раздел 9.16.2</a>{.xref}.</p>
+<p>::: {#TYPE-JSONPATH-VARIABLES .table}
+<strong>Таблица 8.24. Переменные <code>jsonpath</code>{.type}</strong></p>
+<p>::: table-contents
+Переменная             Описание</p>
+<hr>
+<p><code>$</code>{.literal}          Переменная, представляющая значение JSON, которое запрашивается (<em>элемент контекста</em>).
+<code>$varname</code>{.literal}   Именованная переменная. Ее значение может быть задано через параметр *<code>vars</code> *в нескольких функциях обработки JSON. Подробности см. в  <a title="Таблица 9.49. Функции обработки JSON" href="/demo_docu/samples/functions-json.html#FUNCTIONS-JSON-PROCESSING-TABLE">Таблице 9.49</a>{.xref}
+<code>@</code>{.literal}          Переменная, представляющая результат вычисления пути в выражениях фильтрации.
+:::
+:::</p>
+<p>\</p>
+<p>::: {#TYPE-JSONPATH-ACCESSORS .table}
+<strong>Таблица 8.25.  Аксессоры <code>jsonpath</code>{.type}</strong></p>
+<p>::: table-contents
++----------------------------------+----------------------------------+
+| Оператор доступа                 | Описание                         |
++==================================+==================================+
+| <code>.key</code>{.literal}                 | Член-аксессор, который           |
+|                                  | возвращает член объекта с        |
+| <code>.&quot;$varname</code>{.literal}&quot;         | указанным ключом. Если имя ключа |
+|                                  | совпадает с именем переменной,   |
+|                                  | начинающейся с                   |
+|                                  | символа <code>$</code>{.literal} или не     |
+|                                  | соответствует правилам           |
+|                                  | JavaScript для идентификатора,   |
+|                                  | оно должно быть заключено в      |
+|                                  | двойные кавычки, чтобы сделать   |
+|                                  | его строковым литералом.         |
++----------------------------------+----------------------------------+
+| <code>.*</code>{.literal}                   | Метод чтения                     |
+|                                  | элементов-специальных символов,  |
+|                                  | который возвращает значения всех |
+|                                  | элементов, расположенных на      |
+|                                  | верхнем уровне текущего объекта. |
++----------------------------------+----------------------------------+
+| <code>.**</code>{.literal}                  | Рекурсивный доступ к члену с     |
+|                                  | использованием маски, который    |
+|                                  | обрабатывает все уровни иерархии |
+|                                  | JSON текущего объекта и          |
+|                                  | возвращает все значения членов,  |
+|                                  | независимо от их уровня          |
+|                                  | вложенности. Это                 |
+|                                  | расширение [Po                   |
+|                                  | stgreSQL]{.productname}стандарта |
+|                                  | SQL/JSON.                        |
++----------------------------------+----------------------------------+
+| <code>.**{level</code>{.literal}}           | Как <code>.**</code>{.literal}, но выбирает |
+|                                  | только указанные уровни иерархии |
+| <code>.**{start_level</code>{.literal} до   | JSON. Уровни вложенности         |
+| <em><code>end_level</code></em>}                   | указываются в виде целых чисел.  |
+|                                  | Уровень ноль соответствует       |
+|                                  | текущему объекту. Чтобы получить |
+|                                  | доступ к самому нижнему уровню   |
+|                                  | вложенности, можно использовать  |
+|                                  | ключевое слово <code>last</code>{.literal}. |
+|                                  | Это                              |
+|                                  | расширение [Po                   |
+|                                  | stgreSQL]{.productname}стандарта |
+|                                  | SQL/JSON.                        |
++----------------------------------+----------------------------------+
+| <code>[subscript</code>{.literal}, ...]   | Доступ к элементу                |
+|                                  | масс                             |
+|                                  | ива. <code>subscript</code>{.literal} может |
+|                                  | быть задан в двух                |
+|                                  | формах: <code>index</code>{.literal}        |
+|                                  |  или <code>start_index</code>{.literal} до  |
+|                                  | <em><code>end_index</code></em>. Первая форма      |
+|                                  | возвращает один элемент массива  |
+|                                  | по его индексу. Вторая форма     |
+|                                  | возвращает срез массива по       |
+|                                  | диапазону индексов, включая      |
+|                                  | элементы, соответствующие        |
+|                                  | заданным  <em><code>start_index</code></em> и      |
+|                                  | <em><code>end_index</code></em>.                   |
+|                                  |                                  |
+|                                  | Указанный <em><code>index</code></em> может быть   |
+|                                  | целым числом, а также            |
+|                                  | выражением, возвращающим одно    |
+|                                  | числовое значение, которое       |
+|                                  | автоматически приводится к       |
+|                                  | целому числу. Индекс ноль        |
+|                                  | соответствует первому элементу   |
+|                                  | массива. Также можно             |
+|                                  | использовать ключевое            |
+|                                  | слово <code>last</code>{.literal} для       |
+|                                  | обозначения последнего элемента  |
+|                                  | массива, что полезно для работы  |
+|                                  | с массивами неизвестной длины.   |
++----------------------------------+----------------------------------+
+| <code>[*]</code>{.literal}                  | Метод чтения элементов           |
+|                                  | массива-специальных символов,    |
+|                                  | который возвращает значения всех |
+|                                  | элементов массива.               |
++----------------------------------+----------------------------------+
+:::
+:::</p>
+<p><br>
+:::</p>
+<p>::: footnotes
+\</p>
+<hr>
+<p>::: {#ftn.id-1.5.7.22.18.9.3 .footnote}
+<a href="#id-1.5.7.22.18.9.3">^[7]^</a>{.para} Для этой цели термин 
+[&quot;[value]{.quote}&quot;]{.quote} включает элементы массива, хотя в
+терминологии JSON иногда элементы массива рассматриваются как отдельные
+от значений внутри объектов.
+:::
+:::
+:::</p>
+<p>::: navfooter</p>
+<hr>
+<hr>
+<p><a href="/demo_docu/II. The SQL Language/Data Types/datatype-xml">Назад</a>{accesskey=&quot;n&quot;}
+8.13. Тип XML                                                 <a href="/demo_docu/">Начало</a>{accesskey=&quot;h&quot;}                                           8.15. Массивы</p>
+<hr>
+<p>:::
+:::</p>
+<p>::: {#docComments}</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="отправить-исправление">Отправить исправление<a href="#отправить-исправление" class="hash-link" aria-label="Direct link to Отправить исправление" title="Direct link to Отправить исправление">​</a></h2>
+<p>Если вы обнаружили в документации неточности, расхождения с вашим опытом
+использования функциональности или места, требующие дополнительных
+пояснений, пожалуйста, сообщите о проблеме с документацией через <a href="/demo_docu/account/comments/new/16/datatype-json.html">эту
+форму</a>{rel=&quot;nofollow&quot;}.
+:::
+:::
+:::
+:::</p>
+<p>::: container
+<a href="/demo_docu/about/privacypolicy">Политика конфиденциальности</a> | <a href="/demo_docu/about/policies/coc">Этический
+кодекс</a> | <a href="/demo_docu/about">О PostgreSQL</a> |
+<a href="/demo_docu/about/contact">Контакты</a>\</p>
+<p>Авторские права © 1996--2025 Группа глобальной разработки PostgreSQL
+:::</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/samples/json_janus"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">json_janus</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#типы-json .title style=&quot;clear: both&quot;" class="table-of-contents__link toc-highlight">8.14. Типы JSON #{.id_link}</a><ul><li><a href="#примечание .title" class="table-of-contents__link toc-highlight">Примечание</a></li><li><a href="#синтаксис-ввода-и-вывода-json .title" class="table-of-contents__link toc-highlight">8.14.1. Синтаксис ввода и вывода JSON #{.id_link}</a></li><li><a href="#проектирование-json-документов .title" class="table-of-contents__link toc-highlight">8.14.2. Проектирование JSON-документов #{.id_link}</a></li><li><a href="#jsonb-операторы-containment-и-existence .title" class="table-of-contents__link toc-highlight">8.14.3. <code>jsonb</code>{.type}  операторы Containment и Existence #{.id_link}</a></li><li><a href="#подсказка .title" class="table-of-contents__link toc-highlight">Подсказка</a></li><li><a href="#индексирование-jsonb .title" class="table-of-contents__link toc-highlight">8.14.4.  Индексирование <code>jsonb</code>{.type} #{.id_link}</a></li><li><a href="#индексация-jsonb .title" class="table-of-contents__link toc-highlight">8.14.5. Индексация <code>jsonb</code>{.type} #{.id_link}</a></li><li><a href="#преобразования .title" class="table-of-contents__link toc-highlight">8.14.6. Преобразования #{.id_link}</a></li><li><a href="#тип-jsonpath .title" class="table-of-contents__link toc-highlight">8.14.7. Тип jsonpath #{.id_link}</a></li></ul></li><li><a href="#отправить-исправление" class="table-of-contents__link toc-highlight">Отправить исправление</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

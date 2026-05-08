@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-VIII. Appendixes/E. Release Notes/release-16" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">E.10. Release 16 | Postgres Документация</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="E.10. Release 16 | Postgres Документация"><meta data-rh="true" name="description" content="Supported versions: 13 / 14 / 15 / 16 / 17"><meta data-rh="true" property="og:description" content="Supported versions: 13 / 14 / 15 / 16 / 17"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Part VIII. Appendixes","item":"https://hadsunn.github.io/demo_docu/VIII. Appendixes/"},{"@type":"ListItem","position":2,"name":"Appendix E. Release Notes","item":"https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/"},{"@type":"ListItem","position":3,"name":"E.10. Release 16","item":"https://hadsunn.github.io/demo_docu/VIII. Appendixes/E. Release Notes/release-16"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.827c52cd.css">
+<script src="/demo_docu/assets/js/runtime~main.8918983b.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.a0e88019.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Документация Postgresql</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">PostgreSQL 16.9 Documentation Test5</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Preface">Preface</a><button aria-label="Expand sidebar category &#x27;Preface&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/I. Tutorial">Part I. Tutorial</a><button aria-label="Expand sidebar category &#x27;Part I. Tutorial&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/II. The SQL Language">Part II. The SQL Language</a><button aria-label="Expand sidebar category &#x27;Part II. The SQL Language&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/III. Server Administration">Part III. Server Administration</a><button aria-label="Expand sidebar category &#x27;Part III. Server Administration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/IV. Client Interfaces">Part IV. Client Interfaces</a><button aria-label="Expand sidebar category &#x27;Part IV. Client Interfaces&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/V. Server Programming">Part V. Server Programming</a><button aria-label="Expand sidebar category &#x27;Part V. Server Programming&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/VI. Reference">Part VI. Reference</a><button aria-label="Expand sidebar category &#x27;Part VI. Reference&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/VII. Internals">Part VII. Internals</a><button aria-label="Expand sidebar category &#x27;Part VII. Internals&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/demo_docu/VIII. Appendixes">Part VIII. Appendixes</a><button aria-label="Collapse sidebar category &#x27;Part VIII. Appendixes&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/B. DateTime Support">Appendix B. Date/Time Support</a><button aria-label="Expand sidebar category &#x27;Appendix B. Date/Time Support&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/C. SQL Key Words">Appendix C. SQL Key Words</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/D. SQL Conformance">Appendix D. SQL Conformance</a><button aria-label="Expand sidebar category &#x27;Appendix D. SQL Conformance&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes">Appendix E. Release Notes</a><button aria-label="Collapse sidebar category &#x27;Appendix E. Release Notes&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-1">E.9. Release 16.1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-2">E.8. Release 16.2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-3">E.7. Release 16.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-4">E.6. Release 16.4</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-5">E.5. Release 16.5</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-6">E.4. Release 16.6</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-7">E.3. Release 16.7</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-8">E.2. Release 16.8</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-9">E.1. Release 16.9</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16">E.10. Release 16</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-prior">E.11. Prior Releases</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions">Appendix F. Additional Supplied Modules and Extensions</a><button aria-label="Expand sidebar category &#x27;Appendix F. Additional Supplied Modules and Extensions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/G. Additional Supplied Programs">Appendix G. Additional Supplied Programs</a><button aria-label="Expand sidebar category &#x27;Appendix G. Additional Supplied Programs&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/H. External Projects">Appendix H. External Projects</a><button aria-label="Expand sidebar category &#x27;Appendix H. External Projects&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/I. The Source Code Repository">Appendix I. The Source Code Repository</a><button aria-label="Expand sidebar category &#x27;Appendix I. The Source Code Repository&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/J. Documentation">Appendix J. Documentation</a><button aria-label="Expand sidebar category &#x27;Appendix J. Documentation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/N. Color Support">Appendix N. Color Support</a><button aria-label="Expand sidebar category &#x27;Appendix N. Color Support&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/demo_docu/VIII. Appendixes/O. Obsolete or Renamed Features">Appendix O. Obsolete or Renamed Features</a><button aria-label="Expand sidebar category &#x27;Appendix O. Obsolete or Renamed Features&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/acronyms">Appendix L. Acronyms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/errcodes-appendix">Appendix A. PostgreSQL Error Codes</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/glossary">Appendix M. Glossary</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/VIII. Appendixes/limits">Appendix K. PostgreSQL Limits</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/biblio">Bibliography</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/bookindex">Index</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/samples/json_algoritm">samples</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/VIII. Appendixes"><span>Part VIII. Appendixes</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/VIII. Appendixes/E. Release Notes"><span>Appendix E. Release Notes</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">E.10. Release 16</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>E.10. Release 16</h1></header><p>Supported versions: 13 / 14 / 15 / 16 / 17</p>
+<hr>
+<p><a href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16#e101-overview">E.10.1. Overview</a></p>
+<p><a href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16#e102-migration-to-version-16">E.10.2. Migration to Version 16</a></p>
+<p><a href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16#e103-changes">E.10.3. Changes</a></p>
+<p><a href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16#e104-acknowledgments">E.10.4. Acknowledgments</a></p>
+<p>**Release date:  **2023-09-14</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="e101-overview">E.10.1. Overview<a href="#e101-overview" class="hash-link" aria-label="Direct link to E.10.1. Overview" title="Direct link to E.10.1. Overview">​</a></h3>
+<p>PostgreSQL 16 contains many new features and enhancements, including:</p>
+<ul>
+<li>
+<p>Allow parallelization of <code>FULL</code> and internal right <code>OUTER</code> hash joins</p>
+</li>
+<li>
+<p>Allow logical replication from standby servers</p>
+</li>
+<li>
+<p>Allow logical replication subscribers to apply large transactions in parallel</p>
+</li>
+<li>
+<p>Allow monitoring of I/O statistics using the new <code>pg_stat_io</code> view</p>
+</li>
+<li>
+<p>Add SQL/JSON constructors and identity functions</p>
+</li>
+<li>
+<p>Improve performance of vacuum freezing</p>
+</li>
+<li>
+<p>Add support for regular expression matching of user and database names in <code>pg_hba.conf</code>, and user names in <code>pg_ident.conf</code></p>
+</li>
+</ul>
+<p>The above items and other new features of PostgreSQL 16 are explained in more detail in the sections below.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="e102-migration-to-version-16">E.10.2. Migration to Version 16<a href="#e102-migration-to-version-16" class="hash-link" aria-label="Direct link to E.10.2. Migration to Version 16" title="Direct link to E.10.2. Migration to Version 16">​</a></h3>
+<p>A dump/restore using <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-pg-dumpall">pg_dumpall</a> for general information on migrating to new major releases.</p>
+<p>Version 16 contains a number of changes that may affect compatibility with previous releases. Observe the following incompatibilities:</p>
+<ul>
+<li>Change assignment rules for <a title="43.7.2.3. Opening a Bound Cursor" href="/demo_docu/VIII. Appendixes/E. Release Notes/plpgsql-cursors.html#PLPGSQL-OPEN-BOUND-CURSOR">PL/pgSQL</a> bound cursor variables (Tom Lane) <a href="https://postgr.es/c/d747dc85a" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously, the string value of such variables was set to match the variable name during cursor assignment; now it will be assigned during <a title="43.7.2. Opening Cursors" href="/demo_docu/VIII. Appendixes/E. Release Notes/plpgsql-cursors.html#PLPGSQL-CURSOR-OPENING"><code>OPEN</code></a>, and will not match the variable name. To restore the previous behavior, assign the desired portal name to the cursor variable before <code>OPEN</code>.</p>
+<ul>
+<li>
+<p>Disallow <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createindex"><code>NULLS NOT DISTINCT</code></a> indexes for primary keys (Daniel Gustafsson) <a href="https://postgr.es/c/d95952325" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Change <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-reindex"><code>REINDEX DATABASE</code></a> to not process indexes on system catalogs (Simon Riggs) <a href="https://postgr.es/c/2cbc3c17a" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/0a5f06b84" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Processing such indexes is still possible using <code>REINDEX SYSTEM</code> and <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-reindexdb"><code>reindexdb --system</code></a>.</p>
+<ul>
+<li>Tighten <a href="/demo_docu/II. The SQL Language/Data Definition/ddl-generated-columns"><code>GENERATED</code></a> expression restrictions on inherited and partitioned tables (Amit Langote, Tom Lane) <a href="https://postgr.es/c/8bf6ec3ba" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Columns of parent/partitioned and child/partition tables must all have the same generation status, though now the actual generation expressions can be different.</p>
+<ul>
+<li>
+<p>Remove <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pgwalinspect">pg_walinspect</a> functions <code>pg_get_wal_records_info_till_end_of_wal()</code> and <code>pg_get_wal_stats_till_end_of_wal()</code> (Bharath Rupireddy) <a href="https://postgr.es/c/5c1b66280" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Rename server variable <code>force_parallel_mode</code> to <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-developer.html#GUC-DEBUG-PARALLEL-QUERY"><code>debug_parallel_query</code></a> (David Rowley) <a href="https://postgr.es/c/5352ca22e" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/0981846b9" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Remove the ability to <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createview">create views</a> manually with <code>ON SELECT</code> rules (Tom Lane) <a href="https://postgr.es/c/b23cd185f" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Remove the server variable <code>vacuum_defer_cleanup_age</code> (Andres Freund) <a href="https://postgr.es/c/1118cd37e" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This has been unnecessary since <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-replication.html#GUC-HOT-STANDBY-FEEDBACK"><code>hot_standby_feedback</code></a> and <a title="27.2.6. Replication Slots" href="/demo_docu/VIII. Appendixes/E. Release Notes/warm-standby.html#STREAMING-REPLICATION-SLOTS">replication slots</a> were added.</p>
+<ul>
+<li>Remove server variable <code>promote_trigger_file</code> (Simon Riggs) <a href="https://postgr.es/c/cd4329d93" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This was used to promote a standby to primary, but is now more easily accomplished with <a href="/demo_docu/VI. Reference/III. PostgreSQL Server Applications/app-pg-ctl"><code>pg_ctl promote</code></a>.</p>
+<ul>
+<li>Remove read-only server variables <code>lc_collate</code> and <code>lc_ctype</code> (Peter Eisentraut) <a href="https://postgr.es/c/b0f6c4371" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Collations and locales can vary between databases so having them as read-only server variables was unhelpful.</p>
+<ul>
+<li>Role inheritance now controls the default inheritance status of member roles added during <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-grant"><code>GRANT</code></a> (Robert Haas) <a href="https://postgr.es/c/e3ce2de09" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The role&#x27;s default inheritance behavior can be overridden with the new <code>GRANT ... WITH INHERIT</code> clause. This allows inheritance of some roles and not others because the members&#x27; inheritance status is set at <code>GRANT</code> time. Previously the inheritance status of member roles was controlled only by the role&#x27;s inheritance status, and changes to a role&#x27;s inheritance status affected all previous and future member roles.</p>
+<ul>
+<li>Restrict the privileges of <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createrole"><code>CREATEROLE</code></a> and its ability to modify other roles (Robert Haas) <a href="https://postgr.es/c/cf5eb37c5" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/f1358ca52" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously roles with <code>CREATEROLE</code> privileges could change many aspects of any non-superuser role. Such changes, including adding members, now require the role requesting the change to have <code>ADMIN OPTION</code> permission. For example, they can now change the <code>CREATEDB</code>, <code>REPLICATION</code>, and <code>BYPASSRLS</code> properties only if they also have those permissions.</p>
+<ul>
+<li>Remove symbolic links for the postmaster binary (Peter Eisentraut) <a href="https://postgr.es/c/37e267335" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="e103-changes">E.10.3. Changes<a href="#e103-changes" class="hash-link" aria-label="Direct link to E.10.3. Changes" title="Direct link to E.10.3. Changes">​</a></h3>
+<p>Below you will find a detailed account of the changes between PostgreSQL 16 and the previous major release.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1031-server">E.10.3.1. Server<a href="#e1031-server" class="hash-link" aria-label="Direct link to E.10.3.1. Server" title="Direct link to E.10.3.1. Server">​</a></h4>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10311-optimizer">E.10.3.1.1. Optimizer<a href="#e10311-optimizer" class="hash-link" aria-label="Direct link to E.10.3.1.1. Optimizer" title="Direct link to E.10.3.1.1. Optimizer">​</a></h5>
+<ul>
+<li>
+<p>Allow incremental sorts in more cases, including <code>DISTINCT</code> (David Rowley) <a href="https://postgr.es/c/b59242209" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/3c6fc5820" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add the ability for aggregates having <code>ORDER BY</code> or <code>DISTINCT</code> to use pre-sorted data (David Rowley) <a href="https://postgr.es/c/1349d2790" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/3226f4728" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/da5800d5f" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>The new server variable <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-query.html#GUC-ENABLE-PRESORTED-AGGREGATE"><code>enable_presorted_aggregate</code></a> can be used to disable this.</p>
+<ul>
+<li>
+<p>Allow memoize atop a <code>UNION ALL</code> (Richard Guo) <a href="https://postgr.es/c/9bfd2822b" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow anti-joins to be performed with the non-nullable input as the inner relation (Richard Guo) <a href="https://postgr.es/c/16dc2703c" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow parallelization of <a title="7.2.1.1. Joined Tables" href="/demo_docu/VIII. Appendixes/E. Release Notes/queries-table-expressions.html#QUERIES-JOIN"><code>FULL</code></a> and internal right <code>OUTER</code> hash joins (Melanie Plageman, Thomas Munro) <a href="https://postgr.es/c/11c2d6fdf" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Improve the accuracy of <a href="/demo_docu/VII. Internals/GIN Indexes"><code>GIN</code></a> index access optimizer costs (Ronan Dunklau) <a href="https://postgr.es/c/cd9479af2" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10312-general-performance">E.10.3.1.2. General Performance<a href="#e10312-general-performance" class="hash-link" aria-label="Direct link to E.10.3.1.2. General Performance" title="Direct link to E.10.3.1.2. General Performance">​</a></h5>
+<ul>
+<li>
+<p>Allow more efficient addition of heap and index pages (Andres Freund) <a href="https://postgr.es/c/00d1e02be" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/26158b852" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>During non-freeze operations, perform page <a title="25.1.5. Preventing Transaction ID Wraparound Failures" href="/demo_docu/VIII. Appendixes/E. Release Notes/routine-vacuuming.html#VACUUM-FOR-WRAPAROUND">freezing</a> where appropriate (Peter Geoghegan) <a href="https://postgr.es/c/d977ffd92" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/9e5405993" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/1de58df4f" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This makes full-table freeze vacuums less necessary.</p>
+<ul>
+<li>
+<p>Allow window functions to use the faster <a title="4.2.8. Window Function Calls" href="/demo_docu/VIII. Appendixes/E. Release Notes/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS"><code>ROWS</code></a> mode internally when <code>RANGE</code> mode is active but unnecessary (David Rowley) <a href="https://postgr.es/c/ed1a88dda" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow optimization of always-increasing window functions <a title="Table 9.64. General-Purpose Window Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-window.html#FUNCTIONS-WINDOW-TABLE"><code>ntile()</code></a>, <code>cume_dist()</code> and <code>percent_rank()</code> (David Rowley) <a href="https://postgr.es/c/456fa635a" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow aggregate functions <a title="Table 9.59. General-Purpose Aggregate Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-aggregate.html#FUNCTIONS-AGGREGATE-TABLE"><code>string_agg()</code></a> and <code>array_agg()</code> to be parallelized (David Rowley) <a href="https://postgr.es/c/16fd03e95" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Improve performance by caching <a title="5.11.1. Overview" href="/demo_docu/VIII. Appendixes/E. Release Notes/ddl-partitioning.html#DDL-PARTITIONING-OVERVIEW"><code>RANGE</code></a> and <code>LIST</code> partition lookups (Amit Langote, Hou Zhijie, David Rowley) <a href="https://postgr.es/c/3592e0ff9" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow control of the shared buffer usage by vacuum and analyze (Melanie Plageman) <a href="https://postgr.es/c/1cbbee033" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/ae78cae3b" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/b72f564d8" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>The <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-vacuum"><code>VACUUM</code></a> option is <code>--buffer-usage-limit</code>. The default value is set by server variable <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-resource.html#GUC-VACUUM-BUFFER-USAGE-LIMIT"><code>vacuum_buffer_usage_limit</code></a>, which also controls autovacuum.</p>
+<ul>
+<li>
+<p>Support <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-wal.html#GUC-WAL-SYNC-METHOD"><code>wal_sync_method=fdatasync</code></a> on Windows (Thomas Munro) <a href="https://postgr.es/c/9430fb407" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <a href="/demo_docu/VII. Internals/Database Physical Storage/storage-hot">HOT</a> updates if only <code>BRIN</code>-indexed columns are updated (Matthias van de Meent, Josef Simanek, Tomas Vondra) <a href="https://postgr.es/c/19d8e2308" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Improve the speed of updating the <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-logging.html#GUC-UPDATE-PROCESS-TITLE">process title</a> (David Rowley) <a href="https://postgr.es/c/2cb82e2ac" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <code>xid</code>/<code>subxid</code> searches and ASCII string detection to use vector operations (Nathan Bossart, John Naylor) <a href="https://postgr.es/c/37a6e5df3" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/121d2d3d7" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/b6ef16756" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/e813e0e16" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>ASCII detection is particularly useful for <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-copy"><code>COPY FROM</code></a>. Vector operations are also used for some C array searches.</p>
+<ul>
+<li>Reduce overhead of memory allocations (Andres Freund, David Rowley) <a href="https://postgr.es/c/c6e0fe1f2" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10313-monitoring">E.10.3.1.3. Monitoring<a href="#e10313-monitoring" class="hash-link" aria-label="Direct link to E.10.3.1.3. Monitoring" title="Direct link to E.10.3.1.3. Monitoring">​</a></h5>
+<ul>
+<li>
+<p>Add system view <a title="28.2.13. pg_stat_io" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#MONITORING-PG-STAT-IO-VIEW"><code>pg_stat_io</code></a> view to track I/O statistics (Melanie Plageman) <a href="https://postgr.es/c/a9c70b46d" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/8aaa04b32" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/ac8d53dae" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/0ecb87e1f" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/093e5c57d" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Record statistics on the last sequential and index scans on tables (Dave Page) <a href="https://postgr.es/c/c03747183" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This information appears in <a title="Table 28.28. pg_stat_all_tables View" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#PG-STAT-ALL-TABLES-VIEW"><code>pg_stat_*_tables</code></a> and <a title="28.2.19. pg_stat_all_indexes" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#MONITORING-PG-STAT-ALL-INDEXES-VIEW"><code>pg_stat_*_indexes</code></a>.</p>
+<ul>
+<li>Record statistics on the occurrence of updated rows moving to new pages (Corey Huinker) <a href="https://postgr.es/c/ae4fdde13" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The <code>pg_stat_*_tables</code> column is <a title="28.2.18. pg_stat_all_tables" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#MONITORING-PG-STAT-ALL-TABLES-VIEW"><code>n_tup_newpage_upd</code></a>.</p>
+<ul>
+<li>Add speculative lock information to the <a href="/demo_docu/VII. Internals/System Views/view-pg-locks"><code>pg_locks</code></a> system view (Masahiko Sawada, Noriyoshi Shinoda) <a href="https://postgr.es/c/f74573969" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The transaction id is displayed in the <code>transactionid</code> column and the speculative insertion token is displayed in the <code>objid</code> column.</p>
+<ul>
+<li>
+<p>Add the display of prepared statement result types to the <a href="/demo_docu/VII. Internals/System Views/view-pg-prepared-statements"><code>pg_prepared_statements</code></a> view (Dagfinn Ilmari Mannsåker) <a href="https://postgr.es/c/84ad713cf" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/6ffff0fd2" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Create subscription statistics entries at subscription creation time so <a title="Table 28.26. pg_stat_database View" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#PG-STAT-DATABASE-VIEW"><code>stats_reset</code></a> is accurate (Andres Freund) <a href="https://postgr.es/c/e0b014295" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously entries were created only when the first statistics were reported.</p>
+<ul>
+<li>
+<p>Correct the I/O accounting for temp relation writes shown in <a title="Table 28.26. pg_stat_database View" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#PG-STAT-DATABASE-VIEW"><code>pg_stat_database</code></a> (Melanie Plageman) <a href="https://postgr.es/c/704261ecc" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add function <a title="Table 28.36. Per-Backend Statistics Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#MONITORING-STATS-BACKEND-FUNCS-TABLE"><code>pg_stat_get_backend_subxact()</code></a> to report on a session&#x27;s subtransaction cache (Dilip Kumar) <a href="https://postgr.es/c/10ea0f924" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Have <a title="Table 28.36. Per-Backend Statistics Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#MONITORING-STATS-BACKEND-FUNCS-TABLE"><code>pg_stat_get_backend_idset()</code></a>, <code>pg_stat_get_backend_activity()</code>, and related functions use the unchanging backend id (Nathan Bossart) <a href="https://postgr.es/c/d7e39d72c" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously the index values might change during the lifetime of the session.</p>
+<ul>
+<li>
+<p>Report stand-alone backends with a special backend type (Melanie Plageman) <a href="https://postgr.es/c/0c679464a" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add wait event <a title="Table 28.13. Wait Events of Type Timeout" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#WAIT-EVENT-TIMEOUT-TABLE"><code>SpinDelay</code></a> to report spinlock sleep delays (Andres Freund) <a href="https://postgr.es/c/92daeca45" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Create new wait event <a title="Table 28.9. Wait Events of Type IO" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#WAIT-EVENT-IO-TABLE"><code>DSMAllocate</code></a> to indicate waiting for dynamic shared memory allocation (Thomas Munro) <a href="https://postgr.es/c/7bae3bbf6" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously this type of wait was reported as <code>DSMFillZeroWrite</code>, which was also used by <code>mmap()</code> allocations.</p>
+<ul>
+<li>Add the database name to the <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-logging.html#GUC-UPDATE-PROCESS-TITLE">process title</a> of logical WAL senders (Tatsuhiro Nakamori) <a href="https://postgr.es/c/af205152e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Physical WAL senders do not display a database name.</p>
+<ul>
+<li>
+<p>Add checkpoint and <code>REDO LSN</code> information to <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-logging.html#GUC-LOG-CHECKPOINTS"><code>log_checkpoints</code></a> messages (Bharath Rupireddy, Kyotaro Horiguchi) <a href="https://postgr.es/c/62c46eee2" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Provide additional details during client certificate failures (Jacob Champion) <a href="https://postgr.es/c/3a0e38504" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10314-privileges">E.10.3.1.4. Privileges<a href="#e10314-privileges" class="hash-link" aria-label="Direct link to E.10.3.1.4. Privileges" title="Direct link to E.10.3.1.4. Privileges">​</a></h5>
+<ul>
+<li>
+<p>Add predefined role <a href="/demo_docu/III. Server Administration/Database Roles/predefined-roles"><code>pg_create_subscription</code></a> with permission to create subscriptions (Robert Haas) <a href="https://postgr.es/c/c3afe8cf5" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow subscriptions to not require passwords (Robert Haas) <a href="https://postgr.es/c/c3afe8cf5" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/c1cc4e688" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/19e65dff3" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This is accomplished with the option <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createsubscription"><code>password_required=false</code></a>.</p>
+<ul>
+<li>Simplify permissions for <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-lock"><code>LOCK TABLE</code></a> (Jeff Davis) <a href="https://postgr.es/c/c44f6334c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously a user&#x27;s ability to perform <code>LOCK TABLE</code> at various lock levels was limited to the lock levels required by the commands they had permission to execute on the table. For example, someone with <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-update"><code>UPDATE</code></a> permission could perform all lock levels except <code>ACCESS SHARE</code>, even though it was a lesser lock level. Now users can issue lesser lock levels if they already have permission for greater lock levels.</p>
+<ul>
+<li>Allow <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-altergroup"><code>ALTER GROUP group_name ADD USER user_name</code></a> to be performed with <code>ADMIN OPTION</code> (Robert Haas) <a href="https://postgr.es/c/ce6b672e4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously <code>CREATEROLE</code> permission was required.</p>
+<ul>
+<li>Allow <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-grant"><code>GRANT</code></a> to use <code>WITH ADMIN TRUE</code>/<code>FALSE</code> syntax (Robert Haas) <a href="https://postgr.es/c/e3ce2de09" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously only the <code>WITH ADMIN OPTION</code> syntax was supported.</p>
+<ul>
+<li>Allow roles that create other roles to automatically inherit the new role&#x27;s rights or the ability to <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-set-role"><code>SET ROLE</code></a> to the new role (Robert Haas, Shi Yu) <a href="https://postgr.es/c/e5b8a4c09" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/e00bc6c92" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is controlled by server variable <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-client.html#GUC-CREATEROLE-SELF-GRANT"><code>createrole_self_grant</code></a>.</p>
+<ul>
+<li>Prevent users from changing the default privileges of non-inherited roles (Robert Haas) <a href="https://postgr.es/c/48a257d44" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is now only allowed for inherited roles.</p>
+<ul>
+<li>When granting role membership, require the granted-by role to be a role that has appropriate permissions (Robert Haas) <a href="https://postgr.es/c/ce6b672e4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is a requirement even when a non-bootstrap superuser is granting role membership.</p>
+<ul>
+<li>Allow non-superusers to grant permissions using a granted-by user that is not the current user (Robert Haas) <a href="https://postgr.es/c/ce6b672e4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The current user still must have sufficient permissions given by the specified granted-by user.</p>
+<ul>
+<li>Add <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-grant"><code>GRANT</code></a> (Robert Haas) <a href="https://postgr.es/c/3d14e171e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is controlled by a new <code>GRANT ... SET</code> option.</p>
+<ul>
+<li>Add dependency tracking to roles which have granted privileges (Robert Haas) <a href="https://postgr.es/c/ce6b672e4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>For example, removing <code>ADMIN OPTION</code> will fail if there are privileges using that option; <code>CASCADE</code> must be used to revoke dependent permissions.</p>
+<ul>
+<li>Add dependency tracking of grantors for <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-grant"><code>GRANT</code></a> records (Robert Haas) <a href="https://postgr.es/c/6566133c5" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This guarantees that <a href="/demo_docu/VII. Internals/System Catalogs/catalog-pg-auth-members"><code>pg_auth_members</code></a>.<code>grantor</code> values are always valid.</p>
+<ul>
+<li>Allow multiple role membership records (Robert Haas) <a href="https://postgr.es/c/ce6b672e4" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/0101f770a" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously a new membership grant would remove a previous matching membership grant, even if other aspects of the grant did not match.</p>
+<ul>
+<li>Prevent removal of superuser privileges for the bootstrap user (Robert Haas) <a href="https://postgr.es/c/e530be2c5" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Restoring such users could lead to errors.</p>
+<ul>
+<li>Allow <a title="Table 9.70. aclitem Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-info.html#FUNCTIONS-ACLITEM-FN-TABLE"><code>makeaclitem()</code></a> to accept multiple privilege names (Robins Tharakan) <a href="https://postgr.es/c/b762bbde3" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously only a single privilege name, like <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-select"><code>SELECT</code></a>, was accepted.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10315-server-configuration">E.10.3.1.5. Server Configuration<a href="#e10315-server-configuration" class="hash-link" aria-label="Direct link to E.10.3.1.5. Server Configuration" title="Direct link to E.10.3.1.5. Server Configuration">​</a></h5>
+<ul>
+<li>Add support for Kerberos credential delegation (Stephen Frost) <a href="https://postgr.es/c/6633cfb21" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/9c0a0e2ed" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/f4001a553" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/a2eb99a01" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is enabled with server variable <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-connection.html#GUC-GSS-ACCEPT-DELEGATION"><code>gss_accept_delegation</code></a> and libpq connection parameter <a href="/demo_docu/VIII. Appendixes/E. Release Notes/libpq-connect.html#LIBPQ-CONNECT-GSSDELEGATION"><code>gssdelegation</code></a>.</p>
+<ul>
+<li>
+<p>Allow the SCRAM iteration count to be set with server variable <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-connection.html#GUC-SCRAM-ITERATIONS"><code>scram_iterations</code></a> (Daniel Gustafsson) <a href="https://postgr.es/c/b57774300" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Improve performance of server variable management (Tom Lane) <a href="https://postgr.es/c/3057465ac" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/f13b2088f" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Tighten restrictions on which server variables can be reset (Masahiko Sawada) <a href="https://postgr.es/c/385366426" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously, while certain variables, like <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-client#GUC-DEFAULT-TRANSACTION-ISOLATION),"><code>transaction_isolation</code></a>, they could be individually reset in inappropriate situations.</p>
+<ul>
+<li>Move various <a title="20.1.2. Parameter Interaction via the Configuration File" href="/demo_docu/VIII. Appendixes/E. Release Notes/config-setting.html#CONFIG-SETTING-CONFIGURATION-FILE"><code>postgresql.conf</code></a> items into new categories (Shinya Kato) <a href="https://postgr.es/c/0b039e3a8" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This also affects the categories displayed in the <a href="/demo_docu/VII. Internals/System Views/view-pg-settings"><code>pg_settings</code></a> view.</p>
+<ul>
+<li>
+<p>Prevent configuration file recursion beyond 10 levels (Julien Rouhaud) <a href="https://postgr.es/c/d13b68411" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <a title="25.1.6. The Autovacuum Daemon" href="/demo_docu/VIII. Appendixes/E. Release Notes/routine-vacuuming.html#AUTOVACUUM">autovacuum</a> to more frequently honor changes to delay settings (Melanie Plageman) <a href="https://postgr.es/c/7d71d3dd0" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/a9781ae11" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Rather than honor changes only at the start of each relation, honor them at the start of each block.</p>
+<ul>
+<li>Remove restrictions that archive files be durably renamed (Nathan Bossart) <a href="https://postgr.es/c/756e221db" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/3cabe45a8" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-wal.html#GUC-ARCHIVE-COMMAND"><code>archive_command</code></a> command is now more likely to be called with already-archived files after a crash.</p>
+<ul>
+<li>Prevent <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-wal.html#GUC-ARCHIVE-LIBRARY"><code>archive_library</code></a> and <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-wal.html#GUC-ARCHIVE-COMMAND"><code>archive_command</code></a> from being set at the same time (Nathan Bossart) <a href="https://postgr.es/c/d627ce3b7" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously <code>archive_library</code> would override <code>archive_command</code>.</p>
+<ul>
+<li>Allow the postmaster to terminate children with an abort signal (Tom Lane) <a href="https://postgr.es/c/51b5834cd" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This allows collection of a core dump for a stuck child process. This is controlled by <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-developer.html#GUC-SEND-ABORT-FOR-CRASH"><code>send_abort_for_crash</code></a> and <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-developer.html#GUC-SEND-ABORT-FOR-KILL"><code>send_abort_for_kill</code></a>. The postmaster&#x27;s <code>-T</code> switch is now the same as setting <code>send_abort_for_crash</code>.</p>
+<ul>
+<li>
+<p>Remove the non-functional postmaster <code>-n</code> option (Tom Lane) <a href="https://postgr.es/c/51b5834cd" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow the server to reserve backend slots for roles with <a href="/demo_docu/III. Server Administration/Database Roles/predefined-roles"><code>pg_use_reserved_connections</code></a> membership (Nathan Bossart) <a href="https://postgr.es/c/6e2775e4d" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>The number of reserved slots is set by server variable <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-connection.html#GUC-RESERVED-CONNECTIONS"><code>reserved_connections</code></a>.</p>
+<ul>
+<li>Allow <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-resource.html#GUC-HUGE-PAGES">huge pages</a> to work on newer versions of Windows 10 (Thomas Munro) <a href="https://postgr.es/c/fdd8937c0" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This adds the special handling required to enable huge pages on newer versions of Windows 10.</p>
+<ul>
+<li>Add <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-developer.html#GUC-DEBUG-IO-DIRECT"><code>debug_io_direct</code></a> setting for developer usage (Thomas Munro, Andres Freund, Bharath Rupireddy) <a href="https://postgr.es/c/d4e71df6d" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/319bae9a8" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>While primarily for developers, <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-wal.html#GUC-WAL-SYNC-METHOD"><code>wal_sync_method=open_sync</code></a>/<code>open_datasync</code> has been modified to not use direct I/O with <code>wal_level=minimal</code>; this is now enabled with <code>debug_io_direct=wal</code>.</p>
+<ul>
+<li>Add function <a title="Table 9.91. Backup Control Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-admin.html#FUNCTIONS-ADMIN-BACKUP-TABLE"><code>pg_split_walfile_name()</code></a> to report the segment and timeline values of WAL file names (Bharath Rupireddy) <a href="https://postgr.es/c/cca186348" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/13e0d7a60" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10316-pg_hbaconf">E.10.3.1.6. <a href="/demo_docu/III. Server Administration/Client Authentication/auth-pg-hba-conf">pg_hba.conf</a><a href="#e10316-pg_hbaconf" class="hash-link" aria-label="Direct link to e10316-pg_hbaconf" title="Direct link to e10316-pg_hbaconf">​</a></h5>
+<ul>
+<li>Add support for regular expression matching on database and role entries in <code>pg_hba.conf</code> (Bertrand Drouvot) <a href="https://postgr.es/c/8fea86830" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Regular expression patterns are prefixed with a slash. Database and role names that begin with slashes need to be double-quoted if referenced in <code>pg_hba.conf</code>.</p>
+<ul>
+<li>Improve user-column handling of <a href="/demo_docu/III. Server Administration/Server Configuration/runtime-config-file-locations"><code>pg_ident.conf</code></a> to match <code>pg_hba.conf</code> (Jelte Fennema) <a href="https://postgr.es/c/efb6f4a4f" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Specifically, add support for <code>all</code>, role membership with <code>+</code>, and regular expressions with a leading slash. Any user name that matches these patterns must be double-quoted.</p>
+<ul>
+<li>Allow include files in <code>pg_hba.conf</code> and <code>pg_ident.conf</code> (Julien Rouhaud) <a href="https://postgr.es/c/a54b658ce" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>These are controlled by <code>include</code>, <code>include_if_exists</code>, and <code>include_dir</code>. System views <a href="/demo_docu/VII. Internals/System Views/view-pg-hba-file-rules"><code>pg_hba_file_rules</code></a> now display the file name.</p>
+<ul>
+<li>
+<p>Allow <code>pg_hba.conf</code> tokens to be of unlimited length (Tom Lane) <a href="https://postgr.es/c/de3f0e3fe" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add rule and map numbers to the system view <a href="/demo_docu/VII. Internals/System Views/view-pg-hba-file-rules"><code>pg_hba_file_rules</code></a> (Julien Rouhaud) <a href="https://postgr.es/c/c591300a8" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10317-localization">E.10.3.1.7. <a href="/demo_docu/III. Server Administration/Localization">Localization</a><a href="#e10317-localization" class="hash-link" aria-label="Direct link to e10317-localization" title="Direct link to e10317-localization">​</a></h5>
+<ul>
+<li>Determine the default encoding from the locale when using ICU (Jeff Davis) <a href="https://postgr.es/c/c45dc7ffb" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously the default was always <code>UTF-8</code>.</p>
+<ul>
+<li>Have <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createdatabase"><code>CREATE DATABASE</code></a> <code>--locale</code> options, control non-libc collation providers (Jeff Davis)</li>
+</ul>
+<p>Previously they only controlled libc providers.</p>
+<ul>
+<li>Add predefined collations <code>unicode</code> and <code>ucs_basic</code> (Peter Eisentraut) <a href="https://postgr.es/c/0d21d4b9b" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This only works if ICU support is enabled.</p>
+<ul>
+<li>Allow custom ICU collation rules to be created (Peter Eisentraut) <a href="https://postgr.es/c/30a53b792" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is done using <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createcollation"><code>CREATE COLLATION</code></a>.</p>
+<ul>
+<li>Allow Windows to import system locales automatically (Juan José Santamaría Flecha) <a href="https://postgr.es/c/bf03cfd16" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously, only ICU locales could be imported on Windows.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1032-logical-replication">E.10.3.2. <a href="/demo_docu/III. Server Administration/Logical Replication">Logical Replication</a><a href="#e1032-logical-replication" class="hash-link" aria-label="Direct link to e1032-logical-replication" title="Direct link to e1032-logical-replication">​</a></h4>
+<ul>
+<li>Allow <a href="/demo_docu/V. Server Programming/Logical Decoding">logical decoding</a> on standbys (Bertrand Drouvot, Andres Freund, Amit Khandekar) <a href="https://postgr.es/c/0fdab27ad" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/be87200ef" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/26669757b" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Snapshot WAL records are required for logical slot creation but cannot be created on standbys. To avoid delays, the new function <a title="Table 9.94. Snapshot Synchronization Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-admin.html#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION-TABLE"><code>pg_log_standby_snapshot()</code></a> allows creation of such records.</p>
+<ul>
+<li>Add server variable to control how logical decoding publishers transfer changes and how subscribers apply them (Shi Yu) <a href="https://postgr.es/c/5de94a041" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/1e8b61735" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/9f2213a7c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The variable is <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-developer.html#GUC-DEBUG-LOGICAL-REPLICATION-STREAMING"><code>debug_logical_replication_streaming</code></a>.</p>
+<ul>
+<li>Allow logical replication initial table synchronization to copy rows in binary format (Melih Mutlu) <a href="https://postgr.es/c/ecb696527" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is only possible for subscriptions marked as binary.</p>
+<ul>
+<li>Allow parallel application of logical replication (Hou Zhijie, Wang Wei, Amit Kapila) <a href="https://postgr.es/c/216a78482" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/cd06ccd78" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/fce003cfd" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createsubscription"><code>CREATE SUBSCRIPTION</code></a> to track parallel activity.</p>
+<ul>
+<li>Improve performance for <a href="/demo_docu/III. Server Administration/Logical Replication/logical-replication-architecture">logical replication apply</a> without a primary key (Onder Kalaci, Amit Kapila) <a href="https://postgr.es/c/89e46da5e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Specifically, <code>REPLICA IDENTITY FULL</code> can now use btree indexes rather than sequentially scanning the table to find matches.</p>
+<ul>
+<li>Allow logical replication subscribers to process only changes that have no origin (Vignesh C, Amit Kapila) <a href="https://postgr.es/c/366283961" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/875693019" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This can be used to avoid replication loops. This is controlled by the new <code>CREATE SUBSCRIPTION ... ORIGIN</code> option.</p>
+<ul>
+<li>Perform logical replication <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-select"><code>SELECT</code></a> and DML actions as the table owner (Robert Haas) <a href="https://postgr.es/c/1e10d49b6" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/482675987" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This improves security and now requires subscription owners to be either superusers or to have <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-set-role"><code>SET ROLE</code></a> option.</p>
+<ul>
+<li>Have <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-replication.html#GUC-WAL-RETRIEVE-RETRY-INTERVAL"><code>wal_retrieve_retry_interval</code></a> operate on a per-subscription basis (Nathan Bossart) <a href="https://postgr.es/c/5a3a95385" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously the retry time was applied globally. This also adds wait events <a title="Table 28.12. Wait Events of Type LWLock" href="/demo_docu/VIII. Appendixes/E. Release Notes/monitoring-stats.html#WAIT-EVENT-LWLOCK-TABLE">&gt;<code>LogicalRepLauncherDSA</code></a> and <code>LogicalRepLauncherHash</code>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1033-utility-commands">E.10.3.3. Utility Commands<a href="#e1033-utility-commands" class="hash-link" aria-label="Direct link to E.10.3.3. Utility Commands" title="Direct link to E.10.3.3. Utility Commands">​</a></h4>
+<ul>
+<li>
+<p>Add <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-explain"><code>EXPLAIN</code></a> option <code>GENERIC_PLAN</code> to display the generic plan for a parameterized query (Laurenz Albe) <a href="https://postgr.es/c/3c05284d8" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow a <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-copy"><code>COPY FROM</code></a> value to map to a column&#x27;s <code>DEFAULT</code> (Israel Barth Rubio) <a href="https://postgr.es/c/9f8377f7a" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-copy"><code>COPY</code></a> into foreign tables to add rows in batches (Andrey Lepikhov, Etsuro Fujita) <a href="https://postgr.es/c/97da48246" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This is controlled by the <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/postgres-fdw">postgres_fdw</a>.</p>
+<ul>
+<li>Allow the <code>STORAGE</code> type to be specified by <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createtable"><code>CREATE TABLE</code></a> (Teodor Sigaev, Aleksander Alekseev) <a href="https://postgr.es/c/784cedda0" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/b9424d014" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously only <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-altertable"><code>ALTER TABLE</code></a> could control this.</p>
+<ul>
+<li>
+<p>Allow <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createtrigger">truncate triggers</a> on foreign tables (Yugo Nagata) <a href="https://postgr.es/c/3b00a944a" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-vacuum"><code>VACUUM</code></a> tables (Nathan Bossart) <a href="https://postgr.es/c/4211fbd84" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This is accomplished by having <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-vacuum"><code>VACUUM</code></a> using the <code>--no-process-main</code> option.</p>
+<ul>
+<li>Add <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-vacuum"><code>VACUUM</code></a> statistics (Tom Lane, Nathan Bossart) <a href="https://postgr.es/c/a46a7011b" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The options are <code>SKIP_DATABASE_STATS</code> and <code>ONLY_DATABASE_STATS</code>.</p>
+<ul>
+<li>Change <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-reindex"><code>REINDEX DATABASE</code></a> to no longer require an argument (Simon Riggs) <a href="https://postgr.es/c/2cbc3c17a" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/0a5f06b84" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously the database name had to be specified.</p>
+<ul>
+<li>Allow <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-createstatistics"><code>CREATE STATISTICS</code></a> to generate a statistics name if none is specified (Simon Riggs) <a href="https://postgr.es/c/624aa2a13" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1034-data-types">E.10.3.4. Data Types<a href="#e1034-data-types" class="hash-link" aria-label="Direct link to E.10.3.4. Data Types" title="Direct link to E.10.3.4. Data Types">​</a></h4>
+<ul>
+<li>Allow non-decimal <a title="4.1.2.5. Bit-String Constants" href="/demo_docu/VIII. Appendixes/E. Release Notes/sql-syntax-lexical.html#SQL-SYNTAX-BIT-STRINGS">integer literals</a> (Peter Eisentraut) <a href="https://postgr.es/c/6fcda9aba" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>For example, <code>0x42F</code>, <code>0o273</code>, and <code>0b100101</code>.</p>
+<ul>
+<li>Allow <a href="/demo_docu/II. The SQL Language/Data Types/datatype-numeric"><code>NUMERIC</code></a> to process hexadecimal, octal, and binary integers of any size (Dean Rasheed) <a href="https://postgr.es/c/6dfacbf72" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously only unquoted eight-byte integers were supported with these non-decimal bases.</p>
+<ul>
+<li>Allow underscores in integer and numeric <a title="4.1.2.5. Bit-String Constants" href="/demo_docu/VIII. Appendixes/E. Release Notes/sql-syntax-lexical.html#SQL-SYNTAX-BIT-STRINGS">constants</a> (Peter Eisentraut, Dean Rasheed) <a href="https://postgr.es/c/faff8f8e4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This can improve readability for long strings of digits.</p>
+<ul>
+<li>
+<p>Accept the spelling <code>+infinity</code> in datetime input (Vik Fearing) <a href="https://postgr.es/c/2ceea5adb" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Prevent the specification of <code>epoch</code> and <code>infinity</code> together with other fields in datetime strings (Joseph Koshakow) <a href="https://postgr.es/c/bcc704b52" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Remove undocumented support for date input in the form <code>Y _</code>year<code>_ M _</code>month<code>_ D _</code>day<code>_</code> (Joseph Koshakow) <a href="https://postgr.es/c/5b3c59535" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add functions <a title="Table 9.79. Data Validity Checking Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-info.html#FUNCTIONS-INFO-VALIDITY-TABLE"><code>pg_input_is_valid()</code></a> and <code>pg_input_error_info()</code> to check for type conversion errors (Tom Lane) <a href="https://postgr.es/c/1939d2628" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/b8da37b3a" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1035-general-queries">E.10.3.5. General Queries<a href="#e1035-general-queries" class="hash-link" aria-label="Direct link to E.10.3.5. General Queries" title="Direct link to E.10.3.5. General Queries">​</a></h4>
+<ul>
+<li>
+<p>Allow subqueries in the <code>FROM</code> clause to omit aliases (Dean Rasheed) <a href="https://postgr.es/c/bcedd8f5f" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add support for enhanced numeric literals in SQL/JSON paths (Peter Eisentraut) <a href="https://postgr.es/c/102a5c164" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>For example, allow hexadecimal, octal, and binary integers and underscores between digits.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1036-functions">E.10.3.6. Functions<a href="#e1036-functions" class="hash-link" aria-label="Direct link to E.10.3.6. Functions" title="Direct link to E.10.3.6. Functions">​</a></h4>
+<ul>
+<li>Add SQL/JSON constructors (Nikita Glukhov, Teodor Sigaev, Oleg Bartunov, Alexander Korotkov, Amit Langote) <a href="https://postgr.es/c/7081ac46a" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The new functions <a title="Table 9.47. JSON Creation Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-json.html#FUNCTIONS-JSON-CREATION-TABLE"><code>JSON_ARRAY()</code></a>, <a title="Table 9.59. General-Purpose Aggregate Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-aggregate.html#FUNCTIONS-AGGREGATE-TABLE"><code>JSON_ARRAYAGG()</code></a>, <code>JSON_OBJECT()</code>, and <code>JSON_OBJECTAGG()</code> are part of the SQL standard.</p>
+<ul>
+<li>Add SQL/JSON object checks (Nikita Glukhov, Teodor Sigaev, Oleg Bartunov, Alexander Korotkov, Amit Langote, Andrew Dunstan) <a href="https://postgr.es/c/6ee30209a" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The <a title="Table 9.48. SQL/JSON Testing Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-json.html#FUNCTIONS-SQLJSON-MISC"><code>IS JSON</code></a> checks include checks for values, arrays, objects, scalars, and unique keys.</p>
+<ul>
+<li>
+<p>Allow JSON string parsing to use vector operations (John Naylor) <a href="https://postgr.es/c/0a8de93a4" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Improve the handling of full text highlighting function <a title="Table 9.43. Text Search Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-textsearch.html#TEXTSEARCH-FUNCTIONS-TABLE"><code>ts_headline()</code></a> for <code>OR</code> and <code>NOT</code> expressions (Tom Lane) <a href="https://postgr.es/c/5a617d75d" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add functions to add, subtract, and generate <code>timestamptz</code> values in a specified time zone (Przemyslaw Sztoch, Gurjeet Singh) <a href="https://postgr.es/c/75bd846b6" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>The functions are <a title="Table 9.33. Date/Time Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-datetime.html#FUNCTIONS-DATETIME-TABLE"><code>date_add()</code></a>, <code>date_subtract()</code>, and <a title="Table 9.65. Series Generating Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-srf.html#FUNCTIONS-SRF-SERIES"><code>generate_series()</code></a>.</p>
+<ul>
+<li>Change <a title="Table 9.33. Date/Time Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-datetime.html#FUNCTIONS-DATETIME-TABLE"><code>date_trunc(unit, timestamptz, time_zone)</code></a> to be an immutable function (Przemyslaw Sztoch) <a href="https://postgr.es/c/533e02e92" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This allows the creation of expression indexes using this function.</p>
+<ul>
+<li>Add server variable <a title="Table 9.67. Session Information Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-info.html#FUNCTIONS-INFO-SESSION-TABLE"><code>SYSTEM_USER</code></a> (Bertrand Drouvot) <a href="https://postgr.es/c/0823d061b" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This reports the authentication method and its authenticated user.</p>
+<ul>
+<li>
+<p>Add functions <a title="Table 9.54. Array Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-array.html#ARRAY-FUNCTIONS-TABLE"><code>array_sample()</code></a> and <code>array_shuffle()</code> (Martin Kalcher) <a href="https://postgr.es/c/888f2ea0a" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add aggregate function <a title="Table 9.59. General-Purpose Aggregate Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-aggregate.html#FUNCTIONS-AGGREGATE-TABLE"><code>ANY_VALUE()</code></a> which returns any value from a set (Vik Fearing) <a href="https://postgr.es/c/2ddab010c" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add function <a title="Table 9.6. Random Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-math.html#FUNCTIONS-MATH-RANDOM-TABLE"><code>random_normal()</code></a> to supply normally-distributed random numbers (Paul Ramsey) <a href="https://postgr.es/c/38d81760c" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add error function <a title="Table 9.5. Mathematical Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-math.html#FUNCTIONS-MATH-FUNC-TABLE"><code>erf()</code></a> and its complement <code>erfc()</code> (Dean Rasheed) <a href="https://postgr.es/c/d5d574146" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Improve the accuracy of numeric <a title="Table 9.5. Mathematical Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-math.html#FUNCTIONS-MATH-FUNC-TABLE"><code>power()</code></a> for integer exponents (Dean Rasheed) <a href="https://postgr.es/c/40c7fcbbe" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add <a title="8.13.1. Creating XML Values" href="/demo_docu/VIII. Appendixes/E. Release Notes/datatype-xml.html#DATATYPE-XML-CREATING"><code>XMLSERIALIZE()</code></a> option <code>INDENT</code> to pretty-print its output (Jim Jones) <a href="https://postgr.es/c/483bdb2af" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Change <a title="Table 9.98. Collation Management Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-admin.html#FUNCTIONS-ADMIN-COLLATION"><code>pg_collation_actual_version()</code></a> to return a reasonable value for the default collation (Jeff Davis) <a href="https://postgr.es/c/10932ed5e" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously it returned <code>NULL</code>.</p>
+<ul>
+<li>
+<p>Allow <a title="Table 9.101. Generic File Access Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-admin.html#FUNCTIONS-ADMIN-GENFILE-TABLE"><code>pg_read_file()</code></a> and <code>pg_read_binary_file()</code> to ignore missing files (Kyotaro Horiguchi) <a href="https://postgr.es/c/283129e32" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add byte specification (<code>B</code>) to <a title="Table 9.96. Database Object Size Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-admin.html#FUNCTIONS-ADMIN-DBSIZE"><code>pg_size_bytes()</code></a> (Peter Eisentraut) <a href="https://postgr.es/c/ce1215d9b" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <a title="Table 9.72. System Catalog Information Functions" href="/demo_docu/VIII. Appendixes/E. Release Notes/functions-info.html#FUNCTIONS-INFO-CATALOG-TABLE"><code>to_reg</code></a>* functions to accept numeric OIDs as input (Tom Lane) <a href="https://postgr.es/c/3ea7329c9" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1037-plpgsql">E.10.3.7. <a href="/demo_docu/V. Server Programming/PLpgSQL — SQL Procedural Language">PL/pgSQL</a><a href="#e1037-plpgsql" class="hash-link" aria-label="Direct link to e1037-plpgsql" title="Direct link to e1037-plpgsql">​</a></h4>
+<ul>
+<li>Add the ability to get the current function&#x27;s OID in PL/pgSQL (Pavel Stehule) <a href="https://postgr.es/c/d3d53f955" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is accomplished with <a title="43.5.5. Obtaining the Result Status" href="/demo_docu/VIII. Appendixes/E. Release Notes/plpgsql-statements.html#PLPGSQL-STATEMENTS-DIAGNOSTICS"><code>GET DIAGNOSTICS variable = PG_ROUTINE_OID</code></a>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1038-libpq">E.10.3.8. <a href="/demo_docu/IV. Client Interfaces/libpq — C Library">libpq</a><a href="#e1038-libpq" class="hash-link" aria-label="Direct link to e1038-libpq" title="Direct link to e1038-libpq">​</a></h4>
+<ul>
+<li>Add libpq connection option <a href="/demo_docu/VIII. Appendixes/E. Release Notes/libpq-connect.html#LIBPQ-CONNECT-REQUIRE-AUTH"><code>require_auth</code></a> to specify a list of acceptable authentication methods (Jacob Champion) <a href="https://postgr.es/c/3a465cc67" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This can also be used to disallow certain authentication methods.</p>
+<ul>
+<li>Allow multiple libpq-specified hosts to be randomly selected (Jelte Fennema) <a href="https://postgr.es/c/7f5b19817" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/0a16512d4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is enabled with <a href="/demo_docu/VIII. Appendixes/E. Release Notes/libpq-connect.html#LIBPQ-CONNECT-LOAD-BALANCE-HOSTS"><code>load_balance_hosts=random</code></a> and can be used for load balancing.</p>
+<ul>
+<li>Add libpq option <a href="/demo_docu/VIII. Appendixes/E. Release Notes/libpq-connect.html#LIBPQ-CONNECT-SSLCERTMODE"><code>sslcertmode</code></a> to control transmission of the client certificate (Jacob Champion) <a href="https://postgr.es/c/36f40ce2d" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The option values are <code>disable</code>, <code>allow</code>, and <code>require</code>.</p>
+<ul>
+<li>Allow libpq to use the system certificate pool for certificate verification (Jacob Champion, Thomas Habets) <a href="https://postgr.es/c/8eda73146" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is enabled with <a href="/demo_docu/VIII. Appendixes/E. Release Notes/libpq-connect.html#LIBPQ-CONNECT-SSLROOTCERT"><code>sslrootcert=system</code></a>, which also enables <a href="/demo_docu/VIII. Appendixes/E. Release Notes/libpq-connect.html#LIBPQ-CONNECT-SSLMODE"><code>sslmode=verify-full</code></a>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e1039-client-applications">E.10.3.9. Client Applications<a href="#e1039-client-applications" class="hash-link" aria-label="Direct link to E.10.3.9. Client Applications" title="Direct link to E.10.3.9. Client Applications">​</a></h4>
+<ul>
+<li>Allow <a href="/demo_docu/IV. Client Interfaces/ECPG — Embedded SQL in C"><code>ECPG</code></a> variable declarations to use typedef names that match unreserved SQL keywords (Tom Lane) <a href="https://postgr.es/c/83f1c7b74" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This change does prevent keywords which match C typedef names from being processed as keywords in later <code>EXEC SQL</code> blocks.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10391-psql">E.10.3.9.1. <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-psql">psql</a><a href="#e10391-psql" class="hash-link" aria-label="Direct link to e10391-psql" title="Direct link to e10391-psql">​</a></h5>
+<ul>
+<li>Allow psql to control the maximum width of header lines in expanded format (Platon Pronko) <a href="https://postgr.es/c/a45388d6e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is controlled by <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-PSET-XHEADER-WIDTH"><code>xheader_width</code></a>.</p>
+<ul>
+<li>Add psql command <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-DRG"><code>\drg</code></a> to show role membership details (Pavel Luzanov) <a href="https://postgr.es/c/d913928c9" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/d65ddaca9" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The <code>Member of</code> output column has been removed from <code>\du</code> and <code>\dg</code> because this new command displays this information in more detail.</p>
+<ul>
+<li>Allow psql&#x27;s access privilege commands to show system objects (Nathan Bossart) <a href="https://postgr.es/c/d913928c9" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/d65ddaca9" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The options are <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-DP-LC"><code>\dpS</code></a> and <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-Z"><code>\zS</code></a>.</p>
+<ul>
+<li>
+<p>Add <code>FOREIGN</code> designation to psql <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-D"><code>\d+</code></a> for foreign table children and partitions (Ian Lawrence Barwick) <a href="https://postgr.es/c/bd95816f7" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Prevent <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-DF-UC"><code>\df+</code></a> from showing function source code (Isaac Morland) <a href="https://postgr.es/c/3dfae91f7" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Function bodies are more easily viewed with <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-SF"><code>\sf</code></a>.</p>
+<ul>
+<li>Allow psql to submit queries using the extended query protocol (Peter Eisentraut) <a href="https://postgr.es/c/5b66de343" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Passing arguments to such queries is done using the new psql <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-BIND"><code>\bind</code></a> command.</p>
+<ul>
+<li>Allow psql <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-WATCH"><code>\watch</code></a> to limit the number of executions (Andrey Borodin) <a href="https://postgr.es/c/00beecfe8" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The <code>\watch</code> options can now be named when specified.</p>
+<ul>
+<li>
+<p>Detect invalid values for psql <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-META-COMMAND-WATCH"><code>\watch</code></a>, and allow zero to specify no delay (Andrey Borodin) <a href="https://postgr.es/c/6f9ee74d4" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow psql scripts to obtain the exit status of shell commands and queries (Corey Huinker, Tom Lane) <a href="https://postgr.es/c/b0d8f2d98" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/31ae2aa9d" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>The new psql control variables are <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-VARIABLES-SHELL-ERROR"><code>SHELL_ERROR</code></a> and <a href="/demo_docu/VIII. Appendixes/E. Release Notes/app-psql.html#APP-PSQL-VARIABLES-SHELL-EXIT-CODE"><code>SHELL_EXIT_CODE</code></a>.</p>
+<ul>
+<li>Various psql tab completion improvements (Vignesh C, Aleksander Alekseev, Dagfinn Ilmari Mannsåker, Shi Yu, Michael Paquier, Ken Kato, Peter Smith) <a href="https://postgr.es/c/f6c750d31" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/4cbe57974" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/6afcab6ac" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/9aa58d48f" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/3cf2f7af7" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/2ea5de296" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/07f7237c2" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/9d0cf5749" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/a3bc631ea" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/2ff5ca86e" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/9e1e9d656" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/96c498d2f" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e10392-pg_dump">E.10.3.9.2. <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-pgdump">pg_dump</a><a href="#e10392-pg_dump" class="hash-link" aria-label="Direct link to e10392-pg_dump" title="Direct link to e10392-pg_dump">​</a></h5>
+<ul>
+<li>Add pg_dump control of dumping child tables and partitions (Gilles Darold) <a href="https://postgr.es/c/a563c24c9" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The new options are <code>--table-and-children</code>, <code>--exclude-table-and-children</code>, and <code>--exclude-table-data-and-children</code>.</p>
+<ul>
+<li>
+<p>Add LZ4 and Zstandard compression to pg_dump (Georgios Kokolatos, Justin Pryzby)</p>
+</li>
+<li>
+<p>Allow pg_dump and <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-pgbasebackup">pg_basebackup</a> to use <code>long</code> mode for compression (Justin Pryzby) <a href="https://postgr.es/c/0da243fed" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/0070b66fe" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/84adc8e20" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/2820adf77" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Improve pg_dump to accept a more consistent compression syntax (Georgios Kokolatos) <a href="https://postgr.es/c/5e73a6048" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Options like <code>--compress=gzip:5</code>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e10310-server-applications">E.10.3.10. Server Applications<a href="#e10310-server-applications" class="hash-link" aria-label="Direct link to E.10.3.10. Server Applications" title="Direct link to E.10.3.10. Server Applications">​</a></h4>
+<ul>
+<li>Add <a href="/demo_docu/VI. Reference/III. PostgreSQL Server Applications/app-initdb">initdb</a> option to set server variables for the duration of initdb and all future server starts (Tom Lane) <a href="https://postgr.es/c/3e51b278d" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The option is <code>-c name=value</code>.</p>
+<ul>
+<li>Add options to <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-createuser">createuser</a> to control more user options (Shinya Kato) <a href="https://postgr.es/c/08951a7c9" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/2dcd1578c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Specifically, the new options control the valid-until date, bypassing of row-level security, and role membership.</p>
+<ul>
+<li>Deprecate <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-createuser">createuser</a> option <code>--role</code> (Nathan Bossart) <a href="https://postgr.es/c/2dcd1578c" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/381d19b3e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This option could be easily confused with new createuser role membership options, so option <code>--member-of</code> has been added with the same functionality. The <code>--role</code> option can still be used.</p>
+<ul>
+<li>Allow control of <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-vacuumdb">vacuumdb</a> schema processing (Gilles Darold) <a href="https://postgr.es/c/7781f4e3e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>These are controlled by options <code>--schema</code> and <code>--exclude-schema</code>.</p>
+<ul>
+<li>
+<p>Use new <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-vacuum"><code>VACUUM</code></a> (Tom Lane, Nathan Bossart) <a href="https://postgr.es/c/a46a7011b" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Have <a href="/demo_docu/VI. Reference/III. PostgreSQL Server Applications/pgupgrade">pg_upgrade</a> set the new cluster&#x27;s locale and encoding (Jeff Davis) <a href="https://postgr.es/c/9637badd9" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This removes the requirement that the new cluster be created with the same locale and encoding settings.</p>
+<ul>
+<li>Add <a href="/demo_docu/VI. Reference/III. PostgreSQL Server Applications/pgupgrade">pg_upgrade</a> option to specify the default transfer mode (Peter Eisentraut) <a href="https://postgr.es/c/746915c68" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The option is <code>--copy</code>.</p>
+<ul>
+<li>Improve <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-pgbasebackup">pg_basebackup</a> to accept numeric compression options (Georgios Kokolatos, Michael Paquier) <a href="https://postgr.es/c/d18655cc0" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Options like <code>--compress=server-5</code> are now supported.</p>
+<ul>
+<li>
+<p>Fix <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-pgbasebackup">pg_basebackup</a> to handle tablespaces stored in the <code>PGDATA</code> directory (Robert Haas) <a href="https://postgr.es/c/363e8f911" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add <a href="/demo_docu/VI. Reference/III. PostgreSQL Server Applications/pgwaldump">pg_waldump</a> option <code>--save-fullpage</code> to dump full page images (David Christensen) <a href="https://postgr.es/c/d497093cb" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <a href="/demo_docu/VI. Reference/III. PostgreSQL Server Applications/pgwaldump">pg_waldump</a> options <code>-t</code>/<code>--timeline</code> to accept hexadecimal values (Peter Eisentraut) <a href="https://postgr.es/c/4c8044c04" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add support for progress reporting to <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-pgverifybackup">pg_verifybackup</a> (Masahiko Sawada) <a href="https://postgr.es/c/d07c2948b" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <a href="/demo_docu/VI. Reference/III. PostgreSQL Server Applications/app-pgrewind">pg_rewind</a> to properly track timeline changes (Heikki Linnakangas) <a href="https://postgr.es/c/009eeee74" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/0a0500207" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously if pg_rewind was run after a timeline switch but before a checkpoint was issued, it might incorrectly determine that a rewind was unnecessary.</p>
+<ul>
+<li>Have <a href="/demo_docu/VI. Reference/II. PostgreSQL Client Applications/app-pgreceivewal">pg_receivewal</a> cleanly exit on <code>SIGTERM</code> (Christoph Berg) <a href="https://postgr.es/c/8b60db774" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This signal is often used by systemd.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e10311-source-code">E.10.3.11. Source Code<a href="#e10311-source-code" class="hash-link" aria-label="Direct link to E.10.3.11. Source Code" title="Direct link to E.10.3.11. Source Code">​</a></h4>
+<ul>
+<li>Build ICU support by default (Jeff Davis) <a href="https://postgr.es/c/fcb21b3ac" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This removes <a href="/demo_docu/III. Server Administration/Installation from Source Code">build flag</a> <code>--with-icu</code> and adds flag <code>--without-icu</code>.</p>
+<ul>
+<li>
+<p>Add support for SSE2 (Streaming SIMD Extensions 2) vector operations on x86-64 architectures (John Naylor) <a href="https://postgr.es/c/56f2c7b58" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add support for Advanced SIMD (Single Instruction Multiple Data) (NEON) instructions on ARM architectures (Nathan Bossart) <a href="https://postgr.es/c/82739d4a8" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Have Windows binaries built with MSVC use <code>RandomizedBaseAddress</code> (ASLR) (Michael Paquier) <a href="https://postgr.es/c/36389a060" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This was already enabled on MinGW builds.</p>
+<ul>
+<li>Prevent extension libraries from exporting their symbols by default (Andres Freund, Tom Lane) <a href="https://postgr.es/c/089480c07" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/8cf64d35e" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Functions that need to be called from the core backend or other extensions must now be explicitly marked <code>PGDLLEXPORT</code>.</p>
+<ul>
+<li>Require Windows 10 or newer versions (Michael Paquier, Juan José Santamaría Flecha) <a href="https://postgr.es/c/495ed0ef2" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously Windows Vista and Windows XP were supported.</p>
+<ul>
+<li>
+<p>Require Perl version 5.14 or later (John Naylor) <a href="https://postgr.es/c/4c1532763" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Require Bison version 2.3 or later (John Naylor) <a href="https://postgr.es/c/b086a47a2" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Require Flex version 2.5.35 or later (John Naylor) <a href="https://postgr.es/c/8b878bffa" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Require MIT Kerberos for GSSAPI support (Stephen Frost) <a href="https://postgr.es/c/f7431bca8" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Remove support for Visual Studio 2013 (Michael Paquier) <a href="https://postgr.es/c/6203583b7" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Remove support for HP-UX (Thomas Munro) <a href="https://postgr.es/c/9db300ce6" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Remove support for HP/Intel Itanium (Thomas Munro) <a href="https://postgr.es/c/0ad5b48e5" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Remove support for M68K, M88K, M32R, and SuperH CPU architectures (Thomas Munro) <a href="https://postgr.es/c/718aa43a4" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/14168d3c6" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Remove <a href="/demo_docu/IV. Client Interfaces/libpq — C Library">libpq</a> support for SCM credential authentication (Michael Paquier) <a href="https://postgr.es/c/98ae2c84a" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Backend support for this authentication method was removed in PostgresSQL 9.1.</p>
+<ul>
+<li>Add <a href="/demo_docu/III. Server Administration/Installation from Source Code/install-meson">meson</a> build system (Andres Freund, Nazir Bilal Yavuz, Peter Eisentraut) <a href="https://postgr.es/c/e6927270c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This eventually will replace the Autoconf and Windows-based MSVC build systems.</p>
+<ul>
+<li>Allow control of the location of the openssl binary used by the build system (Peter Eisentraut) <a href="https://postgr.es/c/c8e4030d1" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Make finding openssl program a configure or meson option</p>
+<ul>
+<li>Add build option to allow testing of small table segment sizes (Andres Freund) <a href="https://postgr.es/c/d3b111e32" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The build options are <a href="/demo_docu/VIII. Appendixes/E. Release Notes/install-make.html#CONFIGURE-OPTION-WITH-SEGSIZE"><code>--with-segsize-blocks</code></a> and <code>-Dsegsize_blocks</code>.</p>
+<ul>
+<li>Add <a href="/demo_docu/VII. Internals/PostgreSQL Coding Conventions">pgindent</a> options (Andrew Dunstan) <a href="https://postgr.es/c/b90f0b574" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/62e1e28bf" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/124937163" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/a1c4cd6f2" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/068a243b7" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/dab07e8c6" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/b16259b3c" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The new options are <code>--show-diff</code>, <code>--silent-diff</code>, <code>--commit</code>, and <code>--help</code>, and allow multiple <code>--exclude</code> options. Also require the typedef file to be explicitly specified. Options <code>--code-base</code> and <code>--build</code> were also removed.</p>
+<ul>
+<li>
+<p>Add <a href="/demo_docu/VII. Internals/PostgreSQL Coding Conventions">pg_bsd_indent</a> source code to the main tree (Tom Lane) <a href="https://postgr.es/c/4e831f4ce" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Improve make_ctags and make_etags (Yugo Nagata) <a href="https://postgr.es/c/d1e2a380c" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Adjust <a href="/demo_docu/VII. Internals/System Catalogs/catalog-pg-attribute"><code>pg_attribute</code></a> columns for efficiency (Peter Eisentraut) <a href="https://postgr.es/c/90189eefc" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="e10312-additional-modules">E.10.3.12. Additional Modules<a href="#e10312-additional-modules" class="hash-link" aria-label="Direct link to E.10.3.12. Additional Modules" title="Direct link to E.10.3.12. Additional Modules">​</a></h4>
+<ul>
+<li>
+<p>Improve use of extension-based indexes on boolean columns (Zongliang Quan, Tom Lane) <a href="https://postgr.es/c/ff720a597" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add support for Daitch-Mokotoff Soundex to <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/fuzzystrmatch">fuzzystrmatch</a> (Dag Lem) <a href="https://postgr.es/c/a290378a3" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/auto-explain">auto_explain</a> to log values passed to parameterized statements (Dagfinn Ilmari Mannsåker) <a href="https://postgr.es/c/d4bfe4128" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This affects queries using server-side <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-prepare"><code>PREPARE</code></a> and client-side parse/bind. Logging is controlled by <a href="/demo_docu/VIII. Appendixes/E. Release Notes/auto-explain.html#AUTO-EXPLAIN-CONFIGURATION-PARAMETERS-LOG-PARAMETER-MAX-LENGTH"><code>auto_explain.log_parameter_max_length</code></a>; by default query parameters will be logged with no length restriction.</p>
+<ul>
+<li>Have <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/auto-explain">auto_explain</a>&#x27;s <code>log_verbose</code> mode honor the value of <a href="/demo_docu/VIII. Appendixes/E. Release Notes/runtime-config-statistics.html#GUC-COMPUTE-QUERY-ID"><code>compute_query_id</code></a> (Atsushi Torikoshi) <a href="https://postgr.es/c/9d2d9728b" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>Previously even if <code>compute_query_id</code> was enabled, <a href="/demo_docu/VIII. Appendixes/E. Release Notes/auto-explain.html#AUTO-EXPLAIN-CONFIGURATION-PARAMETERS-LOG-VERBOSE"><code>log_verbose</code></a> was not showing the query identifier.</p>
+<ul>
+<li>
+<p>Change the maximum length of <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/ltree">ltree</a> labels from 256 to 1000 and allow hyphens (Garen Torikian) <a href="https://postgr.es/c/b1665bf01" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Have <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pgstatstatements"><code>pg_stat_statements</code></a> normalize constants used in utility commands (Michael Paquier) <a href="https://postgr.es/c/daa8365a9" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously constants appeared instead of placeholders, e.g., <code>$1</code>.</p>
+<ul>
+<li>
+<p>Add <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pgwalinspect">pg_walinspect</a> function <a href="/demo_docu/VIII. Appendixes/E. Release Notes/pgwalinspect.html#PGWALINSPECT-FUNCS-PG-GET-WAL-BLOCK-INFO"><code>pg_get_wal_block_info()</code></a> to report WAL block information (Michael Paquier, Melanie Plageman, Bharath Rupireddy) <a href="https://postgr.es/c/c31cf1c03" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/9ecb134a9" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/122376f02" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/df4f3ab51" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Change how <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pgwalinspect">pg_walinspect</a> functions <a href="/demo_docu/VIII. Appendixes/E. Release Notes/pgwalinspect.html#PGWALINSPECT-FUNCS-PG-GET-WAL-RECORDS-INFO"><code>pg_get_wal_records_info()</code></a> and <a href="/demo_docu/VIII. Appendixes/E. Release Notes/pgwalinspect.html#PGWALINSPECT-FUNCS-PG-GET-WAL-STATS"><code>pg_get_wal_stats()</code></a> interpret ending LSNs (Bharath Rupireddy) <a href="https://postgr.es/c/5c1b66280" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Previously ending LSNs which represent nonexistent WAL locations would generate an error, while they will now be interpreted as the end of the WAL.</p>
+<ul>
+<li>
+<p>Add detailed descriptions of WAL records in <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pgwalinspect">pg_walinspect</a> (Melanie Plageman, Peter Geoghegan) <a href="https://postgr.es/c/7d8219a44" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/1c453cfd8" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/96149a180" target="_blank" rel="noopener noreferrer">§</a> <a href="https://postgr.es/c/50547a3fa" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pageinspect">pageinspect</a> to report statistics on multiple pages (Hamid Akhtar) <a href="https://postgr.es/c/1fd3dd204" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This is similar to <code>bt_page_stats()</code> except it can report on a range of pages.</p>
+<ul>
+<li>
+<p>Add empty range output column to <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pageinspect">pageinspect</a> (Tomas Vondra) <a href="https://postgr.es/c/1fd3dd204" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Redesign archive modules to be more flexible (Nathan Bossart) <a href="https://postgr.es/c/35739b87d" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>Initialization changes will require modules written for older versions of Postgres to be updated.</p>
+<ul>
+<li>
+<p>Correct inaccurate <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pgstatstatements">pg_stat_statements</a> row tracking extended query protocol statements (Sami Imseih) <a href="https://postgr.es/c/1d477a907" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pgbuffercache">pg_buffercache</a> function <code>pg_buffercache_usage_counts()</code> to report usage totals (Nathan Bossart) <a href="https://postgr.es/c/f3fa31327" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Add <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/pgbuffercache">pg_buffercache</a> function <code>pg_buffercache_summary()</code> to report summarized buffer statistics (Melih Mutlu) <a href="https://postgr.es/c/2589434ae" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow the schemas of required extensions to be referenced in extension scripts using the new syntax <code>@extschema:referenced_extension_name@</code> (Regina Obe) <a href="https://postgr.es/c/72a5b1fc8" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Allow required extensions to be marked as non-relocatable using <a href="/demo_docu/VIII. Appendixes/E. Release Notes/extend-extensions.html#EXTEND-EXTENSIONS-FILES-NO-RELOCATE"><code>no_relocate</code></a> (Regina Obe) <a href="https://postgr.es/c/72a5b1fc8" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<p>This allows <code>@extschema:referenced_extension_name@</code> to be treated as a constant for the lifetime of the extension.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="e103121-postgres_fdw">E.10.3.12.1. <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/postgres-fdw">postgres_fdw</a><a href="#e103121-postgres_fdw" class="hash-link" aria-label="Direct link to e103121-postgres_fdw" title="Direct link to e103121-postgres_fdw">​</a></h5>
+<ul>
+<li>Allow postgres_fdw to do aborts in parallel (Etsuro Fujita) <a href="https://postgr.es/c/983ec2300" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>This is enabled with postgres_fdw option <a title="F.38.1.6. Transaction Management Options" href="/demo_docu/VIII. Appendixes/E. Release Notes/postgres-fdw.html#POSTGRES-FDW-OPTIONS-TRANSACTION-MANAGEMENT"><code>parallel_abort</code></a>.</p>
+<ul>
+<li>Make <a href="/demo_docu/VI. Reference/I. SQL Commands/sql-analyze"><code>ANALYZE</code></a> on foreign postgres_fdw tables more efficient (Tomas Vondra) <a href="https://postgr.es/c/8ad51b5f4" target="_blank" rel="noopener noreferrer">§</a></li>
+</ul>
+<p>The postgres_fdw option <a title="F.38.1.3. Cost Estimation Options" href="/demo_docu/VIII. Appendixes/E. Release Notes/postgres-fdw.html#POSTGRES-FDW-OPTIONS-COST-ESTIMATION"><code>analyze_sampling</code></a> controls the sampling method.</p>
+<ul>
+<li>
+<p>Restrict shipment of <a href="/demo_docu/II. The SQL Language/Data Types/datatype-oid"><code>reg</code></a>* type constants in postgres_fdw to those referencing built-in objects or extensions marked as shippable (Tom Lane) <a href="https://postgr.es/c/31e5b5029" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+<li>
+<p>Have postgres_fdw and <a href="/demo_docu/VIII. Appendixes/F. Additional Supplied Modules and Extensions/F.12. dblink — connect to other PostgreSQL databases">dblink</a> handle interrupts during connection establishment (Andres Freund) <a href="https://postgr.es/c/e4602483e" target="_blank" rel="noopener noreferrer">§</a></p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="e104-acknowledgments">E.10.4. Acknowledgments<a href="#e104-acknowledgments" class="hash-link" aria-label="Direct link to E.10.4. Acknowledgments" title="Direct link to E.10.4. Acknowledgments">​</a></h3>
+<p>The following individuals (in alphabetical order) have contributed to this release as patch authors, committers, reviewers, testers, or reporters of issues.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="abhijit-menon-sen">Abhijit Menon-Sen<a href="#abhijit-menon-sen" class="hash-link" aria-label="Direct link to Abhijit Menon-Sen" title="Direct link to Abhijit Menon-Sen">​</a></h2>
+<p>Adam Mackler<br>
+Adrian Klaver<br>
+Ahsan Hadi<br>
+Ajin Cherian<br>
+Ajit Awekar<br>
+Alan Hodgson<br>
+Aleksander Alekseev<br>
+Alex Denman<br>
+Alex Kozhemyakin<br>
+Alexander Korolev<br>
+Alexander Korotkov<br>
+Alexander Lakhin<br>
+Alexander Pyhalov<br>
+Alexey Borzov<br>
+Alexey Ermakov<br>
+Alexey Makhmutov<br>
+Álvaro Herrera<br>
+Amit Kapila<br>
+Amit Khandekar<br>
+Amit Langote<br>
+Amul Sul<br>
+Anastasia Lubennikova<br>
+Anban Company<br>
+Andreas Dijkman<br>
+Andreas Karlsson<br>
+Andreas Scherbaum<br>
+Andrei Zubkov<br>
+Andres Freund<br>
+Andrew Alsup<br>
+Andrew Bille<br>
+Andrew Dunstan<br>
+Andrew Gierth<br>
+Andrew Kesper<br>
+Andrey Borodin<br>
+Andrey Lepikhov<br>
+Andrey Sokolov<br>
+Ankit Kumar Pandey<br>
+Ante Kresic<br>
+Anton Melnikov<br>
+Anton Sidyakin<br>
+Anton Voloshin<br>
+Antonin Houska<br>
+Arne Roland<br>
+Artem Anisimov<br>
+Arthur Zakirov<br>
+Ashutosh Bapat<br>
+Ashutosh Sharma<br>
+Asim Praveen<br>
+Atsushi Torikoshi<br>
+Ayaki Tachikake<br>
+Balazs Szilfai<br>
+Benoit Lobréau<br>
+Bernd Helmle<br>
+Bertrand Drouvot<br>
+Bharath Rupireddy<br>
+Bilva Sanaba<br>
+Bob Krier<br>
+Boris Zentner<br>
+Brad Nicholson<br>
+Brar Piening<br>
+Bruce Momjian<br>
+Bruno da Silva<br>
+Carl Sopchak<br>
+Cary Huang<br>
+Changhong Fei<br>
+Chris Travers<br>
+Christoph Berg<br>
+Christophe Pettus<br>
+Corey Huinker<br>
+Craig Ringer<br>
+Curt Kolovson<br>
+Dag Lem<br>
+Dagfinn Ilmari Mannsåker<br>
+Daniel Gustafsson<br>
+Daniel Vérité<br>
+Daniel Watzinger<br>
+Daniel Westermann<br>
+Daniele Varrazzo<br>
+Daniil Anisimov<br>
+Danny Shemesh<br>
+Dave Page<br>
+David Christensen<br>
+David G. Johnston<br>
+David Geier<br>
+David Gilman<br>
+David Kimura<br>
+David Rowley<br>
+David Steele<br>
+David Turon<br>
+David Zhang<br>
+Davinder Singh<br>
+Dean Rasheed<br>
+Denis Laxalde<br>
+Dilip Kumar<br>
+Dimos Stamatakis<br>
+Dmitriy Kuzmin<br>
+Dmitry Astapov<br>
+Dmitry Dolgov<br>
+Dmitry Koval<br>
+Dong Wook Lee<br>
+Dongming Liu<br>
+Drew DeVault<br>
+Duncan Sands<br>
+Ed Maste<br>
+Egor Chindyaskin<br>
+Ekaterina Kiryanova<br>
+Elena Indrupskaya<br>
+Emmanuel Quincerot<br>
+Eric Mutta<br>
+Erik Rijkers<br>
+Erki Eessaar<br>
+Erwin Brandstetter<br>
+Etsuro Fujita<br>
+Eugeny Zhuzhnev<br>
+Euler Taveira<br>
+Evan Jones<br>
+Evgeny Morozov<br>
+Fabrízio de Royes Mello<br>
+Farias de Oliveira<br>
+Florin Irion<br>
+Franz-Josef Färber<br>
+Garen Torikian<br>
+Georgios Kokolatos<br>
+Gilles Darold<br>
+Greg Stark<br>
+Guillaume Lelarge<br>
+Gunnar Bluth<br>
+Gunnar Morling<br>
+Gurjeet Singh<br>
+Haiyang Wang<br>
+Haiying Tang<br>
+Hamid Akhtar<br>
+Hans Buschmann<br>
+Hao Wu<br>
+Hayato Kuroda<br>
+Heath Lord<br>
+Heikki Linnakangas<br>
+Himanshu Upadhyaya<br>
+Hisahiro Kauchi<br>
+Hongyu Song<br>
+Hubert Lubaczewski<br>
+Hung Nguyen<br>
+Ian Barwick<br>
+Ibrar Ahmed<br>
+Ilya Gladyshev<br>
+Ilya Nenashev<br>
+Isaac Morland<br>
+Israel Barth Rubio<br>
+Jacob Champion<br>
+Jacob Speidel<br>
+Jaime Casanova<br>
+Jakub Wartak<br>
+James Coleman<br>
+James Inform<br>
+James Vanns<br>
+Jan Wieck<br>
+Japin Li<br>
+Jeevan Ladhe<br>
+Jeff Davis<br>
+Jeff Janes<br>
+Jehan-Guillaume de Rorthais<br>
+Jelte Fennema<br>
+Jian He<br>
+Jim Jones<br>
+Jinbao Chen<br>
+Joe Conway<br>
+Joel Jacobson<br>
+John Naylor<br>
+Jonathan Katz<br>
+Josef Simanek<br>
+Joseph Koshakow<br>
+Juan José Santamaría Flecha<br>
+Julien Rouhaud<br>
+Julien Roze<br>
+Junwang Zhao<br>
+Justin Pryzby<br>
+Justin Zhang<br>
+Karina Litskevich<br>
+Karl O. Pinc<br>
+Keisuke Kuroda<br>
+Ken Kato<br>
+Kevin McKibbin<br>
+Kieran McCusker<br>
+Kirk Wolak<br>
+Konstantin Knizhnik<br>
+Koshi Shibagaki<br>
+Kotaro Kawamoto<br>
+Kui Liu<br>
+Kyotaro Horiguchi<br>
+Lakshmi Narayanan Sreethar<br>
+Laurence Parry<br>
+Laurenz Albe<br>
+Luca Ferrari<br>
+Lukas Fittl<br>
+Maciek Sakrejda<br>
+Magnus Hagander<br>
+Maja Zaloznik<br>
+Marcel Hofstetter<br>
+Marina Polyakova<br>
+Mark Dilger<br>
+Marko Tiikkaja<br>
+Markus Winand<br>
+Martijn van Oosterhout<br>
+Martin Jurca<br>
+Martin Kalcher<br>
+Mary Xu<br>
+Masahiko Sawada<br>
+Masahiro Ikeda<br>
+Masao Fujii<br>
+Mason Sharp<br>
+Matheus Alcantara<br>
+Mats Kindahl<br>
+Matthias van de Meent<br>
+Matthijs van der Vleuten<br>
+Maxim Orlov<br>
+Maxim Yablokov<br>
+Mehmet Emin Karakas<br>
+Melanie Plageman<br>
+Melih Mutlu<br>
+Micah Gates<br>
+Michael Banck<br>
+Michael Paquier<br>
+Michail Nikolaev<br>
+Michel Pelletier<br>
+Mike Oh<br>
+Mikhail Gribkov<br>
+Mingli Zhang<br>
+Miroslav Bendik<br>
+Mitsuru Hinata<br>
+Myo Wai Thant<br>
+Naeem Akhter<br>
+Naoki Okano<br>
+Nathan Bossart<br>
+Nazir Bilal Yavuz<br>
+Neha Sharma<br>
+Nick Babadzhanian<br>
+Nicola Contu<br>
+Nikhil Shetty<br>
+Nikita Glukhov<br>
+Nikolay Samokhvalov<br>
+Nikolay Shaplov<br>
+Nishant Sharma<br>
+Nitin Jadhav<br>
+Noah Misch<br>
+Noboru Saito<br>
+Noriyoshi Shinoda<br>
+Nuko Yokohama<br>
+Oleg Bartunov<br>
+Oleg Tselebrovskiy<br>
+Olly Betts<br>
+Onder Kalaci<br>
+Onur Tirtir<br>
+Pablo Federico<br>
+Palle Girgensohn<br>
+Paul Guo<br>
+Paul Jungwirth<br>
+Paul Ramsey<br>
+Pavel Borisov<br>
+Pavel Kulakov<br>
+Pavel Luzanov<br>
+Pavel Stehule<br>
+Peifeng Qiu<br>
+Peter Eisentraut<br>
+Peter Geoghegan<br>
+Peter Smith<br>
+Phil Florent<br>
+Philippe Godfrin<br>
+Platon Pronko<br>
+Przemyslaw Sztoch<br>
+Rachel Heaton<br>
+Ranier Vilela<br>
+Regina Obe<br>
+Reid Thompson<br>
+Reiner Peterke<br>
+Richard Guo<br>
+Riivo Kolka<br>
+Rishu Bagga<br>
+Robert Haas<br>
+Robert Sjöblom<br>
+Robert Treat<br>
+Roberto Mello<br>
+Robins Tharakan<br>
+Roman Zharkov<br>
+Ronan Dunklau<br>
+Rushabh Lathia<br>
+Ryo Matsumura<br>
+Samay Sharma<br>
+Sami Imseih<br>
+Sandeep Thakkar<br>
+Sandro Santilli<br>
+Sebastien Flaesch<br>
+Sébastien Lardière<br>
+Sehrope Sarkuni<br>
+Sergey Belyashov<br>
+Sergey Pankov<br>
+Sergey Shinderuk<br>
+Shi Yu<br>
+Shinya Kato<br>
+Sho Kato<br>
+Shruthi Gowda<br>
+Shveta Mallik<br>
+Simon Riggs<br>
+Sindy Senorita<br>
+Sirisha Chamarthi<br>
+Sravan Kumar<br>
+Stéphane Tachoires<br>
+Stephen Frost<br>
+Steve Chavez<br>
+Stone Tickle<br>
+Sven Klemm<br>
+Takamichi Osumi<br>
+Takeshi Ideriha<br>
+Tatsuhiro Nakamori<br>
+Tatsuo Ishii<br>
+Teja Mupparti<br>
+Tender Wang<br>
+Teodor Sigaev<br>
+Thiago Nunes<br>
+Thom Brown<br>
+Thomas Habets<br>
+Thomas Mc Kay<br>
+Thomas Munro<br>
+Tim Carey-Smith<br>
+Tim Field<br>
+Timo Stolz<br>
+Tom Lane<br>
+Tomas Vondra<br>
+Tor Erik Linnerud<br>
+Torsten Förtsch<br>
+Tristan Partin<br>
+Troy Frericks<br>
+Tushar Ahuja<br>
+Valerie Woolard<br>
+Vibhor Kumar<br>
+Victor Spirin<br>
+Victoria Shepard<br>
+Vignesh C<br>
+Vik Fearing<br>
+Vitaly Burovoy<br>
+Vitaly Davydov<br>
+Wang Wei<br>
+Wenjing Zeng<br>
+Whale Song<br>
+Will Mortensen<br>
+Wolfgang Walther<br>
+Xin Wen<br>
+Xing Guo<br>
+Xingwang Xu<br>
+XueJing Zhao<br>
+Yanliang Lei<br>
+Youmiu Mo<br>
+Yugo Nagata<br>
+Yura Sokolov<br>
+Yuta Katsuragi<br>
+Zhen Mingyang<br>
+Zheng Li<br>
+Zhihong Yu<br>
+Zhijie Hou<br>
+Zongliang Quan<br>
+Zuming Jiang</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-16-9"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">E.1. Release 16.9</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/VIII. Appendixes/E. Release Notes/release-prior"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">E.11. Prior Releases</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#e101-overview" class="table-of-contents__link toc-highlight">E.10.1. Overview</a></li><li><a href="#e102-migration-to-version-16" class="table-of-contents__link toc-highlight">E.10.2. Migration to Version 16</a></li><li><a href="#e103-changes" class="table-of-contents__link toc-highlight">E.10.3. Changes</a></li><li><a href="#e104-acknowledgments" class="table-of-contents__link toc-highlight">E.10.4. Acknowledgments</a></li><li><a href="#abhijit-menon-sen" class="table-of-contents__link toc-highlight">Abhijit Menon-Sen</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
