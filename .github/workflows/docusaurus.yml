@@ -1,0 +1,74 @@
+name: Deploy Docusaurus to gh-pages/docs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'docusaurus.config.js'
+      - 'package.json'
+      - 'yarn.lock'
+      - '.github/workflows/docusaurus.yml'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout main (там docs/*.md и конфиги)
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      # 2. Устанавливаем Node и зависимости
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      # 3. Собираем Docusaurus в build/
+      - name: Build Docusaurus
+        run: yarn build
+
+      # 4. Checkout отдельно ветки gh-pages (или создаём её, если нет)
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: 'gh-pages'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          path: './gh-pages'
+
+      # 5. Очищаем старый docs/ в gh-pages и кладём туда новый билд
+      - name: Copy build to gh-pages docs
+        run: |
+          # удаляем старый каталог docs в gh-pages
+          rm -rf ./gh-pages/docs
+
+          # создаём новый каталог docs и копируем туда build
+          mkdir ./gh-pages/docs
+          cp -r build/* ./gh-pages/docs/
+
+      # 6. Коммитим изменения в gh-pages
+      - name: Commit and push gh-pages/docs
+        run: |
+          cd ./gh-pages
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          git add docs
+
+          # если нет изменений, git commit завершится с ошибкой — это нормально
+          git commit -m "Update docs from Docusaurus build [skip ci]" || echo "No changes to commit"
+
+          git push origin gh-pages
