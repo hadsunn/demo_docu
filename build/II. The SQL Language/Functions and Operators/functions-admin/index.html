@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-II. The SQL Language/Functions and Operators/functions-admin" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">9.27. System Administration Functions | Postgres Документация</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/II. The SQL Language/Functions and Operators/functions-admin"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="9.27. System Administration Functions | Postgres Документация"><meta data-rh="true" name="description" content="Supported Versions:"><meta data-rh="true" property="og:description" content="Supported Versions:"><link data-rh="true" rel="icon" href="/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/II. The SQL Language/Functions and Operators/functions-admin"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/II. The SQL Language/Functions and Operators/functions-admin" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/II. The SQL Language/Functions and Operators/functions-admin" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Part II. The SQL Language","item":"https://your-docusaurus-site.example.com/II. The SQL Language/"},{"@type":"ListItem","position":2,"name":"Chapter 9. Functions and Operators","item":"https://your-docusaurus-site.example.com/II. The SQL Language/Functions and Operators/"},{"@type":"ListItem","position":3,"name":"9.27. System Administration Functions","item":"https://your-docusaurus-site.example.com/II. The SQL Language/Functions and Operators/functions-admin"}]}</script><link rel="stylesheet" href="/assets/css/styles.f420c6a8.css">
+<script src="/assets/js/runtime~main.6a60bab2.js" defer="defer"></script>
+<script src="/assets/js/main.bb4ee8aa.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Документация Postgresql</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/">PostgreSQL 16.9 Documentation</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/Preface/">Preface</a><button aria-label="Expand sidebar category &#x27;Preface&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/I. Tutorial/">Part I. Tutorial</a><button aria-label="Expand sidebar category &#x27;Part I. Tutorial&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/II. The SQL Language/">Part II. The SQL Language</a><button aria-label="Collapse sidebar category &#x27;Part II. The SQL Language&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/SQL Syntax/">Chapter 4. SQL Syntax</a><button aria-label="Expand sidebar category &#x27;Chapter 4. SQL Syntax&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Data Definition/">Chapter 5. Data Definition</a><button aria-label="Expand sidebar category &#x27;Chapter 5. Data Definition&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Data Manipulation/">Chapter 6. Data Manipulation</a><button aria-label="Expand sidebar category &#x27;Chapter 6. Data Manipulation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Queries/">Chapter 7. Queries</a><button aria-label="Expand sidebar category &#x27;Chapter 7. Queries&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Data Types/">Chapter 8. Data Types</a><button aria-label="Expand sidebar category &#x27;Chapter 8. Data Types&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/II. The SQL Language/Functions and Operators/">Chapter 9. Functions and Operators</a><button aria-label="Collapse sidebar category &#x27;Chapter 9. Functions and Operators&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-admin">9.27. System Administration Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-aggregate">9.21. Aggregate Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-array">9.19. Array Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-binarystring">9.5. Binary String Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-bitstring">9.6. Bit String Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-comparison">9.2. Comparison Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-comparisons">9.24. Row and Array Comparisons</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-conditional">9.18. Conditional Expressions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-datetime">9.9. Date/Time Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-enum">9.10. Enum Support Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-event-triggers">9.29. Event Trigger Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-formatting">9.8. Data Type Formatting Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-geometry">9.11. Geometric Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-info">9.26. System Information Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-json">9.16. JSON Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-logical">9.1. Logical Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-matching">9.7. Pattern Matching</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-math">9.3. Mathematical Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-net">9.12. Network Address Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-range">9.20. Range/Multirange Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-sequence">9.17. Sequence Manipulation Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-srf">9.25. Set Returning Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-statistics">9.30. Statistics Information Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-string">9.4. String Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-subquery">9.23. Subquery Expressions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-textsearch">9.13. Text Search Functions and Operators</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-trigger">9.28. Trigger Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-uuid">9.14. UUID Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-window">9.22. Window Functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Functions and Operators/functions-xml">9.15. XML Functions</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Type Conversion/">Chapter 10. Type Conversion</a><button aria-label="Expand sidebar category &#x27;Chapter 10. Type Conversion&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Indexes/">Chapter 11. Indexes</a><button aria-label="Expand sidebar category &#x27;Chapter 11. Indexes&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Full Text Search/">Chapter 12. Full Text Search</a><button aria-label="Expand sidebar category &#x27;Chapter 12. Full Text Search&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Concurrency Control/">Chapter 13. Concurrency Control</a><button aria-label="Expand sidebar category &#x27;Chapter 13. Concurrency Control&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Performance Tips/">Chapter 14. Performance Tips</a><button aria-label="Expand sidebar category &#x27;Chapter 14. Performance Tips&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Parallel Query/">Chapter 15. Parallel Query</a><button aria-label="Expand sidebar category &#x27;Chapter 15. Parallel Query&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/III. Server Administration/">Part III. Server Administration</a><button aria-label="Expand sidebar category &#x27;Part III. Server Administration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/IV. Client Interfaces/">Part IV. Client Interfaces</a><button aria-label="Expand sidebar category &#x27;Part IV. Client Interfaces&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/V. Server Programming/">Part V. Server Programming</a><button aria-label="Expand sidebar category &#x27;Part V. Server Programming&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VI. Reference/">Part VI. Reference</a><button aria-label="Expand sidebar category &#x27;Part VI. Reference&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VII. Internals/">Part VII. Internals</a><button aria-label="Expand sidebar category &#x27;Part VII. Internals&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VIII. Appendixes/">Part VIII. Appendixes</a><button aria-label="Expand sidebar category &#x27;Part VIII. Appendixes&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/biblio">Bibliography</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/bookindex">Index</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/samples/json_algoritm">samples</a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/test">test</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/II. The SQL Language/"><span>Part II. The SQL Language</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/II. The SQL Language/Functions and Operators/"><span>Chapter 9. Functions and Operators</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">9.27. System Administration Functions</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>9.27. System Administration Functions</h1></header><p>Supported Versions:
+17
+/
+16
+/
+15
+/
+14
+/
+13</p>
+<p>Development Versions:
+18
+/
+devel</p>
+<p>Unsupported versions:
+12
+/
+11
+/
+10
+/
+9.6
+/
+9.5
+/
+9.4
+/
+9.3
+/
+9.2
+/
+9.1
+/
+9.0
+/
+8.4
+/
+8.3
+/
+8.2
+/
+8.1
+/
+8.0</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>9.27. System Administration Functions</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><a title="9.26. System Information Functions and Operators" href="/II. The SQL Language/Functions and Operators/functions-info.html">Prev</a></td><td><a title="Chapter 9. Functions and Operators" href="/II. The SQL Language/Functions and Operators/functions.html">Up</a></td><td>Chapter 9. Functions and Operators</td><td><a title="PostgreSQL 16.9 Documentation" href="/II. The SQL Language/Functions and Operators/index.html">Home</a></td><td><a title="9.28. Trigger Functions" href="/II. The SQL Language/Functions and Operators/functions-trigger.html">Next</a></td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="927system-administration-functions-">9.27. System Administration Functions <a href="#FUNCTIONS-ADMIN">#</a><a href="#927system-administration-functions-" class="hash-link" aria-label="Direct link to 927system-administration-functions-" title="Direct link to 927system-administration-functions-">​</a></h2>
+<p><a href="#9271-configuration-settings-functions">9.27.1. Configuration Settings Functions</a></p>
+<p><a href="#9272-server-signaling-functions">9.27.2. Server Signaling Functions</a></p>
+<p><a href="#9273-backup-control-functions">9.27.3. Backup Control Functions</a></p>
+<p><a href="#9274-recovery-control-functions">9.27.4. Recovery Control Functions</a></p>
+<p><a href="#9275-snapshot-synchronization-functions">9.27.5. Snapshot Synchronization Functions</a></p>
+<p><a href="#9276-replication-management-functions">9.27.6. Replication Management Functions</a></p>
+<p><a href="#9277-database-object-management-functions">9.27.7. Database Object Management Functions</a></p>
+<p><a href="#9278-index-maintenance-functions">9.27.8. Index Maintenance Functions</a></p>
+<p><a href="#9279-generic-file-access-functions">9.27.9. Generic File Access Functions</a></p>
+<p><a href="#92710-advisory-lock-functions">9.27.10. Advisory Lock Functions</a></p>
+<p>The functions described in this section are used to control and monitor a PostgreSQL installation.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9271-configuration-settings-functions">9.27.1. Configuration Settings Functions<a href="#9271-configuration-settings-functions" class="hash-link" aria-label="Direct link to 9.27.1. Configuration Settings Functions" title="Direct link to 9.27.1. Configuration Settings Functions">​</a></h3>
+<p><a title="Table 9.89. Configuration Settings Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-SET-TABLE">Table 9.89</a> shows the functions available to query and alter run-time configuration parameters.</p>
+<p><strong>Table 9.89. Configuration Settings Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description  Example(s)</th></tr></thead><tbody><tr><td><code>current_setting</code> ( <em><code>setting_name</code></em> <code>text</code> [, <em><code>missing_ok</code></em> <code>boolean</code> ] ) → <code>text</code>  Returns the current value of the setting <em><code>setting_name</code></em>. If there is no such setting, <code>current_setting</code> throws an error unless <em><code>missing_ok</code></em> is supplied and is <code>true</code> (in which case NULL is returned). This function corresponds to the SQL command <a title="SHOW" href="/II. The SQL Language/Functions and Operators/sql-show.html">SHOW</a>.  <code>current_setting(&#x27;datestyle&#x27;)</code> → <code>ISO, MDY</code></td></tr><tr><td><code>set_config</code> ( <em><code>setting_name</code></em> <code>text</code>, <em><code>new_value</code></em> <code>text</code>, <em><code>is_local</code></em> <code>boolean</code> ) → <code>text</code>  Sets the parameter <em><code>setting_name</code></em> to <em><code>new_value</code></em>, and returns that value. If <em><code>is_local</code></em> is <code>true</code>, the new value will only apply during the current transaction. If you want the new value to apply for the rest of the current session, use <code>false</code> instead. This function corresponds to the SQL command <a title="SET" href="/II. The SQL Language/Functions and Operators/sql-set.html">SET</a>.  <code>set_config(&#x27;log_statement_stats&#x27;, &#x27;off&#x27;, false)</code> → <code>off</code></td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9272-server-signaling-functions">9.27.2. Server Signaling Functions<a href="#9272-server-signaling-functions" class="hash-link" aria-label="Direct link to 9.27.2. Server Signaling Functions" title="Direct link to 9.27.2. Server Signaling Functions">​</a></h3>
+<p>The functions shown in <a title="Table 9.90. Server Signaling Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-SIGNAL-TABLE">Table 9.90</a> send control signals to other server processes. Use of these functions is restricted to superusers by default but access may be granted to others using <code>GRANT</code>, with noted exceptions.</p>
+<p>Each of these functions returns <code>true</code> if the signal was successfully sent and <code>false</code> if sending the signal failed.</p>
+<p><strong>Table 9.90. Server Signaling Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_cancel_backend</code> ( <em><code>pid</code></em> <code>integer</code> ) → <code>boolean</code>  Cancels the current query of the session whose backend process has the specified process ID. This is also allowed if the calling role is a member of the role whose backend is being canceled or the calling role has privileges of <code>pg_signal_backend</code>, however only superusers can cancel superuser backends.</td></tr><tr><td><code>pg_log_backend_memory_contexts</code> ( <em><code>pid</code></em> <code>integer</code> ) → <code>boolean</code>  Requests to log the memory contexts of the backend with the specified process ID. This function can send the request to backends and auxiliary processes except logger. These memory contexts will be logged at <code>LOG</code> message level. They will appear in the server log based on the log configuration set (see <a title="20.8. Error Reporting and Logging" href="/II. The SQL Language/Functions and Operators/runtime-config-logging.html">Section 20.8</a> for more information), but will not be sent to the client regardless of <a href="/II. The SQL Language/Functions and Operators/runtime-config-client.html#GUC-CLIENT-MIN-MESSAGES">client_min_messages</a>.</td></tr><tr><td><code>pg_reload_conf</code> () → <code>boolean</code>  Causes all processes of the PostgreSQL server to reload their configuration files. (This is initiated by sending a SIGHUP signal to the postmaster process, which in turn sends SIGHUP to each of its children.) You can use the <a title="54.7. pg_file_settings" href="/II. The SQL Language/Functions and Operators/view-pg-file-settings.html"><code>pg_file_settings</code></a>, <a title="54.9. pg_hba_file_rules" href="/II. The SQL Language/Functions and Operators/view-pg-hba-file-rules.html"><code>pg_hba_file_rules</code></a> and <a title="54.10. pg_ident_file_mappings" href="/II. The SQL Language/Functions and Operators/view-pg-ident-file-mappings.html"><code>pg_ident_file_mappings</code></a> views to check the configuration files for possible errors, before reloading.</td></tr><tr><td><code>pg_rotate_logfile</code> () → <code>boolean</code>  Signals the log-file manager to switch to a new output file immediately. This works only when the built-in log collector is running, since otherwise there is no log-file manager subprocess.</td></tr><tr><td><code>pg_terminate_backend</code> ( <em><code>pid</code></em> <code>integer</code>, <em><code>timeout</code></em> <code>bigint</code> <code>DEFAULT</code> <code>0</code> ) → <code>boolean</code>  Terminates the session whose backend process has the specified process ID. This is also allowed if the calling role is a member of the role whose backend is being terminated or the calling role has privileges of <code>pg_signal_backend</code>, however only superusers can terminate superuser backends.  If <em><code>timeout</code></em> is not specified or zero, this function returns <code>true</code> whether the process actually terminates or not, indicating only that the sending of the signal was successful. If the <em><code>timeout</code></em> is specified (in milliseconds) and greater than zero, the function waits until the process is actually terminated or until the given time has passed. If the process is terminated, the function returns <code>true</code>. On timeout, a warning is emitted and <code>false</code> is returned.</td></tr></tbody></table>
+<p><code>pg_cancel_backend</code> and <code>pg_terminate_backend</code> send signals (SIGINT or SIGTERM respectively) to backend processes identified by process ID. The process ID of an active backend can be found from the <code>pid</code> column of the <code>pg_stat_activity</code> view, or by listing the <code>postgres</code> processes on the server (using ps on Unix or the Task Manager on Windows). The role of an active backend can be found from the <code>usename</code> column of the <code>pg_stat_activity</code> view.</p>
+<p><code>pg_log_backend_memory_contexts</code> can be used to log the memory contexts of a backend process. For example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">postgres=# SELECT pg_log_backend_memory_contexts(pg_backend_pid());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> pg_log_backend_memory_contexts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">--------------------------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> t</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">(1 row)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>One message for each memory context will be logged. For example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  logging memory contexts of PID 10377</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">STATEMENT:  SELECT pg_log_backend_memory_contexts(pg_backend_pid());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 0; TopMemoryContext: 80800 total in 6 blocks; 14432 free (5 chunks); 66368 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 1; pgstat TabStatusArray lookup hash table: 8192 total in 1 blocks; 1408 free (0 chunks); 6784 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 1; TopTransactionContext: 8192 total in 1 blocks; 7720 free (1 chunks); 472 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 1; RowDescriptionContext: 8192 total in 1 blocks; 6880 free (0 chunks); 1312 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 1; MessageContext: 16384 total in 2 blocks; 5152 free (0 chunks); 11232 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 1; Operator class cache: 8192 total in 1 blocks; 512 free (0 chunks); 7680 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 1; smgr relation table: 16384 total in 2 blocks; 4544 free (3 chunks); 11840 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 1; TransactionAbortContext: 32768 total in 1 blocks; 32504 free (0 chunks); 264 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  level: 1; ErrorContext: 8192 total in 1 blocks; 7928 free (3 chunks); 264 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LOG:  Grand total: 1651920 bytes in 201 blocks; 622360 free (88 chunks); 1029560 used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>If there are more than 100 child contexts under the same parent, the first 100 child contexts are logged, along with a summary of the remaining contexts. Note that frequent calls to this function could incur significant overhead, because it may generate a large number of log messages.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9273-backup-control-functions">9.27.3. Backup Control Functions<a href="#9273-backup-control-functions" class="hash-link" aria-label="Direct link to 9.27.3. Backup Control Functions" title="Direct link to 9.27.3. Backup Control Functions">​</a></h3>
+<p>The functions shown in <a title="Table 9.91. Backup Control Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-BACKUP-TABLE">Table 9.91</a> assist in making on-line backups. These functions cannot be executed during recovery (except <code>pg_backup_start</code>, <code>pg_backup_stop</code>, and <code>pg_wal_lsn_diff</code>).</p>
+<p>For details about proper usage of these functions, see <a title="26.3. Continuous Archiving and Point-in-Time Recovery (PITR)" href="/II. The SQL Language/Functions and Operators/continuous-archiving.html">Section 26.3</a>.</p>
+<p><strong>Table 9.91. Backup Control Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_create_restore_point</code> ( <em><code>name</code></em> <code>text</code> ) → <code>pg_lsn</code>  Creates a named marker record in the write-ahead log that can later be used as a recovery target, and returns the corresponding write-ahead log location. The given name can then be used with <a href="/II. The SQL Language/Functions and Operators/runtime-config-wal.html#GUC-RECOVERY-TARGET-NAME">recovery_target_name</a> to specify the point up to which recovery will proceed. Avoid creating multiple restore points with the same name, since recovery will stop at the first one whose name matches the recovery target.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_current_wal_flush_lsn</code> () → <code>pg_lsn</code>  Returns the current write-ahead log flush location (see notes below).</td></tr><tr><td><code>pg_current_wal_insert_lsn</code> () → <code>pg_lsn</code>  Returns the current write-ahead log insert location (see notes below).</td></tr><tr><td><code>pg_current_wal_lsn</code> () → <code>pg_lsn</code>  Returns the current write-ahead log write location (see notes below).</td></tr><tr><td><code>pg_backup_start</code> ( <em><code>label</code></em> <code>text</code> [, <em><code>fast</code></em> <code>boolean</code> ] ) → <code>pg_lsn</code>  Prepares the server to begin an on-line backup. The only required parameter is an arbitrary user-defined label for the backup. (Typically this would be the name under which the backup dump file will be stored.) If the optional second parameter is given as <code>true</code>, it specifies executing <code>pg_backup_start</code> as quickly as possible. This forces an immediate checkpoint which will cause a spike in I/O operations, slowing any concurrently executing queries.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_backup_stop</code> ( [<em><code>wait_for_archive</code></em> <code>boolean</code> ] ) → <code>record</code> ( <em><code>lsn</code></em> <code>pg_lsn</code>, <em><code>labelfile</code></em> <code>text</code>, <em><code>spcmapfile</code></em> <code>text</code> )  Finishes performing an on-line backup. The desired contents of the backup label file and the tablespace map file are returned as part of the result of the function and must be written to files in the backup area. These files must not be written to the live data directory (doing so will cause PostgreSQL to fail to restart in the event of a crash).  There is an optional parameter of type <code>boolean</code>. If false, the function will return immediately after the backup is completed, without waiting for WAL to be archived. This behavior is only useful with backup software that independently monitors WAL archiving. Otherwise, WAL required to make the backup consistent might be missing and make the backup useless. By default or when this parameter is true, <code>pg_backup_stop</code> will wait for WAL to be archived when archiving is enabled. (On a standby, this means that it will wait only when <code>archive_mode</code> = <code>always</code>. If write activity on the primary is low, it may be useful to run <code>pg_switch_wal</code> on the primary in order to trigger an immediate segment switch.)  When executed on a primary, this function also creates a backup history file in the write-ahead log archive area. The history file includes the label given to <code>pg_backup_start</code>, the starting and ending write-ahead log locations for the backup, and the starting and ending times of the backup. After recording the ending location, the current write-ahead log insertion point is automatically advanced to the next write-ahead log file, so that the ending write-ahead log file can be archived immediately to complete the backup.  The result of the function is a single record. The <em><code>lsn</code></em> column holds the backup&#x27;s ending write-ahead log location (which again can be ignored). The second column returns the contents of the backup label file, and the third column returns the contents of the tablespace map file. These must be stored as part of the backup and are required as part of the restore process.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_switch_wal</code> () → <code>pg_lsn</code>  Forces the server to switch to a new write-ahead log file, which allows the current file to be archived (assuming you are using continuous archiving). The result is the ending write-ahead log location plus 1 within the just-completed write-ahead log file. If there has been no write-ahead log activity since the last write-ahead log switch, <code>pg_switch_wal</code> does nothing and returns the start location of the write-ahead log file currently in use.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_walfile_name</code> ( <em><code>lsn</code></em> <code>pg_lsn</code> ) → <code>text</code>  Converts a write-ahead log location to the name of the WAL file holding that location.</td></tr><tr><td><code>pg_walfile_name_offset</code> ( <em><code>lsn</code></em> <code>pg_lsn</code> ) → <code>record</code> ( <em><code>file_name</code></em> <code>text</code>, <em><code>file_offset</code></em> <code>integer</code> )  Converts a write-ahead log location to a WAL file name and byte offset within that file.</td></tr><tr><td><code>pg_split_walfile_name</code> ( <em><code>file_name</code></em> <code>text</code> ) → <code>record</code> ( <em><code>segment_number</code></em> <code>numeric</code>, <em><code>timeline_id</code></em> <code>bigint</code> )  Extracts the sequence number and timeline ID from a WAL file name.</td></tr><tr><td><code>pg_wal_lsn_diff</code> ( <em><code>lsn1</code></em> <code>pg_lsn</code>, <em><code>lsn2</code></em> <code>pg_lsn</code> ) → <code>numeric</code>  Calculates the difference in bytes (<em><code>lsn1</code></em> - <em><code>lsn2</code></em>) between two write-ahead log locations. This can be used with <code>pg_stat_replication</code> or some of the functions shown in <a title="Table 9.91. Backup Control Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-BACKUP-TABLE">Table 9.91</a> to get the replication lag.</td></tr></tbody></table>
+<p><code>pg_current_wal_lsn</code> displays the current write-ahead log write location in the same format used by the above functions. Similarly, <code>pg_current_wal_insert_lsn</code> displays the current write-ahead log insertion location and <code>pg_current_wal_flush_lsn</code> displays the current write-ahead log flush location. The insertion location is the “logical” end of the write-ahead log at any instant, while the write location is the end of what has actually been written out from the server&#x27;s internal buffers, and the flush location is the last location known to be written to durable storage. The write location is the end of what can be examined from outside the server, and is usually what you want if you are interested in archiving partially-complete write-ahead log files. The insertion and flush locations are made available primarily for server debugging purposes. These are all read-only operations and do not require superuser permissions.</p>
+<p>You can use <code>pg_walfile_name_offset</code> to extract the corresponding write-ahead log file name and byte offset from a <code>pg_lsn</code> value. For example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">postgres=# SELECT * FROM pg_walfile_name_offset((pg_backup_stop()).lsn);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        file_name         | file_offset</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">--------------------------+-------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> 00000001000000000000000D |     4039624</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">(1 row)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>Similarly, <code>pg_walfile_name</code> extracts just the write-ahead log file name. When the given write-ahead log location is exactly at a write-ahead log file boundary, both these functions return the name of the preceding write-ahead log file. This is usually the desired behavior for managing write-ahead log archiving behavior, since the preceding file is the last one that currently needs to be archived.</p>
+<p><code>pg_split_walfile_name</code> is useful to compute a LSN from a file offset and WAL file name, for example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">postgres=# \set file_name &#x27;000000010000000100C000AB&#x27;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">postgres=# \set offset 256</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">postgres=# SELECT &#x27;0/0&#x27;::pg_lsn + pd.segment_number * ps.setting::int + :offset AS lsn</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  FROM pg_split_walfile_name(:&#x27;file_name&#x27;) pd,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       pg_show_all_settings() ps</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  WHERE ps.name = &#x27;wal_segment_size&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      lsn</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">---------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> C001/AB000100</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">(1 row)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9274-recovery-control-functions">9.27.4. Recovery Control Functions<a href="#9274-recovery-control-functions" class="hash-link" aria-label="Direct link to 9.27.4. Recovery Control Functions" title="Direct link to 9.27.4. Recovery Control Functions">​</a></h3>
+<p>The functions shown in <a title="Table 9.92. Recovery Information Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-RECOVERY-INFO-TABLE">Table 9.92</a> provide information about the current status of a standby server. These functions may be executed both during recovery and in normal running.</p>
+<p><strong>Table 9.92. Recovery Information Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_is_in_recovery</code> () → <code>boolean</code>  Returns true if recovery is still in progress.</td></tr><tr><td><code>pg_last_wal_receive_lsn</code> () → <code>pg_lsn</code>  Returns the last write-ahead log location that has been received and synced to disk by streaming replication. While streaming replication is in progress this will increase monotonically. If recovery has completed then this will remain static at the location of the last WAL record received and synced to disk during recovery. If streaming replication is disabled, or if it has not yet started, the function returns <code>NULL</code>.</td></tr><tr><td><code>pg_last_wal_replay_lsn</code> () → <code>pg_lsn</code>  Returns the last write-ahead log location that has been replayed during recovery. If recovery is still in progress this will increase monotonically. If recovery has completed then this will remain static at the location of the last WAL record applied during recovery. When the server has been started normally without recovery, the function returns <code>NULL</code>.</td></tr><tr><td><code>pg_last_xact_replay_timestamp</code> () → <code>timestamp with time zone</code>  Returns the time stamp of the last transaction replayed during recovery. This is the time at which the commit or abort WAL record for that transaction was generated on the primary. If no transactions have been replayed during recovery, the function returns <code>NULL</code>. Otherwise, if recovery is still in progress this will increase monotonically. If recovery has completed then this will remain static at the time of the last transaction applied during recovery. When the server has been started normally without recovery, the function returns <code>NULL</code>.</td></tr><tr><td><code>pg_get_wal_resource_managers</code> () → <code>setof record</code> ( <em><code>rm_id</code></em> <code>integer</code>, <em><code>rm_name</code></em> <code>text</code>, <em><code>rm_builtin</code></em> <code>boolean</code> )  Returns the currently-loaded WAL resource managers in the system. The column <em><code>rm_builtin</code></em> indicates whether it&#x27;s a built-in resource manager, or a custom resource manager loaded by an extension.</td></tr></tbody></table>
+<p>The functions shown in <a title="Table 9.93. Recovery Control Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-RECOVERY-CONTROL-TABLE">Table 9.93</a> control the progress of recovery. These functions may be executed only during recovery.</p>
+<p><strong>Table 9.93. Recovery Control Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_is_wal_replay_paused</code> () → <code>boolean</code>  Returns true if recovery pause is requested.</td></tr><tr><td><code>pg_get_wal_replay_pause_state</code> () → <code>text</code>  Returns recovery pause state. The return values are <code>not paused</code> if pause is not requested, <code>pause requested</code> if pause is requested but recovery is not yet paused, and <code>paused</code> if the recovery is actually paused.</td></tr><tr><td><code>pg_promote</code> ( <em><code>wait</code></em> <code>boolean</code> <code>DEFAULT</code> <code>true</code>, <em><code>wait_seconds</code></em> <code>integer</code> <code>DEFAULT</code> <code>60</code> ) → <code>boolean</code>  Promotes a standby server to primary status. With <em><code>wait</code></em> set to <code>true</code> (the default), the function waits until promotion is completed or <em><code>wait_seconds</code></em> seconds have passed, and returns <code>true</code> if promotion is successful and <code>false</code> otherwise. If <em><code>wait</code></em> is set to <code>false</code>, the function returns <code>true</code> immediately after sending a <code>SIGUSR1</code> signal to the postmaster to trigger promotion.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_wal_replay_pause</code> () → <code>void</code>  Request to pause recovery. A request doesn&#x27;t mean that recovery stops right away. If you want a guarantee that recovery is actually paused, you need to check for the recovery pause state returned by <code>pg_get_wal_replay_pause_state()</code>. Note that <code>pg_is_wal_replay_paused()</code> returns whether a request is made. While recovery is paused, no further database changes are applied. If hot standby is active, all new queries will see the same consistent snapshot of the database, and no further query conflicts will be generated until recovery is resumed.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_wal_replay_resume</code> () → <code>void</code>  Restarts recovery if it was paused.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr></tbody></table>
+<p><code>pg_wal_replay_pause</code> and <code>pg_wal_replay_resume</code> cannot be executed while a promotion is ongoing. If a promotion is triggered while recovery is paused, the paused state ends and promotion continues.</p>
+<p>If streaming replication is disabled, the paused state may continue indefinitely without a problem. If streaming replication is in progress then WAL records will continue to be received, which will eventually fill available disk space, depending upon the duration of the pause, the rate of WAL generation and available disk space.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9275-snapshot-synchronization-functions">9.27.5. Snapshot Synchronization Functions<a href="#9275-snapshot-synchronization-functions" class="hash-link" aria-label="Direct link to 9.27.5. Snapshot Synchronization Functions" title="Direct link to 9.27.5. Snapshot Synchronization Functions">​</a></h3>
+<p>PostgreSQL allows database sessions to synchronize their snapshots. A <em>snapshot</em> determines which data is visible to the transaction that is using the snapshot. Synchronized snapshots are necessary when two or more sessions need to see identical content in the database. If two sessions just start their transactions independently, there is always a possibility that some third transaction commits between the executions of the two <code>START TRANSACTION</code> commands, so that one session sees the effects of that transaction and the other does not.</p>
+<p>To solve this problem, PostgreSQL allows a transaction to <em>export</em> the snapshot it is using. As long as the exporting transaction remains open, other transactions can <em>import</em> its snapshot, and thereby be guaranteed that they see exactly the same view of the database that the first transaction sees. But note that any database changes made by any one of these transactions remain invisible to the other transactions, as is usual for changes made by uncommitted transactions. So the transactions are synchronized with respect to pre-existing data, but act normally for changes they make themselves.</p>
+<p>Snapshots are exported with the <code>pg_export_snapshot</code> function, shown in <a title="Table 9.94. Snapshot Synchronization Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION-TABLE">Table 9.94</a>, and imported with the <a title="SET TRANSACTION" href="/II. The SQL Language/Functions and Operators/sql-set-transaction.html">SET TRANSACTION</a> command.</p>
+<p><strong>Table 9.94. Snapshot Synchronization Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_export_snapshot</code> () → <code>text</code>  Saves the transaction&#x27;s current snapshot and returns a <code>text</code> string identifying the snapshot. This string must be passed (outside the database) to clients that want to import the snapshot. The snapshot is available for import only until the end of the transaction that exported it.  A transaction can export more than one snapshot, if needed. Note that doing so is only useful in <code>READ COMMITTED</code> transactions, since in <code>REPEATABLE READ</code> and higher isolation levels, transactions use the same snapshot throughout their lifetime. Once a transaction has exported any snapshots, it cannot be prepared with <a title="PREPARE TRANSACTION" href="/II. The SQL Language/Functions and Operators/sql-prepare-transaction.html">PREPARE TRANSACTION</a>.</td></tr><tr><td><code>pg_log_standby_snapshot</code> () → <code>pg_lsn</code>  Take a snapshot of running transactions and write it to WAL, without having to wait for bgwriter or checkpointer to log one. This is useful for logical decoding on standby, as logical slot creation has to wait until such a record is replayed on the standby.</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9276-replication-management-functions">9.27.6. Replication Management Functions<a href="#9276-replication-management-functions" class="hash-link" aria-label="Direct link to 9.27.6. Replication Management Functions" title="Direct link to 9.27.6. Replication Management Functions">​</a></h3>
+<p>The functions shown in <a title="Table 9.95. Replication Management Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-REPLICATION-TABLE">Table 9.95</a> are for controlling and interacting with replication features. See <a title="27.2.5. Streaming Replication" href="/II. The SQL Language/Functions and Operators/warm-standby.html#STREAMING-REPLICATION">Section 27.2.5</a>, <a title="27.2.6. Replication Slots" href="/II. The SQL Language/Functions and Operators/warm-standby.html#STREAMING-REPLICATION-SLOTS">Section 27.2.6</a>, and <a title="Chapter 50. Replication Progress Tracking" href="/II. The SQL Language/Functions and Operators/replication-origins.html">Chapter 50</a> for information about the underlying features. Use of functions for replication origin is only allowed to the superuser by default, but may be allowed to other users by using the <code>GRANT</code> command. Use of functions for replication slots is restricted to superusers and users having <code>REPLICATION</code> privilege.</p>
+<p>Many of these functions have equivalent commands in the replication protocol; see <a title="55.4. Streaming Replication Protocol" href="/II. The SQL Language/Functions and Operators/protocol-replication.html">Section 55.4</a>.</p>
+<p>The functions described in <a title="9.27.3. Backup Control Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-BACKUP">Section 9.27.3</a>, <a title="9.27.4. Recovery Control Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-RECOVERY-CONTROL">Section 9.27.4</a>, and <a title="9.27.5. Snapshot Synchronization Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-SNAPSHOT-SYNCHRONIZATION">Section 9.27.5</a> are also relevant for replication.</p>
+<p><strong>Table 9.95. Replication Management Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_create_physical_replication_slot</code> ( <em><code>slot_name</code></em> <code>name</code> [, <em><code>immediately_reserve</code></em> <code>boolean</code>, <em><code>temporary</code></em> <code>boolean</code> ] ) → <code>record</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>lsn</code></em> <code>pg_lsn</code> )  Creates a new physical replication slot named <em><code>slot_name</code></em>. The optional second parameter, when <code>true</code>, specifies that the LSN for this replication slot be reserved immediately; otherwise the LSN is reserved on first connection from a streaming replication client. Streaming changes from a physical slot is only possible with the streaming-replication protocol — see <a title="55.4. Streaming Replication Protocol" href="/II. The SQL Language/Functions and Operators/protocol-replication.html">Section 55.4</a>. The optional third parameter, <em><code>temporary</code></em>, when set to true, specifies that the slot should not be permanently stored to disk and is only meant for use by the current session. Temporary slots are also released upon any error. This function corresponds to the replication protocol command <code>CREATE_REPLICATION_SLOT ... PHYSICAL</code>.</td></tr><tr><td><code>pg_drop_replication_slot</code> ( <em><code>slot_name</code></em> <code>name</code> ) → <code>void</code>  Drops the physical or logical replication slot named <em><code>slot_name</code></em>. Same as replication protocol command <code>DROP_REPLICATION_SLOT</code>.</td></tr><tr><td><code>pg_create_logical_replication_slot</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>plugin</code></em> <code>name</code> [, <em><code>temporary</code></em> <code>boolean</code>, <em><code>twophase</code></em> <code>boolean</code> ] ) → <code>record</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>lsn</code></em> <code>pg_lsn</code> )  Creates a new logical (decoding) replication slot named <em><code>slot_name</code></em> using the output plugin <em><code>plugin</code></em>. The optional third parameter, <em><code>temporary</code></em>, when set to true, specifies that the slot should not be permanently stored to disk and is only meant for use by the current session. Temporary slots are also released upon any error. The optional fourth parameter, <em><code>twophase</code></em>, when set to true, specifies that the decoding of prepared transactions is enabled for this slot. A call to this function has the same effect as the replication protocol command <code>CREATE_REPLICATION_SLOT ... LOGICAL</code>.</td></tr><tr><td><code>pg_copy_physical_replication_slot</code> ( <em><code>src_slot_name</code></em> <code>name</code>, <em><code>dst_slot_name</code></em> <code>name</code> [, <em><code>temporary</code></em> <code>boolean</code> ] ) → <code>record</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>lsn</code></em> <code>pg_lsn</code> )  Copies an existing physical replication slot named <em><code>src_slot_name</code></em> to a physical replication slot named <em><code>dst_slot_name</code></em>. The copied physical slot starts to reserve WAL from the same LSN as the source slot. <em><code>temporary</code></em> is optional. If <em><code>temporary</code></em> is omitted, the same value as the source slot is used. Copy of an invalidated slot is not allowed.</td></tr><tr><td><code>pg_copy_logical_replication_slot</code> ( <em><code>src_slot_name</code></em> <code>name</code>, <em><code>dst_slot_name</code></em> <code>name</code> [, <em><code>temporary</code></em> <code>boolean</code> [, <em><code>plugin</code></em> <code>name</code> ]] ) → <code>record</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>lsn</code></em> <code>pg_lsn</code> )  Copies an existing logical replication slot named <em><code>src_slot_name</code></em> to a logical replication slot named <em><code>dst_slot_name</code></em>, optionally changing the output plugin and persistence. The copied logical slot starts from the same LSN as the source logical slot. Both <em><code>temporary</code></em> and <em><code>plugin</code></em> are optional; if they are omitted, the values of the source slot are used. Copy of an invalidated slot is not allowed.</td></tr><tr><td><code>pg_logical_slot_get_changes</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>upto_lsn</code></em> <code>pg_lsn</code>, <em><code>upto_nchanges</code></em> <code>integer</code>, <code>VARIADIC</code> <em><code>options</code></em> <code>text[]</code> ) → <code>setof record</code> ( <em><code>lsn</code></em> <code>pg_lsn</code>, <em><code>xid</code></em> <code>xid</code>, <em><code>data</code></em> <code>text</code> )  Returns changes in the slot <em><code>slot_name</code></em>, starting from the point from which changes have been consumed last. If <em><code>upto_lsn</code></em> and <em><code>upto_nchanges</code></em> are NULL, logical decoding will continue until end of WAL. If <em><code>upto_lsn</code></em> is non-NULL, decoding will include only those transactions which commit prior to the specified LSN. If <em><code>upto_nchanges</code></em> is non-NULL, decoding will stop when the number of rows produced by decoding exceeds the specified value. Note, however, that the actual number of rows returned may be larger, since this limit is only checked after adding the rows produced when decoding each new transaction commit.</td></tr><tr><td><code>pg_logical_slot_peek_changes</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>upto_lsn</code></em> <code>pg_lsn</code>, <em><code>upto_nchanges</code></em> <code>integer</code>, <code>VARIADIC</code> <em><code>options</code></em> <code>text[]</code> ) → <code>setof record</code> ( <em><code>lsn</code></em> <code>pg_lsn</code>, <em><code>xid</code></em> <code>xid</code>, <em><code>data</code></em> <code>text</code> )  Behaves just like the <code>pg_logical_slot_get_changes()</code> function, except that changes are not consumed; that is, they will be returned again on future calls.</td></tr><tr><td><code>pg_logical_slot_get_binary_changes</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>upto_lsn</code></em> <code>pg_lsn</code>, <em><code>upto_nchanges</code></em> <code>integer</code>, <code>VARIADIC</code> <em><code>options</code></em> <code>text[]</code> ) → <code>setof record</code> ( <em><code>lsn</code></em> <code>pg_lsn</code>, <em><code>xid</code></em> <code>xid</code>, <em><code>data</code></em> <code>bytea</code> )  Behaves just like the <code>pg_logical_slot_get_changes()</code> function, except that changes are returned as <code>bytea</code>.</td></tr><tr><td><code>pg_logical_slot_peek_binary_changes</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>upto_lsn</code></em> <code>pg_lsn</code>, <em><code>upto_nchanges</code></em> <code>integer</code>, <code>VARIADIC</code> <em><code>options</code></em> <code>text[]</code> ) → <code>setof record</code> ( <em><code>lsn</code></em> <code>pg_lsn</code>, <em><code>xid</code></em> <code>xid</code>, <em><code>data</code></em> <code>bytea</code> )  Behaves just like the <code>pg_logical_slot_peek_changes()</code> function, except that changes are returned as <code>bytea</code>.</td></tr><tr><td><code>pg_replication_slot_advance</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>upto_lsn</code></em> <code>pg_lsn</code> ) → <code>record</code> ( <em><code>slot_name</code></em> <code>name</code>, <em><code>end_lsn</code></em> <code>pg_lsn</code> )  Advances the current confirmed position of a replication slot named <em><code>slot_name</code></em>. The slot will not be moved backwards, and it will not be moved beyond the current insert location. Returns the name of the slot and the actual position that it was advanced to. The updated slot position information is written out at the next checkpoint if any advancing is done. So in the event of a crash, the slot may return to an earlier position.</td></tr><tr><td><code>pg_replication_origin_create</code> ( <em><code>node_name</code></em> <code>text</code> ) → <code>oid</code>  Creates a replication origin with the given external name, and returns the internal ID assigned to it.</td></tr><tr><td><code>pg_replication_origin_drop</code> ( <em><code>node_name</code></em> <code>text</code> ) → <code>void</code>  Deletes a previously-created replication origin, including any associated replay progress.</td></tr><tr><td><code>pg_replication_origin_oid</code> ( <em><code>node_name</code></em> <code>text</code> ) → <code>oid</code>  Looks up a replication origin by name and returns the internal ID. If no such replication origin is found, <code>NULL</code> is returned.</td></tr><tr><td><code>pg_replication_origin_session_setup</code> ( <em><code>node_name</code></em> <code>text</code> ) → <code>void</code>  Marks the current session as replaying from the given origin, allowing replay progress to be tracked. Can only be used if no origin is currently selected. Use <code>pg_replication_origin_session_reset</code> to undo.</td></tr><tr><td><code>pg_replication_origin_session_reset</code> () → <code>void</code>  Cancels the effects of <code>pg_replication_origin_session_setup()</code>.</td></tr><tr><td><code>pg_replication_origin_session_is_setup</code> () → <code>boolean</code>  Returns true if a replication origin has been selected in the current session.</td></tr><tr><td><code>pg_replication_origin_session_progress</code> ( <em><code>flush</code></em> <code>boolean</code> ) → <code>pg_lsn</code>  Returns the replay location for the replication origin selected in the current session. The parameter <em><code>flush</code></em> determines whether the corresponding local transaction will be guaranteed to have been flushed to disk or not.</td></tr><tr><td><code>pg_replication_origin_xact_setup</code> ( <em><code>origin_lsn</code></em> <code>pg_lsn</code>, <em><code>origin_timestamp</code></em> <code>timestamp with time zone</code> ) → <code>void</code>  Marks the current transaction as replaying a transaction that has committed at the given LSN and timestamp. Can only be called when a replication origin has been selected using <code>pg_replication_origin_session_setup</code>.</td></tr><tr><td><code>pg_replication_origin_xact_reset</code> () → <code>void</code>  Cancels the effects of <code>pg_replication_origin_xact_setup()</code>.</td></tr><tr><td><code>pg_replication_origin_advance</code> ( <em><code>node_name</code></em> <code>text</code>, <em><code>lsn</code></em> <code>pg_lsn</code> ) → <code>void</code>  Sets replication progress for the given node to the given location. This is primarily useful for setting up the initial location, or setting a new location after configuration changes and similar. Be aware that careless use of this function can lead to inconsistently replicated data.</td></tr><tr><td><code>pg_replication_origin_progress</code> ( <em><code>node_name</code></em> <code>text</code>, <em><code>flush</code></em> <code>boolean</code> ) → <code>pg_lsn</code>  Returns the replay location for the given replication origin. The parameter <em><code>flush</code></em> determines whether the corresponding local transaction will be guaranteed to have been flushed to disk or not.</td></tr><tr><td><code>pg_logical_emit_message</code> ( <em><code>transactional</code></em> <code>boolean</code>, <em><code>prefix</code></em> <code>text</code>, <em><code>content</code></em> <code>text</code> ) → <code>pg_lsn</code>  <code>pg_logical_emit_message</code> ( <em><code>transactional</code></em> <code>boolean</code>, <em><code>prefix</code></em> <code>text</code>, <em><code>content</code></em> <code>bytea</code> ) → <code>pg_lsn</code>  Emits a logical decoding message. This can be used to pass generic messages to logical decoding plugins through WAL. The <em><code>transactional</code></em> parameter specifies if the message should be part of the current transaction, or if it should be written immediately and decoded as soon as the logical decoder reads the record. The <em><code>prefix</code></em> parameter is a textual prefix that can be used by logical decoding plugins to easily recognize messages that are interesting for them. The <em><code>content</code></em> parameter is the content of the message, given either in text or binary form.</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9277-database-object-management-functions">9.27.7. Database Object Management Functions<a href="#9277-database-object-management-functions" class="hash-link" aria-label="Direct link to 9.27.7. Database Object Management Functions" title="Direct link to 9.27.7. Database Object Management Functions">​</a></h3>
+<p>The functions shown in <a title="Table 9.96. Database Object Size Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-DBSIZE">Table 9.96</a> calculate the disk space usage of database objects, or assist in presentation or understanding of usage results. <code>bigint</code> results are measured in bytes. If an OID that does not represent an existing object is passed to one of these functions, <code>NULL</code> is returned.</p>
+<p><strong>Table 9.96. Database Object Size Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_column_size</code> ( <code>&quot;any&quot;</code> ) → <code>integer</code>  Shows the number of bytes used to store any individual data value. If applied directly to a table column value, this reflects any compression that was done.</td></tr><tr><td><code>pg_column_compression</code> ( <code>&quot;any&quot;</code> ) → <code>text</code>  Shows the compression algorithm that was used to compress an individual variable-length value. Returns <code>NULL</code> if the value is not compressed.</td></tr><tr><td><code>pg_database_size</code> ( <code>name</code> ) → <code>bigint</code>  <code>pg_database_size</code> ( <code>oid</code> ) → <code>bigint</code>  Computes the total disk space used by the database with the specified name or OID. To use this function, you must have <code>CONNECT</code> privilege on the specified database (which is granted by default) or have privileges of the <code>pg_read_all_stats</code> role.</td></tr><tr><td><code>pg_indexes_size</code> ( <code>regclass</code> ) → <code>bigint</code>  Computes the total disk space used by indexes attached to the specified table.</td></tr><tr><td><code>pg_relation_size</code> ( <em><code>relation</code></em> <code>regclass</code> [, <em><code>fork</code></em> <code>text</code> ] ) → <code>bigint</code>  Computes the disk space used by one “fork” of the specified relation. (Note that for most purposes it is more convenient to use the higher-level functions <code>pg_total_relation_size</code> or <code>pg_table_size</code>, which sum the sizes of all forks.) With one argument, this returns the size of the main data fork of the relation. The second argument can be provided to specify which fork to examine:  * <code>main</code> returns the size of the main data fork of the relation. * <code>fsm</code> returns the size of the Free Space Map (see <a title="73.3. Free Space Map" href="/II. The SQL Language/Functions and Operators/storage-fsm.html">Section 73.3</a>) associated with the relation. * <code>vm</code> returns the size of the Visibility Map (see <a title="73.4. Visibility Map" href="/II. The SQL Language/Functions and Operators/storage-vm.html">Section 73.4</a>) associated with the relation. * <code>init</code> returns the size of the initialization fork, if any, associated with the relation.</td></tr><tr><td><code>pg_size_bytes</code> ( <code>text</code> ) → <code>bigint</code>  Converts a size in human-readable format (as returned by <code>pg_size_pretty</code>) into bytes. Valid units are <code>bytes</code>, <code>B</code>, <code>kB</code>, <code>MB</code>, <code>GB</code>, <code>TB</code>, and <code>PB</code>.</td></tr><tr><td><code>pg_size_pretty</code> ( <code>bigint</code> ) → <code>text</code>  <code>pg_size_pretty</code> ( <code>numeric</code> ) → <code>text</code>  Converts a size in bytes into a more easily human-readable format with size units (bytes, kB, MB, GB, TB, or PB as appropriate). Note that the units are powers of 2 rather than powers of 10, so 1kB is 1024 bytes, 1MB is 10242 = 1048576 bytes, and so on.</td></tr><tr><td><code>pg_table_size</code> ( <code>regclass</code> ) → <code>bigint</code>  Computes the disk space used by the specified table, excluding indexes (but including its TOAST table if any, free space map, and visibility map).</td></tr><tr><td><code>pg_tablespace_size</code> ( <code>name</code> ) → <code>bigint</code>  <code>pg_tablespace_size</code> ( <code>oid</code> ) → <code>bigint</code>  Computes the total disk space used in the tablespace with the specified name or OID. To use this function, you must have <code>CREATE</code> privilege on the specified tablespace or have privileges of the <code>pg_read_all_stats</code> role, unless it is the default tablespace for the current database.</td></tr><tr><td><code>pg_total_relation_size</code> ( <code>regclass</code> ) → <code>bigint</code>  Computes the total disk space used by the specified table, including all indexes and TOAST data. The result is equivalent to <code>pg_table_size</code> <code>+</code> <code>pg_indexes_size</code>.</td></tr></tbody></table>
+<p>The functions above that operate on tables or indexes accept a <code>regclass</code> argument, which is simply the OID of the table or index in the <code>pg_class</code> system catalog. You do not have to look up the OID by hand, however, since the <code>regclass</code> data type&#x27;s input converter will do the work for you. See <a title="8.19. Object Identifier Types" href="/II. The SQL Language/Functions and Operators/datatype-oid.html">Section 8.19</a> for details.</p>
+<p>The functions shown in <a title="Table 9.97. Database Object Location Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-DBLOCATION">Table 9.97</a> assist in identifying the specific disk files associated with database objects.</p>
+<p><strong>Table 9.97. Database Object Location Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_relation_filenode</code> ( <em><code>relation</code></em> <code>regclass</code> ) → <code>oid</code>  Returns the “filenode” number currently assigned to the specified relation. The filenode is the base component of the file name(s) used for the relation (see <a title="73.1. Database File Layout" href="/II. The SQL Language/Functions and Operators/storage-file-layout.html">Section 73.1</a> for more information). For most relations the result is the same as <code>pg_class</code>.<code>relfilenode</code>, but for certain system catalogs <code>relfilenode</code> is zero and this function must be used to get the correct value. The function returns NULL if passed a relation that does not have storage, such as a view.</td></tr><tr><td><code>pg_relation_filepath</code> ( <em><code>relation</code></em> <code>regclass</code> ) → <code>text</code>  Returns the entire file path name (relative to the database cluster&#x27;s data directory, <code>PGDATA</code>) of the relation.</td></tr><tr><td><code>pg_filenode_relation</code> ( <em><code>tablespace</code></em> <code>oid</code>, <em><code>filenode</code></em> <code>oid</code> ) → <code>regclass</code>  Returns a relation&#x27;s OID given the tablespace OID and filenode it is stored under. This is essentially the inverse mapping of <code>pg_relation_filepath</code>. For a relation in the database&#x27;s default tablespace, the tablespace can be specified as zero. Returns <code>NULL</code> if no relation in the current database is associated with the given values.</td></tr></tbody></table>
+<p><a title="Table 9.98. Collation Management Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-COLLATION">Table 9.98</a> lists functions used to manage collations.</p>
+<p><strong>Table 9.98. Collation Management Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_collation_actual_version</code> ( <code>oid</code> ) → <code>text</code>  Returns the actual version of the collation object as it is currently installed in the operating system. If this is different from the value in <code>pg_collation</code>.<code>collversion</code>, then objects depending on the collation might need to be rebuilt. See also <a title="ALTER COLLATION" href="/II. The SQL Language/Functions and Operators/sql-altercollation.html">ALTER COLLATION</a>.</td></tr><tr><td><code>pg_database_collation_actual_version</code> ( <code>oid</code> ) → <code>text</code>  Returns the actual version of the database&#x27;s collation as it is currently installed in the operating system. If this is different from the value in <code>pg_database</code>.<code>datcollversion</code>, then objects depending on the collation might need to be rebuilt. See also <a title="ALTER DATABASE" href="/II. The SQL Language/Functions and Operators/sql-alterdatabase.html">ALTER DATABASE</a>.</td></tr><tr><td><code>pg_import_system_collations</code> ( <em><code>schema</code></em> <code>regnamespace</code> ) → <code>integer</code>  Adds collations to the system catalog <code>pg_collation</code> based on all the locales it finds in the operating system. This is what <code>initdb</code> uses; see <a title="24.2.2. Managing Collations" href="/II. The SQL Language/Functions and Operators/collation.html#COLLATION-MANAGING">Section 24.2.2</a> for more details. If additional locales are installed into the operating system later on, this function can be run again to add collations for the new locales. Locales that match existing entries in <code>pg_collation</code> will be skipped. (But collation objects based on locales that are no longer present in the operating system are not removed by this function.) The <em><code>schema</code></em> parameter would typically be <code>pg_catalog</code>, but that is not a requirement; the collations could be installed into some other schema as well. The function returns the number of new collation objects it created. Use of this function is restricted to superusers.</td></tr></tbody></table>
+<p><a title="Table 9.99. Partitioning Information Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-INFO-PARTITION">Table 9.99</a> lists functions that provide information about the structure of partitioned tables.</p>
+<p><strong>Table 9.99. Partitioning Information Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_partition_tree</code> ( <code>regclass</code> ) → <code>setof record</code> ( <em><code>relid</code></em> <code>regclass</code>, <em><code>parentrelid</code></em> <code>regclass</code>, <em><code>isleaf</code></em> <code>boolean</code>, <em><code>level</code></em> <code>integer</code> )  Lists the tables or indexes in the partition tree of the given partitioned table or partitioned index, with one row for each partition. Information provided includes the OID of the partition, the OID of its immediate parent, a boolean value telling if the partition is a leaf, and an integer telling its level in the hierarchy. The level value is 0 for the input table or index, 1 for its immediate child partitions, 2 for their partitions, and so on. Returns no rows if the relation does not exist or is not a partition or partitioned table.</td></tr><tr><td><code>pg_partition_ancestors</code> ( <code>regclass</code> ) → <code>setof regclass</code>  Lists the ancestor relations of the given partition, including the relation itself. Returns no rows if the relation does not exist or is not a partition or partitioned table.</td></tr><tr><td><code>pg_partition_root</code> ( <code>regclass</code> ) → <code>regclass</code>  Returns the top-most parent of the partition tree to which the given relation belongs. Returns <code>NULL</code> if the relation does not exist or is not a partition or partitioned table.</td></tr></tbody></table>
+<p>For example, to check the total size of the data contained in a partitioned table <code>measurement</code>, one could use the following query:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT pg_size_pretty(sum(pg_relation_size(relid))) AS total_size</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  FROM pg_partition_tree(&#x27;measurement&#x27;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9278-index-maintenance-functions">9.27.8. Index Maintenance Functions<a href="#9278-index-maintenance-functions" class="hash-link" aria-label="Direct link to 9.27.8. Index Maintenance Functions" title="Direct link to 9.27.8. Index Maintenance Functions">​</a></h3>
+<p><a title="Table 9.100. Index Maintenance Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-INDEX-TABLE">Table 9.100</a> shows the functions available for index maintenance tasks. (Note that these maintenance tasks are normally done automatically by autovacuum; use of these functions is only required in special cases.) These functions cannot be executed during recovery. Use of these functions is restricted to superusers and the owner of the given index.</p>
+<p><strong>Table 9.100. Index Maintenance Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>brin_summarize_new_values</code> ( <em><code>index</code></em> <code>regclass</code> ) → <code>integer</code>  Scans the specified BRIN index to find page ranges in the base table that are not currently summarized by the index; for any such range it creates a new summary index tuple by scanning those table pages. Returns the number of new page range summaries that were inserted into the index.</td></tr><tr><td><code>brin_summarize_range</code> ( <em><code>index</code></em> <code>regclass</code>, <em><code>blockNumber</code></em> <code>bigint</code> ) → <code>integer</code>  Summarizes the page range covering the given block, if not already summarized. This is like <code>brin_summarize_new_values</code> except that it only processes the page range that covers the given table block number.</td></tr><tr><td><code>brin_desummarize_range</code> ( <em><code>index</code></em> <code>regclass</code>, <em><code>blockNumber</code></em> <code>bigint</code> ) → <code>void</code>  Removes the BRIN index tuple that summarizes the page range covering the given table block, if there is one.</td></tr><tr><td><code>gin_clean_pending_list</code> ( <em><code>index</code></em> <code>regclass</code> ) → <code>bigint</code>  Cleans up the “pending” list of the specified GIN index by moving entries in it, in bulk, to the main GIN data structure. Returns the number of pages removed from the pending list. If the argument is a GIN index built with the <code>fastupdate</code> option disabled, no cleanup happens and the result is zero, because the index doesn&#x27;t have a pending list. See <a title="70.4.1. GIN Fast Update Technique" href="/II. The SQL Language/Functions and Operators/gin-implementation.html#GIN-FAST-UPDATE">Section 70.4.1</a> and <a title="70.5. GIN Tips and Tricks" href="/II. The SQL Language/Functions and Operators/gin-tips.html">Section 70.5</a> for details about the pending list and <code>fastupdate</code> option.</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="9279-generic-file-access-functions">9.27.9. Generic File Access Functions<a href="#9279-generic-file-access-functions" class="hash-link" aria-label="Direct link to 9.27.9. Generic File Access Functions" title="Direct link to 9.27.9. Generic File Access Functions">​</a></h3>
+<p>The functions shown in <a title="Table 9.101. Generic File Access Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADMIN-GENFILE-TABLE">Table 9.101</a> provide native access to files on the machine hosting the server. Only files within the database cluster directory and the <code>log_directory</code> can be accessed, unless the user is a superuser or is granted the role <code>pg_read_server_files</code>. Use a relative path for files in the cluster directory, and a path matching the <code>log_directory</code> configuration setting for log files.</p>
+<p>Note that granting users the EXECUTE privilege on <code>pg_read_file()</code>, or related functions, allows them the ability to read any file on the server that the database server process can read; these functions bypass all in-database privilege checks. This means that, for example, a user with such access is able to read the contents of the <code>pg_authid</code> table where authentication information is stored, as well as read any table data in the database. Therefore, granting access to these functions should be carefully considered.</p>
+<p>When granting privilege on these functions, note that the table entries showing optional parameters are mostly implemented as several physical functions with different parameter lists. Privilege must be granted separately on each such function, if it is to be used. psql&#x27;s <code>\df</code> command can be useful to check what the actual function signatures are.</p>
+<p>Some of these functions take an optional <em><code>missing_ok</code></em> parameter, which specifies the behavior when the file or directory does not exist. If <code>true</code>, the function returns <code>NULL</code> or an empty result set, as appropriate. If <code>false</code>, an error is raised. (Failure conditions other than “file not found” are reported as errors in any case.) The default is <code>false</code>.</p>
+<p><strong>Table 9.101. Generic File Access Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_ls_dir</code> ( <em><code>dirname</code></em> <code>text</code> [, <em><code>missing_ok</code></em> <code>boolean</code>, <em><code>include_dot_dirs</code></em> <code>boolean</code> ] ) → <code>setof text</code>  Returns the names of all files (and directories and other special files) in the specified directory. The <em><code>include_dot_dirs</code></em> parameter indicates whether “.” and “..” are to be included in the result set; the default is to exclude them. Including them can be useful when <em><code>missing_ok</code></em> is <code>true</code>, to distinguish an empty directory from a non-existent directory.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_ls_logdir</code> () → <code>setof record</code> ( <em><code>name</code></em> <code>text</code>, <em><code>size</code></em> <code>bigint</code>, <em><code>modification</code></em> <code>timestamp with time zone</code> )  Returns the name, size, and last modification time (mtime) of each ordinary file in the server&#x27;s log directory. Filenames beginning with a dot, directories, and other special files are excluded.  This function is restricted to superusers and roles with privileges of the <code>pg_monitor</code> role by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_ls_waldir</code> () → <code>setof record</code> ( <em><code>name</code></em> <code>text</code>, <em><code>size</code></em> <code>bigint</code>, <em><code>modification</code></em> <code>timestamp with time zone</code> )  Returns the name, size, and last modification time (mtime) of each ordinary file in the server&#x27;s write-ahead log (WAL) directory. Filenames beginning with a dot, directories, and other special files are excluded.  This function is restricted to superusers and roles with privileges of the <code>pg_monitor</code> role by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_ls_logicalmapdir</code> () → <code>setof record</code> ( <em><code>name</code></em> <code>text</code>, <em><code>size</code></em> <code>bigint</code>, <em><code>modification</code></em> <code>timestamp with time zone</code> )  Returns the name, size, and last modification time (mtime) of each ordinary file in the server&#x27;s <code>pg_logical/mappings</code> directory. Filenames beginning with a dot, directories, and other special files are excluded.  This function is restricted to superusers and members of the <code>pg_monitor</code> role by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_ls_logicalsnapdir</code> () → <code>setof record</code> ( <em><code>name</code></em> <code>text</code>, <em><code>size</code></em> <code>bigint</code>, <em><code>modification</code></em> <code>timestamp with time zone</code> )  Returns the name, size, and last modification time (mtime) of each ordinary file in the server&#x27;s <code>pg_logical/snapshots</code> directory. Filenames beginning with a dot, directories, and other special files are excluded.  This function is restricted to superusers and members of the <code>pg_monitor</code> role by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_ls_replslotdir</code> ( <em><code>slot_name</code></em> <code>text</code> ) → <code>setof record</code> ( <em><code>name</code></em> <code>text</code>, <em><code>size</code></em> <code>bigint</code>, <em><code>modification</code></em> <code>timestamp with time zone</code> )  Returns the name, size, and last modification time (mtime) of each ordinary file in the server&#x27;s <code>pg_replslot/slot_name</code> directory, where <em><code>slot_name</code></em> is the name of the replication slot provided as input of the function. Filenames beginning with a dot, directories, and other special files are excluded.  This function is restricted to superusers and members of the <code>pg_monitor</code> role by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_ls_archive_statusdir</code> () → <code>setof record</code> ( <em><code>name</code></em> <code>text</code>, <em><code>size</code></em> <code>bigint</code>, <em><code>modification</code></em> <code>timestamp with time zone</code> )  Returns the name, size, and last modification time (mtime) of each ordinary file in the server&#x27;s WAL archive status directory (<code>pg_wal/archive_status</code>). Filenames beginning with a dot, directories, and other special files are excluded.  This function is restricted to superusers and members of the <code>pg_monitor</code> role by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_ls_tmpdir</code> ( [ <em><code>tablespace</code></em> <code>oid</code> ] ) → <code>setof record</code> ( <em><code>name</code></em> <code>text</code>, <em><code>size</code></em> <code>bigint</code>, <em><code>modification</code></em> <code>timestamp with time zone</code> )  Returns the name, size, and last modification time (mtime) of each ordinary file in the temporary file directory for the specified <em><code>tablespace</code></em>. If <em><code>tablespace</code></em> is not provided, the <code>pg_default</code> tablespace is examined. Filenames beginning with a dot, directories, and other special files are excluded.  This function is restricted to superusers and members of the <code>pg_monitor</code> role by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_read_file</code> ( <em><code>filename</code></em> <code>text</code> [, <em><code>offset</code></em> <code>bigint</code>, <em><code>length</code></em> <code>bigint</code> ] [, <em><code>missing_ok</code></em> <code>boolean</code> ] ) → <code>text</code>  Returns all or part of a text file, starting at the given byte <em><code>offset</code></em>, returning at most <em><code>length</code></em> bytes (less if the end of file is reached first). If <em><code>offset</code></em> is negative, it is relative to the end of the file. If <em><code>offset</code></em> and <em><code>length</code></em> are omitted, the entire file is returned. The bytes read from the file are interpreted as a string in the database&#x27;s encoding; an error is thrown if they are not valid in that encoding.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr><tr><td><code>pg_read_binary_file</code> ( <em><code>filename</code></em> <code>text</code> [, <em><code>offset</code></em> <code>bigint</code>, <em><code>length</code></em> <code>bigint</code> ] [, <em><code>missing_ok</code></em> <code>boolean</code> ] ) → <code>bytea</code>  Returns all or part of a file. This function is identical to <code>pg_read_file</code> except that it can read arbitrary binary data, returning the result as <code>bytea</code> not <code>text</code>; accordingly, no encoding checks are performed.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.  In combination with the <code>convert_from</code> function, this function can be used to read a text file in a specified encoding and convert to the database&#x27;s encoding:   <code> SELECT convert_from(pg_read_binary_file(&#x27;file_in_utf8.txt&#x27;), &#x27;UTF8&#x27;); </code></td></tr><tr><td><code>pg_stat_file</code> ( <em><code>filename</code></em> <code>text</code> [, <em><code>missing_ok</code></em> <code>boolean</code> ] ) → <code>record</code> ( <em><code>size</code></em> <code>bigint</code>, <em><code>access</code></em> <code>timestamp with time zone</code>, <em><code>modification</code></em> <code>timestamp with time zone</code>, <em><code>change</code></em> <code>timestamp with time zone</code>, <em><code>creation</code></em> <code>timestamp with time zone</code>, <em><code>isdir</code></em> <code>boolean</code> )  Returns a record containing the file&#x27;s size, last access time stamp, last modification time stamp, last file status change time stamp (Unix platforms only), file creation time stamp (Windows only), and a flag indicating if it is a directory.  This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="92710-advisory-lock-functions">9.27.10. Advisory Lock Functions<a href="#92710-advisory-lock-functions" class="hash-link" aria-label="Direct link to 9.27.10. Advisory Lock Functions" title="Direct link to 9.27.10. Advisory Lock Functions">​</a></h3>
+<p>The functions shown in <a title="Table 9.102. Advisory Lock Functions" href="/II. The SQL Language/Functions and Operators/functions-admin.html#FUNCTIONS-ADVISORY-LOCKS-TABLE">Table 9.102</a> manage advisory locks. For details about proper use of these functions, see <a title="13.3.5. Advisory Locks" href="/II. The SQL Language/Functions and Operators/explicit-locking.html#ADVISORY-LOCKS">Section 13.3.5</a>.</p>
+<p>All these functions are intended to be used to lock application-defined resources, which can be identified either by a single 64-bit key value or two 32-bit key values (note that these two key spaces do not overlap). If another session already holds a conflicting lock on the same resource identifier, the functions will either wait until the resource becomes available, or return a <code>false</code> result, as appropriate for the function. Locks can be either shared or exclusive: a shared lock does not conflict with other shared locks on the same resource, only with exclusive locks. Locks can be taken at session level (so that they are held until released or the session ends) or at transaction level (so that they are held until the current transaction ends; there is no provision for manual release). Multiple session-level lock requests stack, so that if the same resource identifier is locked three times there must then be three unlock requests to release the resource in advance of session end.</p>
+<p><strong>Table 9.102. Advisory Lock Functions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function  Description</th></tr></thead><tbody><tr><td><code>pg_advisory_lock</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>void</code>  <code>pg_advisory_lock</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>void</code>  Obtains an exclusive session-level advisory lock, waiting if necessary.</td></tr><tr><td><code>pg_advisory_lock_shared</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>void</code>  <code>pg_advisory_lock_shared</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>void</code>  Obtains a shared session-level advisory lock, waiting if necessary.</td></tr><tr><td><code>pg_advisory_unlock</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>boolean</code>  <code>pg_advisory_unlock</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>boolean</code>  Releases a previously-acquired exclusive session-level advisory lock. Returns <code>true</code> if the lock is successfully released. If the lock was not held, <code>false</code> is returned, and in addition, an SQL warning will be reported by the server.</td></tr><tr><td><code>pg_advisory_unlock_all</code> () → <code>void</code>  Releases all session-level advisory locks held by the current session. (This function is implicitly invoked at session end, even if the client disconnects ungracefully.)</td></tr><tr><td><code>pg_advisory_unlock_shared</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>boolean</code>  <code>pg_advisory_unlock_shared</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>boolean</code>  Releases a previously-acquired shared session-level advisory lock. Returns <code>true</code> if the lock is successfully released. If the lock was not held, <code>false</code> is returned, and in addition, an SQL warning will be reported by the server.</td></tr><tr><td><code>pg_advisory_xact_lock</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>void</code>  <code>pg_advisory_xact_lock</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>void</code>  Obtains an exclusive transaction-level advisory lock, waiting if necessary.</td></tr><tr><td><code>pg_advisory_xact_lock_shared</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>void</code>  <code>pg_advisory_xact_lock_shared</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>void</code>  Obtains a shared transaction-level advisory lock, waiting if necessary.</td></tr><tr><td><code>pg_try_advisory_lock</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>boolean</code>  <code>pg_try_advisory_lock</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>boolean</code>  Obtains an exclusive session-level advisory lock if available. This will either obtain the lock immediately and return <code>true</code>, or return <code>false</code> without waiting if the lock cannot be acquired immediately.</td></tr><tr><td><code>pg_try_advisory_lock_shared</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>boolean</code>  <code>pg_try_advisory_lock_shared</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>boolean</code>  Obtains a shared session-level advisory lock if available. This will either obtain the lock immediately and return <code>true</code>, or return <code>false</code> without waiting if the lock cannot be acquired immediately.</td></tr><tr><td><code>pg_try_advisory_xact_lock</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>boolean</code>  <code>pg_try_advisory_xact_lock</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>boolean</code>  Obtains an exclusive transaction-level advisory lock if available. This will either obtain the lock immediately and return <code>true</code>, or return <code>false</code> without waiting if the lock cannot be acquired immediately.</td></tr><tr><td><code>pg_try_advisory_xact_lock_shared</code> ( <em><code>key</code></em> <code>bigint</code> ) → <code>boolean</code>  <code>pg_try_advisory_xact_lock_shared</code> ( <em><code>key1</code></em> <code>integer</code>, <em><code>key2</code></em> <code>integer</code> ) → <code>boolean</code>  Obtains a shared transaction-level advisory lock if available. This will either obtain the lock immediately and return <code>true</code>, or return <code>false</code> without waiting if the lock cannot be acquired immediately.</td></tr></tbody></table>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a title="9.26. System Information Functions and Operators" href="/II. The SQL Language/Functions and Operators/functions-info.html">Prev</a></td><td><a title="Chapter 9. Functions and Operators" href="/II. The SQL Language/Functions and Operators/functions.html">Up</a></td><td><a title="9.28. Trigger Functions" href="/II. The SQL Language/Functions and Operators/functions-trigger.html">Next</a></td></tr><tr><td>9.26. System Information Functions and Operators</td><td><a title="PostgreSQL 16.9 Documentation" href="/II. The SQL Language/Functions and Operators/index.html">Home</a></td><td>9.28. Trigger Functions</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="submit-correction">Submit correction<a href="#submit-correction" class="hash-link" aria-label="Direct link to Submit correction" title="Direct link to Submit correction">​</a></h2>
+<p>If you see anything in the documentation that is not correct, does not match
+your experience with the particular feature or requires further clarification,
+please use
+<a href="/account/comments/new/16/functions-admin.html/">this form</a>
+to report a documentation issue.</p>
+<p><a href="/about/privacypolicy">Privacy Policy</a> |
+<a href="/about/policies/coc/">Code of Conduct</a> |
+<a href="/about/">About PostgreSQL</a> |
+<a href="/about/contact/">Contact</a></p>
+<p>Copyright © 1996-2025 The PostgreSQL Global Development Group</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/II. The SQL Language/Functions and Operators/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Chapter 9. Functions and Operators</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/II. The SQL Language/Functions and Operators/functions-aggregate"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">9.21. Aggregate Functions</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#927system-administration-functions-" class="table-of-contents__link toc-highlight">9.27. System Administration Functions #</a><ul><li><a href="#9271-configuration-settings-functions" class="table-of-contents__link toc-highlight">9.27.1. Configuration Settings Functions</a></li><li><a href="#9272-server-signaling-functions" class="table-of-contents__link toc-highlight">9.27.2. Server Signaling Functions</a></li><li><a href="#9273-backup-control-functions" class="table-of-contents__link toc-highlight">9.27.3. Backup Control Functions</a></li><li><a href="#9274-recovery-control-functions" class="table-of-contents__link toc-highlight">9.27.4. Recovery Control Functions</a></li><li><a href="#9275-snapshot-synchronization-functions" class="table-of-contents__link toc-highlight">9.27.5. Snapshot Synchronization Functions</a></li><li><a href="#9276-replication-management-functions" class="table-of-contents__link toc-highlight">9.27.6. Replication Management Functions</a></li><li><a href="#9277-database-object-management-functions" class="table-of-contents__link toc-highlight">9.27.7. Database Object Management Functions</a></li><li><a href="#9278-index-maintenance-functions" class="table-of-contents__link toc-highlight">9.27.8. Index Maintenance Functions</a></li><li><a href="#9279-generic-file-access-functions" class="table-of-contents__link toc-highlight">9.27.9. Generic File Access Functions</a></li><li><a href="#92710-advisory-lock-functions" class="table-of-contents__link toc-highlight">9.27.10. Advisory Lock Functions</a></li></ul></li><li><a href="#submit-correction" class="table-of-contents__link toc-highlight">Submit correction</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

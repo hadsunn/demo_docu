@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-II. The SQL Language/Data Types/datatype-binary" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">8.4. Binary Data Types | Postgres Документация</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-binary"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="8.4. Binary Data Types | Postgres Документация"><meta data-rh="true" name="description" content="Supported Versions:"><meta data-rh="true" property="og:description" content="Supported Versions:"><link data-rh="true" rel="icon" href="/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-binary"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-binary" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-binary" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Part II. The SQL Language","item":"https://your-docusaurus-site.example.com/II. The SQL Language/"},{"@type":"ListItem","position":2,"name":"Chapter 8. Data Types","item":"https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/"},{"@type":"ListItem","position":3,"name":"8.4. Binary Data Types","item":"https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-binary"}]}</script><link rel="stylesheet" href="/assets/css/styles.f420c6a8.css">
+<script src="/assets/js/runtime~main.6a60bab2.js" defer="defer"></script>
+<script src="/assets/js/main.bb4ee8aa.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Документация Postgresql</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/">PostgreSQL 16.9 Documentation</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/Preface/">Preface</a><button aria-label="Expand sidebar category &#x27;Preface&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/I. Tutorial/">Part I. Tutorial</a><button aria-label="Expand sidebar category &#x27;Part I. Tutorial&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/II. The SQL Language/">Part II. The SQL Language</a><button aria-label="Collapse sidebar category &#x27;Part II. The SQL Language&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/SQL Syntax/">Chapter 4. SQL Syntax</a><button aria-label="Expand sidebar category &#x27;Chapter 4. SQL Syntax&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Data Definition/">Chapter 5. Data Definition</a><button aria-label="Expand sidebar category &#x27;Chapter 5. Data Definition&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Data Manipulation/">Chapter 6. Data Manipulation</a><button aria-label="Expand sidebar category &#x27;Chapter 6. Data Manipulation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Queries/">Chapter 7. Queries</a><button aria-label="Expand sidebar category &#x27;Chapter 7. Queries&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/II. The SQL Language/Data Types/">Chapter 8. Data Types</a><button aria-label="Collapse sidebar category &#x27;Chapter 8. Data Types&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/arrays">8.15. Arrays</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/II. The SQL Language/Data Types/datatype-binary">8.4. Binary Data Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-bit">8.10. Bit String Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-boolean">8.6. Boolean Type</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-character">8.3. Character Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-datetime">8.5. Date/Time Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-enum">8.7. Enumerated Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-geometric">8.8. Geometric Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-json">8.14. JSON Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-money">8.2. Monetary Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-net-types">8.9. Network Address Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-numeric">8.1. Numeric Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-oid">8.19. Object Identifier Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-pg-lsn">8.20. pg\_lsn Type</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-pseudo">8.21. Pseudo-Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-textsearch">8.11. Text Search Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-uuid">8.12. UUID Type</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-xml">8.13. XML Type</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/domains">8.18. Domain Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/rangetypes">8.17. Range Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/rowtypes">8.16. Composite Types</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Functions and Operators/">Chapter 9. Functions and Operators</a><button aria-label="Expand sidebar category &#x27;Chapter 9. Functions and Operators&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Type Conversion/">Chapter 10. Type Conversion</a><button aria-label="Expand sidebar category &#x27;Chapter 10. Type Conversion&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Indexes/">Chapter 11. Indexes</a><button aria-label="Expand sidebar category &#x27;Chapter 11. Indexes&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Full Text Search/">Chapter 12. Full Text Search</a><button aria-label="Expand sidebar category &#x27;Chapter 12. Full Text Search&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Concurrency Control/">Chapter 13. Concurrency Control</a><button aria-label="Expand sidebar category &#x27;Chapter 13. Concurrency Control&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Performance Tips/">Chapter 14. Performance Tips</a><button aria-label="Expand sidebar category &#x27;Chapter 14. Performance Tips&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Parallel Query/">Chapter 15. Parallel Query</a><button aria-label="Expand sidebar category &#x27;Chapter 15. Parallel Query&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/III. Server Administration/">Part III. Server Administration</a><button aria-label="Expand sidebar category &#x27;Part III. Server Administration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/IV. Client Interfaces/">Part IV. Client Interfaces</a><button aria-label="Expand sidebar category &#x27;Part IV. Client Interfaces&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/V. Server Programming/">Part V. Server Programming</a><button aria-label="Expand sidebar category &#x27;Part V. Server Programming&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VI. Reference/">Part VI. Reference</a><button aria-label="Expand sidebar category &#x27;Part VI. Reference&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VII. Internals/">Part VII. Internals</a><button aria-label="Expand sidebar category &#x27;Part VII. Internals&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VIII. Appendixes/">Part VIII. Appendixes</a><button aria-label="Expand sidebar category &#x27;Part VIII. Appendixes&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/biblio">Bibliography</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/bookindex">Index</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/samples/json_algoritm">samples</a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/test">test</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/II. The SQL Language/"><span>Part II. The SQL Language</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/II. The SQL Language/Data Types/"><span>Chapter 8. Data Types</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">8.4. Binary Data Types</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>8.4. Binary Data Types</h1></header><p>Supported Versions:
+17
+/
+16
+/
+15
+/
+14
+/
+13</p>
+<p>Development Versions:
+18
+/
+devel</p>
+<p>Unsupported versions:
+12
+/
+11
+/
+10
+/
+9.6
+/
+9.5
+/
+9.4
+/
+9.3
+/
+9.2
+/
+9.1
+/
+9.0
+/
+8.4
+/
+8.3
+/
+8.2
+/
+8.1
+/
+8.0
+/
+7.4
+/
+7.3
+/
+7.2</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>8.4. Binary Data Types</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><a title="8.3. Character Types" href="/II. The SQL Language/Data Types/datatype-character.html">Prev</a></td><td><a title="Chapter 8. Data Types" href="/II. The SQL Language/Data Types/datatype.html">Up</a></td><td>Chapter 8. Data Types</td><td><a title="PostgreSQL 16.9 Documentation" href="/II. The SQL Language/Data Types/index.html">Home</a></td><td><a title="8.5. Date/Time Types" href="/II. The SQL Language/Data Types/datatype-datetime.html">Next</a></td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="84binary-data-types-">8.4. Binary Data Types <a href="#DATATYPE-BINARY">#</a><a href="#84binary-data-types-" class="hash-link" aria-label="Direct link to 84binary-data-types-" title="Direct link to 84binary-data-types-">​</a></h2>
+<p><a href="#841-%60bytea%60-hex-format">8.4.1. <code>bytea</code> Hex Format</a></p>
+<p><a href="#842-%60bytea%60-escape-format">8.4.2. <code>bytea</code> Escape Format</a></p>
+<p>The <code>bytea</code> data type allows storage of binary strings; see <a title="Table 8.6. Binary Data Types" href="/II. The SQL Language/Data Types/datatype-binary.html#DATATYPE-BINARY-TABLE">Table 8.6</a>.</p>
+<p><strong>Table 8.6. Binary Data Types</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Storage Size</th><th>Description</th></tr></thead><tbody><tr><td><code>bytea</code></td><td>1 or 4 bytes plus the actual binary string</td><td>variable-length binary string</td></tr></tbody></table>
+<p>A binary string is a sequence of octets (or bytes). Binary strings are distinguished from character strings in two ways. First, binary strings specifically allow storing octets of value zero and other “non-printable” octets (usually, octets outside the decimal range 32 to 126). Character strings disallow zero octets, and also disallow any other octet values and sequences of octet values that are invalid according to the database&#x27;s selected character set encoding. Second, operations on binary strings process the actual bytes, whereas the processing of character strings depends on locale settings. In short, binary strings are appropriate for storing data that the programmer thinks of as “raw bytes”, whereas character strings are appropriate for storing text.</p>
+<p>The <code>bytea</code> type supports two formats for input and output: “hex” format and PostgreSQL&#x27;s historical “escape” format. Both of these are always accepted on input. The output format depends on the configuration parameter <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-BYTEA-OUTPUT">bytea_output</a>; the default is hex. (Note that the hex format was introduced in PostgreSQL 9.0; earlier versions and some tools don&#x27;t understand it.)</p>
+<p>The SQL standard defines a different binary string type, called <code>BLOB</code> or <code>BINARY LARGE OBJECT</code>. The input format is different from <code>bytea</code>, but the provided functions and operators are mostly the same.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="841-bytea-hex-format">8.4.1. <code>bytea</code> Hex Format<a href="#841-bytea-hex-format" class="hash-link" aria-label="Direct link to 841-bytea-hex-format" title="Direct link to 841-bytea-hex-format">​</a></h3>
+<p>The “hex” format encodes binary data as 2 hexadecimal digits per byte, most significant nibble first. The entire string is preceded by the sequence <code>\x</code> (to distinguish it from the escape format). In some contexts, the initial backslash may need to be escaped by doubling it (see <a title="4.1.2.1. String Constants" href="/II. The SQL Language/Data Types/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS">Section 4.1.2.1</a>). For input, the hexadecimal digits can be either upper or lower case, and whitespace is permitted between digit pairs (but not within a digit pair nor in the starting <code>\x</code> sequence). The hex format is compatible with a wide range of external applications and protocols, and it tends to be faster to convert than the escape format, so its use is preferred.</p>
+<p>Example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SET bytea_output = &#x27;hex&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;\xDEADBEEF&#x27;::bytea;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   bytea</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> \xdeadbeef</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="842-bytea-escape-format">8.4.2. <code>bytea</code> Escape Format<a href="#842-bytea-escape-format" class="hash-link" aria-label="Direct link to 842-bytea-escape-format" title="Direct link to 842-bytea-escape-format">​</a></h3>
+<p>The “escape” format is the traditional PostgreSQL format for the <code>bytea</code> type. It takes the approach of representing a binary string as a sequence of ASCII characters, while converting those bytes that cannot be represented as an ASCII character into special escape sequences. If, from the point of view of the application, representing bytes as characters makes sense, then this representation can be convenient. But in practice it is usually confusing because it fuzzes up the distinction between binary strings and character strings, and also the particular escape mechanism that was chosen is somewhat unwieldy. Therefore, this format should probably be avoided for most new applications.</p>
+<p>When entering <code>bytea</code> values in escape format, octets of certain values <em>must</em> be escaped, while all octet values <em>can</em> be escaped. In general, to escape an octet, convert it into its three-digit octal value and precede it by a backslash. Backslash itself (octet decimal value 92) can alternatively be represented by double backslashes. <a title="Table 8.7. bytea Literal Escaped Octets" href="/II. The SQL Language/Data Types/datatype-binary.html#DATATYPE-BINARY-SQLESC">Table 8.7</a> shows the characters that must be escaped, and gives the alternative escape sequences where applicable.</p>
+<p><strong>Table 8.7. <code>bytea</code> Literal Escaped Octets</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Decimal Octet Value</th><th>Description</th><th>Escaped Input Representation</th><th>Example</th><th>Hex Representation</th></tr></thead><tbody><tr><td>0</td><td>zero octet</td><td><code>&#x27;\000&#x27;</code></td><td><code>&#x27;\000&#x27;::bytea</code></td><td><code>\x00</code></td></tr><tr><td>39</td><td>single quote</td><td><code>&#x27;&#x27;&#x27;&#x27;</code> or <code>&#x27;\047&#x27;</code></td><td><code>&#x27;&#x27;&#x27;&#x27;::bytea</code></td><td><code>\x27</code></td></tr><tr><td>92</td><td>backslash</td><td><code>&#x27;\\&#x27;</code> or <code>&#x27;\134&#x27;</code></td><td><code>&#x27;\\&#x27;::bytea</code></td><td><code>\x5c</code></td></tr><tr><td>0 to 31 and 127 to 255</td><td>“non-printable” octets</td><td><code>&#x27;\xxx&#x27;</code> (octal value)</td><td><code>&#x27;\001&#x27;::bytea</code></td><td><code>\x01</code></td></tr></tbody></table>
+<p>The requirement to escape <em>non-printable</em> octets varies depending on locale settings. In some instances you can get away with leaving them unescaped.</p>
+<p>The reason that single quotes must be doubled, as shown in <a title="Table 8.7. bytea Literal Escaped Octets" href="/II. The SQL Language/Data Types/datatype-binary.html#DATATYPE-BINARY-SQLESC">Table 8.7</a>, is that this is true for any string literal in an SQL command. The generic string-literal parser consumes the outermost single quotes and reduces any pair of single quotes to one data character. What the <code>bytea</code> input function sees is just one single quote, which it treats as a plain data character. However, the <code>bytea</code> input function treats backslashes as special, and the other behaviors shown in <a title="Table 8.7. bytea Literal Escaped Octets" href="/II. The SQL Language/Data Types/datatype-binary.html#DATATYPE-BINARY-SQLESC">Table 8.7</a> are implemented by that function.</p>
+<p>In some contexts, backslashes must be doubled compared to what is shown above, because the generic string-literal parser will also reduce pairs of backslashes to one data character; see <a title="4.1.2.1. String Constants" href="/II. The SQL Language/Data Types/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS">Section 4.1.2.1</a>.</p>
+<p><code>Bytea</code> octets are output in <code>hex</code> format by default. If you change <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-BYTEA-OUTPUT">bytea_output</a> to <code>escape</code>, “non-printable” octets are converted to their equivalent three-digit octal value and preceded by one backslash. Most “printable” octets are output by their standard representation in the client character set, e.g.:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SET bytea_output = &#x27;escape&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;abc \153\154\155 \052\251\124&#x27;::bytea;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     bytea</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">----------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> abc klm *\251T</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>The octet with decimal value 92 (backslash) is doubled in the output. Details are in <a title="Table 8.8. bytea Output Escaped Octets" href="/II. The SQL Language/Data Types/datatype-binary.html#DATATYPE-BINARY-RESESC">Table 8.8</a>.</p>
+<p><strong>Table 8.8. <code>bytea</code> Output Escaped Octets</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Decimal Octet Value</th><th>Description</th><th>Escaped Output Representation</th><th>Example</th><th>Output Result</th></tr></thead><tbody><tr><td>92</td><td>backslash</td><td><code>\\</code></td><td><code>&#x27;\134&#x27;::bytea</code></td><td><code>\\</code></td></tr><tr><td>0 to 31 and 127 to 255</td><td>“non-printable” octets</td><td><code>\xxx</code> (octal value)</td><td><code>&#x27;\001&#x27;::bytea</code></td><td><code>\001</code></td></tr><tr><td>32 to 126</td><td>“printable” octets</td><td>client character set representation</td><td><code>&#x27;\176&#x27;::bytea</code></td><td><code>~</code></td></tr></tbody></table>
+<p>Depending on the front end to PostgreSQL you use, you might have additional work to do in terms of escaping and unescaping <code>bytea</code> strings. For example, you might also have to escape line feeds and carriage returns if your interface automatically translates these.</p>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a title="8.3. Character Types" href="/II. The SQL Language/Data Types/datatype-character.html">Prev</a></td><td><a title="Chapter 8. Data Types" href="/II. The SQL Language/Data Types/datatype.html">Up</a></td><td><a title="8.5. Date/Time Types" href="/II. The SQL Language/Data Types/datatype-datetime.html">Next</a></td></tr><tr><td>8.3. Character Types</td><td><a title="PostgreSQL 16.9 Documentation" href="/II. The SQL Language/Data Types/index.html">Home</a></td><td>8.5. Date/Time Types</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="submit-correction">Submit correction<a href="#submit-correction" class="hash-link" aria-label="Direct link to Submit correction" title="Direct link to Submit correction">​</a></h2>
+<p>If you see anything in the documentation that is not correct, does not match
+your experience with the particular feature or requires further clarification,
+please use
+<a href="/account/comments/new/16/datatype-binary.html/">this form</a>
+to report a documentation issue.</p>
+<p><a href="/about/privacypolicy">Privacy Policy</a> |
+<a href="/about/policies/coc/">Code of Conduct</a> |
+<a href="/about/">About PostgreSQL</a> |
+<a href="/about/contact/">Contact</a></p>
+<p>Copyright © 1996-2025 The PostgreSQL Global Development Group</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/II. The SQL Language/Data Types/arrays"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">8.15. Arrays</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/II. The SQL Language/Data Types/datatype-bit"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">8.10. Bit String Types</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#84binary-data-types-" class="table-of-contents__link toc-highlight">8.4. Binary Data Types #</a><ul><li><a href="#841-bytea-hex-format" class="table-of-contents__link toc-highlight">8.4.1. <code>bytea</code> Hex Format</a></li><li><a href="#842-bytea-escape-format" class="table-of-contents__link toc-highlight">8.4.2. <code>bytea</code> Escape Format</a></li></ul></li><li><a href="#submit-correction" class="table-of-contents__link toc-highlight">Submit correction</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

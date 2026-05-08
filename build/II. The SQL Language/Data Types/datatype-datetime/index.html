@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-II. The SQL Language/Data Types/datatype-datetime" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">8.5. Date/Time Types | Postgres Документация</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-datetime"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="8.5. Date/Time Types | Postgres Документация"><meta data-rh="true" name="description" content="Supported Versions:"><meta data-rh="true" property="og:description" content="Supported Versions:"><link data-rh="true" rel="icon" href="/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-datetime"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-datetime" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-datetime" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Part II. The SQL Language","item":"https://your-docusaurus-site.example.com/II. The SQL Language/"},{"@type":"ListItem","position":2,"name":"Chapter 8. Data Types","item":"https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/"},{"@type":"ListItem","position":3,"name":"8.5. Date/Time Types","item":"https://your-docusaurus-site.example.com/II. The SQL Language/Data Types/datatype-datetime"}]}</script><link rel="stylesheet" href="/assets/css/styles.f420c6a8.css">
+<script src="/assets/js/runtime~main.6a60bab2.js" defer="defer"></script>
+<script src="/assets/js/main.bb4ee8aa.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Документация Postgresql</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/">PostgreSQL 16.9 Documentation</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/Preface/">Preface</a><button aria-label="Expand sidebar category &#x27;Preface&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/I. Tutorial/">Part I. Tutorial</a><button aria-label="Expand sidebar category &#x27;Part I. Tutorial&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/II. The SQL Language/">Part II. The SQL Language</a><button aria-label="Collapse sidebar category &#x27;Part II. The SQL Language&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/SQL Syntax/">Chapter 4. SQL Syntax</a><button aria-label="Expand sidebar category &#x27;Chapter 4. SQL Syntax&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Data Definition/">Chapter 5. Data Definition</a><button aria-label="Expand sidebar category &#x27;Chapter 5. Data Definition&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Data Manipulation/">Chapter 6. Data Manipulation</a><button aria-label="Expand sidebar category &#x27;Chapter 6. Data Manipulation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Queries/">Chapter 7. Queries</a><button aria-label="Expand sidebar category &#x27;Chapter 7. Queries&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/II. The SQL Language/Data Types/">Chapter 8. Data Types</a><button aria-label="Collapse sidebar category &#x27;Chapter 8. Data Types&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/arrays">8.15. Arrays</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-binary">8.4. Binary Data Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-bit">8.10. Bit String Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-boolean">8.6. Boolean Type</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-character">8.3. Character Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/II. The SQL Language/Data Types/datatype-datetime">8.5. Date/Time Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-enum">8.7. Enumerated Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-geometric">8.8. Geometric Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-json">8.14. JSON Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-money">8.2. Monetary Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-net-types">8.9. Network Address Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-numeric">8.1. Numeric Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-oid">8.19. Object Identifier Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-pg-lsn">8.20. pg\_lsn Type</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-pseudo">8.21. Pseudo-Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-textsearch">8.11. Text Search Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-uuid">8.12. UUID Type</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/datatype-xml">8.13. XML Type</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/domains">8.18. Domain Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/rangetypes">8.17. Range Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/II. The SQL Language/Data Types/rowtypes">8.16. Composite Types</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Functions and Operators/">Chapter 9. Functions and Operators</a><button aria-label="Expand sidebar category &#x27;Chapter 9. Functions and Operators&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Type Conversion/">Chapter 10. Type Conversion</a><button aria-label="Expand sidebar category &#x27;Chapter 10. Type Conversion&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Indexes/">Chapter 11. Indexes</a><button aria-label="Expand sidebar category &#x27;Chapter 11. Indexes&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Full Text Search/">Chapter 12. Full Text Search</a><button aria-label="Expand sidebar category &#x27;Chapter 12. Full Text Search&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Concurrency Control/">Chapter 13. Concurrency Control</a><button aria-label="Expand sidebar category &#x27;Chapter 13. Concurrency Control&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Performance Tips/">Chapter 14. Performance Tips</a><button aria-label="Expand sidebar category &#x27;Chapter 14. Performance Tips&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/II. The SQL Language/Parallel Query/">Chapter 15. Parallel Query</a><button aria-label="Expand sidebar category &#x27;Chapter 15. Parallel Query&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/III. Server Administration/">Part III. Server Administration</a><button aria-label="Expand sidebar category &#x27;Part III. Server Administration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/IV. Client Interfaces/">Part IV. Client Interfaces</a><button aria-label="Expand sidebar category &#x27;Part IV. Client Interfaces&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/V. Server Programming/">Part V. Server Programming</a><button aria-label="Expand sidebar category &#x27;Part V. Server Programming&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VI. Reference/">Part VI. Reference</a><button aria-label="Expand sidebar category &#x27;Part VI. Reference&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VII. Internals/">Part VII. Internals</a><button aria-label="Expand sidebar category &#x27;Part VII. Internals&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/VIII. Appendixes/">Part VIII. Appendixes</a><button aria-label="Expand sidebar category &#x27;Part VIII. Appendixes&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/biblio">Bibliography</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/bookindex">Index</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/samples/json_algoritm">samples</a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/test">test</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/II. The SQL Language/"><span>Part II. The SQL Language</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/II. The SQL Language/Data Types/"><span>Chapter 8. Data Types</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">8.5. Date/Time Types</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>8.5. Date/Time Types</h1></header><p>Supported Versions:
+17
+/
+16
+/
+15
+/
+14
+/
+13</p>
+<p>Development Versions:
+18
+/
+devel</p>
+<p>Unsupported versions:
+12
+/
+11
+/
+10
+/
+9.6
+/
+9.5
+/
+9.4
+/
+9.3
+/
+9.2
+/
+9.1
+/
+9.0
+/
+8.4
+/
+8.3
+/
+8.2
+/
+8.1
+/
+8.0
+/
+7.4
+/
+7.3
+/
+7.2
+/
+7.1</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>8.5. Date/Time Types</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><a title="8.4. Binary Data Types" href="/II. The SQL Language/Data Types/datatype-binary.html">Prev</a></td><td><a title="Chapter 8. Data Types" href="/II. The SQL Language/Data Types/datatype.html">Up</a></td><td>Chapter 8. Data Types</td><td><a title="PostgreSQL 16.9 Documentation" href="/II. The SQL Language/Data Types/index.html">Home</a></td><td><a title="8.6. Boolean Type" href="/II. The SQL Language/Data Types/datatype-boolean.html">Next</a></td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="85datetime-types-">8.5. Date/Time Types <a href="#DATATYPE-DATETIME">#</a><a href="#85datetime-types-" class="hash-link" aria-label="Direct link to 85datetime-types-" title="Direct link to 85datetime-types-">​</a></h2>
+<p><a href="#851-date/time-input">8.5.1. Date/Time Input</a></p>
+<p><a href="#852-date/time-output">8.5.2. Date/Time Output</a></p>
+<p><a href="#853-time-zones">8.5.3. Time Zones</a></p>
+<p><a href="#854-interval-input">8.5.4. Interval Input</a></p>
+<p><a href="#855-interval-output">8.5.5. Interval Output</a></p>
+<p>PostgreSQL supports the full set of SQL date and time types, shown in <a title="Table 8.9. Date/Time Types" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-DATETIME-TABLE">Table 8.9</a>. The operations available on these data types are described in <a title="9.9. Date/Time Functions and Operators" href="/II. The SQL Language/Data Types/functions-datetime.html">Section 9.9</a>. Dates are counted according to the Gregorian calendar, even in years before that calendar was introduced (see <a title="B.6. History of Units" href="/II. The SQL Language/Data Types/datetime-units-history.html">Section B.6</a> for more information).</p>
+<p><strong>Table 8.9. Date/Time Types</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Storage Size</th><th>Description</th><th>Low Value</th><th>High Value</th><th>Resolution</th></tr></thead><tbody><tr><td><code>timestamp [ (p) ] [ without time zone ]</code></td><td>8 bytes</td><td>both date and time (no time zone)</td><td>4713 BC</td><td>294276 AD</td><td>1 microsecond</td></tr><tr><td><code>timestamp [ (p) ] with time zone</code></td><td>8 bytes</td><td>both date and time, with time zone</td><td>4713 BC</td><td>294276 AD</td><td>1 microsecond</td></tr><tr><td><code>date</code></td><td>4 bytes</td><td>date (no time of day)</td><td>4713 BC</td><td>5874897 AD</td><td>1 day</td></tr><tr><td><code>time [ (p) ] [ without time zone ]</code></td><td>8 bytes</td><td>time of day (no date)</td><td>00:00:00</td><td>24:00:00</td><td>1 microsecond</td></tr><tr><td><code>time [ (p) ] with time zone</code></td><td>12 bytes</td><td>time of day (no date), with time zone</td><td>00:00:00+1559</td><td>24:00:00-1559</td><td>1 microsecond</td></tr><tr><td><code>interval [ fields ] [ (p) ]</code></td><td>16 bytes</td><td>time interval</td><td>-178000000 years</td><td>178000000 years</td><td>1 microsecond</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="note">Note<a href="#note" class="hash-link" aria-label="Direct link to Note" title="Direct link to Note">​</a></h3>
+<p>The SQL standard requires that writing just <code>timestamp</code> be equivalent to <code>timestamp without time zone</code>, and PostgreSQL honors that behavior. <code>timestamptz</code> is accepted as an abbreviation for <code>timestamp with time zone</code>; this is a PostgreSQL extension.</p>
+<p><code>time</code>, <code>timestamp</code>, and <code>interval</code> accept an optional precision value <em><code>p</code></em> which specifies the number of fractional digits retained in the seconds field. By default, there is no explicit bound on precision. The allowed range of <em><code>p</code></em> is from 0 to 6.</p>
+<p>The <code>interval</code> type has an additional option, which is to restrict the set of stored fields by writing one of these phrases:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">YEAR</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">MONTH</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">DAY</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">HOUR</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">MINUTE</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SECOND</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">YEAR TO MONTH</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">DAY TO HOUR</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">DAY TO MINUTE</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">DAY TO SECOND</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">HOUR TO MINUTE</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">HOUR TO SECOND</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">MINUTE TO SECOND</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>Note that if both <em><code>fields</code></em> and <em><code>p</code></em> are specified, the <em><code>fields</code></em> must include <code>SECOND</code>, since the precision applies only to the seconds.</p>
+<p>The type <code>time with time zone</code> is defined by the SQL standard, but the definition exhibits properties which lead to questionable usefulness. In most cases, a combination of <code>date</code>, <code>time</code>, <code>timestamp without time zone</code>, and <code>timestamp with time zone</code> should provide a complete range of date/time functionality required by any application.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="851-datetime-input">8.5.1. Date/Time Input<a href="#851-datetime-input" class="hash-link" aria-label="Direct link to 8.5.1. Date/Time Input" title="Direct link to 8.5.1. Date/Time Input">​</a></h3>
+<p>Date and time input is accepted in almost any reasonable format, including ISO 8601, SQL-compatible, traditional POSTGRES, and others. For some formats, ordering of day, month, and year in date input is ambiguous and there is support for specifying the expected ordering of these fields. Set the <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-DATESTYLE">DateStyle</a> parameter to <code>MDY</code> to select month-day-year interpretation, <code>DMY</code> to select day-month-year interpretation, or <code>YMD</code> to select year-month-day interpretation.</p>
+<p>PostgreSQL is more flexible in handling date/time input than the SQL standard requires. See <a title="Appendix B. Date/Time Support" href="/II. The SQL Language/Data Types/datetime-appendix.html">Appendix B</a> for the exact parsing rules of date/time input and for the recognized text fields including months, days of the week, and time zones.</p>
+<p>Remember that any date or time literal input needs to be enclosed in single quotes, like text strings. Refer to <a title="4.1.2.7. Constants of Other Types" href="/II. The SQL Language/Data Types/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS-GENERIC">Section 4.1.2.7</a> for more information. SQL requires the following syntax</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">type [ (p) ] &#x27;value&#x27;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>where <em><code>p</code></em> is an optional precision specification giving the number of fractional digits in the seconds field. Precision can be specified for <code>time</code>, <code>timestamp</code>, and <code>interval</code> types, and can range from 0 to 6. If no precision is specified in a constant specification, it defaults to the precision of the literal value (but not more than 6 digits).</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="8511-dates">8.5.1.1. Dates<a href="#8511-dates" class="hash-link" aria-label="Direct link to 8.5.1.1. Dates" title="Direct link to 8.5.1.1. Dates">​</a></h4>
+<p><a title="Table 8.10. Date Input" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-DATETIME-DATE-TABLE">Table 8.10</a> shows some possible inputs for the <code>date</code> type.</p>
+<p><strong>Table 8.10. Date Input</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Example</th><th>Description</th></tr></thead><tbody><tr><td>1999-01-08</td><td>ISO 8601; January 8 in any mode (recommended format)</td></tr><tr><td>January 8, 1999</td><td>unambiguous in any <code>datestyle</code> input mode</td></tr><tr><td>1/8/1999</td><td>January 8 in <code>MDY</code> mode; August 1 in <code>DMY</code> mode</td></tr><tr><td>1/18/1999</td><td>January 18 in <code>MDY</code> mode; rejected in other modes</td></tr><tr><td>01/02/03</td><td>January 2, 2003 in <code>MDY</code> mode; February 1, 2003 in <code>DMY</code> mode; February 3, 2001 in <code>YMD</code> mode</td></tr><tr><td>1999-Jan-08</td><td>January 8 in any mode</td></tr><tr><td>Jan-08-1999</td><td>January 8 in any mode</td></tr><tr><td>08-Jan-1999</td><td>January 8 in any mode</td></tr><tr><td>99-Jan-08</td><td>January 8 in <code>YMD</code> mode, else error</td></tr><tr><td>08-Jan-99</td><td>January 8, except error in <code>YMD</code> mode</td></tr><tr><td>Jan-08-99</td><td>January 8, except error in <code>YMD</code> mode</td></tr><tr><td>19990108</td><td>ISO 8601; January 8, 1999 in any mode</td></tr><tr><td>990108</td><td>ISO 8601; January 8, 1999 in any mode</td></tr><tr><td>1999.008</td><td>year and day of year</td></tr><tr><td>J2451187</td><td>Julian date</td></tr><tr><td>January 8, 99 BC</td><td>year 99 BC</td></tr></tbody></table>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="8512-times">8.5.1.2. Times<a href="#8512-times" class="hash-link" aria-label="Direct link to 8.5.1.2. Times" title="Direct link to 8.5.1.2. Times">​</a></h4>
+<p>The time-of-day types are <code>time [ (p) ] without time zone</code> and <code>time [ (p) ] with time zone</code>. <code>time</code> alone is equivalent to <code>time without time zone</code>.</p>
+<p>Valid input for these types consists of a time of day followed by an optional time zone. (See <a title="Table 8.11. Time Input" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-DATETIME-TIME-TABLE">Table 8.11</a> and <a title="Table 8.12. Time Zone Input" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-TIMEZONE-TABLE">Table 8.12</a>.) If a time zone is specified in the input for <code>time without time zone</code>, it is silently ignored. You can also specify a date but it will be ignored, except when you use a time zone name that involves a daylight-savings rule, such as <code>America/New_York</code>. In this case specifying the date is required in order to determine whether standard or daylight-savings time applies. The appropriate time zone offset is recorded in the <code>time with time zone</code> value and is output as stored; it is not adjusted to the active time zone.</p>
+<p><strong>Table 8.11. Time Input</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>04:05:06.789</code></td><td>ISO 8601</td></tr><tr><td><code>04:05:06</code></td><td>ISO 8601</td></tr><tr><td><code>04:05</code></td><td>ISO 8601</td></tr><tr><td><code>040506</code></td><td>ISO 8601</td></tr><tr><td><code>04:05 AM</code></td><td>same as 04:05; AM does not affect value</td></tr><tr><td><code>04:05 PM</code></td><td>same as 16:05; input hour must be &lt;= 12</td></tr><tr><td><code>04:05:06.789-8</code></td><td>ISO 8601, with time zone as UTC offset</td></tr><tr><td><code>04:05:06-08:00</code></td><td>ISO 8601, with time zone as UTC offset</td></tr><tr><td><code>04:05-08:00</code></td><td>ISO 8601, with time zone as UTC offset</td></tr><tr><td><code>040506-08</code></td><td>ISO 8601, with time zone as UTC offset</td></tr><tr><td><code>040506+0730</code></td><td>ISO 8601, with fractional-hour time zone as UTC offset</td></tr><tr><td><code>040506+07:30:00</code></td><td>UTC offset specified to seconds (not allowed in ISO 8601)</td></tr><tr><td><code>04:05:06 PST</code></td><td>time zone specified by abbreviation</td></tr><tr><td><code>2003-04-12 04:05:06 America/New_York</code></td><td>time zone specified by full name</td></tr></tbody></table>
+<p><strong>Table 8.12. Time Zone Input</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>PST</code></td><td>Abbreviation (for Pacific Standard Time)</td></tr><tr><td><code>America/New_York</code></td><td>Full time zone name</td></tr><tr><td><code>PST8PDT</code></td><td>POSIX-style time zone specification</td></tr><tr><td><code>-8:00:00</code></td><td>UTC offset for PST</td></tr><tr><td><code>-8:00</code></td><td>UTC offset for PST (ISO 8601 extended format)</td></tr><tr><td><code>-800</code></td><td>UTC offset for PST (ISO 8601 basic format)</td></tr><tr><td><code>-8</code></td><td>UTC offset for PST (ISO 8601 basic format)</td></tr><tr><td><code>zulu</code></td><td>Military abbreviation for UTC</td></tr><tr><td><code>z</code></td><td>Short form of <code>zulu</code> (also in ISO 8601)</td></tr></tbody></table>
+<p>Refer to <a title="8.5.3. Time Zones" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-TIMEZONES">Section 8.5.3</a> for more information on how to specify time zones.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="8513-time-stamps">8.5.1.3. Time Stamps<a href="#8513-time-stamps" class="hash-link" aria-label="Direct link to 8.5.1.3. Time Stamps" title="Direct link to 8.5.1.3. Time Stamps">​</a></h4>
+<p>Valid input for the time stamp types consists of the concatenation of a date and a time, followed by an optional time zone, followed by an optional <code>AD</code> or <code>BC</code>. (Alternatively, <code>AD</code>/<code>BC</code> can appear before the time zone, but this is not the preferred ordering.) Thus:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">1999-01-08 04:05:06</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>and:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">1999-01-08 04:05:06 -8:00</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>are valid values, which follow the ISO 8601 standard. In addition, the common format:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">January 8 04:05:06 1999 PST</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>is supported.</p>
+<p>The SQL standard differentiates <code>timestamp without time zone</code> and <code>timestamp with time zone</code> literals by the presence of a “+” or “-” symbol and time zone offset after the time. Hence, according to the standard,</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TIMESTAMP &#x27;2004-10-19 10:23:54&#x27;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>is a <code>timestamp without time zone</code>, while</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TIMESTAMP &#x27;2004-10-19 10:23:54+02&#x27;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>is a <code>timestamp with time zone</code>. PostgreSQL never examines the content of a literal string before determining its type, and therefore will treat both of the above as <code>timestamp without time zone</code>. To ensure that a literal is treated as <code>timestamp with time zone</code>, give it the correct explicit type:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TIMESTAMP WITH TIME ZONE &#x27;2004-10-19 10:23:54+02&#x27;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>In a value that has been determined to be <code>timestamp without time zone</code>, PostgreSQL will silently ignore any time zone indication. That is, the resulting value is derived from the date/time fields in the input string, and is not adjusted for time zone.</p>
+<p>For <code>timestamp with time zone</code> values, an input string that includes an explicit time zone will be converted to UTC (<a title="UTC" href="/II. The SQL Language/Data Types/glossary.html#GLOSSARY-UTC">Universal Coordinated Time</a>) using the appropriate offset for that time zone. If no time zone is stated in the input string, then it is assumed to be in the time zone indicated by the system&#x27;s <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-TIMEZONE">TimeZone</a> parameter, and is converted to UTC using the offset for the <code>timezone</code> zone. In either case, the value is stored internally as UTC, and the originally stated or assumed time zone is not retained.</p>
+<p>When a <code>timestamp with time zone</code> value is output, it is always converted from UTC to the current <code>timezone</code> zone, and displayed as local time in that zone. To see the time in another time zone, either change <code>timezone</code> or use the <code>AT TIME ZONE</code> construct (see <a title="9.9.4. AT TIME ZONE" href="/II. The SQL Language/Data Types/functions-datetime.html#FUNCTIONS-DATETIME-ZONECONVERT">Section 9.9.4</a>).</p>
+<p>Conversions between <code>timestamp without time zone</code> and <code>timestamp with time zone</code> normally assume that the <code>timestamp without time zone</code> value should be taken or given as <code>timezone</code> local time. A different time zone can be specified for the conversion using <code>AT TIME ZONE</code>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="8514-special-values">8.5.1.4. Special Values<a href="#8514-special-values" class="hash-link" aria-label="Direct link to 8.5.1.4. Special Values" title="Direct link to 8.5.1.4. Special Values">​</a></h4>
+<p>PostgreSQL supports several special date/time input values for convenience, as shown in <a title="Table 8.13. Special Date/Time Inputs" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-DATETIME-SPECIAL-TABLE">Table 8.13</a>. The values <code>infinity</code> and <code>-infinity</code> are specially represented inside the system and will be displayed unchanged; but the others are simply notational shorthands that will be converted to ordinary date/time values when read. (In particular, <code>now</code> and related strings are converted to a specific time value as soon as they are read.) All of these values need to be enclosed in single quotes when used as constants in SQL commands.</p>
+<p><strong>Table 8.13. Special Date/Time Inputs</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Input String</th><th>Valid Types</th><th>Description</th></tr></thead><tbody><tr><td><code>epoch</code></td><td><code>date</code>, <code>timestamp</code></td><td>1970-01-01 00:00:00+00 (Unix system time zero)</td></tr><tr><td><code>infinity</code></td><td><code>date</code>, <code>timestamp</code></td><td>later than all other time stamps</td></tr><tr><td><code>-infinity</code></td><td><code>date</code>, <code>timestamp</code></td><td>earlier than all other time stamps</td></tr><tr><td><code>now</code></td><td><code>date</code>, <code>time</code>, <code>timestamp</code></td><td>current transaction&#x27;s start time</td></tr><tr><td><code>today</code></td><td><code>date</code>, <code>timestamp</code></td><td>midnight (<code>00:00</code>) today</td></tr><tr><td><code>tomorrow</code></td><td><code>date</code>, <code>timestamp</code></td><td>midnight (<code>00:00</code>) tomorrow</td></tr><tr><td><code>yesterday</code></td><td><code>date</code>, <code>timestamp</code></td><td>midnight (<code>00:00</code>) yesterday</td></tr><tr><td><code>allballs</code></td><td><code>time</code></td><td>00:00:00.00 UTC</td></tr></tbody></table>
+<p>The following SQL-compatible functions can also be used to obtain the current time value for the corresponding data type: <code>CURRENT_DATE</code>, <code>CURRENT_TIME</code>, <code>CURRENT_TIMESTAMP</code>, <code>LOCALTIME</code>, <code>LOCALTIMESTAMP</code>. (See <a title="9.9.5. Current Date/Time" href="/II. The SQL Language/Data Types/functions-datetime.html#FUNCTIONS-DATETIME-CURRENT">Section 9.9.5</a>.) Note that these are SQL functions and are <em>not</em> recognized in data input strings.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="caution">Caution<a href="#caution" class="hash-link" aria-label="Direct link to Caution" title="Direct link to Caution">​</a></h3>
+<p>While the input strings <code>now</code>, <code>today</code>, <code>tomorrow</code>, and <code>yesterday</code> are fine to use in interactive SQL commands, they can have surprising behavior when the command is saved to be executed later, for example in prepared statements, views, and function definitions. The string can be converted to a specific time value that continues to be used long after it becomes stale. Use one of the SQL functions instead in such contexts. For example, <code>CURRENT_DATE + 1</code> is safer than <code>&#x27;tomorrow&#x27;::date</code>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="852-datetime-output">8.5.2. Date/Time Output<a href="#852-datetime-output" class="hash-link" aria-label="Direct link to 8.5.2. Date/Time Output" title="Direct link to 8.5.2. Date/Time Output">​</a></h3>
+<p>The output format of the date/time types can be set to one of the four styles ISO 8601, SQL (Ingres), traditional POSTGRES (Unix date format), or German. The default is the ISO format. (The SQL standard requires the use of the ISO 8601 format. The name of the “SQL” output format is a historical accident.) <a title="Table 8.14. Date/Time Output Styles" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-DATETIME-OUTPUT-TABLE">Table 8.14</a> shows examples of each output style. The output of the <code>date</code> and <code>time</code> types is generally only the date or time part in accordance with the given examples. However, the POSTGRES style outputs date-only values in ISO format.</p>
+<p><strong>Table 8.14. Date/Time Output Styles</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Style Specification</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>ISO</code></td><td>ISO 8601, SQL standard</td><td><code>1997-12-17 07:37:16-08</code></td></tr><tr><td><code>SQL</code></td><td>traditional style</td><td><code>12/17/1997 07:37:16.00 PST</code></td></tr><tr><td><code>Postgres</code></td><td>original style</td><td><code>Wed Dec 17 07:37:16 1997 PST</code></td></tr><tr><td><code>German</code></td><td>regional style</td><td><code>17.12.1997 07:37:16.00 PST</code></td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="note-1">Note<a href="#note-1" class="hash-link" aria-label="Direct link to Note" title="Direct link to Note">​</a></h3>
+<p>ISO 8601 specifies the use of uppercase letter <code>T</code> to separate the date and time. PostgreSQL accepts that format on input, but on output it uses a space rather than <code>T</code>, as shown above. This is for readability and for consistency with <a href="https://datatracker.ietf.org/doc/html/rfc3339" target="_blank" rel="noopener noreferrer">RFC 3339</a> as well as some other database systems.</p>
+<p>In the SQL and POSTGRES styles, day appears before month if DMY field ordering has been specified, otherwise month appears before day. (See <a title="8.5.1. Date/Time Input" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-DATETIME-INPUT">Section 8.5.1</a> for how this setting also affects interpretation of input values.) <a title="Table 8.15. Date Order Conventions" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-DATETIME-OUTPUT2-TABLE">Table 8.15</a> shows examples.</p>
+<p><strong>Table 8.15. Date Order Conventions</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><code>datestyle</code> Setting</th><th>Input Ordering</th><th>Example Output</th></tr></thead><tbody><tr><td><code>SQL, DMY</code></td><td><em><code>day</code></em>/<em><code>month</code></em>/<em><code>year</code></em></td><td><code>17/12/1997 15:37:16.00 CET</code></td></tr><tr><td><code>SQL, MDY</code></td><td><em><code>month</code></em>/<em><code>day</code></em>/<em><code>year</code></em></td><td><code>12/17/1997 07:37:16.00 PST</code></td></tr><tr><td><code>Postgres, DMY</code></td><td><em><code>day</code></em>/<em><code>month</code></em>/<em><code>year</code></em></td><td><code>Wed 17 Dec 07:37:16 1997 PST</code></td></tr></tbody></table>
+<p>In the ISO style, the time zone is always shown as a signed numeric offset from UTC, with positive sign used for zones east of Greenwich. The offset will be shown as <em><code>hh</code></em> (hours only) if it is an integral number of hours, else as <em><code>hh</code></em>:<em><code>mm</code></em> if it is an integral number of minutes, else as <em><code>hh</code></em>:<em><code>mm</code></em>:<em><code>ss</code></em>. (The third case is not possible with any modern time zone standard, but it can appear when working with timestamps that predate the adoption of standardized time zones.) In the other date styles, the time zone is shown as an alphabetic abbreviation if one is in common use in the current zone. Otherwise it appears as a signed numeric offset in ISO 8601 basic format (<em><code>hh</code></em> or <em><code>hhmm</code></em>).</p>
+<p>The date/time style can be selected by the user using the <code>SET datestyle</code> command, the <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-DATESTYLE">DateStyle</a> parameter in the <code>postgresql.conf</code> configuration file, or the <code>PGDATESTYLE</code> environment variable on the server or client.</p>
+<p>The formatting function <code>to_char</code> (see <a title="9.8. Data Type Formatting Functions" href="/II. The SQL Language/Data Types/functions-formatting.html">Section 9.8</a>) is also available as a more flexible way to format date/time output.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="853-time-zones">8.5.3. Time Zones<a href="#853-time-zones" class="hash-link" aria-label="Direct link to 8.5.3. Time Zones" title="Direct link to 8.5.3. Time Zones">​</a></h3>
+<p>Time zones, and time-zone conventions, are influenced by political decisions, not just earth geometry. Time zones around the world became somewhat standardized during the 1900s, but continue to be prone to arbitrary changes, particularly with respect to daylight-savings rules. PostgreSQL uses the widely-used IANA (Olson) time zone database for information about historical time zone rules. For times in the future, the assumption is that the latest known rules for a given time zone will continue to be observed indefinitely far into the future.</p>
+<p>PostgreSQL endeavors to be compatible with the SQL standard definitions for typical usage. However, the SQL standard has an odd mix of date and time types and capabilities. Two obvious problems are:</p>
+<ul>
+<li>Although the <code>date</code> type cannot have an associated time zone, the <code>time</code> type can. Time zones in the real world have little meaning unless associated with a date as well as a time, since the offset can vary through the year with daylight-saving time boundaries.</li>
+<li>The default time zone is specified as a constant numeric offset from UTC. It is therefore impossible to adapt to daylight-saving time when doing date/time arithmetic across DST boundaries.</li>
+</ul>
+<p>To address these difficulties, we recommend using date/time types that contain both date and time when using time zones. We do <em>not</em> recommend using the type <code>time with time zone</code> (though it is supported by PostgreSQL for legacy applications and for compliance with the SQL standard). PostgreSQL assumes your local time zone for any type containing only date or time.</p>
+<p>All timezone-aware dates and times are stored internally in UTC. They are converted to local time in the zone specified by the <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-TIMEZONE">TimeZone</a> configuration parameter before being displayed to the client.</p>
+<p>PostgreSQL allows you to specify time zones in three different forms:</p>
+<ul>
+<li>A full time zone name, for example <code>America/New_York</code>. The recognized time zone names are listed in the <code>pg_timezone_names</code> view (see <a title="54.32. pg_timezone_names" href="/II. The SQL Language/Data Types/view-pg-timezone-names.html">Section 54.32</a>). PostgreSQL uses the widely-used IANA time zone data for this purpose, so the same time zone names are also recognized by other software.</li>
+<li>A time zone abbreviation, for example <code>PST</code>. Such a specification merely defines a particular offset from UTC, in contrast to full time zone names which can imply a set of daylight savings transition rules as well. The recognized abbreviations are listed in the <code>pg_timezone_abbrevs</code> view (see <a title="54.31. pg_timezone_abbrevs" href="/II. The SQL Language/Data Types/view-pg-timezone-abbrevs.html">Section 54.31</a>). You cannot set the configuration parameters <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-TIMEZONE">TimeZone</a> or <a href="/II. The SQL Language/Data Types/runtime-config-logging.html#GUC-LOG-TIMEZONE">log_timezone</a> to a time zone abbreviation, but you can use abbreviations in date/time input values and with the <code>AT TIME ZONE</code> operator.</li>
+<li>In addition to the timezone names and abbreviations, PostgreSQL will accept POSIX-style time zone specifications, as described in <a title="B.5. POSIX Time Zone Specifications" href="/II. The SQL Language/Data Types/datetime-posix-timezone-specs.html">Section B.5</a>. This option is not normally preferable to using a named time zone, but it may be necessary if no suitable IANA time zone entry is available.</li>
+</ul>
+<p>In short, this is the difference between abbreviations and full names: abbreviations represent a specific offset from UTC, whereas many of the full names imply a local daylight-savings time rule, and so have two possible UTC offsets. As an example, <code>2014-06-04 12:00 America/New_York</code> represents noon local time in New York, which for this particular date was Eastern Daylight Time (UTC-4). So <code>2014-06-04 12:00 EDT</code> specifies that same time instant. But <code>2014-06-04 12:00 EST</code> specifies noon Eastern Standard Time (UTC-5), regardless of whether daylight savings was nominally in effect on that date.</p>
+<p>To complicate matters, some jurisdictions have used the same timezone abbreviation to mean different UTC offsets at different times; for example, in Moscow <code>MSK</code> has meant UTC+3 in some years and UTC+4 in others. PostgreSQL interprets such abbreviations according to whatever they meant (or had most recently meant) on the specified date; but, as with the <code>EST</code> example above, this is not necessarily the same as local civil time on that date.</p>
+<p>In all cases, timezone names and abbreviations are recognized case-insensitively. (This is a change from PostgreSQL versions prior to 8.2, which were case-sensitive in some contexts but not others.)</p>
+<p>Neither timezone names nor abbreviations are hard-wired into the server; they are obtained from configuration files stored under <code>.../share/timezone/</code> and <code>.../share/timezonesets/</code> of the installation directory (see <a title="B.4. Date/Time Configuration Files" href="/II. The SQL Language/Data Types/datetime-config-files.html">Section B.4</a>).</p>
+<p>The <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-TIMEZONE">TimeZone</a> configuration parameter can be set in the file <code>postgresql.conf</code>, or in any of the other standard ways described in <a title="Chapter 20. Server Configuration" href="/II. The SQL Language/Data Types/runtime-config.html">Chapter 20</a>. There are also some special ways to set it:</p>
+<ul>
+<li>The SQL command <code>SET TIME ZONE</code> sets the time zone for the session. This is an alternative spelling of <code>SET TIMEZONE TO</code> with a more SQL-spec-compatible syntax.</li>
+<li>The <code>PGTZ</code> environment variable is used by libpq clients to send a <code>SET TIME ZONE</code> command to the server upon connection.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="854-interval-input">8.5.4. Interval Input<a href="#854-interval-input" class="hash-link" aria-label="Direct link to 8.5.4. Interval Input" title="Direct link to 8.5.4. Interval Input">​</a></h3>
+<p><code>interval</code> values can be written using the following verbose syntax:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[@] quantity unit [quantity unit...] [direction]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>where <em><code>quantity</code></em> is a number (possibly signed); <em><code>unit</code></em> is <code>microsecond</code>, <code>millisecond</code>, <code>second</code>, <code>minute</code>, <code>hour</code>, <code>day</code>, <code>week</code>, <code>month</code>, <code>year</code>, <code>decade</code>, <code>century</code>, <code>millennium</code>, or abbreviations or plurals of these units; <em><code>direction</code></em> can be <code>ago</code> or empty. The at sign (<code>@</code>) is optional noise. The amounts of the different units are implicitly added with appropriate sign accounting. <code>ago</code> negates all the fields. This syntax is also used for interval output, if <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-INTERVALSTYLE">IntervalStyle</a> is set to <code>postgres_verbose</code>.</p>
+<p>Quantities of days, hours, minutes, and seconds can be specified without explicit unit markings. For example, <code>&#x27;1 12:59:10&#x27;</code> is read the same as <code>&#x27;1 day 12 hours 59 min 10 sec&#x27;</code>. Also, a combination of years and months can be specified with a dash; for example <code>&#x27;200-10&#x27;</code> is read the same as <code>&#x27;200 years 10 months&#x27;</code>. (These shorter forms are in fact the only ones allowed by the SQL standard, and are used for output when <code>IntervalStyle</code> is set to <code>sql_standard</code>.)</p>
+<p>Interval values can also be written as ISO 8601 time intervals, using either the “format with designators” of the standard&#x27;s section 4.4.3.2 or the “alternative format” of section 4.4.3.3. The format with designators looks like this:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">P quantity unit [ quantity unit ...] [ T [ quantity unit ...]]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>The string must start with a <code>P</code>, and may include a <code>T</code> that introduces the time-of-day units. The available unit abbreviations are given in <a title="Table 8.16. ISO 8601 Interval Unit Abbreviations" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-INTERVAL-ISO8601-UNITS">Table 8.16</a>. Units may be omitted, and may be specified in any order, but units smaller than a day must appear after <code>T</code>. In particular, the meaning of <code>M</code> depends on whether it is before or after <code>T</code>.</p>
+<p><strong>Table 8.16. ISO 8601 Interval Unit Abbreviations</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Abbreviation</th><th>Meaning</th></tr></thead><tbody><tr><td>Y</td><td>Years</td></tr><tr><td>M</td><td>Months (in the date part)</td></tr><tr><td>W</td><td>Weeks</td></tr><tr><td>D</td><td>Days</td></tr><tr><td>H</td><td>Hours</td></tr><tr><td>M</td><td>Minutes (in the time part)</td></tr><tr><td>S</td><td>Seconds</td></tr></tbody></table>
+<p>In the alternative format:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">P [ years-months-days ] [ T hours:minutes:seconds ]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>the string must begin with <code>P</code>, and a <code>T</code> separates the date and time parts of the interval. The values are given as numbers similar to ISO 8601 dates.</p>
+<p>When writing an interval constant with a <em><code>fields</code></em> specification, or when assigning a string to an interval column that was defined with a <em><code>fields</code></em> specification, the interpretation of unmarked quantities depends on the <em><code>fields</code></em>. For example <code>INTERVAL &#x27;1&#x27; YEAR</code> is read as 1 year, whereas <code>INTERVAL &#x27;1&#x27;</code> means 1 second. Also, field values “to the right” of the least significant field allowed by the <em><code>fields</code></em> specification are silently discarded. For example, writing <code>INTERVAL &#x27;1 day 2:03:04&#x27; HOUR TO MINUTE</code> results in dropping the seconds field, but not the day field.</p>
+<p>According to the SQL standard all fields of an interval value must have the same sign, so a leading negative sign applies to all fields; for example the negative sign in the interval literal <code>&#x27;-1 2:03:04&#x27;</code> applies to both the days and hour/minute/second parts. PostgreSQL allows the fields to have different signs, and traditionally treats each field in the textual representation as independently signed, so that the hour/minute/second part is considered positive in this example. If <code>IntervalStyle</code> is set to <code>sql_standard</code> then a leading sign is considered to apply to all fields (but only if no additional signs appear). Otherwise the traditional PostgreSQL interpretation is used. To avoid ambiguity, it&#x27;s recommended to attach an explicit sign to each field if any field is negative.</p>
+<p>Internally, <code>interval</code> values are stored as three integral fields: months, days, and microseconds. These fields are kept separate because the number of days in a month varies, while a day can have 23 or 25 hours if a daylight savings time transition is involved. An interval input string that uses other units is normalized into this format, and then reconstructed in a standardized way for output, for example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SELECT &#x27;2 years 15 months 100 weeks 99 hours 123456789 milliseconds&#x27;::interval;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">               interval</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">---------------------------------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> 3 years 3 mons 700 days 133:17:36.789</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>Here weeks, which are understood as “7 days”, have been kept separate, while the smaller and larger time units were combined and normalized.</p>
+<p>Input field values can have fractional parts, for example <code>&#x27;1.5 weeks&#x27;</code> or <code>&#x27;01:02:03.45&#x27;</code>. However, because <code>interval</code> internally stores only integral fields, fractional values must be converted into smaller units. Fractional parts of units greater than months are rounded to be an integer number of months, e.g. <code>&#x27;1.5 years&#x27;</code> becomes <code>&#x27;1 year 6 mons&#x27;</code>. Fractional parts of weeks and days are computed to be an integer number of days and microseconds, assuming 30 days per month and 24 hours per day, e.g., <code>&#x27;1.75 months&#x27;</code> becomes <code>1 mon 22 days 12:00:00</code>. Only seconds will ever be shown as fractional on output.</p>
+<p><a title="Table 8.17. Interval Input" href="/II. The SQL Language/Data Types/datatype-datetime.html#DATATYPE-INTERVAL-INPUT-EXAMPLES">Table 8.17</a> shows some examples of valid <code>interval</code> input.</p>
+<p><strong>Table 8.17. Interval Input</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Example</th><th>Description</th></tr></thead><tbody><tr><td><code>1-2</code></td><td>SQL standard format: 1 year 2 months</td></tr><tr><td><code>3 4:05:06</code></td><td>SQL standard format: 3 days 4 hours 5 minutes 6 seconds</td></tr><tr><td><code>1 year 2 months 3 days 4 hours 5 minutes 6 seconds</code></td><td>Traditional Postgres format: 1 year 2 months 3 days 4 hours 5 minutes 6 seconds</td></tr><tr><td><code>P1Y2M3DT4H5M6S</code></td><td>ISO 8601 “format with designators”: same meaning as above</td></tr><tr><td><code>P0001-02-03T04:05:06</code></td><td>ISO 8601 “alternative format”: same meaning as above</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="855-interval-output">8.5.5. Interval Output<a href="#855-interval-output" class="hash-link" aria-label="Direct link to 8.5.5. Interval Output" title="Direct link to 8.5.5. Interval Output">​</a></h3>
+<p>As previously explained, PostgreSQL stores <code>interval</code> values as months, days, and microseconds. For output, the months field is converted to years and months by dividing by 12. The days field is shown as-is. The microseconds field is converted to hours, minutes, seconds, and fractional seconds. Thus months, minutes, and seconds will never be shown as exceeding the ranges 0–11, 0–59, and 0–59 respectively, while the displayed years, days, and hours fields can be quite large. (The <a href="/II. The SQL Language/Data Types/functions-datetime.html#FUNCTION-JUSTIFY-DAYS"><code>justify_days</code></a> and <a href="/II. The SQL Language/Data Types/functions-datetime.html#FUNCTION-JUSTIFY-HOURS"><code>justify_hours</code></a> functions can be used if it is desirable to transpose large days or hours values into the next higher field.)</p>
+<p>The output format of the interval type can be set to one of the four styles <code>sql_standard</code>, <code>postgres</code>, <code>postgres_verbose</code>, or <code>iso_8601</code>, using the command <code>SET intervalstyle</code>. The default is the <code>postgres</code> format. <a title="Table 8.18. Interval Output Style Examples" href="/II. The SQL Language/Data Types/datatype-datetime.html#INTERVAL-STYLE-OUTPUT-TABLE">Table 8.18</a> shows examples of each output style.</p>
+<p>The <code>sql_standard</code> style produces output that conforms to the SQL standard&#x27;s specification for interval literal strings, if the interval value meets the standard&#x27;s restrictions (either year-month only or day-time only, with no mixing of positive and negative components). Otherwise the output looks like a standard year-month literal string followed by a day-time literal string, with explicit signs added to disambiguate mixed-sign intervals.</p>
+<p>The output of the <code>postgres</code> style matches the output of PostgreSQL releases prior to 8.4 when the <a href="/II. The SQL Language/Data Types/runtime-config-client.html#GUC-DATESTYLE">DateStyle</a> parameter was set to <code>ISO</code>.</p>
+<p>The output of the <code>postgres_verbose</code> style matches the output of PostgreSQL releases prior to 8.4 when the <code>DateStyle</code> parameter was set to non-<code>ISO</code> output.</p>
+<p>The output of the <code>iso_8601</code> style matches the “format with designators” described in section 4.4.3.2 of the ISO 8601 standard.</p>
+<p><strong>Table 8.18. Interval Output Style Examples</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Style Specification</th><th>Year-Month Interval</th><th>Day-Time Interval</th><th>Mixed Interval</th></tr></thead><tbody><tr><td><code>sql_standard</code></td><td>1-2</td><td>3 4:05:06</td><td>-1-2 +3 -4:05:06</td></tr><tr><td><code>postgres</code></td><td>1 year 2 mons</td><td>3 days 04:05:06</td><td>-1 year -2 mons +3 days -04:05:06</td></tr><tr><td><code>postgres_verbose</code></td><td>@ 1 year 2 mons</td><td>@ 3 days 4 hours 5 mins 6 secs</td><td>@ 1 year 2 mons -3 days 4 hours 5 mins 6 secs ago</td></tr><tr><td><code>iso_8601</code></td><td>P1Y2M</td><td>P3DT4H5M6S</td><td>P-1Y-2M3D​T-4H-5M-6S</td></tr></tbody></table>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a title="8.4. Binary Data Types" href="/II. The SQL Language/Data Types/datatype-binary.html">Prev</a></td><td><a title="Chapter 8. Data Types" href="/II. The SQL Language/Data Types/datatype.html">Up</a></td><td><a title="8.6. Boolean Type" href="/II. The SQL Language/Data Types/datatype-boolean.html">Next</a></td></tr><tr><td>8.4. Binary Data Types</td><td><a title="PostgreSQL 16.9 Documentation" href="/II. The SQL Language/Data Types/index.html">Home</a></td><td>8.6. Boolean Type</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="submit-correction">Submit correction<a href="#submit-correction" class="hash-link" aria-label="Direct link to Submit correction" title="Direct link to Submit correction">​</a></h2>
+<p>If you see anything in the documentation that is not correct, does not match
+your experience with the particular feature or requires further clarification,
+please use
+<a href="/account/comments/new/16/datatype-datetime.html/">this form</a>
+to report a documentation issue.</p>
+<p><a href="/about/privacypolicy">Privacy Policy</a> |
+<a href="/about/policies/coc/">Code of Conduct</a> |
+<a href="/about/">About PostgreSQL</a> |
+<a href="/about/contact/">Contact</a></p>
+<p>Copyright © 1996-2025 The PostgreSQL Global Development Group</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/II. The SQL Language/Data Types/datatype-character"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">8.3. Character Types</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/II. The SQL Language/Data Types/datatype-enum"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">8.7. Enumerated Types</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#85datetime-types-" class="table-of-contents__link toc-highlight">8.5. Date/Time Types #</a><ul><li><a href="#note" class="table-of-contents__link toc-highlight">Note</a></li><li><a href="#851-datetime-input" class="table-of-contents__link toc-highlight">8.5.1. Date/Time Input</a></li><li><a href="#caution" class="table-of-contents__link toc-highlight">Caution</a></li><li><a href="#852-datetime-output" class="table-of-contents__link toc-highlight">8.5.2. Date/Time Output</a></li><li><a href="#note-1" class="table-of-contents__link toc-highlight">Note</a></li><li><a href="#853-time-zones" class="table-of-contents__link toc-highlight">8.5.3. Time Zones</a></li><li><a href="#854-interval-input" class="table-of-contents__link toc-highlight">8.5.4. Interval Input</a></li><li><a href="#855-interval-output" class="table-of-contents__link toc-highlight">8.5.5. Interval Output</a></li></ul></li><li><a href="#submit-correction" class="table-of-contents__link toc-highlight">Submit correction</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

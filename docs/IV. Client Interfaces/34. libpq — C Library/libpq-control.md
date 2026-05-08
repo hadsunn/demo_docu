@@ -1,0 +1,129 @@
+---
+title: 34.11. Control Functions
+---
+
+
+
+
+
+
+
+Supported versions: 13 / 14 / 15 / 16 / 17
+
+
+Development versions: 18 / devel
+
+
+Unsupported versions: 10 / 11 / 12 / 7.1 / 7.2 / 7.3 / 7.4 / 8.0 / 8.1 / 8.2 / 8.3 / 8.4 / 9.0 / 9.1 / 9.2 / 9.3 / 9.4 / 9.5 / 9.6
+
+
+---  
+  
+
+
+These functions control miscellaneous details of libpq's behavior.
+
+`PQclientEncoding` #
+    
+
+Returns the client encoding.
+    
+    
+    int PQclientEncoding(const PGconn *_conn_);
+    
+
+Note that it returns the encoding ID, not a symbolic string such as `EUC_JP`. If unsuccessful, it returns -1. To convert an encoding ID to an encoding name, you can use:
+    
+    
+    char *pg_encoding_to_char(int _encoding_id_);
+    
+
+`PQsetClientEncoding` #
+    
+
+Sets the client encoding.
+    
+    
+    int PQsetClientEncoding(PGconn *_conn_ , const char *_encoding_);
+    
+
+_`conn`_ is a connection to the server, and _`encoding`_ is the encoding you want to use. If the function successfully sets the encoding, it returns 0, otherwise -1. The current encoding for this connection can be determined by using [`PQclientEncoding`](libpq-control.html#LIBPQ-PQCLIENTENCODING).
+
+`PQsetErrorVerbosity` #
+    
+
+Determines the verbosity of messages returned by [`PQerrorMessage`](libpq-status.html#LIBPQ-PQERRORMESSAGE) and [`PQresultErrorMessage`](libpq-exec.html#LIBPQ-PQRESULTERRORMESSAGE).
+    
+    
+    typedef enum
+    {
+        PQERRORS_TERSE,
+        PQERRORS_DEFAULT,
+        PQERRORS_VERBOSE,
+        PQERRORS_SQLSTATE
+    } PGVerbosity;
+    
+    PGVerbosity PQsetErrorVerbosity(PGconn *conn, PGVerbosity verbosity);
+    
+
+[`PQsetErrorVerbosity`](libpq-control.html#LIBPQ-PQSETERRORVERBOSITY) sets the verbosity mode, returning the connection's previous setting. In _TERSE_ mode, returned messages include severity, primary text, and position only; this will normally fit on a single line. The _DEFAULT_ mode produces messages that include the above plus any detail, hint, or context fields (these might span multiple lines). The _VERBOSE_ mode includes all available fields. The _SQLSTATE_ mode includes only the error severity and the `SQLSTATE` error code, if one is available (if not, the output is like _TERSE_ mode).
+
+Changing the verbosity setting does not affect the messages available from already-existing `PGresult` objects, only subsequently-created ones. (But see [`PQresultVerboseErrorMessage`](libpq-exec.html#LIBPQ-PQRESULTVERBOSEERRORMESSAGE) if you want to print a previous error with a different verbosity.)
+
+`PQsetErrorContextVisibility` #
+    
+
+Determines the handling of `CONTEXT` fields in messages returned by [`PQerrorMessage`](libpq-status.html#LIBPQ-PQERRORMESSAGE) and [`PQresultErrorMessage`](libpq-exec.html#LIBPQ-PQRESULTERRORMESSAGE).
+    
+    
+    typedef enum
+    {
+        PQSHOW_CONTEXT_NEVER,
+        PQSHOW_CONTEXT_ERRORS,
+        PQSHOW_CONTEXT_ALWAYS
+    } PGContextVisibility;
+    
+    PGContextVisibility PQsetErrorContextVisibility(PGconn *conn, PGContextVisibility show_context);
+    
+
+[`PQsetErrorContextVisibility`](libpq-control.html#LIBPQ-PQSETERRORCONTEXTVISIBILITY) sets the context display mode, returning the connection's previous setting. This mode controls whether the `CONTEXT` field is included in messages. The _NEVER_ mode never includes `CONTEXT`, while _ALWAYS_ always includes it if available. In _ERRORS_ mode (the default), `CONTEXT` fields are included only in error messages, not in notices and warnings. (However, if the verbosity setting is _TERSE_ or _SQLSTATE_ , `CONTEXT` fields are omitted regardless of the context display mode.)
+
+Changing this mode does not affect the messages available from already-existing `PGresult` objects, only subsequently-created ones. (But see [`PQresultVerboseErrorMessage`](libpq-exec.html#LIBPQ-PQRESULTVERBOSEERRORMESSAGE) if you want to print a previous error with a different display mode.)
+
+`PQtrace` #
+    
+
+Enables tracing of the client/server communication to a debugging file stream.
+    
+    
+    void PQtrace(PGconn *conn, FILE *stream);
+    
+
+Each line consists of: an optional timestamp, a direction indicator (`F` for messages from client to server or `B` for messages from server to client), message length, message type, and message contents. Non-message contents fields (timestamp, direction, length and message type) are separated by a tab. Message contents are separated by a space. Protocol strings are enclosed in double quotes, while strings used as data values are enclosed in single quotes. Non-printable chars are printed as hexadecimal escapes. Further message-type-specific detail can be found in [Section 55.7](</VII. Internals/55. FrontendBackend Protocol/protocol-message-formats.md>).
+
+### Note
+
+On Windows, if the libpq library and an application are compiled with different flags, this function call will crash the application because the internal representation of the `FILE` pointers differ. Specifically, multithreaded/single-threaded, release/debug, and static/dynamic flags should be the same for the library and all applications using that library.
+
+`PQsetTraceFlags` #
+    
+
+Controls the tracing behavior of client/server communication.
+    
+    
+    void PQsetTraceFlags(PGconn *conn, int flags);
+    
+
+`flags` contains flag bits describing the operating mode of tracing. If `flags` contains `PQTRACE_SUPPRESS_TIMESTAMPS`, then the timestamp is not included when printing each message. If `flags` contains `PQTRACE_REGRESS_MODE`, then some fields are redacted when printing each message, such as object OIDs, to make the output more convenient to use in testing frameworks. This function must be called after calling `PQtrace`.
+
+`PQuntrace` #
+    
+
+Disables tracing started by [`PQtrace`](libpq-control.html#LIBPQ-PQTRACE).
+    
+    
+    void PQuntrace(PGconn *conn);
+    
+
+
+  
