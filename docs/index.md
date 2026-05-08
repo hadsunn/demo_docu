@@ -1,6 +1,6 @@
 ---
 slug: /
-title: PostgreSQL 16.9 Documentation Test
+title: PostgreSQL 16.9 Documentation Test2
 sidebar_position: 1
 ---
 
