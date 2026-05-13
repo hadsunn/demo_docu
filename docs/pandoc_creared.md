@@ -106,8 +106,8 @@ style="width:0.25139in;height:0.25139in" /></th>
   - [Права пользователя СУБД](#права-пользователя-субд)
   - [Пример подключения к целевой СУБД и получения отчета](#пример-подключения-к-целевой-субд-и-получения-отчета)
 - [Отчет в формате JSON](#отчет-в-формате-json)
+- [Термины и определения](#термины-и-определения)
 - [](#)
-- [](#-1)
 
 
 # Назначение компонента
@@ -155,10 +155,9 @@ style="width:0.25139in;height:0.25139in" /></th>
 
 Для установки компонента требуется выполнить следующие шаги:
 
-1)  
+1)  в окне «Выбор типа установки» следует выбрать тип установки «Выборочная» (см. рис. Рисунок 2.1);
 
-в окне «Выбор типа установки» следует выбрать тип установки «Выборочная»
-(см. рис. Рисунок 2.1);<img src="./docs/images/media/image3.png"
+<img src="./docs/images/media/image3.png"
 style="width:3.85272in;height:3.01212in" />
 
 Рисунок . – Окно выбора типа установки
@@ -172,6 +171,8 @@ style="width:3.85272in;height:3.01212in" />
 
 <img src="images/media/image4.png"
 style="width:3.84457in;height:3.00576in" />
+
+<img src="images/media/image4.png" alt="Описание" width="500" height="400">
 
 Рисунок . – Выбор устанавливаемых компонент
 
@@ -481,10 +482,9 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 
 > ja_inventory_ABCDEF12_123456AB.json
 
-# 
+# Термины и определения
 
-<span id="_Toc208910807" class="anchor"></span>Термины и
-определения**Администратор СУБД** – субъект доступа, выполняющий
+**Администратор СУБД** – субъект доступа, выполняющий
 административные функции в СУБД и наделенный правами:
 
 -   
@@ -507,13 +507,10 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 **Пользователь БД** - субъект доступа, имеющий доступ к ограниченному
 перечню БД и объектов БД. Имеющий следующий набор привилегий:
 
--   
--   
+- создавать и манипулировать объектами доступа БД (таблица, запись или столбец, поле, представление и иные объекты доступа);
+- выполнять процедуры (программный код), хранимые в БД.Пользователь БД имеет обязательный атрибут LOGIN.
 
-создавать и манипулировать объектами доступа БД (таблица, запись или
-столбец, поле, представление и иные объекты доступа);выполнять процедуры
-(программный код), хранимые в БД.Пользователь БД имеет обязательный
-атрибут LOGIN.
+
 
 # 
 
@@ -524,353 +521,3 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 | ОС                                                                    | –   | Операционная система             |
 | СУБД                                                                  | –   | Система управления базами данных |
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th colspan="10">Лист регистрации изменений</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td rowspan="2">Изм.</td>
-<td colspan="4">Номера листов (страниц)</td>
-<td rowspan="2">Всего<br />
-листов (страниц)<br />
-в документе</td>
-<td rowspan="2">Номер документа</td>
-<td rowspan="2">Входящий номер сопроводительного документа и дата</td>
-<td rowspan="2">Подпись</td>
-<td rowspan="2">Дата</td>
-</tr>
-<tr class="even">
-<td>измененных</td>
-<td>замененных</td>
-<td>новых</td>
-<td>аннулированных</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
