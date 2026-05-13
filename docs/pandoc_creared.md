@@ -169,6 +169,11 @@ style="width:3.85272in;height:3.01212in" />
 
 ![](images/media/image4.png)
 
+import myImage from 'images/media/image4.png';
+<img src={myImage} alt="Описание" width={500} height={400} />
+
+Через myimage выше
+
 <img src="images/media/image4.png"
 style="width:3.84457in;height:3.00576in" />
 
