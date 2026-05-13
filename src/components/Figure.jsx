@@ -1,6 +1,6 @@
 // src/components/Figure.jsx
 import React from 'react';
-import './figure.css'; // опционально: стили для figure/figcaption
+//import './figure.css'; // опционально: стили для figure/figcaption
 
 let _figureCounter = 0;
 export function resetFigureCounter() {
