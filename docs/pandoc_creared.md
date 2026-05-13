@@ -66,12 +66,10 @@ ja_inventory), предназначенного для формирования 
 
 Степени важности примечаний, применяемые в документе:
 
-| <img src="images/media/image2.png"     
- style="width:0.25139in;height:0.25139in" />  | **Важная информация** – указания, требующие особого внимания |
+| <img src="assets/images/media/image2.png" style="width:0.25139in;height:0.25139in" />  | **Важная информация** – указания, требующие особого внимания |
 |---------------------------------------------|--------------------------------------------------------------|
 
-| <img src="images/media/image1.png" 
- style="width:0.25in;height:0.25in" />    | **Дополнительная информация** – указания, позволяющие упростить работу с изделием |
+| <img src="assets/images/media/image1.png" style="width:0.25in;height:0.25in" />    | **Дополнительная информация** – указания, позволяющие упростить работу с изделием |
 |-----------------------------------------|-----------------------------------------------------------------------------------|
 
 <table>
@@ -81,7 +79,7 @@ ja_inventory), предназначенного для формирования 
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="images/media/image2.png"
+<th><img src="assets/images/media/image2.png"
 style="width:0.25139in;height:0.25139in" /></th>
 <th><p><strong>Важная информация</strong></p>
 <p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа
@@ -157,7 +155,7 @@ style="width:0.25139in;height:0.25139in" /></th>
 
 1)  в окне «Выбор типа установки» следует выбрать тип установки «Выборочная» (см. рис. Рисунок 2.1);
 
-<img src="./docs/images/media/image3.png"
+<img src="./assets/images/media/image3.png"
 style="width:3.85272in;height:3.01212in" />
 
 Рисунок . – Окно выбора типа установки
@@ -167,21 +165,18 @@ style="width:3.85272in;height:3.01212in" />
 в окне «Выборочная установка», выбрать «ja_Inventory» (см. рис. Рисунок
 2.2);Остальные компоненты при ненадобности доступно отключить.
 
-![](images/media/image4.png)
-
-import myImage from 'images/media/image4.png';
-<img src={myImage} alt="Описание" width={500} height={400} />
+![](assets/images/media/image4.png)
 
 Через myimage выше
 
-<img src="images/media/image4.png" alt="Описание" width="500" height="300" />
+<img src="assets/images/media/image4.png" alt="Описание" width="500" height="300" />
 
 img src ^
 
-<img src="images/media/image4.png"
+<img src="assets/images/media/image4.png"
 style="width:3.84457in;height:3.00576in" />
 
-<img src="images/media/image4.png" alt="Описание" width="500" height="400">
+<img src="assets/images/media/image4.png" alt="Описание" width="500" height="400">
 
 Рисунок . – Выбор устанавливаемых компонент
 
@@ -191,7 +186,7 @@ style="width:3.84457in;height:3.00576in" />
 установки, нажав кнопку «Установить» (см. рис. Рисунок
 2.3);
 
-<img src="images/media/image5.png"
+<img src="assets/images/media/image5.png"
 style="width:4.06172in;height:3.14208in" />
 
 Рисунок 2.3 – Окно «Все готово к установке Jatoba»
@@ -217,7 +212,7 @@ style="width:4.06172in;height:3.14208in" />
 
 > dpkg --force-all -i jatoba6-ja-inventory_1.0.0-18.\_amd64.deb
 
-<img src="images/media/image6.png"
+<img src="assets/images/media/image6.png"
 style="width:7.13472in;height:1.92199in"
 alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-18 06-22-20.png" />
 
@@ -231,7 +226,7 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 В результате в каталоге СУБД будет находится единственный файл с
 утилитой.
 
-<img src="images/media/image7.png"
+<img src="assets/images/media/image7.png"
 style="width:7.13472in;height:1.42416in"
 alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-18 06-27-21.png" />
 
@@ -263,7 +258,7 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 строка разрешения подключения может иметь вид, как представлено на
 рисунке Рисунок 2.6.
 
-<img src="images/media/image8.png"
+<img src="assets/images/media/image8.png"
 style="width:6.74026in;height:2.27847in"/>
 
 Рисунок . - Вид конфигурационного файла «pg_hba.conf»
@@ -388,7 +383,7 @@ style="width:6.74026in;height:2.27847in"/>
 выделенный пользователь должен иметь атрибут LOGIN;CREATE ROLE
 ja_inventory LOGIN PASSWORD 'password';
 
-<img src="images/media/image9.png"
+<img src="assets/images/media/image9.png"
 style="width:7.09275in;height:1.04215in"
 alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 03-57-53.png" />
 
@@ -400,14 +395,14 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 > и получать результаты выполнения этой
 > функции;GRANT EXECUTE ON FUNCTION pg_catalog.jatoba_version TO ja_inventory;
 
-<img src="images/media/image10.png"
+<img src="assets/images/media/image10.png"
 style="width:7.10225in;height:1.048in"
 alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 06-33-59.png" />
 
 Рисунок . – SQL- команда наделения правом пользователя на выполнение
 функции jatoba_version
 
-| <img src="images/media/image1.png" 
+| <img src="assets/images/media/image1.png" 
  style="width:0.25in;height:0.25in" />    | Разрешение применяется для всех БД |
 |-----------------------------------------|------------------------------------|
 
@@ -419,13 +414,13 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 > pg_extension в схеме pg_catalog;GRANT SELECT ON TABLE
 > pg_catalog.pg_database TO ja_inventory;
 
-| <img src="images/media/image1.png" 
+| <img src="assets/images/media/image1.png" 
  style="width:0.25in;height:0.25in" />    | Разрешение применяется для всех БД |
 |-----------------------------------------|------------------------------------|
 
 > GRANT SELECT ON TABLE pg_catalog.pg_extension TO ja_inventory;
 
-<img src="images/media/image11.png"
+<img src="assets/images/media/image11.png"
 style="width:7.09614in;height:1.456in"
 alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 04-11-13.png" />
 
@@ -443,7 +438,7 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 
 > ./ja_inventory -h 10.116.102.130 -U postgres --org-name Datagile –W
 
-<img src="images/media/image12.png"
+<img src="assets/images/media/image12.png"
 style="width:7.07219in;height:2.25872in"
 alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 02-23-48.png" />
 
@@ -473,7 +468,7 @@ alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская д
 
 Отчет имеет вид представленный на рисунке Рисунок 4.1.
 
-<img src="images/media/image13.png"
+<img src="assets/images/media/image13.png"
 style="width:6.75278in;height:3.00649in"
 alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 04-43-37.png" />
 
