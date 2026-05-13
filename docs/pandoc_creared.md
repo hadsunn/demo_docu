@@ -174,6 +174,10 @@ import myImage from 'images/media/image4.png';
 
 Через myimage выше
 
+<img src="images/media/image4.png" alt="Описание" width="500" height="300" />
+
+img src ^
+
 <img src="images/media/image4.png"
 style="width:3.84457in;height:3.00576in" />
 
