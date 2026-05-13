@@ -1,21 +1,31 @@
-// src/components/Figure.jsx
-import React from 'react';
-//import './figure.css'; // опционально: стили для figure/figcaption
+import React, { useState, useEffect } from 'react';
 
-let _figureCounter = 0;
-export function resetFigureCounter() {
-  _figureCounter = 0;
-}
+// Глобальный массив для отслеживания порядка изображений на текущей странице
+let pageImages = []; 
 
-export default function Figure({ src, alt = '', caption = '', width, height, id }) {
-  const num = ++_figureCounter;
-  const figId = id || `figure-${num}`;
-  const style = {};
-  if (width) style.maxWidth = typeof width === 'number' ? `${width}px` : width;
+export default function Figure({ src, caption }) {
+  const [imgNumber, setImgNumber] = useState(0);
+
+  useEffect(() => {
+    // Добавляем этот экземпляр в список страницы, если его там нет
+    if (!pageImages.includes(src)) {
+      pageImages.push(src);
+    }
+    // Присваиваем номер на основе индекса в массиве (+1 для отсчета с 1)
+    setImgNumber(pageImages.indexOf(src) + 1);
+
+    // Очистка при уходе со страницы
+    return () => {
+      pageImages = [];
+    };
+  }, [src]);
+
   return (
-    <figure id={figId} className="doc-figure" style={{ margin: '1em 0' }}>
-      <img src={src} alt={alt} style={{ width: '100%', height: 'auto', ...style }} />
-      <figcaption className="doc-figcaption">{`Рисунок ${num}. ${caption}`}</figcaption>
-    </figure>
+    <div style={{ textStyle: 'center', margin: '20px 0' }}>
+      <img src={src} alt={caption} style={{ display: 'block', margin: '0 auto', maxWidth: '100%' }} />
+      <p style={{ textAlign: 'center', fontSize: '0.9em', marginTop: '8px', color: '#555' }}>
+        <strong>Рисунок {imgNumber}:</strong> {caption}
+      </p>
+    </div>
   );
 }
