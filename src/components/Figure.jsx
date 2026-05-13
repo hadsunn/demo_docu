@@ -23,7 +23,7 @@ export default function Figure({ src, caption }) {
   return (
     <div style={{ textStyle: 'center', margin: '20px 0' }}>
       <img src={src} alt={caption} style={{ display: 'block', margin: '0 auto', maxWidth: '100%' }} />
-      <p style={{ textAlign: 'center', fontSize: '0.9em', marginTop: '8px', color: '#555' }}>
+      <p style={{ textAlign: 'center', fontSize: '0.9em', marginTop: '8px', color: '#000000' }}>
         <strong>Рисунок {imgNumber}:</strong> {caption}
       </p>
     </div>
