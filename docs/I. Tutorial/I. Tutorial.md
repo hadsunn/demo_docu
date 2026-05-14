@@ -2,20 +2,6 @@
 title: Part I. Tutorial
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Supported versions: 13 / 14 / 15 / 16 / 17
 
 
@@ -88,30 +74,4 @@ After you have worked through this tutorial you might want to move on to reading
 [2.8. Updates](</I. Tutorial/2. The SQL Language/tutorial-update.md>)
 
 [2.9. Deletions](</I. Tutorial/2. The SQL Language/tutorial-delete.md>)
-
-[3\. Advanced Features](</I. Tutorial/3. Advanced Features/3. Advanced Features.md>)
-
-    
-
-
-
-[3.1. Introduction](</I. Tutorial/3. Advanced Features/tutorial-advanced-intro.md>)
-
-[3.2. Views](</I. Tutorial/3. Advanced Features/tutorial-views.md>)
-
-[3.3. Foreign Keys](</I. Tutorial/3. Advanced Features/tutorial-fk.md>)
-
-[3.4. Transactions](</I. Tutorial/3. Advanced Features/tutorial-transactions.md>)
-
-[3.5. Window Functions](</I. Tutorial/3. Advanced Features/tutorial-window.md>)
-
-[3.6. Inheritance](</I. Tutorial/3. Advanced Features/tutorial-inheritance.md>)
-
-[3.7. Conclusion](</I. Tutorial/3. Advanced Features/tutorial-conclusion.md>)
-
-
-
-
-
-  
 

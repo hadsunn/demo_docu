@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Postgres Документация',
+  title: 'Postgres',
   tagline: 'Postgresql',
   favicon: 'img/faviconV2.png',
 

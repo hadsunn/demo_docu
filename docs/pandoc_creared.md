@@ -384,8 +384,7 @@ style="width:6.74026in;height:2.27847in"/>
 ja_inventory LOGIN PASSWORD 'password';
 
 <img src="assets/images/media/image9.png"
-style="width:7.09275in;height:1.04215in"
-alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 03-57-53.png" />
+style="width:7.09275in;height:1.04215in"/>
 
 Рисунок 3.1 – Создание пользователя
 
