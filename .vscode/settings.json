@@ -3,3 +3,8 @@
         "JATOBA"
     ]
 }
+
+{
+  "markdown.extension.imgPreview.baseFolder": "${workspaceFolder}/static",
+  "markdown.extension.imgPreview.pathAsIs": true
+}
