@@ -1,0 +1,29 @@
+{
+  "MDX note block": {
+    "prefix": "!n",
+    "body": [
+      ":::note Дополнительная информация",
+      "",
+      ":::"
+    ],
+    "description": "Insert a note admonition for MDX/Docusaurus"
+  },
+  "MDX warn block": {
+    "prefix": "!w",
+    "body": [
+      ":::note Важная информация",
+      "",
+      ":::"
+    ],
+    "description": "Insert a note admonition for MDX/Docusaurus"
+  },
+  "MDX title block": {
+    "prefix": "!t",
+    "body": [
+      "---",
+      "title: ",
+      "---"
+    ],
+    "description": "Insert a note admonition for MDX/Docusaurus"
+  }
+}
