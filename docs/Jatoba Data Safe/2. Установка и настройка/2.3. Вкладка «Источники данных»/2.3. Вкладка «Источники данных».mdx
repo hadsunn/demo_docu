@@ -1,0 +1,177 @@
+---
+title: 2.3. Вкладка «Источники данных»
+---
+
+## Вкладка «Источники данных»
+
+Вкладка «Источники данных» в разделе «Настройки» используется для
+раздела «Мониторинг», описанного в п. 3 настоящего документа.
+
+<img src={require('/docs/assets/images/jds-gfm/image25.png').default} alt="Описание" />
+Рисунок 2.19 – Вкладка «Источники данных»
+
+В качестве источника данных используется система «PROMETHEUS», для
+подключения к которой потребуется указать имя подключения и URL с
+используемым портом.
+
+<img src={require('/docs/assets/images/jds-gfm/image26.png').default} alt="Описание" />
+Рисунок 2.20 – Окно добавления нового источника данных
+
+Установив параметры подключения, требуется проверить доступность
+источника. Нажатие на кнопку «Тест подключения» проверить
+доступность источника и сформирует дополнительную информацию по
+источнику, доступную по гиперссылке «Подробности».
+
+При тестировании соединения в момент создания нового подключения к
+системе «PROMETHEUS» предоставляется подробная информация о
+настроенных экспортерах, а также адреса серверов СУБД,
+наблюдаемых соответствующими экспортерами.
+
+Таким образом предоставляется информация о подключении требуемого
+инстанса системы «PROMETHEUS», правильно ли настроена система и
+подключены ли к ней желаемые базы.
+
+<img src={require('/docs/assets/images/jds-gfm/image27.png').default} alt="Описание" />
+Рисунок 2.21 – Окно «Опрашиваемые экспортеры и наблюдаемые СУБД»
+
+Перечень полей окна «Опрашиваемые экспортеры и наблюдаемые СУБД»
+приведен в таблице Таблица 2.4.
+
+Таблица 2.4 - Перечень полей
+
+<table>
+<thead>
+<tr class="header">
+<th><blockquote>
+<p><strong>Столбец</strong></p>
+</blockquote></th>
+<th><blockquote>
+<p><strong>Примечание</strong></p>
+</blockquote></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><blockquote>
+<p><strong>Задание</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p><strong> </strong></p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p><strong>URL метрик</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Активная ссылка, открывается в новой вкладке браузера</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p><strong>Интервал</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p> Интервал опроса</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p><strong>Последний опрос</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p> Временная метка последнего опроса</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p> * всплывающая подсказка</p>
+</blockquote></td>
+<td><blockquote>
+<p>Отображать длительность опроса в формате: &quot;Длительность: 99.9 с&quot;/&quot;Duration: 99.9 s&quot;</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p><strong>Статус</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Статус экспортера:</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>UP - последний опрос экспортёра вернул метрики, экспортёр работоспособен;</p>
+</blockquote></li>
+<li><blockquote>
+<p>DOWN - последний опрос экспортёра вернул ошибку</p>
+</blockquote></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p> * всплывающая подсказка</p>
+</blockquote></td>
+<td><blockquote>
+<p>В случае статуса DOWN отображать информацию об ошибке</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p><strong>Адрес СУБД</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Адрес СУБД получаемый из метрик Prom-QL запросом:</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>pg_static (для postgres_exporter);</p>
+</blockquote></li>
+<li><blockquote>
+<p>pg_server  (для sql_exporter).</p>
+</blockquote></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p><strong>Тип экспортера</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Тип экспортёра определяемый сочетанием названия метрики и содержимым метки <strong>instance</strong>:</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>pg_static для postgres_exporter;</p>
+</blockquote></li>
+<li><blockquote>
+<p>pg_server для sql_exporter;</p>
+</blockquote></li>
+<li><blockquote>
+<p>node_os_info для node_exporter;</p>
+</blockquote></li>
+<li><blockquote>
+<p>windows_os_info для windows_exporter;</p>
+</blockquote></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+### Информирование о неполном перечне наблюдаемых СУБД
+
+После настройки источника данных компонент определит полный перечень
+возможных для мониторинга объектов.
+
+<img src={require('/docs/assets/images/jds-gfm/image28.png').default} alt="Описание" />
+Рисунок 2.22 – Поле «Источник данных»
+
+В поле выбора «Источника данных» (СУБД) появится предупредительный знак,
+если в область мониторинга были не включены все инстансы системе
+«PROMETHEUS».
+
+Наведение курсора на предупредительный знак, появится всплывающая
+подсказка.
+
+Перейдя по гиперссылке «Вкладка «Источники данных» откроется одноименный
+раздел компонента, где выбрав любое из подключений и протестировав его в
+окне «Опрашиваемые экспортеры и наблюдаемые СУБД» будет выведен полный
+список (см. Рисунок 2.21).

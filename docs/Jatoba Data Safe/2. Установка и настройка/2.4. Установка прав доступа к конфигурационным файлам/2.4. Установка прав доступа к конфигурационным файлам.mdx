@@ -1,0 +1,91 @@
+---
+title: 2.4. Установка прав доступа к конфигурационным файлам
+---
+
+### Установка прав доступа к конфигурационному файлу appsettings.json
+
+Установка прав доступа к конфигурационному файлу appsettings.json
+выполняется администратором ИС.
+
+Для администраторов ОС устанавливаются полные права, а для пользователей
+ОС устанавливаются права на чтение и выполнение.
+
+Файл расположен по пути в:
+
+  - ОС семейства Windows
+
+> C:\\Programm Files\\GIS\\JDS\\appsettings.json
+
+  - В GNU
+Linux
+
+> /opt/jds/appsettings.json
+
+### Установка параметров в конфигурационного файле appsettings.json JDS
+
+|                         |                                                                 |
+| ----------------------- | --------------------------------------------------------------- |
+| | Описание раздела актуально для версии компонента JDS 2.3 и выше |
+
+В конфигурационного файле appsettings.json устанавливаются основные
+параметры работы компонента.
+
+**Remove expired refresh tokens**
+
+Проверка актуальности токенов, выдаваемых пользователям компонента,
+выполняется пакетным сценарием «Remove expired refresh tokens».
+
+«Remove expired refresh tokens» по установленному интервалу времени,
+управляемого программным планировщиком Quartz.AspNetCore, в
+служебной БД JDS выполняет периодическую проверку таблицы
+«refreshtokens» для удаления записей.
+
+Записи удаляются, если значение «refreshtokens.ExpireAT» меньше времени
+начала выполнения проверки.
+
+По умолчанию установлены параметры:
+
+> "AccessTokenExpiration": 480, "RefreshTokenExpiration": 960
+
+При необходимости измените параметры жизни «AccessTokenExpiration» и
+«RefreshTokenExpiration». Истечение срока действия
+«RefreshTokenExpiration» должно превышать «AccessTokenExpiration».
+
+Таблица 2.5 – Параметры пакетного сценария «Remove expired refresh
+tokens»
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Параметр</strong></th>
+<th><strong>Значение</strong></th>
+<th><strong>Единица измерения</strong></th>
+<th><strong>Описание</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>JobKey</td>
+<td>Remove expired refresh tokens</td>
+<td></td>
+<td>Наименование пакетного сценария</td>
+</tr>
+<tr class="even">
+<td>Active</td>
+<td>True</td>
+<td></td>
+<td><p>Параметр определяющий статус выполнения Job.</p></td>
+<p>Допускаются значения:</p>
+<ul>
+<p>True – включен;</p>
+<p>False – отключен.</p>
+</ul>
+</tr>
+<tr class="odd">
+<td>Interval</td>
+<td>10080</td>
+<td>Минуты</td>
+<td>Периодичность запуска. Значение по умолчанию - 7 дней.</td>
+</tr>
+</tbody>
+</table>
