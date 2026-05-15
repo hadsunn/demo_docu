@@ -18,7 +18,6 @@ title: ja_inventory
 :::tip[Tip test]
 Content goes here
 :::
-
 <!-- This is a comment -->
 
 Компонент «ja_Inventory» предназначен для сбора на серверах Заказчика информации об установленных СУБД «Jatoba» в форме отчета в формате JSON. В отчет включается информация о:

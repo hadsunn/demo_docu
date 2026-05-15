@@ -12,20 +12,19 @@ title: 2.4. Установка прав доступа к конфигураци
 
 Файл расположен по пути в:
 
-  - ОС семейства Windows
+```bash title='ОС семейства Windows'
+C:\Programm Files\GIS\JDS\appsettings.json
+```
 
-> C:\\Programm Files\\GIS\\JDS\\appsettings.json
-
-  - В GNU
-Linux
-
-> /opt/jds/appsettings.json
+```bash title='В GNU Linux'
+/opt/jds/appsettings.json
+```
 
 ### Установка параметров в конфигурационного файле appsettings.json JDS
 
-|                         |                                                                 |
-| ----------------------- | --------------------------------------------------------------- |
-| | Описание раздела актуально для версии компонента JDS 2.3 и выше |
+:::note Дополнительная информация
+Описание раздела актуально для версии компонента JDS 2.3 и выше
+:::
 
 В конфигурационного файле appsettings.json устанавливаются основные
 параметры работы компонента.
@@ -45,7 +44,9 @@ Linux
 
 По умолчанию установлены параметры:
 
-> "AccessTokenExpiration": 480, "RefreshTokenExpiration": 960
+```
+"AccessTokenExpiration": 480, "RefreshTokenExpiration": 960
+```
 
 При необходимости измените параметры жизни «AccessTokenExpiration» и
 «RefreshTokenExpiration». Истечение срока действия
