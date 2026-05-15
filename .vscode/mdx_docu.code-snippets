@@ -11,7 +11,7 @@
   "MDX warn block": {
     "prefix": "!w",
     "body": [
-      ":::note Важная информация",
+      ":::warning Важная информация",
       "",
       ":::"
     ],
@@ -23,6 +23,15 @@
       "---",
       "title: ",
       "---"
+    ],
+    "description": "Insert a note admonition for MDX/Docusaurus"
+  },
+  "MDX minimal code block": {
+    "prefix": "!c",
+    "body": [
+      "```",
+      "",
+      "```"
     ],
     "description": "Insert a note admonition for MDX/Docusaurus"
   }
