@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "Alertmanager",
         "Citus",
         "CRDB",
         "CREATEDB",
@@ -7,11 +8,16 @@
         "csum",
         "fastpath",
         "JATOBA",
+        "LDAPS",
         "Piechart",
+        "PTRACK",
         "securityprofile",
+        "Zulip",
         "виджете",
         "дефрагментирована",
         "маппинга",
+        "тайл",
+        "тайлов",
         "тайтлов"
     ],
     "mdx-preview.preview.enableScripts": true
