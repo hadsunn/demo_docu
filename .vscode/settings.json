@@ -1,6 +1,18 @@
 {
     "cSpell.words": [
-        "JATOBA"
+        "Citus",
+        "CRDB",
+        "CREATEDB",
+        "CREATEROLE",
+        "csum",
+        "fastpath",
+        "JATOBA",
+        "Piechart",
+        "securityprofile",
+        "виджете",
+        "дефрагментирована",
+        "маппинга",
+        "тайтлов"
     ],
     "mdx-preview.preview.enableScripts": true
 }
