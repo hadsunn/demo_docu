@@ -5,5 +5,5 @@
       "@site/*": ["./*"]
     }
   },
-  //"include": ["docs/**/*", "src/**/*"]
+  "include": ["docs/**/*", "src/**/*"]
 }

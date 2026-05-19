@@ -1,12 +1,12 @@
 {
-  "MDX note block": {
-    "prefix": "!n",
+  "MDX info block": {
+    "prefix": "!in",
     "body": [
-      ":::note Дополнительная информация",
+      ":::info Дополнительная информация",
       "",
       ":::"
     ],
-    "description": "Insert a note admonition for MDX/Docusaurus"
+    "description": "Insert a info admonition for MDX/Docusaurus"
   },
   "MDX warn block": {
     "prefix": "!w",

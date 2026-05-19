@@ -5,6 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkFigureXref from './plugins/remark-figure-xref.js';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -17,10 +18,10 @@ const config = {
   markdown: {
     format: 'detect',
   },
-  //plugins: [require.resolve('docusaurus-lunr-search')],
+  // plugins: [require.resolve('docusaurus-lunr-search')],
   //plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
-//  module.exports = {
-//    plugins: [require.resolve('docusaurus-lunr-search')],
+  // module.exports = {
+  //  plugins: [require.resolve('docusaurus-lunr-search')],
 //  }
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -58,7 +59,8 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars_pg.js',
-	  routeBasePath: '/',
+	        routeBasePath: '/',
+          remarkPlugins: [remarkFigureXref],
         },
         blog: false,
         theme: {
@@ -143,6 +145,8 @@ const config = {
       },
     }),
 };
+
+
 
 export default config;
 //export default {

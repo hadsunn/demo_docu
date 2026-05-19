@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import {useColorMode} from '@docusaurus/theme-common';
 
 // Глобальный массив для отслеживания порядка изображений на текущей странице
 let pageImages = []; 
 
-export default function Figure({ src, caption }) {
+export default function Figure({ src, alt = '', caption = '', width = 500}) {
   const [imgNumber, setImgNumber] = useState(0);
 
   useEffect(() => {
@@ -23,8 +24,8 @@ export default function Figure({ src, caption }) {
   return (
     <div style={{ textStyle: 'center', margin: '20px 0' }}>
       <img src={src} alt={caption} style={{ display: 'block', margin: '0 auto', maxWidth: '100%' }} />
-      <p style={{ textAlign: 'center', fontSize: '1.2em', marginTop: '8px', color: '#646464' }}>
-        <strong>Рисунок {imgNumber}:</strong> {caption}
+      <p style={{ textAlign: 'center', fontSize: '1.2em', marginTop: '8px', color: '#818181' }}>
+        Рисунок {imgNumber}: {caption}
       </p>
     </div>
   );
