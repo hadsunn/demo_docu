@@ -22,7 +22,9 @@
     "body": [
       "---",
       "title: ",
-      "---"
+      "---",
+      "",
+      ""
     ],
     "description": "Insert a title for MDX/Docusaurus"
   },
