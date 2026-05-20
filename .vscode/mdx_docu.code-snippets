@@ -40,7 +40,19 @@
   "MDX image block": {
     "prefix": "!i",
     "body": [
-      "<img src={require('/docs/assets/images/jds-gfm/image.png').default} alt="Описание" />"
+      "<img src={require('/docs/assets/images/jds-gfm/image.png').default} alt='Описание' />",
     ],
     "description": "Insert a image for MDX/Docusaurus"
+  },
+  "Wrap selection with code block": {
+    "scope": "mdx",
+    "prefix": "wraptag",
+    "body": [
+    "```",
+    //"$TM_SELECTED_TEXT",
+    "${TM_SELECTED_TEXT/^.{2}(.*)$/$1/}",
+    "```"
+    ],
+    "description": "Wrap selected text with a tag (asks for tag name) and leave an empty line"
+}
 }
