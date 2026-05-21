@@ -6,7 +6,9 @@
         "CREATEDB",
         "CREATEROLE",
         "csum",
+        "datname",
         "fastpath",
+        "Hipe",
         "JATOBA",
         "LDAPS",
         "Piechart",
@@ -18,7 +20,8 @@
         "маппинга",
         "тайл",
         "тайлов",
-        "тайтлов"
+        "тайтлов",
+        "шардированных"
     ],
     "mdx-preview.preview.enableScripts": true
 }
