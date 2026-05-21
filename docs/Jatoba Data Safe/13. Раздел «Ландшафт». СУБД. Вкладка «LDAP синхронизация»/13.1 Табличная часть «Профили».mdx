@@ -133,7 +133,9 @@ Linux и может быть использован для создания ка
 
 Строка параметра может иметь следующий вид:
 
-> uid=admin,cn=users,cn=accounts,dc=freeipa,dc=local)
+```
+uid=admin,cn=users,cn=accounts,dc=freeipa,dc=local)
+```
 
   - в поле «Пароль» (password) указать пароль администратора сервера
     FreeIPA.
@@ -183,11 +185,15 @@ Samba Active Directory Server обеспечивает среду, похожу�
 
     IP-адрес сервера Samba
 
-> 10.116.101.114
+```
+10.116.101.114
+```
 
 или доменное имя сервера Samba
 
-> dc.domain.test
+```
+dc.domain.test
+```
 
   - в поле «Порт» (Port) по умолчанию установлено значение «389», если
     значение входящего порта не менялось, то оставить значением без
@@ -200,7 +206,9 @@ Samba Active Directory Server обеспечивает среду, похожу�
 «UID» администратора сервера Samba получается выполнением команды в
 терминале от имени и с правами «root»:
 
-> samba-tool user show administrator
+```
+samba-tool user show administrator
+```
 
 <img src={require("/docs/assets/images/jds-gfm/image94.png").default} alt="Описание" />
 
@@ -208,7 +216,9 @@ Samba Active Directory Server обеспечивает среду, похожу�
 
 Строка параметра может иметь следующий вид:
 
-> cn=administrator,cn=users,dc=domain,dc=test
+```
+cn=administrator,cn=users,dc=domain,dc=test
+```
 
   - в поле «Пароль» (password) указать пароль администратора сервера
     Samba.
@@ -224,9 +234,12 @@ Samba Active Directory Server обеспечивает среду, похожу�
 Выполняемые действия будут аналогичны выполнению SQL-команде на сервере
 СУБД «Jatoba» с установленным расширением ja\_Sync\_LDAP:
 
-> SELECT
-> ja\_sync\_ldap.set\_sync\_profile(null,'samba\_usr','dc.domain.test','636','CN=Administrator,CN=Users,DC=domain,DC=test',
-> 'P@ssword', 'samba');
+```sql
+SELECT
+ja_sync_ldap.set_sync_profile(null,'samba_usr','dc.domain.test','636',
+'CN=Administrator,CN=Users,DC=domain,DC=test','P@ssword', 'samba');
+```
+
 
 Создание профиля маппинга описано в п. 13.2.4 «Создание профиля маппинга
 Samba».
@@ -256,16 +269,21 @@ Directory и установлен на сервер СУБД в доверенн
 
 Например:
 
-> /var/lib/jatoba/\<версия\>/
+```
+/var/lib/jatoba/<версия>/
+```
 
 Получить из сертификата pfx сертификат crt:
 
-> openssl pkcs12 -in \<cert\_name\>.pfx -nokeys -out \<cert\_name\>.crt
+```shell
+openssl pkcs12 -in <cert_name>.pfx -nokeys -out <cert_name>.crt
+```
 
 Назначить владельцем сертификата пользователя postgres:
 
-> chown postgres:postgres
-/путь/до/\<cert\_name\>.crt
+```
+chown postgres:postgres /путь/до/<cert_name>.crt
+```
 
 :::info Дополнительная информация
 Полное описание настроек по ОС приведено в документе «Руководство по настройке. Часть 8. Синхронизация учетных записей служб каталогов и СУБД. Компонент «ja\_Sync\_LDAP».
@@ -283,6 +301,6 @@ Directory и установлен на сервер СУБД в доверенн
 Удаление профиля синхронизации идентично выполненной SQL-команде, где
 номер профиля подставляется автоматически:
 
-```
+```sql
 select ja_sync_ldap.drop_sync_profile(in_profile_id int);
 ```
