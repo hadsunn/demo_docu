@@ -17,11 +17,21 @@
     ],
     "description": "Insert a warning for MDX/Docusaurus"
   },
+  "MDX auto title block": {
+    "body": [
+      "---",
+      "title: ${TM_FILENAME_BASE}",
+      "---",
+      "",
+      ""
+    ],
+    "description": "Insert a title for MDX/Docusaurus"
+  },
   "MDX title block": {
     "prefix": "!t",
     "body": [
       "---",
-      "title: \"$1\"",
+      "title: ",
       "---",
       "",
       ""
@@ -32,7 +42,7 @@
     "prefix": "!c",
     "body": [
       "```",
-      "\"$1\"",
+      "",
       "```"
     ],
     "description": "Insert a code block for MDX/Docusaurus"
