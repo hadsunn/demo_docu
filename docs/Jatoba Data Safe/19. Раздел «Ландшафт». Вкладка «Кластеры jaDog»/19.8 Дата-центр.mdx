@@ -168,13 +168,15 @@ IP-адрес 10.116.103.82/24.
 параметры для подключения узлов в другой подсети, внеся
 следующие строки:
 
-> host all \<имя пользователя\> \<адрес подсети\> md5
-> 
-> host replication \<имя пользователя\> \<адрес подсети\> md5
+```
+host all <имя пользователя> <адрес подсети> md5
+
+host replication <имя пользователя> <адрес подсети> md5
+```
 
 <img src={require('/docs/assets/images/jds-gfm/image149.png').default} alt='Описание' />
 
-Рисунок 19.18 – Параметры конфигурационного файлы pg\_hba.conf на узле
+Рисунок 19.18 – Параметры конфигурационного файлы pg_hba.conf на узле
 «Master»
 
 Сохранить внесенные
@@ -259,13 +261,16 @@ SELECT pg_reload_conf();
 
 Это соответствует команде в утилите «jadog\_ctl»:
 
-> datacenter 'dc1' attach node 10.116.102.54 12345
-> 
-> datacenter 'dc1' attach node 10.116.102.55 12345
-> 
-> datacenter 'dc2' attach node 10.116.103.57 12345
-> 
-> datacenter 'dc2' attach node 10.116.103.58 12345
+```
+datacenter 'dc1' attach node 10.116.102.54 12345
+
+datacenter 'dc1' attach node 10.116.102.55 12345
+
+datacenter 'dc2' attach node 10.116.103.57 12345
+
+datacenter 'dc2' attach node 10.116.103.58 12345
+```
+
 
 В результате узлы кластера распределены по Дата-центрам. Один узел
 выполняет роль «Master», остальные узлы работают с ролью «Slave».

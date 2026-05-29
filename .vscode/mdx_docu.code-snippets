@@ -21,7 +21,7 @@
     "prefix": "!t",
     "body": [
       "---",
-      "title: ",
+      "title: \"$1\"",
       "---",
       "",
       ""
@@ -32,7 +32,7 @@
     "prefix": "!c",
     "body": [
       "```",
-      "",
+      "\"$1\"",
       "```"
     ],
     "description": "Insert a code block for MDX/Docusaurus"

@@ -33,6 +33,12 @@
         "тайтлов",
         "шардированных"
     ],
+    "autoSnippet.snippets": [
+    {
+      "language": "mdx",
+      "snippet": "MDX title block"
+    }
+  ],
     "mdx-preview.preview.enableScripts": true,
     "cSpell.language": "en,ru"
 }
