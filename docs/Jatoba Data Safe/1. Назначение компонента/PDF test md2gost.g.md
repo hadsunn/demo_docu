@@ -36,6 +36,10 @@ test
 ```html [#] Одинокий div
 <div></div>
 
+
+```
+
+```sql
 SELECT * FROM users;
 ```
 
@@ -54,7 +58,11 @@ SELECT * FROM users;
 На рисунке [#-1] был изображён кот
 
 Ниже, на рисунках [#]-[#+2] изображены коты
+
 ![[#] Кот](../../assets/images/jds-gfm/image1.png)
+
 ![[#] Котик](../../assets/images/jds-gfm/image1.png)
+
 ![[#] Котяра](../../assets/images/jds-gfm/image1.png)
+
 Выше, на рисунках [#-3]-[#-1] были изображены коты
