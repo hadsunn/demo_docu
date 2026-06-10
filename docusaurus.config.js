@@ -72,8 +72,7 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      docs: {
+    ({docs: {
         sidebar: {
           autoCollapseCategories: true,
 	          },

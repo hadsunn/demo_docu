@@ -47,7 +47,13 @@
       "language": "mdx",
       "snippet": "MDX auto title block"
     }
-  ],
+    ],
+    "languageToolLinter.managed.classPath": "c:\\Users\\kulikov-i\\Documents\\work\\Docu\\LanguageTool-6.6\\languagetool-server.jar",
+    "languageTool.language": "auto",
+    "languageToolLinter.serviceType": "managed",
+    "languageTool.fileTypes": ["markdown", "mdx"],
+    "languageTool.strength": "normal",
+    "languageTool.enableErrors": ["grammar", "style"],
     "mdx-preview.preview.enableScripts": true,
     "cSpell.language": "en,ru"
 }
