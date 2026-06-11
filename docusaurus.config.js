@@ -19,9 +19,9 @@ const config = {
     format: 'detect',
   },
   // plugins: [require.resolve('docusaurus-lunr-search')],
-  //plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
+  // plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
   // module.exports = {
-  //  plugins: [require.resolve('docusaurus-lunr-search')],
+  //   plugins: [require.resolve('docusaurus-lunr-search')],
 //  }
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -73,9 +73,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({docs: {
-        sidebar: {
-          autoCollapseCategories: true,
-	          },
+        sidebar: {autoCollapseCategories: true,},
           },
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
@@ -86,15 +84,7 @@ const config = {
           src: 'img/jatoba.png',
         },
         items: [
-          //{
-          //  type: 'docSidebar',
-          //  sidebarId: 'tutorialSidebar',
-          //  position: 'left',
-          //  label: 'Tutorial',
-          //},
-          //{to: '/blog', label: 'Blog', position: 'left'},
           {
-            //href: 'https://github.com/facebook/docusaurus',
             href: 'https://jatoba.ru',
             label: 'Jatoba.ru',
             position: 'left',

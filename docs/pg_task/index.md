@@ -1,5 +1,6 @@
 ---
 title: Компонент pg_task
+sidebar_position: 3
 ---
 
 **АННОТАЦИЯ**
