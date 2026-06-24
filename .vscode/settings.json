@@ -19,6 +19,7 @@
       "PTRACK",
       "Reinit",
       "Resultset",
+      "Sber",
       "securityprofile",
       "sqlconnection",
       "sqlstate",
