@@ -1,54 +1,3 @@
----
-title: Компонент «ja_Log»
-toc_max_heading_level: 3
----
-
-
-
-<table>
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><p>УТВЕРЖДЕН</p>
-<p>643.72410666.00067-08 98 01-ЛУ</p></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" style="text-align: center;"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br />
-БАЗАМИ ДАННЫХ «JATOBA»</p>
-<p><strong>Руководство по настройке. Часть 12.<br />
-Централизованный сбор записей событий в СУБД.<br />
-Компонент «ja_Log»</strong></p></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;"><strong>643.72410666.00067-08 98 01-12</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">Листов 52</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">2026</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: right;">Литера О<sub>1</sub></td>
-</tr>
-</tbody>
-</table>
-
 **АННОТАЦИЯ**
 
 В документе приведены сведения необходимые для установки и эксплуатации компонента централизованного сбора записей событий СУБД «ja_Log» (далее по тексту – компонент либо ja_Log).
@@ -73,7 +22,7 @@ toc_max_heading_level: 3
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
+<th style="text-align: center;"><img src="./assets/images/jalog3/media/image2.png" style="width:0.25in;height:0.25in" /></th>
 <th style="text-align: left;"><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
 <p>Например, СУБД «Jatoba» версии 5.x по умолчанию устанавливается в директорию ОС Linux – «/usr/jatoba-5/bin».</p>
 <p>Используется версия компонента — 2.1</p></th>
@@ -82,7 +31,7 @@ toc_max_heading_level: 3
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><img src="./assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></td>
+<td style="text-align: center;"><img src="./assets/images/jalog3/media/image1.png" style="width:0.25139in;height:0.25139in" /></td>
 <td colspan="2" style="text-align: left;">Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</td>
 </tr>
 </tbody>
@@ -96,13 +45,13 @@ toc_max_heading_level: 3
 
 При клиент-серверной установке на серверах целевых СУБД устанавливается агент компонента, а на сервере служебной СУБД серверная часть компонента. Передача данных осуществляется по протоколу Libpq или TLS.
 
-![](./assets/images/jalog/media/image3.png)
+![](./assets/images/jalog3/media/image3.emf)
 
 Рисунок 1.1 – Схема работы компонента при клиент-серверной установке
 
 При локальной установке на сервере СУБД устанавливается агент и сервер компонента. Передача данных осуществляется по внутреннему интерфейсу.
 
-![](./assets/images/jalog/media/image4.png)
+![](./assets/images/jalog3/media/image4.emf)
 
 Рисунок 1.2 – Схема работы компонента при локальной установке
 
@@ -115,7 +64,7 @@ toc_max_heading_level: 3
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></th>
+<th style="text-align: center;"><img src="./assets/images/jalog3/media/image1.png" style="width:0.25139in;height:0.25139in" /></th>
 <th style="text-align: left;"><p>При установке сервера и агента на одном экземпляре БД необходимо избегать полного логирования всех операций log_statement = 'all', т.к. в таком случае файлы журналов будут накапливать как записи самих запросов, так и записи записей этих запросов в служебную таблицу компонента, что приведет к разрастанию этих файлов.</p>
 <p>Также необходимо избегать использования log_statement = 'mod', т.к. в этом случае будет выполняться журналирования всех INSERT-запросов, что также приведет к прогрессивному увеличению файлов журналов.</p></th>
 </tr>
@@ -205,7 +154,7 @@ toc_max_heading_level: 3
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></th>
+<th style="text-align: center;"><img src="./assets/images/jalog3/media/image1.png" style="width:0.25139in;height:0.25139in" /></th>
 <th style="text-align: left;"><p><strong>ВАЖНО!</strong> В случае совместной работы компонента «ja_Log» с SecurityProfile в одной СУБД, расширение «jalog» должно устанавливаться в ту же БД, в которую установлено расширение «securityprofile».</p>
 <p>Справочная информация по настройке SecurityProfile приведена в документе «Руководство администратора СУБД Jatoba» 643.72410666.00067-08 95 01</p></th>
 </tr>
@@ -214,7 +163,7 @@ toc_max_heading_level: 3
 </tbody>
 </table>
 
-![](./assets/images/jalog/media/image5.png)
+![](@site/docs/assets/images/jalog3/media/image5.png)
 
 Рисунок 3.1 – Создание служебной БД и установка расширения
 
@@ -222,8 +171,7 @@ toc_max_heading_level: 3
 
 > \dx+ jalog
 
-![](./assets/images/jalog/media/image6.png)
-
+![](@site/docs/assets/images/jalog3/media/image6.png)
 
 :::info Дополнительная информация
 Расширение может быть установлено в разделе «Ландшафт» компонента JDS.
@@ -247,7 +195,7 @@ toc_max_heading_level: 3
 
 > \du
 
-![](./assets/images/jalog/media/image7.png)
+![](@site/docs/assets/images/jalog3/media/image7.png)
 
 Рисунок . – Список ролей БД
 
@@ -257,7 +205,7 @@ toc_max_heading_level: 3
 
 > ALTER ROLE jalog_user WITH LOGIN PASSWORD \['password_jalog_user'\];
 
-![](./assets/images/jalog/media/image8.png)
+![](@site/docs/assets/images/jalog3/media/image8.png)
 
 Рисунок . – Создание пароля технологической УЗ
 
@@ -265,7 +213,7 @@ toc_max_heading_level: 3
 
 > \drg
 
-![](@site/docs/assets/images/jalog/media/image9.png)
+![](@site/docs/assets/images/jalog3/media/image9.png)
 
 Рисунок 3.5 – Проверка наследования атрибутов групповой роли
 
@@ -273,7 +221,7 @@ toc_max_heading_level: 3
 
 > host ja_log jalog_user 127.0.0.1/32 scram-sha-256
 
-![](@site/docs/assets/images/jalog/media/image10.png)
+![](@site/docs/assets/images/jalog3/media/image10.png)
 
 :::info Дополнительная информация
 В конфигурационном файле pg_hba.conf может указываться внешний IP-адрес сервера СУБД, на котором установлено расширение ja_Log и настроена технологическая запись пользователя.
@@ -307,7 +255,7 @@ toc_max_heading_level: 3
 
 > Предоставить права доступа для групповой роли jalog_role к созданному табличному пространству:GRANT CREATE ON TABLESPACE ts_jalog_archive TO jalog_role;
 
-![](@site/docs/assets/images/jalog/media/image11.png)
+![](@site/docs/assets/images/jalog3/media/image11.png)
 
 Рисунок 3.7 – Предоставление групповой роли прав доступа к табличному пространству
 
@@ -428,7 +376,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Вид сформированного файла событий безопасности представлен на рисунке Рисунок 3.8.
 
-![](@site/docs/assets/images/jalog/media/image12.png)
+![](@site/docs/assets/images/jalog3/media/image12.png)
 
 Рисунок 3.8 – Сформированный файл событий безопасности СУБД
 
@@ -552,7 +500,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 В колонке «status» установлен параметр «f» – (false), что означает, что параметр выключен.
 
-![](@site/docs/assets/images/jalog/media/image13.png)
+![](@site/docs/assets/images/jalog3/media/image13.png)
 
 Рисунок 3.9 – Добавление нового агента и проверка установленных параметров
 
@@ -568,7 +516,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 В результате выполнения команды активации агента значение в колонке «status» сменится с «f» – (false) на «t» – (true).
 
-![](@site/docs/assets/images/jalog/media/image14.png)
+![](@site/docs/assets/images/jalog3/media/image14.png)
 
 Рисунок 3.10 Активация и проверка агента
 
@@ -582,7 +530,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 > \# systemctl status jalog_server
 
-![](@site/docs/assets/images/jalog/media/image15.png)
+![](@site/docs/assets/images/jalog3/media/image15.png)
 
 Рисунок 3.11 – Установка службы сервера компонента в ОС GNU/Linux
 
@@ -635,7 +583,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
+<th style="text-align: center;"><img src="./assets/images/jalog3/media/image2.png" style="width:0.25in;height:0.25in" /></th>
 <th><p>Для ротации архивных журналов служебной СУБД может быть использовано существующее табличное пространство. При установке расширения компоненту выдаются все необходимые права доступа ко всем существующим на тот момент табличным пространствам служебной СУБД. Назначаемые права доступа необходимы для корректного перемещения архивных журналов, выполнения функций и процедур.</p>
 <p>Если после установки расширения создается новое табличное пространство, которое будет использовано для ротации архивных журналов, то в этом случае для групповой роли jalog_role определяются права доступа к ему (см. пример в п. 3.1.3).</p></th>
 </tr>
@@ -656,7 +604,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 Администратор при выполнении переноса журналов в другое табличное пространство должен оценивать объем журналов. В случае, если журнал содержит значительное количество информации, рекомендуется выполнять его поэтапный перенос используя параметры процедуры jalog.rotation_hot_logs_days.
 :::
 
-![](@site/docs/assets/images/jalog/media/image16.png)
+![](@site/docs/assets/images/jalog3/media/image16.png)
 
 Рисунок 3.12 – Перенос журналов служебной СУБД в другое табличное пространство
 
@@ -674,7 +622,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Данный пример процедуры выполняет удаление архивированных журналов, например при помощи процедуры jalog.rotation_hot_logs_days (см. выше), за последние 90 дней начиная с текущей даты.
 
-![](@site/docs/assets/images/jalog/media/image17.png)
+![](@site/docs/assets/images/jalog3/media/image17.png)
 
 Рисунок 3.13 – Удаление архивированных журналов служебной СУБД
 
@@ -800,7 +748,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 > \# systemctl status jalog_agent
 
-![](@site/docs/assets/images/jalog/media/image18.png)
+![](@site/docs/assets/images/jalog3/media/image18.png)
 
 Рисунок 3.14 – Установка службы агента компонента в ОС GNU/Linux
 
@@ -1219,7 +1167,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 <span id="_Toc222142662" class="anchor"></span>Пример установки СУБД «Jatoba» из локального репозитория для ОС UbuntuУстановка СУБД «Jatoba» из локального репозитория для ОС Ubuntu проводится в следующем порядке:
 
-1) 
+1)  
 
 > В терминале войти в режим суперпользователя, выполнив команду:sudo su
 
@@ -1237,7 +1185,7 @@ IP-адрес БД, по которому выполняется подключ�
 >
 > \# apt dist-upgrade
 
-![](@site/docs/assets/images/jalog/media/image19.png)
+![](@site/docs/assets/images/jalog3/media/image19.png)
 
 Рисунок 8.1 – Обновление системы
 
@@ -1253,7 +1201,7 @@ IP-адрес БД, по которому выполняется подключ�
 >
 > файл \<DEB-GPG-KEY-Jatoba\>
 
-![](@site/docs/assets/images/jalog/media/image20.png)
+![](@site/docs/assets/images/jalog3/media/image20.png)
 
 Рисунок 8.2 – Структура каталога «localrepo»
 
@@ -1261,7 +1209,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Установить открытый ключ репозитория:# apt-key add /localrepo/DEB-GPG-KEY-Jatoba
 
-![](@site/docs/assets/images/jalog/media/image21.png)
+![](@site/docs/assets/images/jalog3/media/image21.png)
 
 Рисунок 8.3 – Установка открытого ключа репозитория
 
@@ -1273,7 +1221,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Вставить в файл следующее содержимое и сохранить:deb file:///localrepo stable non-free
 
-![](@site/docs/assets/images/jalog/media/image22.png)
+![](@site/docs/assets/images/jalog3/media/image22.png)
 
 Рисунок 8.4 – Содержание файла «jatoba-4.list»
 
@@ -1281,7 +1229,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Проиндексировать обновленное состояние репозитория:# apt-get update
 
-![](@site/docs/assets/images/jalog/media/image23.png)
+![](@site/docs/assets/images/jalog3/media/image23.png)
 
 Рисунок 8.5 – Индексация репозитория
 
@@ -1289,7 +1237,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Установить СУБД Jatoba при помощи команды:# apt-get install jatoba4-client jatoba4-contrib jatoba4-libs jatoba4-server jatoba4-ja-log
 
-![](@site/docs/assets/images/jalog/media/image24.png)
+![](@site/docs/assets/images/jalog3/media/image24.png)
 
 Рисунок 8.6 – Установка пакетов
 
@@ -1297,7 +1245,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Убедиться, что отсутствуют ошибки зависимостей:for f in \$(LANG=C find /usr/jatoba-4 -type f -exec file {} \\ \| grep "ELF 64-bit LSB" \| awk 'BEGIN {FS=":"} { print \$1}' \| sort); do echo \$f; ldd \$f \| grep "not found"; done
 
-![](@site/docs/assets/images/jalog/media/image25.png)
+![](@site/docs/assets/images/jalog3/media/image25.png)
 
 Рисунок 8.7 – Проверка отсутствия ошибок зависимостей
 
@@ -1305,7 +1253,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Перейти в директорию исполняемых файлов СУБД:# cd /usr/jatoba-4/bin
 
-![](@site/docs/assets/images/jalog/media/image26.png)
+![](@site/docs/assets/images/jalog3/media/image26.png)
 
 Рисунок 8.8 – Переход в каталог
 
@@ -1313,7 +1261,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Инициализировать каталог данных СУБД при помощи команды:# ./jatoba-setup initdb jatoba-4
 
-![](@site/docs/assets/images/jalog/media/image27.png)
+![](@site/docs/assets/images/jalog3/media/image27.png)
 
 Рисунок 8.9 – Инициализация СУБД
 
@@ -1321,7 +1269,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Добавить сервис в список автозапуска:# systemctl enable jatoba-4
 
-![](@site/docs/assets/images/jalog/media/image28.png)
+![](@site/docs/assets/images/jalog3/media/image28.png)
 
 Рисунок 8.10 – Добавление сервиса jatoba-4 а автозагрузку ОС
 
@@ -1329,7 +1277,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Запустить службу:# systemctl start jatoba-4
 
-![](@site/docs/assets/images/jalog/media/image29.png)
+![](@site/docs/assets/images/jalog3/media/image29.png)
 
 Рисунок 8.11 – Запуск службы jatoba-4
 
@@ -1337,7 +1285,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Проверить статус службы:# systemctl status jatoba-4
 
-![](@site/docs/assets/images/jalog/media/image30.png)
+![](@site/docs/assets/images/jalog3/media/image30.png)
 
 Рисунок 8.12 – Проверка статуса службы jatoba-4
 
@@ -1351,7 +1299,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Установить пароль для пользователя СУБД «postgres»:\password
 
-![](@site/docs/assets/images/jalog/media/image31.png)
+![](@site/docs/assets/images/jalog3/media/image31.png)
 
 Рисунок 8.13 – Установка пароля для пользователя ОС
 
@@ -1359,7 +1307,7 @@ IP-адрес БД, по которому выполняется подключ�
 
 > Установить пароль для системного пользователя ОС «postgres»:# passwd postgres
 
-![](@site/docs/assets/images/jalog/media/image32.png)
+![](@site/docs/assets/images/jalog3/media/image32.png)
 
 Рисунок 8.14 – Установка пароля для пользователя СУБД
 
@@ -1446,22 +1394,341 @@ IP-адрес БД, по которому выполняется подключ�
 | ЭВМ | – | Электронно-вычислительная машина |
 | ДСЧ | – | Датчик случайных чисел |
 
-
-Тесты:
-
 <table>
 <colgroup>
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
 <col style="width: 11%" />
-<col style="width: 88%" />
+<col style="width: 9%" />
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
-<th><p>Для ротации архивных журналов служебной СУБД может быть использовано существующее табличное пространство. При установке расширения компоненту выдаются все необходимые права доступа ко всем существующим на тот момент табличным пространствам служебной СУБД. Назначаемые права доступа необходимы для корректного перемещения архивных журналов, выполнения функций и процедур.</p>
-<p>Если после установки расширения создается новое табличное пространство, которое будет использовано для ротации архивных журналов, то в этом случае для групповой роли jalog_role определяются права доступа к ему (см. пример в п. 3.1.3).</p></th>
+<th colspan="10" style="text-align: center;">Лист регистрации изменений</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td rowspan="2" style="text-align: center;">Изм.</td>
+<td colspan="4" style="text-align: center;">Номера листов (страниц)</td>
+<td rowspan="2" style="text-align: center;">Всего<br />
+листов (страниц)<br />
+в документе</td>
+<td rowspan="2" style="text-align: center;">Номер документа</td>
+<td rowspan="2" style="text-align: center;">Входящий номер сопроводительного документа и дата</td>
+<td rowspan="2" style="text-align: center;">Подпись</td>
+<td rowspan="2" style="text-align: center;">Дата</td>
+</tr>
+<tr>
+<td style="text-align: center;">измененных</td>
+<td style="text-align: center;">замененных</td>
+<td style="text-align: center;">новых</td>
+<td style="text-align: center;">аннулированных</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
 </tbody>
 </table>
-
