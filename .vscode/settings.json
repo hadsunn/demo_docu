@@ -47,6 +47,10 @@
     {
       "language": "mdx",
       "snippet": "MDX auto title block"
+    },
+    {
+      "language": "markdown",
+      "snippet": "MD auto title block"
     }
     ],
     "languageToolLinter.managed.classPath": "c:\\Users\\kulikov-i\\Documents\\work\\Docu\\LanguageTool-6.6\\languagetool-server.jar",
@@ -56,5 +60,55 @@
     "languageTool.strength": "normal",
     "languageTool.enableErrors": ["grammar", "style"],
     "mdx-preview.preview.enableScripts": true,
-    "cSpell.language": "en,ru"
+    "cSpell.language": "en,ru",
+    "replacerules.rulesets": {
+      "Shift all headers": {
+        "rules": ["Shift ####", "Shift ###", "Shift ##", "Shift #"]
+      },
+      "Fix all for DS": {
+        "rules": [
+          "Shift ####", "Shift ###", "Shift ##", "Shift #", "Fix images",
+          "Fix warnings", "Fix infos", "Delete old TOC", "Delete 1st page"
+        ]
+      }
+      
+  },
+    "replacerules.rules": {
+      "Shift ####": {
+        "find": "^#### ",
+        "replace": "##### ",
+    },
+    "Shift ###": {
+        "find": "^### ",
+        "replace": "#### ",
+    },
+    "Shift ##": {
+        "find": "^## ",
+        "replace": "### ",
+    },
+    "Shift #": {
+        "find": "^# ",
+        "replace": "## ",
+    },
+    "Fix images": {
+        "find": "^<img src=[^>]+\\.\/assets\/images\/([^\/]+)\/media\/image(\\d+)\\.png\" style=[^\n]+",
+        "replace": "![](@site/docs/assets/images/$1/media/image$2.png)",
+    },
+    "Fix warnings": {
+        "find": "\\| <img src=[^>]+\\.\/assets/images\/([^\/]+)\/media/image1\\.png\" style=\"[^\"]*\" /> \\| ([^|]+) \\|\n\\|----\\|----\\|",
+        "replace": ":::warning Важная информация\n$2\n:::",
+    },
+    "Fix infos": {
+        "find": "\\| <img src=[^>]+\\.\/assets/images\/([^\/]+)\/media/image2\\.png\" style=\"[^\"]*\" /> \\| ([^|]+) \\|\n\\|----\\|----\\|",
+        "replace": ":::info Дополнительная информация\n$2\n:::",
+    },
+    "Delete old TOC": {
+        "find": "\\*\\*СОДЕРЖАНИЕ\\*\\*\n[\\s|\\S]*## Назначение компонента",
+        "replace": "## Назначение компонента",
+    },
+    "Delete 1st page": {
+        "find": "<table>\n[\\s\\S]*?\\*\\*АННОТАЦИЯ\\*\\*",
+        "replace": "**АННОТАЦИЯ**",
+    },
+  }
 }

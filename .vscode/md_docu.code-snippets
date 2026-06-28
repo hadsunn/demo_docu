@@ -27,6 +27,16 @@
     ],
     "description": "Insert a title for MDX/Docusaurus"
   },
+    "MD auto title block": {
+    "body": [
+      "---",
+      "title: ${TM_FILENAME_BASE}",
+      "---",
+      "",
+      ""
+    ],
+    "description": "Insert a title for MD/Docusaurus"
+  },
   "MDX title block": {
     "prefix": "!t",
     "body": [
