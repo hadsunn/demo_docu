@@ -67,8 +67,10 @@
       },
       "Fix all for DS": {
         "rules": [
-          "Shift ####", "Shift ###", "Shift ##", "Shift #", "Fix images",
-          "Fix warnings", "Fix infos", "Delete old TOC", "Delete 1st page"
+          "Delete old TOC", "Delete 1st page", "Replace emf", "Delete reg changes list",
+          "Shift ####", "Shift ###", "Shift ##", "Shift #",
+          "Fix warnings", "Fix infos", "Fix warnings 2", "Fix infos 2",
+          "Fix images"
         ]
       }
       
@@ -77,38 +79,57 @@
       "Shift ####": {
         "find": "^#### ",
         "replace": "##### ",
-    },
-    "Shift ###": {
-        "find": "^### ",
-        "replace": "#### ",
-    },
-    "Shift ##": {
-        "find": "^## ",
-        "replace": "### ",
-    },
-    "Shift #": {
-        "find": "^# ",
-        "replace": "## ",
-    },
-    "Fix images": {
-        "find": "^<img src=[^>]+\\.\/assets\/images\/([^\/]+)\/media\/image(\\d+)\\.png\" style=[^\n]+",
-        "replace": "![](@site/docs/assets/images/$1/media/image$2.png)",
-    },
-    "Fix warnings": {
-        "find": "\\| <img src=[^>]+\\.\/assets/images\/([^\/]+)\/media/image1\\.png\" style=\"[^\"]*\" /> \\| ([^|]+) \\|\n\\|----\\|----\\|",
-        "replace": ":::warning Важная информация\n$2\n:::",
-    },
-    "Fix infos": {
-        "find": "\\| <img src=[^>]+\\.\/assets/images\/([^\/]+)\/media/image2\\.png\" style=\"[^\"]*\" /> \\| ([^|]+) \\|\n\\|----\\|----\\|",
-        "replace": ":::info Дополнительная информация\n$2\n:::",
-    },
-    "Delete old TOC": {
-        "find": "\\*\\*СОДЕРЖАНИЕ\\*\\*\n[\\s|\\S]*## Назначение компонента",
-        "replace": "## Назначение компонента",
-    },
-    "Delete 1st page": {
-        "find": "<table>\n[\\s\\S]*?\\*\\*АННОТАЦИЯ\\*\\*",
-        "replace": "**АННОТАЦИЯ**",
-    },
+      },
+      "Shift ###": {
+          "find": "^### ",
+          "replace": "#### ",
+      },
+      "Shift ##": {
+          "find": "^## ",
+          "replace": "### ",
+      },
+      "Shift #": {
+          "find": "^# ",
+          "replace": "## ",
+      },
+      "Fix images": {
+          "find": "<img src=[^>]+\\.\/assets\/images\/([^\/]+)\/media\/image(\\d+)\\.(png|PNG)\" style=[^\n]+",
+          "replace": "\n\n![](@site/docs/assets/images/$1/media/image$2.png)",
+      },
+      "Fix warnings": {
+          "find": "\\| <img src=[^>]+\\.\/assets/images\/([^\/]+)\/media/image1\\.png\" style=\"[^\"]*\" /> \\| ([^|]+) \\|\n\\|----\\|----\\|",
+          "replace": ":::warning Важная информация\n$2\n:::",
+      },
+      "Fix warnings 2": {
+          /* конструкция ужасна, но пока ничего лучше не придумал для этих типов предупреждений */
+          "find": "<table>\\n<colgroup>\\n<col style=\"width: \\d+%\" \\/>\\n<col style=\"width: \\d+%\" \\/>\\n<\\/colgroup>\\n<thead>\\n<tr>\\n<th .*?image1.png.*?<\\/th>\\n<th><p>(.*)<\\/p>\\n<p>(.*)<\\/p>[\\s\\S]*?<\\/table>",
+          "replace": ":::warning Важная информация\n$1\n\n$2\n:::",
+      },
+      "Fix infos": {
+          "find": "\\| <img src=[^>]+\\.\/assets/images\/([^\/]+)\/media/image2\\.png\" style=\"[^\"]*\" /> \\| ([^|]+) \\|\n\\|----\\|----\\|",
+          "replace": ":::info Дополнительная информация\n$2\n:::",
+      },
+      "Fix infos 2": {
+          "find": "<table>\\n<colgroup>\\n<col style=\"width: \\d+%\" \\/>\\n<col style=\"width: \\d+%\" \\/>\\n<\\/colgroup>\\n<thead>\\n<tr>\\n<th .*?image2.png.*?<\\/th>\\n<th><p>(.*)<\\/p>\\n<p>(.*)<\\/p>[\\s\\S]*?<\\/table>",
+          "replace": ":::info Дополнительная информация\n$1\n\n$2\n:::",
+      },
+      "Delete old TOC": {
+          "find": "\\*\\*СОДЕРЖАНИЕ\\*\\*\n[\\s|\\S]*# Назначение компонент(а|ов)",
+          "replace": "# Назначение компонента",
+      },
+      "Delete 1st page": {
+          "find": "<table>\n[\\s\\S]*?\\*\\*АННОТАЦИЯ\\*\\*",
+          "replace": "**АННОТАЦИЯ**",
+      },
+      "Replace emf": {
+          "find": ".emf\\)",
+          "replace": ".png)",
+      },
+      "Delete reg changes list": {
+          /* Поиск последней таблицы идет с помощью Перечня сокращений, его таблица сохраняется, таблица Листа удаляется */
+          "find": "^(\\| <span id[\\s\\S]*?Перечень сокращений[\\s\\S]*?\n)(<table>\n[\\s\\S]*?Лист регистрации изменений[\\s\\S]*?<\/table>\n)",
+          "replace": "$1",
+      },
+
   }
 }
