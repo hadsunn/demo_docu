@@ -70,7 +70,8 @@
           "Delete old TOC", "Delete 1st page", "Replace emf", "Delete reg changes list",
           "Shift ####", "Shift ###", "Shift ##", "Shift #",
           "Fix warnings", "Fix infos", "Fix warnings 2", "Fix infos 2",
-          "Fix images"
+          "Fix images", "Fix code lines", "Fix <> escapes", "Fix _ escapes",
+          
         ]
       }
       
@@ -129,6 +130,23 @@
           /* Поиск последней таблицы идет с помощью Перечня сокращений, его таблица сохраняется, таблица Листа удаляется */
           "find": "^(\\| <span id[\\s\\S]*?Перечень сокращений[\\s\\S]*?\n)(<table>\n[\\s\\S]*?Лист регистрации изменений[\\s\\S]*?<\/table>\n)",
           "replace": "$1",
+      },
+      "Fix code lines": {
+          "find": "(> )(\\\\# )([\\s\\S]*?\\n)",
+          "replace": "```\n# $3```\n",
+      },
+      "Fix <> escapes": {
+          "find": "\\\\<ver\\\\>",
+          "replace": "<ver>",
+      },
+      "Fix _ escapes": {
+          "find": "\\\\_",
+          "replace": "_",
+      },
+      "Fix jatoba escapes": {
+          /* пока не юзаем, * без экрана потом ломает текст */
+          "find": "jatoba\\\\",
+          "replace": "jatoba",
       },
 
   }
