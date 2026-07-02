@@ -45,13 +45,13 @@
 
 При клиент-серверной установке на серверах целевых СУБД устанавливается агент компонента, а на сервере служебной СУБД серверная часть компонента. Передача данных осуществляется по протоколу Libpq или TLS.
 
-![](./assets/images/jalog3/media/image3.emf)
+![](./assets/images/jalog3/media/image3.png)
 
 Рисунок 1.1 – Схема работы компонента при клиент-серверной установке
 
 При локальной установке на сервере СУБД устанавливается агент и сервер компонента. Передача данных осуществляется по внутреннему интерфейсу.
 
-![](./assets/images/jalog3/media/image4.emf)
+![](./assets/images/jalog3/media/image4.png)
 
 Рисунок 1.2 – Схема работы компонента при локальной установке
 
@@ -98,17 +98,17 @@
 
 - 
 
-> для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba\<ver\>-ja-log
+> для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba<ver>-ja-log
 
 - 
 
-> для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba\<ver\>-ja-log
+> для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba<ver>-ja-log
 
 Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.
 
 - 
 
-> ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba\<ver\>-ja-log
+> ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba<ver>-ja-log
 
 Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba5-ja-log и т.п.
 
@@ -265,7 +265,7 @@
 
 Для внесения изменений необходимо открыть конфигурационный файл «jalog_server.yml» в терминале ОС:
 
-> nano /usr/jatoba-\<ver\>/etc/jalog/jalog_server.yml
+> nano /usr/jatoba-<ver>/etc/jalog/jalog_server.yml
 
 и указать следующие значения:
 
@@ -299,7 +299,7 @@
 >
 > **log:**
 >
-> path: "/usr/jatoba-\<ver\>/var/log/jalog/" \# Путь к каталогу логов (Linux)
+> path: "/usr/jatoba-<ver>/var/log/jalog/" \# Путь к каталогу логов (Linux)
 >
 > filename: jalog_server \# Шаблон для имени файлов логов
 >
@@ -336,7 +336,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Перейти в директорию bin:
 
-> \# cd /usr/jatoba-\<ver\>/bin/
+> \# cd /usr/jatoba-<ver>/bin/
 
 \- Запустить утилиту установки компонента:
 
@@ -362,7 +362,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Добавить нового агента при помощи запроса:
 
-> SELECT jalog.add_agent_task('\<имя агента\>', '/var/lib/jatoba/\<ver\>/data/log/jatoba-\[0-9\]{4}-\[0-9\]{2}-\[0-9\]{2}\_\[0-9\]{6}.csv');
+> SELECT jalog.add_agent_task('\<имя агента\>', '/var/lib/jatoba/<ver>/data/log/jatoba-\[0-9\]{4}-\[0-9\]{2}-\[0-9\]{2}\_\[0-9\]{6}.csv');
 
 Имя файла журнала событий формируется по параметру log_filename в конфигурационном файле «postgresql.conf».
 
@@ -536,7 +536,9 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 В случае если служба сервера компонента не запускается необходимо проверить системный журнал на наличие ошибок при помощи команды:
 
-> \# cat /var/log/syslog \| grep jalog
+```
+# cat /var/log/syslog | grep jalog
+```
 
 На данном шаге настройка службы сервера компонента в ОС GNU/Linux завершена.
 
@@ -544,21 +546,29 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Авторизоваться в psql от имени привилегированного пользователя:
 
-> psql -U postgres
+```
+psql -U postgres
+```
 
 Подключиться к базе данных ja_log:
 
-> \c ja_log
+```
+\c ja_log
+```
 
 Удаление агента производится по его идентификатору. Для получения идентификатора необходимо выполнить запрос:
 
-> SELECT \* from jalog.key;
+```
+SELECT * from jalog.key;
+```
 
 В столбце «key_id» определить номер агента, который требуется удалить.
 
 Удалить агента при помощи запросов:
 
-> SELECT jalog.delete_agent_task(\<key_id выбранного агента\>);
+```
+SELECT jalog.delete_agent_task(\<key_id выбранного агента\>);
+```
 
 #### Функционал ротации журналов служебной СУБД
 
@@ -636,7 +646,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Открыть конфигурационный файл СУБД postgresql.conf:
 
-> \# nano /var/lib/jatoba/\<ver\>/data/postgresql.conf
+> # nano /var/lib/jatoba/<ver>/data/postgresql.conf
 
 Изменить формат логов (значения менять в конце файла, а не в середине):
 
@@ -646,7 +656,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Выполнить перезагрузку СУБД в терминале ОС:
 
-> \# systemctl restart jatoba-\<ver\>
+> # systemctl restart jatoba-<ver>
 
 #### Настройка конфигурационного файла jalog_agent.yml
 
@@ -654,35 +664,35 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Требуется открыть файл конфигурационный файл jalog_agent.yml в терминале ОС:
 
-> \# nano /usr/jatoba-\<ver\>/etc/jalog/jalog_agent.yml
+> # nano /usr/jatoba-<ver>/etc/jalog/jalog_agent.yml
 
 и указать следующие значения:
 
-> \# Собственные параметры агента
+> # Собственные параметры агента
 >
 > jalog_agent:
 >
-> hostname: u602doc-jdog03 \# Уникальное имя агента
+> hostname: u602doc-jdog03 # Уникальное имя агента
 >
-> ip: 10.116.102.56 \# Ip-адрес агента
+> ip: 10.116.102.56 # Ip-адрес агента
 >
-> \# port: 22345 \# Порт агента
+> # port: 22345 # Порт агента
 >
-> \# task_puller_frequency: 15 \# Частота запроса задач у сервера, в секундах
+> # task_puller_frequency: 15 # Частота запроса задач у сервера, в секундах
 >
-> \# task_execution_frequency: 5 \# Частота проверки лог-файлов, в секундах
+> # task_execution_frequency: 5 # Частота проверки лог-файлов, в секундах
 >
-> \# max_logs_per_iteration: 1000 \# Максимальное количество логов, которые обрабатываются за итерацию (10-1000)
+> # max_logs_per_iteration: 1000 # Максимальное количество логов, которые обрабатываются за итерацию (10-1000)
 >
-> \# Параметры сервера, с которым работает агент
+> # Параметры сервера, с которым работает агент
 >
 > jalog_server:
 >
-> ip: 10.116.102.41 \# Ip-адрес сервера
+> ip: 10.116.102.41 # Ip-адрес сервера
 >
-> port: 10051 \# Порт сервера
+> port: 10051 # Порт сервера
 >
-> \# Параметры TLS
+> # Параметры TLS
 >
 > tls:
 >
@@ -698,7 +708,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 >
 > log:
 >
-> path: "/usr/jatoba-\<ver\>/var/log/jalog/" \# Путь к каталогу логов (Linux)
+> path: "/usr/jatoba-<ver>/var/log/jalog/" \# Путь к каталогу логов (Linux)
 >
 > filename: jalog_agent \# Шаблон для имени файлов логов
 >
@@ -726,7 +736,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 
 Перейти в директорию bin:
 
-> \# cd /usr/jatoba-\<ver\>/bin/
+> \# cd /usr/jatoba-<ver>/bin/
 
 Запустить утилиту установки компонента:
 
@@ -796,7 +806,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 >
 > log:
 >
-> \# path: "/usr/jatoba-\<ver\>/var/log/jalog/"
+> \# path: "/usr/jatoba-<ver>/var/log/jalog/"
 >
 > \# Путь к каталогу логов (Linux)
 >
@@ -942,7 +952,7 @@ IP-адрес БД, по которому выполняется подключ�
 >
 > log:
 >
-> \# path: "/usr/jatoba-\<ver\>/var/log/jalog/" \# Путь к каталогу логов (Linux)
+> \# path: "/usr/jatoba-<ver>/var/log/jalog/" \# Путь к каталогу логов (Linux)
 >
 > \# filename: jalog_agent \# Шаблон для имени файлов логов
 >
@@ -976,7 +986,7 @@ IP-адрес БД, по которому выполняется подключ�
 3)  
 4)  
 
-> Обновить локальный репозиторий СУБД «Jatoba»;Обновить пакет компонента;\# apt-get install jatoba\<ver\>-ja-log
+> Обновить локальный репозиторий СУБД «Jatoba»;Обновить пакет компонента;\# apt-get install jatoba<ver>-ja-log
 
 5)  
 
@@ -988,7 +998,7 @@ IP-адрес БД, по которому выполняется подключ�
 >
 > \c ja_log
 >
-> \i /usr/jatoba-\<ver\>/etc/jalog/migration.sql
+> \i /usr/jatoba-<ver>/etc/jalog/migration.sql
 
 7)  
 
@@ -998,13 +1008,13 @@ IP-адрес БД, по которому выполняется подключ�
 9)  
 10) 
 
-> Перейти в /usr/jatoba-\<ver\>/etc/jalog/ и проверить наличие конфигурационных файлов версии 2.0: jalog_server.yml на сервере служебной СУБД и jalog_agent.yml на сервере целевой СУБД;Выполнить настройку конфигурационных файлов согласно п.п. 3.1.3 и п.п. 3.2.2;На сервере служебной СУБД указать новый конфигурационный файл jalog_server.yml версии 2.0:# systemctl stop jalog_server
+> Перейти в /usr/jatoba-<ver>/etc/jalog/ и проверить наличие конфигурационных файлов версии 2.0: jalog_server.yml на сервере служебной СУБД и jalog_agent.yml на сервере целевой СУБД;Выполнить настройку конфигурационных файлов согласно п.п. 3.1.3 и п.п. 3.2.2;На сервере служебной СУБД указать новый конфигурационный файл jalog_server.yml версии 2.0:# systemctl stop jalog_server
 >
 > \# systemctl edit --full jalog_server.service
 >
 > \### Параметры запуска Jalog_server
 >
-> ExecStart=/usr/jatoba-\<ver\>/bin/jalog_server /usr/jatoba-6/etc/jalog/jalog_server.yml
+> ExecStart=/usr/jatoba-<ver>/bin/jalog_server /usr/jatoba-6/etc/jalog/jalog_server.yml
 >
 > \# systemctl daemon-reload
 >
@@ -1020,7 +1030,7 @@ IP-адрес БД, по которому выполняется подключ�
 >
 > \### Параметры запуска Jalog_agent
 >
-> ExecStart=/usr/jatoba-\<ver\>/bin/jalog_agent /usr/jatoba-6/etc/jalog/jalog_agent.yml
+> ExecStart=/usr/jatoba-<ver>/bin/jalog_agent /usr/jatoba-6/etc/jalog/jalog_agent.yml
 >
 > \# systemctl daemon-reload
 >
@@ -1092,9 +1102,9 @@ IP-адрес БД, по которому выполняется подключ�
 
 Сохранить изменения и выполнить перезагрузку целевой СУБД:
 
-> \# systemctl stop jatoba-\<ver\>
+> \# systemctl stop jatoba-<ver>
 >
-> \# systemctl start jatoba-\<ver\>
+> \# systemctl start jatoba-<ver>
 
 Подключиться к серверу со служебной СУБД и остановить службу:
 
@@ -1332,7 +1342,7 @@ IP-адрес БД, по которому выполняется подключ�
 | **database_params** |  | **Параметры подключения к базе данных** |
 | conn_string |  | Строка с параметрами подключения компонента к БД |
 | **log** |  | **Параметры ведения журналов работы** |
-| path | /usr/jatoba-\<ver\>/var/log/jalog/ | Каталог хранения журналов работы |
+| path | /usr/jatoba-<ver>/var/log/jalog/ | Каталог хранения журналов работы |
 | filename | jalog_server | Шаблон названия файлов журналов |
 | level | info | Уровень детализации журналов |
 | type | txt | Тип файлов журналов (txt, csv, json) |
@@ -1362,7 +1372,7 @@ IP-адрес БД, по которому выполняется подключ�
 | ca_file |  | Путь до сертификата центра сертификации, который агент ja_Log использует для подключения к серверу |
 | crl_file |  | Путь до CRL файла, который агент ja_Log использует для подключения к серверу |
 | **log** |  | **Параметры ведения журналов работы** |
-| path | /usr/jatoba-\<ver\>/var/log/jalog/ | Каталог хранения журналов работы |
+| path | /usr/jatoba-<ver>/var/log/jalog/ | Каталог хранения журналов работы |
 | filename | jalog_server | Шаблон названия файлов журналов |
 | level | info | Уровень детализации журналов |
 | type | txt | Тип файлов журналов (txt, csv, json) |

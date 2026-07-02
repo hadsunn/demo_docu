@@ -27,7 +27,7 @@
     ],
     "description": "Insert a title for MDX/Docusaurus"
   },
-    "MD auto title block": {
+  "MD auto title block": {
     "body": [
       "---",
       "title: ${TM_FILENAME_BASE}",
@@ -72,7 +72,7 @@
     "description": "Insert a image for MD"
   },
   "Wrap selection with code block": {
-    "scope": "mdx",
+    "scope": "md",
     "prefix": "wraptag",
     "body": [
     "```",
