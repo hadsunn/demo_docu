@@ -1574,11 +1574,11 @@ http://\<ip\>:9093
 
 создать папку пользователя, под которым работает JDS:sudo -s
 
-\# mkdir /home/jds
-
-\# chown jds /home/jds
-
-\# exit
+```
+# mkdir /home/jds
+# chown jds /home/jds
+# exit
+```
 
 - 
 
