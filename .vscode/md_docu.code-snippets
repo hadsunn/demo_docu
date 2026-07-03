@@ -1,31 +1,21 @@
 {
-  "MDX info block": {
+  "MD info block": {
     "prefix": "!in",
     "body": [
       ":::info Дополнительная информация",
       "",
       ":::"
     ],
-    "description": "Insert a info admonition for MDX/Docusaurus"
+    "description": "Insert a info admonition for md-file"
   },
-  "MDX warn block": {
+  "MD warn block": {
     "prefix": "!w",
     "body": [
       ":::warning Важная информация",
       "",
       ":::"
     ],
-    "description": "Insert a warning for MDX/Docusaurus"
-  },
-  "MDX auto title block": {
-    "body": [
-      "---",
-      "title: ${TM_FILENAME_BASE}",
-      "---",
-      "",
-      ""
-    ],
-    "description": "Insert a title for MDX/Docusaurus"
+    "description": "Insert a warning for md-file"
   },
   "MD auto title block": {
     "body": [
@@ -37,7 +27,7 @@
     ],
     "description": "Insert a title for MD/Docusaurus"
   },
-  "MDX title block": {
+  "MD title block": {
     "prefix": "!t",
     "body": [
       "---",
@@ -46,28 +36,21 @@
       "",
       ""
     ],
-    "description": "Insert a title for MDX/Docusaurus"
+    "description": "Insert a title for md-file"
   },
-  "MDX minimal code block": {
+  "MD minimal code block": {
     "prefix": "!c",
     "body": [
       "```",
       "",
       "```"
     ],
-    "description": "Insert a code block for MDX/Docusaurus"
-  },
-  "MDX image block": {
-    "prefix": "!imdx",
-    "body": [
-      "<img src={require('/docs/assets/images/jds-gfm/image.png').default} alt='Описание' />",
-    ],
-    "description": "Insert a image for MDX/Docusaurus"
+    "description": "Insert a code block for md-file"
   },
   "MD image block": {
     "prefix": "!i",
     "body": [
-      "![](@site/docs/assets/images/jds-gfm/image.png)",
+      "![](@site/docs/assets/images/folder/media/image.png)",
     ],
     "description": "Insert a image for MD"
   },

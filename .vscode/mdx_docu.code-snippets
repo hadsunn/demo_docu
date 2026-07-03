@@ -50,16 +50,9 @@
   "MDX image block": {
     "prefix": "!imdx",
     "body": [
-      "<img src={require('/docs/assets/images/jds-gfm/image.png').default} alt='Описание' />",
+      "<img src={require('/docs/assets/images/folder/image.png').default} alt='Описание' />",
     ],
     "description": "Insert a image for MDX/Docusaurus"
-  },
-  "MD image block": {
-    "prefix": "!i",
-    "body": [
-      "![](@site/docs/assets/images/jds-gfm/image.png)",
-    ],
-    "description": "Insert a image for MD"
   },
   "Wrap selection with code block": {
     "scope": "mdx",
