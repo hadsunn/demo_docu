@@ -18,7 +18,7 @@ const config = {
   markdown: {
     format: 'detect',
   },
-  // plugins: [require.resolve('docusaurus-lunr-search')],
+  plugins: [require.resolve('docusaurus-lunr-search')],
   // plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
   // module.exports = {
   //   plugins: [require.resolve('docusaurus-lunr-search')],
