@@ -21,3 +21,4 @@ yarn-error.log*
 
 *.pdf
 *.docx
+*.g.md
