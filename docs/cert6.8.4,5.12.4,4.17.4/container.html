@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-cert6.8.4,5.12.4,4.17.4/container" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">container | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/container"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="container | Postgres"><meta data-rh="true" name="description" content="УТВЕРЖДЕН"><meta data-rh="true" property="og:description" content="УТВЕРЖДЕН"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/container"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/container" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/container" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Сертифицированные версии 6.8.4,5.12.4,4.17.4","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/"},{"@type":"ListItem","position":2,"name":"container","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/container"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.cbebf560.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.2f8c1cba.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Collapse sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/1c">1c</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_log">ja_log</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_secevenlog">ja_secevenlog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_similar">ja_similar</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_sync">ja_sync</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jadog_3.3_1">jadog_3.3_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jadog_3.3_2">jadog_3.3_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jds2.7">jds2.7</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_probackup">pg_probackup</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sec_functions">sec_functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sec_guide">sec_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sql_firewall">sql_firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/user_guide">user_guide</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/cert6.8.4,5.12.4,4.17.4"><span>Сертифицированные версии 6.8.4,5.12.4,4.17.4</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">container</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:49%">
+<col style="width:50%">
+</colgroup><thead><tr><th style="text-align:center"><p>УТВЕРЖДЕН</p>
+<p>643.72410666.00067-07 99 01-ЛУ</p></th><th style="text-align:center"></th></tr></thead><tbody><tr><td colspan="2" style="text-align:center"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br>
+БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Инструкция по настройке и использованию контейнера</strong></p></td></tr><tr><td colspan="2" style="text-align:center"><strong>643.72410666.00067-07 99 01</strong></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">Листов 36</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">2024</td></tr><tr><td style="text-align:center"></td><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения, описывающие работу контейнера СУБД «Jatoba».</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><p>Для СУБД «Jatoba» версии ядра 4 используется версия — 4.17.1</p>
+<p>Для СУБД «Jatoba» версии ядра 5 используется версия — 5.12.1</p>
+<p>Для СУБД «Jatoba» версии ядра 6 используется версия — 6.8.1</p></th></tr></thead><tbody></tbody></table>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th style="text-align:left"><p><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p></th></tr></thead><tbody></tbody></table>
+<p>Степени важности примечаний, применяемые в документе:</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th><strong>Важная информация</strong> – указания, требующие особого внимания</th></tr></thead></table>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</th></tr></thead></table>
+<p><strong>СОДЕРЖАНИЕ</strong></p>
+<header><h1></h1></header>
+<p>[1. Требования к ПО <a href="#%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA-%D0%BF%D0%BE">4</a>](#требования-к-по)</p>
+<p>[2. Комплект контейнера <a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0">5</a>](#комплект-контейнера)</p>
+<p>[3. Установка контейнера <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0">9</a>](#установка-контейнера)</p>
+<p>[3.1. Обновление ОС <a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%81">9</a>](#обновление-ос)</p>
+<p>[3.2. Установка платформы docker в ОС <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D1%8B-docker-%D0%B2-%D0%BE%D1%81">10</a>](#установка-платформы-docker-в-ос)</p>
+<p>[3.3. Импорт образа <a href="#%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82-%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B0">11</a>](#импорт-образа)</p>
+<p>[3.4. Переменные окружения <a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">12</a>](#переменные-окружения)</p>
+<p>[3.4.1. Запуск нового контейнера <a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0">14</a>](#запуск-нового-контейнера)</p>
+<p>[3.4.2. Запуск контейнера <a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0">15</a>](#запуск-контейнера)</p>
+<p>[4. Основные операции с контейнером <a href="#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D1%81-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%BE%D0%BC">17</a>](#основные-операции-с-контейнером)</p>
+<p>[4.1. Проверка статуса (docker ps -a) <a href="#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0-docker-ps--a">17</a>](#проверка-статуса-docker-ps--a)</p>
+<p>[4.2. Проверка наличие созданных томов (volume list) <a href="#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%82%D0%BE%D0%BC%D0%BE%D0%B2-volume-list">18</a>](#проверка-наличие-созданных-томов-volume-list)</p>
+<p>[4.3. Остановка контейнера (stop.sh) <a href="#%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-stop.sh">18</a>](#остановка-контейнера-stop.sh)</p>
+<p>[4.4. Запуск остановленного контейнера (start.sh) <a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-start.sh">19</a>](#запуск-остановленного-контейнера-start.sh)</p>
+<p>[4.5. Перезапуск контейнера (restart.sh) <a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-restart.sh">19</a>](#перезапуск-контейнера-restart.sh)</p>
+<p>[4.6. Логирование контейнера (log.sh) <a href="#%D0%BB%D0%BE%D0%B3%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-log.sh">20</a>](#логирование-контейнера-log.sh)</p>
+<p>[4.7. Удаление контейнера (remove.sh) <a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-remove.sh">20</a>](#удаление-контейнера-remove.sh)</p>
+<p>[4.8. Запуск контейнера через docker run <a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-docker-run">21</a>](#запуск-контейнера-через-docker-run)</p>
+<p>[4.9. Сохранение данных контейнера <a href="#%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0">23</a>](#сохранение-данных-контейнера)</p>
+<p>[5. Изменение пользовательских настроек postgresql.conf <a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D1%85-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA-postgresql.conf">24</a>](#изменение-пользовательских-настроек-postgresql.conf)</p>
+<p>[6. Примеры команд запуска контейнера <a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0">26</a>](#примеры-команд-запуска-контейнера)</p>
+<p>[7. Использование утилиты psql <a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-psql">27</a>](#использование-утилиты-psql)</p>
+<p>[8. Поведение контейнера в особых случаях <a href="#%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-%D0%B2-%D0%BE%D1%81%D0%BE%D0%B1%D1%8B%D1%85-%D1%81%D0%BB%D1%83%D1%87%D0%B0%D1%8F%D1%85">29</a>](#поведение-контейнера-в-особых-случаях)</p>
+<p>[8.1. Изменение настроек после запуска контейнера <a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0">29</a>](#изменение-настроек-после-запуска-контейнера)</p>
+<p>[Приложение 1 <a href="#%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-1">30</a>](#приложение-1)</p>
+<p>[Приложение 2 <a href="#%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-2">32</a>](#приложение-2)</p>
+<p>[Термины и определения <a href="#%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D1%8B-%D0%B8-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">34</a>](#термины-и-определения)</p>
+<p>[Перечень сокращений <a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">35</a>](#перечень-сокращений)</p>
+<h1>Требования к ПО</h1>
+<p>Контейнер устанавливается на ЭВМ под управлением ОС, указанных в таблице Таблица 1.1.</p>
+<p>Таблица . – Перечень поддерживаемых ОС</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:center"><strong>№</strong></th><th style="text-align:left"><strong>Наименование ОС</strong></th><th style="text-align:center"><strong>Серверная часть</strong></th><th style="text-align:center"><strong>Клиентская часть</strong></th><th style="text-align:center"><strong>Docker (ver.)</strong></th><th style="text-align:center"><strong>Сертификат ФСТЭК</strong></th><th style="text-align:center"></th></tr></thead><tbody><tr><td style="text-align:center"></td><td style="text-align:left"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"><strong>№ серт.</strong></td><td style="text-align:center"><strong>Дата выдачи</strong></td></tr><tr><td style="text-align:center">1</td><td style="text-align:left">Astra Linux 1.7 Special Edition Смоленск (x86-64)</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">20.10.2</td><td style="text-align:center">2557</td><td style="text-align:center">30.01.2012</td></tr><tr><td style="text-align:center">2</td><td style="text-align:left">Astra Linux 1.8 (x86-64)</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">3</td><td style="text-align:left">Альт 8 СП</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">20.10.11</td><td style="text-align:center">3866</td><td style="text-align:center">10.08.2018</td></tr><tr><td style="text-align:center">4</td><td style="text-align:left">Альт 10 СП</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">20.10.11</td><td style="text-align:center">3866</td><td style="text-align:center">10.08.2018</td></tr><tr><td style="text-align:center">5</td><td style="text-align:left">ОСНОВА2</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">20.10.5</td><td style="text-align:center">4381</td><td style="text-align:center">31.03.2021</td></tr><tr><td style="text-align:center">6</td><td style="text-align:left">РЕД ОС 7.3 Муром</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">20.10.1</td><td style="text-align:center">4060</td><td style="text-align:center">12.01.2019</td></tr></tbody></table>
+<p>Для использования контейнера необходимо установить docker-ce версии, указанной в таблице 1.1. Инструкцию по установке ПО для необходимой ОС можно найти на сайтах:</p>
+<ul>
+<li>
+<p>для Astra Linux — <a href="https://wiki.astralinux.ru/pages/viewpage.action?pageId=158601444" target="_blank" rel="noopener noreferrer">https://wiki.astralinux.ru/pages/viewpage.action?pageId=158601444</a>,</p>
+</li>
+<li>
+<p>для РЕД ОС — <a href="https://redos.red-soft.ru/base/arm/arm-other/docker-install/" target="_blank" rel="noopener noreferrer">https://redos.red-soft.ru/base/arm/arm-other/docker-install/</a>,</p>
+</li>
+<li>
+<p>для Альт — <a href="https://www.altlinux.org/Docker" target="_blank" rel="noopener noreferrer">https://www.altlinux.org/Docker</a>,</p>
+</li>
+<li>
+<p>для остальных ОС, представленных в таблице Таблица 1.1 —<a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener noreferrer">https://docs.docker.com/engine/install/</a>.</p>
+</li>
+</ul>
+<h1>Комплект контейнера</h1>
+<p>Контейнер СУБД «Jatoba» распространяется в виде архива, содержащего файлы, указанные в таблице 2.1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Название документа</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>jatobaХ_Х.Х.Х-ХХХХ-df1.3.1-astralinux1.7.tar<sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup></td><td>образ контейнера</td></tr><tr><td>.env</td><td>файл, содержащий переменные окружения для контейнера (см. подраздел 3.4)</td></tr><tr><td>changelog.md</td><td>текстовый файл, описывающий изменения ПО</td></tr><tr><td>postgresql.template.conf</td><td>конфигурация БД, использующаяся контейнером по умолчанию (см. раздел 5)</td></tr><tr><td>README.md</td><td>краткая инструкция к контейнеру</td></tr><tr><td>log.sh</td><td>скрипт, использующийся для вывода журнала событий контейнера (см. раздел 4.6)</td></tr><tr><td>remove.sh</td><td>скрипт, использующийся для удаления контейнера (см. подраздел 4.7)</td></tr><tr><td>restart.sh</td><td>cкрипт, использующийся для перезапуска контейнера (см. подраздел 4.5)</td></tr><tr><td>run.sh</td><td>скрипт, использующийся для запуска нового контейнера (см. п. 3.4.2)</td></tr><tr><td>setup.sh</td><td>скрипт, использующийся для импорта образа контейнера (см. подраздел 3.3)</td></tr><tr><td>start.sh</td><td>скрипт, использующийся для запуска существующего контейнера (см. подраздел 4.4)</td></tr><tr><td>stop.sh</td><td>скрипт, использующийся для остановки контейнера (см. подраздел 4.3)</td></tr></tbody></table>
+<p>Таблица . – Описание файлов комплекта контейнера</p>
+<p>В образе контейнера содержится БД «Jatoba» и компоненты к ней (см. таблицу</p>
+<p>Таблица 2.2). Настройка компонентов описана отдельно в соответствующих документах.</p>
+<p>Установка дополнительных компонентов описаны в приложениях (Oracle_FWD – в Приложение 1 и PLsPgSQL – в Приложение 2).</p>
+<p>Таблица . – Состав образа контейнера</p>
+<table><colgroup>
+<col style="width:4%">
+<col style="width:21%">
+<col style="width:5%">
+<col style="width:4%">
+<col style="width:5%">
+<col style="width:4%">
+<col style="width:5%">
+<col style="width:5%">
+<col style="width:41%">
+</colgroup><thead><tr><th style="text-align:center"></th><th style="text-align:center"><strong>Наименование</strong></th><th colspan="2" style="text-align:center"><strong>J4</strong></th><th colspan="2" style="text-align:center"><strong>J5</strong></th><th colspan="2" style="text-align:center"><strong>J6</strong></th><th style="text-align:center"><strong>Описание</strong></th></tr><tr><th style="text-align:center"><strong>№</strong></th><th style="text-align:center"></th><th style="text-align:center">комм</th><th style="text-align:center">серт</th><th style="text-align:center">комм</th><th style="text-align:center">серт</th><th style="text-align:center">комм</th><th style="text-align:center">серт</th><th style="text-align:center"></th></tr></thead><tbody><tr><td style="text-align:center">1</td><td>ядро СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td></td></tr><tr><td style="text-align:center">1.1</td><td>server</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>Сервер СУБД</td></tr><tr><td style="text-align:center">1.2</td><td>client</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>Клиентские утилиты для СУБД</td></tr><tr><td style="text-align:center">1.3</td><td>contrib</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>Дополнительные расширения для сервера СУБД</td></tr><tr><td style="text-align:center">1.4</td><td>docs</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>Документация СУБД</td></tr><tr><td style="text-align:center">1.5</td><td>libs</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>Библиотеки для клиентских утилит СУБД</td></tr><tr><td style="text-align:center">1.6</td><td>plperl</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>Расширение для реализации хранимых процедур на языке Perl</td></tr><tr><td style="text-align:center">1.7</td><td>plpython</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>Расширение для реализации хранимых процедур на языке Python 2</td></tr><tr><td style="text-align:center">1.8</td><td>plpython3</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>Расширение для реализации хранимых процедур на языке Python 3</td></tr><tr><td style="text-align:center">2</td><td>jaDog</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>jaDog</td></tr><tr><td style="text-align:center">3</td><td>jaPooler</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>jaPooler</td></tr><tr><td style="text-align:center">4</td><td>fasttrun</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент совместимости с 1С</td></tr><tr><td style="text-align:center">5</td><td>fulleq</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент совместимости с 1С</td></tr><tr><td style="text-align:center">6</td><td>mchar</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент совместимости с 1С</td></tr><tr><td style="text-align:center">7</td><td>online_analyze</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент совместимости с 1С</td></tr><tr><td style="text-align:center">8</td><td>plantuner</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент совместимости с 1С</td></tr><tr><td style="text-align:center">9</td><td>Oracle_FDW (Foreign data wrapper for oracle)</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td>компонент доступа к данным СУБД Oracle</td></tr><tr><td style="text-align:center">10</td><td><p>OraFCE</p>
+<p>(Oracle function compatibility extension)</p></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент совместимости с СУБД Oracle</td></tr><tr><td style="text-align:center">11</td><td>pg_Variables</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент совместимости с системой глобальных переменных СУБД Oracle</td></tr><tr><td style="text-align:center">12</td><td>JDV (Jatoba data vault)</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент контроля субъектов доступа</td></tr><tr><td style="text-align:center">13</td><td>pgSQL-HTTP</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент формирования HTTP/HTTPS запросов из СУБД</td></tr><tr><td style="text-align:center">14</td><td>PlsPgSQL</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент обфускации кода PL/pgSQL</td></tr><tr><td style="text-align:center">15</td><td>PostGIS</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент работы с географическими данными</td></tr><tr><td style="text-align:center">16</td><td><p>JCS</p>
+<p>(Jatoba crypto access storage)</p></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент сокрытия информации в файлах данных СУБД</td></tr><tr><td style="text-align:center">17</td><td>SQL_Firewall</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент выявления и предотвращения исполнения нетипичных SQL-запросов</td></tr><tr><td style="text-align:center">18</td><td>pg_Cryogen</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент компрессии данных СУБД</td></tr><tr><td style="text-align:center">19</td><td>pg_Task</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент планирования заданий СУБД</td></tr><tr><td style="text-align:center">20</td><td>pgAudit</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент расширенного журналирования событий СУБД</td></tr><tr><td style="text-align:center">21</td><td>ja_Log</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент централизованного сбора записей событий СУБД</td></tr><tr><td style="text-align:center">22</td><td>pgBadger</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент формирования отчетов по журналам СУБД</td></tr><tr><td style="text-align:center">23</td><td>SecurityProfile</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент управления парольными политиками пользователей СУБД</td></tr><tr><td style="text-align:center">24</td><td>pg_ProBackup</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент расширенного резервного копирования</td></tr><tr><td style="text-align:center">25</td><td>PTrack</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент расширенного резервного копирования</td></tr><tr><td style="text-align:center">26</td><td>ja_CSum</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент контроля целостности</td></tr><tr><td style="text-align:center">27</td><td>ja_Sync_Ldap</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент синхронизации учетных записей с MS Active Directory</td></tr><tr><td style="text-align:center">28</td><td>pg_Profile</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент формирования отчетов производительности СУБД</td></tr><tr><td style="text-align:center">29</td><td><p>JDS</p>
+<p>(Jatoba data safe)</p></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент пользовательского веб-интерфейса для администраторов</td></tr><tr><td style="text-align:center">30</td><td>ja_Plan_Manager</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td>компонент создания планов запросов в базах данных (БД), их оптимизации и экспорта в БД</td></tr><tr><td style="text-align:center">31</td><td>ja_Hipe_Cluster</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент высокопроизводительного кластера</td></tr><tr><td style="text-align:center">32</td><td>TDS_FDW</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент поддержки платформы Microsoft SQL Server</td></tr><tr><td style="text-align:center">33</td><td>pg-hint-plan</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент корректировки запросов</td></tr><tr><td style="text-align:center">34</td><td>pg-store-plans</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td>компонент контроля выполненных планов запросов</td></tr><tr><td style="text-align:center">35</td><td>node_exporter</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент сбора аппаратных и программных показателей работы GNU/Linux</td></tr><tr><td style="text-align:center">36</td><td>postgres_exporter</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент сбора метрик СУБД</td></tr><tr><td style="text-align:center">37</td><td>sql_exporter</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент сбора расширенных метрик СУБД</td></tr><tr><td style="text-align:center">38</td><td>pg_ulid</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td>компонент поддержки лексографического идентификатора</td></tr></tbody></table>
+<h1>Установка контейнера</h1>
+<p>Установка контейнера состоит из следующих шагов:</p>
+<ul>
+<li>
+<p>Обновление ОС (п. 3.1);</p>
+</li>
+<li>
+<p>Установка платформы docker в ОС (п. 3.2);</p>
+</li>
+<li>
+<p>Импорт образа (п. 3.3);</p>
+</li>
+<li>
+<p>Установка разрешений на исполнения всех исполняемых файлов контейнере;</p>
+</li>
+<li>
+<p>Настройка переменных окружения (п. 3.4)</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Запуск скрипта логирования контейнера log (п. 4.6);</p>
+</li>
+<li>
+<p>Проверка созданного контейнера (п. 4.2).</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="обновление-ос">Обновление ОС<a href="#обновление-ос" class="hash-link" aria-label="Direct link to Обновление ОС" title="Direct link to Обновление ОС">​</a></h2>
+<p>Обновление ОС выполняется синхронизацией пакетов и обновлением их командами, описанными ниже.</p>
+<p>sudo apt update</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image3.png" style="width:7.00146in;height:2.41739in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-04 23-21-06.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Синхронизация пакетов</p></figcaption>
+</figure>
+<p>Команда «apt update» используется для синхронизации списков пакетов в вашей системе.</p>
+<p>Она извлекает последние списки пакетов PPA и репозиториев в вашей системе и обеспечивает их актуальность.</p>
+<p>Команда «apt upgrade» обновляет пакеты до последних версий и устанавливает новые пакеты, если они требуются в качестве зависимостей.</p>
+<p>Он не удаляет никакие пакеты, а если какие-либо из них предназначены для удаления, он их пропускает.</p>
+<p>sudo apt upgrade </p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image4.png" style="width:7.08384in;height:2.90435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-04 23-22-34.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Обновление пакетов ОС</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-платформы-docker-в-ос">Установка платформы docker в ОС<a href="#установка-платформы-docker-в-ос" class="hash-link" aria-label="Direct link to Установка платформы docker в ОС" title="Direct link to Установка платформы docker в ОС">​</a></h2>
+<p>Платформа докера должна устанавливаться версии 20.10.12 или выше.</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Подробная инструкция по установке находится на сайте разработчика по адресу: <a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener noreferrer">https://docs.docker.com/engine/install/</a></th></tr></thead></table>
+<p>Альтернативный вариант (можно использовать для OS (DEB), которых нет в списке на сайте):</p>
+<p>sudo apt install docker.io</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image5.png" style="width:7.1913in;height:1.22245in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-04 23-23-52.png" class="img_ev3q">
+<figcaption><p>Рисунок . - Установка платформы docker в ОС</p></figcaption>
+</figure>
+<p>Версия установленной платформы docker проверяется командой:</p>
+<p>docker –v</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image6.png" style="width:7.18219in;height:1.144in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-04 23-26-49.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Проверка версии установленной платформы docker</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="импорт-образа">Импорт образа<a href="#импорт-образа" class="hash-link" aria-label="Direct link to Импорт образа" title="Direct link to Импорт образа">​</a></h2>
+<p>Образ поставляется в виде архива, который необходимо импортировать в локальный набор образов. Для импорта образа надо исполнить скрипт setup.sh, который входит в комплект.</p>
+<p>Необходимо дать скрипту право на выполнение командой:</p>
+<p>chmod +x setup.sh</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image7.png" style="width:7.04043in;height:3.97391in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-04 22-40-36.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Выполнение команды chmod</p></figcaption>
+</figure>
+<p>Запустить установку образа:</p>
+<p>./setup.sh</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image8.png" style="width:7.15634in;height:1.912in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-05 03-07-03.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Выполнение скрипта setup.sh</p></figcaption>
+</figure>
+<p>После выполнения скрипта образ будет загружен и готов для создания контейнеров.</p>
+<p>Проверка наличия образа выполняется командой:</p>
+<p>sudo docker images</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image9.png" style="width:7.15075in;height:1.22361in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-05 04-28-03.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Вывод данных об образе</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="переменные-окружения">Переменные окружения<a href="#переменные-окружения" class="hash-link" aria-label="Direct link to Переменные окружения" title="Direct link to Переменные окружения">​</a></h2>
+<p>Переменные окружения, указанные в таблице Таблица 3.1, контейнер использует при инициализации БД.</p>
+<p>Чтобы задать переменные окружения, необходимо указать значения параметров при запуске контейнера (docker run) в виде параметров (–e &lt;параметр&gt;) или в виде файла (--env-file .env). Шаблон файла .env есть в комплекте контейнера.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:center"><strong>Название</strong></th><th style="text-align:center"><strong>Значение параметра</strong></th><th style="text-align:center"><strong>Необходимо указывать</strong></th><th style="text-align:center"><strong>Описание</strong></th></tr></thead><tbody><tr><td style="text-align:center"><strong># Сommon</strong></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">JATOBA_VERSION</td><td style="text-align:center">&lt;ver.image&gt;</td><td style="text-align:center"></td><td style="text-align:center">Версия контейнера</td></tr><tr><td style="text-align:center">PG_MAJOR</td><td style="text-align:center">&lt;ver&gt;</td><td style="text-align:center"></td><td style="text-align:center">Мажорная версия СУБД</td></tr><tr><td style="text-align:center">IMAGE_NAME</td><td style="text-align:center">jatoba</td><td style="text-align:center"></td><td style="text-align:center">Имя образа</td></tr><tr><td style="text-align:center">CONTAINER_NAME</td><td style="text-align:center">jatobadb</td><td style="text-align:center"></td><td style="text-align:center">Имя контейнера</td></tr><tr><td style="text-align:center"><strong># Need absolute path to file</strong></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">POSTGRESCONF_PATH</td><td style="text-align:center">/path/to/postgresql.template.conf</td><td style="text-align:center"></td><td style="text-align:center">Путь к шаблону конфигурационного файла</td></tr><tr><td style="text-align:center"><strong># For external postgres.conf</strong></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">PGCFGFILE_TIMEZONE</td><td style="text-align:center">Europe/Moscow</td><td style="text-align:center">Х</td><td style="text-align:center">Временная зона</td></tr><tr><td style="text-align:center"><strong># Volumes</strong></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">POSTGRESQL_VOLUME_DATA</td><td style="text-align:center">postgresql-volume-data</td><td style="text-align:center"></td><td style="text-align:center">Том с данными</td></tr><tr><td style="text-align:center">POSTGRESQL_VOLUME_EXTENSIONS</td><td style="text-align:center">postgresql-volume-extensions</td><td style="text-align:center"></td><td style="text-align:center">Том с расширениям</td></tr><tr><td style="text-align:center"><strong># Account data</strong></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">POSTGRES_USER</td><td style="text-align:center">postgres</td><td style="text-align:center"></td><td style="text-align:center">Имя пользователя сервера БД. По умолчанию: postgres</td></tr><tr><td style="text-align:center">POSTGRES_PASSWORD</td><td style="text-align:center">mysecretpassword</td><td style="text-align:center">Х</td><td style="text-align:center">Пользовательский пароль для подключения к системной БД</td></tr></tbody></table>
+<p>Таблица . – Переменные окружения</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-нового-контейнера">Запуск нового контейнера<a href="#запуск-нового-контейнера" class="hash-link" aria-label="Direct link to Запуск нового контейнера" title="Direct link to Запуск нового контейнера">​</a></h3>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th>Изменить версию СУБД при использовании текущей версии контейнера невозможно.</th></tr></thead></table>
+<p>В данном разделе описаны действия, которые необходимо сделать администратору, чтобы контейнер корректно запустился и инициализировал БД.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image10.emf" class="img_ev3q">
+<figcaption><p>Рисунок . – Проверки, которые контейнер делает после запуска</p></figcaption>
+</figure>
+<p>На рисунке Рисунок 3.8 отображен процесс запуска контейнера: какие проверки происходят после запуска, и в каких случаях могут происходить ошибки. На этой схеме видно, что при запуске новый контейнер может принимать часть данных от старого контейнера, такую как каталог данных БД (см. подраздел 4.9).</p>
+<p>В качестве шаблона конфигурационного файла контейнер использует файл «postgresql.template.conf», содержащийся в комплекте. Однако пользователь может переопределить этот файл при запуске контейнера (см. подраздел 4.9).</p>
+<p>Запустить контейнер можно с помощью команды «docker run» (см. подраздел 4.8) или с помощью скрипта run.sh (см. подраздел 3.4.2).</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-контейнера">Запуск контейнера<a href="#запуск-контейнера" class="hash-link" aria-label="Direct link to Запуск контейнера" title="Direct link to Запуск контейнера">​</a></h3>
+<p>Для запуска контейнера СУБД «Jatoba» необходимо выполнить последовательность действий, приведенную ниже.</p>
+<ol>
+<li>Проверить параметры в файле .env, находящийся в текущем каталоге:</li>
+</ol>
+<p># cd /home/admin1/Downloads/container/</p>
+<p># nano .env</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image11.png" style="width:6.70408in;height:1.50435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-05 07-26-45.png" class="img_ev3q">
+<p>Рисунок . – Файл «.env»</p>
+<p>Сохранить внесенные изменения. Перемещать, переименовывать файл .env не требуется.</p>
+<ol start="2">
+<li>Перейти в каталог с системой. Если ранее скриптам не был дан доступ на выполнение, необходимо выполнить команду:</li>
+</ol>
+<p>chmod +x *.sh</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image12.png" style="width:7.13913in;height:3.69424in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-05 06-55-41.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Содержимое каталога</p></figcaption>
+</figure>
+<ol start="3">
+<li>Далее необходимо запустить контейнер и одновременно вывести журнал событий контейнера:</li>
+</ol>
+<p>./run.sh; ./log.sh</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image13.png" style="width:6.70139in;height:2.82609in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic3\Screenshot from 2024-03-06 03-17-09.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Журнал событий контейнера после запуска скриптов «./run.sh; ./log.sh»</p></figcaption>
+</figure>
+<h1>Основные операции с контейнером</h1>
+<p>В комплекте контейнера расположены скрипты, упрощающие работу с контейнерами. Скрипты должны находиться в одном каталоге с файлом .env. Имя контейнера, с которым работают скрипты, указывается в .env параметром CONTAINER_NAME.</p>
+<p>.env – файл, содержащий набор переменных окружения. Переменные окружения описаны в подразделе 3.4.</p>
+<p>Описание скриптов:</p>
+<ul>
+<li>remove.sh – удаляет контейнер (см. подраздел 4.7);</li>
+</ul>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th>Если каталог data не был примонтирован к хостовому серверу при инициализации контейнера, то при использовании скрипта remove.sh данные удалятся. Если каталог был примонтирован, то данные при запуске remove.sh сохранятся.</th></tr></thead></table>
+<ul>
+<li>
+<p>stop.sh – останавливает контейнер (см. подраздел 4.3);</p>
+</li>
+<li>
+<p>run.sh – запускает новый контейнер (см. п. 3.4.2);</p>
+</li>
+<li>
+<p>start.sh – запускает остановленный (но не удаленный) контейнер (см. п .4.4);</p>
+</li>
+<li>
+<p>restart.sh - используется для перезапуска контейнера (см. подраздел 4.5);</p>
+</li>
+<li>
+<p>stop.sh - используется для остановки контейнера (см. подраздел 4.3);</p>
+</li>
+<li>
+<p>log.sh – запускает просмотр журнала событий БД (см. подраздел 4.6);</p>
+</li>
+<li>
+<p>remove.sh – удаляет контейнер (см. подраздел 4.7);</p>
+</li>
+</ul>
+<p>Чтобы выполнить скрипт, надо дать ему право на выполнение:</p>
+<p>chmod +x &lt;название скрипта&gt;.sh</p>
+<p>И запустить:</p>
+<p>./&lt;название скрипта&gt;.sh</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-статуса-docker-ps--a">Проверка статуса (docker ps -a)<a href="#проверка-статуса-docker-ps--a" class="hash-link" aria-label="Direct link to Проверка статуса (docker ps -a)" title="Direct link to Проверка статуса (docker ps -a)">​</a></h2>
+<p>Проверка статуса контейнера выполняется из терминала ОС командой:</p>
+<p># docker ps -a</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image14.png" style="width:7.2987in;height:0.67622in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-11 04-39-37.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Вывод статуса контейнера</p></figcaption>
+</figure>
+<p>В выводе статуса будут отражены столбцы:</p>
+<ul>
+<li>
+<p>CONTAINER ID – идентификатор контейнера;</p>
+</li>
+<li>
+<p>IMAGE –имя образа, из которого был поднят контейнер;</p>
+</li>
+<li>
+<p>COMMAND - команда, которая выполнилась при старте контейнера</p>
+</li>
+<li>
+<p>CREATED – время с момента создания контейнера;</p>
+</li>
+<li>
+<p>STATUS – дни работы контейнера (текущее состояние);</p>
+</li>
+<li>
+<p>PORTS – используемые порты и адресация сети (проброс портов);</p>
+</li>
+<li>
+<p>NAMES – имя контейнера.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-наличие-созданных-томов-volume-list">Проверка наличие созданных томов (volume list)<a href="#проверка-наличие-созданных-томов-volume-list" class="hash-link" aria-label="Direct link to Проверка наличие созданных томов (volume list)" title="Direct link to Проверка наличие созданных томов (volume list)">​</a></h2>
+<p>Проверка созданных томов выполняется из терминала ОС командой:</p>
+<p># docker volume list</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image15.png" style="width:7.125in;height:1.72508in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-11 07-33-30.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Вывод команды проверки созданных томов</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="остановка-контейнера-stopsh">Остановка контейнера (stop.sh)<a href="#остановка-контейнера-stopsh" class="hash-link" aria-label="Direct link to Остановка контейнера (stop.sh)" title="Direct link to Остановка контейнера (stop.sh)">​</a></h2>
+<p>Остановка контейнера выполняется скриптом «stop.sh», расположенным в домашней директории контейнера.</p>
+<p>Скрипт «stop.sh» запускается командой из терминала ОС:</p>
+<p>./stop.sh </p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image16.png" style="width:7.14921in;height:1.39904in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-11 08-04-36.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Команда остановки контейнера</p></figcaption>
+</figure>
+<p>При проверке статуса контейнера в столбце «Status» значение «Exited» с указанием истекшего времени с момента остановки контейнера.</p>
+<p>docker ps -a </p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image17.png" style="width:7.24819in;height:1.44215in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-11 08-06-47.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Вывод статуса остановленного контейнера</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-остановленного-контейнера-startsh">Запуск остановленного контейнера (start.sh)<a href="#запуск-остановленного-контейнера-startsh" class="hash-link" aria-label="Direct link to Запуск остановленного контейнера (start.sh)" title="Direct link to Запуск остановленного контейнера (start.sh)">​</a></h2>
+<p>Запуск контейнера выполняется скриптом «start.sh», командой из корневого каталога контейнера в терминале ОС:</p>
+<p>./start.sh</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image18.png" style="width:7.07919in;height:1.424in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-11 08-27-16.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Команда запуска контейнера</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="перезапуск-контейнера-restartsh">Перезапуск контейнера (restart.sh)<a href="#перезапуск-контейнера-restartsh" class="hash-link" aria-label="Direct link to Перезапуск контейнера (restart.sh)" title="Direct link to Перезапуск контейнера (restart.sh)">​</a></h2>
+<p>Перезапуск контейнера выполняется скриптом «restart.sh», командой из корневого каталога контейнера в терминале ОС:</p>
+<p>./restart.sh</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image19.png" style="width:7.096in;height:1.456in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-12 01-21-44.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Выполнение команды перезапуска контейнера</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="логирование-контейнера-logsh">Логирование контейнера (log.sh)<a href="#логирование-контейнера-logsh" class="hash-link" aria-label="Direct link to Логирование контейнера (log.sh)" title="Direct link to Логирование контейнера (log.sh)">​</a></h2>
+<p>Скрипт log.sh может запускаться самостоятельно, либо совместно со скриптами:</p>
+<ul>
+<li>run.sh (п. 3.4.2);</li>
+</ul>
+<p>./run.sh; ./log.sh</p>
+<ul>
+<li>start.sh (п. 4.4).</li>
+</ul>
+<p>./start.sh; ./log.sh</p>
+<p>При запущенном контейнере скрипт «log.sh» выведет журнал событий контейнера:</p>
+<p>./log.sh </p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image20.png" style="width:7.04423in;height:1.73044in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-12 01-47-39.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Вывод скрипта логирования</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="удаление-контейнера-removesh">Удаление контейнера (remove.sh)<a href="#удаление-контейнера-removesh" class="hash-link" aria-label="Direct link to Удаление контейнера (remove.sh)" title="Direct link to Удаление контейнера (remove.sh)">​</a></h2>
+<p>Удаление контейнера должно выполняться по следующим шагам:</p>
+<ul>
+<li>Выполнить скрипт удаления контейнера:</li>
+</ul>
+<p>./remove.sh</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image21.png" style="width:7.21515in;height:1.81314in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-12 04-41-59.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Удаление контейнера</p></figcaption>
+</figure>
+<ul>
+<li>Удалить том с данными:</li>
+</ul>
+<p>docker volume rm postgresql-volume-data</p>
+<ul>
+<li>Удалить том с расширениями СУБД:</li>
+</ul>
+<p>docker volume rm postgresql-volume-extensions</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image22.png" style="width:7.02987in;height:1.69476in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-12 07-24-20.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Команды удаления томов с данными и расширениями СУБД</p></figcaption>
+</figure>
+<ul>
+<li>Проверить отсутствие контейнера в списке:</li>
+</ul>
+<p>docker ps –a</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image23.png" style="width:7.15973in;height:1.9434in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-12 04-44-11.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Вывод статуса контейнера</p></figcaption>
+</figure>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-контейнера-через-docker-run">Запуск контейнера через docker run<a href="#запуск-контейнера-через-docker-run" class="hash-link" aria-label="Direct link to Запуск контейнера через docker run" title="Direct link to Запуск контейнера через docker run">​</a></h2>
+<p>Для запуска контейнера СУБД «Jatoba» необходимо выполнить команду:</p>
+<p>docker run &lt;параметры&gt; jatoba*:*.*.*-****-df1.*.*</p>
+<p>Примеры команд запуска контейнера есть в разделе 6.</p>
+<p>Параметры docker run для запуска контейнера СУБД «Jatoba»:</p>
+<ul>
+<li>
+<p>-i – параметр, который делает возможным взаимодействие с терминалом внутри контейнера;</p>
+</li>
+<li>
+<p>-t – параметр, который предоставляет доступ к терминалу внутри контейнера;</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Параметры –t и –i обычно используются в паре</th></tr></thead></table>
+<ul>
+<li>
+<p>-d – параметр для запуска контейнера в фоновом режиме. При запуске контейнера с использованием этого параметра контейнер не остановится при закрытии консоли;</p>
+</li>
+<li>
+<p>-v &lt;название созданного docker-volume&gt;:&lt;путь до каталога внутри контейнера&gt; – параметр, позволяющий сохранять каталог контейнера на хостовом сервере. При использовании этого параметра данные контейнера сохранятся при его удалении (см. подраздел 4.9);</p>
+</li>
+<li>
+<p>-e &lt;параметр&gt;=&lt;значение параметра&gt; – параметр, который задает переменную окружения для контейнера;</p>
+</li>
+<li>
+<p>--env-file &lt;путь к файлу&gt; – параметр, который задает путь к файлу, содержащему переменные окружения для контейнера;</p>
+</li>
+<li>
+<p>-p &lt;внешний порт&gt;:5432 – параметр, который сопоставляет порт внутри контейнера с портом на хостовом сервере — таким образом, к БД в контейнере можно обратиться через указанный порт на хостовом сервере;</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Если на хостовом сервере уже запущен процесс, использующий порт 5432, можно поменять порт для контейнера, например, на 54321 (-p 54321:5432)</th></tr></thead></table>
+<ul>
+<li>--name – имя запускаемого контейнера.</li>
+</ul>
+<p>При успешном создании контейнера появится его идентификатор.</p>
+<p>По имени или идентификатору контейнера можно получить журнал событий и убедиться, что сервер БД корректно запустился. Команда для просмотра журнала событий:</p>
+<p>docker logs &lt;имя контейнера&gt;</p>
+<p>Либо для отслеживания потока вывода журнала событий:</p>
+<p>docker logs -f &lt;имя контейнера&gt;</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="сохранение-данных-контейнера">Сохранение данных контейнера<a href="#сохранение-данных-контейнера" class="hash-link" aria-label="Direct link to Сохранение данных контейнера" title="Direct link to Сохранение данных контейнера">​</a></h2>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>При запуске контейнера с использованием скрипта run.sh сохранять данные не требуется, это делает скрипт.</th></tr></thead></table>
+<p>Перед запуском нового контейнера рекомендуется создать docker-volume для каталога данных сервера БД. Иначе в случае удаления контейнера эти данные будут потеряны.</p>
+<p>Чтобы создать docker-volume для сохранения каталога данных сервера БД (каталога /var/lib/jatoba/&lt;ver&gt;/data), выполнить команду:</p>
+<p>docker volume create postgresql-volume-data</p>
+<p>Для использования этого docker-volume в контейнере, при запуске контейнера с помощью команды docker run (см. подраздел 4.8) необходимо добавить параметр -v postgresql-volume-data:/var/lib/jatoba/&lt;ver&gt;/data.</p>
+<h1>Изменение пользовательских настроек postgresql.conf</h1>
+<p>В комплекте контейнера есть файл конфигурации БД (postgresql.template.conf), который используется в качестве шаблона при настройке БД. Но его можно переопределить через монтирование нового файла конфигурации на хостовой сервер или через перенос файла в контейнер:</p>
+<ul>
+<li>Монтирование файла. При использовании этого способа файл конфигурации сохранится на хостовом сервере в случае удаления контейнера.</li>
+</ul>
+<blockquote>
+<p>Для этого при запуске контейнера (docker run) указать параметр:</p>
+<p>-v &lt;путь до postgresql.conf на хостовом сервере&gt;:/settings/postgresql.conf</p>
+</blockquote>
+<ul>
+<li>Перенос файла. При использовании этого способа файл конфигурации не сохранится при удалении контейнера.</li>
+</ul>
+<blockquote>
+<p>В каталог /settings, находящийся внутри контейнера, поместить свой файл конфигурации с именем postgresql.conf и перезапустить контейнер. Это можно сделать с помощью команды:</p>
+<p>docker cp &lt;путь до postgresql.conf на хостовом сервере&gt; &lt;имя контейнера&gt;:/settings</p>
+<p>Затем выполнить команду:</p>
+<p>docker restart &lt;имя контейнера&gt;</p>
+</blockquote>
+<p><strong>Шаблонизация параметров</strong></p>
+<p>В пользовательском файле настроек поддерживается шаблонизация параметров. Например, если при создании контейнера задать переменную окружения PGCFGFILE_TIMEZONE, то ее можно указать в пользовательском файле настроек: log_timezone= {{PGCFGFILE_TIMEZONE}}.</p>
+<p>Если в файле конфигурации было шаблонизировано значение, но соответствующей переменной окружения не существует, контейнер будет выдавать ошибку. В таком случае необходимо или указать значение этого параметра в качестве переменной окружения при запуске, или изменить файл конфигурации, чтобы в нем было явно указано значение параметра.</p>
+<h1>Примеры команд запуска контейнера</h1>
+<ol>
+<li>С созданием docker-volume.</li>
+</ol>
+<p>Выполнить команду создания docker-volume для сохранения каталога данных сервера БД:</p>
+<blockquote>
+<p>docker volume create postgresql-volume-data</p>
+<p>Выполнить команду запуска контейнера:</p>
+<p>docker run -it -d \</p>
+<p>-v postgresql-volume-data:/var/lib/jatoba/4/data \</p>
+<p>-e POSTGRES_PASSWORD=mysecretpassword \</p>
+<p>--name jatobadb jatoba4:4.8.2-1124-df1.2.1</p>
+</blockquote>
+<p>В данном примере в интерактивном режиме создается контейнер с примонтированными docker-volume для каталога данных БД. Доступ к БД есть с хостового сервера по порту 5432. Имя контейнера – jatobadb.</p>
+<ol start="2">
+<li>Без создания docker-volume.</li>
+</ol>
+<p>Для запуска контейнера выполнить команду:</p>
+<p>docker run -it -d \</p>
+<p>-e POSTGRES_HOST_AUTH_METHOD=trust -e POSTGRES_USER=admin \</p>
+<p>-p 5432:5432 --name jatobadb jatoba4:4.8.2-1124-df1.2.1</p>
+<p>В данном примере создается контейнер jatobadb. Доступ к БД у пользователя admin, пароль для подключения не используется. После удаления контейнера данные не сохранятся, потому что docker-volume не были примонтированы<br>
+(см. подраздел 4.9).</p>
+<h1>Использование утилиты psql</h1>
+<p>psql – это терминальный интерфейс, использующийся для работы с СУБД «Jatoba». Он позволяет вводить запросы в интерактивном режиме, отправлять их в СУБД и просматривать результат выполнения запросов.</p>
+<p>Для подключения к СУБД «Jatoba» с сервера, на котором развернут и запущен контейнер, можно использовать команду:</p>
+<p>docker exec -it &lt;название контейнера&gt; psql -U &lt;имя пользователя БД&gt;</p>
+<p>Здесь:</p>
+<ul>
+<li>
+<p>docker exec -it – команда запуска процесса в контейнере, -it обозначает интерактивный режим выполнения (позволяет использовать оболочку командной строки внутри контейнера и выполнять из-под нее команды);</p>
+</li>
+<li>
+<p>&lt;название контейнера&gt; – имя контейнера СУБД «Jatoba», указанное при запуске;</p>
+</li>
+<li>
+<p>psql – утилита, запускаемая внутри контейнера;</p>
+</li>
+<li>
+<p>-U &lt;имя пользователя БД&gt; – параметр утилиты psql, который обозначает, что psql будет подключаться к СУБД «Jatoba» под указанным пользователем БД. Необходимо использовать имя, указанное в параметре POSTGRES_USER файла .env.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>По умолчанию, если в файле .env не был указан POSTGRES_USER, при инициализации создается пользователь postgres.</th></tr></thead></table>
+<p>Пример использования команды:</p>
+<p>docker exec -it jatobadb psql -U postgres</p>
+<p>В данном примере подключение идет к контейнеру с названием jatobadb, в нем в интерактивном режиме запускается утилита psql под пользователем postgres.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/container/media/image24.png" style="width:6.99595in;height:1.584in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-12 03-03-58.png" class="img_ev3q">
+<figcaption><p>Рисунок . - Запуск утилиты psql в контейнере</p></figcaption>
+</figure>
+<h1>Поведение контейнера в особых случаях</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="изменение-настроек-после-запуска-контейнера">Изменение настроек после запуска контейнера<a href="#изменение-настроек-после-запуска-контейнера" class="hash-link" aria-label="Direct link to Изменение настроек после запуска контейнера" title="Direct link to Изменение настроек после запуска контейнера">​</a></h2>
+<p>Настройки подключения к БД, такие как пароль пользователя и метод аутентификации, указываются переменными окружения при первом запуске БД (см. подраздел 3.4). Они используются контейнером при инициализации БД, после чего эти настройки можно изменить двумя способами:</p>
+<ul>
+<li>
+<p>Удалить контейнер и создать его заново с использованием новых переменных окружения. При этом необходимо использовать новый docker-volume для каталога данных, потому что при использовании старого docker-volume БД не будет проинициализирована заново;</p>
+</li>
+<li>
+<p>Вручную изменить настройки в запущенном контейнере, например:</p>
+</li>
+</ul>
+<ul>
+<li>Для смены пароля пользователя БД выполнить команду:</li>
+</ul>
+<blockquote>
+<p>docker exec -it &lt;имя контейнера&gt; psql -U &lt;имя пользователя&gt; -c &quot;ALTER USER &lt;имя пользователя&gt; PASSWORD &#x27;&lt;новый пароль&gt;&#x27;;&quot;</p>
+</blockquote>
+<ul>
+<li>
+<p>Для смены метода аутентификации необходимо отредактировать файл pg_hba.conf. Если для контейнера был создан и примонтирован docker-volume для каталога данных, отредактировать файл можно таким образом:</p>
+<ol>
+<li>На хостовом сервере выполнить команду:</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>docker inspect postgresql-volume-data</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>Открыть файл pg_hba.conf: он находится в каталоге, указанном в графе «Mountpoint».</p>
+</li>
+<li>
+<p>Изменить настройки в файле pg_hba.conf.</p>
+</li>
+<li>
+<p>Перезапустить контейнер:</p>
+</li>
+</ol>
+<blockquote>
+<p>docker restart &lt;имя контейнера&gt;</p>
+</blockquote>
+<h1>Приложение 1</h1>
+<p>Установка компонента Oracle_FDW</p>
+<p>Чтобы установить компонент Oracle_FDW, необходимо:</p>
+<ol>
+<li>
+<p>Скачать внешний rpm-пакет Oracle Instance Client версии 11.1. Скачать его возможно по адресу: <a href="https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html" target="_blank" rel="noopener noreferrer">https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html</a></p>
+</li>
+<li>
+<p>Скопировать файл пакета в контейнер:</p>
+</li>
+</ol>
+<p>docker cp &lt;oracle instance client&gt;.rpm &lt;имя контейнера&gt;:/&lt;oracle instance client&gt;.rpm</p>
+<ol start="3">
+<li>
+<p>Перейти в каталог c дистрибутивом astralinux17smolensk.</p>
+</li>
+<li>
+<p>Скопировать установщик компонента на контейнер:</p>
+</li>
+</ol>
+<p>docker cp jatoba4-oracle-fdw_4.8.2-1124_amd64.deb &lt;имя контейнера&gt;:/jatoba4-oracle-fdw_4.8.2-1124_amd64file.deb</p>
+<ol start="5">
+<li>Зайти в bash оболочку контейнера:</li>
+</ol>
+<p>docker exec -it &lt;имя контейнера&gt; /bin/bash</p>
+<ol start="6">
+<li>Прописать репозиторий:</li>
+</ol>
+<p>echo &quot;deb <a href="https://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-main/" target="_blank" rel="noopener noreferrer">https://dl.astralinux.ru/astra/stable/1.7_x86-64/repository-main/</a> 1.7_x86-64 main contrib non-free&quot; &gt; /etc/apt/source.list</p>
+<ol start="7">
+<li>Обновить списки пакетов:</li>
+</ol>
+<p>apt update</p>
+<ol start="8">
+<li>Установить дополнительные библиотеки:</li>
+</ol>
+<p>apt install alien libaio1</p>
+<ol start="9">
+<li>Установить Oracle Instance Client:</li>
+</ol>
+<p>alien -i &lt;oracle instance client&gt;.rpm</p>
+<ol start="10">
+<li>Выполнить конфигурирование установленной библиотеки:</li>
+</ol>
+<p>echo /usr/lib/oracle/11.2/client64/lib &gt; /etc/ld.so.conf.d/oracle-instantclient.conf</p>
+<p>ldconfig</p>
+<ol start="11">
+<li>Установить пакет Oracle_FDW:</li>
+</ol>
+<p>dpkg -i jatoba4-oracle-fdw_4.8.2-1124_amd64file.deb</p>
+<blockquote>
+<p>Далее необходимо настроить компонент в соответствии с инструкцией к компоненту.</p>
+</blockquote>
+<h1>Приложение 2</h1>
+<p>Установка компонента PLsPgSQL</p>
+<p>Чтобы установить компонент PLsPgSQL, необходимо:</p>
+<ol>
+<li>Скачать библиотеку lsb-cprocsp.</li>
+</ol>
+<blockquote>
+<p>lsb-cprocsp – криптопровайдер «КриптоПро CSP» версии 5.0. Данный пакет распространяется в виде самостоятельного DEB/RPM дистрибутива. Для установки необходимо обратиться к документации на официальном сайте разработчика КриптоПро – для доступа требуется зарегистрированный пользователь по правилам сайта <a href="https://cryptopro.ru/user" target="_blank" rel="noopener noreferrer">https://cryptopro.ru/user</a>);</p>
+</blockquote>
+<ol start="2">
+<li>Создать каталог cryptopro в контейнере:</li>
+</ol>
+<p>sudo docker exec -it &lt;имя контейнера&gt; mkdir cryptopro</p>
+<ol start="3">
+<li>Скопировать файлы библиотеки в каталог cryptopro в контейнере:</li>
+</ol>
+<p>docker cp &lt;имя каталога с файлами КриптоПро&gt;/. &lt;имя контейнера&gt;:/cryptopro</p>
+<ol start="4">
+<li>Дать скрипту install.sh право на исполнение:</li>
+</ol>
+<p>sudo docker exec -it &lt;имя контейнера&gt; chmod +x cryptopro/install.sh</p>
+<ol start="5">
+<li>Установить библиотеку КриптоПро:</li>
+</ol>
+<p>sudo docker exec -it &lt;имя контейнера&gt; cryptopro/install.sh</p>
+<ol start="6">
+<li>
+<p>Перейти в каталог c дистрибутивом astralinux17smolensk.</p>
+</li>
+<li>
+<p>Скопировать пакет gis-cryptoplatform17 на контейнер:</p>
+</li>
+</ol>
+<p>docker cp gis-cryptoplatform17_1.7.3-4_amd64.deb &lt;имя контейнера&gt;:/gis-cryptoplatform17_1.7.3-4_amd64.deb</p>
+<ol start="8">
+<li>Скопировать пакет PLsPgSQL на контейнер:</li>
+</ol>
+<p>docker cp jatoba4-plspgsql_4.8.2-1124_amd64.deb &lt;имя контейнера&gt;:/jatoba4-plspgsql_4.8.2-1124_amd64.deb</p>
+<ol start="9">
+<li>Установить библиотеку gis-cryptoplatform17:</li>
+</ol>
+<p>docker exec -it &lt;имя контейнера&gt; dpkg -i gis-cryptoplatform17_1.7.3-4_amd64.deb</p>
+<ol start="10">
+<li>Установить компонент PLsPgSQL:</li>
+</ol>
+<p>docker exec -it &lt;имя контейнера&gt; dpkg -i jatoba4-plspgsql_4.8.2-1124_amd64.deb</p>
+<blockquote>
+<p>Далее необходимо настроить компонент в соответствии с инструкцией к компоненту.</p>
+</blockquote>
+<h1>Термины и определения</h1>
+<p><strong>docker-volume</strong> – это механизм сохранения данных, сгенерированных и используемых контейнерами Docker, которые остаются после работы и удаления контейнеров, если были использованы в команде запуска контейнера через аргументы -v или --volume.</p>
+<p><strong>Хостовой сервер</strong> — сервер, на который устанавливается образ и запускается контейнер СУБД «Jatoba».</p>
+<p><strong>Docker -</strong> это платформа для автоматизации развертывания и управления приложениями в средах с различными операционными системами. Он позволяет упаковывать приложения со всем их зависимостями в легкие, повторно используемые модули-контейнеры. Docker ускоряет процесс разработки и доставки приложений, а также упрощает управление инфраструктурой и контейнеризацию приложений.**<br>
+**</p>
+<h1>Перечень сокращений</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ОС</th><th>–</th><th>Операционная система</th></tr></thead><tbody><tr><td>БД</td><td>–</td><td>База данных</td></tr><tr><td>ПО</td><td>–</td><td>Программное обеспечение</td></tr><tr><td>СУБД</td><td>–</td><td>Система управления базами данных</td></tr><tr><td>ЭВМ</td><td>–</td><td>Электронно-вычислительная машина</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center">Лист регистрации изменений</th></tr></thead><tbody><tr><td rowspan="2" style="text-align:center">Изм.</td><td colspan="4" style="text-align:center">Номера листов (страниц)</td><td rowspan="2" style="text-align:center">Всего<br>
+листов (страниц)<br>
+в документе</td><td rowspan="2" style="text-align:center">Номер документа</td><td rowspan="2" style="text-align:center">Входящий номер сопроводительного документа и дата</td><td rowspan="2" style="text-align:center">Подпись</td><td rowspan="2" style="text-align:center">Дата</td></tr><tr><td style="text-align:center">измененных</td><td style="text-align:center">замененных</td><td style="text-align:center">новых</td><td style="text-align:center">аннулированных</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr></tbody></table>
+<!-- -->
+<section data-footnotes="" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_LWe7 sr-only" id="footnote-label">Footnotes<a href="#footnote-label" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-1">
+<p>версия уточняется при поставке <a href="#user-content-fnref-1" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/admin"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">admin</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/describe"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">describe</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#обновление-ос" class="table-of-contents__link toc-highlight">Обновление ОС</a></li><li><a href="#установка-платформы-docker-в-ос" class="table-of-contents__link toc-highlight">Установка платформы docker в ОС</a></li><li><a href="#импорт-образа" class="table-of-contents__link toc-highlight">Импорт образа</a></li><li><a href="#переменные-окружения" class="table-of-contents__link toc-highlight">Переменные окружения</a><ul><li><a href="#запуск-нового-контейнера" class="table-of-contents__link toc-highlight">Запуск нового контейнера</a></li><li><a href="#запуск-контейнера" class="table-of-contents__link toc-highlight">Запуск контейнера</a></li></ul></li><li><a href="#проверка-статуса-docker-ps--a" class="table-of-contents__link toc-highlight">Проверка статуса (docker ps -a)</a></li><li><a href="#проверка-наличие-созданных-томов-volume-list" class="table-of-contents__link toc-highlight">Проверка наличие созданных томов (volume list)</a></li><li><a href="#остановка-контейнера-stopsh" class="table-of-contents__link toc-highlight">Остановка контейнера (stop.sh)</a></li><li><a href="#запуск-остановленного-контейнера-startsh" class="table-of-contents__link toc-highlight">Запуск остановленного контейнера (start.sh)</a></li><li><a href="#перезапуск-контейнера-restartsh" class="table-of-contents__link toc-highlight">Перезапуск контейнера (restart.sh)</a></li><li><a href="#логирование-контейнера-logsh" class="table-of-contents__link toc-highlight">Логирование контейнера (log.sh)</a></li><li><a href="#удаление-контейнера-removesh" class="table-of-contents__link toc-highlight">Удаление контейнера (remove.sh)</a></li><li><a href="#запуск-контейнера-через-docker-run" class="table-of-contents__link toc-highlight">Запуск контейнера через docker run</a></li><li><a href="#сохранение-данных-контейнера" class="table-of-contents__link toc-highlight">Сохранение данных контейнера</a></li><li><a href="#изменение-настроек-после-запуска-контейнера" class="table-of-contents__link toc-highlight">Изменение настроек после запуска контейнера</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

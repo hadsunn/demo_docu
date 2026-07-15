@@ -1,0 +1,1280 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-cert6.8.4,5.12.4,4.17.4/describe" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">describe | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/describe"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="describe | Postgres"><meta data-rh="true" name="description" content="УТВЕРЖДЕНО"><meta data-rh="true" property="og:description" content="УТВЕРЖДЕНО"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/describe"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/describe" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/describe" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Сертифицированные версии 6.8.4,5.12.4,4.17.4","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/"},{"@type":"ListItem","position":2,"name":"describe","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/describe"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.cbebf560.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.2f8c1cba.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Collapse sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/1c">1c</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_log">ja_log</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_secevenlog">ja_secevenlog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_similar">ja_similar</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_sync">ja_sync</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jadog_3.3_1">jadog_3.3_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jadog_3.3_2">jadog_3.3_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jds2.7">jds2.7</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_probackup">pg_probackup</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sec_functions">sec_functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sec_guide">sec_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sql_firewall">sql_firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/user_guide">user_guide</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/cert6.8.4,5.12.4,4.17.4"><span>Сертифицированные версии 6.8.4,5.12.4,4.17.4</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">describe</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>describe</h1></header><table><colgroup>
+<col style="width:4%">
+<col style="width:4%">
+<col style="width:59%">
+<col style="width:6%">
+<col style="width:23%">
+<col style="width:1%">
+</colgroup><thead><tr><th colspan="2" rowspan="6"></th><th><p>УТВЕРЖДЕНО</p>
+<p>643.72410666.00067-07 31 01</p></th><th colspan="3" style="text-align:center"></th></tr><tr><th colspan="3" style="text-align:center"><p><strong>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ</strong></p>
+<p><strong>БАЗАМИ ДАННЫХ «JATOBA»</strong></p>
+<p><strong>Описание применения</strong></p></th><th></th></tr><tr><th colspan="3" style="text-align:center"><strong>643.72410666.00067-07 31 01</strong></th><th></th></tr><tr><th colspan="3" style="text-align:center"></th><th></th></tr><tr><th colspan="3" style="text-align:center">Листов 30</th><th></th></tr><tr><th colspan="2" rowspan="6"></th><th colspan="2" rowspan="6" style="text-align:center"></th></tr><tr><th><blockquote>
+<p><strong>Подп. и дата</strong></p>
+</blockquote></th><th></th></tr><tr><th style="text-align:left"><blockquote>
+<p><strong>Инв. № дубл.</strong></p>
+</blockquote></th><th></th></tr><tr><th><blockquote>
+<p><strong>Взам. инв. №</strong></p>
+</blockquote></th><th></th></tr><tr><th><blockquote>
+<p><strong>Подп. и дата</strong></p>
+</blockquote></th><th></th></tr><tr><th rowspan="2" style="text-align:left"><blockquote>
+<p><strong>Инв. № подл.</strong></p>
+</blockquote></th><th rowspan="2"></th></tr><tr><th colspan="4" style="text-align:center"><p>2024</p>
+<p>Литера О<sub>1</sub></p></th></tr></thead><tbody></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="аннотация">аннотация<a href="#аннотация" class="hash-link" aria-label="Direct link to аннотация" title="Direct link to аннотация">​</a></h2>
+<p>В документе приведены сведения о защищенной системе управления базами данных «Jatoba» (далее − СУБД «Jatoba»). Настоящий документ содержит описание назначения СУБД «Jatoba», описание функциональных возможностей, условий применения и решаемых СУБД «Jatoba» задач, а также входные и выходные данные СУБД.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="содержание">СОДЕРЖАНИЕ<a href="#содержание" class="hash-link" aria-label="Direct link to СОДЕРЖАНИЕ" title="Direct link to СОДЕРЖАНИЕ">​</a></h2>
+<p>[1. НАЗНАЧЕНИЕ ПРОГРАММЫ <a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B">4</a>](#назначение-программы)</p>
+<p>[1.1. Назначение СУБД «Jatoba» <a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%83%D0%B1%D0%B4-jatoba">4</a>](#назначение-субд-jatoba)</p>
+<p>[1.2. Основные характеристики <a href="#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D1%85%D0%B0%D1%80%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8">4</a>](#основные-характеристики)</p>
+<p>[1.3. Производительность СУБД <a href="#%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D1%81%D1%83%D0%B1%D0%B4">10</a>](#производительность-субд)</p>
+<p>[2. УСЛОВИЯ ПРИМЕНЕНИЯ <a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">11</a>](#условия-применения)</p>
+<p>[3. ОПИСАНИЕ ЗАДАЧИ <a href="#%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8">16</a>](#описание-задачи)</p>
+<p>[3.1. Классы решаемых задач <a href="#%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B-%D1%80%D0%B5%D1%88%D0%B0%D0%B5%D0%BC%D1%8B%D1%85-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87">16</a>](#классы-решаемых-задач)</p>
+<p>[3.2. Методы решения задач <a href="#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87">17</a>](#методы-решения-задач)</p>
+<p>[3.2.1. Задачи управления базами данных, решаемые ядром СУБД <a href="#%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B1%D0%B0%D0%B7%D0%B0%D0%BC%D0%B8-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%80%D0%B5%D1%88%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5-%D1%8F%D0%B4%D1%80%D0%BE%D0%BC-%D1%81%D1%83%D0%B1%D0%B4">17</a>](#задачи-управления-базами-данных-решаемые-ядром-субд)</p>
+<p>[3.2.2. Задачи расширения функциональных возможностей ядра СУБД <a href="#%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9-%D1%8F%D0%B4%D1%80%D0%B0-%D1%81%D1%83%D0%B1%D0%B4">20</a>](#задачи-расширения-функциональных-возможностей-ядра-субд)</p>
+<p>[3.2.3. Задачи расширения защиты данных и обеспечения отказоустойчивости <a href="#%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8-%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BE%D1%82%D0%BA%D0%B0%D0%B7%D0%BE%D1%83%D1%81%D1%82%D0%BE%D0%B9%D1%87%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D0%B8">21</a>](#задачи-расширения-защиты-данных-и-обеспечения-отказоустойчивости)</p>
+<p>[4. ВХОДНЫЕ И ВЫХОДНЫЕ ДАННЫЕ <a href="#%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B8-%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5">28</a>](#входные-и-выходные-данные)</p>
+<p>[4.1. Входные данные <a href="#%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5">28</a>](#входные-данные)</p>
+<p>[4.2. Выходные данные <a href="#%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5">28</a>](#выходные-данные)</p>
+<p>[ПЕРЕЧЕНЬ СОКРАЩЕНИЙ <a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">29</a>](#перечень-сокращений)</p>
+<p>[ЛИСТ РЕГИСТРАЦИИ ИЗМЕНЕНИЙ <a href="#%D0%BB%D0%B8%D1%81%D1%82-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9">30</a>](#лист-регистрации-изменений)</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="назначение-программы">НАЗНАЧЕНИЕ ПРОГРАММЫ<a href="#назначение-программы" class="hash-link" aria-label="Direct link to НАЗНАЧЕНИЕ ПРОГРАММЫ" title="Direct link to НАЗНАЧЕНИЕ ПРОГРАММЫ">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="назначение-субд-jatoba">Назначение СУБД «Jatoba»<a href="#назначение-субд-jatoba" class="hash-link" aria-label="Direct link to Назначение СУБД «Jatoba»" title="Direct link to Назначение СУБД «Jatoba»">​</a></h3>
+<p>СУБД «Jatoba» базируется на свободном программном обеспечении СУБД «PostgreSQL».</p>
+<p>СУБД «Jatoba» предназначена для управления базами данных (далее – БД) в значимых объектах критической информационной инфраструктуры 1 категории, в государственных информационных системах 1 класса защищенности, в автоматизированных системах управления производственными и технологическими процессами 1 класса защищенности, в информационных системах персональных данных при необходимости обеспечения 1 уровня защищенности персональных данных, в информационных системах общего пользования II класса на базе электронно-вычислительных машин (далее – ЭВМ) под управлением операционных систем (далее – ОС) приведенных в таблице Таблица 2.1.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="основные-характеристики">Основные характеристики<a href="#основные-характеристики" class="hash-link" aria-label="Direct link to Основные характеристики" title="Direct link to Основные характеристики">​</a></h3>
+<p>СУБД «Jatoba» реализована в архитектуре клиент-сервер. Рабочий сеанс включает следующие взаимодействующие процессы (программы):</p>
+<ul>
+<li>
+<p>главный серверный процесс, управляющий файлами баз данных, принимающий подключения клиентских приложений и выполняющий различные запросы клиентов к базам данных;</p>
+</li>
+<li>
+<p>клиентское приложение пользователя, выполняющее операции в БД;</p>
+</li>
+<li>
+<p>CLI-консоль на АРМ управления.</p>
+</li>
+</ul>
+<p>Клиентская и серверная часть СУБД «Jatoba» могут располагаться на разных ЭВМ. Взаимодействие организовано по протоколу TCP/IP. Сервер СУБД «Jatoba» может обслуживать одновременно несколько подключений клиентов.</p>
+<p>В состав СУБД «Jatoba» входят компоненты, приведенные в таблице Таблица 1.1.</p>
+<p>Таблица 1.1 – Состав компонент</p>
+<table><colgroup>
+<col style="width:4%">
+<col style="width:18%">
+<col style="width:9%">
+<col style="width:9%">
+<col style="width:9%">
+<col style="width:22%">
+<col style="width:4%">
+<col style="width:4%">
+<col style="width:4%">
+<col style="width:4%">
+<col style="width:4%">
+<col style="width:4%">
+</colgroup><thead><tr><th rowspan="2" style="text-align:left"><strong>№</strong></th><th rowspan="2" style="text-align:left"><strong>Наименование</strong></th><th rowspan="2" style="text-align:center"><strong>J4</strong></th><th rowspan="2" style="text-align:center"><strong>J5</strong></th><th rowspan="2" style="text-align:center"><strong>J6</strong></th><th rowspan="2" style="text-align:left"><strong>Описание</strong></th><th colspan="2" style="text-align:center"><strong>J4</strong></th><th colspan="2" style="text-align:center"><strong>J5</strong></th><th colspan="2" style="text-align:center"><strong>J6</strong></th></tr><tr><th style="text-align:center"><blockquote>
+<p><strong>Дист.1)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Обр.к.2)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Дист.1)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Обр.к.2)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Дист.1)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Обр.к.2)</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left">ядро СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:left"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">pwgen</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:left">Генератор паролей</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:left">Маскирование паролей</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">KNN</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:left">Поиск ближайших соседей</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">xid64</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:left">Компонент xid64</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">ja_Compression</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">1.0</td><td style="text-align:left">Сжатие данных на уровне страниц</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">WAL Recovery</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:left">Восстановление поврежденных WAL записей</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left">jaDog</td><td style="text-align:center">3.3.0</td><td style="text-align:center">3.3.0</td><td style="text-align:center">3.3.0</td><td style="text-align:left">компонент управления режимом работы узлов кластера</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left"><p>JDV</p>
+<p>(Jatoba data vault)</p></td><td style="text-align:center">1.5.1</td><td style="text-align:center">1.5.1</td><td style="text-align:center">1.6.1</td><td style="text-align:left">компонент контроля субъектов доступа</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left">pgBadger</td><td style="text-align:center">12.1</td><td style="text-align:center">12.1</td><td style="text-align:center">12.1</td><td style="text-align:left">компонент формирования отчетов по журналам СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">5</td><td style="text-align:left">pg_ProBackup</td><td style="text-align:center">2.5.12</td><td style="text-align:center">2.5.14</td><td style="text-align:center">2.5.14</td><td style="text-align:left">компонент расширенного резервного копирования</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">6</td><td style="text-align:left">pg_Task</td><td style="text-align:center">2.0.39</td><td style="text-align:center">2.0.39</td><td style="text-align:center">2.0.39</td><td style="text-align:left">компонент планирования заданий СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">7</td><td style="text-align:left">pg_Profile</td><td style="text-align:center">4.6.0</td><td style="text-align:center">4.6.0</td><td style="text-align:center">4.6.0</td><td style="text-align:left">компонент формирования отчетов производительности СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">8</td><td style="text-align:left"><p>JDS</p>
+<p>(Jatoba data safe)</p></td><td style="text-align:center">2.7.0</td><td style="text-align:center">2.7.0</td><td style="text-align:center">2.7.0</td><td style="text-align:left">компонент пользовательского веб-интерфейса для администраторов</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td></tr><tr><td style="text-align:left">9</td><td style="text-align:left">ja_Sync_Ldap</td><td style="text-align:center">1.3.1</td><td style="text-align:center">1.3.1</td><td style="text-align:center">1.3.1</td><td style="text-align:left">компонент синхронизации учетных записей со службами каталогов</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">10</td><td style="text-align:left">PlsPgSQL</td><td style="text-align:center">2.0.1</td><td style="text-align:center">2.0.1</td><td style="text-align:center">2.0.1</td><td style="text-align:left">компонент обфускации кода PL/pgSQL</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td></tr><tr><td style="text-align:left">11</td><td style="text-align:left">ja_Hipe_Cluster</td><td style="text-align:center">12.1.1</td><td style="text-align:center">12.1.1</td><td style="text-align:center">12.1.1</td><td style="text-align:left">компонент высокопроизводительного кластера</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">12</td><td style="text-align:left">ja_Log</td><td style="text-align:center">1.2.0</td><td style="text-align:center">1.2.0</td><td style="text-align:center">1.2.0</td><td style="text-align:left">компонент централизованного сбора записей событий СУБД</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td></tr><tr><td style="text-align:left">13</td><td style="text-align:left">1c_support</td><td style="text-align:center">4.17.1</td><td style="text-align:center">5.12.1</td><td style="text-align:center">5.12.1</td><td style="text-align:left">компонент поддержки платформы 1С</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">14</td><td style="text-align:left">fasttrun</td><td style="text-align:center">2.0.15</td><td style="text-align:center">2.0.0</td><td style="text-align:center">2.0.0</td><td style="text-align:left">компонент совместимости с 1С</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">15</td><td style="text-align:left">fulleq</td><td style="text-align:center">2.0.0</td><td style="text-align:center">2.0.0</td><td style="text-align:center">2.0.0</td><td style="text-align:left">компонент совместимости с 1С</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">16</td><td style="text-align:left">mchar</td><td style="text-align:center">2.2.1</td><td style="text-align:center">2.2.1</td><td style="text-align:center">2.2.1</td><td style="text-align:left">компонент совместимости с 1С</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">17</td><td style="text-align:left">online_analyze</td><td style="text-align:center">1.0.0</td><td style="text-align:center">1.0.0</td><td style="text-align:center">1.0.0</td><td style="text-align:left">компонент совместимости с 1С</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">18</td><td style="text-align:left">plantuner</td><td style="text-align:center">1.0.0</td><td style="text-align:center">1.0.0</td><td style="text-align:center">1.0.0</td><td style="text-align:left">компонент совместимости с 1С</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">19</td><td style="text-align:left">ja_CSum</td><td style="text-align:center">1.0.19</td><td style="text-align:center">1.1.1</td><td style="text-align:center">1.1.1</td><td style="text-align:left">компонент контроля целостности</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">20</td><td style="text-align:left">jaPooler</td><td style="text-align:center">2.1.0</td><td style="text-align:center">2.1.0</td><td style="text-align:center">2.1.0</td><td style="text-align:left">компонент балансировки подключений пользователей к СУБД</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td></tr><tr><td style="text-align:left">21</td><td style="text-align:left">Oracle_FDW (Foreign data wrapper for oracle)</td><td style="text-align:center">1.2.0</td><td style="text-align:center">1.2.0</td><td style="text-align:center">1.2.0</td><td style="text-align:left">компонент доступа к данным СУБД Oracle</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">22</td><td style="text-align:left">OraFCE (Oracle function compatibility extension)</td><td style="text-align:center">3.22.0</td><td style="text-align:center">4.3.0</td><td style="text-align:center">4.3.0</td><td style="text-align:left">компонент совместимости с СУБД Oracle</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">23</td><td style="text-align:left">pg_Variables</td><td style="text-align:center">1.2.0</td><td style="text-align:center">1.2.5</td><td style="text-align:center">1.2.5</td><td style="text-align:left">компонент совместимости с системой глобальных переменных СУБД Oracle</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">24</td><td style="text-align:left">SQL_Firewall</td><td style="text-align:center">0.8.1</td><td style="text-align:center">0.8.1</td><td style="text-align:center">0.8.1</td><td style="text-align:left">компонент выявления и предотвращения исполнения нетипичных SQL-запросов</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">25</td><td style="text-align:left">JCS (Jatoba crypto access storage)</td><td style="text-align:center">2.0.0</td><td style="text-align:center">2.0.0</td><td style="text-align:center">2.0.0</td><td style="text-align:left">компонент сокрытия информации в файлах данных СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">26</td><td style="text-align:left">pgSQL-HTTP</td><td style="text-align:center">1.5.0</td><td style="text-align:center">1.6.0</td><td style="text-align:center">1.6.0</td><td style="text-align:left">компонент формирования HTTP/HTTPS запросов из СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">27</td><td style="text-align:left">TDS_FDW</td><td style="text-align:center"></td><td style="text-align:center">2.0.3</td><td style="text-align:center">2.0.3</td><td style="text-align:left">компонент поддержки платформы Microsoft SQL Server</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">28</td><td style="text-align:left">pgAudit</td><td style="text-align:center">1.6.2</td><td style="text-align:center">16.0.0</td><td style="text-align:center">16.0.0</td><td style="text-align:left">компонент расширенного журналирования событий СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">29</td><td style="text-align:left">pgauditlogtofile</td><td style="text-align:center"></td><td style="text-align:center">1.5.12</td><td style="text-align:center">1.5.12</td><td style="text-align:left">хранение событий безопасности в отдельном хранилище</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">30</td><td style="text-align:left">PostGIS</td><td style="text-align:center">3.2.1</td><td style="text-align:center">3.3.3</td><td style="text-align:center">3.3.3</td><td style="text-align:left">компонент работы с географическими данными</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td></tr><tr><td style="text-align:left">31</td><td style="text-align:left">PTrack</td><td style="text-align:center">2.3.0</td><td style="text-align:center">2.4.4</td><td style="text-align:center">2.4.4</td><td style="text-align:left">компонент расширенного резервного копирования</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">32</td><td style="text-align:left">SecurityProfile</td><td style="text-align:center">2.1.1</td><td style="text-align:center">2.1.1</td><td style="text-align:center">2.1.1</td><td style="text-align:left">компонент управления парольными политиками пользователей СУБД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">33</td><td style="text-align:left">ja_Plan_Manager</td><td style="text-align:center">1.2.0</td><td style="text-align:center">1.2.0</td><td style="text-align:center">1.2.0</td><td style="text-align:left">компонент создания планов запросов в базах данных (БД), их оптимизации и экспорта в БД</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">34</td><td style="text-align:left">pg_store_plans</td><td style="text-align:center"></td><td style="text-align:center">1.8.0</td><td style="text-align:center">1.8.0</td><td style="text-align:left">контроль выполненных планов запросов</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">35</td><td style="text-align:left">pg-hint-plan</td><td style="text-align:center"></td><td style="text-align:center">1.5.1</td><td style="text-align:center">1.6.0</td><td style="text-align:left">компонент корректировки запросов</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">36</td><td style="text-align:left">ja_Container</td><td style="text-align:center">4.17.1</td><td style="text-align:center">5.12.1</td><td style="text-align:center">6.8.1</td><td style="text-align:left">СУБД «Jatoba» в контейнере</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center">—</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">37</td><td style="text-align:left">node_exporter</td><td style="text-align:center"></td><td style="text-align:center">1.8.0</td><td style="text-align:center">1.8.0</td><td style="text-align:left">компонент сбора аппаратных и программных показателей работы GNU/Linux</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">—</td></tr><tr><td style="text-align:left">38</td><td style="text-align:left">postgres_exporter</td><td style="text-align:center"></td><td style="text-align:center">0.15.0</td><td style="text-align:center">0.15.0</td><td style="text-align:left">компонент сбора метрик СУБД</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">—</td></tr><tr><td style="text-align:left">39</td><td style="text-align:left">sql_exporter</td><td style="text-align:center"></td><td style="text-align:center">0.14.3</td><td style="text-align:center">0.14.3</td><td style="text-align:left">SQL экспортёр. Компонент сбора расширенных метрик СУБД</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">—</td></tr><tr><td style="text-align:left">40</td><td style="text-align:left">prometheus</td><td style="text-align:center"></td><td style="text-align:center">2.52.0</td><td style="text-align:center">2.52.0</td><td style="text-align:left">компонент мониторинга различных программных систем и сервисов Prometheus</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">—</td></tr><tr><td style="text-align:left">41</td><td style="text-align:left">Alertmanager</td><td style="text-align:center"></td><td style="text-align:center">0.27.0</td><td style="text-align:center">0.27.0</td><td style="text-align:left">компонент управления и обработки оповещений в системе мониторинга Prometheus</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">—</td></tr><tr><td style="text-align:left">42</td><td style="text-align:left"></td><td style="text-align:center">4.17.1</td><td style="text-align:center">5.12.1</td><td style="text-align:center">6.8.1</td><td style="text-align:left">Работа СУБД «Jatoba» в режиме ЗПС в ОС Astra Linux</td><td style="text-align:center">Х</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center">—</td></tr><tr><td style="text-align:left">43</td><td style="text-align:left">gis-cryptoplatform</td><td style="text-align:center">17_1.7.3-4</td><td style="text-align:center">17_1.7.3-4</td><td style="text-align:center">17_1.7.3-4</td><td style="text-align:left">библиотека «КриптоПлатформа»</td><td style="text-align:center">Х</td><td style="text-align:center">—</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">—</td></tr><tr><td style="text-align:left">44</td><td style="text-align:left">pg_ulid</td><td style="text-align:center"></td><td style="text-align:center">0.0.1-15</td><td style="text-align:center">0.0.1-15</td><td style="text-align:left">компонент поддержки лексографического идентификатора</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">45</td><td style="text-align:left">ja_Seceventlog</td><td style="text-align:center"></td><td style="text-align:center">3.0.0</td><td style="text-align:center">3.0.0</td><td style="text-align:left">компонент записи событий информационной безопасности</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">46</td><td style="text-align:left">rum</td><td style="text-align:center"></td><td style="text-align:center">1.3.13</td><td style="text-align:center">1.3.13</td><td style="text-align:left">компонент поддерживающий обратный индекс с хранением позиционной информации и полнотекстовый поиск</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">47</td><td style="text-align:left">pg_repak</td><td style="text-align:center"></td><td style="text-align:center">1.5.1</td><td style="text-align:center">1.5.1</td><td style="text-align:left">компонент реорганизации таблицы с минимальными блокировками</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">48</td><td style="text-align:left">osnova-digsig-key</td><td style="text-align:center">4.17.1</td><td style="text-align:center">5.12.1</td><td style="text-align:center">6.8.1</td><td style="text-align:left">работа СУБД Jatoba в режиме ЗПС в ОС ОСНОВА</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td></tr><tr><td style="text-align:left">49</td><td style="text-align:left">tsvector2</td><td style="text-align:center"></td><td style="text-align:center">1.0.0</td><td style="text-align:center">1.0.0</td><td style="text-align:left">компонент полнотекстового поиска в БД</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">50</td><td style="text-align:left">ja_Similar</td><td style="text-align:center"></td><td style="text-align:center">1.0</td><td style="text-align:center">1.0</td><td style="text-align:left">компонент для полнотекстового поиска и определения похожих текстов</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">51</td><td style="text-align:left">ja_Inventory</td><td style="text-align:center">1.0</td><td style="text-align:center">1.0</td><td style="text-align:center">1.0</td><td style="text-align:left">компонент инвентаризации СУБД</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr><tr><td style="text-align:left">52</td><td style="text-align:left">ja_tune</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">1.0.0</td><td style="text-align:left">Генератор конфигурационного файла</td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center"></td><td style="text-align:center">Х</td><td style="text-align:center">Х</td></tr></tbody></table>
+<p>СУБД «Jatoba» реализует следующие функциональные возможности:</p>
+<ol>
+<li>
+<p>управление данными во внешней памяти;</p>
+</li>
+<li>
+<p>управление данными в оперативной памяти;</p>
+</li>
+<li>
+<p>выполнение запросов (DDL/DML);</p>
+</li>
+<li>
+<p>управление транзакциями;</p>
+</li>
+<li>
+<p>журнализация изменений, резервное копирование и восстановление базы данных после сбоев, репликация.</p>
+</li>
+</ol>
+<p>СУБД «Jatoba» в дополнение к стандартным возможностям управления базами данных, реализует функции:</p>
+<ol>
+<li>
+<p>хранение пространственных, географических и геометрических данных, поддержка запросов к ним и управление ими;</p>
+</li>
+<li>
+<p>синтаксическая совместимость с распространенными PL/SQL Oracle;</p>
+</li>
+<li>
+<p>расширенные возможности секционирования больших таблиц;</p>
+</li>
+<li>
+<p>протоколирование, анализ и запрет выполнения команд манипулирования данными (DDL/DML);</p>
+</li>
+<li>
+<p>сбор журналов аудита всех операций и загрузка конфигураций в СУБД;</p>
+</li>
+<li>
+<p>журналирование операций доступа к защищенным таблицам;</p>
+</li>
+<li>
+<p>работа в составе отказоустойчивого кластера с механизмом переключения нагрузки на основной узел кластера;</p>
+</li>
+<li>
+<p>защита от несанкционированного изменения конфигурационных файлов;</p>
+</li>
+<li>
+<p>единый пользовательский интерфейс для управления конфигурациями компонентов СУБД и просмотра их состояния.</p>
+</li>
+<li>
+<p>поддержка предустановленных профилей парольных политик:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>FSTEC_1_class – профиль для ИС первого класса защищенности;</p>
+</li>
+<li>
+<p>FSTEC_2_class – профиль для ИС второго класса защищенности;</p>
+</li>
+<li>
+<p>CIS – профиль, основанный на рекомендациях Center for Internet Security;</p>
+</li>
+<li>
+<p>Corporate_1 – корпоративный профиль первого уровня для учетных записей пользователей;</p>
+</li>
+<li>
+<p>Corporate_2 – корпоративный профиль второго уровня, для учетных записей администраторов программных (программно-аппаратных средств);</p>
+</li>
+<li>
+<p>Corporate_3 – корпоративный профиль третьего уровня для, технических (сервисных, служебных) учетных записей, используемых в технологических процессах ИС или встроенных производителями программных (программно-аппаратных) средств в такие средства.</p>
+</li>
+</ul>
+<ol start="11">
+<li>СУБД «Jatoba» поддерживает методы аутентификации:</li>
+</ol>
+<ul>
+<li>
+<p>PASSWORD;</p>
+</li>
+<li>
+<p>GSSAPI / SSPI (Kerberos);</p>
+</li>
+<li>
+<p>LDAP (LDAPS);</p>
+</li>
+<li>
+<p>PAM;</p>
+</li>
+<li>
+<p>RADIUS;</p>
+</li>
+<li>
+<p>по сертификатам (SSL/TLS).</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="производительность-субд">Производительность СУБД<a href="#производительность-субд" class="hash-link" aria-label="Direct link to Производительность СУБД" title="Direct link to Производительность СУБД">​</a></h3>
+<p>СУБД должна обеспечивать требования по производительности указанные в таблице Таблица 1.2.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:center"><strong>№</strong></th><th><strong>Параметр производительности</strong></th><th><strong>J4</strong></th><th></th><th><strong>J5</strong></th><th></th><th><strong>J6</strong></th><th></th></tr></thead><tbody><tr><td style="text-align:center"></td><td></td><td><strong>Серверная часть, исполнение</strong></td><td></td><td><strong>Серверная часть, исполнение</strong></td><td></td><td><strong>Серверная часть, исполнение</strong></td><td></td></tr><tr><td style="text-align:center"></td><td></td><td><strong>Дист.<sup>1)</sup></strong></td><td><strong>Обр.к.<sup>2)</sup></strong></td><td><strong>Дист.<sup>1)</sup></strong></td><td><strong>Обр.к.<sup>2)</sup></strong></td><td><strong>Дист.<sup>1)</sup></strong></td><td><strong>Обр.к.<sup>2)</sup></strong></td></tr><tr><td style="text-align:center">1</td><td>Количество пользовательских сессий, поддерживаемых параллельно</td><td>800</td><td>750</td><td>800</td><td>750</td><td>800</td><td>750</td></tr><tr><td style="text-align:center">2</td><td>Количество обрабатываемых стандартных запросов в единицу времени (сек)</td><td>3650</td><td>3475</td><td>3520</td><td>3305</td><td>3540</td><td>3420</td></tr><tr><td style="text-align:center"></td><td></td><td>(256 сессий)</td><td>(128 сессий)</td><td>(256 сессий)</td><td>(128 сессий)</td><td>(256 сессий)</td><td>(128 сессий)</td></tr><tr><td style="text-align:center">3</td><td>Количество транзакций в единицу времени (ед/сек)</td><td>730</td><td>695</td><td>704</td><td>661</td><td>725</td><td>643</td></tr><tr><td style="text-align:center"></td><td></td><td>256 сессий</td><td>128 сессий</td><td>256 сессий</td><td>128 сессий</td><td>(256 сессий)</td><td>(128 сессий)</td></tr><tr><td style="text-align:center">4</td><td>Задержка в выполнении стандартного запроса (сек)</td><td>мин. 13,5</td><td>мин. 14,4</td><td>мин. 13,9</td><td>мин. 15,9</td><td>мин. 13,6</td><td>мин. 15,8</td></tr><tr><td style="text-align:center"></td><td></td><td>(1 сессия)</td><td>(1 сессия)</td><td>(1 сессия)</td><td>(1 сессия)</td><td>(1 сессия)</td><td>(1 сессия)</td></tr><tr><td style="text-align:center"></td><td></td><td>макс. 5558</td><td>макс. 5724</td><td>макс. 5222</td><td>макс. 7475</td><td>макс. 5222</td><td>макс. 7475</td></tr><tr><td style="text-align:center"></td><td></td><td>(800 сессий)</td><td>(750 сессий)</td><td>(800 сессий)</td><td>(700 сессий)</td><td>(800 сессий)</td><td>(700 сессий)</td></tr><tr><td style="text-align:center"></td><td></td><td>348</td><td>210</td><td>441</td><td>191</td><td>446</td><td>198</td></tr><tr><td style="text-align:center"></td><td></td><td>(256 сессий)</td><td>(128 сессий)</td><td>(256 сессий)</td><td>(128 сессий)</td><td>(256 сессий)</td><td>(128 сессий)</td></tr><tr><td style="text-align:center">5</td><td>Количество экземпляров системы управления базами данных, которые могут совместно работать в режиме балансировки нагрузки</td><td>2 <strong>–</strong> 8</td><td>2 <strong>–</strong> 8</td><td>2 <strong>–</strong> 8</td><td>2 <strong>–</strong> 8</td><td>2 – 8</td><td>2 – 8</td></tr></tbody></table>
+<p>Таблица 1.2 – Требования к производительности СУБД</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">УСЛОВИЯ ПРИМЕНЕНИЯ<a href="#условия-применения" class="hash-link" aria-label="Direct link to УСЛОВИЯ ПРИМЕНЕНИЯ" title="Direct link to УСЛОВИЯ ПРИМЕНЕНИЯ">​</a></h2>
+<p>Установка СУБД «Jatoba» должна выполняться на ЭВМ защищаемой локальной вычислительной сети, расположенные в контролируемой зоне.</p>
+<p>Допускается установка СУБД «Jatoba» на ЭВМ, функционирующие под управлением ОС, указанных в таблице Таблица 2.1.</p>
+<p>Таблица 2.1 – Поддерживаемые операционные системы</p>
+<table style="width:100%"><colgroup>
+<col style="width:5%">
+<col style="width:21%">
+<col style="width:8%">
+<col style="width:14%">
+<col style="width:5%">
+<col style="width:5%">
+<col style="width:5%">
+<col style="width:5%">
+<col style="width:5%">
+<col style="width:5%">
+<col style="width:4%">
+<col style="width:5%">
+<col style="width:5%">
+</colgroup><thead><tr><th rowspan="3" style="text-align:center"><strong>№</strong></th><th rowspan="3" style="text-align:center"><strong>Наименование ОС</strong></th><th colspan="2" style="text-align:center"><strong>Сертификат ФСТЭК</strong></th><th colspan="3" style="text-align:center"><strong>J4</strong></th><th colspan="3" style="text-align:center"><strong>J5</strong></th><th colspan="3" style="text-align:center"><strong>J6</strong></th></tr><tr><th rowspan="2"><strong>№ серт.</strong></th><th rowspan="2"><strong>Дата выдачи</strong></th><th colspan="2" style="text-align:center"><strong>Серв. часть, исп.</strong></th><th rowspan="2"><strong>КЧ</strong></th><th colspan="2" style="text-align:center"><strong>Серв. часть, исп.</strong></th><th rowspan="2"><strong>КЧ</strong></th><th colspan="2" style="text-align:center"><strong>Серв. часть, исп.</strong></th><th rowspan="2"><strong>КЧ</strong></th></tr><tr><th><blockquote>
+<p><strong>Дист.</strong><sup>1)</sup></p>
+</blockquote></th><th><blockquote>
+<p><strong>Обр.к.</strong><sup>2)</sup></p>
+</blockquote></th><th><blockquote>
+<p><strong>Дист.<sup>1)</sup></strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Обр.к.</strong> <strong><sup>2)</sup></strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Дист.</strong><sup>1)</sup></p>
+</blockquote></th><th><blockquote>
+<p><strong>Обр.к.</strong><sup>2)</sup></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center">1</td><td>Astra Linux Special Edition 1.7 Смоленск (x86-64)</td><td>2557</td><td>27.01.2012</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td></tr><tr><td style="text-align:center">2</td><td><p>Astra Linux Special Edition 1.8</p>
+<p>(x86-64)</p></td><td>2557</td><td>27.01.2012</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td></tr><tr><td style="text-align:center">3</td><td>Альт 8 СП</td><td>3866</td><td>10.08.2018</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td></tr><tr><td style="text-align:center">4</td><td>Альт 10 Server</td><td>3866</td><td>10.08.2018</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td></tr><tr><td style="text-align:center">5</td><td>РЕД ОС 7.3 Муром</td><td>4060</td><td>12.01.2019</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td></tr><tr><td style="text-align:center">6</td><td>Основа2</td><td>4381</td><td>31.03.2021</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td><td>Х</td><td>*3)</td><td>Х</td></tr></tbody></table>
+<p>Примечание:</p>
+<ol>
+<li>
+<p>Дистрибутив.</p>
+</li>
+<li>
+<p>Образ контейнера.</p>
+</li>
+<li>
+<p>Из комплекта поставки ОС.</p>
+</li>
+</ol>
+<p>СУБД «Jatoba» устанавливается на ЭВМ с процессорами, имеющими архитектуру x86-64 и AMD64, удовлетворяющие следующим аппаратным требованиям, указанным в таблице 2.2.</p>
+<table><caption><p>Таблица 2.2 – Аппаратные требования к средствам вычислительной техники, на которых функционируют клиентская и серверная части СУБД</p></caption><colgroup>
+<col style="width:46%">
+<col style="width:53%">
+</colgroup><thead><tr><th style="text-align:center"><strong>Параметр</strong></th><th style="text-align:center"><strong>Характеристика</strong></th></tr></thead><tbody><tr><td colspan="2" style="text-align:center"><strong>Требования к аппаратному обеспечению сервера СУБД</strong></td></tr><tr><td style="text-align:center">ОЗУ</td><td style="text-align:center">Не менее 2 Гб</td></tr><tr><td style="text-align:center">Свободный объем жесткого диска</td><td style="text-align:center"><p>Минимальный объем от 40 Гб</p>
+<p>Рекомендуемый объем от 100 Гб</p></td></tr><tr><td style="text-align:center">Устройства видео вывода</td><td style="text-align:center">Монитор и видеоадаптер с поддержкой VGA и разрешением 800x600 или выше</td></tr><tr><td style="text-align:center">Тип процессора и минимальная тактовая частота процессора</td><td style="text-align:center">64-разрядный процессор Intel или AMD 3 ГГц или больше</td></tr><tr><td style="text-align:center">Минимальное количество ядер</td><td style="text-align:center">4</td></tr><tr><td style="text-align:center">Максимальное количество ядер</td><td style="text-align:center">256</td></tr><tr><td style="text-align:center">Устройства ввода-вывода</td><td style="text-align:center">Стандартные 105-клавишная клавиатура и манипулятор «мышь» с USB, либо PS/2-интерфейсами</td></tr><tr><td style="text-align:center">Адаптер Ethernet</td><td style="text-align:center">100 Мбит/с</td></tr><tr><td colspan="2" style="text-align:center"><strong>Требования к аппаратному обеспечению АРМ управления</strong></td></tr><tr><td style="text-align:center">ОЗУ</td><td style="text-align:center">Не менее 4 Гб</td></tr><tr><td style="text-align:center">Свободный объем жесткого диска</td><td style="text-align:center">От 3 Гб</td></tr><tr><td style="text-align:center">Устройства видео вывода</td><td style="text-align:center">Монитор и видеоадаптер с поддержкой VGA и разрешением 800x600 или выше</td></tr><tr><td style="text-align:center">Тип процессора и минимальная тактовая частота процессора</td><td style="text-align:center"><p>64-разрядный процессор Intel или AMD</p>
+<p>Рекомендуемая частота: 2.4 ГГц или больше</p></td></tr><tr><td style="text-align:center">Устройства ввода-вывода</td><td style="text-align:center">Стандартные 105-клавишная клавиатура и манипулятор «мышь» с USB-интерфейсами, либо PS/2 интерфейсами</td></tr><tr><td style="text-align:center">Адаптер Ethernet</td><td style="text-align:center">100 Мбит/с</td></tr><tr><td colspan="2" style="text-align:center"><strong>Требования к программному обеспечению сервера</strong></td></tr><tr><td style="text-align:left">Операционная система</td><td style="text-align:left">Требования приведены в таблице Таблица 2.1</td></tr><tr><td colspan="2" style="text-align:center"><strong>Требования к программному обеспечению АРМ управления</strong></td></tr><tr><td style="text-align:left">Операционная система</td><td style="text-align:left">Требования приведены в таблице Таблица 2.1</td></tr><tr><td colspan="2" style="text-align:center"><strong>Требования к аппаратному обеспечению сервера Jatoba data safe</strong></td></tr><tr><td style="text-align:center">ОЗУ</td><td style="text-align:center">Не менее 2 Гб</td></tr><tr><td style="text-align:center">Свободный объем жесткого диска</td><td style="text-align:center"><p>Минимальный объем от 40 Гб</p>
+<p>Рекомендуемый объем от 100 Гб</p></td></tr><tr><td style="text-align:center">Устройства видео вывода</td><td style="text-align:center">Монитор и видеоадаптер с поддержкой VGA и разрешением 800x600 или выше</td></tr><tr><td style="text-align:center">Тип процессора и минимальная тактовая частота процессора</td><td style="text-align:center">64-разрядный процессор Intel или AMD 3 ГГц или больше</td></tr><tr><td style="text-align:center">Минимальное количество ядер</td><td style="text-align:center">4</td></tr><tr><td style="text-align:center">Устройства ввода-вывода</td><td style="text-align:center">Стандартные 105-клавишная клавиатура и манипулятор «мышь» с USB-интерфейсами, либо PS/2 интерфейсами</td></tr><tr><td style="text-align:center">Адаптер Ethernet</td><td style="text-align:center">100 Мбит/с</td></tr><tr><td colspan="2" style="text-align:center"><strong>Требования к программному обеспечению сервера Jatoba data safe</strong></td></tr><tr><td style="text-align:left">Поддерживаемые платформы</td><td style="text-align:left">linux-x64</td></tr><tr><td style="text-align:center">СУБД</td><td style="text-align:center">Защищенная система управления базами данных «Jatoba»</td></tr><tr><td style="text-align:center">Веб-сервер</td><td style="text-align:center">nginx</td></tr><tr><td style="text-align:left">Internet браузеры сертифицированных ОС</td><td style="text-align:center"><ul>
+<li><p>Яндекс.Браузер;</p></li>
+<li><p>Chromium;</p></li>
+<li><p>Mozilla Firefox.</p></li>
+</ul></td></tr><tr><td style="text-align:left">Internet браузеры ОС</td><td style="text-align:center"><ul>
+<li><p>Google Chrome;</p></li>
+<li><p>Opera.</p></li>
+</ul></td></tr></tbody></table>
+<p>Таблица 2.2 – Аппаратные требования к средствам вычислительной техники, на которых функционируют клиентская и серверная части СУБД</p>
+<p>СУБД «Jatoba» может использоваться для обеспечения базовых и адаптированных мер защиты информации:</p>
+<ol>
+<li>
+<p>при создании защищенных автоматизированных систем, не обрабатывающих сведения составляющие государственную тайну, до класса защищенности 1Г включительно (руководящий документ «Автоматизированные системы. Защита от несанкционированного доступа к информации. Классификация автоматизированных систем и требования по защите информации» (Гостехкомиссия России, 1992);</p>
+</li>
+<li>
+<p>для обеспечения 1 уровня защищенности персональных данных (п. 12 Приказа ФСТЭК России № 21 от 18 февраля 2013 г. (ред. от 14.05.2020) «Об утверждении состава и содержания организационных и технических мер по обеспечению безопасности персональных данных при их обработке в информационных системах персональных данных»);</p>
+</li>
+<li>
+<p>в государственных информационных системах 1 класса защищенности (п. 26 Приказа ФСТЭК России № 17 от 11 февраля 2013 г. (ред. от 28.05.2019) «Об утверждении Требований о защите информации, не составляющей государственную тайну, содержащейся в государственных информационных системах»);</p>
+</li>
+<li>
+<p>при создании защищенных информационных систем управления производственными и технологическими процессами на критически важных объектах, потенциально опасных объектах, а также объектах, представляющих повышенную опасность для жизни и здоровья людей и для окружающей природной среды до 1 класса защищенности включительно (п. 26 Приказа ФСТЭК России № 31 от 14 марта 2014 г. (ред. от 15.03.2021) «Об утверждении Требований к обеспечению защиты информации в автоматизированных системах управления производственными и технологическими процессами на критически важных объектах, потенциально опасных объектах, а также объектах, представляющих повышенную опасность для жизни и здоровья людей и для окружающей природной среды»);</p>
+</li>
+<li>
+<p>при создании информационных систем 1 категории значимости (п. 27 Приказа ФСТЭК России № 239 от 25.12.2017 (ред. от 20.02.2020) «Об утверждении требований по обеспечению безопасности значимых объектов критической информационной инфраструктуры Российской Федерации»);</p>
+</li>
+<li>
+<p>в информационных системах общего пользования II класса в соответствии с приказом ФСБ России и ФСТЭК России от 31.08.2010 г. №416/489,</p>
+</li>
+</ol>
+<p>и обеспечивать базовые и адаптированные меры защиты информации, приведенные ниже.</p>
+<p>В таблице 2.3 приведены выполняемые меры защиты информации в соответствии с Приказами ФСТЭК России № 17 от 11.02.2013 (ред. от 28.08.2024), № 21 от 18.02.2013 (ред. от 14.05.2020), № 31 от 14.03.2014 (ред. от 15.03.2021) и № 239 от 25.12.2017 (ред. от 28.08.2024).</p>
+<blockquote>
+<p>Таблица 2.3 – Реализуемые меры защиты информации</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Наименование</strong></th><th style="text-align:center"><strong>J4</strong></th><th style="text-align:center"></th><th style="text-align:center"><strong>J5</strong></th><th style="text-align:center"></th><th style="text-align:center"><strong>J6</strong></th><th style="text-align:center"></th><th style="text-align:center"><strong>Приказы ФСТЭК</strong></th><th style="text-align:center"></th><th style="text-align:center"></th></tr></thead><tbody><tr><td></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"><strong>ГИС</strong></td><td style="text-align:center"><strong>ИСПДн</strong></td><td style="text-align:center"><strong>КИИ и КВО</strong></td></tr><tr><td></td><td style="text-align:center"><strong>Дист.<sup>1)</sup></strong></td><td style="text-align:center"><strong>Обр.к.<sup>2)</sup></strong></td><td style="text-align:center"><strong>Дист.<sup>1)</sup></strong></td><td style="text-align:center"><strong>Обр.к.<sup>2)</sup></strong></td><td style="text-align:center"><strong>Дист.<sup>1)</sup></strong></td><td style="text-align:center"><strong>Обр.к.<sup>2)</sup></strong></td><td style="text-align:center"><strong>№17</strong></td><td style="text-align:center"><strong>№21</strong></td><td style="text-align:center"><strong>№239, №31</strong></td></tr><tr><td>Идентификация и аутентификация субъектов доступа и объектов доступа (ИАФ)</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ИАФ.1</td><td style="text-align:center">ИАФ.1</td><td style="text-align:center">ИАФ.1</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ИАФ.3</td><td style="text-align:center">ИАФ.3</td><td style="text-align:center">ИАФ.3</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ИАФ.4</td><td style="text-align:center">ИАФ.4</td><td style="text-align:center">ИАФ.4</td></tr><tr><td></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">ИАФ.4(1г)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ИАФ.4(2)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ИАФ.5</td><td style="text-align:center">ИАФ.5</td><td style="text-align:center"></td></tr><tr><td>Управление доступом субъектов доступа к объектам доступа (УПД)</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.1</td><td style="text-align:center">УПД.1</td><td style="text-align:center">УПД.1</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.1(1)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.1(2)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.1(3б)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">УПД.1(5)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.2</td><td style="text-align:center">УПД.2</td><td style="text-align:center">УПД.2</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.2(1)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">УПД.4</td><td style="text-align:center">УПД.4</td><td style="text-align:center">УПД.4</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.5</td><td style="text-align:center">УПД.5</td><td style="text-align:center">УПД.5</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.6</td><td style="text-align:center">УПД.6</td><td style="text-align:center">УПД.6</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.6(1)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.9</td><td style="text-align:center">УПД.9</td><td style="text-align:center">УПД.9</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">УПД.9(3)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">УПД.9(4)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td>Регистрация событий безопасности (РСБ)</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">РСБ.2(1а)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">РСБ.3</td><td style="text-align:center">РСБ.3</td><td style="text-align:center">АУД.4</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">РСБ.3(1)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">РСБ.6</td><td style="text-align:center">РСБ.6</td><td style="text-align:center">АУД.3</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">РСБ.7</td><td style="text-align:center">РСБ.7</td><td style="text-align:center">АУД.6</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">РСБ.8</td><td style="text-align:center"></td><td style="text-align:center">АУД.9</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">РСБ.8(1)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td>Обеспечение целостности информационной системы и информации ОЦЛ)</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ОЦЛ.1</td><td style="text-align:center">ОЦЛ.1</td><td style="text-align:center">ОЦЛ.1</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ОЦЛ.2</td><td style="text-align:center">ОЦЛ.2</td><td style="text-align:center">ОЦЛ.2</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ОЦЛ.7</td><td style="text-align:center">ОЦЛ.7</td><td style="text-align:center">ОЦЛ.4</td></tr><tr><td>Обеспечение доступности информации (ОДТ)</td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">ОДТ.4</td><td style="text-align:center">ОДТ.4</td><td style="text-align:center">ОДТ.4</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">X</td><td style="text-align:center"></td><td style="text-align:center">ОДТ.5</td><td style="text-align:center">ОДТ.5</td><td style="text-align:center">ОДТ.5</td></tr><tr><td></td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">X</td><td style="text-align:center">ОДТ.6 (2)</td><td style="text-align:center"></td><td style="text-align:center">ОДТ.7</td></tr></tbody></table>
+<p>СУБД «Jatoba» выполняет требования по безопасности информации, установленные приказом ФСТЭК России от 14.04.2023 № 64 «Требования по безопасности информации к системам управления базами данных».</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="описание-задачи">ОПИСАНИЕ ЗАДАЧИ<a href="#описание-задачи" class="hash-link" aria-label="Direct link to ОПИСАНИЕ ЗАДАЧИ" title="Direct link to ОПИСАНИЕ ЗАДАЧИ">​</a></h2>
+<p>Основная задача, решаемая СУБД «Jatoba» в процессе своего функционирования – управление реляционными базами данных, обеспечивающими многопользовательский доступ к данным при необходимых уровнях отказоустойчивости и защищенности в соответствии с нормативными документами, указанными в «Условиях применения» данного документа.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="классы-решаемых-задач">Классы решаемых задач<a href="#классы-решаемых-задач" class="hash-link" aria-label="Direct link to Классы решаемых задач" title="Direct link to Классы решаемых задач">​</a></h3>
+<p>Для решения основной задачи функционирования СУБД «Jatoba» задача создания и управления реляционными базами данных разбивается на следующие классы задач:</p>
+<ol>
+<li>задачи управления базами данных, решаемые ядром СУБД:</li>
+</ol>
+<ul>
+<li>
+<p>управление данными во внешней памяти;</p>
+</li>
+<li>
+<p>управление данными в оперативной памяти;</p>
+</li>
+<li>
+<p>выполнение запросов;</p>
+</li>
+<li>
+<p>управление транзакциями;</p>
+</li>
+<li>
+<p>журнализация изменений, резервное копирование и восстановление базы данных после сбоев, репликация;</p>
+</li>
+<li>
+<p>поддержка языков определения и манипулирования данными;</p>
+</li>
+</ul>
+<ol start="2">
+<li>задачи расширения функциональных возможностей ядра СУБД:</li>
+</ol>
+<ul>
+<li>
+<p>хранение пространственных, географических и геометрических данных, поддержка запросов к ним и управление ими;</p>
+</li>
+<li>
+<p>совместимость с функциями процедурных языков СУБД «Oracle»;</p>
+</li>
+<li>
+<p>расширение возможностей секционирования больших таблиц;</p>
+</li>
+</ul>
+<ol start="3">
+<li>задачи защиты данных и обеспечения отказоустойчивости:</li>
+</ol>
+<ul>
+<li>
+<p>протоколирование, анализ и запрет выполнения команд манипулирования данными (DDL/DML);</p>
+</li>
+<li>
+<p>ролевое разграничение доступа</p>
+</li>
+<li>
+<p>дискреционное разграничение доступа;</p>
+</li>
+<li>
+<p>идентификация и аутентификация;</p>
+</li>
+<li>
+<p>очистка памяти;</p>
+</li>
+<li>
+<p>регистрация событий;</p>
+</li>
+<li>
+<p>контроль целостности;</p>
+</li>
+<li>
+<p>управление подключениями к системе управления базами данных;</p>
+</li>
+<li>
+<p>обеспечение отказоустойчивости СУБД «Jatoba»;</p>
+</li>
+<li>
+<p>управление конфигурациями компонентов СУБД «Jatoba» и просмотр их состояния с использованием единого пользовательского интерфейса;</p>
+</li>
+<li>
+<p>передача значимых событий в системы информационно-технологического мониторинга и системы учета событий информационной безопасности.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="методы-решения-задач">Методы решения задач<a href="#методы-решения-задач" class="hash-link" aria-label="Direct link to Методы решения задач" title="Direct link to Методы решения задач">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="задачи-управления-базами-данных-решаемые-ядром-субд">Задачи управления базами данных, решаемые ядром СУБД<a href="#задачи-управления-базами-данных-решаемые-ядром-субд" class="hash-link" aria-label="Direct link to Задачи управления базами данных, решаемые ядром СУБД" title="Direct link to Задачи управления базами данных, решаемые ядром СУБД">​</a></h4>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="управление-данными-во-внешней-памяти">Управление данными во внешней памяти<a href="#управление-данными-во-внешней-памяти" class="hash-link" aria-label="Direct link to Управление данными во внешней памяти" title="Direct link to Управление данными во внешней памяти">​</a></h5>
+<p>В СУБД «Jatoba» на уровне ядра реализован программный интерфейс управления данными во внешней памяти. Через данный интерфейс другим компонентам и подсистемам СУБД предоставляется набор функций поблочного чтения и записи из файлов данных, составляющих конкретную базу данных. Внутренние функции интерфейса реализуют управление структурой и расположением файлов баз данных, находящихся под управлением ядра СУБД.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="управление-данными-в-оперативной-памяти">Управление данными в оперативной памяти<a href="#управление-данными-в-оперативной-памяти" class="hash-link" aria-label="Direct link to Управление данными в оперативной памяти" title="Direct link to Управление данными в оперативной памяти">​</a></h5>
+<p>В СУБД «Jatoba» управление данными в оперативной памяти организуется с помощью встроенных менеджеров памяти нескольких видов. Внутренняя структура памяти представляет собой массивы и хеш-таблицы связанных сегментов, блоков и страниц для высокопроизводительного выполнения процедур обработки данных.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="выполнение-запросов">Выполнение запросов<a href="#выполнение-запросов" class="hash-link" aria-label="Direct link to Выполнение запросов" title="Direct link to Выполнение запросов">​</a></h5>
+<p>В СУБД «Jatoba» реализован конвейер из нескольких исполнительных блоков, отвечающий за выполнение запросов пользователей. Каждый запрос проходит блок разбора и анализа синтаксической корректности SQL-запроса, блок построения дерева планов выполнения запросов, блок оптимизации и нахождения оптимального плана выполнения запроса в дереве и блок непосредственного выполнения выбранного плана, приводящий к результату запроса (внесение, получение или изменение данных).</p>
+<p>В СУБД «Jatoba» реализован механизм для создания, оптимизации, экспорта/импорта и подмены планов запросов в БД.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/describe/media/image1.emf" class="img_ev3q">
+<figcaption><p>Рисунок . – Схема работы экспорт/импорта планов запросов</p></figcaption>
+</figure>
+<p>Помимо базовых механизмов СУБД для балансировки и оптимизации запросов пользователей к СУБД используется компонент «jaPooler».</p>
+<p>Компонент имеет функциональную возможность оптимизировать запросы от пользователя (ей) к серверу при их подключении к серверу СУБД на указанный порт, как представлено на рисунке Рисунок 3.2.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/describe/media/image2.emf" class="img_ev3q">
+<figcaption><p>Рисунок 3.2 – Балансировка запросов пользователя</p></figcaption>
+</figure>
+<p>Также компонент обладает функциональной возможностью балансировки подключений множества пользователей к серверам СУБД, как представлено на рисунке Рисунок 3.3.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/describe/media/image3.emf" class="img_ev3q">
+<figcaption><p>Рисунок 3.3 – Балансировка запросов пользователей к серверам СУБД</p></figcaption>
+</figure>
+<p>Подключения формируются, как от пользователей, так и от пользовательских приложений.</p>
+<p>Для выявления и предотвращение исполнения нетипичных SQL-запросов используется компонент «SQL_Firewall». Компонент предназначен для защиты базы данных от SQL-инъекций или неожиданных запросов.</p>
+<p>Компонент SQL_Firewall функционирует в режимах:</p>
+<ul>
+<li>
+<p>«learning» – режим обучения;</p>
+</li>
+<li>
+<p>«enforcing» – режим применения;</p>
+</li>
+<li>
+<p>«permissive» – режим разрешающий любые SQL запросы;</p>
+</li>
+<li>
+<p>«disabled» – режим отключенного модуля.</p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="управление-транзакциями">Управление транзакциями<a href="#управление-транзакциями" class="hash-link" aria-label="Direct link to Управление транзакциями" title="Direct link to Управление транзакциями">​</a></h5>
+<p>В СУБД «Jatoba» реализован на уровне ядра механизм управлениями транзакциями. Данный механизм тесно связан с механизмом многоверсионности данных, что позволяет реализовать безблокировочный механизм одновременного изменения данных множеством параллельных транзакций. В результате каждая транзакция пользователя либо успешно завершается и данные надежно фиксируются во внешней памяти, либо отвергается с отбрасыванием сделанных изменений.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="журнализация-изменений-резервное-копирование-и-восстановление-базы-данных-после-сбоев-репликация">Журнализация изменений, резервное копирование и восстановление базы данных после сбоев, репликация<a href="#журнализация-изменений-резервное-копирование-и-восстановление-базы-данных-после-сбоев-репликация" class="hash-link" aria-label="Direct link to Журнализация изменений, резервное копирование и восстановление базы данных после сбоев, репликация" title="Direct link to Журнализация изменений, резервное копирование и восстановление базы данных после сбоев, репликация">​</a></h5>
+<p>В СУБД «Jatoba» реализован ряд механизмов, значительно повышающих надежность ее работы в условиях возникновения аварийной ситуации (физический выход из строя оборудования сервера). Список механизмов включает: журнал транзакций (журнал опережающей записи), который в момент исполнения транзакции фиксирует все сделанные ею изменения в отдельное хранилище внешней памяти; процедуры резервного копирования и восстановления, в том числе с использованием журнала транзакций, чтобы восстановить работу с момента последней зафиксированной транзакции до сбоя; процедуры репликации данных для передачи всех зафиксированных транзакций на резервные сервера с возможностью включения в оперативную работу резервного сервера в случае выхода главного сервера из строя.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="поддержка-языков-определения-и-манипулирования-данными">Поддержка языков определения и манипулирования данными<a href="#поддержка-языков-определения-и-манипулирования-данными" class="hash-link" aria-label="Direct link to Поддержка языков определения и манипулирования данными" title="Direct link to Поддержка языков определения и манипулирования данными">​</a></h5>
+<p>В СУБД «Jatoba» реализована полная поддержка современных стандартов языка SQL, включая выражения определения (CREATE/DROP/ALTER) необходимых объектов баз данных для хранения и управления данными пользователей и выражения манипулирования данными (SELECT/INSERT/UPDATE/DELETE), отвечающими за преобразования данных пользователя.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="задачи-расширения-функциональных-возможностей-ядра-субд">Задачи расширения функциональных возможностей ядра СУБД<a href="#задачи-расширения-функциональных-возможностей-ядра-субд" class="hash-link" aria-label="Direct link to Задачи расширения функциональных возможностей ядра СУБД" title="Direct link to Задачи расширения функциональных возможностей ядра СУБД">​</a></h4>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="хранение-пространственных-географических-и-геометрических-данных-поддержка-запросов-к-ним-и-управление-ими">Хранение пространственных, географических и геометрических данных, поддержка запросов к ним и управление ими<a href="#хранение-пространственных-географических-и-геометрических-данных-поддержка-запросов-к-ним-и-управление-ими" class="hash-link" aria-label="Direct link to Хранение пространственных, географических и геометрических данных, поддержка запросов к ним и управление ими" title="Direct link to Хранение пространственных, географических и геометрических данных, поддержка запросов к ним и управление ими">​</a></h5>
+<p>В СУБД «Jatoba» реализован набор расширений, обеспечивающий управление пространственными данными для построения на базу СУБД геоинформационных систем. Набор расширений включает дополнительные типы данных и процедуры обработки данных этих типов.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="совместимость-с-функциями-процедурных-языков-субд-oracle">Совместимость с функциями процедурных языков СУБД «Oracle»<a href="#совместимость-с-функциями-процедурных-языков-субд-oracle" class="hash-link" aria-label="Direct link to Совместимость с функциями процедурных языков СУБД «Oracle»" title="Direct link to Совместимость с функциями процедурных языков СУБД «Oracle»">​</a></h5>
+<p>В СУБД «Jatoba» реализован набор расширений, обеспечивающий интеграцию СУБД «Jatoba» с СУБД «Oracle». Расширения предоставляют дополнительные функции, повышающие синтаксическую совместимость и упрощающие перенос хранимых процедур, и предоставляют дополнительные методы прозрачного доступа к данными из одной СУБД в другую.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="расширение-возможностей-секционирования-больших-таблиц">Расширение возможностей секционирования больших таблиц<a href="#расширение-возможностей-секционирования-больших-таблиц" class="hash-link" aria-label="Direct link to Расширение возможностей секционирования больших таблиц" title="Direct link to Расширение возможностей секционирования больших таблиц">​</a></h5>
+<p>В СУБД «Jatoba» реализована функциональная возможность, позволяющая обычным серверам баз данных (называемым узлами) координировать свои действия друг с другом в архитектуре «ничего общего» («shared nothing»). Узлы образуют кластер, который позволяет СУБД хранить больше данных и использовать больше ядер центрального процессора, чем это было бы возможно на одном компьютере. Эта архитектура также позволяет масштабировать базу данных, просто добавляя дополнительные узлы в кластер. Данное расширение позволяет выполнять распределение таблиц и запросов по рабочим узлам, входящим в кластер.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/describe/media/image4.png" style="width:6.63472in;height:3.49778in" alt="C:\Users\kuznetsov-a\Downloads\ja_Hipe_Cluster.png" class="img_ev3q">
+<figcaption><p>Рисунок . – Отправка запросов на рабочие узлы</p></figcaption>
+</figure>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="задачи-расширения-защиты-данных-и-обеспечения-отказоустойчивости">Задачи расширения защиты данных и обеспечения отказоустойчивости<a href="#задачи-расширения-защиты-данных-и-обеспечения-отказоустойчивости" class="hash-link" aria-label="Direct link to Задачи расширения защиты данных и обеспечения отказоустойчивости" title="Direct link to Задачи расширения защиты данных и обеспечения отказоустойчивости">​</a></h4>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="протоколирование-анализ-и-запрет-выполнения-команд-манипулирования-данными-ddldml">Протоколирование, анализ и запрет выполнения команд манипулирования данными (DDL/DML)<a href="#протоколирование-анализ-и-запрет-выполнения-команд-манипулирования-данными-ddldml" class="hash-link" aria-label="Direct link to Протоколирование, анализ и запрет выполнения команд манипулирования данными (DDL/DML)" title="Direct link to Протоколирование, анализ и запрет выполнения команд манипулирования данными (DDL/DML)">​</a></h5>
+<p>В СУБД «Jatoba» реализован механизм детального протоколирования запросов пользователей. Реализация данного механизма использует возможности блоков управления запросов для формирования детальной информации о статусе выполнения запроса. Статусная информация включает описание об объекте и субъекте доступа.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="ролевое-разграничение-доступа">Ролевое разграничение доступа<a href="#ролевое-разграничение-доступа" class="hash-link" aria-label="Direct link to Ролевое разграничение доступа" title="Direct link to Ролевое разграничение доступа">​</a></h5>
+<p>В СУБД «Jatoba» реализован механизм ролевого разграничения доступа. Механизм контроля доступа при обращении к объекту доступа в процессе выполнения запроса проверяет необходимые привилегии. В случае отсутствия достаточных привилегий доступ к объекту запрещается, выполнение запроса пользователя прекращается по ошибке.</p>
+<p>Дополнительно в пользовательском веб-интерфейсе для администраторов компонента «Jatoba data safe» реализована двухкомпонентная ролевая модель.</p>
+<p>Первым компонентом выступает предопределенная ролевая модель JDS, в которую включена доступность разделов.</p>
+<p>Вторым компонентом ролевой модели является набор групповых ролей в целевой СУБД, которым предоставлены необходимые права и привилегии при инициализации компонент и расширений СУБД.</p>
+<p>Механизм разграничения доступа реализован таким образом при котором пользователю JDS присваивается предустановленная роль в компоненте, определяющая доступность разделов и в соответствии с данной ролью, пользователь ассоциируется с учетной записью в целевой СУБД.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/describe/media/image5.emf" class="img_ev3q">
+<figcaption><p>Рисунок 3.5 – Двухкомпонентная ролевая модель</p></figcaption>
+</figure>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="дискреционное-разграничение-доступа">Дискреционное разграничение доступа<a href="#дискреционное-разграничение-доступа" class="hash-link" aria-label="Direct link to Дискреционное разграничение доступа" title="Direct link to Дискреционное разграничение доступа">​</a></h5>
+<p>В СУБД «Jatoba» реализован дискреционный механизм разграничения доступа. Механизм контроля доступа при обращении к объекту доступа в процессе выполнения запроса проверяет необходимые привилегии на вложенные объекты уровня БД. В случае отсутствия достаточных привилегий доступ к объекту запрещается, выполнение запроса пользователя прекращается по ошибке.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="идентификация-и-аутентификация">Идентификация и аутентификация<a href="#идентификация-и-аутентификация" class="hash-link" aria-label="Direct link to Идентификация и аутентификация" title="Direct link to Идентификация и аутентификация">​</a></h5>
+<p>В СУБД «Jatoba» каждое подключение пользователя предварительно проходит процедуру аутентификации. Аутентификация включает проверку данных сетевого подключения, имени базы данных, имени пользователя и согласования метода аутентификации. Если запрошенные данные подтверждаются, то проводится процедура установления идентичности пользователя в соответствии с заданным методом аутентификации. Основным методом аутентификации пользователей является метод «Password».</p>
+<p>Поддерживается функциональная возможность применения методов аутентификации:</p>
+<ul>
+<li>
+<p>GSSAPI;</p>
+</li>
+<li>
+<p>LDAP(LDAPS);</p>
+</li>
+<li>
+<p>PAM;</p>
+</li>
+<li>
+<p>RADIUS;</p>
+</li>
+<li>
+<p>SSL;</p>
+</li>
+<li>
+<p>SSPI.</p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="очистка-памяти">Очистка памяти<a href="#очистка-памяти" class="hash-link" aria-label="Direct link to Очистка памяти" title="Direct link to Очистка памяти">​</a></h5>
+<p>В СУБД «Jatoba» поддерживаются внутренние процедуры очистки блоков памяти, в которых располагаются данные пользователя в процессе его работы с некоторой базой данных. В случае фиксации этих данных ядром СУБД и отсутствия текущего использования этих данных другими запросами пользователей, данные принудительно удаляются во избежание утечек конфиденциальной информации. При завершении сессии пользователя вся память, где хранились данные пользователя, также принудительно отчищается.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="регистрация-событий">Регистрация событий<a href="#регистрация-событий" class="hash-link" aria-label="Direct link to Регистрация событий" title="Direct link to Регистрация событий">​</a></h5>
+<p>В ядро СУБД «Jatoba» встроен механизм регистрации различных событий, связанных как с работой самого ядра СУБД, так и с выполнение запросов пользователей на доступ и изменение данных. Реализовано несколько уровней детализации событий, которые администратор может выбрать и настроить на основании имеющихся требований, предъявляемых к СУБД.</p>
+<p>Помимо встроенного механизма СУБД, применение компонента «Jatoba data safe» пользовательского веб-интерфейс для администраторов и в совокупности с компонентом централизованного сбора записей событий в СУБД «ja_Log» позволяют обеспечить централизованный сбор, хранение, обработку и просмотр событий безопасности с СУБД.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="контроль-целостности">Контроль целостности<a href="#контроль-целостности" class="hash-link" aria-label="Direct link to Контроль целостности" title="Direct link to Контроль целостности">​</a></h5>
+<p>СУБД «Jatoba» на уровне ядра поддерживает несколько механизмов обеспечения целостности данных.</p>
+<p>Первый встроенный механизм СУБД позволяет проводить проверки корректности данных, которые пользователь вносит в базу данных. Реализована программная возможность включения этих проверок для отдельных полей таблиц по выбору пользователя. Также реализована система ограничений, накладываемая на данные, помещаемые в таблицы. Данные ограничения позволяют обеспечивать ссылочную целостность данных в разных таблицах.</p>
+<p>Вторым механизмом контроля целостности является компонент «ja_CSum» предназначенный для выполнения периодических фоновых проверок фалов, расположенных в ключевых директориях СУБД, а также:</p>
+<ul>
+<li>
+<p>конфигурации системы управления базами данных;</p>
+</li>
+<li>
+<p>конфигураций баз данных;</p>
+</li>
+<li>
+<p>процедур (программного кода) системы управления базами данных;</p>
+</li>
+<li>
+<p>процедур (программного кода), хранимых в базах данных.</p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="механизм-управления-подключениями-к-системе-управления-базами-данных">Механизм управления подключениями к системе управления базами данных<a href="#механизм-управления-подключениями-к-системе-управления-базами-данных" class="hash-link" aria-label="Direct link to Механизм управления подключениями к системе управления базами данных" title="Direct link to Механизм управления подключениями к системе управления базами данных">​</a></h5>
+<p>Защита подключений реализуется сторонними по отношению к ядру СУБД средствами, что подтверждается соответствующими описанными требованиями к среде функционирования.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="обеспечение-отказоустойчивости-субд-jatoba">Обеспечение отказоустойчивости СУБД «Jatoba»<a href="#обеспечение-отказоустойчивости-субд-jatoba" class="hash-link" aria-label="Direct link to Обеспечение отказоустойчивости СУБД «Jatoba»" title="Direct link to Обеспечение отказоустойчивости СУБД «Jatoba»">​</a></h5>
+<p>Отказоустойчивость в СУБД «Jatoba» реализуется средствами репликации данных. Экземпляр СУБД может выступать в роли ведущего или ведомого сервера. Роль сервера определяется соответствующими конфигурационными параметрами, заданными администратором СУБД. Ведомый сервер всегда зависит от ведущего и получает от него все изменения данных, которые накапливаются в журнале транзакций. В случае выхода из строя ведущего сервера, ведомый сервер может автоматически или по команде администратора принять на себя роль ведущего. После восстановления функционирования сервера ему снова может быть возвращена роль ведущего.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/describe/media/image6.emf" class="img_ev3q">
+<figcaption><p>Рисунок 3.6 – Физическая структура узлов кластера</p></figcaption>
+</figure>
+<p>Базовые функциональные возможности кластера расширены до полнофункционального инженерного решения катастрофоустойчивого и геораспределенного кластера.</p>
+<p>Дополнительно отказоустойчивость СУБД «Jatoba» реализуется применением полного или инкрементального резервного копирования.</p>
+<p>Полные резервные копии содержат все файлы данных, необходимые для восстановления сервера баз данных с нулевой точки;</p>
+<p>Инкрементальные копии создаются на уровне страниц данных и включают только ту информацию, которая изменилась со времени последнего резервного копирования.</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image7-3f18627456b48169572353bb8a729c78.png" width="887" height="317" class="img_ev3q">Рисунок 3.7 – Реализуемые способы резервного копирования</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="ограничение-программной-среды">Ограничение программной среды<a href="#ограничение-программной-среды" class="hash-link" aria-label="Direct link to Ограничение программной среды" title="Direct link to Ограничение программной среды">​</a></h5>
+<p>СУБД на уровне ядра и используя компонент «ja_CSum» выявляет и блокирует загрузку в адресное пространство СУБД:</p>
+<ul>
+<li>
+<p>ПО не включенного в перечень разрешенного;</p>
+</li>
+<li>
+<p>ПО целостность которого нарушена.</p>
+</li>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="управление-компонентами-субд-jatoba-и-просмотр-их-состояния-с-использованием-единого-пользовательского-интерфейса">Управление компонентами СУБД «Jatoba» и просмотр их состояния с использованием единого пользовательского интерфейса<a href="#управление-компонентами-субд-jatoba-и-просмотр-их-состояния-с-использованием-единого-пользовательского-интерфейса" class="hash-link" aria-label="Direct link to Управление компонентами СУБД «Jatoba» и просмотр их состояния с использованием единого пользовательского интерфейса" title="Direct link to Управление компонентами СУБД «Jatoba» и просмотр их состояния с использованием единого пользовательского интерфейса">​</a></h5>
+<p>Для обслуживания и управления СУБД «Jatoba» используется единый пользовательский интерфейс в виде командной строки (CLI).</p>
+<p>Дополнительно реализован пользовательский веб-интерфейс для администраторов в компоненте «Jatoba data safe», содержащий следующие разделы:</p>
+<ul>
+<li>
+<p>Разделы «Анализ рисков» (UserRisk) и «Матрица доступа» (Access matrix) используются для контроля имеющихся привилегий в СУБД и привилегий на вложенные объекты уровня БД.</p>
+</li>
+<li>
+<p>Раздел «Список кластеров» (Cluster list) позволяет управлять преднастроенным кластером серверов СУБД. Раздел представляет собой графическое отображение управления компонентом «Jadog».</p>
+</li>
+</ul>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/describe/media/image8.emf" class="img_ev3q">
+<figcaption><p>Рисунок . – Схема работы компонента при клиент-серверном варианте</p></figcaption>
+</figure>
+<ul>
+<li>Раздел «Список событий» (Event List) предназначен для просмотра событий безопасности в выбранной инсталляции (Target).</li>
+</ul>
+<p>Для функционирования раздела требуется, чтобы на целевой СУБД был установлен компонент «ja_Log», обеспечивающий передачу событий безопасности в служебную СУБД. Компонент «pgAudit» при этом обеспечивает расширенную регистрацию событий безопасности.</p>
+<ul>
+<li>
+<p>Подраздел «Снимки и отчеты» (Snapshots &amp; Reports) предназначен для создания снимков состояния БД (Snapshots) и получения отчетов. Формирование статической информации выполняется компонентом «pg_Profile».</p>
+</li>
+<li>
+<p>Подраздел «Проблемы и решения» (Problems &amp; Solutions) представляет собой интеллектуальный инструмент, который позволяет определять ряд проблем, существующих в целевой СУБД.</p>
+</li>
+<li>
+<p>Раздел «LDAP синхронизация» (LDAP Sync) предназначен для графического отображения операций по синхронизации учетных записей со службой каталогов и учетных записей целевой СУБД. Для выполнения синхронизации требуется, чтобы расширение было установлено на целевой СУБД.</p>
+</li>
+<li>
+<p>Раздел «Уведомления» предназначен для оповещения администраторов о событиях целевой СУБД и компонента «JDS» по классам событий, кодам событий, ключевым фразам и словам.</p>
+</li>
+<li>
+<p>Раздел «Роли БД» предназначен для:</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>создания ролей;</p>
+</li>
+<li>
+<p>редактирования ролей;</p>
+</li>
+<li>
+<p>назначения атрибутов и привилегий ролей.</p>
+</li>
+</ul>
+<p>Сопоставление разделов JDS и, обеспечивающих их функционирование, компонентов целевой СУБД представлено на рисунке Рисунок 3.9.</p>
+<figure>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/describe/media/image9.emf" class="img_ev3q">
+<figcaption><p>Рисунок 3.9 – Разделы JDS и компоненты СУБД, требуемые для работы разделов JDS</p></figcaption>
+</figure>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="передача-событий-безопасности-в-системы-информационно-технологического-мониторинга-и-системы-учета-событий-информационной-безопасности">Передача событий безопасности в системы информационно-технологического мониторинга и системы учета событий информационной безопасности<a href="#передача-событий-безопасности-в-системы-информационно-технологического-мониторинга-и-системы-учета-событий-информационной-безопасности" class="hash-link" aria-label="Direct link to Передача событий безопасности в системы информационно-технологического мониторинга и системы учета событий информационной безопасности" title="Direct link to Передача событий безопасности в системы информационно-технологического мониторинга и системы учета событий информационной безопасности">​</a></h5>
+<p>В СУБД «Jatoba» через систему регистрации событий административными мерами реализуется передача событий в сторонние системы информационно-технологического мониторинга и учета событий безопасности. Данная функция включается соответствующими конфигурационными параметрами администратором СУБД на основании соответствующих требований безопасности.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="входные-и-выходные-данные">ВХОДНЫЕ И ВЫХОДНЫЕ ДАННЫЕ<a href="#входные-и-выходные-данные" class="hash-link" aria-label="Direct link to ВХОДНЫЕ И ВЫХОДНЫЕ ДАННЫЕ" title="Direct link to ВХОДНЫЕ И ВЫХОДНЫЕ ДАННЫЕ">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="входные-данные">Входные данные<a href="#входные-данные" class="hash-link" aria-label="Direct link to Входные данные" title="Direct link to Входные данные">​</a></h3>
+<p>Входными данными являются:</p>
+<ol>
+<li>
+<p>загружаемые табличные стройки;</p>
+</li>
+<li>
+<p>атрибуты ролей, определяющие их полномочия и взаимодействие с системой аутентификации клиентов;</p>
+</li>
+<li>
+<p>привилегии ролей, определяющие ролевые правила разграничения доступа к объектам баз данных;</p>
+</li>
+<li>
+<p>настройка обращений ролей пользователей к защищенным данным;</p>
+</li>
+<li>
+<p>политики защиты строк, определяющие правила доступа к строкам таблиц.</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="выходные-данные">Выходные данные<a href="#выходные-данные" class="hash-link" aria-label="Direct link to Выходные данные" title="Direct link to Выходные данные">​</a></h3>
+<p>Выходными данными является результат использования субъектом доступа защищаемых объектов, предоставленных ему в соответствии с установленными правилами разграничение доступа.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="перечень-сокращений">ПЕРЕЧЕНЬ СОКРАЩЕНИЙ<a href="#перечень-сокращений" class="hash-link" aria-label="Direct link to ПЕРЕЧЕНЬ СОКРАЩЕНИЙ" title="Direct link to ПЕРЕЧЕНЬ СОКРАЩЕНИЙ">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left"></th><th style="text-align:center"></th><th></th></tr></thead><tbody><tr><td style="text-align:left">DDL</td><td style="text-align:center">–</td><td>Data Definition Language, язык описания данных</td></tr><tr><td style="text-align:left">DML</td><td style="text-align:center">–</td><td>Data Manipulation Language, язык манипулирования данными</td></tr><tr><td style="text-align:left">SQL</td><td style="text-align:center">–</td><td>Structured Query Language, язык структурированных запросов</td></tr><tr><td style="text-align:left">БД</td><td style="text-align:center">–</td><td>База данных</td></tr><tr><td style="text-align:left">ГИС</td><td style="text-align:center">–</td><td>Государственные информационные системы</td></tr><tr><td style="text-align:left">Дист.</td><td style="text-align:center">–</td><td>Дистрибутив</td></tr><tr><td style="text-align:left">ИСПДн</td><td style="text-align:center">–</td><td>Информационная система персональных данных</td></tr><tr><td style="text-align:left">КВО</td><td style="text-align:center">–</td><td>Критически важный объект</td></tr><tr><td style="text-align:left">КИИ</td><td style="text-align:center">–</td><td>Критическая информационная инфраструктура</td></tr><tr><td style="text-align:left">Обр.к</td><td style="text-align:center">–</td><td>Образ контейнера</td></tr><tr><td style="text-align:left">ОС</td><td style="text-align:center">–</td><td>Операционная система</td></tr><tr><td style="text-align:left">СУБД</td><td style="text-align:center">–</td><td>Система управления базами данных</td></tr><tr><td style="text-align:left">ФСТЭК России</td><td style="text-align:center">–</td><td>Федеральная служба по техническому и экспортному контролю России</td></tr><tr><td style="text-align:left">ЭВМ</td><td style="text-align:center">–</td><td>Электронно-вычислительная машина</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="лист-регистрации-изменений">ЛИСТ РЕГИСТРАЦИИ ИЗМЕНЕНИЙ<a href="#лист-регистрации-изменений" class="hash-link" aria-label="Direct link to ЛИСТ РЕГИСТРАЦИИ ИЗМЕНЕНИЙ" title="Direct link to ЛИСТ РЕГИСТРАЦИИ ИЗМЕНЕНИЙ">​</a></h2>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:9%">
+<col style="width:11%">
+<col style="width:17%">
+<col style="width:10%">
+<col style="width:9%">
+</colgroup><tbody><tr><td rowspan="2" style="text-align:center"><strong>Изм</strong></td><td colspan="4" style="text-align:center"><strong>Номера листов (страниц)</strong></td><td rowspan="2" style="text-align:center"><strong>Всего листов (страниц) в докум.</strong></td><td rowspan="2" style="text-align:center"><strong>№ докум.</strong></td><td rowspan="2" style="text-align:center"><p><strong>Входящий №</strong></p>
+<p><strong>сопроводитель</strong></p>
+<p><strong>ного докум. и дата</strong></p></td><td rowspan="2" style="text-align:center"><strong>Подпись</strong></td><td rowspan="2" style="text-align:center"><strong>Дата</strong></td></tr><tr><td style="text-align:center"><p><strong>изменен</strong></p>
+<p><strong>ных</strong></p></td><td style="text-align:center"><p><strong>заменен</strong></p>
+<p><strong>ных</strong></p></td><td style="text-align:center"><strong>новых</strong></td><td style="text-align:center"><p><strong>аннули</strong></p>
+<p><strong>рован</strong></p>
+<p><strong>ных</strong></p></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/container"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">container</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/explain"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">explain</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#аннотация" class="table-of-contents__link toc-highlight">аннотация</a></li><li><a href="#содержание" class="table-of-contents__link toc-highlight">СОДЕРЖАНИЕ</a></li><li><a href="#назначение-программы" class="table-of-contents__link toc-highlight">НАЗНАЧЕНИЕ ПРОГРАММЫ</a><ul><li><a href="#назначение-субд-jatoba" class="table-of-contents__link toc-highlight">Назначение СУБД «Jatoba»</a></li><li><a href="#основные-характеристики" class="table-of-contents__link toc-highlight">Основные характеристики</a></li><li><a href="#производительность-субд" class="table-of-contents__link toc-highlight">Производительность СУБД</a></li></ul></li><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">УСЛОВИЯ ПРИМЕНЕНИЯ</a></li><li><a href="#описание-задачи" class="table-of-contents__link toc-highlight">ОПИСАНИЕ ЗАДАЧИ</a><ul><li><a href="#классы-решаемых-задач" class="table-of-contents__link toc-highlight">Классы решаемых задач</a></li><li><a href="#методы-решения-задач" class="table-of-contents__link toc-highlight">Методы решения задач</a></li></ul></li><li><a href="#входные-и-выходные-данные" class="table-of-contents__link toc-highlight">ВХОДНЫЕ И ВЫХОДНЫЕ ДАННЫЕ</a><ul><li><a href="#входные-данные" class="table-of-contents__link toc-highlight">Входные данные</a></li><li><a href="#выходные-данные" class="table-of-contents__link toc-highlight">Выходные данные</a></li></ul></li><li><a href="#перечень-сокращений" class="table-of-contents__link toc-highlight">ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</a></li><li><a href="#лист-регистрации-изменений" class="table-of-contents__link toc-highlight">ЛИСТ РЕГИСТРАЦИИ ИЗМЕНЕНИЙ</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

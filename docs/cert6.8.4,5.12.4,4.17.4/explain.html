@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-cert6.8.4,5.12.4,4.17.4/explain" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">explain | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/explain"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="explain | Postgres"><meta data-rh="true" name="description" content="АННОТАЦИЯ"><meta data-rh="true" property="og:description" content="АННОТАЦИЯ"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/explain"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/explain" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/explain" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Сертифицированные версии 6.8.4,5.12.4,4.17.4","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/"},{"@type":"ListItem","position":2,"name":"explain","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/explain"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.cbebf560.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.2f8c1cba.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Collapse sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/1c">1c</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_log">ja_log</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_secevenlog">ja_secevenlog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_similar">ja_similar</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_sync">ja_sync</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jadog_3.3_1">jadog_3.3_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jadog_3.3_2">jadog_3.3_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jds2.7">jds2.7</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_probackup">pg_probackup</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sec_functions">sec_functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sec_guide">sec_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sql_firewall">sql_firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/user_guide">user_guide</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/cert6.8.4,5.12.4,4.17.4"><span>Сертифицированные версии 6.8.4,5.12.4,4.17.4</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">explain</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>explain</h1></header><p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонентов, предназначенных для мониторинга СУБД в части анализа запросов:</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>Компонент «pg-explain». Версия компонента – 1.6.2;Компонент «pg-explain-db». Версия компонента – 1.6;Компонент «pg-monitor». Версия компонента – 1.6.5;Компонент «pg-monitor-collector». Версия компонента – 1.6.5;Компонент «pg-monitor-dispatcher». Версия компонента – 1.6.5.Настоящее руководство предназначено для администраторов СУБД.</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th style="text-align:left"><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии<br>
+ядра 5.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>ОС Windows – «C:\Program Files\GIS\Jatoba\6\bin»;ОС Linux – «/usr/jatoba-6/bin».Примеры команд приведены для операционной системы Ubuntu 20.04. При развертывании в ОС, использующих систему управления пакетами RPM, необходимо заменить команды «apt install» на соответствующие команды (dnf/yum).</p></th></tr></thead><tbody><tr><td style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></td><td style="text-align:left"><p><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p></td></tr></tbody></table>
+<p>Степени важности примечаний, применяемые в документе:</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th><strong>Важная информация</strong> – указания, требующие особого внимания</th></tr></thead></table>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</th></tr></thead></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="назначение-компонента">Назначение компонента<a href="#назначение-компонента" class="hash-link" aria-label="Direct link to Назначение компонента" title="Direct link to Назначение компонента">​</a></h2>
+<p>Компонент pg-explain — это инструмент для анализа планов запросов в СУБД. Он позволяет просматривать и анализировать планы запросов, созданные оптимизатором СУБД, и помогает разработчикам и администраторам баз данных понять, как СУБД выполняет запросы.</p>
+<p>Компонент pg-explain-db — это инструмент для анализа производительности базы данных СУБД. Он предоставляет информацию о планах выполнения запросов, статистике и других показателях, которые помогают оптимизировать работу с данными.</p>
+<p>Компонент pg-monitor — это библиотека для мониторинга событий в базе данных с использованием гибкой системы событий, предоставляемой пакетом pg-promise. Библиотека позволяет отслеживать и регистрировать события, такие как запросы, ошибки и транзакции, а также упрощает логирование событий для вашего приложения.</p>
+<p>Компонент pg-monitor-collector — это часть программного обеспечения pgwatch2, которое собирает метрики из настроенных баз данных и сохраняет их в другой базе данных.</p>
+<p>Компонент pg-monitor-dispatcher — это прослушиватель для СУБД, который слушает один канал базы данных и выполняет заданную команду при получении уведомления.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения">​</a></h3>
+<p>Компоненты могут использоваться:</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>с СУБД «Jatoba» версий 5.x и выше; с установленным компонентом в ОС «nodejs» версии 20 и выше;под управлением операционных систем GNU/Linux приведенных в таблице Таблица 1.1.Таблица 1.1 – Поддерживаемые ОС</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:center"><strong>№</strong></th><th style="text-align:left"><strong>Наименование ОС</strong></th><th style="text-align:center"><strong>Сертификат ФСТЭК</strong></th><th style="text-align:center"></th></tr></thead><tbody><tr><td style="text-align:center"></td><td style="text-align:left"></td><td style="text-align:center"><strong>№ серт.</strong></td><td style="text-align:center"><strong>Дата выдачи</strong></td></tr><tr><td style="text-align:center">1</td><td style="text-align:left">Astra Linux 1.7 Special Edition Смоленск (x86-64)</td><td style="text-align:center">2557</td><td style="text-align:center">30.01.2012</td></tr><tr><td style="text-align:center">2</td><td style="text-align:left">Astra Linux 1.8 (x86-64)</td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center">3</td><td style="text-align:left">Альт 8 СП</td><td style="text-align:center">3866</td><td style="text-align:center">10.08.2018</td></tr><tr><td style="text-align:center">4</td><td style="text-align:left">Альт 10 СП</td><td style="text-align:center">3866</td><td style="text-align:center">10.08.2018</td></tr><tr><td style="text-align:center">5</td><td style="text-align:left">ОСНОВА2</td><td style="text-align:center">20.10.5</td><td style="text-align:center">31.03.2021</td></tr><tr><td style="text-align:center">6</td><td style="text-align:left">РЕД ОС 7.3 Муром</td><td style="text-align:center">4060</td><td style="text-align:center">12.01.2019</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ограничения-по-эксплуатации">Ограничения по эксплуатации<a href="#ограничения-по-эксплуатации" class="hash-link" aria-label="Direct link to Ограничения по эксплуатации" title="Direct link to Ограничения по эксплуатации">​</a></h3>
+<p>Ограничений по совместимости с другими компонентами нет.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="архитектура-мониторинга-в-части-анализа-запросов">Архитектура мониторинга в части анализа запросов<a href="#архитектура-мониторинга-в-части-анализа-запросов" class="hash-link" aria-label="Direct link to Архитектура мониторинга в части анализа запросов" title="Direct link to Архитектура мониторинга в части анализа запросов">​</a></h2>
+<p>В архитектуре мониторинга в части анализа запросов, допустимы две основные конфигурации:</p>
+<ul>
+<li></li>
+</ul>
+<p>с установкой pg-explain на одном сервере СУБД «Jatoba» с установленным компонентом JDS (см. п. 5.1);<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image3-55f0f8fb296823d4f0759f17bd6ffbd8.png" width="2506" height="1125" class="img_ev3q"></p>
+<p>Рисунок 2.1 – Установка pg-explain и JDS на одном узле</p>
+<ul>
+<li></li>
+</ul>
+<p>с установкой pg-explain выделенном сервере СУБД и отдельном сервере СУБД с установленном компонентом JDS (см. п. 5.1).<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image4-d7002c010a93dad8155fc13a51f7745a.png" width="3028" height="1124" class="img_ev3q"></p>
+<p>Рисунок 2.2 – Установка pg-explain и JDS на разных узлах</p>
+<p>Данные с целевых СУБД собираются в БД pg-monitor.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-и-настройка-целевой-субд-jatoba">Установка и настройка целевой СУБД «Jatoba»<a href="#установка-и-настройка-целевой-субд-jatoba" class="hash-link" aria-label="Direct link to Установка и настройка целевой СУБД «Jatoba»" title="Direct link to Установка и настройка целевой СУБД «Jatoba»">​</a></h2>
+<p>СУБД «Jatoba» устанавливается в соответствии с документом «Руководство по установке».</p>
+<p>Корректная работа pg-explain обеспечивается установкой системной локали «ru_RU.UTF-8» до развертывания СУБД «Jatoba».</p>
+<p>Регистрация событий в СУБД осуществляется компонентами:</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>«pgAudit»;«auto_explain».Компонент «pgAudit» выполняет расширенную регистрацию событий безопасности. Настройка компонента приведена в документе «Защищенная система управления базами данных «Jatoba». Руководство администратора».</p>
+<p>Компонент «auto_explain» выполняет протоколирование планов выполнения медленных запросов.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="установка-расширения-auto_explain">Установка расширения auto_explain<a href="#установка-расширения-auto_explain" class="hash-link" aria-label="Direct link to Установка расширения auto_explain" title="Direct link to Установка расширения auto_explain">​</a></h3>
+<p>Чтобы не загружать компонент в процесс сервера, загрузка выполняется через переменную «shared_preload_libraries» в конфигурационном файле «postgresql.conf», как описано в п. 3.1.2 «Настройка конфигурационного файла postgresql.conf целевой СУБД» настоящего документа.</p>
+<p>Установка пакета не требуется.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="переменные-расширения-auto_explain">Переменные расширения auto_explain<a href="#переменные-расширения-auto_explain" class="hash-link" aria-label="Direct link to Переменные расширения auto_explain" title="Direct link to Переменные расширения auto_explain">​</a></h4>
+<p>Компонент имеет нижеперечисленные параметры, которые могут устанавливаться в конфигурационном файле «postgresql.conf» или изменяться суперпользователями СУБД «на лету» в рамках своих сеансов.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_min_duration">auto_explain.log_min_duration<a href="#auto_explainlog_min_duration" class="hash-link" aria-label="Direct link to auto_explain.log_min_duration" title="Direct link to auto_explain.log_min_duration">​</a></h5>
+<blockquote>
+<p>auto_explain.log_min_duration (integer)</p>
+</blockquote>
+<p>Переменная auto_explain.log_min_duration задаёт время выполнения оператора в миллисекундах, при превышении которого план оператора будет протоколироваться. При значении равном 0 протоколируются все планы, а при -1 (по умолчанию) протоколирование планов отключается.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_analyze">auto_explain.log_analyze<a href="#auto_explainlog_analyze" class="hash-link" aria-label="Direct link to auto_explain.log_analyze" title="Direct link to auto_explain.log_analyze">​</a></h5>
+<blockquote>
+<p>auto_explain.log_analyze (boolean)</p>
+</blockquote>
+<p>При включении параметра auto_explain.log_analyze в протокол будет записываться вывод команды EXPLAIN ANALYZE, а не EXPLAIN. По умолчанию этот параметр отключен.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_buffers">auto_explain.log_buffers<a href="#auto_explainlog_buffers" class="hash-link" aria-label="Direct link to auto_explain.log_buffers" title="Direct link to auto_explain.log_buffers">​</a></h5>
+<blockquote>
+<p>auto_explain.log_buffers (boolean)</p>
+</blockquote>
+<p>Параметр auto_explain.log_buffers определяет, будет ли при протоколировании плана выполнения выводиться статистика об использовании буферов; он равносилен указанию BUFFERS команды EXPLAIN. Этот параметр действует, только если включён параметр <a href="#auto_explain.log_analyze">auto_explain.log_analyze</a>. По умолчанию этот параметр отключен.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_wal">auto_explain.log_wal<a href="#auto_explainlog_wal" class="hash-link" aria-label="Direct link to auto_explain.log_wal" title="Direct link to auto_explain.log_wal">​</a></h5>
+<blockquote>
+<p>auto_explain.log_wal (boolean)</p>
+</blockquote>
+<p>Параметр auto_explain.log_wal определяет, будет ли при протоколировании плана выполнения выводиться статистика об использовании WAL; он равносилен указанию WAL команды EXPLAIN. Этот параметр действует, только если включён параметр <a href="#auto_explain.log_analyze">auto_explain.log_analyze</a>. По умолчанию этот параметр отключён.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_timing">auto_explain.log_timing<a href="#auto_explainlog_timing" class="hash-link" aria-label="Direct link to auto_explain.log_timing" title="Direct link to auto_explain.log_timing">​</a></h5>
+<blockquote>
+<p>auto_explain.log_timing (boolean)</p>
+</blockquote>
+<p>Параметр auto_explain.log_timing определяет, будет ли при протоколировании плана выполнения выводиться длительность на уровне узлов: он равнозначен указанию TIMING команды EXPLAIN. Установка данного параметра может замедлить запросы в некоторых системах, так что возможно его следует отключать этот параметр, когда нужно знать только количество строк, но не точную длительность каждого узла. Этот параметр действует, только если включён <a href="#auto_explain.log_analyze">auto_explain.log_analyze</a>. По умолчанию этот параметр отключён.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_triggers">auto_explain.log_triggers<a href="#auto_explainlog_triggers" class="hash-link" aria-label="Direct link to auto_explain.log_triggers" title="Direct link to auto_explain.log_triggers">​</a></h5>
+<blockquote>
+<p>auto_explain.log_triggers (boolean)</p>
+</blockquote>
+<p>При включении параметра auto_explain.log_triggers в протокол будет записываться статистика выполнения триггеров. Этот параметр действует, только если включён параметр <a href="#auto_explain.log_analyze">auto_explain.log_analyze</a>. По умолчанию этот параметр отключён.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_verbose">auto_explain.log_verbose<a href="#auto_explainlog_verbose" class="hash-link" aria-label="Direct link to auto_explain.log_verbose" title="Direct link to auto_explain.log_verbose">​</a></h5>
+<blockquote>
+<p>auto_explain.log_verbose (boolean)</p>
+</blockquote>
+<p>Параметр auto_explain.log_verbose определяет, будут ли при протоколировании плана выполнения выводиться подробные сведения; он равнозначен указанию VERBOSE команды EXPLAIN. По умолчанию этот параметр отключён.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_settings">auto_explain.log_settings<a href="#auto_explainlog_settings" class="hash-link" aria-label="Direct link to auto_explain.log_settings" title="Direct link to auto_explain.log_settings">​</a></h5>
+<blockquote>
+<p>auto_explain.log_settings (boolean)</p>
+</blockquote>
+<p>Параметр auto_explain.log_settings определяет, будут ли вместе с планами выполнения выводиться изменённые параметры конфигурации. При его включении выводятся только те параметры, которые влияют на планирование запросов и имеют значения, отличающиеся от встроенных. По умолчанию этот параметр отключён. Изменить его могут только суперпользователи.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_format">auto_explain.log_format<a href="#auto_explainlog_format" class="hash-link" aria-label="Direct link to auto_explain.log_format" title="Direct link to auto_explain.log_format">​</a></h5>
+<blockquote>
+<p>auto_explain.log_format (enum)</p>
+</blockquote>
+<p>Параметр auto_explain.log_format выбирает формат вывода для EXPLAIN. Он может принимать значение text, xml, json и yaml. Значение по умолчанию — text. Изменить этот параметр могут только суперпользователи.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_level">auto_explain.log_level<a href="#auto_explainlog_level" class="hash-link" aria-label="Direct link to auto_explain.log_level" title="Direct link to auto_explain.log_level">​</a></h5>
+<blockquote>
+<p>auto_explain.log_level (enum)</p>
+</blockquote>
+<p>Параметр auto_explain.log_level выбирает уровень, с которым auto_explain будет выводить в протокол планы запросов. Допустимые значения: DEBUG5, DEBUG4, DEBUG3, DEBUG2, DEBUG1, INFO, NOTICE, WARNING и LOG. По умолчанию подразумевается LOG. Изменить этот параметр могут только суперпользователи.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainlog_nested_statements">auto_explain.log_nested_statements<a href="#auto_explainlog_nested_statements" class="hash-link" aria-label="Direct link to auto_explain.log_nested_statements" title="Direct link to auto_explain.log_nested_statements">​</a></h5>
+<blockquote>
+<p>auto_explain.log_nested_statements (boolean)</p>
+</blockquote>
+<p>При включении параметра auto_explain.log_nested_statements протоколированию могут подлежать и вложенные операторы (операторы, выполняемые внутри функции). Когда он отключён, протоколируются планы запросов только верхнего уровня. Изменить этот параметр могут только суперпользователи.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="auto_explainsample_rate">auto_explain.sample_rate<a href="#auto_explainsample_rate" class="hash-link" aria-label="Direct link to auto_explain.sample_rate" title="Direct link to auto_explain.sample_rate">​</a></h5>
+<blockquote>
+<p>auto_explain.sample_rate (real)</p>
+</blockquote>
+<p>Параметр auto_explain.sample_rate задаёт для auto_explain процент операторов, которые будут отслеживаться в каждом сеансе. Значение по умолчанию — 1, то есть отслеживаются все запросы. Вложенные операторы отслеживаются совместно — либо все, либо никакой из них. Изменить этот параметр могут только суперпользователи.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-конфигурационного-файла-postgresqlconf-целевой-субд">Настройка конфигурационного файла postgresql.conf целевой СУБД<a href="#настройка-конфигурационного-файла-postgresqlconf-целевой-субд" class="hash-link" aria-label="Direct link to Настройка конфигурационного файла postgresql.conf целевой СУБД" title="Direct link to Настройка конфигурационного файла postgresql.conf целевой СУБД">​</a></h4>
+<p>В разделе «Shared Library Preloading», конфигурационного файла /var/lib/jatoba/<ver>/data/postgresql.conf, для последующей загрузки расширений pgaudit и auto_explain, установить параметры:</ver></p>
+<blockquote>
+<p>shared_preload_libraries = &#x27;pgaudit,auto_explain&#x27;</p>
+</blockquote>
+<p>Проверить и установить параметры регистрации событий в СУБД:</p>
+<blockquote>
+<p>#-------------------------------------------------------------</p>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># JATOBA LOGGING PARAMETERS</span><br></span></code></pre></div></div>
+<blockquote>
+<p>#--------------------------------------------------------------</p>
+<p>logging_collector = on</p>
+<p>log_directory = &#x27;log&#x27;</p>
+<p>log_filename = &#x27;jatoba-%Y-%m-%d_%H%M%S.log&#x27;</p>
+<p>log_rotation_age = 1d</p>
+<p>log_rotation_size = 0</p>
+<p>log_truncate_on_rotation = on</p>
+<p>log_line_prefix = &#x27;%m [%p] app=%a host=%h user=%u db=%d &#x27;</p>
+<p>log_destination = &#x27;stderr,csvlog&#x27;</p>
+</blockquote>
+<p>Дополнительно установить параметры:</p>
+<blockquote>
+<p>log_min_duration_statement = 10</p>
+<p><a href="#auto_explain.log_min_duration">auto_explain.log_min_duration</a> = 10</p>
+<p><a href="#auto_explain.log_nested_statements">auto_explain.log_nested_statements</a> = true</p>
+<p><a href="#auto_explain.log_analyze">auto_explain.log_analyze</a> = true</p>
+<p><a href="#auto_explain.log_buffers">auto_explain.log_buffers</a> = true</p>
+<p><a href="#auto_explain.log_triggers">auto_explain.log_triggers</a> = on</p>
+<p>track_io_timing = &#x27;on&#x27;</p>
+</blockquote>
+<p>Для работы компонента «auto_explain» загрузки библиотеки будет достаточно.</p>
+<p>После применения установленных параметров, для установки компонента «pgaudit» потребуется войти в СУБД от имени и с правами пользователя «SUPERUSER», выполнить SQL–команду:</p>
+<blockquote>
+<p>CREATE EXTENSION pgaudit;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image5.png" style="width:7.08955in;height:1.10348in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 05-58-00.png" class="img_ev3q">
+<p>Рисунок 3.1 – Установка расширения «pgaudit»</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-файла-pg_hbaconf-целевой-субд">Настройка файла pg_hba.conf целевой СУБД<a href="#настройка-файла-pg_hbaconf-целевой-субд" class="hash-link" aria-label="Direct link to Настройка файла pg_hba.conf целевой СУБД" title="Direct link to Настройка файла pg_hba.conf целевой СУБД">​</a></h3>
+<p>На целевой СУБД должно быть разрешено подключение типа «local» роли «postgres» в режиме аутентификации «peer».</p>
+<p>В конфигурационный файл /var/lib/jatoba/<ver>/data/pg_hba.conf добавить строку:</ver></p>
+<blockquote>
+<p>local all postgres peer</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image6.png" style="width:6.66234in;height:2.90833in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-22 14-03-19.png" class="img_ev3q">
+<p>Рисунок 3.2 – Строка подключения в конфигурационном файле pg_hba.conf</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-ssh-сервера-на-целевой-субд">Настройка SSH-сервера на целевой СУБД<a href="#настройка-ssh-сервера-на-целевой-субд" class="hash-link" aria-label="Direct link to Настройка SSH-сервера на целевой СУБД" title="Direct link to Настройка SSH-сервера на целевой СУБД">​</a></h3>
+<p>Подключение к целевой СУБД службой pg-monitor-collector осуществляется по протоколу SSH. Для этого на целевой СУБД должен быть установлен SSH-сервер.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="установка-необходимых-пакетов">Установка необходимых пакетов<a href="#установка-необходимых-пакетов" class="hash-link" aria-label="Direct link to Установка необходимых пакетов" title="Direct link to Установка необходимых пакетов">​</a></h4>
+<p>Установка необходимых пакетов выполняется от имени и с правами привилегированного пользователя в терминале ОС.</p>
+<p>Первоначально обновляется ОС командой:</p>
+<blockquote>
+<p>sudo apt update &amp;&amp; sudo apt upgrade</p>
+</blockquote>
+<p>Пакет, необходимый для запуска SSH-сервера, предоставляется компонентом openssh-server из OpenSSH и устанавливается командой:</p>
+<blockquote>
+<p>sudo apt install openssh-server</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image7.png" style="width:6.68831in;height:2.60346in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-22 15-13-51.png" class="img_ev3q">
+<p>Рисунок 3.3 – Установка openssh-server</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-статуса-сервера">Проверка статуса сервера<a href="#проверка-статуса-сервера" class="hash-link" aria-label="Direct link to Проверка статуса сервера" title="Direct link to Проверка статуса сервера">​</a></h4>
+<p>После завершения загрузки и установки пакета служба SSH должна быть уже запущена. Статус службы проверяется командой:</p>
+<blockquote>
+<p>service ssh status</p>
+</blockquote>
+<p>Также можно использовать команды systemd:</p>
+<blockquote>
+<p>sudo systemctl status ssh</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image8.png" style="width:6.68182in;height:2.60278in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-22 15-16-33.png" class="img_ev3q">
+<p>Рисунок 3.4 – Вывод статуса службы SSH</p>
+<p>В выводе команды статус службы SSH должен быть в состоянии «Active».</p>
+<p>Если служба не работает, она активируется командой:</p>
+<blockquote>
+<p>sudo systemctl enable --now ssh</p>
+</blockquote>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="разрешение-ssh-соединения-через-брандмауэр">Разрешение SSH соединения через брандмауэр<a href="#разрешение-ssh-соединения-через-брандмауэр" class="hash-link" aria-label="Direct link to Разрешение SSH соединения через брандмауэр" title="Direct link to Разрешение SSH соединения через брандмауэр">​</a></h4>
+<p>В операционных системах Linux поставляется с утилита межсетевого экрана UFW (UncomplicatedFirewall), которая представляет собой интерфейс для утилиты командной строки iptables, который, в свою очередь, управляет сетевыми правилами.</p>
+<p>Если брандмауэр активен, он может помешать подключению к SSH-серверу.</p>
+<p>Чтобы настроить брандмауэр для разрешения требуемого доступа, необходимо выполнить следующую команду:</p>
+<blockquote>
+<p>sudo ufw allow ssh</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image9.png" style="width:6.68182in;height:1.13611in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-04-22 15-19-58.png" class="img_ev3q">
+<p>Рисунок 3.5 – Команда разрешения SSH-соединений</p>
+<p>Статус UFW можно проверить командой:</p>
+<blockquote>
+<p>sudo ufw status</p>
+</blockquote>
+<p>На данном этапе SSH-сервер запущен и ожидает соединения от клиента.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-сервера-ssh">Настройка сервера SSH<a href="#настройка-сервера-ssh" class="hash-link" aria-label="Direct link to Настройка сервера SSH" title="Direct link to Настройка сервера SSH">​</a></h4>
+<p>Настройки сервера SSH находятся в файле /etc/ssh/sshd_config, в котором требуется установить параметры, приведенные ниже.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="порт-ssh">Порт SSH<a href="#порт-ssh" class="hash-link" aria-label="Direct link to Порт SSH" title="Direct link to Порт SSH">​</a></h5>
+<p>По умолчанию SSH работает на порту 22, но такое поведение является небезопасным, поскольку злоумышленник может попробовать выполнить «Bruteforce» атаку для перебора пароля. Порт задается строчкой:</p>
+<blockquote>
+<p>Port 22</p>
+</blockquote>
+<p>Необходимо изменить значение порта на требуемое.</p>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="протокол-ssh">Протокол SSH<a href="#протокол-ssh" class="hash-link" aria-label="Direct link to Протокол SSH" title="Direct link to Протокол SSH">​</a></h5>
+<p>По умолчанию сервер SSH может работать по двум версиям протокола для совместимости. Чтобы использовать только протокол версии два, необходимо раскомментировать строку и привести ее к такому виду:</p>
+<blockquote>
+<p>Protocol 2</p>
+</blockquote>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="root-доступ">ROOT доступ<a href="#root-доступ" class="hash-link" aria-label="Direct link to ROOT доступ" title="Direct link to ROOT доступ">​</a></h5>
+<p>По умолчанию Root доступ по SSH разрешен, но такое поведение небезопасно, поэтому следует раскомментировать строку:</p>
+<blockquote>
+<p>PermitRootLogin no</p>
+</blockquote>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="доступ-только-определенного-пользователя-к-ssh">Доступ только определенного пользователя к SSH<a href="#доступ-только-определенного-пользователя-к-ssh" class="hash-link" aria-label="Direct link to Доступ только определенного пользователя к SSH" title="Direct link to Доступ только определенного пользователя к SSH">​</a></h5>
+<p>Требуется разрешить доступ к SSH только для определенного пользователя или группы. Для этого необходимо добавить следующие строки:</p>
+<blockquote>
+<p>AllowUsers User1, User2, User3</p>
+<p>AllowGroups Group1, Group2, Group3</p>
+</blockquote>
+<p>Здесь User1 и Group1 – пользователь и группа, которым нужно разрешить доступ.</p>
+<p>В рассматриваемом примере в ОС сервера целевых СУБД, используются пользователи admin и admin1. Им следует разрешить доступ по SSH, добавив строку:</p>
+<blockquote>
+<p>AllowUsers admin, admin1</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image10.png" style="width:6.73377in;height:1.25278in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-04-23 15-22-13.png" class="img_ev3q">
+<p>Рисунок 3.6 – Строка с именами пользователей которым разрешен доступ по SSH</p>
+<p>Выполнив конфигурирование SSH сервера, потребуется перезагрузить службу командами:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl stop ssh</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl start ssh</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl status ssh</span><br></span></code></pre></div></div>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image11.png" style="width:6.64935in;height:1.63611in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-04-23 15-33-44.png" class="img_ev3q">
+<p>Рисунок 3.7 – Перезапуск службы SSH</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-и-настройка-pg-explain">Установка и настройка pg-explain<a href="#установка-и-настройка-pg-explain" class="hash-link" aria-label="Direct link to Установка и настройка pg-explain" title="Direct link to Установка и настройка pg-explain">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="предварительные-требования-к-установке">Предварительные требования к установке<a href="#предварительные-требования-к-установке" class="hash-link" aria-label="Direct link to Предварительные требования к установке" title="Direct link to Предварительные требования к установке">​</a></h3>
+<p>На узлах системы должна быть установлена СУБД «Jatoba» в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по установке».</p>
+<p>После установки СУБД обязательно устанавливается пароль для системного пользователя ОС «postgres»:</p>
+<blockquote>
+<p>sudo passwd postgres</p>
+</blockquote>
+<p>А также для пользователя СУБД:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># su –l postgres</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># psql</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># \password</span><br></span></code></pre></div></div>
+<p>Компонент пользовательского веб-интерфейса для администраторов «Jatoba data safe» (JDS) устанавливается в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe», в зависимости от требуемой архитектуры, описанной в разделе 2 документа.</p>
+<p>Установка пакетов, входящих в pg-explain, выполняется из архива JDS.</p>
+<p>Для рассматриваемого примера, необходимо создать каталог /usr/share/jds командой:</p>
+<blockquote>
+<p>sudo mkdir /usr/share/jds</p>
+</blockquote>
+<p>С дистрибутивного диска «Disk1» из каталога «Jatoba Data Safe» скопировать файлы и каталог пакета установки в созданный каталог:</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>каталог – packages, содержащий пакеты установки;каталог – utils, содержащий конфигурационные файлы;скрипт – jds.sh.<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image12.png" style="width:3.47986in;height:1.15254in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\UI JDS\1ё23,\Screenshot from 2022-12-13 23-12-21.png" class="img_ev3q"></p>
+<p>Рисунок 4.1 – Структура каталогов</p>
+<p>В каталоге packages находятся пакеты pg-explain помимо пакета компонента JDS.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="установка-pg_repack">Установка pg_repack<a href="#установка-pg_repack" class="hash-link" aria-label="Direct link to Установка pg_repack" title="Direct link to Установка pg_repack">​</a></h3>
+<p>Компонент pg_repack, требуемый для работы системы, включен в состав СУБД «Jatoba» в качестве внешней утилиты и расширения, начиная с версии 5.6.1-54937.</p>
+<p>Установка компонента осуществляется командой:</p>
+<blockquote>
+<p>apt install jatoba5-pg-repack</p>
+</blockquote>
+<p>На данном шаге расширение в СУБД устанавливать не требуется, т.к. устанавливается последовательно по шагам описанным ниже в п. 4.3.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="установка-explain-db">Установка explain db<a href="#установка-explain-db" class="hash-link" aria-label="Direct link to Установка explain db" title="Direct link to Установка explain db">​</a></h3>
+<p>Перейти в каталог с разархивированными пакетами JDS:</p>
+<blockquote>
+<p>cd /usr/share/jds/packages</p>
+</blockquote>
+<p>Установить пакет pg-explain-db_&lt;version&gt;-&lt;buildnumber&gt;_amd64.deb:</p>
+<blockquote>
+<p>apt install ./pg-explain-db_1.5.15-20240216_amd64.deb</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image13.png" style="width:7.08209in;height:1.54827in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 14-02-27.png" class="img_ev3q">
+<p>Рисунок 4.2 – Установка пакета pg-explain-db</p>
+<p>Перейти в каталог /usr/local/lib/pg-explain-db:</p>
+<blockquote>
+<p>cd /usr/local/lib/pg-explain-db</p>
+</blockquote>
+<p>Установить права на выполнение:</p>
+<blockquote>
+<p>chmod 755 install.sh ./scripts/clear_dsk_space.sh ./scripts/create_partitions.sh ./scripts/repack.sh</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image14.png" style="width:7.06853in;height:1.55224in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 14-05-27.png" class="img_ev3q">
+<p>Рисунок 4.3 – Команда установки прав на выполнение</p>
+<p>С помощью текстового редактора открыть файл ./scripts/repack.sh:</p>
+<blockquote>
+<p>nano ./scripts/repack.sh</p>
+</blockquote>
+<p>Исправить строку с указанием установленной версии СУБД «Jatoba»:</p>
+<blockquote>
+<p>REPACK=/usr/pgsql-14/bin/pg_repack</p>
+</blockquote>
+<p>на строку со следующим содержанием:</p>
+<blockquote>
+<p>REPACK=/usr/jatoba-5/bin/pg_repack</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image15.png" style="width:7.11676in;height:2.1194in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 14-07-58.png" class="img_ev3q">
+<p>Рисунок 4.4 – Содержание файла ./scripts/repack.sh</p>
+<p>Запустить основной скрипт установки:</p>
+<blockquote>
+<p>./install.sh</p>
+</blockquote>
+<p>В скрипте потребуется выполнить следующие шаги:</p>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Указать хост БД:Enter database hostname (localhost):</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Указать порт БД:Enter database port (5432):</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Указать имя создаваемой БД:Enter database name (pg-monitor):</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Ввести имя пользователя, от имени которого будет создана БД:Enter username to create database (postgres):</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Ввести пароль пользователя, от имени которого будет создана БД:Enter password for user &quot;postgres&quot;:</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Ввести имя пользователя БД:Enter pg-explain database user (explain):</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>Ввести пароль для создаваемого пользователя:Enter password for pg-explain user (explain):</p>
+</blockquote>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>При активированной парольной политике компонентом «securityprofile» устанавливаемый пароль должен соответствовать требования безопасности</th></tr></thead></table>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image16.png" style="width:6.70833in;height:4.36389in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 08-52-43.png" class="img_ev3q">
+<p>Рисунок 4.5 – Выполнение скрипта установки</p>
+<p>Подключиться к созданной в процессе установки базе и создать в ней расширение:</p>
+<blockquote>
+<p>CREATE EXTENSION pg_repack;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image17.png" style="width:6.69792in;height:1.31181in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 12-54-18.png" class="img_ev3q">
+<p>Рисунок 4.6 – SQL-команда создания расширения pg_repack</p>
+<p>Если установка пройдет с ошибками, удалить БД pg-monitor (название по умолчанию), исправить ошибки и запустить install.sh снова.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="установка-pg-monitor">Установка pg-monitor<a href="#установка-pg-monitor" class="hash-link" aria-label="Direct link to Установка pg-monitor" title="Direct link to Установка pg-monitor">​</a></h3>
+<p>Пакет pg-monitor располагается в каталоге с разархивированными пакетами JDS:</p>
+<blockquote>
+<p>cd /usr/share/jds/packages</p>
+</blockquote>
+<p>Установка пакета pg-monitor_&lt;version&gt;-&lt;buildnumber&gt;_amd64.deb выполняется командой:</p>
+<blockquote>
+<p>apt install ./pg-monitor_1.5.6-20240216_amd64.deb</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image18.png" style="width:6.60417in;height:3.10347in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 15-15-49.png" class="img_ev3q">
+<p>Рисунок 4.7 – Установка пакета pg-monitor</p>
+<p>Перейти в каталог /usr/local/lib/pg-monitor:</p>
+<blockquote>
+<p>cd /usr/local/lib/pg-monitor</p>
+</blockquote>
+<p>Переименовать файл app.cfg.json.example в файл app.cfg.json с помощью команды:</p>
+<blockquote>
+<p>mv app.cfg.json.example app.cfg.json</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image19.png" style="width:6.6875in;height:1.59306in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 15-54-41.png" class="img_ev3q">
+<p>Рисунок 4.8 – Переименование файла</p>
+<p>Создать каталог для журнала аудита компонента:</p>
+<blockquote>
+<p>mkdir -p /var/log/pg-explain/offline</p>
+</blockquote>
+<p>Отредактировать файл app.cfg.json командой:</p>
+<blockquote>
+<p>nano app.cfg.json</p>
+</blockquote>
+<p>Установить требуемые параметры, такие как пароль, база данных, num_workers по числу процессорных ядер и т. д.:</p>
+<blockquote>
+<p>{</p>
+<p>&quot;db&quot;: {</p>
+<p>&quot;host&quot; : &quot;localhost&quot;,</p>
+<p>&quot;port&quot; : 5432,</p>
+<p>&quot;user&quot;: &quot;postgres&quot;,</p>
+<p>&quot;password&quot;: &quot;password&quot;,</p>
+<p>&quot;database&quot;: &quot;pg-monitor&quot;,</p>
+<p>&quot;name&quot;: &quot;pg-monitor&quot;,</p>
+<p>&quot;timeoutReconnect&quot;: 10000</p>
+<p>},</p>
+<p>&quot;offline&quot;: {</p>
+<p>&quot;hostname&quot;: &quot;pg-explain&quot;,</p>
+<p>&quot;logdir&quot;: &quot;/var/log/pg-explain/offline&quot;</p>
+<p>},</p>
+<p>&quot;tasktype&quot;: &quot;any&quot;,</p>
+<p>&quot;num_workers&quot;: 8,</p>
+<p>. . .</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image20.png" style="width:6.66087in;height:5.28596in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-20 10-47-17.png" class="img_ev3q">
+<p>Рисунок 4.9 – Содержание конфигурационного файла app.cfg.json</p>
+<p>Запустить службу pg-monitor командами в терминале ОС:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl start pg-monitor</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl enable pg-monitor</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl status pg-monitor</span><br></span></code></pre></div></div>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image21.png" style="width:6.67164in;height:2.73819in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 16-13-23.png" class="img_ev3q">
+<p>Рисунок 4.10 – Запуск и статус службы «pg-monitor»</p>
+<p>В веб-браузере проверить состояние службы:</p>
+<blockquote>
+<p>http://&lt;ip-адрес-сервиса-pg-monitor&gt;:8000</p>
+</blockquote>
+<p>В рассматриваемом примере адрес будет следующим:</p>
+<blockquote>
+<p><a href="http://10.116.102.59:8000" target="_blank" rel="noopener noreferrer">http://10.116.102.59:8000</a></p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image22.png" style="width:7.08681in;height:1.50833in" class="img_ev3q">
+<p>Рисунок 4.11 – Веб-интерфейс «pg-monitor»</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="установка-pg-monitor-collector">Установка pg-monitor-collector<a href="#установка-pg-monitor-collector" class="hash-link" aria-label="Direct link to Установка pg-monitor-collector" title="Direct link to Установка pg-monitor-collector">​</a></h3>
+<p>Служба «pg-monitor-collector» установится автоматически после установки «pg-monitor-collector».</p>
+<p>Для полноценного функционирования достаточно добавить ее в автозагрузку ОС и проверить статус командами:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl enable pg-monitor-collector</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl status pg-monitor-collector</span><br></span></code></pre></div></div>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image23.png" style="width:6.65672in;height:3.23056in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 16-36-36.png" class="img_ev3q">
+<p>Рисунок 4.12 – Статус службы «pg-monitor-collector»</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-ssh-доступа-к-узлам">Настройка SSH-доступа к узлам<a href="#настройка-ssh-доступа-к-узлам" class="hash-link" aria-label="Direct link to Настройка SSH-доступа к узлам" title="Direct link to Настройка SSH-доступа к узлам">​</a></h3>
+<p>Мониторинг удаленных узлов по протоколу SSH требуется предварительная настройка беспарольного доступа (по сертификату). Для чего необходимо создать ключи SSH для аутентификации на локальном сервере, при помощи утилиты ssh-keygen, которая входит в набор утилит OpenSSH. По умолчанию она создает пару 2048 битных RSA ключей.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="генерация-ключей-ssh">Генерация ключей SSH<a href="#генерация-ключей-ssh" class="hash-link" aria-label="Direct link to Генерация ключей SSH" title="Direct link to Генерация ключей SSH">​</a></h4>
+<p>Генерация ключей SSH выполняется командой:</p>
+<blockquote>
+<p>ssh-keygen</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image24.png" style="width:6.64935in;height:1.03194in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 10-35-22.png" class="img_ev3q">
+<p>Рисунок 4.13 – Команда генерации ключей</p>
+<p>Утилита предложит выбрать расположение ключей. По умолчанию ключи располагаются в папке ~/.ssh/.</p>
+<p>Секретный ключ будет называться id_rsa, а публичный id_rsa.pub.</p>
+<p>Затем утилита предложит ввести пароль для дополнительного шифрования ключа на диске. Его можно не указывать, нажав «Enter».</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image25.png" style="width:6.64935in;height:1.14861in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 13-04-24.png" class="img_ev3q">
+<p>Рисунок 4.14 – Шаг ввода пароля для генерируемого ключа</p>
+<p>Далее утилита сгенерирует ключи SSH.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image26.png" style="width:6.65584in;height:4.02566in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 13-05-18.png" class="img_ev3q">
+<p>Рисунок 4.15 – Генерирование ключей SSH</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="загрузка-ключа-на-сервер">Загрузка ключа на сервер<a href="#загрузка-ключа-на-сервер" class="hash-link" aria-label="Direct link to Загрузка ключа на сервер" title="Direct link to Загрузка ключа на сервер">​</a></h4>
+<p>Когда генерация ключей завершена, следует загрузить ключ на сервер целевой СУБД «Jatoba». Загрузка выполняется утилитой ssh-copy-id. Она входит в пакет программ OpenSSH. Для загрузки ключа необходим пароль доступа к серверу по SSH.</p>
+<p>Синтаксис команды:</p>
+<blockquote>
+<p>ssh-copy-id -i ~/.ssh/id_rsa.pub имя_пользователя@ip-сервера</p>
+</blockquote>
+<p>В рассматриваемом примере ключ SSH требуется скопировать на целевую СУБД с IP- 10.116.102.56 от пользователя ОС сервера СУБД (см. п. 3.3.4.4). Команда копирования будет следующей:</p>
+<blockquote>
+<p>ssh-copy-id -i ~/.ssh/id_rsa.pub admin1@10.116.102.56</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image27.png" style="width:6.688in;height:3.45555in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-01-33.png" class="img_ev3q">
+<p>Рисунок 4.16 – Копирование ключа SSH на сервер SSH целевой СУБД</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-созданного-подключения">Проверка созданного подключения<a href="#проверка-созданного-подключения" class="hash-link" aria-label="Direct link to Проверка созданного подключения" title="Direct link to Проверка созданного подключения">​</a></h4>
+<p>Проверка созданного подключения выполняется командой с сервера с установленным pg_explain:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># ssh postgres@ip-сервера</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># exit</span><br></span></code></pre></div></div>
+<p>В рассматриваемом примере команда подключения будет следующей:</p>
+<blockquote>
+<p>ssh admin1@10.116.102.56</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image28.png" style="width:6.712in;height:3.97569in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-19-38.png" class="img_ev3q">
+<p>Рисунок 4.17 – Проверка подключения по SSH к целевой СУБД</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="копирование-ключа-ssh-в-каталог-pg-monitor">Копирование ключа SSH в каталог pg-monitor<a href="#копирование-ключа-ssh-в-каталог-pg-monitor" class="hash-link" aria-label="Direct link to Копирование ключа SSH в каталог pg-monitor" title="Direct link to Копирование ключа SSH в каталог pg-monitor">​</a></h4>
+<p>Скопировать закрытый ключ в каталог pg-monitor/ssh_keys. Файл должен обязательно присутствовать для запуска службы:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># cp ~/.ssh/id_rsa /usr/local/lib/pg-monitor/ssh_keys</span><br></span></code></pre></div></div>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image29.png" style="width:6.68in;height:1.2875in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-33-19.png" class="img_ev3q">
+<p>Рисунок 4.18 – Копирование ключа SSH в каталог pg-monitor</p>
+<p>Дать пользователю «explain» права на файл командой:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># chown explain:explain /usr/local/lib/pg-monitor/ssh_keys/id_rsa</span><br></span></code></pre></div></div>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image30.png" style="width:6.63759in;height:1.60694in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-35-57.png" class="img_ev3q">
+<p>Рисунок 4.19 – Установка прав</p>
+<p>Перезапустить службу коллектора:</p>
+<blockquote>
+<p>systemctl restart pg-monitor-collector.service</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="установка-pg-explain">Установка pg-explain<a href="#установка-pg-explain" class="hash-link" aria-label="Direct link to Установка pg-explain" title="Direct link to Установка pg-explain">​</a></h3>
+<p>Установить пакет pg-explain_&lt;version&gt;-&lt;buildnumber&gt;_amd64.deb командами:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># cd /usr/share/jds/packages</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># apt install ./pg-explain_1.5.9-20240216_amd64.deb</span><br></span></code></pre></div></div>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image31.png" style="width:6.63958in;height:3.904in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 15-08-17.png" class="img_ev3q">
+<p>Рисунок 4.20 – Установка пакета pg-explain</p>
+<p>Перейти в каталог /usr/local/lib/pg-explain:</p>
+<blockquote>
+<p>cd /usr/local/lib/pg-explain</p>
+</blockquote>
+<p>Переименовать файл app.conf.example:</p>
+<blockquote>
+<p>mv app.conf.example app.conf</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image32.png" style="width:6.696in;height:0.99923in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 16-03-34.png" class="img_ev3q">
+<p>Рисунок 4.21 – Команда переименования файла</p>
+<p>Отредактировать app.conf под требуемые настройки СУБД (БД по умолчанию pg-monitor):</p>
+<blockquote>
+<p>nano app.conf</p>
+</blockquote>
+<p>Параметры используются такие же, как и при установке компонента explain db, как описано в п. 4.3 настоящего документа и показано на рисунке Рисунок 4.5.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image33.png" style="width:6.60298in;height:1.79221in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 16-20-44.png" class="img_ev3q">
+<p>Рисунок 4.22 – Содержание файла app.conf</p>
+<p>Запустить службу pg-explain:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl start pg-explain.service</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl enable pg-explain.service</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl status pg-explain.service</span><br></span></code></pre></div></div>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image34.png" style="width:6.68in;height:1.6875in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 16-29-50.png" class="img_ev3q">
+<p>Рисунок 4.23 – Запуск и вывод статуса службы pg-explain.service</p>
+<p>В веб-браузере проверить состояние службы:</p>
+<blockquote>
+<p>http://&lt;ip-адрес-сервиса-pg-explain&gt;:8080</p>
+</blockquote>
+<p>В рассматриваемом примере адрес сервиса pg-explain будет следующим:</p>
+<blockquote>
+<p><a href="http://10.116.102.59:8080/" target="_blank" rel="noopener noreferrer">http://10.116.102.59:8080/</a></p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image35.png" style="width:7.05933in;height:3.70939in" class="img_ev3q">
+<p>Рисунок 4.24 – Веб-страница сервиса pg-explain</p>
+<p>При ошибке «Слишком много клиентов» в статусе службы увеличить параметр «max_connections» в файле конфигурационном файле «postgresql.conf» сервера с установленным компонентом «explain».</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-jds-для-взаимодействия-с-сервисами">Настройка JDS для взаимодействия с сервисами<a href="#настройка-jds-для-взаимодействия-с-сервисами" class="hash-link" aria-label="Direct link to Настройка JDS для взаимодействия с сервисами" title="Direct link to Настройка JDS для взаимодействия с сервисами">​</a></h2>
+<p>Работа компонентов обеспечивается корректно настроенными протоколами, описанными в таблице Таблица 5.1</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Компонент</strong></th><th><strong>Протокол</strong></th><th><strong>Компонент</strong></th><th><strong>Протокол</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>JDS</td><td>http</td><td>pg-explain</td><td>http</td><td>корректная работа</td></tr><tr><td>JDS</td><td>http/https</td><td>pg-explain</td><td>https</td><td>корректная работа при наличии у pg-explain валидного сертификата или, если сертификат не валидный (self-signed и т.п.), то после отдельного подтверждения pg-explain в браузере</td></tr><tr><td>JDS</td><td>https</td><td>pg-explain</td><td>http</td><td>данная связка работать не будет из-за ограничений безопасности браузеров</td></tr></tbody></table>
+<p>Таблица 5.1 – Протоколы взаимодействия компонентов</p>
+<p>Поэтому требуется настроить реверс-прокси для перенаправления запросов к pg-explain.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-pg-explain-на-узле-отдельном-от-узла-jds">Настройка pg-explain на узле отдельном от узла JDS<a href="#настройка-pg-explain-на-узле-отдельном-от-узла-jds" class="hash-link" aria-label="Direct link to Настройка pg-explain на узле отдельном от узла JDS" title="Direct link to Настройка pg-explain на узле отдельном от узла JDS">​</a></h3>
+<p>Компонент JDS имеет функциональную возможность работы без веб-сервера nginx. Поэтому веб-сервера nginx может быть установлен после.</p>
+<p>Установка компонент JDS выполняется с помощью инсталлятора, а веб-сервер nginx с помощью скрипта установки, как описано в документе «Защищенная система управления базами данных «Jatoba». Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe».</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image36-d7002c010a93dad8155fc13a51f7745a.png" width="3028" height="1124" class="img_ev3q"></p>
+<p>До конфигурирования компонентов должны быть выполнены действия, описанные в разделах:</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="3-установка-и-настройка-целевой-субд-jatoba4-установка-и-настройка-pg-explainустановка-веб-сервера-nginx-на-сервере-служебной-субд-pg-explain">3 «Установка и настройка целевой СУБД «Jatoba»;4 «Установка и настройка pg-explain».Установка веб-сервера nginx на сервере служебной СУБД pg-explain<a href="#3-установка-и-настройка-целевой-субд-jatoba4-установка-и-настройка-pg-explainустановка-веб-сервера-nginx-на-сервере-служебной-субд-pg-explain" class="hash-link" aria-label="Direct link to 3 «Установка и настройка целевой СУБД «Jatoba»;4 «Установка и настройка pg-explain».Установка веб-сервера nginx на сервере служебной СУБД pg-explain" title="Direct link to 3 «Установка и настройка целевой СУБД «Jatoba»;4 «Установка и настройка pg-explain».Установка веб-сервера nginx на сервере служебной СУБД pg-explain">​</a></h4>
+<p>Установка пакета nginx выполняется из репозитория ОС. Использование скрипта установки nginx.sh, расположенного в каталоге /usr/share/jds/utils, нецелесообразно, т.к. он выполнит конфигурирование веб-сервера для компонента JDS.</p>
+<p>Установить nginx:</p>
+<blockquote>
+<p>apt install -y nginx</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image37.png" style="width:6.64286in;height:2.45411in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 14-53-30.png" class="img_ev3q">
+<p>Рисунок 5.1 – Установка nginx</p>
+<p>Проверить статус веб-сервера:</p>
+<blockquote>
+<p>systemctl status nginx</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image38.png" style="width:6.69481in;height:1.33056in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 14-55-58.png" class="img_ev3q">
+<p>Рисунок 5.2 – Статус службы nginx</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="создание-сертификата-и-ключа">Создание сертификата и ключа<a href="#создание-сертификата-и-ключа" class="hash-link" aria-label="Direct link to Создание сертификата и ключа" title="Direct link to Создание сертификата и ключа">​</a></h4>
+<p>Создать папку для сертификата и ключа командой:</p>
+<blockquote>
+<p>mkdir /etc/nginx/ssl</p>
+</blockquote>
+<p>Создать сертификат и ключ: 4096</p>
+<blockquote>
+<p>openssl req -x509 -nodes -days 3650 -newkey rsa:4096 -keyout /etc/nginx/ssl/nginx-explain.key -out /etc/nginx/ssl/nginx-explain.crt</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image39.png" style="width:6.66956in;height:1.16458in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-27 15-30-24.png" class="img_ev3q">
+<p>Рисунок 5.3 – Команда создания ключа и сертификата</p>
+<p>Процесс формирования сертификата потребует ввода значений по параметрам, приведенным в таблице Таблица 5.2. В этой же таблице приведены значения, которые использовались для формирования примера.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Параметры</strong></th><th><strong>Примерные значения</strong></th></tr></thead><tbody><tr><td>Country Name (2 letter code) [AU]</td><td>RU</td></tr><tr><td>State or Province Name (full name) [Some-State]</td><td>Leningrad obl</td></tr><tr><td>Locality Name (eg, city) []</td><td>Saint Petersburg</td></tr><tr><td>Organization Name (eg, company) [Internet Widgits Pty Ltd]</td><td>Datagile</td></tr><tr><td>Organizational Unit Name (eg, section) []</td><td>Private</td></tr><tr><td>Common Name (e.g. server FQDN or YOUR name) []</td><td>NAME</td></tr><tr><td>Email Address []</td><td><a href="mailto:test@datagile.ru" target="_blank" rel="noopener noreferrer">test@datagile.ru</a></td></tr></tbody></table>
+<p>Таблица 5.2 – Параметры формирования сертификата</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image40.png" style="width:6.66883in;height:3.23958in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 15-34-24.png" class="img_ev3q">
+<p>Рисунок 5.4 – Вводимые параметры для формирования сертификата</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="создание-конфигурации-сайта">Создание конфигурации сайта<a href="#создание-конфигурации-сайта" class="hash-link" aria-label="Direct link to Создание конфигурации сайта" title="Direct link to Создание конфигурации сайта">​</a></h4>
+<p>Создать файл конфигурации сайта командой:</p>
+<blockquote>
+<p>nano /etc/nginx/conf.d/explain.https.conf</p>
+</blockquote>
+<p>Вставить текст и сохранить:</p>
+<blockquote>
+<p>server {</p>
+<p>charset utf-8;</p>
+<p>access_log /var/log/nginx/explain.access.log;</p>
+<p>error_log /var/log/nginx/explain.error.log;</p>
+<p>listen 443 ssl;</p>
+<p>ssl_certificate /etc/nginx/ssl/nginx-explain.crt;</p>
+<p>ssl_certificate_key /etc/nginx/ssl/nginx-explain.key;</p>
+<p>location / {</p>
+<p>proxy_pass <a href="http://localhost:8080" target="_blank" rel="noopener noreferrer">http://localhost:8080</a>;</p>
+<p>}</p>
+<p>}</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image41.png" style="width:6.7013in;height:2.75889in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 16-01-07.png" class="img_ev3q">
+<p>Рисунок 5.5 – Содержание файл конфигурации сайта</p>
+<p>Перезапустить службу nginx:</p>
+<blockquote>
+<p>systemctl restart nginx</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image42.png" style="width:6.699in;height:1.50556in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 16-04-28.png" class="img_ev3q">
+<p>Рисунок 5.6 – Перезапуск и вывод статуса службы nginx</p>
+<p>Проверить в браузере работу explain по https, дать подтверждение системе безопасности при запросе про недействительный сертификат:</p>
+<blockquote>
+<p>https://&lt;адрес сервера explain&gt;</p>
+</blockquote>
+<p>В рассматриваемом примере используется адрес:</p>
+<blockquote>
+<p><a href="https://localhost:8080/" target="_blank" rel="noopener noreferrer">https://localhost:8080/</a></p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image43.png" style="width:7.08681in;height:2.97027in" class="img_ev3q">
+<p>Рисунок 5.7 – Проверка работы сайта</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="конфигурирование-компонента-jds-на-отдельном-узле">Конфигурирование компонента JDS на отдельном узле<a href="#конфигурирование-компонента-jds-на-отдельном-узле" class="hash-link" aria-label="Direct link to Конфигурирование компонента JDS на отдельном узле" title="Direct link to Конфигурирование компонента JDS на отдельном узле">​</a></h4>
+<p>Взаимодействие JDS с сервисом pg-explain настраивается в конфигурационном файле компонента JDS appsettings.json. В свойстве PgExplainConfig.BaseAddress указать URL, по которому доступен https-сервис pg-explain.</p>
+<p>Например</p>
+<p>Выполнить команду редактирования файла appsettings.json:</p>
+<blockquote>
+<p>nano /opt/jds/appsettings.json</p>
+</blockquote>
+<p>Установить строки с синтаксисом:</p>
+<blockquote>
+<p>&quot;PgExplainConfig&quot;: {</p>
+<p>&quot;BaseAddress&quot;: &quot;https://&lt;адрес сервера explain&gt;&quot;</p>
+</blockquote>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Адрес должен быть указан без знака дробной черты (solidus) «/»</th></tr></thead></table>
+<p>В рассматриваемом примере один из узлов имеет IP-адрес 10.116.102.59 и строка конфигурационного файла appsettings.json компонента JDS будет иметь следующий вид:</p>
+<blockquote>
+<p>&quot;PgExplainConfig&quot;: {</p>
+<p>&quot;BaseAddress&quot;: &quot;<a href="https://10.116.102.59" target="_blank" rel="noopener noreferrer">https://10.116.102.59</a>&quot;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image44.png" style="width:7.08681in;height:0.99583in" class="img_ev3q">
+<p>Рисунок 5.8 – Содержание конфигурационного файла appsettings.json компонента JDS</p>
+<p>Войти в веб-интерфейс компонента JDS. Перейти в подраздел «Анализ запросов».<br>
+На вкладке «Настройки» нажать кнопку «Добавить». Ввести IP-адрес узла с наблюдаемой СУБД, порт (если он отличается от стандартного 5432) и отметить флагами пункты собираемой статистики и сохранить.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image45.png" style="width:7.08681in;height:3.02609in" class="img_ev3q">
+<p>Рисунок 5.9 – Вкладка «Настройки» раздела «Анализ запросов»</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-pg-explain-на-одном-узле-с-jds">Настройка pg-explain на одном узле с JDS<a href="#настройка-pg-explain-на-одном-узле-с-jds" class="hash-link" aria-label="Direct link to Настройка pg-explain на одном узле с JDS" title="Direct link to Настройка pg-explain на одном узле с JDS">​</a></h3>
+<p>Компонент JDS может быть установлен до установки pg-explain. Порядок установки компонент не принципиален. Связь компонентом обеспечивается веб-сервером nginx с конфигурациями под каждый из компонентов.</p>
+<p>В силу особенностей конфигурации компонентов потребуется редактировать параметры портов по протоколу HTTPS.</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image46-55f0f8fb296823d4f0759f17bd6ffbd8.png" width="2506" height="1125" class="img_ev3q"></p>
+<p>Рисунок 5.10 – Схема взаимодействия компонентов</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="установка-компонента-jds">Установка компонента JDS<a href="#установка-компонента-jds" class="hash-link" aria-label="Direct link to Установка компонента JDS" title="Direct link to Установка компонента JDS">​</a></h4>
+<p>Компонент пользовательского веб-интерфейса для администраторов «Jatoba data safe» (JDS) устанавливается в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe», в зависимости от требуемой архитектуры, описанной в разделе 2 документа.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="веб-сервер-nginx">Веб-сервер nginx<a href="#веб-сервер-nginx" class="hash-link" aria-label="Direct link to Веб-сервер nginx" title="Direct link to Веб-сервер nginx">​</a></h4>
+<p>Веб-сервер nginx устанавливается в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe».</p>
+<p>Выполнять действия, описанные в п. 5.1.1 документа, необязательно.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="создание-сертификата-и-ключа-для-pg-explain">Создание сертификата и ключа для pg-explain<a href="#создание-сертификата-и-ключа-для-pg-explain" class="hash-link" aria-label="Direct link to Создание сертификата и ключа для pg-explain" title="Direct link to Создание сертификата и ключа для pg-explain">​</a></h4>
+<p>Создание сертификата и ключа для соединения по протоколу SSL описано в п. 5.1.2 документа.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="создание-конфигурации-сайта-1">Создание конфигурации сайта<a href="#создание-конфигурации-сайта-1" class="hash-link" aria-label="Direct link to Создание конфигурации сайта" title="Direct link to Создание конфигурации сайта">​</a></h4>
+<p>Отличие выполняемых шагов, описанных в п. 5.1.3 документа состоит в том, что вместо порта 443 будет использоваться порт 444 SSL.</p>
+<p>Для чего потребуется создать или отредактировать файл конфигурации сайта командой:</p>
+<blockquote>
+<p>nano /etc/nginx/conf.d/explain.https.conf</p>
+</blockquote>
+<p>Вставить текст и сохранить строки:</p>
+<blockquote>
+<p>server {</p>
+<p>charset utf-8;</p>
+<p>access_log /var/log/nginx/explain.access.log;</p>
+<p>error_log /var/log/nginx/explain.error.log;</p>
+<p>listen 444 ssl;</p>
+<p>ssl_certificate /etc/nginx/ssl/nginx-explain.crt;</p>
+<p>ssl_certificate_key /etc/nginx/ssl/nginx-explain.key;</p>
+<p>location / {</p>
+<p>proxy_pass <a href="http://localhost:8080" target="_blank" rel="noopener noreferrer">http://localhost:8080</a>;</p>
+<p>}</p>
+<p>}</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image47.png" style="width:6.84934in;height:3.01739in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-28 10-52-01.png" class="img_ev3q">
+<p>Рисунок 5.11 – Содержание файла explain.https.conf</p>
+<p>Применение параметров обеспечивается перезагрузкой службы nginx:</p>
+<blockquote>
+<p>systemctl restart nginx</p>
+</blockquote>
+<p>Проверить в веб-браузере работу explain по https, дать подтверждение системе безопасности, если спросит про недействительный сертификат.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="редактирование-параметров-компонента-jds">Редактирование параметров компонента JDS<a href="#редактирование-параметров-компонента-jds" class="hash-link" aria-label="Direct link to Редактирование параметров компонента JDS" title="Direct link to Редактирование параметров компонента JDS">​</a></h4>
+<p>Взаимодействие JDS с сервисом pg-explain настраивается в конфигурационном файле компонента JDS appsettings.json. В свойстве PgExplainConfig.BaseAddress необходимо указать URL, по которому доступен https-сервис pg-explain.</p>
+<p>Выполнить команду редактирования конфигурационного файла компонента JDS appsettings.json, командой:</p>
+<blockquote>
+<p>nano /opt/jds/appsettings.json</p>
+</blockquote>
+<p>Вставить параметры:</p>
+<blockquote>
+<p>&quot;PgExplainConfig&quot;: {</p>
+<p>&quot;BaseAddress&quot;: &quot;https://&lt;адрес сервера explain&gt;:444&quot;</p>
+<p>},</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Адрес должен быть указан без знака дробной черты (solidus) «/»</th></tr></thead><tbody><tr><td style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></td><td>Сервис explain работает на том же хосте, что и JDS, но в свойстве BaseAddress нужно указывать внешний IP-адрес (не localhost), т.к. обращение к pg-explain идет не от JDS, а от веб-браузера пользователя.</td></tr></tbody></table>
+<p>В рассматриваемом примере один из узлов имеет IP-адрес 10.116.102.59 и строка конфигурационного файла appsettings.json компонента JDS будет иметь следующий вид:</p>
+<blockquote>
+<p>&quot;PgExplainConfig&quot;: {</p>
+<p>&quot;BaseAddress&quot;: &quot;<a href="https://10.116.102.59:444" target="_blank" rel="noopener noreferrer">https://10.116.102.59:444</a>&quot;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image48.png" style="width:6.65217in;height:1.28611in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-28 11-05-57.png" class="img_ev3q">
+<p>Рисунок 5.12 – Содержание конфигурационного файла приложения JDS appsettings.json</p>
+<p>Сохранить файл и перезапустить службу «jds»</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl restart jds</span><br></span></code></pre></div></div>
+<blockquote>
+</blockquote>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># systemctl status jds</span><br></span></code></pre></div></div>
+<p>Проверить доступность компонента JDS по адресу:</p>
+<blockquote>
+<p><a href="https://10.116.102.59/" target="_blank" rel="noopener noreferrer">https://10.116.102.59/</a></p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image49.png" style="width:7.02758in;height:3.18201in" class="img_ev3q">
+<p>Войти в веб-интерфейс компонента JDS. Перейти в подраздел «Анализ запросов».<br>
+На вкладке «Настройки» нажать кнопку «Добавить». Ввести IP-адрес узла с наблюдаемой СУБД, порт (если он отличается от стандартного 5432) и отметить флагами пункты собираемой статистики и сохранить.</p>
+<p>После чего отобразится добавленный узел.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ошибки">Ошибки<a href="#ошибки" class="hash-link" aria-label="Direct link to Ошибки" title="Direct link to Ошибки">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ошибка-fatal-password-authentication-failed-for-user-postgres">Ошибка FATAL: password authentication failed for user &quot;postgres&quot;<a href="#ошибка-fatal-password-authentication-failed-for-user-postgres" class="hash-link" aria-label="Direct link to Ошибка FATAL: password authentication failed for user &quot;postgres&quot;" title="Direct link to Ошибка FATAL: password authentication failed for user &quot;postgres&quot;">​</a></h3>
+<p>Ошибка появляется при вводе некорректного пароля привилегированного пользователя СУБД.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image50.png" style="width:6.67164in;height:3.08889in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 15-32-30.png" class="img_ev3q">
+<p>Рисунок 6.1 – Ошибка ввода пароля</p>
+<p>Необходимо повторно запустить инсталлятор и указать корректный пароль.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ошибка-error-invalid-locale-name-ru_ruutf-8">Ошибка ERROR: invalid locale name: &quot;ru_RU.UTF-8&quot;<a href="#ошибка-error-invalid-locale-name-ru_ruutf-8" class="hash-link" aria-label="Direct link to Ошибка ERROR: invalid locale name: &quot;ru_RU.UTF-8&quot;" title="Direct link to Ошибка ERROR: invalid locale name: &quot;ru_RU.UTF-8&quot;">​</a></h3>
+<p>Ошибка появляется при отсутствии установленной в ОС локали «ru_RU.UTF-8».</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image51.png" style="width:6.6708in;height:3.08696in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 15-08-27.png" class="img_ev3q">
+<p>Рисунок 6.2 – Ошибка при неустановленной локали</p>
+<p>Необходимо установить системную локаль «ru_RU.UTF-8» командой:</p>
+<blockquote>
+<p>dpkg-reconfigure locales</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image52.png" style="width:6.26866in;height:3.82778in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 14-41-24.png" class="img_ev3q">
+<p>Рисунок 6.3 – Выбор локали в скрипте установки</p>
+<p>В случае, если СУБД была установлена без локали «ru_RU.UTF-8» в ОС, то потребуется ее переустановка.</p>
+<h2></h2>
+<p><span id="_Toc195524711" class="anchor"></span>Термины и определения**«/»** – ГОСТ 34.302.2-91 (ИСО 8859/2-87) «Наборы 8 битных однобайтовых кодированных графических символов. латинский алфавит № 2» определяет символ как, «дробная черта» (англ. «solidus»).</p>
+<p><strong>SSH (Secure Shell)</strong> – сетевой протокол прикладного уровня, который позволяет осуществлять удаленное управление ОС и туннелирование TCP-соединений, например, для передачи файлов. Он шифрует весь трафик, включая передаваемые пароли, и допускает выбор различных алгоритмов шифрования. SSH-клиенты и серверы доступны для большинства сетевых ОС.</p>
+<p><strong>Аутентификация «peer»</strong> – режим аутентификации, при использовании которого пользователи автоматически аутентифицируются, если существует соответствующий пользователь СУБД с именем, совпадающим с именем ОС пользователя.</p>
+<p><strong>UFW (Uncomplicated Firewall)</strong> – утилита для конфигурирования межсетевого экрана Netfilter в ОС Linux. Она использует интерфейс командной строки и состоит из небольшого количества простых команд для лёгкого управления межсетевым экраном.</p>
+<p><strong>Iptables</strong> – утилита командной строки, стандартный интерфейс управления межсетевым экраном netfilter для ядер Linux, начиная с версии 2.4. Iptables используется для настройки правил фильтрации пакетов, маршрутизации и преобразования сетевых адресов.</p>
+<p><strong>Bruteforce (брутфорс)</strong> – метод взлома, при котором злоумышленник или тестировщик подбирает данные для входа в систему, используя различные комбинации паролей. Этот метод эффективен для взлома аккаунтов с простыми паролями, но сложен для сложных комбинаций, шифровок и фраз.</p>
+<p><strong>OpenSSH</strong> – набор программ, предоставляющих шифрование сеансов связи по компьютерным сетям с использованием протокола SSH. OpenSSH включает программы для клиента и сервера, а также инструменты для генерации ключей и аутентификации.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-1"><a href="#-1" class="hash-link" aria-label="Direct link to -1" title="Direct link to -1">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left"><span id="_Toc195524712" class="anchor"></span>Перечень сокращенийSQL</th><th>–</th><th>Structured Query Language</th></tr></thead><tbody><tr><td style="text-align:left">БД</td><td>–</td><td>База данных</td></tr><tr><td style="text-align:left">ОС</td><td>–</td><td>Операционная система</td></tr><tr><td style="text-align:left">СУБД</td><td>–</td><td>Система управления базами данных</td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/describe"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">describe</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/install"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">install</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#назначение-компонента" class="table-of-contents__link toc-highlight">Назначение компонента</a><ul><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#ограничения-по-эксплуатации" class="table-of-contents__link toc-highlight">Ограничения по эксплуатации</a></li></ul></li><li><a href="#архитектура-мониторинга-в-части-анализа-запросов" class="table-of-contents__link toc-highlight">Архитектура мониторинга в части анализа запросов</a></li><li><a href="#установка-и-настройка-целевой-субд-jatoba" class="table-of-contents__link toc-highlight">Установка и настройка целевой СУБД «Jatoba»</a><ul><li><a href="#установка-расширения-auto_explain" class="table-of-contents__link toc-highlight">Установка расширения auto_explain</a></li><li><a href="#настройка-файла-pg_hbaconf-целевой-субд" class="table-of-contents__link toc-highlight">Настройка файла pg_hba.conf целевой СУБД</a></li><li><a href="#настройка-ssh-сервера-на-целевой-субд" class="table-of-contents__link toc-highlight">Настройка SSH-сервера на целевой СУБД</a></li></ul></li><li><a href="#установка-и-настройка-pg-explain" class="table-of-contents__link toc-highlight">Установка и настройка pg-explain</a><ul><li><a href="#предварительные-требования-к-установке" class="table-of-contents__link toc-highlight">Предварительные требования к установке</a></li><li><a href="#установка-pg_repack" class="table-of-contents__link toc-highlight">Установка pg_repack</a></li><li><a href="#установка-explain-db" class="table-of-contents__link toc-highlight">Установка explain db</a></li><li><a href="#установка-pg-monitor" class="table-of-contents__link toc-highlight">Установка pg-monitor</a></li><li><a href="#установка-pg-monitor-collector" class="table-of-contents__link toc-highlight">Установка pg-monitor-collector</a></li><li><a href="#настройка-ssh-доступа-к-узлам" class="table-of-contents__link toc-highlight">Настройка SSH-доступа к узлам</a></li><li><a href="#установка-pg-explain" class="table-of-contents__link toc-highlight">Установка pg-explain</a></li></ul></li><li><a href="#настройка-jds-для-взаимодействия-с-сервисами" class="table-of-contents__link toc-highlight">Настройка JDS для взаимодействия с сервисами</a><ul><li><a href="#настройка-pg-explain-на-узле-отдельном-от-узла-jds" class="table-of-contents__link toc-highlight">Настройка pg-explain на узле отдельном от узла JDS</a></li><li><a href="#настройка-pg-explain-на-одном-узле-с-jds" class="table-of-contents__link toc-highlight">Настройка pg-explain на одном узле с JDS</a></li></ul></li><li><a href="#ошибки" class="table-of-contents__link toc-highlight">Ошибки</a><ul><li><a href="#ошибка-fatal-password-authentication-failed-for-user-postgres" class="table-of-contents__link toc-highlight">Ошибка FATAL: password authentication failed for user &quot;postgres&quot;</a></li><li><a href="#ошибка-error-invalid-locale-name-ru_ruutf-8" class="table-of-contents__link toc-highlight">Ошибка ERROR: invalid locale name: &quot;ru_RU.UTF-8&quot;</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

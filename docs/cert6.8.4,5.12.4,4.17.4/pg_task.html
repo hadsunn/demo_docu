@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-cert6.8.4,5.12.4,4.17.4/pg_task" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">pg_task | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="pg_task | Postgres"><meta data-rh="true" name="description" content="УТВЕРЖДЕН"><meta data-rh="true" property="og:description" content="УТВЕРЖДЕН"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Сертифицированные версии 6.8.4,5.12.4,4.17.4","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/"},{"@type":"ListItem","position":2,"name":"pg_task","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.cbebf560.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.2f8c1cba.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Collapse sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/1c">1c</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_log">ja_log</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_secevenlog">ja_secevenlog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_similar">ja_similar</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/ja_sync">ja_sync</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jadog_3.3_1">jadog_3.3_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jadog_3.3_2">jadog_3.3_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jds2.7">jds2.7</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_probackup">pg_probackup</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sec_functions">sec_functions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sec_guide">sec_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/sql_firewall">sql_firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/user_guide">user_guide</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/cert6.8.4,5.12.4,4.17.4"><span>Сертифицированные версии 6.8.4,5.12.4,4.17.4</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">pg_task</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:49%">
+<col style="width:50%">
+</colgroup><thead><tr><th style="text-align:center"><p>УТВЕРЖДЕН</p>
+<p>643.72410666.00067-07 98 01-ЛУ</p></th><th style="text-align:center"></th></tr></thead><tbody><tr><td colspan="2" style="text-align:center"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br>
+БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 5.<br>
+Планирование заданий СУБД<br>
+Компонент «pg_Task»</strong></p></td></tr><tr><td colspan="2" style="text-align:center"><strong>643.72410666.00067-07 98 01-05</strong></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">Листов 16</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">2024</td></tr><tr><td style="text-align:center"></td><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения, описывающие работу планировщика заданий системы управления базами данных (СУБД), компонента pg_Task. Настоящее руководство предназначено для администратора СУБД «Jatoba».</p>
+<p>Администратор СУБД «Jatoba» должен иметь навыки по работе с СУБД PostgreSQL или защищенной СУБД «Jatoba» (ООО «Газинформсервис»).</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_task/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 4.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>ОС Windows – «C:\Program Files\GIS\Jatoba\5\bin»;ОС Linux – «/usr/jatoba-6/bin».</p>
+<p>Для СУБД «Jatoba» версии ядра 4 используется версия компонента — 2.0.1</p>
+<p>Для СУБД «Jatoba» версии ядра 5/6 используется версия компонента — 2.0.39</p></th></tr></thead><tbody></tbody></table>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_task/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th style="text-align:left"><p><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p></th></tr></thead><tbody></tbody></table>
+<p>Степени важности примечаний, применяемые в документе:</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_task/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th><strong>Важная информация</strong> – указания, требующие особого внимания</th></tr></thead></table>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_task/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</th></tr></thead></table>
+<p><strong>СОДЕРЖАНИЕ</strong></p>
+<header><h1></h1></header>
+<p>[1. Назначение компонента <a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">4</a>](#назначение-компонента)</p>
+<p>[1.1. Функциональные возможности <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8">4</a>](#функциональные-возможности)</p>
+<p>[1.2. Условия применения <a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">4</a>](#условия-применения)</p>
+<p>[2. Установка и настройка <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">5</a>](#установка-и-настройка)</p>
+<p>[2.1. Установка компонента ОС GNU/Linux <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-%D0%BE%D1%81-gnulinux">5</a>](#установка-компонента-ос-gnulinux)</p>
+<p>[2.2. Установка компонента в СУБД <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-%D0%B2-%D1%81%D1%83%D0%B1%D0%B4">7</a>](#установка-компонента-в-субд)</p>
+<p>[3. Создание задач для планировщика <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D1%89%D0%B8%D0%BA%D0%B0">10</a>](#создание-задач-для-планировщика)</p>
+<p>[4. Удаление задачи <a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8">13</a>](#удаление-задачи)</p>
+<p>[5. Удаление компонента <a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">14</a>](#удаление-компонента)</p>
+<p>[Перечень сокращений <a href="#_Toc215497055">15</a>](#_Toc215497055)</p>
+<h1>Назначение компонента</h1>
+<p>Компонент pg_Task является планировщиком асинхронных задач.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функциональные-возможности">Функциональные возможности<a href="#функциональные-возможности" class="hash-link" aria-label="Direct link to Функциональные возможности" title="Direct link to Функциональные возможности">​</a></h2>
+<p>Компонент позволяет организовать выполнение фоновых заданий на языке SQL в заданное время в заданной базе данных от заданного пользователя.</p>
+<p>Для своей работы в каждой базе данных, созданных в рамках сервера СУБД, компонент создает собственную таблицу для управления фоновыми заданиями.</p>
+<p>Результаты выполнения заданий сохраняются в текстовом виде в специальном поле таблицы заданий.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения">​</a></h2>
+<p>Компонент pg_Task может использоваться совместно с СУБД «Jatoba»<br>
+версий 1.x – 4.x и выше.</p>
+<h1>Установка и настройка</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-компонента-ос-gnulinux">Установка компонента ОС GNU/Linux<a href="#установка-компонента-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка компонента ОС GNU/Linux" title="Direct link to Установка компонента ОС GNU/Linux">​</a></h2>
+<p>Компонент устанавливается в составе СУБД «Jatoba». Его возможно установить при первичной установке, либо доустановить.</p>
+<p>Установку компонента возможно провести двумя способами:</p>
+<ol>
+<li></li>
+<li></li>
+</ol>
+<p>установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:</p>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba4-pg-task</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba4-pg-task</p>
+</blockquote>
+<p>Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.</p>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<p>ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba4-pg-task</p>
+</blockquote>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba1-pg-task и т.п.</p>
+<p>Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-компонента-в-субд">Установка компонента в СУБД<a href="#установка-компонента-в-субд" class="hash-link" aria-label="Direct link to Установка компонента в СУБД" title="Direct link to Установка компонента в СУБД">​</a></h2>
+<p>Установка производится администратором базы данных. Для установки планировщика не требуется загрузка расширения, достаточно прописать в postgresql.conf:</p>
+<blockquote>
+<p>shared_preload_libraries = &#x27;pg_task&#x27;</p>
+</blockquote>
+<p>В этом же файле можно по желанию добавить значение для пустой строки (параметр null в таблице Таблица 2.1):</p>
+<blockquote>
+<p>pg_task.default_null = &#x27;\N&#x27;</p>
+</blockquote>
+<p>Можно также добавить список баз данных и пользователей, на которых должны выполняться задачи, в формате json-строки. Если БД и/или роли не существуют на текущий момент, то они будут созданы.</p>
+<blockquote>
+<p>pg_task.json = &#x27;[{&quot;data&quot;:&quot;postgres&quot;}]&#x27;</p>
+</blockquote>
+<p>Примеры:</p>
+<blockquote>
+<p>pg_task.json= &#x27;[{&quot;data&quot;:&quot;db1&quot;, &quot;user&quot;:&quot;user1&quot;}, {&quot;data&quot;:&quot;db2&quot;, &quot;user&quot;:&quot;user2&quot;}]&#x27;</p>
+<p>pg_task.json = &#x27;[{&quot;data&quot;:&quot;database1&quot;},{&quot;data&quot;:&quot;database2&quot;,&quot;user&quot;:&quot;username2&quot;},{&quot;data&quot;:&quot;database3&quot;,&quot;schema&quot;:&quot;schema3&quot;},{&quot;data&quot;:&quot;database4&quot;,&quot;table&quot;:&quot;table4&quot;},{&quot;data&quot;:&quot;database5&quot;,&quot;timeout&quot;:100}]&#x27;</p>
+</blockquote>
+<p>Если эти данные не указать, по умолчанию планировщик создаст таблицы task во всех базах данных от имени пользователей баз данных и в схемах по умолчанию для этих пользователей.</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_task/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><p>Пользователь по умолчанию – postgres.</p>
+<p>База данных по умолчанию – postgres.</p>
+<p>Схема – public.</p></th></tr></thead><tbody></tbody></table>
+<p>Использование компонента доступно для пользователей, имеющих доступ к таблице task.</p>
+<p>После старта сервера планировщик создает, если еще не создана, таблицу задач со следующими столбцами (см. таблицу Таблица 2.1):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Параметр</strong></th><th><strong>Тип</strong></th><th style="text-align:center"><strong>Обязательный (ненулевой)</strong></th><th><strong>Значение по умолчанию</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>id</td><td>BIGSERIAL</td><td style="text-align:center">+</td><td>autoincrement</td><td>первичный ключ</td></tr><tr><td>parent</td><td>BIGINT</td><td style="text-align:center">-</td><td></td><td>внешний ключ к родительской задаче (при необходимости)</td></tr><tr><td>plan</td><td>TIMESTAMP</td><td style="text-align:center">+</td><td>CURRENT_TIMESTAMP</td><td>запланированное время начала (по умолчанию – как можно быстрее)</td></tr><tr><td>start</td><td>TIMESTAMP</td><td style="text-align:center">-</td><td></td><td>фактическое время начала</td></tr><tr><td>stop</td><td>TIMESTAMP</td><td style="text-align:center">-</td><td></td><td>фактическое время остановки</td></tr><tr><td>active</td><td>INTERVAL</td><td style="text-align:center">+</td><td>1 hour</td><td>период, в который задача исполняется</td></tr><tr><td>live</td><td>INTERVAL</td><td style="text-align:center">+</td><td>0 sec</td><td>максимальное время жизни текущего рабочего процесса</td></tr><tr><td>repeat</td><td>INTERVAL</td><td style="text-align:center">+</td><td>0 sec</td><td>интервал повторения задачи</td></tr><tr><td>timeout</td><td>INTERVAL</td><td style="text-align:center">+</td><td>0 sec</td><td>позволяет ограничивать время выполнения задачи</td></tr><tr><td>count</td><td>INTEGER</td><td style="text-align:center">+</td><td>0</td><td>количество одновременно выполняемых задач в группе</td></tr><tr><td>hash</td><td>INTEGER</td><td style="text-align:center">+</td><td></td><td>хэш-сумма групповой задачи</td></tr><tr><td>max</td><td>INT</td><td style="text-align:center">+</td><td>0</td><td>максимальное количество одновременно выполняемых задач в группе</td></tr><tr><td>pid</td><td>INT</td><td style="text-align:center">-</td><td></td><td>идентификатор процесса, выполняющего задачу</td></tr><tr><td>state</td><td>STATE</td><td style="text-align:center">+</td><td>PLAN</td><td>статус задачи: PLAN, TAKE, WORK, DONE, FAIL, STOP</td></tr><tr><td>delete</td><td>BOOLEAN</td><td style="text-align:center">+</td><td>true</td><td>удалять задачу автоматически после выполнения, если нет результата (вывод равен нулю)</td></tr><tr><td>drift</td><td>BOOLEAN</td><td style="text-align:center">+</td><td>false</td><td>предотвращать ли отсчет времени при повторе задачи</td></tr><tr><td>header</td><td>BOOLEAN</td><td style="text-align:center">+</td><td>true</td><td>флаг присоединения заголовка с названием колонок, если задача возвращает таблицу</td></tr><tr><td>string</td><td>BOOLEAN</td><td style="text-align:center">+</td><td>true</td><td>флаг, отображающий, является ли результат вывода строковым типом</td></tr><tr><td>delimiter</td><td>CHAR</td><td style="text-align:center">+</td><td>\t</td><td>символ-разделитель, используемый для оформления строки результата (параметр output)</td></tr><tr><td>escape</td><td>CHAR</td><td style="text-align:center">+</td><td></td><td>escape-символ, используемый для оформления строки результата</td></tr><tr><td>quote</td><td>CHAR</td><td style="text-align:center">+</td><td></td><td>символ кавычек, используемый для оформления строки результата</td></tr><tr><td>data</td><td>TEXT</td><td style="text-align:center">-</td><td></td><td>пользовательская информация</td></tr><tr><td>error</td><td>TEXT</td><td style="text-align:center">-</td><td></td><td>текст ошибки</td></tr><tr><td>group</td><td>TEXT</td><td style="text-align:center">+</td><td>group</td><td>групповая задача</td></tr><tr><td>input</td><td>TEXT</td><td style="text-align:center">+</td><td></td><td>непосредственно сама задача для выполнения на языке SQL</td></tr><tr><td>null</td><td>TEXT</td><td style="text-align:center">+</td><td>\N</td><td>текст «пустого» значения, используется для оформления строки результата</td></tr><tr><td>output</td><td>TEXT</td><td style="text-align:center">-</td><td></td><td>полученный результат выполнения задачи</td></tr><tr><td>remote</td><td>TEXT</td><td style="text-align:center">-</td><td></td><td>подключение к удаленной базе данных (при необходимости)</td></tr></tbody></table>
+<p>Таблица . – Таблица задач</p>
+<h1>Создание задач для планировщика</h1>
+<p>Планировщик запускает несколько фоновых рабочих процессов:</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>один для отслеживания изменений в конфигурационном файле и запуске/остановке при необходимости остальных фоновых процессов планировщика;по одному фоновому рабочему процессу для каждой базы для проверки запланированных задач в каждой базе и запуске при необходимости выполнения задач.Для быстрого выполнения задачи нужно выполнить SQL-команду:</p>
+<blockquote>
+<p>INSERT INTO task (input) VALUES (&#x27;SELECT now()&#x27;);</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p>input – задача, которую необходимо выполнить.Результат выполнения задачи планировщик записывает в столбец результата (output) в текстовом виде. Если в результате выполнения задачи будет несколько колонок, то pg_task создаст текстовую таблицу в колонке output.</p>
+<p>В результате выполнения задачи может быть несколько строк, все они добавятся в колонку результата.</p>
+<p>Для того, чтобы создать задачу и выполнить ее не сразу, а в определенное время, достаточно добавить в таблицу task следующую команду:</p>
+<blockquote>
+<p>INSERT INTO task (plan, input) VALUES (now() + &#x27;5 min&#x27;::INTERVAL, &#x27;SELECT now()&#x27;);</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>plan – планируемое время запуска задачи в стандартных форматах (например:<br>
+&quot;now() + &#x27;5 min&#x27;::INTERVAL&quot; или, указав время, &quot;2021-09-01 00:00:00&quot;);input – задача, которую необходимо выполнить.Для того, чтобы поставить задачу на периодическое исполнение, нужно записать в таблицу task следующую команду:</p>
+<blockquote>
+<p>INSERT INTO task (repeat, input) VALUES (&#x27;5 min&#x27;, &#x27;SELECT now()&#x27;);</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+</ul>
+
+
+
+
+
+
+
+<table><thead><tr><th>repeat – периодичность запуска задачи;input – задача которую необходимо выполнить.<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_task/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th>Если время исполнения задачи превышает период запуска задачи, то возможна ситуация, когда новая задача запустится до того, как закончится первая и задачи будут выполняться параллельно, что может вызвать некоторые проблемы.</th></tr></thead></table>
+<p>Для недопущения подобной ситуации, нужно правильно оценить время выполнения задачи, либо использовать опцию drift, которая будет отсчитывать время запуска последующей задачи от момента завершения первой задачи:</p>
+<blockquote>
+<p>INSERT INTO task (repeat, input, drift) VALUES (&#x27;5 min&#x27;, &#x27;SELECT now()&#x27;, false);</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>repeat – периодичность запуска задачи;input – задача которую необходимо выполнить;drift – флаг, который указывает, отсчитывать ли время последующего запуска задачи от старта первой задачи (true) или от окончания первой задачи (false, по умолчанию).При возникновении ошибки при выполнении задачи, она перехватывается и в текстовом виде записывается в колонку error, а задаче присваивается соответствующее состояние в колонке state.</p>
+<p>Например, выполнение команды:</p>
+<blockquote>
+<p>INSERT INTO task (input) VALUES (&#x27;SELECT 1/0&#x27;);</p>
+</blockquote>
+<p>создаст запись в колонке error:</p>
+<blockquote>
+<p>....</p>
+<p>sqlerror\33816706</p>
+<p>message\division by zero</p>
+<p>....</p>
+</blockquote>
+<p>При необходимости параллельного выполнения нескольких задач – можно создать группы:</p>
+<blockquote>
+<p>INSERT INTO task (&quot;group&quot;, max, input) VALUES (&#x27;group_1&#x27;, 2, &#x27;SELECT 1&#x27;);</p>
+<p>INSERT INTO task (&quot;group&quot;, max, input) VALUES (&#x27;group_1&#x27;, 2, &#x27;SELECT 2&#x27;);</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>group – уникальное имя группы;max – количество параллельно исполняемых задач в группе;input – задача, которую необходимо выполнить.Также можно увеличить количество параллельных задач для определенной группы:</p>
+<blockquote>
+<p>INSERT INTO task (&quot;group&quot;, max, input) VALUES (&#x27;group_1&#x27;, 3, &#x27;SELECT 3&#x27;);</p>
+</blockquote>
+<ul>
+<li></li>
+</ul>
+<p>группа group_1 имеет 3 параллельных задачи.Запуск задачи на удаленной базе данных:</p>
+<blockquote>
+<p>INSERT INTO task (input, remote) VALUES (&#x27;SELECT now()&#x27;, &#x27;user=user host=host&#x27;);</p>
+</blockquote>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>input – задача, которую необходимо выполнить;remote – данные для подключения к удаленной базе данных, входные параметры – user, password, host, port, dbname.Все вышеуказанные примеры использования компонента можно комбинировать под конкретные цели.</p>
+<h1>Удаление задачи</h1>
+<p>Для удаления задачи необходимо удалить строку (строки) конкретной задачи из таблицы task.</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_task/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Проще всего идентифицировать строки по полям input, id, или parent.</th></tr></thead></table>
+<blockquote>
+<p>DELETE FROM task WHERE id = 77;</p>
+<p>DELETE FROM task WHERE parent = 77;</p>
+<p>DELETE FROM task WHERE input = &#x27;SELECT now()&#x27;;</p>
+</blockquote>
+<h1>Удаление компонента</h1>
+<p>Для удаления компонента достаточно закомментировать в конфигурационном файле «postgresql.conf» строку:</p>
+<blockquote>
+<p>#shared_preload_libraries = &#x27;pg_task&#x27;</p>
+</blockquote>
+<h1></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left"><span id="_Toc215497055" class="anchor"></span>Перечень сокращенийSQL</th><th>–</th><th>Structured Query Language – язык структурированных запросов</th></tr></thead><tbody><tr><td style="text-align:left">БД</td><td>–</td><td>База данных</td></tr><tr><td style="text-align:left">СУБД</td><td>–</td><td>Система управления базами данных</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center">Лист регистрации изменений</th></tr></thead><tbody><tr><td rowspan="2" style="text-align:center">Изм.</td><td colspan="4" style="text-align:center">Номера листов (страниц)</td><td rowspan="2" style="text-align:center">Всего<br>
+листов (страниц)<br>
+в документе</td><td rowspan="2" style="text-align:center">Номер документа</td><td rowspan="2" style="text-align:center">Входящий номер сопроводительного документа и дата</td><td rowspan="2" style="text-align:center">Подпись</td><td rowspan="2" style="text-align:center">Дата</td></tr><tr><td style="text-align:center">измененных</td><td style="text-align:center">замененных</td><td style="text-align:center">новых</td><td style="text-align:center">аннулированных</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_store_plans"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">pg_store_plans</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/cert6.8.4,5.12.4,4.17.4/pg_ulid"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">pg_ulid</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#функциональные-возможности" class="table-of-contents__link toc-highlight">Функциональные возможности</a></li><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#установка-компонента-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка компонента ОС GNU/Linux</a></li><li><a href="#установка-компонента-в-субд" class="table-of-contents__link toc-highlight">Установка компонента в СУБД</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
