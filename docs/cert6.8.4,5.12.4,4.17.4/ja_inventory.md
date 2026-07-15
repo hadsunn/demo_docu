@@ -1,0 +1,773 @@
+<table>
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><p>УТВЕРЖДЕН</p>
+<p>643.72410666.00067-07 98 01-ЛУ</p></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" style="text-align: center;"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br />
+БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 23.<br />
+Инвентаризация СУБД.<br />
+Компонент «ja_Inventory»</strong></p></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center;"><strong>643.72410666.00067-07 98 01-23</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center;">Листов 16</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center;">2024</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">Литера О<sub>1</sub></td>
+</tr>
+</tbody>
+</table>
+
+**АННОТАЦИЯ**
+
+В документе приведены сведения, необходимые для установки и эксплуатации компонента «ja_Inventory» (далее по тексту – «компонент» или ja_inventory), предназначенного для формирования фйла отчета об установленной СУБД «Jatoba».
+
+Настоящее руководство предназначено для администраторов СУБД.
+
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image1.png" style="width:0.25in;height:0.25in" /></th>
+<th><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 4.x по умолчанию устанавливается в директорию:</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>ОС Windows – «C:\Program Files\GIS\Jatoba\4\bin»;ОС Linux – «/usr/jatoba-4/bin».Версия компонента — 1.0</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+Степени важности примечаний, применяемые в документе:
+
+| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image2.png" style="width:0.25139in;height:0.25139in" /> | **Важная информация** – указания, требующие особого внимания |
+|----|----|
+
+| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image1.png" style="width:0.25in;height:0.25in" /> | **Дополнительная информация** – указания, позволяющие упростить работу с изделием |
+|----|----|
+
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image2.png" style="width:0.25139in;height:0.25139in" /></th>
+<th style="text-align: left;"><p><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+**СОДЕРЖАНИЕ**
+
+# 
+
+[1. Назначение компонента [4](#назначение-компонента)](#назначение-компонента)
+
+[1.1. Условия применения [4](#версии-субдколичествах-ядер-сервераиспользуемых-расширениях.условия-применения)](#версии-субдколичествах-ядер-сервераиспользуемых-расширениях.условия-применения)
+
+[2. Установка и настройка [5](#установка-и-настройка)](#установка-и-настройка)
+
+[2.1. Установка компонента «ja_Inventory» на ОС Windows [5](#установка-компонента-ja_inventory-на-ос-windows)](#установка-компонента-ja_inventory-на-ос-windows)
+
+[2.2. Установка компонента «ja_Inventory» в ОС GNU/Linux [7](#установка-компонента-ja_inventory-в-ос-gnulinux)](#установка-компонента-ja_inventory-в-ос-gnulinux)
+
+[2.3. Настройка конфигурационного файла «pg_hba.conf» [8](#настройка-конфигурационного-файла-pg_hba.conf)](#настройка-конфигурационного-файла-pg_hba.conf)
+
+[3. Функциональные возможности компонента [10](#функциональные-возможности-компонента)](#функциональные-возможности-компонента)
+
+[3.1. Синтаксис команды подключения [10](#синтаксис-команды-подключения)](#синтаксис-команды-подключения)
+
+[3.2. Параметры подключения [10](#параметры-подключения)](#параметры-подключения)
+
+[3.3. Права пользователя СУБД [10](#права-пользователя-субд)](#права-пользователя-субд)
+
+[3.4. Пример подключения к целевой СУБД и получения отчета [12](#пример-подключения-к-целевой-субд-и-получения-отчета)](#пример-подключения-к-целевой-субд-и-получения-отчета)
+
+[4. Отчет в формате JSON [13](#отчет-в-формате-json)](#отчет-в-формате-json)
+
+[Термины и определения [14](#_Toc185852109)](#_Toc185852109)
+
+[Перечень сокращений [15](#_Toc185852110)](#_Toc185852110)
+
+# Назначение компонента
+
+Компонент «ja_Inventory» предназначен для сбора на серверах Заказчика информации об установленных СУБД «Jatoba» в форме отчета в формате JSON. В отчет включается информация о:
+
+- 
+- 
+- 
+
+## версии СУБД;количествах ядер сервера;используемых расширениях.Условия применения
+
+Компонент «ja_Inventory» может использоваться с СУБД «Jatoba» версий 4.x и выше, под управлением операционных систем Windows и GNU/Linux.
+
+Компонент выполнен в форме внешней утилиты и не имеет ограничений по совместимости с другими компонентами.
+
+# Установка и настройка
+
+Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в системе.
+
+Так как компонент выполнен в форме внешней утилиты, то для выполнения своих функциональных возможностей не требует установленной СУБД, но входит в дистрибутив. В силу этой особенности компонент возможно установить:
+
+- 
+- 
+
+в составе СУБД (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке);отдельно от СУБД.Данный компонент штатным образом может быть установлен только с СУБД «Jatoba».
+
+Установка компонента под управлением ОС Windows и ОС GNU/Linux приведено ниже.
+
+## Установка компонента «ja_Inventory» на ОС Windows
+
+В ОС Windows нет способа отдельной установки компонента, т.к. компонент включен в состав дистрибутива и устанавливается через инсталлятор.
+
+Для установки компонента требуется выполнить следующие шаги:
+
+1)  
+
+в окне «Выбор типа установки» следует выбрать тип установки «Выборочная» (см. рис. Рисунок 2.1);<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image3.png" style="width:3.85272in;height:3.01212in" />
+
+Рисунок 2.1 – Окно выбора типа установки
+
+2)  
+
+в окне «Выборочная установка», выбрать «ja_Inventory» (см. рис. Рисунок 2.2);Остальные компоненты при ненадобности доступно отключить.
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image4.png" style="width:3.84457in;height:3.00576in" />
+
+Рисунок 2.2 – Выбор устанавливаемых компонент
+
+3)  
+
+в открывшемся окне «Все готово к установке Jatoba» запустить процесс установки, нажав кнопку «Установить» (см. рис. Рисунок 2.3);<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image5.png" style="width:4.06172in;height:3.14208in" />
+
+Рисунок 2.3 – Окно «Все готово к установке Jatoba»
+
+## Установка компонента «ja_Inventory» в ОС GNU/Linux
+
+Пакет компонента входит в состав дистрибутива, однако может функционировать, как в составе СУБД, так и на отдельном хосте. Поскольку выполнен в виде внешней утилиты.
+
+Установка в составе СУБД описана в документе «Защищенная система управления базами данных «Jatoba». Руководство по установке.
+
+Для функционирования компонента не требуется установка СУБД.
+
+Установка на отдельном хосте без установки зависимостей
+
+- 
+
+> DEB пакета для ОС GNU/Linux выполняется командой:dpkg --force-all –i
+
+Например
+
+> dpkg --force-all -i jatoba6-ja-inventory_1.0.0-18.\_amd64.deb
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image6.png" style="width:7.13472in;height:1.92199in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-18 06-22-20.png" />
+
+Рисунок 2.4 – Установка пакета компонента
+
+- 
+
+> RPM пакета для ОС GNU/Linux выполняется командой:rpm -i jatoba6-ja-inventory\*.rpm --nodeps
+
+В результате в каталоге СУБД будет находится единственный файл с утилитой.
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image7.png" style="width:7.13472in;height:1.42416in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-18 06-27-21.png" />
+
+Рисунок 2.5 – Содержание каталога СУБД
+
+Удаление модуля осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).
+
+Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.
+
+## Настройка конфигурационного файла «pg_hba.conf»
+
+Для подключения компонента «ja_Inventory» к целевой СУБД «Jatoba» в конфигурационном файле «pg_hba.conf» должно быть разрешено подключение от конкретного IP-адреса или подсети.
+
+> host all all \<the_first_computer_IP_address\>/32 md5
+
+В рассматриваемом примере:
+
+- 
+- 
+
+компонента «ja_Inventory» находится на хосте с IP-адресом - 10.116.102.135;целевая СУБД находится на хосте с IP-адресом -10.116.102.130При разрешении подключения с конкретного IP-адреса, строка разрешения подключения может иметь вид, как представлено на рисунке Рисунок 2.6.
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image8.png" style="width:6.74026in;height:2.27847in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 01-14-32.png" />
+
+Рисунок 2.6 - Вид конфигурационного файла «pg_hba.conf»
+
+# Функциональные возможности компонента
+
+Подключение к целевой СУБД компонентом «ja_Inventory» выполняется аналогично, подключению интерактивным терминалом psql и используется часть параметров подключения.
+
+## Синтаксис команды подключения
+
+Применяется следующий синтаксис команды подключения:
+
+> ja_inventory {–n \| --name-org} Datagile {–h \| --host} IP-address {–U \| --user} user_name {–d \| --db_name} database {–o \| --output-dir} /temp/db {–W\|-w}
+
+## Параметры подключения
+
+Компонент «ja_Inventory» использует параметры подключения приведенные в таблице Таблица 3.1.
+
+<table>
+<caption><p>Таблица 3.1 – Параметры подключения компонента</p></caption>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 61%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Параметр</strong></th>
+<th style="text-align: center;"><strong>Описание</strong></th>
+<th style="text-align: center;"><strong>Уникальность параметра</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- h</td>
+<td>Хост СУБД</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>-p</td>
+<td>Порт подключения</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>-d</td>
+<td>Название БД</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>-U</td>
+<td>Пользователь СУБД</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>--output-dir</td>
+<td>Директория сохранения файла отчета</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr>
+<td>-W</td>
+<td>Принудительный ввод пароля пользователя</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>-w</td>
+<td><p>Не запрашивать пароль.</p>
+<p>Если пароль требуется серверу, то будет ошибка:</p>
+<p>no password supplied</p></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>--org-name</td>
+<td>Ввод имения организации</td>
+<td style="text-align: center;">X</td>
+</tr>
+</tbody>
+</table>
+
+Таблица 3.1 – Параметры подключения компонента
+
+## Права пользователя СУБД
+
+Файл отчета может быть получен от имени и с правами привилегированного пользователя СУБД (SUPERUSER). В этом случае не требуется дополнительных разрешений. Данный способ подключения менее трудозатратен, но не является безопасным.
+
+Целесообразнее использовать специальную учетную запись в СУБД, наделив ее минимально достаточными привилегиями.
+
+Такого пользователя и его привилегии Администратор СУБД должен создать самостоятельно. Набор привилегий такого пользователя должен распространяться на все БД в СУБД и включать следующее:
+
+- 
+
+выделенный пользователь должен иметь атрибут LOGIN;CREATE ROLE ja_inventory LOGIN PASSWORD 'password';
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image9.png" style="width:7.09275in;height:1.04215in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 03-57-53.png" />
+
+Рисунок 3.1 – Создание пользователя
+
+- 
+
+> выделенный пользователь должен уметь запускать функцию jatoba_version и получать результаты выполнения этой функции;GRANT EXECUTE ON FUNCTION pg_catalog.jatoba_version TO ja_inventory;
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image10.png" style="width:7.10225in;height:1.048in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 06-33-59.png" />
+
+Рисунок 3.2 – SQL- команда наделения правом пользователя на выполнение функции jatoba_version
+
+- 
+- 
+
+> выделенный пользователь должен уметь читать таблицу pg_database в схеме pg_catalog;выделенный пользователь должен уметь читать таблицу pg_extension в схеме pg_catalog;GRANT SELECT ON TABLE pg_catalog.pg_database TO ja_inventory;
+>
+> GRANT SELECT ON TABLE pg_catalog.pg_extension TO ja_inventory;
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image11.png" style="width:7.09614in;height:1.456in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 04-11-13.png" />
+
+Рисунок 3.3 – SQL – команды наделения правом пользователя на чтение таблиц
+
+## Пример подключения к целевой СУБД и получения отчета
+
+Запуск компонента выполняется из каталога СУБД, для чего требуется перейти в него командой:
+
+> cd /usr/jatoba-6/bin/
+
+Команда получения фала отчета выполняется от имени и с правами привилегированного пользователя ОС и имеет вид:
+
+> ./ja_inventory -h 10.116.102.130 -U postgres --org-name Datagile –W
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image12.png" style="width:7.07219in;height:2.25872in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 02-23-48.png" />
+
+Рисунок 3.4 – Команда получения файла отчета
+
+Компонент запросит пароль указанного в строке подключения пользователя и если не указана директория сохранения файла отчета, то он будет сохранен в текущей директории.
+
+# Отчет в формате JSON
+
+Получаемый отчет имеет формат JSON с реквизитами и атрибутами приведенными в таблице Таблица 4.1.
+
+| **Реквизит**             | **Атрибут json** |
+|--------------------------|------------------|
+| Название утилиты         | utilName         |
+| Версия утилиты           | utilVersion      |
+| Наименование организации | orgName          |
+| Дата формирования отчета | reportDate       |
+| Имя хоста                | hostName         |
+| Версия Jatoba            | jatobaVersion    |
+| Ядра                     | coreCount        |
+| Расширение               | extensionName    |
+
+Таблица 4.1 - Перечень реквизитов и атрибутов JSON
+
+Отчет имеет вид представленный на рисунке Рисунок 4.1.
+
+<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_inventory/media/image13.png" style="width:6.75278in;height:3.00649in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\PIC1\Screenshot from 2024-12-19 04-43-37.png" />
+
+Рисунок 4.1 – Вид отчета о хосте
+
+В процессе формирования отчета компонент:
+
+- 
+- 
+- 
+
+формирует значения атрибутов, описанных выше;рассчитывает контрольную сумму (далее – КС) хеш-суммы по алгоритму CRC32.КС включается в имя файла отчета и не может быть изменена;Пример названия файла отчета:
+
+> ja_inventory_ABCDEF12_123456AB.json
+
+# 
+
+<span id="_Toc185852109" class="anchor"></span>Термины и определения**Администратор СУБД** – субъект доступа, выполняющий административные функции в СУБД и наделенный правами:
+
+- 
+- 
+- 
+- 
+- 
+
+создавать учетные записи пользователей системы управления базами данных;модифицировать, блокировать и удалять учетные записи пользователей системы управления базами данных;назначать права доступа пользователям системы управления базами данных к объектам доступа системы управления базами данных;управлять конфигурацией системы управления базами данных;создавать, подключать базы данных.Администратор СУБД имеет атрибут SUPERUSER и/или обладает системной учетной записью «postgres».
+
+**Целевая СУБД** – СУБД являющаяся целью мониторинга.
+
+**Пользователь БД** - субъект доступа, имеющий доступ к ограниченному перечню БД и объектов БД. Имеющий следующий набор привилегий:
+
+- 
+- 
+
+создавать и манипулировать объектами доступа БД (таблица, запись или столбец, поле, представление и иные объекты доступа);выполнять процедуры (программный код), хранимые в БД.Пользователь БД имеет обязательный атрибут LOGIN.
+
+# 
+
+| <span id="_Toc185852110" class="anchor"></span>Перечень сокращенийSQL | – | Structured Query Language |
+|:---|----|----|
+| БД | – | База данных |
+| КС | – | Контрольные суммы |
+| ОС | – | Операционная система |
+| СУБД | – | Система управления базами данных |
+
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 11%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr>
+<th colspan="10" style="text-align: center;">Лист регистрации изменений</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2" style="text-align: center;">Изм.</td>
+<td colspan="4" style="text-align: center;">Номера листов (страниц)</td>
+<td rowspan="2" style="text-align: center;">Всего<br />
+листов (страниц)<br />
+в документе</td>
+<td rowspan="2" style="text-align: center;">Номер документа</td>
+<td rowspan="2" style="text-align: center;">Входящий номер сопроводительного документа и дата</td>
+<td rowspan="2" style="text-align: center;">Подпись</td>
+<td rowspan="2" style="text-align: center;">Дата</td>
+</tr>
+<tr>
+<td style="text-align: center;">измененных</td>
+<td style="text-align: center;">замененных</td>
+<td style="text-align: center;">новых</td>
+<td style="text-align: center;">аннулированных</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>

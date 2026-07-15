@@ -1,0 +1,29 @@
+{
+  "name": "semicolon-list-extension",
+  "displayName": "Semicolon List Extension",
+  "description": "Convert selected semicolon-separated text into a bullet list",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:semicolonList.convert"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "semicolonList.convert",
+        "title": "Convert semicolon list"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "semicolonList.convert",
+        "key": "ctrl+alt+shift+b",
+        "when": "editorTextFocus && editorLangId == markdown"
+      }
+    ]
+  }
+}
