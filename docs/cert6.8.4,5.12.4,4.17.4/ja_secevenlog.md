@@ -1,47 +1,3 @@
-<table>
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><p>УТВЕРЖДЕН</p>
-<p>643.72410666.00067-07 98 01-ЛУ</p></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" style="text-align: center;"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br />
-БАЗАМИ ДАННЫХ «JATOBA»</p>
-<p><strong>Руководство по настройке. Часть 30.<br />
-Запись событий информационной безопасности.<br />
-Компонент «ja_seceventlog»</strong></p></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;"><strong>643.72410666.00067-07 98 01-30</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">Листов 43</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">2025</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: right;">Литера О<sub>1</sub></td>
-</tr>
-</tbody>
-</table>
-
 **АННОТАЦИЯ**
 
 В документе приведены сведения, необходимые для установки и эксплуатации компонента «ja_seceventlog» (далее по тексту – «компонент»), предназначенного для формирования событий безопасности СУБД в соответствии с ГОСТ-Р-59548-2022 «Национальный стандарт Российской Федерации. Защита информации. Регистрация событий безопасности. Требования к регистрируемой информации» и хранения их в отдельном каталоге.
@@ -58,165 +14,27 @@
 | <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_secevenlog/media/image2.png" style="width:0.25in;height:0.25in" /> | **Дополнительная информация** – указания, позволяющие упростить работу с изделием |
 |----|----|
 
-**СОДЕРЖАНИЕ**
-
-# 
-
-[1. Назначение компонента [5](#назначение-компонента)](#назначение-компонента)
-
-[1.1. Условия применения [5](#условия-применения)](#условия-применения)
-
-[1.2. Ограничения [5](#ограничения)](#ограничения)
-
-[2. Установка и настройка [6](#установка-и-настройка)](#установка-и-настройка)
-
-[2.1. Установка в ОС GNU Linux [6](#установка-в-ос-gnu-linux)](#установка-в-ос-gnu-linux)
-
-[2.2. Настройка конфигурационного файла «postgresql.conf» для компонента «ja_seceventlog» [7](#настройка-конфигурационного-файла-postgresql.conf-для-компонента-ja_seceventlog)](#настройка-конфигурационного-файла-postgresql.conf-для-компонента-ja_seceventlog)
-
-[2.3. Параметры регистрации событий безопасности компонентом «ja_seceventlog» [10](#параметры-регистрации-событий-безопасности-компонентом-ja_seceventlog)](#параметры-регистрации-событий-безопасности-компонентом-ja_seceventlog)
-
-[2.3.1. ja_seceventlog.log_connections [11](#ja_seceventlog.log_connections)](#ja_seceventlog.log_connections)
-
-[2.3.2. ja_seceventlog.log_disconnections [11](#ja_seceventlog.log_disconnections)](#ja_seceventlog.log_disconnections)
-
-[2.3.3. ja_seceventlog.log [11](#ja_seceventlog.log)](#ja_seceventlog.log)
-
-[2.3.4. ja_seceventlog.log_catalog [12](#ja_seceventlog.log_catalog)](#ja_seceventlog.log_catalog)
-
-[2.3.5. ja_seceventlog.log_client [13](#ja_seceventlog.log_client)](#ja_seceventlog.log_client)
-
-[2.3.6. ja_seceventlog.log_destination [13](#ja_seceventlog.log_destination)](#ja_seceventlog.log_destination)
-
-[2.3.7. ja_seceventlog.log_level [13](#ja_seceventlog.log_level)](#ja_seceventlog.log_level)
-
-[2.3.8. ja_seceventlog.log_parameter [14](#ja_seceventlog.log_parameter)](#ja_seceventlog.log_parameter)
-
-[2.3.9. ja_seceventlog.log_relation [14](#ja_seceventlog.log_relation)](#ja_seceventlog.log_relation)
-
-[2.3.10. ja_seceventlog.log_statement [14](#ja_seceventlog.log_statement)](#ja_seceventlog.log_statement)
-
-[2.3.11. ja_seceventlog.log_statement_once [14](#ja_seceventlog.log_statement_once)](#ja_seceventlog.log_statement_once)
-
-[2.3.12. ja_seceventlog.log_directory [15](#ja_seceventlog.log_directory)](#ja_seceventlog.log_directory)
-
-[2.3.13. ja_seceventlog.log_rotation_size [15](#ja_seceventlog.log_rotation_size)](#ja_seceventlog.log_rotation_size)
-
-[2.3.14. ja_seceventlog.log_rotation_age [15](#ja_seceventlog.log_rotation_age)](#ja_seceventlog.log_rotation_age)
-
-[2.3.15. ja_seceventlog.code_desc_cache_limit [15](#ja_seceventlog.code_desc_cache_limit)](#ja_seceventlog.code_desc_cache_limit)
-
-[2.3.16. ja_seceventlog.source_desc_cache_limit [16](#ja_seceventlog.source_desc_cache_limit)](#ja_seceventlog.source_desc_cache_limit)
-
-[2.3.17. ja_seceventlog.log_parameter_max_size [16](#ja_seceventlog.log_parameter_max_size)](#ja_seceventlog.log_parameter_max_size)
-
-[2.3.18. ja_seceventlog.log_destination_table [16](#ja_seceventlog.log_destination_table)](#ja_seceventlog.log_destination_table)
-
-[2.3.19. ja_seceventlog.db_name [16](#ja_seceventlog.db_name)](#ja_seceventlog.db_name)
-
-[2.3.20. ja_seceventlog.role [17](#ja_seceventlog.role)](#ja_seceventlog.role)
-
-[2.3.21. ja_seceventlog.jasel_syslog_facility [17](#ja_seceventlog.jasel_syslog_facility)](#ja_seceventlog.jasel_syslog_facility)
-
-[2.3.22. ja_seceventlog.jasel_syslog_ident [17](#ja_seceventlog.jasel_syslog_ident)](#ja_seceventlog.jasel_syslog_ident)
-
-[2.3.23. ja_seceventlog.jasel_syslog_sequence_numbers [18](#ja_seceventlog.jasel_syslog_sequence_numbers)](#ja_seceventlog.jasel_syslog_sequence_numbers)
-
-[2.3.24. ja_seceventlog.jasel_split_messages [18](#ja_seceventlog.jasel_split_messages)](#ja_seceventlog.jasel_split_messages)
-
-[2.3.25. ja_seceventlog.maxage [18](#ja_seceventlog.maxage)](#ja_seceventlog.maxage)
-
-[2.3.26. ja_seceventlog.maxsize [19](#ja_seceventlog.maxsize)](#ja_seceventlog.maxsize)
-
-[2.3.27. ja_seceventlog.log_size_soft_limit [19](#ja_seceventlog.log_size_soft_limit)](#ja_seceventlog.log_size_soft_limit)
-
-[2.3.28. ja_seceventlog.log_size_hard_limit [20](#ja_seceventlog.log_size_hard_limit)](#ja_seceventlog.log_size_hard_limit)
-
-[2.4. Установка расширения «ja_seceventlog» [20](#установка-расширения-ja_seceventlog)](#установка-расширения-ja_seceventlog)
-
-[2.5. Директория хранения журнала событий безопасности компонента «ja_seceventlog» [21](#secevent_log-таблица-временного-хранения-событий-безопасности.-директория-хранения-журнала-событий-безопасности-компонента-ja_seceventlog)](#secevent_log-таблица-временного-хранения-событий-безопасности.-директория-хранения-журнала-событий-безопасности-компонента-ja_seceventlog)
-
-[3. Функциональные возможности компонента [24](#функциональные-возможности-компонента)](#функциональные-возможности-компонента)
-
-[3.1. Фильтрация событий информационной безопасности [24](#фильтрация-событий-информационной-безопасности)](#фильтрация-событий-информационной-безопасности)
-
-[3.1.1. Функция создания фильтра (create_filter) [25](#функция-создания-фильтра-create_filter)](#функция-создания-фильтра-create_filter)
-
-[3.1.2. Функция отображения фильтров (show_filters) [27](#функция-отображения-фильтров-show_filters)](#функция-отображения-фильтров-show_filters)
-
-[3.1.3. Функция удаления фильтра (drop_filter) [27](#функция-удаления-фильтра-drop_filter)](#функция-удаления-фильтра-drop_filter)
-
-[3.1.4. Функция удаления всех фильтров (reset_filters) [27](#функция-удаления-всех-фильтров-reset_filters)](#функция-удаления-всех-фильтров-reset_filters)
-
-[3.2. Запись событий ИБ в таблицу БД [27](#запись-событий-иб-в-таблицу-бд)](#запись-событий-иб-в-таблицу-бд)
-
-[4. Обновление компонента [30](#обновление-компонента)](#обновление-компонента)
-
-[4.1. Обновление пакета компонента из репозитория [30](#обновление-пакета-компонента-из-репозитория)](#обновление-пакета-компонента-из-репозитория)
-
-[4.2. Обновление расширения с использованием [30](#обновление-расширения-с-использованием)](#обновление-расширения-с-использованием)
-
-[4.3. Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.0 [30](#настройка-расширения-ja_seceventlog-после-обновления-с-версии-2.0-до-3.0)](#настройка-расширения-ja_seceventlog-после-обновления-с-версии-2.0-до-3.0)
-
-[4.3.1. Параметр ja_seceventlog.log [31](#параметр-ja_seceventlog.log)](#параметр-ja_seceventlog.log)
-
-[4.3.2. Параметр ja_seceventlog.max_filters [32](#параметр-ja_seceventlog.max_filters)](#параметр-ja_seceventlog.max_filters)
-
-[4.3.3. Параметр ja_seceventlog.log_connections [33](#в-версии-3.0-128в-версии-2.0---параметр-отсутствует.параметр-ja_seceventlog.log_connections)](#в-версии-3.0-128в-версии-2.0---параметр-отсутствует.параметр-ja_seceventlog.log_connections)
-
-[4.3.4. Параметр ja_seceventlog.log_disconnections [33](#параметр-ja_seceventlog.log_disconnections)](#параметр-ja_seceventlog.log_disconnections)
-
-[4.3.5. Параметр ja_seceventlog.log_catalog [33](#параметр-ja_seceventlog.log_catalog)](#параметр-ja_seceventlog.log_catalog)
-
-[4.3.6. Параметр ja_seceventlog.log_relation [34](#параметр-ja_seceventlog.log_relation)](#параметр-ja_seceventlog.log_relation)
-
-[4.3.7. Параметр ja_seceventlog.role [34](#параметр-ja_seceventlog.role)](#параметр-ja_seceventlog.role)
-
-[4.3.8. Параметр ja_seceventlog.log_parameter [36](#параметр-ja_seceventlog.log_parameter)](#параметр-ja_seceventlog.log_parameter)
-
-[4.3.9. Параметр ja_seceventlog.log_statement_once [36](#параметр-ja_seceventlog.log_statement_once)](#параметр-ja_seceventlog.log_statement_once)
-
-[4.3.10. Параметр ja_seceventlog.log_client [36](#параметр-ja_seceventlog.log_client)](#параметр-ja_seceventlog.log_client)
-
-[4.3.11. Параметр ja_seceventlog.log_level [37](#параметр-ja_seceventlog.log_level)](#параметр-ja_seceventlog.log_level)
-
-[4.3.12. Параметр ja_seceventlog.log_parameter_max_size [37](#параметр-ja_seceventlog.log_parameter_max_size)](#параметр-ja_seceventlog.log_parameter_max_size)
-
-[4.3.13. Параметр ja_seceventlog.log_rows [37](#параметр-ja_seceventlog.log_rows)](#параметр-ja_seceventlog.log_rows)
-
-[4.3.14. Параметр ja_seceventlog.log_statement [38](#параметр-ja_seceventlog.log_statement)](#параметр-ja_seceventlog.log_statement)
-
-[5. Удаление компонента [39](#удаление-компонента)](#удаление-компонента)
-
-[5.1. Удаление расширения [39](#удаление-расширения)](#удаление-расширения)
-
-[5.2. Удаление пакета [39](#удаление-пакета)](#удаление-пакета)
-
-[Приложение 1 [40](#_Toc215496900)](#_Toc215496900)
-
-[Перечень сокращений [42](#_Toc215496901)](#_Toc215496901)
-
-# Назначение компонента
+## Назначение компонента
 
 Компонент «ja_seceventlog» предназначен для формирования событий безопасности СУБД в соответствии с ГОСТ-Р-59548-2022 «Национальный стандарт Российской Федерации. Защита информации. Регистрация событий безопасности. Требования к регистрируемой информации» и хранения их в отдельном каталоге.
 
 Компонент устанавливает собственные и независимые параметры регистрации событий и вырезает события безопасности из журнала аудита СУБД, складывая их в свой журнал.
 
-## Условия применения
+### Условия применения
 
 Компонент «ja_seceventlog» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционных систем Windows и GNU/Linux.
 
-## Ограничения
+### Ограничения
 
 На данной стадии реализации отсутствует интеграция компонента «ja_seceventlog» с разделом «Уведомления» компонента Jatoba Data Safe.
 
 События журналов безопасности хранятся в формате JSON.
 
-# Установка и настройка
+## Установка и настройка
 
 Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).
 
-## Установка в ОС GNU Linux
+### Установка в ОС GNU Linux
 
 Компонент возможно установить при первичной установке СУБД «Jatoba», либо доустановить.
 
@@ -247,7 +65,7 @@
 
 Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.
 
-## Настройка конфигурационного файла «postgresql.conf» для компонента «ja_seceventlog»
+### Настройка конфигурационного файла «postgresql.conf» для компонента «ja_seceventlog»
 
 Функциональные возможности компонента позволяют сохранять события безопасности:
 
@@ -260,7 +78,7 @@
 
 Взаимосвязи ключевых и зависимых параметров компонента представлены на рисунке Рисунок 2.1.
 
-![](../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_secevenlog/media/image3.emf)
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_secevenlog/media/image3.png)
 
 Рисунок . – Схема зависимости параметров компонента
 
@@ -303,9 +121,9 @@
 
 - 
 
-> в GNU Linux:systemctl restart jatoba-\<ver\>
+> в GNU Linux:systemctl restart jatoba-<ver>
 
-## Параметры регистрации событий безопасности компонентом «ja_seceventlog»
+### Параметры регистрации событий безопасности компонентом «ja_seceventlog»
 
 После установки расширения компонента становится доступным вывод параметров SQL-командой:
 
@@ -325,7 +143,7 @@
 
 Компонент «ja_seceventlog» использует параметры регистрации событий безопасности СУБД приведенные ниже.
 
-### ja_seceventlog.log_connections
+#### ja_seceventlog.log_connections
 
 Параметр определяет перехват событий безопасности соединения с СУБД.
 
@@ -338,7 +156,7 @@
 | <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_secevenlog/media/image5.svg" style="width:0.25139in;height:0.25139in" /> | Параметр ja_seceventlog.log_connections при обновлении компонента ja_seceventlog до версии 3.0 должен быть предварительно удален из конфигурационного файла postgresql.conf. |
 |----|----|
 
-### ja_seceventlog.log_disconnections
+#### ja_seceventlog.log_disconnections
 
 Параметр определяет перехват событий безопасности разъединения с СУБД.
 
@@ -351,7 +169,7 @@
 | <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_secevenlog/media/image5.svg" style="width:0.25139in;height:0.25139in" /> | Параметр ja_seceventlog.log_disconnections при обновлении компонента ja_seceventlog до версии 3.0 должен быть предварительно удален из конфигурационного файла postgresql.conf. |
 |----|----|
 
-### ja_seceventlog.log 
+#### ja_seceventlog.log 
 
 Параметр определяет какие классы операторов будут регистрироваться в журнале событий безопасности СУБД.
 
@@ -378,19 +196,19 @@
 
 READ – регистрируются SQL-команды SELECT, COPY в случае если источником является отношение или запрос;WRITE – регистрируются SQL-команды INSERT, UPDATE, DELETE, TRUNCATE, и COPY;FUNCTION – регистрируются функции CALLS и DO;ROLE – регистрируются SQL-команды, относящиеся к ролям и системным привилегиям такие как, GRANT, REVOKE, CREATE/ALTER/DROP ROLE;DDL – регистрируются SQL-команды DDL не относящиеся к параметру ROLE;MISC – регистрируются прочие команды SQL-команды, такие как DISCARD, FETCH, CHECKPOINT, VACUUM, SET;MISC_SET – регистрируются SQL-команды типа SET;ALL – регистрируются все перечисленные SQL-команды.Создание фильтров событий в версии 3.0, соответствующих версии 2.0 приводится в п.п. 4.3.1.
 
-### ja_seceventlog.log_catalog
+#### ja_seceventlog.log_catalog
 
 Параметр указывает, что ведение журнала сеанса должно быть включено в случае, когда все отношения в операторе находятся в pg_catalog.
 
 > ja_seceventlog.log_catalog = on
 
-### ja_seceventlog.log_client
+#### ja_seceventlog.log_client
 
 Параметр определяет, будут ли сообщения журнала видны клиентскому процессу, такому как psql. Обычно этот параметр следует оставлять отключенным, но он может быть полезен для отладки или других целей.
 
 > ja_seceventlog.log_client = on
 
-### ja_seceventlog.log_destination 
+#### ja_seceventlog.log_destination 
 
 Параметр, определяет формат записи журнала событий безопасности СУБД.
 
@@ -404,7 +222,7 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 Значение по умолчанию – jsonlog.
 
-### ja_seceventlog.log_level 
+#### ja_seceventlog.log_level 
 
 Параметр определяет уровень логирования, который будет использоваться для записей журнала.
 
@@ -420,7 +238,7 @@ log: базовый уровень, регистрирует только важ
 
 > ja_seceventlog.log_level = log
 
-### ja_seceventlog.log_parameter
+#### ja_seceventlog.log_parameter
 
 Параметр указывает, что ведение журнала аудита должно включать параметры, переданные вместе с оператором. При наличии параметров они будут включены в формате JSON после текста оператора.
 
@@ -428,33 +246,33 @@ log: базовый уровень, регистрирует только важ
 
 > ja_seceventlog.log_parameter = on
 
-### ja_seceventlog.log_relation
+#### ja_seceventlog.log_relation
 
 Параметр указывает, должно ли ведение журнала аудита сессии создавать отдельную запись журнала для каждого отношения (TABLE, VIEW и т. д.), на которое ссылается оператор SELECT или DML.
 
 > ja_seceventlog.log_relation = on
 
-### ja_seceventlog.log_statement
+#### ja_seceventlog.log_statement
 
 Параметр указывает, будет ли протоколирование включать текст инструкции и параметры (если включено). В зависимости от требований журнал аудита может не требовать этого, и журналы становятся менее подробными.
 
 > ja_seceventlog.log_statement = on
 
-### ja_seceventlog.log_statement_once
+#### ja_seceventlog.log_statement_once
 
 Параметр указывает, будет ли протоколирование включать текст оператора и параметры с первой записью журнала для комбинации оператора/подоператора или с каждой записью. Отключение этого параметра приведет к менее подробному журналированию, но может затруднить определение инструкции, сгенерировавшей запись в журнале, хотя пары оператор/подоператор вместе с идентификатором процесса должно быть достаточно для идентификации текста оператора, зарегистрированного с предыдущей записью.
 
 > ja_seceventlog.log_statement_once = on
 
-### ja_seceventlog.log_directory
+#### ja_seceventlog.log_directory
 
 Параметр указывает на директорию хранения журнала событий безопасности
 
 > ja_seceventlog.log_directory = '/audit_log'
 
-Значение по умолчанию – LOG (/var/lib/jatoba/\<ver\>/data/log).
+Значение по умолчанию – LOG (/var/lib/jatoba/<ver>/data/log).
 
-### ja_seceventlog.log_rotation_size
+#### ja_seceventlog.log_rotation_size
 
 Параметр, определяющий ротацию журнала по достижению установленного размера.
 
@@ -469,7 +287,7 @@ log: базовый уровень, регистрирует только важ
 | <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_secevenlog/media/image7.svg" style="width:0.25in;height:0.25in" /> | Не рекомендуется ставить небольшие значения, ротация журналов в таком случае будет происходить не чаще чем 1 раз в секунду. |
 |----|----|
 
-### ja_seceventlog.log_rotation_age
+#### ja_seceventlog.log_rotation_age
 
 Параметр определяет переключение на другой файл журнала каждые N минут.
 
@@ -478,7 +296,7 @@ log: базовый уровень, регистрирует только важ
 | <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_secevenlog/media/image7.svg" style="width:0.25in;height:0.25in" /> | Не рекомендуется ставить небольшие значения, ротация журналов в таком случае будет происходить не чаще чем 1 раз в секунду. |
 |----|----|
 
-### ja_seceventlog.code_desc_cache_limit
+#### ja_seceventlog.code_desc_cache_limit
 
 Параметр устанавливает максимальное количества значений secEventId в кеше.
 
@@ -486,7 +304,7 @@ log: базовый уровень, регистрирует только важ
 
 > ja_seceventlog.code_desc_cache_limit = 200
 
-### ja_seceventlog.source_desc_cache_limit
+#### ja_seceventlog.source_desc_cache_limit
 
 Параметр устанавливает максимальное количество описаний событий безопасности в кеше.
 
@@ -494,13 +312,13 @@ log: базовый уровень, регистрирует только важ
 
 > ja_seceventlog.source_desc_cache_limit = 20
 
-### ja_seceventlog.log_parameter_max_size
+#### ja_seceventlog.log_parameter_max_size
 
 Параметр определяет максимальный размер параметров, которые будут регистрироваться в журнале аудита СУБД. Если значение равно 0 (по умолчанию), все параметры регистрируются независимо от длины.
 
 > ja_seceventlog.log_parameter_max_size = 0
 
-### ja_seceventlog.log_destination_table
+#### ja_seceventlog.log_destination_table
 
 Параметр определяет запись событий информационной безопасности в таблицу ja_seceventlog.secevent_log и непосредственно связан с параметром «ja_seceventlog.db_name».
 
@@ -508,7 +326,7 @@ log: базовый уровень, регистрирует только важ
 
 Значение по умолчанию – true.
 
-### ja_seceventlog.db_name
+#### ja_seceventlog.db_name
 
 При включенном протоколировании в таблицу БД, т.е при установленном параметре ja_seceventlog.log_destination_table = true, определяет имя базы данных, в которой содержится таблица.
 
@@ -532,13 +350,13 @@ log: базовый уровень, регистрирует только важ
 </tbody>
 </table>
 
-###  ja_seceventlog.role
+####  ja_seceventlog.role
 
 Указывает основную роль, используемую для ведения журнала аудита объектов. Можно определить несколько ролей аудита, назначив их главной роли. Это позволяет нескольким группам отвечать за различные аспекты ведения журналов аудита.
 
 По умолчанию роли нет.
 
-### ja_seceventlog.jasel_syslog_facility
+#### ja_seceventlog.jasel_syslog_facility
 
 Параметр «ja_seceventlog.jasel_syslog_facility» является зависимым от параметра «ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog».
 
@@ -548,7 +366,7 @@ log: базовый уровень, регистрирует только важ
 
 Значение по умолчанию – LOCAL0.
 
-### ja_seceventlog.jasel_syslog_ident
+#### ja_seceventlog.jasel_syslog_ident
 
 Параметр «ja_seceventlog.jasel_syslog_ident» является зависимым от параметра «ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog».
 
@@ -556,7 +374,7 @@ log: базовый уровень, регистрирует только важ
 
 Значение по умолчанию отсутствует.
 
-### ja_seceventlog.jasel_syslog_sequence_numbers
+#### ja_seceventlog.jasel_syslog_sequence_numbers
 
 Параметр «ja_seceventlog.jasel_syslog_sequence_numbers» является зависимым от параметра «ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog». При данном значении параметр «ja_seceventlog.jasel_syslog_sequence_numbers» включен по умолчанию.
 
@@ -564,7 +382,7 @@ log: базовый уровень, регистрирует только важ
 
 Значение по умолчанию – false.
 
-### ja_seceventlog.jasel_split_messages
+#### ja_seceventlog.jasel_split_messages
 
 Параметр «ja_seceventlog.jasel_split_messages» является зависимым от параметра «ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog».
 
@@ -574,7 +392,7 @@ log: базовый уровень, регистрирует только важ
 
 Значение по умолчанию – true.
 
-### ja_seceventlog.maxage
+#### ja_seceventlog.maxage
 
 Параметр определяет количество дней, в течение которых будут храниться журналы событий безопасности СУБД в отдельном каталоге.
 
@@ -584,7 +402,7 @@ log: базовый уровень, регистрирует только важ
 
 Значение по умолчанию – 30D
 
-### ja_seceventlog.maxsize
+#### ja_seceventlog.maxsize
 
 Параметр «ja_seceventlog.maxsize» определяет объем дисковой памяти, выделенной администратором для хранения журналов событий безопасности СУБД в отдельном каталоге.
 
@@ -596,7 +414,7 @@ log: базовый уровень, регистрирует только важ
 
 Если значение равно «0», то не будут выполняться проверки на программные (soft) и аппаратные (hard) лимиты.
 
-### ja_seceventlog.log_size_soft_limit
+#### ja_seceventlog.log_size_soft_limit
 
 Параметр «ja_seceventlog.log_size_soft_limit» является зависимым от параметра «ja_seceventlog.maxsize» который устанавливает размер каталога для хранения журналов событий безопасности СУБД.
 
@@ -624,7 +442,7 @@ log: базовый уровень, регистрирует только важ
 </tbody>
 </table>
 
-### ja_seceventlog.log_size_hard_limit
+#### ja_seceventlog.log_size_hard_limit
 
 Параметр «ja_seceventlog.log_size_hard_limit» является зависимым параметром от параметра «ja_seceventlog.maxsize», который определяет объем дисковой памяти, выделенной администратором для хранения журналов событий безопасности СУБД в отдельном каталоге.
 
@@ -652,7 +470,7 @@ log: базовый уровень, регистрирует только важ
 </tbody>
 </table>
 
-## Установка расширения «ja_seceventlog»
+### Установка расширения «ja_seceventlog»
 
 Войти в СУБД от имени и с правами пользователя «SUPERUSER», выполнить  
 SQL-команду:
@@ -679,9 +497,9 @@ ja_seceventlog.secevent_source_desc, содержащую спецификаци
 
 - 
 
-## secevent_log – таблица временного хранения событий безопасности. Директория хранения журнала событий безопасности компонента «ja_seceventlog»
+### secevent_log – таблица временного хранения событий безопасности. Директория хранения журнала событий безопасности компонента «ja_seceventlog»
 
-По умолчанию директория хранения журнала событий безопасности компонента «ja_seceventlog» /var/lib/jatoba/\<ver\>/data/log.
+По умолчанию директория хранения журнала событий безопасности компонента «ja_seceventlog» /var/lib/jatoba/<ver>/data/log.
 
 Просмотреть текущую директорию хранения журнала событий безопасности компонента «ja_seceventlog» возможно SQL-командой:
 
@@ -709,9 +527,13 @@ ja_seceventlog.secevent_source_desc, содержащую спецификаци
 
 > Задать права на созданный каталог:# chown postgres: /audit_log
 >
-> \# chmod 700 /audit_log
+```
+# chmod 700 /audit_log
+```
 >
-> \# ls -ld /audit_log/
+```
+# ls -ld /audit_log/
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_secevenlog/media/image10.png" style="width:7.06601in;height:1.52174in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-19 23-53-22.png" />
 
@@ -725,9 +547,9 @@ ja_seceventlog.secevent_source_desc, содержащую спецификаци
 
 Перезагрузить службу СУБД «Jatoba».Таким образом журнала событий безопасности будет храниться отдельно от журнала аудита СУБД.
 
-# Функциональные возможности компонента
+## Функциональные возможности компонента
 
-## Фильтрация событий информационной безопасности
+### Фильтрация событий информационной безопасности
 
 Во время установки расширения будет создана служебная таблица фильтров ja_seceventlog.filter. Таблица ja_seceventlog.filter предназначена для хранения фильтров имеет следующую структуру:
 
@@ -780,7 +602,7 @@ create_filter (см. п.п. 3.1.1).show_filters ();drop_filter (см. п.п. 3.1
 >
 > (6 rows)
 
-### Функция создания фильтра (create_filter)
+#### Функция создания фильтра (create_filter)
 
 Функция create_filter предназначена для создания нового правила регистрации событий (фильтра) компонента ja_seceventlog.
 
@@ -805,7 +627,7 @@ db_name – символьный параметр. Имя БД, для кото�
 >
 > SELECT ja_seceventlog.create_filter('db1', NULL, NULL, NULL, 'user1', 'все события для пользователя user1 в базе db1');
 
-### Функция отображения фильтров (show_filters)
+#### Функция отображения фильтров (show_filters)
 
 Функция show_filters выводит полный список текущих фильтров из таблицы фильтров filter. Пример отображения фильтров представлен выше (представление ja_seceventlog.view_filters).
 
@@ -813,17 +635,17 @@ db_name – символьный параметр. Имя БД, для кото�
 
 Любое NULL значение заменяется на ключевое слово “ALL”, означая, что допускается запись любого события по данному атрибуту фильтра.
 
-### Функция удаления фильтра (drop_filter)
+#### Функция удаления фильтра (drop_filter)
 
 Функция drop_filter предназначена для удаления правила регистрации событий (фильтра).
 
 При использовании функции drop_filter происходит удаление фильтра из таблицы фильтров filter в схеме ja_seceventlog.
 
-### Функция удаления всех фильтров (reset_filters)
+#### Функция удаления всех фильтров (reset_filters)
 
 Функция reset_filters удаляет **все** фильтры из таблицы фильтров filter.
 
-## Запись событий ИБ в таблицу БД
+### Запись событий ИБ в таблицу БД
 
 Компонент обладает функциональной возможностью записи событий информационной безопасности в отдельную таблицу ja_seceventlog.secevent_log. Данная таблица создаётся при установке расширения.
 
@@ -872,9 +694,9 @@ log_time – штамп времени (во временной зоне сер�
 
 Рисунок 3.2 – Содержание представления ja_seceventlog.secevent_log_last_hour
 
-# Обновление компонента
+## Обновление компонента
 
-## Обновление пакета компонента из репозитория
+### Обновление пакета компонента из репозитория
 
 Перед началом процесса обновления компонента с версии 2.0 до 3.0 необходимо:
 
@@ -887,7 +709,7 @@ log_time – штамп времени (во временной зоне сер�
 
 > Или всех установленных в ОС пакетов:apt-get upgrade
 
-## Обновление расширения с использованием 
+### Обновление расширения с использованием 
 
 Другим вариантом обновления компонента является установка новой версии при помощи команды:
 
@@ -905,7 +727,7 @@ log_time – штамп времени (во временной зоне сер�
 
 > ALTER EXTENSION ja_seceventlog UPDATE TO '3.0';
 
-## Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.0
+### Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.0
 
 После обновления расширения с версии 2.0 до 3.0 необходимо установить значение параметров регистрации в журнале событий безопасности СУБД как это указано в п.п. 2.3:
 
@@ -922,7 +744,7 @@ log_time – штамп времени (во временной зоне сер�
 
 При обновлении версии расширения с версии 2.0 до 3.0 в следующих параметрах произошли изменения.
 
-### Параметр ja_seceventlog.log
+#### Параметр ja_seceventlog.log
 
 Если параметр ja_seceventlog.log (см. п.п.2.3) в версии 2.0 был установлен в 'NONE', то после обновления до версии 3.0 дополнительных действий по созданию фильтров не требуется.
 
@@ -968,7 +790,7 @@ log_time – штамп времени (во временной зоне сер�
 >
 > SELECT ja_seceventlog.create_filter(NULL, 100105100, NULL, NULL, NULL, 'для событий SET ROLE');
 
-### Параметр ja_seceventlog.max_filters
+#### Параметр ja_seceventlog.max_filters
 
 Параметр ja_seceventlog.max_filters определяет максимальное количество применяемых фильтров.
 
@@ -981,7 +803,7 @@ log_time – штамп времени (во временной зоне сер�
 - 
 - 
 
-### в версии 3.0 – 128;в версии 2.0 - параметр отсутствует.Параметр ja_seceventlog.log_connections
+#### в версии 3.0 – 128;в версии 2.0 - параметр отсутствует.Параметр ja_seceventlog.log_connections
 
 Параметр ja_seceventlog.log_connections активирует регистрацию событий попыток подключения к серверу СУБД. В версии 3.0 параметр удален, а управление регистрации попыток подключения возложено на параметр log_connections СУБД «Jatoba».
 
@@ -996,7 +818,7 @@ log_time – штамп времени (во временной зоне сер�
 >
 > SELECT ja_seceventlog.create_filter(NULL, '100107100', NULL, NULL, NULL, 'получение соединения');
 
-### Параметр ja_seceventlog.log_disconnections
+#### Параметр ja_seceventlog.log_disconnections
 
 Параметр включает ja_seceventlog.log_disconnections регистрацию событий завершения сеанса.
 
@@ -1009,7 +831,7 @@ log_time – штамп времени (во временной зоне сер�
 
 > SELECT ja_seceventlog.create_filter(NULL, '100106100', NULL, NULL, NULL, 'завершение сеанса');
 
-### Параметр ja_seceventlog.log_catalog
+#### Параметр ja_seceventlog.log_catalog
 
 Параметр ja_seceventlog.log_catalog позволяет включать/отключать регистрацию событий, относящихся к схеме pg_catalog.
 
@@ -1024,7 +846,7 @@ log_time – штамп времени (во временной зоне сер�
 
 Для работы фильтра событий ja_seceventlog.log_catalog необходимо наличие параметра ja_seceventlog.log_relation = on.
 
-### Параметр ja_seceventlog.log_relation
+#### Параметр ja_seceventlog.log_relation
 
 Позволяет ja_seceventlog.log_relation включать/отключать отдельную запись журнала для каждого отношения (TABLE, VIEW, и т.д.), на которое ссылается оператор SELECT или DML.
 
@@ -1039,7 +861,7 @@ log_time – штамп времени (во временной зоне сер�
 >
 > SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table2', NULL, 'все события для table2');
 
-### Параметр ja_seceventlog.role
+#### Параметр ja_seceventlog.role
 
 Данный параметр используется для аудита объектов БД.
 
@@ -1084,7 +906,7 @@ log_time – штамп времени (во временной зоне сер�
 
 Для каждого объекта, для которого ведется аудит объекта необходимо создать соответствующий фильтр, аналогичный указанным выше.
 
-### Параметр ja_seceventlog.log_parameter
+#### Параметр ja_seceventlog.log_parameter
 
 Параметр ja_seceventlog.log_parameter предназначен для включения в сообщения журналов событий безопасности ГОСТ-атрибута «Parameter» со значениями параметров запроса (к примеру, для команды EXECUTE).
 
@@ -1095,7 +917,7 @@ log_time – штамп времени (во временной зоне сер�
 
 в версии 3.0 – on;в версии 2.0 – off.При обновлении компонента ja_seceventlog до версии 3.0 данный параметр не требует дополнительных действий в настройке.
 
-### Параметр ja_seceventlog.log_statement_once
+#### Параметр ja_seceventlog.log_statement_once
 
 Параметр ja_seceventlog.log_statement_once предназначен для включения/выключения записи текста запроса (или его части) в событие журнала безопасности только один раз при обработке сложных запросов для подвыражений.
 
@@ -1106,7 +928,7 @@ log_time – штамп времени (во временной зоне сер�
 
 в версии 3.0 – off;в версии 2.0 – off.При обновлении компонента ja_seceventlog до версии 3.0 данный параметр не требует дополнительных действий в настройке.
 
-### Параметр ja_seceventlog.log_client
+#### Параметр ja_seceventlog.log_client
 
 Параметр ja_seceventlog.log_client предназначен для определения, будут ли сообщения журнала событий безопасности отображаться для клиентского процесса, например такого как psql.
 
@@ -1117,7 +939,7 @@ log_time – штамп времени (во временной зоне сер�
 
 в версии 3.0 – off;в версии 2.0 – off.При обновлении компонента ja_seceventlog до версии 3.0 данный параметр не требует дополнительных действий в настройке.
 
-### Параметр ja_seceventlog.log_level
+#### Параметр ja_seceventlog.log_level
 
 Параметр ja_seceventlog.log_level предназначен для указания уровня важности сообщений событий юезопасности, которые передаются клиенту, в случае, когда включен параметр pgaudit.log_client = on.
 
@@ -1128,7 +950,7 @@ log_time – штамп времени (во временной зоне сер�
 
 в версии 3.0 – 'log';в версии 2.0 – 'log'.При обновлении компонента ja_seceventlog до версии 3.0 данный параметр не требует дополнительных действий в настройке.
 
-### Параметр ja_seceventlog.log_parameter_max_size
+#### Параметр ja_seceventlog.log_parameter_max_size
 
 Параметр ja_seceventlog.log_parameter_max_size определяет максимальный размер (в байтах) параметров, которые могут быть записаны в журнал. Параметры, превышающие указанный размер, заменяются на \<long param suppressed\>. При значении 0 ограничение отключается, и регистрируются все параметры без обрезки. Данная настройка ограничивает длину записываемых значений для ja_seceventlog.log_parameter.
 
@@ -1139,7 +961,7 @@ log_time – штамп времени (во временной зоне сер�
 
 в версии 3.0 – 0;в версии 2.0 – 0.При обновлении компонента ja_seceventlog до версии 3.0 данный параметр не требует дополнительных действий в настройке.
 
-### Параметр ja_seceventlog.log_rows
+#### Параметр ja_seceventlog.log_rows
 
 Параметр ja_seceventlog.log_rows определяет, нужно ли записывать в журнал аудита количество строк, которые были извлечены или изменены в результате выполнения запроса.
 
@@ -1150,7 +972,7 @@ log_time – штамп времени (во временной зоне сер�
 
 в версии 3.0 – off;в версии 2.0 – off.При обновлении компонента ja_seceventlog до версии 3.0 данный параметр не требует дополнительных действий в настройке.
 
-### Параметр ja_seceventlog.log_statement
+#### Параметр ja_seceventlog.log_statement
 
 Параметр ja_seceventlog.log_statement предназначен для включения/выключения записи текста запроса (или его части) в событие журнала безопасности.
 
@@ -1161,9 +983,9 @@ log_time – штамп времени (во временной зоне сер�
 
 в версии 3.0 – on;в версии 2.0 – on.При обновлении компонента ja_seceventlog до версии 3.0 данный параметр не требует дополнительных действий в настройке.
 
-# Удаление компонента
+## Удаление компонента
 
-## Удаление расширения
+### Удаление расширения
 
 Расширение удаляется SQL-командой:
 
@@ -1173,13 +995,13 @@ log_time – штамп времени (во временной зоне сер�
 
 > \#shared_preload_libraries = 'ja_seceventlog'
 
-## Удаление пакета
+### Удаление пакета
 
 Компонент удаляется при помощи штатных средств ОС управления пакетами:
 
 > apt-get purge jatoba6-ja-seceventlog
 
-# 
+## 
 
 <span id="_Toc215496900" class="anchor"></span>Приложение 1(справочное)
 
@@ -1230,7 +1052,7 @@ log_time – штамп времени (во временной зоне сер�
 
 ACCESS METHODAGGREGATECASTCOLLATIONCONVERSIONDATABASEDOMAINEVENT TRIGGEREXTENSIONFOREIGN DATA WRAPPERFOREIGN TABLEFUNCTIONGROUPINDEXLANGUAGEMATERIALIZED VIEWOPERATOROPERATOR CLASSOPERATOR FAMILYPOLICYPROCEDUREPUBLICATIONROLERULESCHEMASEQUENCESERVERSTATISTICSSUBSCRIPTIONTABLETABLE ASTABLESPACETEXT SEARCH CONFIGURATIONTEXT SEARCH DICTIONARYTEXT SEARCH PARSERTEXT SEARCH TEMPLATETRANSFORMTRIGGERTYPEUSERUSER MAPPINGVIEW
 
-# 
+## 
 
 | <span id="_Toc215496901" class="anchor"></span>Перечень сокращенийSQL | – | Structured Query Language |
 |:---|----|----|
@@ -1238,353 +1060,3 @@ ACCESS METHODAGGREGATECASTCOLLATIONCONVERSIONDATABASEDOMAINEVENT TRIGGEREXTENSIO
 | ОС | – | Операционная система |
 | СУБД | – | Система управления базами данных |
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;">Лист регистрации изменений</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2" style="text-align: center;">Изм.</td>
-<td colspan="4" style="text-align: center;">Номера листов (страниц)</td>
-<td rowspan="2" style="text-align: center;">Всего<br />
-листов (страниц)<br />
-в документе</td>
-<td rowspan="2" style="text-align: center;">Номер документа</td>
-<td rowspan="2" style="text-align: center;">Входящий номер сопроводительного документа и дата</td>
-<td rowspan="2" style="text-align: center;">Подпись</td>
-<td rowspan="2" style="text-align: center;">Дата</td>
-</tr>
-<tr>
-<td style="text-align: center;">измененных</td>
-<td style="text-align: center;">замененных</td>
-<td style="text-align: center;">новых</td>
-<td style="text-align: center;">аннулированных</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>

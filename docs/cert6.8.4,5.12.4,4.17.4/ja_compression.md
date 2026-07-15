@@ -1,72 +1,14 @@
-<table>
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><p>УТВЕРЖДЕН</p>
-<p>643.72410666.00067-07 98 01-ЛУ</p></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" style="text-align: center;"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br />
-БАЗАМИ ДАННЫХ «JATOBA»</p>
-<p><strong>Руководство по настройке. Часть 25.<br />
-Сжатие данных на уровне страниц.<br />
-Компонент «ja_Compression»</strong></p></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;"><strong>643.72410666.00067-07 98 01-25</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">Листов 39</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">2024</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: right;">Литера О<sub>1</sub></td>
-</tr>
-</tbody>
-</table>
-
 **АННОТАЦИЯ**
 
 В документе приведены сведения, необходимые для установки и эксплуатации компонента «ja_Compression» (далее по тексту – «компонент» или ja_Compression), предназначенного для сжатия данных СУБД «Jatoba».
 
 Настоящее руководство предназначено для администраторов СУБД.
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 88%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" /></th>
-<th><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
-<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:</p>
-<ul>
-<li></li>
-</ul>
-<p>ОС Linux – «/usr/jatoba-6/bin».Версия компонента — 1.0</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.
+
+Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:
+:::
 
 Степени важности примечаний, применяемые в документе:
 
@@ -92,77 +34,7 @@
 </tbody>
 </table>
 
-**СОДЕРЖАНИЕ**
-
-# 
-
-[1. Назначение компонента [4](#назначение-компонента)](#назначение-компонента)
-
-[1.1. Условия применения [4](#условия-применения)](#условия-применения)
-
-[1.2. Ограничения по эксплуатации [4](#ограничения-по-эксплуатации)](#ограничения-по-эксплуатации)
-
-[2. Установка и настройка [8](#установка-и-настройка)](#установка-и-настройка)
-
-[3. Функциональные возможности компонента [9](#функциональные-возможности-компонента)](#функциональные-возможности-компонента)
-
-[3.1. Создание табличного пространства с сжатием данных [11](#создание-табличного-пространства-с-сжатием-данных)](#создание-табличного-пространства-с-сжатием-данных)
-
-[3.2. Перенос БД в новое табличное пространство с сжатием данных [12](#перенос-бд-в-новое-табличное-пространство-с-сжатием-данных)](#перенос-бд-в-новое-табличное-пространство-с-сжатием-данных)
-
-[4. SQL операции над компрессированными таблицами и индексами [14](#sql-операции-над-компрессированными-таблицами-и-индексами)](#sql-операции-над-компрессированными-таблицами-и-индексами)
-
-[4.1. Компрессия таблиц [14](#zstdlz4.компрессия-таблиц)](#zstdlz4.компрессия-таблиц)
-
-[4.2. Компрессия индексов таблиц [15](#компрессия-индексов-таблиц)](#компрессия-индексов-таблиц)
-
-[4.3. Компрессия других видов индексов [16](#компрессия-других-видов-индексов)](#компрессия-других-видов-индексов)
-
-[4.3.1. BRIN [16](#brin)](#brin)
-
-[4.3.2. GIN [16](#gin)](#gin)
-
-[4.3.3. HASH [17](#hash)](#hash)
-
-[4.3.4. GIST [17](#gist)](#gist)
-
-[4.3.5. SP GIST [18](#sp-gist)](#sp-gist)
-
-[4.3.6. Btree [18](#btree)](#btree)
-
-[4.3.7. RUM [18](#rum)](#rum)
-
-[4.4. Смена алгоритма компрессии (alter table) [19](#смена-алгоритма-компрессии-alter-table)](#смена-алгоритма-компрессии-alter-table)
-
-[4.5. Смена алгоритма компрессии индекса (alter index) [20](#смена-алгоритма-компрессии-индекса-alter-index)](#смена-алгоритма-компрессии-индекса-alter-index)
-
-[4.6. Компрессия журналируемых таблиц (logged tables) и нежурналируемых таблиц (unlogged tables), временных таблиц (temporary_tables) и их индексов [20](#компрессия-журналируемых-таблиц-logged-tables-и-нежурналируемых-таблиц-unlogged-tables-временных-таблиц-temporary_tables-и-их-индексов)](#компрессия-журналируемых-таблиц-logged-tables-и-нежурналируемых-таблиц-unlogged-tables-временных-таблиц-temporary_tables-и-их-индексов)
-
-[4.7. Компрессия TOAST файлов [21](#компрессия-toast-файлов)](#компрессия-toast-файлов)
-
-[4.8. Компрессия партиций [21](#компрессия-партиций)](#компрессия-партиций)
-
-[4.9. Компрессия распределенных таблиц [22](#компрессия-распределенных-таблиц)](#компрессия-распределенных-таблиц)
-
-[5. Резервирование и восстановление [25](#резервирование-и-восстановление)](#резервирование-и-восстановление)
-
-[6. Репликация [26](#репликация)](#репликация)
-
-[7. Удаление компонента [27](#удаление-компонента)](#удаление-компонента)
-
-[8. Настройка 1С:КИП с БД с компрессией [28](#настройка-1скип-с-бд-с-компрессией)](#настройка-1скип-с-бд-с-компрессией)
-
-[8.1. Предварительные условия [28](#предварительные-условия)](#предварительные-условия)
-
-[8.2. Настройка БД с компрессией [28](#настройка-бд-с-компрессией)](#настройка-бд-с-компрессией)
-
-[8.3. Запуск тестов в 1С КИП (Тест-центр) [33](#запуск-тестов-в-1с-кип-тест-центр)](#запуск-тестов-в-1с-кип-тест-центр)
-
-[Термины и определения [36](#_Toc196213027)](#_Toc196213027)
-
-[Перечень сокращений [38](#_Toc196213028)](#_Toc196213028)
-
-# Назначение компонента
+## Назначение компонента
 
 Компонент «ja_Сompression» предназначен для экономии имеющегося дискового пространства физического сервера СУБД.
 
@@ -177,11 +49,11 @@
 
 GUID - статистически уникальный 128-битный идентификатор;бинарные данные и случайные данные, например, иллюстрации, сохраненные в базе данных;Плохо сжимаются индексы, так как содержат бинарные данные. Совсем не сжимаются таблицы, созданные компонентом JCS, так как данные зашифрованы и хаотичны. Не сжимаются уже сжатые данные, см ниже про TOAST (тост-таблицах). Мало эффективно сжатие маленьких таблиц до 100 кб данных.
 
-## Условия применения
+### Условия применения
 
 Компонент «ja_Сompression» может использоваться с СУБД «Jatoba» версий 6.x и выше, под управлением GNU/Linux.
 
-## Ограничения по эксплуатации
+### Ограничения по эксплуатации
 
 Для поддержки компрессии в ОС должен быть установлен zstd версии 1.4 и выше.
 
@@ -308,13 +180,13 @@ Debian 10;ROSA 7.9;Следует избегать применения:
 
 > alter database \[db_name\] set tablespace \[tablespace_compression\];
 
-# Установка и настройка
+## Установка и настройка
 
 Компонент «ja_Сompression» выполнен в виде патча ядра СУБД «Jatoba» и не имеет отдельного пакета.
 
 Установка компонента «ja_Сompression» производится от имени пользователя, обладающего административными привилегиями в системе при базовой установке СУБД «Jatoba» в ОС GNU/Linux (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке 643.72410666.00067-07 97 01).
 
-# Функциональные возможности компонента
+## Функциональные возможности компонента
 
 Для каждой таблицы СУБД «Jatoba», соответствуют определённые файлы на диске. В файлы данные поступают в следующих обстоятельствах: после операций commit, checkpoint и вытеснения буфера из оперативной памяти на диск.
 
@@ -385,7 +257,7 @@ Debian 10;ROSA 7.9;Следует избегать применения:
 
 Таблица 3.1 – Варианты использования компрессии данных
 
-![](../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image3.emf)
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image3.png)
 
 Рисунок . – Схема применения сжатия данных к различным объектам
 
@@ -398,7 +270,7 @@ Debian 10;ROSA 7.9;Следует избегать применения:
 
 zstd;lz4.Далее по тексту в синтаксисе запросов compres_type может принимать значения zstd или lz4 в зависимости от выбранного алгоритма сжатия данных
 
-## Создание табличного пространства с сжатием данных
+### Создание табличного пространства с сжатием данных
 
 При создании табличного пространства с сжатием данных применяется следующий синтаксис команды:
 
@@ -408,9 +280,13 @@ zstd;lz4.Далее по тексту в синтаксисе запросов c
 
 Создать каталог и назначить права в терминале ОС:
 
-> \# mkdir -p /data/dbs
+```
+# mkdir -p /data/dbs
+```
 >
-> \# chown postgres:postgres /data/dbs
+```
+# chown postgres:postgres /data/dbs
+```
 
 Создать табличное пространство в отдельном каталоге, например с использованием компрессии zstd:
 
@@ -420,7 +296,7 @@ zstd;lz4.Далее по тексту в синтаксисе запросов c
 
 Рисунок 3.2 – Создание табличного пространства с сжатием данных
 
-## Перенос БД в новое табличное пространство с сжатием данных
+### Перенос БД в новое табличное пространство с сжатием данных
 
 В существующее табличное пространство возможно переместить БД. Применяется следующий синтаксис команды:
 
@@ -448,7 +324,7 @@ zstd;lz4.Далее по тексту в синтаксисе запросов c
 >
 > checkpoint;
 
-# SQL операции над компрессированными таблицами и индексами
+## SQL операции над компрессированными таблицами и индексами
 
 Компрессия индексов и таблиц разнесена в отдельные операции, чтобы избежать возникновения двойной компрессии.
 
@@ -457,7 +333,7 @@ zstd;lz4.Далее по тексту в синтаксисе запросов c
 - 
 - 
 
-## zstd;lz4.Компрессия таблиц
+### zstd;lz4.Компрессия таблиц
 
 Таблицы могут создаваться с признаком компрессии данных в БД или в табличном пространстве.
 
@@ -485,7 +361,7 @@ SQL-команда для создания таблицы в табличном 
 
 Рисунок 4.2 - SQL-команда для создания таблицы в табличном пространстве с компрессией
 
-## Компрессия индексов таблиц
+### Компрессия индексов таблиц
 
 Компонент поддерживает компрессию индексов. Ниже приведены примеры сжатия индексов таблиц.
 
@@ -513,9 +389,9 @@ SQL-команда для создания таблицы в табличном 
 
 Рисунок 4.5 - Компрессия создаваемого индекса таблицы в табличном пространстве
 
-## Компрессия других видов индексов
+### Компрессия других видов индексов
 
-### BRIN
+#### BRIN
 
 Компонент поддерживает компрессию индексов типа BRIN.
 
@@ -529,7 +405,7 @@ SQL-команда для создания таблицы в табличном 
 
 Рисунок 4.6 – Компрессия индекса типа BRIN c использованием алгоритма zstd
 
-### GIN
+#### GIN
 
 Компонент «ja_Сompression» поддерживает компрессию индексов типа GIN.
 
@@ -545,7 +421,7 @@ SQL-команда для создания таблицы в табличном 
 
 Рисунок 4.7 – Компрессия индекса типа GIN c использованием алгоритма zstd
 
-### HASH
+#### HASH
 
 Компонент «ja_Сompression» поддерживает компрессию индексов типа HASH.
 
@@ -559,7 +435,7 @@ SQL-команда для создания таблицы в табличном 
 
 Рисунок 4.8 – Компрессия индекса типа HASH c использованием алгоритма zstd
 
-### GIST
+#### GIST
 
 Компонент «ja_Сompression» поддерживает компрессию индексов типа GIST.
 
@@ -573,7 +449,7 @@ SQL-команда для создания таблицы в табличном 
 
 Рисунок 4.9 – Компрессия индекса типа GIST c использованием алгоритма zstd
 
-### SP GIST
+#### SP GIST
 
 Компонент «ja_Сompression» поддерживает компрессию индексов типа SP GIST.
 
@@ -590,7 +466,7 @@ SQL-команда для создания таблицы в табличном 
 
 Рисунок 4.10 – Компрессия индекса типа SP GIST c использованием алгоритма zstd
 
-### Btree
+#### Btree
 
 Компонент «ja_Сompression» поддерживает компрессию индексов типа Btree.
 
@@ -600,7 +476,7 @@ SQL-команда для создания таблицы в табличном 
 >
 > CREATE INDEX ix_brin on compress_brin using Btree (a) with (compression=\[zstd\|lz4\]);
 
-### RUM
+#### RUM
 
 Компонент RUM является внешним расширением.
 
@@ -618,7 +494,7 @@ SQL-команда для создания таблицы в табличном 
 >
 > CREATE INDEX rumidx ON test_rum USING rum (a rum_tsvector_ops) tablespace tablespace_compr;
 
-## Смена алгоритма компрессии (alter table)
+### Смена алгоритма компрессии (alter table)
 
 Для ранее созданной таблицы возможно установить тип компрессии используя оператор SET.
 
@@ -650,7 +526,7 @@ SQL-команда для создания таблицы в табличном 
 
 Рисунок 4.13 - Перенос таблицы в табличное пространство
 
-## Смена алгоритма компрессии индекса (alter index)
+### Смена алгоритма компрессии индекса (alter index)
 
 Смена индивидуального алгоритма компрессии у индексов не работает. Вместо этого необходимо пересоздать индексы или переместить в табличное пространство.
 
@@ -660,7 +536,7 @@ SQL-команда для создания таблицы в табличном 
 
 > ALTER INDEX idx1 set tablespace tablespace_compressed;
 
-## Компрессия журналируемых таблиц (logged tables) и нежурналируемых таблиц (unlogged tables), временных таблиц (temporary_tables) и их индексов
+### Компрессия журналируемых таблиц (logged tables) и нежурналируемых таблиц (unlogged tables), временных таблиц (temporary_tables) и их индексов
 
 Компонент «ja_Сompression» поддерживает компрессию журналируемых таблиц (logged tables), нежурналируемых таблиц (unlogged tables), временных таблиц (temporary_tables) и их индексов.
 
@@ -676,7 +552,7 @@ SQL-команда для создания таблицы в табличном 
 
 \- работает для постоянных (журналируемых) таблиц.
 
-## Компрессия TOAST файлов
+### Компрессия TOAST файлов
 
 При наличии столбцов с длинным типом (LOB) помимо основного файла - может создаваться TOAST файл, который привязан к таблице.
 
@@ -694,7 +570,7 @@ TOAST не имеет своих опций и наследует их от та
 
 При этом некоторые режимы хранения подразумевают свой механизм сжатия данных. на уровне строк. Чтобы избежать двойного сжатия, рекомендуется использовать режим хранения EXTERNAL. В таком случае будет использоваться только сжатие на уровне страниц.
 
-## Компрессия партиций
+### Компрессия партиций
 
 В данном подразделе приведен сценарий, позволяющий сжимать партиции, содержащие данные, которые редко используются, и перемещать их на более медленные и дешевые хранилища.
 
@@ -716,12 +592,12 @@ TOAST не имеет своих опций и наследует их от та
 
 Либо выполняем перемещение второй компрессированной таблицы в другое ТП при помощи команды:
 
-> ALTER TABLE compressed_partition_2 SET TABLESPACE tablespace\_ compressed;
+> ALTER TABLE compressed_partition_2 SET TABLESPACE tablespace_ compressed;
 
 | <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" /> | Алгоритм сжатия данных партиции и ТП при выполнении перемещения должны совпадать. Если для компрессированной партиции выбран алгоритм zstd, то перемещать такую партицию разрешено только в компрессированное ТП с алгоритмом сжатия данных zstd. |
 |----|----|
 
-## Компрессия распределенных таблиц
+### Компрессия распределенных таблиц
 
 При использовании компонента ja_Hipe_Cluster для реализации горизонтального масштабирования может применяться компрессия распределенных таблиц (шардов).
 
@@ -781,7 +657,7 @@ TOAST не имеет своих опций и наследует их от та
 
 То на распределенных узлах кластера эта же таблица будет располагаться в не сжатом ТП по умолчанию pg_default.
 
-# Резервирование и восстановление
+## Резервирование и восстановление
 
 **Утилита pg_dump **
 
@@ -799,7 +675,7 @@ TOAST не имеет своих опций и наследует их от та
 
 Утилита pg_basebackup сохраняет атрибут компрессии. После восстановления данных компрессия тоже восстанавливается при условии, что версия СУБД поддерживает компрессию.
 
-# Репликация
+## Репликация
 
 Следует заметить, что сетевой траффик не сжимается, а сжимается только дисковые данные.
 
@@ -819,17 +695,17 @@ TOAST не имеет своих опций и наследует их от та
 
 Компрессия данных поддерживается компонентом «jaDog».
 
-# Удаление компонента
+## Удаление компонента
 
 Выполнить удаление компонента «ja_Сompression» невозможно, т.к. он выполнен в виде патча ядра СУБД «Jatoba».
 
-# Настройка 1С:КИП с БД с компрессией
+## Настройка 1С:КИП с БД с компрессией
 
 В данном разделе рассматривается пример настройки 1С для работы с БД под управлением СУБД «Jatoba» подвергнутой компрессии компонентом «ja_Сompression».
 
 1С:КИП является инструментом для тестирования совместимости СУБД с 1С. Функциональные возможности компонента «ja_Сompression» позволяют подвергать компрессии БД в любых конфигурациях 1С.
 
-## Предварительные условия
+### Предварительные условия
 
 - 
 
@@ -846,7 +722,7 @@ TOAST не имеет своих опций и наследует их от та
 
 настройка производится на 2 серверах: Windows Server 2019 (сервер 1С); Astra Linux 1.7.5 (сервер СУБД, версия Linux-сервера неважна);на Windows-сервере установлена платформа 1С актуальной версии, к примеру, 8.3.25.1445 для совместимости с актуальными версиями СУБД, настроен сервер администрирования 1С («кластер 1С»);на сервере СУБД установлена Jatoba 6.4.1 с поддержкой компрессии;на сервере СУБД для супер-пользователя задан пароль;Тестирование заключается в вычислении условного относительного коэффициента APDEX (значение от 0.0 до 1.0)
 
-## Настройка БД с компрессией
+### Настройка БД с компрессией
 
 - 
 
@@ -857,7 +733,9 @@ TOAST не имеет своих опций и наследует их от та
 
 в конфигурационный файл postgresql.conf внести рекомендуемые параметры для работы с 1С, как описано в п.п. 3.2 и 3.3 документа «Поддержка платформы 1С» 643.72410666.00067-07 98 01-13.в конфигурационный файл pg_hba.conf внести параметры, позволяющие серверу 1С подключаться к СУБД, к примеру
 
-> \# IPv4 local connections:
+```
+# IPv4 local connections:
+```
 >
 > host kip_compress postgres \<IP-адрес сервера 1С\> password
 
@@ -927,24 +805,11 @@ TOAST не имеет своих опций и наследует их от та
 
 > в СУБД создать табличное пространство со сжатием (zstd или lz4);CREATE TABLESPACE tsp location '/tmp/tsp' with(compression=\[zstd\|lz4\]);
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 88%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" /></th>
-<th><p>Внимание, каталог /tmp может периодически чиститься демоном systemd-tmpfiles-clean.timer.</p>
-<p>Чтобы посмотреть его статус используйте команду ниже, либо создавайте tsp в другом каталоге, чтобы избежать внезапной очистки.</p>
-<blockquote>
-<p>#systemctl status systemd-tmpfiles-clean.timer</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+Внимание, каталог /tmp может периодически чиститься демоном systemd-tmpfiles-clean.timer.
+
+Чтобы посмотреть его статус используйте команду ниже, либо создавайте tsp в другом каталоге, чтобы избежать внезапной очистки.
+:::
 
 - 
 - 
@@ -963,7 +828,7 @@ TOAST не имеет своих опций и наследует их от та
 >
 > checkpoint;
 
-## Запуск тестов в 1С КИП (Тест-центр)
+### Запуск тестов в 1С КИП (Тест-центр)
 
 Выполнение теста требует выполнения следующих шагов:
 
@@ -1001,7 +866,7 @@ TOAST не имеет своих опций и наследует их от та
 
 Рисунок 8.10 – Вывод результатов теста
 
-# 
+## 
 
 <span id="_Toc196213027" class="anchor"></span>Термины и определения**Администратор СУБД** – субъект доступа, выполняющий административные функции в СУБД и наделенный правами:
 
@@ -1025,7 +890,7 @@ TOAST не имеет своих опций и наследует их от та
 
 **LZ4** — алгоритм сжатия данных без потерь, ориентированный на высокую скорость сжатия и распаковки. Он относится к семейству методов сжатия LZ77, работающих с байтовыми потоками. Отличается компактным кодом для распаковки.
 
-# 
+## 
 
 | <span id="_Toc196213028" class="anchor"></span>Перечень сокращенийSQL | – | Structured Query Language |
 |:---|----|----|
@@ -1034,353 +899,3 @@ TOAST не имеет своих опций и наследует их от та
 | ТП | – | Табличное пространство |
 | СУБД | – | Система управления базами данных |
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;">Лист регистрации изменений</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2" style="text-align: center;">Изм.</td>
-<td colspan="4" style="text-align: center;">Номера листов (страниц)</td>
-<td rowspan="2" style="text-align: center;">Всего<br />
-листов (страниц)<br />
-в документе</td>
-<td rowspan="2" style="text-align: center;">Номер документа</td>
-<td rowspan="2" style="text-align: center;">Входящий номер сопроводительного документа и дата</td>
-<td rowspan="2" style="text-align: center;">Подпись</td>
-<td rowspan="2" style="text-align: center;">Дата</td>
-</tr>
-<tr>
-<td style="text-align: center;">измененных</td>
-<td style="text-align: center;">замененных</td>
-<td style="text-align: center;">новых</td>
-<td style="text-align: center;">аннулированных</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>

@@ -1,47 +1,3 @@
-<table>
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><p>УТВЕРЖДЕН</p>
-<p>643.72410666.00067-07 98 01-ЛУ</p></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" style="text-align: center;"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br />
-БАЗАМИ ДАННЫХ «JATOBA»</p>
-<p><strong>Руководство по настройке. Часть 9.<br />
-Обфускация кода PL/spgSQL.<br />
-Компонент «PLsPgSQL»</strong></p></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;"><strong>643.72410666.00067-07 98 01-09</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">Листов 37</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">2024</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: right;">Литера О<sub>1</sub></td>
-</tr>
-</tbody>
-</table>
-
 **АННОТАЦИЯ**
 
 В документе приведены сведения необходимые для установки и эксплуатации компонента «PLsPgSQL» (далее по тексту – «компонент» либо «PLsPgSQL»).
@@ -50,27 +6,11 @@
 
 Администратор СУБД «Jatoba» должен иметь навыки по работе с СУБД PostgreSQL или защищенной СУБД «Jatoba» (ООО «Газинформсервис»).
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 88%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/plspgsql/media/image1.png" style="width:0.25in;height:0.25in" /></th>
-<th><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 5.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
-<p>Например, СУБД «Jatoba» версии 4.x по умолчанию устанавливается в директорию:</p>
-<ul>
-<li></li>
-<li></li>
-</ul>
-<p>ОС Windows – «C:\Program Files\GIS\Jatoba\4\bin»;ОС Linux – «/usr/jatoba-4/bin».</p>
-<p>Для СУБД «Jatoba» используется версия компонента — 2.0.1</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 5.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.
+
+Например, СУБД «Jatoba» версии 4.x по умолчанию устанавливается в директорию:
+:::
 
 <table>
 <colgroup>
@@ -96,61 +36,7 @@
 | <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/plspgsql/media/image1.png" style="width:0.25in;height:0.25in" /> | **Дополнительная информация** – указания, позволяющие упростить работу с изделием |
 |----|----|
 
-**СОДЕРЖАНИЕ**
-
-# 
-
-[1. Назначение компонента [4](#назначение-компонента)](#назначение-компонента)
-
-[1.1. Условия применения [4](#условия-применения)](#условия-применения)
-
-[2. Ограничения [5](#ограничения)](#ограничения)
-
-[3. Установка и использование компонента [6](#сокрытие-усложняет-восстановление-исходного-кода-но-пароли-и-другие-конфиденциальные-данные-не-должны-храниться-в-кодеисходный-код-должен-быть-pgplsql-преобразование-процедур-и-функций-других-языков-не-поддерживаетсяскрытый-код-не-может-компилироваться-в-экземплярах-субд-отличных-от-субд-jatobaв-коде-к-которому-будет-применяться-сокрытие-не-могут-использоваться-подстановочные-переменные.установка-и-использование-компонента)](#сокрытие-усложняет-восстановление-исходного-кода-но-пароли-и-другие-конфиденциальные-данные-не-должны-храниться-в-кодеисходный-код-должен-быть-pgplsql-преобразование-процедур-и-функций-других-языков-не-поддерживаетсяскрытый-код-не-может-компилироваться-в-экземплярах-субд-отличных-от-субд-jatobaв-коде-к-которому-будет-применяться-сокрытие-не-могут-использоваться-подстановочные-переменные.установка-и-использование-компонента)
-
-[3.1. Установка компонента в сегменте разработки и в промышленном сегменте [7](#установка-компонента-в-сегменте-разработки-и-в-промышленном-сегменте)](#установка-компонента-в-сегменте-разработки-и-в-промышленном-сегменте)
-
-[3.2. Установка криптопровайдера «КриптоПро CSP» [8](#установка-расширения.установка-криптопровайдера-криптопро-csp)](#установка-расширения.установка-криптопровайдера-криптопро-csp)
-
-[3.3. Установка библиотеки «КриптоПлатформа» (gis-cryptoplatform17) [14](#установка-библиотеки-криптоплатформа-gis-cryptoplatform17)](#установка-библиотеки-криптоплатформа-gis-cryptoplatform17)
-
-[3.4. Установка приложения «Litoria Desktop 2» [14](#установка-приложения-litoria-desktop-2)](#установка-приложения-litoria-desktop-2)
-
-[3.5. Выпуск сертификата [15](#выпуск-сертификата)](#выпуск-сертификата)
-
-[3.5.1. Первый запуск приложения «Litoria Desktop2» [15](#первый-запуск-приложения-litoria-desktop2)](#первый-запуск-приложения-litoria-desktop2)
-
-[3.5.2. Запуск приложения «Litoria Desktop 2» от имени и с правами пользователя [15](#запуск-приложения-litoria-desktop-2-от-имени-и-с-правами-пользователя)](#запуск-приложения-litoria-desktop-2-от-имени-и-с-правами-пользователя)
-
-[3.5.3. Формирование сертификата [16](#через-список-установленного-по.формирование-сертификата)](#через-список-установленного-по.формирование-сертификата)
-
-[3.5.4. Импорт сертификата в личное хранилище пользователя ОС [21](#импорт-сертификата-в-личное-хранилище-пользователя-ос)](#импорт-сертификата-в-личное-хранилище-пользователя-ос)
-
-[3.6. Установка компонента «PLsPgSQL» [24](#установка-компонента-plspgsql)](#установка-компонента-plspgsql)
-
-[3.6.1. Установка пакета «jatoba5-plspgsql» [24](#установка-пакета-jatoba5-plspgsql)](#установка-пакета-jatoba5-plspgsql)
-
-[3.6.2. Редактирование конфигурационного файла «postgresql.conf» [27](#редактирование-конфигурационного-файла-postgresql.conf)](#редактирование-конфигурационного-файла-postgresql.conf)
-
-[3.6.3. Установка расширения [27](#установка-расширения)](#установка-расширения)
-
-[3.7. Описание утилиты wplpsql [28](#описание-утилиты-wplpsql)](#описание-утилиты-wplpsql)
-
-[3.7.1. Установка прав на каталоги [28](#установка-прав-на-каталоги)](#установка-прав-на-каталоги)
-
-[3.7.2. Процедура обфускации [29](#процедура-обфускации)](#процедура-обфускации)
-
-[3.7.3. Перемещение преобразованной функции в промышленный сегмент [32](#перемещение-преобразованной-функции-в-промышленный-сегмент)](#перемещение-преобразованной-функции-в-промышленный-сегмент)
-
-[4. Сообщения об ошибках [34](#сообщения-об-ошибках)](#сообщения-об-ошибках)
-
-[4.1. Ошибка установки пакета «jatoba\<ver\>-plspgsql» [34](#ошибка-установки-пакета-jatobaver-plspgsql)](#ошибка-установки-пакета-jatobaver-plspgsql)
-
-[4.2. Ошибка запуска приложения «Litoria Desktop 2» [34](#ошибка-запуска-приложения-litoria-desktop-2)](#ошибка-запуска-приложения-litoria-desktop-2)
-
-[Перечень сокращений [36](#_Toc215497210)](#_Toc215497210)
-
-# Назначение компонента
+## Назначение компонента
 
 PL/spgSQL – процедурный язык PL/pgSQL с дополнительными функциями безопасности.
 
@@ -161,7 +47,7 @@ PL/spgSQL – процедурный язык PL/pgSQL с дополнитель
 Утилита обфускации использует серверную часть СУБД для обфускации отдельных  
 SQL-команд.
 
-## Условия применения
+### Условия применения
 
 Компонент «PLsPgSQL» может использоваться совместно с СУБД «Jatoba» версий 1.x – 4.х и выше в ОС, указанных в таблице Таблица 1.1.
 
@@ -177,7 +63,7 @@ SQL-команд.
 | 5 | ОСНОВА2 | 20.10.5 | 31.03.2021 |
 | 6 | РЕД ОС 7.3 Муром | 4060 | 12.01.2019 |
 
-# Ограничения
+## Ограничения
 
 При работе со скрытым кодом необходимо учитывать следующее:
 
@@ -186,11 +72,11 @@ SQL-команд.
 - 
 - 
 
-# сокрытие усложняет восстановление исходного кода, но пароли и другие конфиденциальные данные не должны храниться в коде;исходный код должен быть pgplsql, преобразование процедур и функций других языков не поддерживается;скрытый код не может компилироваться в экземплярах СУБД отличных от СУБД «Jatoba»;в коде, к которому будет применяться сокрытие, не могут использоваться подстановочные переменные.Установка и использование компонента
+## сокрытие усложняет восстановление исходного кода, но пароли и другие конфиденциальные данные не должны храниться в коде;исходный код должен быть pgplsql, преобразование процедур и функций других языков не поддерживается;скрытый код не может компилироваться в экземплярах СУБД отличных от СУБД «Jatoba»;в коде, к которому будет применяться сокрытие, не могут использоваться подстановочные переменные.Установка и использование компонента
 
 Процесс сокрытия исходных текстов, процедур и функций в СУБД «Jatoba» отображен на рисунке Рисунок 3.1.
 
-![](../docs/assets/images/cert6.8.4,5.12.4,4.17.4/plspgsql/media/image3.emf)
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/plspgsql/media/image3.png)
 
 Рисунок 3.1 – Процесс сокрытия процедур и функций в СУБД «Jatoba»
 
@@ -213,7 +99,7 @@ SQL-команд.
 
 Эксплуатация.После компиляции текст файла находится в СУБД в преобразованном виде и не подлежит изменению, при этом полностью сохраняет работоспособность и соответствует изначальной логике производителя.
 
-## Установка компонента в сегменте разработки и в промышленном сегменте
+### Установка компонента в сегменте разработки и в промышленном сегменте
 
 Процесс установки компонента идентичен для всех сегментов и состоит из следующих этапов:
 
@@ -234,7 +120,7 @@ SQL-команд.
 
 - 
 
-Установка пакета «jatoba\<ver\>-plspgsql»;Пакет использует внешние зависимости и для удовлетворения их требуется установка следующих внешних продуктов:
+Установка пакета «jatoba<ver>-plspgsql»;Пакет использует внешние зависимости и для удовлетворения их требуется установка следующих внешних продуктов:
 
 1)  
 
@@ -242,7 +128,7 @@ lsb-cprocsp – криптопровайдер «КриптоПро CSP» вер
 
 2)  
 
-gis-cryptoplatform17 – библиотека «КриптоПлатформа» версия 1.7.3-4. Данный пакет распространяется в составе дистрибутива СУБД «Jatoba» и устанавливается автоматически по зависимостям при установке пакета jatoba\<ver\>-plspgsql. Продукт поставляет ООО «Газинформсервис».Установка пакета описана в разделе 3.3 настоящего документа.
+gis-cryptoplatform17 – библиотека «КриптоПлатформа» версия 1.7.3-4. Данный пакет распространяется в составе дистрибутива СУБД «Jatoba» и устанавливается автоматически по зависимостям при установке пакета jatoba<ver>-plspgsql. Продукт поставляет ООО «Газинформсервис».Установка пакета описана в разделе 3.3 настоящего документа.
 
 - 
 
@@ -250,7 +136,7 @@ gis-cryptoplatform17 – библиотека «КриптоПлатформа»
 
 - 
 
-## Установка расширения.Установка криптопровайдера «КриптоПро CSP»
+### Установка расширения.Установка криптопровайдера «КриптоПро CSP»
 
 Сборки продуктов загружаются с официального сайта ООО «Крипто-Про» <https://www.cryptopro.ru/>.
 
@@ -324,7 +210,7 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 На данном шаге установка криптопровайдера закончена.
 
-## Установка библиотеки «КриптоПлатформа» (gis-cryptoplatform17)
+### Установка библиотеки «КриптоПлатформа» (gis-cryptoplatform17)
 
 Установка библиотеки «КриптоПлатформа» выполняется командой:
 
@@ -334,7 +220,7 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 Рисунок 3.11 – Установка библиотеки «КриптоПлатформа»
 
-## Установка приложения «Litoria Desktop 2»
+### Установка приложения «Litoria Desktop 2»
 
 Имеющийся архив с дистрибутивом графического интерфейса «Litoria Desktop 2» распаковать в директорию.
 
@@ -362,11 +248,11 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 Рисунок 3.14 – Установка графического интерфейса «Litoria Desktop 2»
 
-## Выпуск сертификата
+### Выпуск сертификата
 
 Пакет устанавливается в сегменте разработки и в промышленном сегменте.
 
-### Первый запуск приложения «Litoria Desktop2»
+#### Первый запуск приложения «Litoria Desktop2»
 
 Первый запуск приложения должен выполняться от имени и с правами пользователя «root», необходимо перейти в каталог:
 
@@ -384,7 +270,7 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 В открывшимся окне приложения установить тип лицензии.
 
-### Запуск приложения «Litoria Desktop 2» от имени и с правами пользователя
+#### Запуск приложения «Litoria Desktop 2» от имени и с правами пользователя
 
 Приложение должно запускаться от имени и с правами пользователя, для которого будет формироваться сертификат.
 
@@ -415,7 +301,7 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 2)  
 
-### Через список установленного ПО.Формирование сертификата
+#### Через список установленного ПО.Формирование сертификата
 
 В меню «Сертификаты» (Certificates) выбрать вкладку «Запрос на сертификат» (Reguest) и в окне «Криптопровайдер» (Cryptography tool) установить параметры, приведенные в таблице Таблица 3.1.
 
@@ -475,21 +361,11 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 > Копируем получившийся текст нажатием кнопки «Копировать» (Copy).
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 88%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/plspgsql/media/image1.png" style="width:0.25in;height:0.25in" /></th>
-<th><p>В рассматриваемом примере используется тестовый удостоверяющий центр компании «Газинформсервис».</p>
-<p>Для формирования сертификата в промышленной среде, следует использовать реальный удостоверяющий центр.</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+В рассматриваемом примере используется тестовый удостоверяющий центр компании «Газинформсервис».
+
+Для формирования сертификата в промышленной среде, следует использовать реальный удостоверяющий центр.
+:::
 
 С помощью браузера открываем страницу тестового удостоверяющего центра по адресу: [http://testca.gaz-is.ru/#](http://testca.gaz-is.ru/)
 
@@ -507,7 +383,7 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 Рисунок 3.23 – Получение сертификата
 
-### Импорт сертификата в личное хранилище пользователя ОС
+#### Импорт сертификата в личное хранилище пользователя ОС
 
 В приложении «Litoria Desktop 2» требуется перейти на вкладку «Управление» (Manage) и импортировать сертификат. Из директории загрузки сертификата возможно его перетащить мышкой в окно импорта сертификата.
 
@@ -539,11 +415,11 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 На данном шаге формирование и импорт сертификата закончено.
 
-## Установка компонента «PLsPgSQL»
+### Установка компонента «PLsPgSQL»
 
 Компонент «PLsPgSQL» устанавливается в сегменте разработки и в промышленном сегменте.
 
-### Установка пакета «jatoba5-plspgsql»
+#### Установка пакета «jatoba5-plspgsql»
 
 После того как, установлен криптопровайдер (см. п. 3.2) и криптоплатформа  
 (см. п.3.3), становится доступной установка пакета компонента «PLsPgSQL».
@@ -557,21 +433,21 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 - 
 
-> для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba\<ver\>-plspgsql
+> для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba<ver>-plspgsql
 
 - 
 
-> для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba\<ver\>-plspgsql
+> для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba<ver>-plspgsql
 
 Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.
 
 - 
 
-> ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba\<ver\>-plspgsql
+> ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba<ver>-plspgsql
 
 - 
 
-> openSUSE также распространяется в виде rpm-пакетов, но использует собственный пакетный менеджер zypper, для нее команда установки выглядит следующим образом:zypper install jatoba\<ver\>-plspgsql
+> openSUSE также распространяется в виде rpm-пакетов, но использует собственный пакетный менеджер zypper, для нее команда установки выглядит следующим образом:zypper install jatoba<ver>-plspgsql
 
 Более подробно процесс установки компонента описан в документе 643.72410666.00067-07 97 01 «Защищенная система управления базами данных «Jatoba». Руководство по установке».
 
@@ -597,7 +473,7 @@ KC1 Cryptographic Service Provider;KC2 Provider (skip if not sure);GUI dialogs c
 
 Рисунок 3.30 – Проверка отсутствия зависимостей
 
-### Редактирование конфигурационного файла «postgresql.conf»
+#### Редактирование конфигурационного файла «postgresql.conf»
 
 В конфигурационный файл «postgresql.conf» в раздел «CUSTOMIZED OPTIONS», добавляются два параметра:
 
@@ -610,7 +486,7 @@ plspgsql.cert_cn – имя созданного сертификата;plspgsql
 
 Рисунок 3.31 – Параметры сертификата в конфигурационном файле postgresql.conf
 
-### Установка расширения 
+#### Установка расширения 
 
 Установка расширения в СУБД должна выполняться от имени и с правами пользователя, для которого был создан сертификат.
 
@@ -622,7 +498,7 @@ plspgsql.cert_cn – имя созданного сертификата;plspgsql
 
 Рисунок 3.32 – Установка расширения
 
-## Описание утилиты wplpsql
+### Описание утилиты wplpsql
 
 Одним из важных элементов функции сокрытия исходных текстов процедур и функций в СУБД «Jatoba» является утилита wplpgsql.
 
@@ -631,7 +507,7 @@ plspgsql.cert_cn – имя созданного сертификата;plspgsql
 Данная утилита разработана в рамках продукта СУБД «Jatoba» компанией  
 ООО «Газинформсервис».
 
-### Установка прав на каталоги
+#### Установка прав на каталоги
 
 После установки расширения дополнительная функциональность с использованием специальной утилиты wplpgsql становится доступной.
 
@@ -650,7 +526,7 @@ input;output.Для каталогов обязательно следует у�
 
 Рисунок 3.33 – Установление прав на директории
 
-### Процедура обфускации
+#### Процедура обфускации
 
 К примеру, исходный текст сохранен в файле /usr/jatoba-5/output/jatoba_secret_function.sql со следующим содержимым:
 
@@ -799,7 +675,7 @@ input;output.Для каталогов обязательно следует у�
 
 Рисунок 3.36 – Содержание преобразованного файла «jatoba_secret_function.sql»
 
-### Перемещение преобразованной функции в промышленный сегмент
+#### Перемещение преобразованной функции в промышленный сегмент
 
 Переместить полученный файл «jatoba_secret_function.sql» на эксплуатируемую БД и скомпилировать эту функцию, используя стандартную утилиту работы с БД, выполнив команду в консоли ОС:
 
@@ -832,13 +708,13 @@ input;output.Для каталогов обязательно следует у�
 
 Рисунок 3.39 – Проверка исходного текста
 
-# Сообщения об ошибках
+## Сообщения об ошибках
 
-## Ошибка установки пакета «jatoba\<ver\>-plspgsql»
+### Ошибка установки пакета «jatoba<ver>-plspgsql»
 
 При выполнении команды установки пакета компонента «PLsPgSQL»
 
-> apt-get install jatoba\<ver\>-plspgsql
+> apt-get install jatoba<ver>-plspgsql
 
 может возникнуть ошибка установки.
 
@@ -850,7 +726,7 @@ input;output.Для каталогов обязательно следует у�
 
 Исправить ошибку возможно установкой библиотеки «КриптоПлатформа» (gis-cryptoplatform17), описанной в п. 3.3 настоящего документа.
 
-## Ошибка запуска приложения «Litoria Desktop 2»
+### Ошибка запуска приложения «Litoria Desktop 2»
 
 Ошибка запуска приложения «Litoria Desktop 2» возникает при попытке его запуска из терминала не от имени текущего пользователя.
 
@@ -865,7 +741,7 @@ input;output.Для каталогов обязательно следует у�
 
 выхода из текущего сеанса в ОС;авторизации в ОС от требуемого пользователя;как описано в п. 3.5.2 настоящего документа.
 
-# 
+## 
 
 | <span id="_Toc215497210" class="anchor"></span>Перечень сокращенийSQL | – | Structured Query Language – язык структурированных запросов |
 |:---|:--:|----|
@@ -873,355 +749,5 @@ input;output.Для каталогов обязательно следует у�
 | СУБД | – | Система управления базами данных |
 | ДСЧ | – | Датчик случайных чисел |
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;">Лист регистрации изменений</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2" style="text-align: center;">Изм.</td>
-<td colspan="4" style="text-align: center;">Номера листов (страниц)</td>
-<td rowspan="2" style="text-align: center;">Всего<br />
-листов (страниц)<br />
-в документе</td>
-<td rowspan="2" style="text-align: center;">Номер документа</td>
-<td rowspan="2" style="text-align: center;">Входящий номер сопроводительного документа и дата</td>
-<td rowspan="2" style="text-align: center;">Подпись</td>
-<td rowspan="2" style="text-align: center;">Дата</td>
-</tr>
-<tr>
-<td style="text-align: center;">измененных</td>
-<td style="text-align: center;">замененных</td>
-<td style="text-align: center;">новых</td>
-<td style="text-align: center;">аннулированных</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
 
 [^1]: Не входит в комплект поставки СУБД «Jatoba»

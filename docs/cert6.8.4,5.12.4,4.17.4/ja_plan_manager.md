@@ -1,73 +1,14 @@
-<table>
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><p>УТВЕРЖДЕН</p>
-<p>643.72410666.00067-07 98 01-ЛУ</p></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" style="text-align: center;"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br />
-БАЗАМИ ДАННЫХ «JATOBA»</p>
-<p><strong>Руководство по настройке. Часть 21.<br />
-Управление планами запросов.</strong></p>
-<p><strong>Компонент "ja_Plan_Manager"</strong></p></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;"><strong>643.72410666.00067-07 98 01-21</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">Листов 26</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">2024</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: right;">Литера О<sub>1</sub></td>
-</tr>
-</tbody>
-</table>
-
 **АННОТАЦИЯ**
 
 В документе приведены сведения, необходимые для установки и эксплуатации компонента «ja_Plan_Manager» (далее по тексту – компонент или ja_Plan_Manager), предназначенного для сохранения планов запросов, их дальнейшего использования, экспорта и импорта в базах данных (БД) и оптимизации.
 
 Настоящее руководство предназначено для администраторов СУБД.
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 88%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_plan_manager/media/image2.png" style="width:0.25in;height:0.25in" /></th>
-<th><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
-<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:</p>
-<ul>
-<li></li>
-<li></li>
-</ul>
-<p>ОС Windows – «C:\Program Files\GIS\Jatoba\6\bin»;ОС Linux – «/usr/jatoba-6/bin».Версия компонента – 1.2</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::info Дополнительная информация
+Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.
+
+Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:
+:::
 
 Степени важности примечаний, применяемые в документе:
 
@@ -93,65 +34,11 @@
 </tbody>
 </table>
 
-**СОДЕРЖАНИЕ**
-
-# 
-
-[1. Назначение компонента [4](#назначение-компонента)](#назначение-компонента)
-
-[1.1. Условия применения [4](#условия-применения)](#условия-применения)
-
-[2. Установка компонента [5](#установка-компонента)](#установка-компонента)
-
-[3. Настройка компонента [7](#настройка-компонента)](#настройка-компонента)
-
-[3.1. Механизм работы компонента [7](#механизм-работы-компонента)](#механизм-работы-компонента)
-
-[3.2. Настройка конфигурационного файла postgresql.conf [8](#настройка-конфигурационного-файла-postgresql.conf)](#настройка-конфигурационного-файла-postgresql.conf)
-
-[3.3. Установка расширения «ja_Plan_Manager» [9](#установка-расширения-ja_plan_manager)](#установка-расширения-ja_plan_manager)
-
-[4. Функциональные возможности компонента [11](#функциональные-возможности-компонента)](#функциональные-возможности-компонента)
-
-[4.1. Включение/отключение режима сохранения плана запросов [11](#включениеотключение-режима-сохранения-плана-запросов)](#включениеотключение-режима-сохранения-плана-запросов)
-
-[4.2. Включение/отключение режима использования сохраненных планов запросов [12](#включениеотключение-режима-использования-сохраненных-планов-запросов)](#включениеотключение-режима-использования-сохраненных-планов-запросов)
-
-[4.3. Экспорт/импорт плана запросов [12](#экспортимпорт-плана-запросов)](#экспортимпорт-плана-запросов)
-
-[4.3.1. Экспорт [12](#экспорт)](#экспорт)
-
-[4.3.2. Импорт [13](#импорт)](#импорт)
-
-[4.4. Просмотр сохраненных планов запросов [14](#просмотр-сохраненных-планов-запросов)](#просмотр-сохраненных-планов-запросов)
-
-[4.5. Анализ планов запросов [14](#анализ-планов-запросов)](#анализ-планов-запросов)
-
-[4.6. Журналирование отработанных планов запросов [14](#журналирование-отработанных-планов-запросов)](#журналирование-отработанных-планов-запросов)
-
-[5. Пример реализации функциональных возможностей компонента [16](#пример-реализации-функциональных-возможностей-компонента)](#пример-реализации-функциональных-возможностей-компонента)
-
-[5.1. Подготовка БД «test_db_a» [16](#подготовка-бд-test_db_a)](#подготовка-бд-test_db_a)
-
-[5.2. Подготовка БД «test_db_b» [18](#подготовка-бд-test_db_b)](#подготовка-бд-test_db_b)
-
-[5.3. Сознание плана запроса на test_db_a [19](#сознание-плана-запроса-на-test_db_a)](#сознание-плана-запроса-на-test_db_a)
-
-[5.4. Экспорт плана в каталог пользователя [21](#экспорт-плана-в-каталог-пользователя)](#экспорт-плана-в-каталог-пользователя)
-
-[5.5. Импорт плана в БД «test_db_b» [22](#импорт-плана-в-бд-test_db_b)](#импорт-плана-в-бд-test_db_b)
-
-[6. Удаление компонента [24](#удаление-компонента)](#удаление-компонента)
-
-[6.1. Отключение режима использования плана запросов [24](#отключение-режима-использования-плана-запросов)](#отключение-режима-использования-плана-запросов)
-
-[Перечень сокращений [25](#_Toc215496951)](#_Toc215496951)
-
-# Назначение компонента
+## Назначение компонента
 
 Компонент «ja_Plan_Manager» предназначен для сохранения, экспорта/импорта и подмены планов запросов в БД.
 
-## Условия применения
+### Условия применения
 
 Компонент «ja_Plan_Manager» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционных систем Windows и GNU/Linux.
 
@@ -176,7 +63,7 @@
 </tbody>
 </table>
 
-# Установка компонента
+## Установка компонента
 
 Установка компонента должна производиться от имени пользователя, обладающего административными привилегиями в системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).
 
@@ -191,17 +78,17 @@
 
 - 
 
-> для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba\<ver\>-ja-plan-manager
+> для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba<ver>-ja-plan-manager
 
 - 
 
-> для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba\<ver\>-ja-plan-manager
+> для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba<ver>-ja-plan-manager
 
 Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.
 
 - 
 
-> ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba\<ver\>-ja-plan-manager
+> ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba<ver>-ja-plan-manager
 
 Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется.
 
@@ -209,9 +96,9 @@
 
 Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.
 
-# Настройка компонента
+## Настройка компонента
 
-## Механизм работы компонента
+### Механизм работы компонента
 
 Компонент работает, используя принцип импорта/экспорта. Для экспорта используется домашний каталог пользователя postgres, либо указанный администратором СУБД.
 
@@ -225,7 +112,7 @@
 
 настроить конфигурационный файл для каждой БД;установить расширение для каждой БД;выполнить действия по экспорту/импорту плана запросов.Схема работы компонента представлена на рисунке Рисунок 3.1.
 
-![](../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_plan_manager/media/image4.emf)
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_plan_manager/media/image4.png)
 
 Рисунок 3.1 – Схема работы компонента
 
@@ -245,13 +132,13 @@
 
 Таблица 3.1 – Описание столбцов таблицы jpm_plans
 
-## Настройка конфигурационного файла postgresql.conf
+### Настройка конфигурационного файла postgresql.conf
 
 Установка расширения «ja_plan_manager» требует, чтобы в конфигурационном файле postgresql.conf были заданы параметры загрузки разделяемых библиотек, которые будут загружаться при запуске сервера СУБД.
 
 Файл расположен в каталоге:
 
-> /var/lib/jatoba/\<ver\>/data/
+> /var/lib/jatoba/<ver>/data/
 
 Откройте его в режиме редактирования и в разделе «Shared Library Preloading», для последующей загрузки расширения установите параметр:
 
@@ -263,13 +150,13 @@
 
 Для применения параметров потребуется перезапустить СУБД и проверить статус демона «jatoba-5».
 
-> systemctl restart jatoba-\<ver\>
+> systemctl restart jatoba-<ver>
 >
-> systemctl status jatoba-\<ver\>
+> systemctl status jatoba-<ver>
 
 В случае, когда базы данных находятся в разных инсталляциях СУБД, вышеописанные действия проводятся в каждой из СУБД.
 
-## Установка расширения «ja_Plan_Manager»
+### Установка расширения «ja_Plan_Manager»
 
 После перезагрузки СУБД и загрузки расширения станет доступной установка расширения «ja_plan_manager». Расширение должно быть установлено в каждой базе данных, в которых планируются проводить манипуляции по экспорту/импорту планов запросов. В рассматриваемом примере расширение должно быть установлено в тестовых базах данных:
 
@@ -290,17 +177,23 @@ test_db_a;test_db_b.Расширение устанавливается SQL-ко
 
 Аналогичные действия выполняются для второй тестовой БД «test_db_b»
 
-> \# \connect test_db_b
+```
+# \connect test_db_b
+```
 >
-> \# CREATE EXTENSION ja_plan_manager;
+```
+# CREATE EXTENSION ja_plan_manager;
+```
 >
-> \# \dx
+```
+# \dx
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_plan_manager/media/image7.png" style="width:7.07826in;height:2.80879in" alt="C:\Users\KUZNET~1\AppData\Local\Temp\vmware-kuznetsov-a\VMwareDnD\4cb3d220\Screenshot from 2024-12-13 02-41-26.png" />
 
 Рисунок 3.5 – Команда установки расширения в «test_db_b»
 
-# Функциональные возможности компонента
+## Функциональные возможности компонента
 
 Функциональные возможности компонента позволяют:
 
@@ -330,7 +223,7 @@ test_db_a;test_db_b.Расширение устанавливается SQL-ко
 
 включать/отключать режим сохранения запросов;включать/отключать режим использования сохраненных запросов;экспортировать планы запросов в формате:json;text;xml; yaml;экспортировать планы запросов через:домашний каталог пользователя;строку соединения с другой БД (dblink connection);импортировать планы запросов.При использовании компонента есть возможность использовать кириллицу в именах объектов СУБД «Jatoba».
 
-## Включение/отключение режима сохранения плана запросов
+### Включение/отключение режима сохранения плана запросов
 
 Для включения режима сохранения плана запросов устанавливается переменная SQL-командой:
 
@@ -346,7 +239,7 @@ test_db_a;test_db_b.Расширение устанавливается SQL-ко
 
 > SET ja_plan_manager.write_mode = false;
 
-## Включение/отключение режима использования сохраненных планов запросов
+### Включение/отключение режима использования сохраненных планов запросов
 
 Для установления режима использования сохраненных планов запросов устанавливается переменная SQL-командой:
 
@@ -360,9 +253,9 @@ test_db_a;test_db_b.Расширение устанавливается SQL-ко
 
 Одному и тому же запросу могут соответствовать разные планы. Если включен режим использования одного плана запроса, второй план к этому запросу невозможно будет включить: сработает триггер.
 
-## Экспорт/импорт плана запросов
+### Экспорт/импорт плана запросов
 
-### Экспорт
+#### Экспорт
 
 Чтобы экспортировать план запроса через файл json, необходимо выполнить следующий SQL-запрос:
 
@@ -375,7 +268,7 @@ test_db_a;test_db_b.Расширение устанавливается SQL-ко
 - 
 - 
 
-#### json;text;xml;yaml.Экспорт через «dblink connection»
+##### json;text;xml;yaml.Экспорт через «dblink connection»
 
 Чтобы экспортировать план запроса непосредственно в другую базу данных c которой есть соединение, необходимо выполнить следующий SQL-запрос:
 
@@ -389,13 +282,13 @@ test_db_a;test_db_b.Расширение устанавливается SQL-ко
 
 > UPDATE ja_plan_manager.jpm_plans SET enable = true;
 
-### Импорт
+#### Импорт
 
 Для импорта плана запроса необходимо выполнить следующую SQL-команду:
 
 > SELECT ja_plan_manager.ja_import_plan(\<query_hash\>, \<file_path\>);
 
-#### Импорт через «dblink connection»
+##### Импорт через «dblink connection»
 
 Для прямой передачи плана запроса на другую базу внутри сети можно использовать «dblink». Для этого необходимо вызвать следующий SQL-запрос:
 
@@ -415,19 +308,19 @@ dbname;host;port;user;password – пароль суперпользовател
 
 > UPDATE ja_plan_manager.jpm_plans SET enable = true;
 
-## Просмотр сохраненных планов запросов
+### Просмотр сохраненных планов запросов
 
 С помощью функции «show_plan» можно просмотреть сохраненные планы. Для этого требуется знать хеш запроса, который может быть извлечен из таблицы «ja_plan_manager.jpm_plans», и выполнить SQL-запрос:
 
 > SELECT ja_plan_manager.show_plan(\<query_hash\>);
 
-## Анализ планов запросов
+### Анализ планов запросов
 
 Анализ плана запроса выполняется SQL-командой:
 
 > EXPLAIN ANALYZE \<query\>;
 
-## Журналирование отработанных планов запросов
+### Журналирование отработанных планов запросов
 
 При использовании плана запроса возникнет уведомление (notice), сообщающее, план с каким query_hash был отработан:
 
@@ -443,11 +336,11 @@ dbname;host;port;user;password – пароль суперпользовател
 
 Файлы журнала событий находятся в директории:
 
-> /var/lib/jatoba/\<ver\>/data/log/
+> /var/lib/jatoba/<ver>/data/log/
 
 Запись в журнале событий появится также если отработан запрос, план которого есть в таблице «ja_plan_manager.jpm_plans», но он не включен (enable=false).
 
-# Пример реализации функциональных возможностей компонента
+## Пример реализации функциональных возможностей компонента
 
 В качестве примера использования компонента будут рассмотрены две тестовые БД, находящиеся в одной СУБД, у которых уже установлено расширение «ja_plan_manager».
 
@@ -456,7 +349,7 @@ dbname;host;port;user;password – пароль суперпользовател
 
 test_db_a;test_db_b.В базах данных создаются таблицы «customers» и «orders». Таблица «customers» содержит три записи, а таблица «orders» будет содержать тысячу записей.
 
-## Подготовка БД «test_db_a»
+### Подготовка БД «test_db_a»
 
 В БД «test_db_a» создать таблицу «customers»:
 
@@ -500,7 +393,7 @@ test_db_a;test_db_b.В базах данных создаются таблицы
 
 Рисунок 5.4 – Добавление значений в таблицу «orders» в БД «test_db_a»
 
-## Подготовка БД «test_db_b»
+### Подготовка БД «test_db_b»
 
 В БД «test_db_b» создать таблицу «customers»:
 
@@ -544,7 +437,7 @@ test_db_a;test_db_b.В базах данных создаются таблицы
 
 Рисунок 5.7 – Создание индекса
 
-## Сознание плана запроса на test_db_a
+### Сознание плана запроса на test_db_a
 
 Установить соединение с БД «test_db_a» и выполнить анализ плана запроса:
 
@@ -582,7 +475,7 @@ test_db_a;test_db_b.В базах данных создаются таблицы
 
 Полученный хеш запроса равен «334402852». Полученное значение потребуется для экспорта.
 
-## Экспорт плана в каталог пользователя
+### Экспорт плана в каталог пользователя
 
 Выполнить экспорт плана запроса, указав формат вывода JSON в расширении файла, значение «query_hash» равное «334402852» и путь к каталогу пользователя:
 
@@ -614,7 +507,7 @@ test_db_a;test_db_b.В базах данных создаются таблицы
 
 Рисунок 5.13 – Экспортированный план запроса
 
-## Импорт плана в БД «test_db_b»
+### Импорт плана в БД «test_db_b»
 
 Установить соединение с БД «test_db_b» и выполнить импорт плана запроса из каталога пользователя SQL-командой:
 
@@ -644,7 +537,7 @@ test_db_a;test_db_b.В базах данных создаются таблицы
 
 Рисунок 5.16 – Вывод плана запроса в БД «test_db_b»
 
-# Удаление компонента
+## Удаление компонента
 
 Удаление компонента производится SQL-командой:
 
@@ -654,7 +547,7 @@ test_db_a;test_db_b.В базах данных создаются таблицы
 
 > \#shared_preload_libraries = 'ja_plan_manager'
 
-## Отключение режима использования плана запросов
+### Отключение режима использования плана запросов
 
 Отключить режим использования планов запросов:
 
@@ -674,7 +567,7 @@ test_db_a;test_db_b.В базах данных создаются таблицы
 
 Рисунок 6.2 – Новый план запроса
 
-# 
+## 
 
 | <span id="_Toc215496951" class="anchor"></span>Перечень сокращенийSQL | – | Structured Query Language – язык структурированных запросов |
 |:---|----|----|
@@ -682,353 +575,3 @@ test_db_a;test_db_b.В базах данных создаются таблицы
 | ОС | – | Операционная система |
 | СУБД | – | Система управления базами данных |
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;">Лист регистрации изменений</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2" style="text-align: center;">Изм.</td>
-<td colspan="4" style="text-align: center;">Номера листов (страниц)</td>
-<td rowspan="2" style="text-align: center;">Всего<br />
-листов (страниц)<br />
-в документе</td>
-<td rowspan="2" style="text-align: center;">Номер документа</td>
-<td rowspan="2" style="text-align: center;">Входящий номер сопроводительного документа и дата</td>
-<td rowspan="2" style="text-align: center;">Подпись</td>
-<td rowspan="2" style="text-align: center;">Дата</td>
-</tr>
-<tr>
-<td style="text-align: center;">измененных</td>
-<td style="text-align: center;">замененных</td>
-<td style="text-align: center;">новых</td>
-<td style="text-align: center;">аннулированных</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>

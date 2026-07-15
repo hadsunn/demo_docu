@@ -1,47 +1,3 @@
-<table>
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><p>УТВЕРЖДЕН</p>
-<p>643.72410666.00067-07 98 01-ЛУ</p></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" style="text-align: center;"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br />
-БАЗАМИ ДАННЫХ «JATOBA»</p>
-<p><strong>Руководство по настройке. Часть 29.<br />
-Поддержка мониторинга СУБД</strong></p>
-<p><strong>в части анализа запросов</strong></p></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;"><strong>643.72410666.00067-07 98 01-29</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">Листов 49</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center;">2024</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: right;">Литера О<sub>1</sub></td>
-</tr>
-</tbody>
-</table>
-
 **АННОТАЦИЯ**
 
 В документе приведены сведения, необходимые для установки и эксплуатации компонентов, предназначенных для мониторинга СУБД в части анализа запросов:
@@ -89,97 +45,7 @@
 | <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" /> | **Дополнительная информация** – указания, позволяющие упростить работу с изделием |
 |----|----|
 
-**СОДЕРЖАНИЕ**
-
-# 
-
-[1. Назначение компонентов [5](#назначение-компонентов)](#назначение-компонентов)
-
-[1.1. Условия применения [5](#условия-применения)](#условия-применения)
-
-[1.2. Ограничения по эксплуатации [6](#ограничения-по-эксплуатации)](#ограничения-по-эксплуатации)
-
-[2. Архитектура мониторинга в части анализа запросов [7](#архитектура-мониторинга-в-части-анализа-запросов)](#архитектура-мониторинга-в-части-анализа-запросов)
-
-[3. Установка и настройка целевой СУБД «Jatoba» [8](#установка-и-настройка-целевой-субд-jatoba)](#установка-и-настройка-целевой-субд-jatoba)
-
-[3.1. Установка расширения auto_explain [8](#установка-расширения-auto_explain)](#установка-расширения-auto_explain)
-
-[3.1.1. Переменные расширения auto_explain [8](#переменные-расширения-auto_explain)](#переменные-расширения-auto_explain)
-
-[3.1.2. Настройка конфигурационного файла postgresql.conf целевой СУБД [11](#настройка-конфигурационного-файла-postgresql.conf-целевой-субд)](#настройка-конфигурационного-файла-postgresql.conf-целевой-субд)
-
-[3.2. Настройка файла pg_hba.conf целевой СУБД [12](#настройка-файла-pg_hba.conf-целевой-субд)](#настройка-файла-pg_hba.conf-целевой-субд)
-
-[3.3. Настройка SSH-сервера на целевой СУБД [13](#настройка-ssh-сервера-на-целевой-субд)](#настройка-ssh-сервера-на-целевой-субд)
-
-[3.3.1. Установка необходимых пакетов [13](#установка-необходимых-пакетов)](#установка-необходимых-пакетов)
-
-[3.3.2. Проверка статуса сервера [14](#проверка-статуса-сервера)](#проверка-статуса-сервера)
-
-[3.3.3. Разрешение SSH соединения через брандмауэр [15](#разрешение-ssh-соединения-через-брандмауэр)](#разрешение-ssh-соединения-через-брандмауэр)
-
-[3.3.4. Настройка сервера SSH [15](#настройка-сервера-ssh)](#настройка-сервера-ssh)
-
-[4. Установка и настройка pg-explain [18](#установка-и-настройка-pg-explain)](#установка-и-настройка-pg-explain)
-
-[4.1. Предварительные требования к установке [18](#предварительные-требования-к-установке)](#предварительные-требования-к-установке)
-
-[4.2. Установка pg_repack [19](#установка-pg_repack)](#установка-pg_repack)
-
-[4.3. Установка explain db [19](#установка-explain-db)](#установка-explain-db)
-
-[4.4. Установка pg-monitor [23](#установка-pg-monitor)](#установка-pg-monitor)
-
-[4.5. Установка pg-monitor-collector [26](#установка-pg-monitor-collector)](#установка-pg-monitor-collector)
-
-[4.6. Настройка SSH-доступа к узлам [27](#настройка-ssh-доступа-к-узлам)](#настройка-ssh-доступа-к-узлам)
-
-[4.6.1. Генерация ключей SSH [27](#генерация-ключей-ssh)](#генерация-ключей-ssh)
-
-[4.6.2. Загрузка ключа на сервер [28](#загрузка-ключа-на-сервер)](#загрузка-ключа-на-сервер)
-
-[4.6.3. Проверка созданного подключения [29](#проверка-созданного-подключения)](#проверка-созданного-подключения)
-
-[4.6.4. Копирование ключа SSH в каталог pg-monitor [30](#копирование-ключа-ssh-в-каталог-pg-monitor)](#копирование-ключа-ssh-в-каталог-pg-monitor)
-
-[4.7. Установка pg-explain [31](#установка-pg-explain)](#установка-pg-explain)
-
-[5. Настройка JDS для взаимодействия с сервисами [34](#настройка-jds-для-взаимодействия-с-сервисами)](#настройка-jds-для-взаимодействия-с-сервисами)
-
-[5.1. Настройка pg-explain на узле отдельном от узла JDS [34](#настройка-pg-explain-на-узле-отдельном-от-узла-jds)](#настройка-pg-explain-на-узле-отдельном-от-узла-jds)
-
-[5.1.1. Установка веб-сервера nginx на сервере служебной СУБД pg-explain [35](#установка-и-настройка-целевой-субд-jatoba4-установка-и-настройка-pg-explain.установка-веб-сервера-nginx-на-сервере-служебной-субд-pg-explain)](#установка-и-настройка-целевой-субд-jatoba4-установка-и-настройка-pg-explain.установка-веб-сервера-nginx-на-сервере-служебной-субд-pg-explain)
-
-[5.1.2. Создание сертификата и ключа [36](#создание-сертификата-и-ключа)](#создание-сертификата-и-ключа)
-
-[5.1.3. Создание конфигурации сайта [37](#создание-конфигурации-сайта)](#создание-конфигурации-сайта)
-
-[5.1.4. Конфигурирование компонента JDS на отдельном узле [39](#конфигурирование-компонента-jds-на-отдельном-узле)](#конфигурирование-компонента-jds-на-отдельном-узле)
-
-[5.2. Настройка pg-explain на одном узле с JDS [40](#настройка-pg-explain-на-одном-узле-с-jds)](#настройка-pg-explain-на-одном-узле-с-jds)
-
-[5.2.1. Установка компонента JDS [41](#установка-компонента-jds)](#установка-компонента-jds)
-
-[5.2.2. Веб-сервер nginx [41](#веб-сервер-nginx)](#веб-сервер-nginx)
-
-[5.2.3. Создание сертификата и ключа для pg-explain [41](#создание-сертификата-и-ключа-для-pg-explain)](#создание-сертификата-и-ключа-для-pg-explain)
-
-[5.2.4. Создание конфигурации сайта [41](#создание-конфигурации-сайта-1)](#создание-конфигурации-сайта-1)
-
-[5.2.5. Редактирование параметров компонента JDS [43](#редактирование-параметров-компонента-jds)](#редактирование-параметров-компонента-jds)
-
-[6. Ошибки [45](#ошибки)](#ошибки)
-
-[6.1. Ошибка FATAL: password authentication failed for user "postgres" [45](#ошибка-fatal-password-authentication-failed-for-user-postgres)](#ошибка-fatal-password-authentication-failed-for-user-postgres)
-
-[6.2. Ошибка ERROR: invalid locale name: "ru_RU.UTF-8" [45](#ошибка-error-invalid-locale-name-ru_ru.utf-8)](#ошибка-error-invalid-locale-name-ru_ru.utf-8)
-
-[Термины и определения [47](#_Toc195524711)](#_Toc195524711)
-
-[Перечень сокращений [48](#_Toc195524712)](#_Toc195524712)
-
-# Назначение компонентов
+## Назначение компонента
 
 Компонент pg-explain — это инструмент для анализа планов запросов в СУБД. Он позволяет просматривать и анализировать планы запросов, созданные оптимизатором СУБД, и помогает разработчикам и администраторам баз данных понять, как СУБД выполняет запросы.
 
@@ -191,7 +57,7 @@
 
 Компонент pg-monitor-dispatcher — это прослушиватель для СУБД, который слушает один канал базы данных и выполняет заданную команду при получении уведомления.
 
-## Условия применения
+### Условия применения
 
 Компоненты могут использоваться:
 
@@ -211,29 +77,29 @@
 | 5 | ОСНОВА2 | 20.10.5 | 31.03.2021 |
 | 6 | РЕД ОС 7.3 Муром | 4060 | 12.01.2019 |
 
-## Ограничения по эксплуатации
+### Ограничения по эксплуатации
 
 Ограничений по совместимости с другими компонентами нет.
 
-# Архитектура мониторинга в части анализа запросов
+## Архитектура мониторинга в части анализа запросов
 
 В архитектуре мониторинга в части анализа запросов, допустимы две основные конфигурации:
 
 - 
 
-с установкой pg-explain на одном сервере СУБД «Jatoba» с установленным компонентом JDS (см. п. 5.1);![](../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image3.emf)
+с установкой pg-explain на одном сервере СУБД «Jatoba» с установленным компонентом JDS (см. п. 5.1);![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image3.png)
 
 Рисунок 2.1 – Установка pg-explain и JDS на одном узле
 
 - 
 
-с установкой pg-explain выделенном сервере СУБД и отдельном сервере СУБД с установленном компонентом JDS (см. п. 5.1).![](../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image4.emf)
+с установкой pg-explain выделенном сервере СУБД и отдельном сервере СУБД с установленном компонентом JDS (см. п. 5.1).![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image4.png)
 
 Рисунок 2.2 – Установка pg-explain и JDS на разных узлах
 
 Данные с целевых СУБД собираются в БД pg-monitor.
 
-# Установка и настройка целевой СУБД «Jatoba»
+## Установка и настройка целевой СУБД «Jatoba»
 
 СУБД «Jatoba» устанавливается в соответствии с документом «Руководство по установке».
 
@@ -248,91 +114,91 @@
 
 Компонент «auto_explain» выполняет протоколирование планов выполнения медленных запросов.
 
-## Установка расширения auto_explain
+### Установка расширения auto_explain
 
 Чтобы не загружать компонент в процесс сервера, загрузка выполняется через переменную «shared_preload_libraries» в конфигурационном файле «postgresql.conf», как описано в п. 3.1.2 «Настройка конфигурационного файла postgresql.conf целевой СУБД» настоящего документа.
 
 Установка пакета не требуется.
 
-### Переменные расширения auto_explain
+#### Переменные расширения auto_explain
 
 Компонент имеет нижеперечисленные параметры, которые могут устанавливаться в конфигурационном файле «postgresql.conf» или изменяться суперпользователями СУБД «на лету» в рамках своих сеансов.
 
-#### auto_explain.log_min_duration
+##### auto_explain.log_min_duration
 
 > auto_explain.log_min_duration (integer)
 
 Переменная auto_explain.log_min_duration задаёт время выполнения оператора в миллисекундах, при превышении которого план оператора будет протоколироваться. При значении равном 0 протоколируются все планы, а при -1 (по умолчанию) протоколирование планов отключается.
 
-#### auto_explain.log_analyze
+##### auto_explain.log_analyze
 
 > auto_explain.log_analyze (boolean)
 
 При включении параметра auto_explain.log_analyze в протокол будет записываться вывод команды EXPLAIN ANALYZE, а не EXPLAIN. По умолчанию этот параметр отключен.
 
-#### auto_explain.log_buffers
+##### auto_explain.log_buffers
 
 > auto_explain.log_buffers (boolean)
 
 Параметр auto_explain.log_buffers определяет, будет ли при протоколировании плана выполнения выводиться статистика об использовании буферов; он равносилен указанию BUFFERS команды EXPLAIN. Этот параметр действует, только если включён параметр [auto_explain.log_analyze](#auto_explain.log_analyze). По умолчанию этот параметр отключен.
 
-#### auto_explain.log_wal
+##### auto_explain.log_wal
 
 > auto_explain.log_wal (boolean)
 
 Параметр auto_explain.log_wal определяет, будет ли при протоколировании плана выполнения выводиться статистика об использовании WAL; он равносилен указанию WAL команды EXPLAIN. Этот параметр действует, только если включён параметр [auto_explain.log_analyze](#auto_explain.log_analyze). По умолчанию этот параметр отключён.
 
-#### auto_explain.log_timing
+##### auto_explain.log_timing
 
 > auto_explain.log_timing (boolean)
 
 Параметр auto_explain.log_timing определяет, будет ли при протоколировании плана выполнения выводиться длительность на уровне узлов: он равнозначен указанию TIMING команды EXPLAIN. Установка данного параметра может замедлить запросы в некоторых системах, так что возможно его следует отключать этот параметр, когда нужно знать только количество строк, но не точную длительность каждого узла. Этот параметр действует, только если включён [auto_explain.log_analyze](#auto_explain.log_analyze). По умолчанию этот параметр отключён.
 
-#### auto_explain.log_triggers
+##### auto_explain.log_triggers
 
 > auto_explain.log_triggers (boolean)
 
 При включении параметра auto_explain.log_triggers в протокол будет записываться статистика выполнения триггеров. Этот параметр действует, только если включён параметр [auto_explain.log_analyze](#auto_explain.log_analyze). По умолчанию этот параметр отключён.
 
-#### auto_explain.log_verbose
+##### auto_explain.log_verbose
 
 > auto_explain.log_verbose (boolean)
 
 Параметр auto_explain.log_verbose определяет, будут ли при протоколировании плана выполнения выводиться подробные сведения; он равнозначен указанию VERBOSE команды EXPLAIN. По умолчанию этот параметр отключён.
 
-#### auto_explain.log_settings
+##### auto_explain.log_settings
 
 > auto_explain.log_settings (boolean)
 
 Параметр auto_explain.log_settings определяет, будут ли вместе с планами выполнения выводиться изменённые параметры конфигурации. При его включении выводятся только те параметры, которые влияют на планирование запросов и имеют значения, отличающиеся от встроенных. По умолчанию этот параметр отключён. Изменить его могут только суперпользователи.
 
-#### auto_explain.log_format
+##### auto_explain.log_format
 
 > auto_explain.log_format (enum)
 
 Параметр auto_explain.log_format выбирает формат вывода для EXPLAIN. Он может принимать значение text, xml, json и yaml. Значение по умолчанию — text. Изменить этот параметр могут только суперпользователи.
 
-#### auto_explain.log_level
+##### auto_explain.log_level
 
 > auto_explain.log_level (enum)
 
 Параметр auto_explain.log_level выбирает уровень, с которым auto_explain будет выводить в протокол планы запросов. Допустимые значения: DEBUG5, DEBUG4, DEBUG3, DEBUG2, DEBUG1, INFO, NOTICE, WARNING и LOG. По умолчанию подразумевается LOG. Изменить этот параметр могут только суперпользователи.
 
-#### auto_explain.log_nested_statements
+##### auto_explain.log_nested_statements
 
 > auto_explain.log_nested_statements (boolean)
 
 При включении параметра auto_explain.log_nested_statements протоколированию могут подлежать и вложенные операторы (операторы, выполняемые внутри функции). Когда он отключён, протоколируются планы запросов только верхнего уровня. Изменить этот параметр могут только суперпользователи.
 
-#### auto_explain.sample_rate
+##### auto_explain.sample_rate
 
 > auto_explain.sample_rate (real)
 
 Параметр auto_explain.sample_rate задаёт для auto_explain процент операторов, которые будут отслеживаться в каждом сеансе. Значение по умолчанию — 1, то есть отслеживаются все запросы. Вложенные операторы отслеживаются совместно — либо все, либо никакой из них. Изменить этот параметр могут только суперпользователи.
 
-### Настройка конфигурационного файла postgresql.conf целевой СУБД
+#### Настройка конфигурационного файла postgresql.conf целевой СУБД
 
-В разделе «Shared Library Preloading», конфигурационного файла /var/lib/jatoba/\<ver\>/data/postgresql.conf, для последующей загрузки расширений pgaudit и auto_explain, установить параметры:
+В разделе «Shared Library Preloading», конфигурационного файла /var/lib/jatoba/<ver>/data/postgresql.conf, для последующей загрузки расширений pgaudit и auto_explain, установить параметры:
 
 > shared_preload_libraries = 'pgaudit,auto_explain'
 
@@ -340,7 +206,9 @@
 
 > \#-------------------------------------------------------------
 >
-> \# JATOBA LOGGING PARAMETERS
+```
+# JATOBA LOGGING PARAMETERS
+```
 >
 > \#--------------------------------------------------------------
 >
@@ -348,7 +216,7 @@
 >
 > log_directory = 'log'
 >
-> log_filename = 'jatoba-%Y-%m-%d\_%H%M%S.log'
+> log_filename = 'jatoba-%Y-%m-%d_%H%M%S.log'
 >
 > log_rotation_age = 1d
 >
@@ -386,11 +254,11 @@
 
 Рисунок 3.1 – Установка расширения «pgaudit»
 
-## Настройка файла pg_hba.conf целевой СУБД
+### Настройка файла pg_hba.conf целевой СУБД
 
 На целевой СУБД должно быть разрешено подключение типа «local» роли «postgres» в режиме аутентификации «peer».
 
-В конфигурационный файл /var/lib/jatoba/\<ver\>/data/pg_hba.conf добавить строку:
+В конфигурационный файл /var/lib/jatoba/<ver>/data/pg_hba.conf добавить строку:
 
 > local all postgres peer
 
@@ -398,11 +266,11 @@
 
 Рисунок 3.2 – Строка подключения в конфигурационном файле pg_hba.conf
 
-## Настройка SSH-сервера на целевой СУБД
+### Настройка SSH-сервера на целевой СУБД
 
 Подключение к целевой СУБД службой pg-monitor-collector осуществляется по протоколу SSH. Для этого на целевой СУБД должен быть установлен SSH-сервер.
 
-### Установка необходимых пакетов
+#### Установка необходимых пакетов
 
 Установка необходимых пакетов выполняется от имени и с правами привилегированного пользователя в терминале ОС.
 
@@ -418,7 +286,7 @@
 
 Рисунок 3.3 – Установка openssh-server
 
-### Проверка статуса сервера
+#### Проверка статуса сервера
 
 После завершения загрузки и установки пакета служба SSH должна быть уже запущена. Статус службы проверяется командой:
 
@@ -438,7 +306,7 @@
 
 > sudo systemctl enable --now ssh
 
-### Разрешение SSH соединения через брандмауэр
+#### Разрешение SSH соединения через брандмауэр
 
 В операционных системах Linux поставляется с утилита межсетевого экрана UFW (UncomplicatedFirewall), которая представляет собой интерфейс для утилиты командной строки iptables, который, в свою очередь, управляет сетевыми правилами.
 
@@ -458,11 +326,11 @@
 
 На данном этапе SSH-сервер запущен и ожидает соединения от клиента.
 
-### Настройка сервера SSH
+#### Настройка сервера SSH
 
 Настройки сервера SSH находятся в файле /etc/ssh/sshd_config, в котором требуется установить параметры, приведенные ниже.
 
-#### Порт SSH
+##### Порт SSH
 
 По умолчанию SSH работает на порту 22, но такое поведение является небезопасным, поскольку злоумышленник может попробовать выполнить «Bruteforce» атаку для перебора пароля. Порт задается строчкой:
 
@@ -470,19 +338,19 @@
 
 Необходимо изменить значение порта на требуемое.
 
-#### Протокол SSH
+##### Протокол SSH
 
 По умолчанию сервер SSH может работать по двум версиям протокола для совместимости. Чтобы использовать только протокол версии два, необходимо раскомментировать строку и привести ее к такому виду:
 
 > Protocol 2
 
-#### ROOT доступ
+##### ROOT доступ
 
 По умолчанию Root доступ по SSH разрешен, но такое поведение небезопасно, поэтому следует раскомментировать строку:
 
 > PermitRootLogin no
 
-#### Доступ только определенного пользователя к SSH
+##### Доступ только определенного пользователя к SSH
 
 Требуется разрешить доступ к SSH только для определенного пользователя или группы. Для этого необходимо добавить следующие строки:
 
@@ -502,19 +370,25 @@
 
 Выполнив конфигурирование SSH сервера, потребуется перезагрузить службу командами:
 
-> \# systemctl stop ssh
+```
+# systemctl stop ssh
+```
 >
-> \# systemctl start ssh
+```
+# systemctl start ssh
+```
 >
-> \# systemctl status ssh
+```
+# systemctl status ssh
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image11.png" style="width:6.64935in;height:1.63611in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-04-23 15-33-44.png" />
 
 Рисунок 3.7 – Перезапуск службы SSH
 
-# Установка и настройка pg-explain
+## Установка и настройка pg-explain
 
-## Предварительные требования к установке
+### Предварительные требования к установке
 
 На узлах системы должна быть установлена СУБД «Jatoba» в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по установке».
 
@@ -524,11 +398,17 @@
 
 А также для пользователя СУБД:
 
-> \# su –l postgres
+```
+# su –l postgres
+```
 >
-> \# psql
+```
+# psql
+```
 >
-> \# \password
+```
+# \password
+```
 
 Компонент пользовательского веб-интерфейса для администраторов «Jatoba data safe» (JDS) устанавливается в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe», в зависимости от требуемой архитектуры, описанной в разделе 2 документа.
 
@@ -550,7 +430,7 @@
 
 В каталоге packages находятся пакеты pg-explain помимо пакета компонента JDS.
 
-## Установка pg_repack
+### Установка pg_repack
 
 Компонент pg_repack, требуемый для работы системы, включен в состав СУБД «Jatoba» в качестве внешней утилиты и расширения, начиная с версии 5.6.1-54937.
 
@@ -560,13 +440,13 @@
 
 На данном шаге расширение в СУБД устанавливать не требуется, т.к. устанавливается последовательно по шагам описанным ниже в п. 4.3.
 
-## Установка explain db
+### Установка explain db
 
 Перейти в каталог с разархивированными пакетами JDS:
 
 > cd /usr/share/jds/packages
 
-Установить пакет pg-explain-db\_\<version\>-\<buildnumber\>\_amd64.deb:
+Установить пакет pg-explain-db_\<version\>-\<buildnumber\>_amd64.deb:
 
 > apt install ./pg-explain-db_1.5.15-20240216_amd64.deb
 
@@ -653,13 +533,13 @@
 
 Если установка пройдет с ошибками, удалить БД pg-monitor (название по умолчанию), исправить ошибки и запустить install.sh снова.
 
-## Установка pg-monitor
+### Установка pg-monitor
 
 Пакет pg-monitor располагается в каталоге с разархивированными пакетами JDS:
 
 > cd /usr/share/jds/packages
 
-Установка пакета pg-monitor\_\<version\>-\<buildnumber\>\_amd64.deb выполняется командой:
+Установка пакета pg-monitor_\<version\>-\<buildnumber\>_amd64.deb выполняется командой:
 
 > apt install ./pg-monitor_1.5.6-20240216_amd64.deb
 
@@ -729,11 +609,17 @@
 
 Запустить службу pg-monitor командами в терминале ОС:
 
-> \# systemctl start pg-monitor
+```
+# systemctl start pg-monitor
+```
 >
-> \# systemctl enable pg-monitor
+```
+# systemctl enable pg-monitor
+```
 >
-> \# systemctl status pg-monitor
+```
+# systemctl status pg-monitor
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image21.png" style="width:6.67164in;height:2.73819in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 16-13-23.png" />
 
@@ -751,25 +637,29 @@
 
 Рисунок 4.11 – Веб-интерфейс «pg-monitor»
 
-## Установка pg-monitor-collector
+### Установка pg-monitor-collector
 
 Служба «pg-monitor-collector» установится автоматически после установки «pg-monitor-collector».
 
 Для полноценного функционирования достаточно добавить ее в автозагрузку ОС и проверить статус командами:
 
-> \# systemctl enable pg-monitor-collector
+```
+# systemctl enable pg-monitor-collector
+```
 >
-> \# systemctl status pg-monitor-collector
+```
+# systemctl status pg-monitor-collector
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image23.png" style="width:6.65672in;height:3.23056in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 16-36-36.png" />
 
 Рисунок 4.12 – Статус службы «pg-monitor-collector»
 
-## Настройка SSH-доступа к узлам
+### Настройка SSH-доступа к узлам
 
 Мониторинг удаленных узлов по протоколу SSH требуется предварительная настройка беспарольного доступа (по сертификату). Для чего необходимо создать ключи SSH для аутентификации на локальном сервере, при помощи утилиты ssh-keygen, которая входит в набор утилит OpenSSH. По умолчанию она создает пару 2048 битных RSA ключей.
 
-### Генерация ключей SSH
+#### Генерация ключей SSH
 
 Генерация ключей SSH выполняется командой:
 
@@ -795,7 +685,7 @@
 
 Рисунок 4.15 – Генерирование ключей SSH
 
-### Загрузка ключа на сервер
+#### Загрузка ключа на сервер
 
 Когда генерация ключей завершена, следует загрузить ключ на сервер целевой СУБД «Jatoba». Загрузка выполняется утилитой ssh-copy-id. Она входит в пакет программ OpenSSH. Для загрузки ключа необходим пароль доступа к серверу по SSH.
 
@@ -811,13 +701,17 @@
 
 Рисунок 4.16 – Копирование ключа SSH на сервер SSH целевой СУБД
 
-### Проверка созданного подключения
+#### Проверка созданного подключения
 
 Проверка созданного подключения выполняется командой с сервера с установленным pg_explain:
 
-> \# ssh postgres@ip-сервера
+```
+# ssh postgres@ip-сервера
+```
 >
-> \# exit
+```
+# exit
+```
 
 В рассматриваемом примере команда подключения будет следующей:
 
@@ -827,11 +721,13 @@
 
 Рисунок 4.17 – Проверка подключения по SSH к целевой СУБД
 
-### Копирование ключа SSH в каталог pg-monitor
+#### Копирование ключа SSH в каталог pg-monitor
 
 Скопировать закрытый ключ в каталог pg-monitor/ssh_keys. Файл должен обязательно присутствовать для запуска службы:
 
-> \# cp ~/.ssh/id_rsa /usr/local/lib/pg-monitor/ssh_keys
+```
+# cp ~/.ssh/id_rsa /usr/local/lib/pg-monitor/ssh_keys
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image29.png" style="width:6.68in;height:1.2875in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-33-19.png" />
 
@@ -839,7 +735,9 @@
 
 Дать пользователю «explain» права на файл командой:
 
-> \# chown explain:explain /usr/local/lib/pg-monitor/ssh_keys/id_rsa
+```
+# chown explain:explain /usr/local/lib/pg-monitor/ssh_keys/id_rsa
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image30.png" style="width:6.63759in;height:1.60694in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-35-57.png" />
 
@@ -849,13 +747,17 @@
 
 > systemctl restart pg-monitor-collector.service
 
-## Установка pg-explain
+### Установка pg-explain
 
-Установить пакет pg-explain\_\<version\>-\<buildnumber\>\_amd64.deb командами:
+Установить пакет pg-explain_\<version\>-\<buildnumber\>_amd64.deb командами:
 
-> \# cd /usr/share/jds/packages
+```
+# cd /usr/share/jds/packages
+```
 >
-> \# apt install ./pg-explain_1.5.9-20240216_amd64.deb
+```
+# apt install ./pg-explain_1.5.9-20240216_amd64.deb
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image31.png" style="width:6.63958in;height:3.904in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 15-08-17.png" />
 
@@ -885,11 +787,17 @@
 
 Запустить службу pg-explain:
 
-> \# systemctl start pg-explain.service
+```
+# systemctl start pg-explain.service
+```
 >
-> \# systemctl enable pg-explain.service
+```
+# systemctl enable pg-explain.service
+```
 >
-> \# systemctl status pg-explain.service
+```
+# systemctl status pg-explain.service
+```
 
 <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image34.png" style="width:6.68in;height:1.6875in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 16-29-50.png" />
 
@@ -909,7 +817,7 @@
 
 При ошибке «Слишком много клиентов» в статусе службы увеличить параметр «max_connections» в файле конфигурационном файле «postgresql.conf» сервера с установленным компонентом «explain».
 
-# Настройка JDS для взаимодействия с сервисами
+## Настройка JDS для взаимодействия с сервисами
 
 Работа компонентов обеспечивается корректно настроенными протоколами, описанными в таблице Таблица 5.1
 
@@ -923,20 +831,20 @@
 
 Поэтому требуется настроить реверс-прокси для перенаправления запросов к pg-explain.
 
-## Настройка pg-explain на узле отдельном от узла JDS
+### Настройка pg-explain на узле отдельном от узла JDS
 
 Компонент JDS имеет функциональную возможность работы без веб-сервера nginx. Поэтому веб-сервера nginx может быть установлен после.
 
 Установка компонент JDS выполняется с помощью инсталлятора, а веб-сервер nginx с помощью скрипта установки, как описано в документе «Защищенная система управления базами данных «Jatoba». Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe».
 
-![](../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image36.emf)
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image36.png)
 
 До конфигурирования компонентов должны быть выполнены действия, описанные в разделах:
 
 - 
 - 
 
-### 3 «Установка и настройка целевой СУБД «Jatoba»;4 «Установка и настройка pg-explain».Установка веб-сервера nginx на сервере служебной СУБД pg-explain
+#### 3 «Установка и настройка целевой СУБД «Jatoba»;4 «Установка и настройка pg-explain».Установка веб-сервера nginx на сервере служебной СУБД pg-explain
 
 Установка пакета nginx выполняется из репозитория ОС. Использование скрипта установки nginx.sh, расположенного в каталоге /usr/share/jds/utils, нецелесообразно, т.к. он выполнит конфигурирование веб-сервера для компонента JDS.
 
@@ -956,7 +864,7 @@
 
 Рисунок 5.2 – Статус службы nginx
 
-### Создание сертификата и ключа
+#### Создание сертификата и ключа
 
 Создать папку для сертификата и ключа командой:
 
@@ -988,7 +896,7 @@
 
 Рисунок 5.4 – Вводимые параметры для формирования сертификата
 
-### Создание конфигурации сайта 
+#### Создание конфигурации сайта 
 
 Создать файл конфигурации сайта командой:
 
@@ -1042,7 +950,7 @@
 
 Рисунок 5.7 – Проверка работы сайта
 
-### Конфигурирование компонента JDS на отдельном узле
+#### Конфигурирование компонента JDS на отдельном узле
 
 Взаимодействие JDS с сервисом pg-explain настраивается в конфигурационном файле компонента JDS appsettings.json. В свойстве PgExplainConfig.BaseAddress указать URL, по которому доступен https-сервис pg-explain.
 
@@ -1078,31 +986,31 @@
 
 Рисунок 5.9 – Вкладка «Настройки» раздела «Анализ запросов»
 
-## Настройка pg-explain на одном узле с JDS
+### Настройка pg-explain на одном узле с JDS
 
 Компонент JDS может быть установлен до установки pg-explain. Порядок установки компонент не принципиален. Связь компонентом обеспечивается веб-сервером nginx с конфигурациями под каждый из компонентов.
 
 В силу особенностей конфигурации компонентов потребуется редактировать параметры портов по протоколу HTTPS.
 
-![](../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image46.emf)
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image46.png)
 
 Рисунок 5.10 – Схема взаимодействия компонентов
 
-### Установка компонента JDS
+#### Установка компонента JDS
 
 Компонент пользовательского веб-интерфейса для администраторов «Jatoba data safe» (JDS) устанавливается в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe», в зависимости от требуемой архитектуры, описанной в разделе 2 документа.
 
-### Веб-сервер nginx
+#### Веб-сервер nginx
 
 Веб-сервер nginx устанавливается в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe».
 
 Выполнять действия, описанные в п. 5.1.1 документа, необязательно.
 
-### Создание сертификата и ключа для pg-explain
+#### Создание сертификата и ключа для pg-explain
 
 Создание сертификата и ключа для соединения по протоколу SSL описано в п. 5.1.2 документа.
 
-### Создание конфигурации сайта 
+#### Создание конфигурации сайта 
 
 Отличие выполняемых шагов, описанных в п. 5.1.3 документа состоит в том, что вместо порта 443 будет использоваться порт 444 SSL.
 
@@ -1144,7 +1052,7 @@
 
 Проверить в веб-браузере работу explain по https, дать подтверждение системе безопасности, если спросит про недействительный сертификат.
 
-### Редактирование параметров компонента JDS 
+#### Редактирование параметров компонента JDS 
 
 Взаимодействие JDS с сервисом pg-explain настраивается в конфигурационном файле компонента JDS appsettings.json. В свойстве PgExplainConfig.BaseAddress необходимо указать URL, по которому доступен https-сервис pg-explain.
 
@@ -1176,9 +1084,13 @@
 
 Сохранить файл и перезапустить службу «jds»
 
-> \# systemctl restart jds
+```
+# systemctl restart jds
+```
 >
-> \# systemctl status jds
+```
+# systemctl status jds
+```
 
 Проверить доступность компонента JDS по адресу:
 
@@ -1191,9 +1103,9 @@
 
 После чего отобразится добавленный узел.
 
-# Ошибки
+## Ошибки
 
-## Ошибка FATAL: password authentication failed for user "postgres"
+### Ошибка FATAL: password authentication failed for user "postgres"
 
 Ошибка появляется при вводе некорректного пароля привилегированного пользователя СУБД.
 
@@ -1203,7 +1115,7 @@
 
 Необходимо повторно запустить инсталлятор и указать корректный пароль.
 
-## Ошибка ERROR: invalid locale name: "ru_RU.UTF-8" 
+### Ошибка ERROR: invalid locale name: "ru_RU.UTF-8" 
 
 Ошибка появляется при отсутствии установленной в ОС локали «ru_RU.UTF-8».
 
@@ -1221,7 +1133,7 @@
 
 В случае, если СУБД была установлена без локали «ru_RU.UTF-8» в ОС, то потребуется ее переустановка.
 
-# 
+## 
 
 <span id="_Toc195524711" class="anchor"></span>Термины и определения**«/»** – ГОСТ 34.302.2-91 (ИСО 8859/2-87) «Наборы 8 битных однобайтовых кодированных графических символов. латинский алфавит № 2» определяет символ как, «дробная черта» (англ. «solidus»).
 
@@ -1237,7 +1149,7 @@
 
 **OpenSSH** – набор программ, предоставляющих шифрование сеансов связи по компьютерным сетям с использованием протокола SSH. OpenSSH включает программы для клиента и сервера, а также инструменты для генерации ключей и аутентификации.
 
-# 
+## 
 
 | <span id="_Toc195524712" class="anchor"></span>Перечень сокращенийSQL | – | Structured Query Language |
 |:---|----|----|
@@ -1245,353 +1157,3 @@
 | ОС | – | Операционная система |
 | СУБД | – | Система управления базами данных |
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;">Лист регистрации изменений</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2" style="text-align: center;">Изм.</td>
-<td colspan="4" style="text-align: center;">Номера листов (страниц)</td>
-<td rowspan="2" style="text-align: center;">Всего<br />
-листов (страниц)<br />
-в документе</td>
-<td rowspan="2" style="text-align: center;">Номер документа</td>
-<td rowspan="2" style="text-align: center;">Входящий номер сопроводительного документа и дата</td>
-<td rowspan="2" style="text-align: center;">Подпись</td>
-<td rowspan="2" style="text-align: center;">Дата</td>
-</tr>
-<tr>
-<td style="text-align: center;">измененных</td>
-<td style="text-align: center;">замененных</td>
-<td style="text-align: center;">новых</td>
-<td style="text-align: center;">аннулированных</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
