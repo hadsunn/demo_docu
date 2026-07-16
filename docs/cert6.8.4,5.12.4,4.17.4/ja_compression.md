@@ -8,31 +8,13 @@
 Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.
 
 Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:
+
+> ОС Linux – «/usr/jatoba-6/bin».
 :::
 
-Степени важности примечаний, применяемые в документе:
-
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image2.png" style="width:0.25139in;height:0.25139in" /> | **Важная информация** – указания, требующие особого внимания |
-|----|----|
-
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" /> | **Дополнительная информация** – указания, позволяющие упростить работу с изделием |
-|----|----|
-
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 88%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image2.png" style="width:0.25139in;height:0.25139in" /></th>
-<th style="text-align: left;"><p><strong>Важная информация</strong></p>
-<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!
+:::
 
 ## Назначение компонента
 
@@ -44,10 +26,10 @@
 
 Имеют малый коэффициент сжатия:
 
-- 
-- 
+- GUID - статистически уникальный 128-битный идентификатор;
+- бинарные данные и случайные данные, например, иллюстрации, сохраненные в базе данных;
 
-GUID - статистически уникальный 128-битный идентификатор;бинарные данные и случайные данные, например, иллюстрации, сохраненные в базе данных;Плохо сжимаются индексы, так как содержат бинарные данные. Совсем не сжимаются таблицы, созданные компонентом JCS, так как данные зашифрованы и хаотичны. Не сжимаются уже сжатые данные, см ниже про TOAST (тост-таблицах). Мало эффективно сжатие маленьких таблиц до 100 кб данных.
+Плохо сжимаются индексы, так как содержат бинарные данные. Совсем не сжимаются таблицы, созданные компонентом JCS, так как данные зашифрованы и хаотичны. Не сжимаются уже сжатые данные, см ниже про TOAST (тост-таблицах). Мало эффективно сжатие маленьких таблиц до 100 кб данных.
 
 ### Условия применения
 
@@ -59,32 +41,36 @@ GUID - статистически уникальный 128-битный иден
 
 Компрессия компонентом «ja_Сompression» не поддерживается на следующих ОС:
 
-- 
-- 
+- Debian 10;
+- ROSA 7.9;
 
-Debian 10;ROSA 7.9;Следует избегать применения:
+Следует избегать применения:
 
-1)  
+1) **Двойной компрессии TOAST в ТП (табличном пространстве)**
 
-**Двойной компрессии TOAST в ТП (табличном пространстве)**Если в таблице присутствует длинный тип данных TOAST (LOB) и таблица помещена в ТП, то возможно двойное сжатие. То есть сначала применяется компрессия TOAST, потом поверх неё применяется компрессия на уровне страниц. Двойная компрессия может дать всего порядка 10% выигрыша по сравнению с одиночной.
+Если в таблице присутствует длинный тип данных TOAST (LOB) и таблица помещена в ТП, то возможно двойное сжатие. То есть сначала применяется компрессия TOAST, потом поверх неё применяется компрессия на уровне страниц. Двойная компрессия может дать всего порядка 10% выигрыша по сравнению с одиночной.
 
 Чтобы избежать двойного сжатия следует:
 
-- 
+- Вариант № 1
 
-Вариант № 1Таблицы с TOAST не помещать сжатое ТП, а использовать индивидуальный признак компрессии. В этом случае TOAST будет сжат своим алгоритмом (pglz).
+Таблицы с TOAST не помещать сжатое ТП, а использовать индивидуальный признак компрессии. В этом случае TOAST будет сжат своим алгоритмом (pglz).
 
-- 
+- Вариант № 2
 
-Вариант № 2Возможно снять компрессию TOAST путем изменения режима хранения колонок на EXTERNAL:
+Возможно снять компрессию TOAST путем изменения режима хранения колонок на EXTERNAL:
 
+```
 > ALTER TABLE mytable alter column mycol SET storage external;
+```
 
 В этом случае будет использована только компрессия на уровне страниц.
 
 Дополнительным вариантом является снятие компрессии TOAST путем изменения режима хранения колонок на PLAIN:
 
-> ALTER TABLE mytable alter column mycol SET storage PLAIN;
+```
+ALTER TABLE mytable alter column mycol SET storage PLAIN;
+```
 
 **Фрагментация**
 
@@ -92,45 +78,37 @@ Debian 10;ROSA 7.9;Следует избегать применения:
 
 Чтобы дефрагментировать таблицу надо выполнить операции:
 
-> VACUUM full mytable;
->
-> REINDEX table mytable;
+```
+VACUUM full mytable;
+REINDEX table mytable;
+```
 
-2)  
-
-**RUM индекс**Объекты такие как индекс RUM таблицы имеют названия алгоритма в пути до конкретного файла этого индекса, если оно находится в компрессированном табличном пространстве.
+2) **RUM индекс**Объекты такие как индекс RUM таблицы имеют названия алгоритма в пути до конкретного файла этого индекса, если оно находится в компрессированном табличном пространстве.
 
 **Особого внимания требуют табличные пространства (ТП)**
 
 После создания ТП, его компрессию можно изменять только пока оно не содержит данных. Как только появляется хоть один объект (таблица, индекс и так далее), то изменение компрессии уже невозможно.
 
-> CREATE TABLESPACE tablespace_c LOCATION '/dir/tablespace_c';
->
-> ALTER CREATE TABLESPACE tablespace_c SET (compression=zstd);
->
-> ОК
->
-> CREATE TABLESPACE TABLESPACE_c LOCATION '/dir/tablespace_c';
->
-> CREATE TABLE a(a int) TABLESPACE tablespace_c;
->
-> ALTER CREATE TABLESPACE tablespace_c SET (compression=zstd);
->
-> ОШИБКА смена алгоритма компрессии запрещена
+```
+CREATE TABLESPACE tablespace_c LOCATION '/dir/tablespace_c';
+ALTER CREATE TABLESPACE tablespace_c SET (compression=zstd);
+ОК
+CREATE TABLESPACE TABLESPACE_c LOCATION '/dir/tablespace_c';
+CREATE TABLE a(a int) TABLESPACE tablespace_c;
+ALTER CREATE TABLESPACE tablespace_c SET (compression=zstd);
+ОШИБКА смена алгоритма компрессии запрещена
+```
 
 После переноса базы данных в компрессированное ТП, - компрессия сразу не применяется. Чтобы применилась компрессия к объектам БД, - надо выполнить запросы vacuum full; reindex database;
 
-> CREATE TABLESPACE tablespace_c LOCATION '/var/lib/jatoba/6/tablespace_c' with(compression=zstd);
->
-> ALTER DATABASE mydb SET TABLESPACE tablespace_c;
->
-> \c mydb 
->
-> vacuum full;
->
-> reindex database;
->
-> checkpoint;
+```
+CREATE TABLESPACE tablespace_c LOCATION '/var/lib/jatoba/6/tablespace_c' with(compression=zstd);
+ALTER DATABASE mydb SET TABLESPACE tablespace_c;
+\c mydb 
+vacuum full;
+reindex database;
+checkpoint;
+```
 
 После команд vacuum full, reindex database, компрессируются системные объекты типа pg_class. Так как эти объекты небольшие, то применение компрессии к ним будет малоэффективным. Но такого поведения можно избежать, если применять команду vacuum full только к отдельным таблицам.
 
@@ -138,13 +116,12 @@ Debian 10;ROSA 7.9;Следует избегать применения:
 
 Нельзя изменять компрессию у объекта внутри компрессированного ТП.
 
-> CREATE TABLESPACE tablespace_c LOCATION '/dir/tablespace_c' with(compression=zstd);
->
-> CREATE TABLE a(a int) TABLESPACE tablespace_c;
->
-> ALTER TABLE a SET (compression=lz4);
->
-> ОШИБКА смена алгоритма компрессии запрещена
+```
+CREATE TABLESPACE tablespace_c LOCATION '/dir/tablespace_c' with(compression=zstd);
+CREATE TABLE a(a int) TABLESPACE tablespace_c;
+ALTER TABLE a SET (compression=lz4);
+ОШИБКА смена алгоритма компрессии запрещена
+```
 
 **Перемещение таблицы между ТП с разным алгоритмом компрессии**
 
@@ -154,31 +131,36 @@ Debian 10;ROSA 7.9;Следует избегать применения:
 
 Для того чтобы безопасно переместить таблицу между табличными пространствами и исключить конфликт между алгоритмами сжатия необходимо:
 
-1)  
+1) Переместить таблицу в табличное пространство по умолчанию pg_default:
 
-> Переместить таблицу в табличное пространство по умолчанию pg_default:alter table \[table_name\] set tablespace pg_default;
+```
+alter table [table_name] set tablespace pg_default;
+```
 
-2)  
+2) Отключить компрессию данных таблицы:
 
-> Отключить компрессию данных таблицы:alter table \[table_name\] reset(compression);
+```
+alter table [table_name] reset(compression);
+```
 
-3)  
+3) Переместить таблицу в табличное пространство с компрессией:
 
-> Переместить таблицу в табличное пространство с компрессией:alter table \[table_name\] set tablespace \[tablespace_compression\];
+```
+alter table [table_name] set tablespace [tablespace_compression];
+```
 
-4)  
+4)  Выполнить сжатие данных табличного пространства:vacuum full;
 
-> Выполнить сжатие данных табличного пространства:vacuum full;
->
-> reindex database;
->
-> checkpoint;
+```
+reindex database;
+checkpoint;
+```
 
-5)  
+1)  После этого перемещенная таблица будет сжата по алгоритму, примененному к текущему табличному пространству.После перемещения таблицы возможно переместить БД при помощи выполнения запроса:
 
-После этого перемещенная таблица будет сжата по алгоритму, примененному к текущему табличному пространству.После перемещения таблицы возможно переместить БД при помощи выполнения запроса:
-
-> alter database \[db_name\] set tablespace \[tablespace_compression\];
+```
+alter database [db_name] set tablespace [tablespace_compression];
+```
 
 ## Установка и настройка
 
@@ -192,14 +174,14 @@ Debian 10;ROSA 7.9;Следует избегать применения:
 
 Табличные пространства (ТП) стоят выше по иерархии чем БД, поэтому возможны следующие варианты использования компрессии:
 
-- 
+- табличные пространства с компрессией;
 
-табличные пространства с компрессией; Все включенные и/или перенесенные таблицы, индексы и БД будут подвергнуты компрессии:
+Все включенные и/или перенесенные таблицы, индексы и БД будут подвергнуты компрессии:
 
-- 
-- 
+- таблицы с компрессией;
+- индексы с компрессией.
 
-таблицы с компрессией;индексы с компрессией.Все варианты использования компонента для компрессии данных приведены в таблице Таблица 3.1.
+Все варианты использования компонента для компрессии данных приведены в таблице Таблица 3.1.
 
 <table>
 <caption><p>Таблица 3.1 – Варианты использования компрессии данных</p></caption>
@@ -265,16 +247,18 @@ Debian 10;ROSA 7.9;Следует избегать применения:
 
 Компонент «ja_Сompression» позволяет компрессировать данные с использованием следующих алгоритмов сжатия без потерь:
 
-- 
-- 
+- zstd;
+- lz4.
 
-zstd;lz4.Далее по тексту в синтаксисе запросов compres_type может принимать значения zstd или lz4 в зависимости от выбранного алгоритма сжатия данных
+Далее по тексту в синтаксисе запросов compres_type может принимать значения zstd или lz4 в зависимости от выбранного алгоритма сжатия данных
 
 ### Создание табличного пространства с сжатием данных
 
 При создании табличного пространства с сжатием данных применяется следующий синтаксис команды:
 
-> CREATE TABLESPACE \[name_ts\] location 'path to the tablespace' with(compression=\[zstd\|lz4\]);
+```
+CREATE TABLESPACE [name_ts] location 'path to the tablespace' with(compression=[zstd|lz4]);
+```
 
 Реализовать это можно при помощи следующих шагов.
 
@@ -282,17 +266,17 @@ zstd;lz4.Далее по тексту в синтаксисе запросов c
 
 ```
 # mkdir -p /data/dbs
-```
->
-```
 # chown postgres:postgres /data/dbs
 ```
 
 Создать табличное пространство в отдельном каталоге, например с использованием компрессии zstd:
 
-> CREATE TABLESPACE tablespace_compressed LOCATION '/data/dbs' with(compression=zstd);
+```
+CREATE TABLESPACE tablespace_compressed LOCATION '/data/dbs' with(compression=zstd);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image4.png" style="width:6.71304in;height:2.63403in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-13 04-23-21.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image4.png)
 
 Рисунок 3.2 – Создание табличного пространства с сжатием данных
 
@@ -300,64 +284,81 @@ zstd;lz4.Далее по тексту в синтаксисе запросов c
 
 В существующее табличное пространство возможно переместить БД. Применяется следующий синтаксис команды:
 
-> ALTER DATABASE \[name_db\] SET TABLESPACE \[name_ts\];
+```
+ALTER DATABASE [name_db] SET TABLESPACE [name_ts];
+```
 
 Например:
 
-> ALTER DATABASE test_db1 SET TABLESPACE tablespace_compressed;
+```
+ALTER DATABASE test_db1 SET TABLESPACE tablespace_compressed;
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image5.png" style="width:7.08674in;height:1.1913in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-13 04-34-41.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image5.png)
 
 Рисунок 3.3 – Перемещение БД в табличное пространство
 
 После переноса переключиться на БД:
 
-> \c \[name_db\]
+```
+\c [name_db]
+```
 
 После переноса БД в компрессированное ТП компрессия к данным сразу не применяется. Чтобы применилась компрессия к объектам БД следует выполнить полный вакуум (vacuum full), реиндексацию БД (reindex database) и создать контрольные точки (checkpoint).
 
 В силу указанных причин следует выполнить SQL-команды:
 
-> vacuum full;
->
-> reindex database;
->
-> checkpoint;
+```
+vacuum full;
+reindex database;
+checkpoint;
+```
 
 ## SQL операции над компрессированными таблицами и индексами
 
 Компрессия индексов и таблиц разнесена в отдельные операции, чтобы избежать возникновения двойной компрессии.
 
-Для задания компрессии на момент создания таблицы или индекса используется конструкция with(compression=\[compres_type\]), где compres_type может соответствовать одному из поддерживаемых компонентом алгоритмов сжатия данных без потерь:
+Для задания компрессии на момент создания таблицы или индекса используется конструкция with(compression=[compres_type]), где compres_type может соответствовать одному из поддерживаемых компонентом алгоритмов сжатия данных без потерь:
 
-- 
-- 
+- zstd;
+- lz4.
 
-### zstd;lz4.Компрессия таблиц
+### Компрессия таблиц
 
 Таблицы могут создаваться с признаком компрессии данных в БД или в табличном пространстве.
 
 SQL-команда будет иметь синтаксис:
 
-> CREATE TABLE \[name_table\] with(compression=\[zstd\|lz4\]);
+```
+CREATE TABLE [name_table] with(compression=[zstd|lz4]);
+```
 
 Например:
 
-> CREATE TABLE t1(a int) with(compression=zstd);
+```
+CREATE TABLE t1(a int) with(compression=zstd);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image6.png" style="width:7.14964in;height:1.06087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-13 00-48-17.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image6.png)
 
 Рисунок 4.1 – Создание таблицы с компрессией zstd
 
 SQL-команда для создания таблицы в табличном пространстве с компрессией, будет иметь синтаксис:
 
-> CREATE TABLE \[name_table\] TABLESPACE \[name_ts\];
+```
+CREATE TABLE [name_table] TABLESPACE [name_ts];
+```
 
 Например:
 
-> CREATE TABLE t1(a int) TABLESPACE tablespace_compressed;
+```
+CREATE TABLE t1(a int) TABLESPACE tablespace_compressed;
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image7.png" style="width:7.11383in;height:1.10435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-13 04-44-59.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image7.png)
 
 Рисунок 4.2 - SQL-команда для создания таблицы в табличном пространстве с компрессией
 
@@ -367,25 +368,34 @@ SQL-команда для создания таблицы в табличном 
 
 Создание таблицы и индекса таблицы с компрессией:
 
-> CREATE TABLE t1(a int primary key with(compression=\[zstd\|lz4\])) with(compression=\[zstd\|lz4\]);
+```
+CREATE TABLE t1(a int primary key with(compression=[zstd|lz4])) with(compression=[zstd|lz4]);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image8.png" style="width:7.07263in;height:1.31304in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 00-31-46.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image8.png)
 
 Рисунок 4.3 - Создание таблицы и индекса таблицы с компрессией zstd
 
 Компрессия создаваемого индекса таблицы:
 
-> CREATE INDEX idx1 on t1(a) with(compression=\[zstd\|lz4\]);
+```
+CREATE INDEX idx1 on t1(a) with(compression=[zstd|lz4]);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image9.png" style="width:7.10751in;height:1.45217in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 00-35-41.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image9.png)
 
 Рисунок 4.4 - Компрессия создаваемого индекса таблицы c использованием алгоритма zstd
 
 Компрессия создаваемого индекса таблицы в табличном пространстве:
 
-> CREATE INDEX idx1 on t1(a) TABLESPACE tablespace_compressed;
+```
+CREATE INDEX idx1 on t1(a) TABLESPACE tablespace_compressed;
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image10.png" style="width:6.75297in;height:1.32374in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 00-44-41.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image10.png)
 
 Рисунок 4.5 - Компрессия создаваемого индекса таблицы в табличном пространстве
 
@@ -397,11 +407,12 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> CREATE TABLE compress_brin(a int);
->
-> CREATE INDEX ix_brin on compress_brin using brin (a) with (compression=\[zstd\|lz4\]);
+```
+CREATE TABLE compress_brin(a int);
+CREATE INDEX ix_brin on compress_brin using brin (a) with (compression=[zstd|lz4]);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image11.png" style="width:7.08542in;height:1.58423in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 02-54-13.png" />
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image11.png)
 
 Рисунок 4.6 – Компрессия индекса типа BRIN c использованием алгоритма zstd
 
@@ -411,13 +422,14 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> CREATE TABLE compress_gin(doc text, doc_tsv tsvector);
->
-> UPDATE compress_gin set doc_tsv = to_tsvector(doc);
->
-> CREATE INDEX ix_gin on compress_gin USING gin(doc_tsv) with(compression=\[zstd\|lz4\]);
+```
+CREATE TABLE compress_gin(doc text, doc_tsv tsvector);
+UPDATE compress_gin set doc_tsv = to_tsvector(doc);
+CREATE INDEX ix_gin on compress_gin USING gin(doc_tsv) with(compression=[zstd|lz4]);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image12.png" style="width:6.97289in;height:1.92174in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 03-01-19.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image12.png)
 
 Рисунок 4.7 – Компрессия индекса типа GIN c использованием алгоритма zstd
 
@@ -427,11 +439,13 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> CREATE TABLE compress_hash(a int);
->
-> CREATE INDEX ix_hash on compress_hash USING hash (a) with (compression=\[zstd\|lz4\]);
+```
+CREATE TABLE compress_hash(a int);
+CREATE INDEX ix_hash on compress_hash USING hash (a) with (compression=[zstd|lz4]);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image13.png" style="width:7.13044in;height:1.59691in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 03-13-31.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image13.png)
 
 Рисунок 4.8 – Компрессия индекса типа HASH c использованием алгоритма zstd
 
@@ -441,11 +455,13 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> CREATE TABLE compress_gist(a POINT);
->
-> CREATE INDEX ix_gist on compress_gist USING gist (a) with (compression=\[zstd\|lz4\]);
+```
+CREATE TABLE compress_gist(a POINT);
+CREATE INDEX ix_gist on compress_gist USING gist (a) with (compression=[zst\|lz4]);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image14.png" style="width:6.97438in;height:1.54783in" alt="C:\Users\KUZNET~1\AppData\Local\Temp\vmware-kuznetsov-a\VMwareDnD\d59d2698\Screenshot from 2025-01-14 03-14-46.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image14.png)
 
 Рисунок 4.9 – Компрессия индекса типа GIST c использованием алгоритма zstd
 
@@ -455,16 +471,18 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> CREATE TABLE compress_spgist(a POINT);
->
-> CREATE INDEX ix_spgist on compress_spgist USING spgist (a) with (compression=\[zstd\|lz4\]);
+```
+CREATE TABLE compress_spgist(a POINT);
+CREATE INDEX ix_spgist on compress_spgist USING spgist (a) with (compression=[zstd|lz4]);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image15.png" style="width:7.10104in;height:1.56522in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 03-16-02.png" />
 
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" /> | Индекс SP GIST очень медленный индекс, лучше создавать его в конце после заполнения таблицы данными |
-|----|----|
-
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image15.png)
 Рисунок 4.10 – Компрессия индекса типа SP GIST c использованием алгоритма zstd
+
+:::info Дополнительная информация
+Индекс SP GIST очень медленный индекс, лучше создавать его в конце после заполнения таблицы данными
+:::
 
 #### Btree
 
@@ -472,9 +490,10 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> CREATE TABLE compress_btree(a int);
->
-> CREATE INDEX ix_brin on compress_brin using Btree (a) with (compression=\[zstd\|lz4\]);
+```
+CREATE TABLE compress_btree(a int);
+CREATE INDEX ix_brin on compress_brin using Btree (a) with (compression=[zstd|lz4]);
+```
 
 #### RUM
 
@@ -488,11 +507,11 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> CREATE EXTENSION rum;
->
-> CREATE TABLESPACE tablespace_compr ‘path/to/file’ with(compression=\[zstd\|lz4\]);
->
-> CREATE INDEX rumidx ON test_rum USING rum (a rum_tsvector_ops) tablespace tablespace_compr;
+```
+CREATE EXTENSION rum;
+CREATE TABLESPACE tablespace_compr ‘path/to/file’ with(compression=[zstd|lz4]);
+CREATE INDEX rumidx ON test_rum USING rum (a rum_tsvector_ops) tablespace tablespace_compr;
+```
 
 ### Смена алгоритма компрессии (alter table)
 
@@ -500,9 +519,12 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> ALTER TABLE t1 SET (compression=\[zstd\|lz4\]);
+```
+ALTER TABLE t1 SET (compression=[zstd|lz4]);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image16.png" style="width:7.16418in;height:1.2in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 22-32-19.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image16.png)
 
 Рисунок 4.11 – Установка типа компрессии
 
@@ -510,9 +532,12 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> ALTER TABLE t1 RESET (compression);
+```
+ALTER TABLE t1 RESET (compression);
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image17.png" style="width:7.10815in;height:1.06087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 22-33-47.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image17.png)
 
 Рисунок 4.12 – Снятие компрессии с таблицы
 
@@ -520,9 +545,12 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> ALTER TABLE t1 SET TABLESPACE tablespace_compressed;
+```
+ALTER TABLE t1 SET TABLESPACE tablespace_compressed;
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image18.png" style="width:7.0891in;height:1.10435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\Screenshot from 2025-01-14 22-51-18.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image18.png)
 
 Рисунок 4.13 - Перенос таблицы в табличное пространство
 
@@ -534,7 +562,9 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> ALTER INDEX idx1 set tablespace tablespace_compressed;
+```
+ALTER INDEX idx1 set tablespace tablespace_compressed;
+```
 
 ### Компрессия журналируемых таблиц (logged tables) и нежурналируемых таблиц (unlogged tables), временных таблиц (temporary_tables) и их индексов
 
@@ -542,15 +572,18 @@ SQL-команда для создания таблицы в табличном 
 
 Например:
 
-> CREATE \[unlogged\|temporary\|temp\] table t1(a int) with(compression=\[zstd\|lz4\]);
->
-> ALTER TABLE t1 set unlogged;
+```
+CREATE [unlogged|temporary|temp] table t1(a int) with(compression=[zstd|lz4]);
+ALTER TABLE t1 set unlogged;
+```
 
-\- работает для постоянных (нежурналируемых) таблиц.
+- работает для постоянных (нежурналируемых) таблиц.
 
-> ALTER TABLE t1 set logged;
+```
+ALTER TABLE t1 set logged;
+```
 
-\- работает для постоянных (журналируемых) таблиц.
+- работает для постоянных (журналируемых) таблиц.
 
 ### Компрессия TOAST файлов
 
@@ -562,11 +595,15 @@ TOAST не имеет своих опций и наследует их от та
 
 СУБД «Jatoba» предоставляет команды для управления TOAST:
 
-> CREATE TABLE \[table_name\] (\[column_name\]TEXT STORAGE \[PLAIN\|EXTERNAL\|EXTENDED\|MAIN\]);
+```
+CREATE TABLE [table_name] ([column_name]TEXT STORAGE [PLAIN|EXTERNAL|EXTENDED|MAIN]);
+```
 
 или
 
-> ALTER TABLE \[table_name\] ALTER COLUMN \[column_name\] SET STORAGE \[PLAIN\|EXTERNAL\|EXTENDED\|MAIN\];
+```
+ALTER TABLE [table_name] ALTER COLUMN [column_name] SET STORAGE [PLAIN|EXTERNAL|EXTENDED|MAIN];
+```
 
 При этом некоторые режимы хранения подразумевают свой механизм сжатия данных. на уровне строк. Чтобы избежать двойного сжатия, рекомендуется использовать режим хранения EXTERNAL. В таком случае будет использоваться только сжатие на уровне страниц.
 
@@ -576,26 +613,37 @@ TOAST не имеет своих опций и наследует их от та
 
 Создаем партицированную таблицу при помощи команды:
 
-> CREATE TABLE compressed_partitioned_table(a int) PARTITION BY range(a);
+```
+CREATE TABLE compressed_partitioned_table(a int) PARTITION BY range(a);
+```
 
 Создаем компрессированную партицию при помощи команды:
 
-> CREATE TABLE compressed_partition_1 PARTITION OF compressed_partitioned_table FOR VALUES FROM (0) TO (500000) WITH (compression=\[zstd\|lz4\]);
+```
+CREATE TABLE compressed_partition_1 PARTITION OF compressed_partitioned_table FOR VALUES FROM (0) TO (500000) WITH (compression=[zstd\|lz4]);
+```
 
 Создаем вторую некомпрессированную партицию при помощи команды:
 
-> CREATE TABLE compressed_partition_2 PARTITION OF compressed_partitioned_table FOR VALUES FROM (500000) TO (1000000);
+```
+CREATE TABLE compressed_partition_2 PARTITION OF compressed_partitioned_table FOR VALUES FROM (500000) TO (1000000);
+```
 
 Компрессируем вторую партицию с использованием одного из двух алгоритмов сжатия данных при помощи команды:
 
-> ALTER TABLE compressed_partition_2 SET(compression=\[zstd\|lz4\]);
+```
+ALTER TABLE compressed_partition_2 SET(compression=[zstd\|lz4]);
+```
 
 Либо выполняем перемещение второй компрессированной таблицы в другое ТП при помощи команды:
 
-> ALTER TABLE compressed_partition_2 SET TABLESPACE tablespace_ compressed;
+```
+ALTER TABLE compressed_partition_2 SET TABLESPACE tablespace_ compressed;
+```
 
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" /> | Алгоритм сжатия данных партиции и ТП при выполнении перемещения должны совпадать. Если для компрессированной партиции выбран алгоритм zstd, то перемещать такую партицию разрешено только в компрессированное ТП с алгоритмом сжатия данных zstd. |
-|----|----|
+:::info Дополнительная информация
+Алгоритм сжатия данных партиции и ТП при выполнении перемещения должны совпадать. Если для компрессированной партиции выбран алгоритм zstd, то перемещать такую партицию разрешено только в компрессированное ТП с алгоритмом сжатия данных zstd.
+:::
 
 ### Компрессия распределенных таблиц
 
@@ -605,15 +653,21 @@ TOAST не имеет своих опций и наследует их от та
 
 На узле координаторе необходимо создать таблицу с использованием одного из алгоритмов сжатия:
 
-> CREATE TABLE \[table_name\](f1 int) WITH(compression=\[zstd\|lz4\]);
+```
+CREATE TABLE [table_name](f1 int) WITH(compression=[zstd\|lz4]);
+```
 
 Либо применить на узле координатор алгоритм сжатия к существующей таблице при помощи выполнения запроса:
 
-> ALTER TABLE \[table_name\] SET(compression=\[zstd\|lz4\]);
+```
+ALTER TABLE [table_name] SET(compression=[zstd\|lz4]);
+```
 
 После этого необходимо создать распределенную таблицу на узлах кластера (количество указывается в параметре shard_count) при помощи запроса:
 
-> SELECT create_distributed_table('\[table_name\]', 'f1', shard_count:=2);
+```
+SELECT create_distributed_table('[table_name]', 'f1', shard_count:=2);
+```
 
 После этого скомпрессированная таблица будет распределена на узлы кластера и к ней будет применяться выбранный ранее алгоритм сжатия.
 
@@ -621,45 +675,46 @@ TOAST не имеет своих опций и наследует их от та
 
 Для того чтобы отключить механизм сжатия данных для распределенных таблиц необходимо на узле координатор выбрать таблицу и выполнить следующий запрос
 
-> ALTER TABLE \[table_name\] reset (compression);
+```
+ALTER TABLE [table_name] reset (compression);
+```
 
 **Существующие ограничения сжатия распределенных таблиц.**
 
 Если ТП не создано на узлах кластера, то следующие запросы выполнятся с ошибками:
 
-> CREATE TABLE a1(a text) tablespace tsp;
->
-> SELECT create_distributed_table('a1', 'a');
->
-> ERROR: tablespace "tsp" does not exist
->
-> CONTEXT: while executing command on \[IP-адрес\]:5432
+```
+CREATE TABLE a1(a text) tablespace tsp;
+SELECT create_distributed_table('a1', 'a');
+ERROR: tablespace "tsp" does not exist
+CONTEXT: while executing command on [IP-адрес]:5432
+```
 
 Для решения такой ситуации необходимо создать таблицу a1 в ТП по умолчанию pg_default, или создать ТП tsp на распределенных узлах.
 
 Создание индексов в ТП также имеет определенные ограничения:
 
-> CREATE TABLE a2(a int);
->
-> CREATE INDEX ix2 ON a2(a) tablespace tsp;
->
-> SELECT create_distributed_table('a2', 'a');
->
-> ERROR: tablespace "tsp" does not exist
->
-> CONTEXT: while executing command on \[IP-адрес\]:5432
+```
+CREATE TABLE a2(a int);
+CREATE INDEX ix2 ON a2(a) tablespace tsp;
+SELECT create_distributed_table('a2', 'a');
+ERROR: tablespace "tsp" does not exist
+CONTEXT: while executing command on [IP-адрес]:5432
+```
 
 Для решения такой ситуации необходимо создать индекс ix2 в ТП по умолчанию pg_default, или создать ТП tsp на распределенных узлах.
 
 Если распределяемая таблица создается в ТП, для которого уже используется сжатие данных:
 
-> CREATE TABLE \[table_name\](a int) tablespace \[tablespace_zstd\];
+```
+CREATE TABLE [table_name](a int) tablespace [tablespace_zstd];
+```
 
 То на распределенных узлах кластера эта же таблица будет располагаться в не сжатом ТП по умолчанию pg_default.
 
 ## Резервирование и восстановление
 
-**Утилита pg_dump **
+**Утилита pg_dump**
 
 Утилита pg_dump сохраняет атрибут компрессии у отдельных таблиц. После завершения восстановления таблиц данных компрессия также восстанавливается. 
 
@@ -683,13 +738,13 @@ TOAST не имеет своих опций и наследует их от та
 
 Для физической репликации различается 2 случая:
 
-- 
+- Если таблица создана до настройки репликации;
 
-Если таблица создана до настройки репликации;Признак компрессии передается на реплику через утилиту pg_basebackup.
+Признак компрессии передается на реплику через утилиту pg_basebackup.
 
-- 
+- Если таблица создана после настройки репликации;
 
-Если таблица создана после настройки репликации; Признак компрессии данных передается посредством WAL-журналов в реплику.
+Признак компрессии данных передается посредством WAL-журналов в реплику.
 
 На данный момент реализована передача признака компрессии для обоих случаев.
 
@@ -707,31 +762,27 @@ TOAST не имеет своих опций и наследует их от та
 
 ### Предварительные условия
 
-- 
+- настройка производится на 2 серверах:
+  - Windows Server 2019 (сервер 1С);
+  - Astra Linux 1.7.5 (сервер СУБД, версия Linux-сервера неважна);
 
-<!-- -->
+- на Windows-сервере установлена платформа 1С актуальной версии, к примеру, 8.3.25.1445 для совместимости с актуальными версиями СУБД, настроен сервер администрирования 1С («кластер 1С»);
+- на сервере СУБД установлена Jatoba 6.4.1 с поддержкой компрессии;
+- на сервере СУБД для супер-пользователя задан пароль;
 
-- 
-- 
-
-<!-- -->
-
-- 
-- 
-- 
-
-настройка производится на 2 серверах: Windows Server 2019 (сервер 1С); Astra Linux 1.7.5 (сервер СУБД, версия Linux-сервера неважна);на Windows-сервере установлена платформа 1С актуальной версии, к примеру, 8.3.25.1445 для совместимости с актуальными версиями СУБД, настроен сервер администрирования 1С («кластер 1С»);на сервере СУБД установлена Jatoba 6.4.1 с поддержкой компрессии;на сервере СУБД для супер-пользователя задан пароль;Тестирование заключается в вычислении условного относительного коэффициента APDEX (значение от 0.0 до 1.0)
+Тестирование заключается в вычислении условного относительного коэффициента APDEX (значение от 0.0 до 1.0)
 
 ### Настройка БД с компрессией
 
-- 
+- на сервере СУБД установить пакет компонента «1C_support»:
 
-> на сервере СУБД установить пакет компонента «1C_support»:apt install jatoba6-1csupport
+```
+apt install jatoba6-1csupport
+```
 
-- 
-- 
+- в конфигурационный файл postgresql.conf внести рекомендуемые параметры для работы с 1С, как описано в п.п. 3.2 и 3.3 документа «Поддержка платформы 1С» 643.72410666.00067-07 98 01-13.
 
-в конфигурационный файл postgresql.conf внести рекомендуемые параметры для работы с 1С, как описано в п.п. 3.2 и 3.3 документа «Поддержка платформы 1С» 643.72410666.00067-07 98 01-13.в конфигурационный файл pg_hba.conf внести параметры, позволяющие серверу 1С подключаться к СУБД, к примеру
+- в конфигурационный файл pg_hba.conf внести параметры, позволяющие серверу 1С подключаться к СУБД, к примеру
 
 ```
 # IPv4 local connections:
@@ -739,52 +790,54 @@ TOAST не имеет своих опций и наследует их от та
 >
 > host kip_compress postgres \<IP-адрес сервера 1С\> password
 
-- 
+- перезапустить СУБД в терминале ОС:
 
-> перезапустить СУБД в терминале ОС:systemctl restart jatoba-6.service
+```
+systemctl restart jatoba-6.service
+```
 
-- 
+- на Windows-сервере создать пустую базу данных 1С. Для этого запустить клиент 1С, нажать «Добавить»
 
-на Windows-сервере создать пустую базу данных 1С. Для этого запустить клиент 1С, нажать «Добавить»<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image19.png" style="width:2.78264in;height:4.85208in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-27_12-45-8.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image19.png)
 
 Рисунок 8.1 – Кнопка добавления БД
 
-- 
-- 
-- 
+- Выбрать «Создание новой информационной базы» и нажать кнопку «Далее»;
+- Выбрать «Создание информационной базы без конфигурации…» и нажать кнопку «Далее»;
+- Задать название будущей базы данных, выбрать «На сервере 1С-предприятия» и нажать кнопку «Далее»;
 
-Выбрать «Создание новой информационной базы» и нажать кнопку «Далее»;Выбрать «Создание информационной базы без конфигурации…» и нажать кнопку «Далее»;Задать название будущей базы данных, выбрать «На сервере 1С-предприятия» и нажать кнопку «Далее»;<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image20.png" style="width:3.16489in;height:3.25957in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-6_11-25-47-1.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image20.png)
 
 Рисунок 8.2 – Окно «Добавление информационной базы»
 
-- 
+- задать настройки БД в 1С-кластере и для подключения к серверу СУБД:
+  - кластер серверов: localhost;
+  - имя базы в кластере: название БД в кластере 1С;
+  - тип СУБД: PostgreSQL;
+  - сервер баз данных: адрес сервера СУБД;
+  - имя базы данных: с каким названием БД будет создана на сервере СУБД;
+  - имя пользователя и пароль для доступа к серверу СУБД
 
-<!-- -->
+- Дважды нажать кнопку «Далее»;
 
-- 
-- 
-- 
-- 
-- 
-- 
 
-<!-- -->
-
-- 
-
-задать настройки БД в 1С-кластере и для подключения к серверу СУБД:кластер серверов: localhost;имя базы в кластере: название БД в кластере 1С;тип СУБД: PostgreSQL;сервер баз данных: адрес сервера СУБД;имя базы данных: с каким названием БД будет создана на сервере СУБД;имя пользователя и пароль для доступа к серверу СУБДДважды нажать кнопку «Далее»;<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image21.png" style="width:3.15622in;height:3.25767in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-6_11-26-1-1.png" />
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image21.png)
 
 Рисунок 8.3 – Окно «Добавление информационной базы»
 
-- 
+- в клиенте 1С выбрать созданную БД, нажать кнопку «Конфигуратор»;
 
-в клиенте 1С выбрать созданную БД, нажать кнопку «Конфигуратор»;<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image22.png" style="width:3.17368in;height:2.51968in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-6_11-26-9-1.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image22.png)
 
 Рисунок 8.4 – Окно клиента 1С
 
-- 
+- в открывшемся Конфигураторе выбрать Администрирование и опцию «Загрузить информационную базу»;
 
-в открывшемся Конфигураторе выбрать Администрирование и опцию «Загрузить информационную базу»;<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image23.png" style="width:5.88274in;height:3.53332in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-6_11-26-21-1.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image23.png)
 
 Рисунок 8.5 – Опция «Загрузить информационную базу»
 
@@ -792,18 +845,27 @@ TOAST не имеет своих опций и наследует их от та
 - 
 - 
 
-> выбрать файл дамп конфигурации и подтвердить загрузку дампа;по окончании загрузки можно закрыть Конфигуратор;на сервере СУБД использовать клиент psql для входа в СУБД;sudo -u postgres psql
+- выбрать файл дамп конфигурации и подтвердить загрузку дампа;
+- по окончании загрузки можно закрыть Конфигуратор;
+- на сервере СУБД использовать клиент psql для входа в СУБД;
+
+```
+sudo -u postgres psql
+```
 
 - 
 
-| в терминале ОС создать каталог для сжатого табличного пространства; <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" /> | В представленном примере используется каталог /tmp/tsp. Для реальной БД следует выбрать более подходящее размещение |
+| в терминале ОС создать каталог для сжатого табличного пространства; 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image1.png)
 |----|----|
 
 > \\ mkdir /tmp/tsp
 
-- 
+- в СУБД создать табличное пространство со сжатием (zstd или lz4);
 
-> в СУБД создать табличное пространство со сжатием (zstd или lz4);CREATE TABLESPACE tsp location '/tmp/tsp' with(compression=\[zstd\|lz4\]);
+```
+CREATE TABLESPACE tsp location '/tmp/tsp' with(compression=[zstd\|lz4]);
+```
 
 :::warning Важная информация
 Внимание, каталог /tmp может периодически чиститься демоном systemd-tmpfiles-clean.timer.
@@ -811,10 +873,12 @@ TOAST не имеет своих опций и наследует их от та
 Чтобы посмотреть его статус используйте команду ниже, либо создавайте tsp в другом каталоге, чтобы избежать внезапной очистки.
 :::
 
-- 
-- 
+- убедиться, что нет нагрузки на целевую БД;
+- перенести БД в новое табличное пространство SQL-командой:
 
-> убедиться, что нет нагрузки на целевую БД;перенести БД в новое табличное пространство SQL-командой:ALTER DATABASE kip_compress set tablespace tsp;
+```
+ALTER DATABASE kip_compress set tablespace tsp;
+```
 
 - 
 
@@ -834,7 +898,8 @@ TOAST не имеет своих опций и наследует их от та
 
 - 
 
-на сервере под управление ОС Windows запустить клиент 1С, войти в базу нажатием кнопки 1С:Предприятие и ввести аутентификационную информацию администратора СУБД;<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image24.png" style="width:3.86332in;height:2.07362in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-6_11-26-38-1.png" />
+на сервере под управление ОС Windows запустить клиент 1С, войти в базу нажатием кнопки 1С:Предприятие и ввести аутентификационную информацию администратора СУБД;
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image24.png)
 
 Рисунок 8.6 – Окно аутентификации
 
@@ -842,7 +907,13 @@ TOAST не имеет своих опций и наследует их от та
 - 
 - 
 
-в левом меню перейти в опции «Тест-центр» - «Агенты»;если в списке уже есть значения, то следует нажать кнопку «Выгрузить» и дождаться окончания выгрузки;нажать кнопку «Включить режим агента» и дождаться состояния «Подключен»;<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image25.png" style="width:3.11043in;height:2.06733in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-6_11-26-48-1.png" />
+в левом меню перейти в опции «Тест-центр» - «Агенты»;
+- если в списке уже есть значения, то следует нажать кнопку «Выгрузить» и дождаться окончания выгрузки;
+- нажать кнопку «Включить режим агента» и дождаться состояния «Подключен»;
+- 
+
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image25.png)
 
 Рисунок 8.7 – Агент Тест-центра
 
@@ -850,33 +921,41 @@ TOAST не имеет своих опций и наследует их от та
 - 
 - 
 
-не закрывая это окно 1С, запустить новый клиент, войти под тем же пользователем;в левом меню перейти в опции «Тест-центр» - «Сценарии тестирования»;выбрать предпочтительный сценарий и нажать «Настроить запуск»;<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image26.png" style="width:3.95647in;height:2.6954in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-27_12-45-54.png" />
+не закрывая это окно 1С, запустить новый клиент, войти под тем же пользователем;
+- в левом меню перейти в опции «Тест-центр» - «Сценарии тестирования»;
+- выбрать предпочтительный сценарий и нажать «Настроить запуск»;
+- 
+
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image26.png)
 
 Рисунок 8.8 – Выбор сценария тестирования
 
 - 
 
-нажать кнопку «Заполнить по запущенным агентам» (должен появиться агент). При необходимости изменить настройки тестов (количество виртуальных рабочих мест, итераций и пр.). Нажать «Запустить тест»;<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image27.png" style="width:3.99944in;height:2.97433in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-6_11-27-7-1.png" />
+нажать кнопку «Заполнить по запущенным агентам» (должен появиться агент). При необходимости изменить настройки тестов (количество виртуальных рабочих мест, итераций и пр.). Нажать «Запустить тест»;
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image27.png)
 
 Рисунок 8.9 – Окно «Настройка запуска тестов»
 
 - 
 
-после чего будет выведено окно с результатами тестов.<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image28.png" style="width:6.53333in;height:3.35583in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_6\Пользовательская документация\Draft\1\image-2024-12-6_11-27-15-1.png" />
+после чего будет выведено окно с результатами тестов.
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/ja_compression/media/image28.png)
 
 Рисунок 8.10 – Вывод результатов теста
 
-## 
+## Термины и определения
 
-<span id="_Toc196213027" class="anchor"></span>Термины и определения**Администратор СУБД** – субъект доступа, выполняющий административные функции в СУБД и наделенный правами:
+**Администратор СУБД** – субъект доступа, выполняющий административные функции в СУБД и наделенный правами:
 
-- 
-- 
-- 
-- 
-- 
+- создавать учетные записи пользователей системы управления базами данных;
+- модифицировать, блокировать и удалять учетные записи пользователей системы управления базами данных;
+- назначать права доступа пользователям системы управления базами данных к объектам доступа системы управления базами данных;
+- управлять конфигурацией системы управления базами данных;
+- создавать, подключать базы данных.
 
-создавать учетные записи пользователей системы управления базами данных;модифицировать, блокировать и удалять учетные записи пользователей системы управления базами данных;назначать права доступа пользователям системы управления базами данных к объектам доступа системы управления базами данных;управлять конфигурацией системы управления базами данных;создавать, подключать базы данных.Администратор СУБД имеет атрибут SUPERUSER и/или обладает системной учетной записью «postgres».
+Администратор СУБД имеет атрибут SUPERUSER и/или обладает системной учетной записью «postgres».
 
 **Алгоритм адресации блока** – у блока есть номер, по нему вычисляется сегмент и смещение в этом сегменте c помощью нехитрой математики.
 
@@ -890,12 +969,13 @@ TOAST не имеет своих опций и наследует их от та
 
 **LZ4** — алгоритм сжатия данных без потерь, ориентированный на высокую скорость сжатия и распаковки. Он относится к семейству методов сжатия LZ77, работающих с байтовыми потоками. Отличается компактным кодом для распаковки.
 
-## 
+## Перечень сокращений
 
-| <span id="_Toc196213028" class="anchor"></span>Перечень сокращенийSQL | – | Structured Query Language |
-|:---|----|----|
-| БД | – | База данных |
-| ОС | – | Операционная система |
-| ТП | – | Табличное пространство |
-| СУБД | – | Система управления базами данных |
+| Сокращение | Расшифровка                      |
+|------------|----------------------------------|
+| SQL        | Structured Query Language        |
+| БД         | База данных                      |
+| ОС         | Операционная система             |
+| ТП         | Табличное пространство           |
+| СУБД       | Система управления базами данных |
 

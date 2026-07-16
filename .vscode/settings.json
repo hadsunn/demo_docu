@@ -25,6 +25,7 @@
         "securityprofile",
         "sqlconnection",
         "sqlstate",
+        "TABLESPACE",
         "timedatectl",
         "timesyncd",
         "Zulip",
@@ -39,6 +40,7 @@
         "журналирования",
         "маппинга",
         "Мегазапросы",
+        "реиндексацию",
         "реинициализации",
         "Реинициализация",
         "тайл",
@@ -73,8 +75,9 @@
           "Delete old TOC", "Delete 1st page", "Replace emf", "Delete reg changes list",
           "Shift ####", "Shift ###", "Shift ##", "Shift #",
           "Fix warnings", "Fix infos", "Fix warnings 2", "Fix infos 2",
-          "Fix images",  "Fix images3", "Fix images3", "Fix code lines",
-          "Fix <> escapes", "Fix _ escapes", "Fix /< escapes", "Fix /> escapes"
+          "Fix images",  "Fix images3", "Fix images figure", "Fix code lines",
+          "Fix <> escapes", "Fix _ escapes", "Fix /< escapes", "Fix /> escapes",
+          "Delete blockquotes"
         ]
       }
       
@@ -102,9 +105,9 @@
       },
       "Fix images2": {
           "find": "<img src=[^>]+\\.\\/docs\\/assets\\/images\\/([^\\/]+)\\/([\\s\\S]*?)\\/media\\/image(\\d+)\\.(png|PNG)\" style=[^\\n]+",
-          "replace": "\n![](@site/docs/assets/images/$1/$2/media/image$3.png))",
+          "replace": "\n![](@site/docs/assets/images/$1/$2/media/image$3.png)",
       },
-      "Fix images3": {
+      "Fix images figure": {
           "find": "<figure>\\n<img src=[^>]+\\.\\/docs\\/assets\\/images\\/([^\\/]+)\\/([\\s\\S]*?)\\/media\\/image(\\d+)\\.(png|PNG)\" style=[^\\n]+\\n<figcaption><p>(Рисунок[\\s\\S]*?)<.p>[\\s\\S]*?<\\/figure>",
           "replace": "![](@site/docs/assets/images/$1/$2/media/image$3.png)\n\n$5",
       },
@@ -134,7 +137,7 @@
           "replace": "**АННОТАЦИЯ**",
       },
       "Replace emf": {
-          "find": ".emf\\)",
+          "find": "(.emf\\)|.emf\")",
           "replace": ".png)",
       },
       "Delete reg changes list": {
@@ -166,6 +169,11 @@
           /* пока не юзаем, * без экрана потом ломает текст */
           "find": "jatoba\\\\",
           "replace": "jatoba",
+      },
+      "Delete blockquotes": {
+          /* пока не юзаем, * без экрана потом ломает текст */
+          "find": "<blockquote>|<\\/blockquote>",
+          "replace": "",
       },
 
   }

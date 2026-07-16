@@ -2,13 +2,13 @@
 
 В документе приведены сведения, необходимые для установки и эксплуатации компонентов, предназначенных для мониторинга СУБД в части анализа запросов:
 
-- 
-- 
-- 
-- 
-- 
+- Компонент «pg-explain». Версия компонента – 1.6.2;
+- Компонент «pg-explain-db». Версия компонента – 1.6;
+- Компонент «pg-monitor». Версия компонента – 1.6.5;
+- Компонент «pg-monitor-collector». Версия компонента – 1.6.5;
+- Компонент «pg-monitor-dispatcher». Версия компонента – 1.6.5.
 
-Компонент «pg-explain». Версия компонента – 1.6.2;Компонент «pg-explain-db». Версия компонента – 1.6;Компонент «pg-monitor». Версия компонента – 1.6.5;Компонент «pg-monitor-collector». Версия компонента – 1.6.5;Компонент «pg-monitor-dispatcher». Версия компонента – 1.6.5.Настоящее руководство предназначено для администраторов СУБД.
+Настоящее руководство предназначено для администраторов СУБД.
 
 <table>
 <colgroup>
@@ -17,7 +17,8 @@
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" /></th>
+<th style="text-align: center;">
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png)
 <th style="text-align: left;"><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии<br />
 ядра 5.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
 <p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:</p>
@@ -30,20 +31,13 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image2.png" style="width:0.25139in;height:0.25139in" /></td>
+<td style="text-align: center;">
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image2.png)
 <td style="text-align: left;"><p><strong>Важная информация</strong></p>
 <p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p></td>
 </tr>
 </tbody>
 </table>
-
-Степени важности примечаний, применяемые в документе:
-
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image2.png" style="width:0.25139in;height:0.25139in" /> | **Важная информация** – указания, требующие особого внимания |
-|----|----|
-
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" /> | **Дополнительная информация** – указания, позволяющие упростить работу с изделием |
-|----|----|
 
 ## Назначение компонента
 
@@ -61,11 +55,11 @@
 
 Компоненты могут использоваться:
 
-- 
-- 
-- 
+- с СУБД «Jatoba» версий 5.x и выше;
+- с установленным компонентом в ОС «nodejs» версии 20 и выше;
+- под управлением операционных систем GNU/Linux приведенных в таблице Таблица 1.1.
 
-с СУБД «Jatoba» версий 5.x и выше; с установленным компонентом в ОС «nodejs» версии 20 и выше;под управлением операционных систем GNU/Linux приведенных в таблице Таблица 1.1.Таблица 1.1 – Поддерживаемые ОС
+Таблица 1.1 – Поддерживаемые ОС
 
 | **№** | **Наименование ОС** | **Сертификат ФСТЭК** |  |
 |:--:|:---|:--:|:--:|
@@ -85,15 +79,15 @@
 
 В архитектуре мониторинга в части анализа запросов, допустимы две основные конфигурации:
 
-- 
+- с установкой pg-explain на одном сервере СУБД «Jatoba» с установленным компонентом JDS (см. п. 5.1);
 
-с установкой pg-explain на одном сервере СУБД «Jatoba» с установленным компонентом JDS (см. п. 5.1);![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image3.png)
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image3.png)
 
 Рисунок 2.1 – Установка pg-explain и JDS на одном узле
 
-- 
+- с установкой pg-explain выделенном сервере СУБД и отдельном сервере СУБД с установленном компонентом JDS (см. п. 5.1).
 
-с установкой pg-explain выделенном сервере СУБД и отдельном сервере СУБД с установленном компонентом JDS (см. п. 5.1).![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image4.png)
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image4.png)
 
 Рисунок 2.2 – Установка pg-explain и JDS на разных узлах
 
@@ -107,10 +101,10 @@
 
 Регистрация событий в СУБД осуществляется компонентами:
 
-- 
-- 
+- «pgAudit»;
+- «auto_explain».
 
-«pgAudit»;«auto_explain».Компонент «pgAudit» выполняет расширенную регистрацию событий безопасности. Настройка компонента приведена в документе «Защищенная система управления базами данных «Jatoba». Руководство администратора».
+Компонент «pgAudit» выполняет расширенную регистрацию событий безопасности. Настройка компонента приведена в документе «Защищенная система управления базами данных «Jatoba». Руководство администратора».
 
 Компонент «auto_explain» выполняет протоколирование планов выполнения медленных запросов.
 
@@ -200,7 +194,9 @@
 
 В разделе «Shared Library Preloading», конфигурационного файла /var/lib/jatoba/<ver>/data/postgresql.conf, для последующей загрузки расширений pgaudit и auto_explain, установить параметры:
 
-> shared_preload_libraries = 'pgaudit,auto_explain'
+```
+shared_preload_libraries = 'pgaudit,auto_explain'
+```
 
 Проверить и установить параметры регистрации событий в СУБД:
 
@@ -250,7 +246,8 @@
 
 > CREATE EXTENSION pgaudit;
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image5.png" style="width:7.08955in;height:1.10348in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 05-58-00.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image5.png)
 
 Рисунок 3.1 – Установка расширения «pgaudit»
 
@@ -262,7 +259,8 @@
 
 > local all postgres peer
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image6.png" style="width:6.66234in;height:2.90833in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-22 14-03-19.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image6.png)
 
 Рисунок 3.2 – Строка подключения в конфигурационном файле pg_hba.conf
 
@@ -276,13 +274,16 @@
 
 Первоначально обновляется ОС командой:
 
-> sudo apt update && sudo apt upgrade
+```
+sudo apt update && sudo apt upgrade
+```
 
 Пакет, необходимый для запуска SSH-сервера, предоставляется компонентом openssh-server из OpenSSH и устанавливается командой:
 
 > sudo apt install openssh-server
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image7.png" style="width:6.68831in;height:2.60346in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-22 15-13-51.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image7.png)
 
 Рисунок 3.3 – Установка openssh-server
 
@@ -290,13 +291,18 @@
 
 После завершения загрузки и установки пакета служба SSH должна быть уже запущена. Статус службы проверяется командой:
 
-> service ssh status
+```
+service ssh status
+```
 
 Также можно использовать команды systemd:
 
-> sudo systemctl status ssh
+```
+sudo systemctl status ssh
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image8.png" style="width:6.68182in;height:2.60278in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-22 15-16-33.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image8.png)
 
 Рисунок 3.4 – Вывод статуса службы SSH
 
@@ -304,7 +310,9 @@
 
 Если служба не работает, она активируется командой:
 
-> sudo systemctl enable --now ssh
+```
+sudo systemctl enable --now ssh
+```
 
 #### Разрешение SSH соединения через брандмауэр
 
@@ -314,15 +322,20 @@
 
 Чтобы настроить брандмауэр для разрешения требуемого доступа, необходимо выполнить следующую команду:
 
-> sudo ufw allow ssh
+```
+sudo ufw allow ssh
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image9.png" style="width:6.68182in;height:1.13611in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-04-22 15-19-58.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image9.png)
 
 Рисунок 3.5 – Команда разрешения SSH-соединений
 
 Статус UFW можно проверить командой:
 
-> sudo ufw status
+```
+sudo ufw status
+```
 
 На данном этапе SSH-сервер запущен и ожидает соединения от клиента.
 
@@ -334,7 +347,9 @@
 
 По умолчанию SSH работает на порту 22, но такое поведение является небезопасным, поскольку злоумышленник может попробовать выполнить «Bruteforce» атаку для перебора пароля. Порт задается строчкой:
 
-> Port 22
+```
+Port 22
+```
 
 Необходимо изменить значение порта на требуемое.
 
@@ -342,29 +357,37 @@
 
 По умолчанию сервер SSH может работать по двум версиям протокола для совместимости. Чтобы использовать только протокол версии два, необходимо раскомментировать строку и привести ее к такому виду:
 
-> Protocol 2
+```
+Protocol 2
+```
 
 ##### ROOT доступ
 
 По умолчанию Root доступ по SSH разрешен, но такое поведение небезопасно, поэтому следует раскомментировать строку:
 
-> PermitRootLogin no
+```
+PermitRootLogin no
+```
 
 ##### Доступ только определенного пользователя к SSH
 
 Требуется разрешить доступ к SSH только для определенного пользователя или группы. Для этого необходимо добавить следующие строки:
 
-> AllowUsers User1, User2, User3
->
-> AllowGroups Group1, Group2, Group3
+```
+AllowUsers User1, User2, User3
+AllowGroups Group1, Group2, Group3
+```
 
 Здесь User1 и Group1 – пользователь и группа, которым нужно разрешить доступ.
 
 В рассматриваемом примере в ОС сервера целевых СУБД, используются пользователи admin и admin1. Им следует разрешить доступ по SSH, добавив строку:
 
-> AllowUsers admin, admin1
+```
+AllowUsers admin, admin1
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image10.png" style="width:6.73377in;height:1.25278in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-04-23 15-22-13.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image10.png)
 
 Рисунок 3.6 – Строка с именами пользователей которым разрешен доступ по SSH
 
@@ -382,7 +405,8 @@
 # systemctl status ssh
 ```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image11.png" style="width:6.64935in;height:1.63611in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-04-23 15-33-44.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image11.png)
 
 Рисунок 3.7 – Перезапуск службы SSH
 
@@ -394,7 +418,9 @@
 
 После установки СУБД обязательно устанавливается пароль для системного пользователя ОС «postgres»:
 
-> sudo passwd postgres
+```
+sudo passwd postgres
+```
 
 А также для пользователя СУБД:
 
@@ -416,15 +442,17 @@
 
 Для рассматриваемого примера, необходимо создать каталог /usr/share/jds командой:
 
-> sudo mkdir /usr/share/jds
+```
+sudo mkdir /usr/share/jds
+```
 
 С дистрибутивного диска «Disk1» из каталога «Jatoba Data Safe» скопировать файлы и каталог пакета установки в созданный каталог:
 
-- 
-- 
-- 
+- каталог – packages, содержащий пакеты установки;
+- каталог – utils, содержащий конфигурационные файлы;
+- скрипт – jds.sh.
 
-каталог – packages, содержащий пакеты установки;каталог – utils, содержащий конфигурационные файлы;скрипт – jds.sh.<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image12.png" style="width:3.47986in;height:1.15254in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\UI JDS\1ё23,\Screenshot from 2022-12-13 23-12-21.png" />
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image12.png)
 
 Рисунок 4.1 – Структура каталогов
 
@@ -436,7 +464,9 @@
 
 Установка компонента осуществляется командой:
 
-> apt install jatoba5-pg-repack
+```
+apt install jatoba5-pg-repack
+```
 
 На данном шаге расширение в СУБД устанавливать не требуется, т.к. устанавливается последовательно по шагам описанным ниже в п. 4.3.
 
@@ -444,90 +474,100 @@
 
 Перейти в каталог с разархивированными пакетами JDS:
 
-> cd /usr/share/jds/packages
+```
+cd /usr/share/jds/packages
+```
 
-Установить пакет pg-explain-db_\<version\>-\<buildnumber\>_amd64.deb:
+Установить пакет pg-explain-db_<version>-<buildnumber>_amd64.deb:
 
-> apt install ./pg-explain-db_1.5.15-20240216_amd64.deb
+```
+apt install ./pg-explain-db_1.5.15-20240216_amd64.deb
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image13.png" style="width:7.08209in;height:1.54827in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 14-02-27.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image13.png)
 
 Рисунок 4.2 – Установка пакета pg-explain-db
 
 Перейти в каталог /usr/local/lib/pg-explain-db:
 
-> cd /usr/local/lib/pg-explain-db
+```
+cd /usr/local/lib/pg-explain-db
+```
 
 Установить права на выполнение:
 
-> chmod 755 install.sh ./scripts/clear_dsk_space.sh ./scripts/create_partitions.sh ./scripts/repack.sh
+```
+chmod 755 install.sh ./scripts/clear_dsk_space.sh ./scripts/create_partitions.sh ./scripts/repack.sh
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image14.png" style="width:7.06853in;height:1.55224in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 14-05-27.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image14.png)
 
 Рисунок 4.3 – Команда установки прав на выполнение
 
 С помощью текстового редактора открыть файл ./scripts/repack.sh:
 
-> nano ./scripts/repack.sh
+```
+nano ./scripts/repack.sh
+```
 
 Исправить строку с указанием установленной версии СУБД «Jatoba»:
 
-> REPACK=/usr/pgsql-14/bin/pg_repack
+```
+REPACK=/usr/pgsql-14/bin/pg_repack
+```
 
 на строку со следующим содержанием:
 
-> REPACK=/usr/jatoba-5/bin/pg_repack
+```
+REPACK=/usr/jatoba-5/bin/pg_repack
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image15.png" style="width:7.11676in;height:2.1194in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 14-07-58.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image15.png)
 
 Рисунок 4.4 – Содержание файла ./scripts/repack.sh
 
 Запустить основной скрипт установки:
 
-> ./install.sh
+```
+./install.sh
+```
 
 В скрипте потребуется выполнить следующие шаги:
 
-- 
+- Указать хост БД:Enter database hostname (localhost):
 
-> Указать хост БД:Enter database hostname (localhost):
+- Указать порт БД:Enter database port (5432):
 
-- 
+- Указать имя создаваемой БД:Enter database name (pg-monitor):
 
-> Указать порт БД:Enter database port (5432):
+- Ввести имя пользователя, от имени которого будет создана БД:Enter username to create database (postgres):
 
-- 
+- Ввести пароль пользователя, от имени которого будет создана БД:Enter password for user "postgres":
 
-> Указать имя создаваемой БД:Enter database name (pg-monitor):
+- Ввести имя пользователя БД:Enter pg-explain database user (explain):
 
-- 
+- Ввести пароль для создаваемого пользователя:Enter password for pg-explain user (explain):
 
-> Ввести имя пользователя, от имени которого будет создана БД:Enter username to create database (postgres):
-
-- 
-
-> Ввести пароль пользователя, от имени которого будет создана БД:Enter password for user "postgres":
-
-- 
-
-> Ввести имя пользователя БД:Enter pg-explain database user (explain):
-
-- 
-
-> Ввести пароль для создаваемого пользователя:Enter password for pg-explain user (explain):
-
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" /> | При активированной парольной политике компонентом «securityprofile» устанавливаемый пароль должен соответствовать требования безопасности |
+| 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png)
 |----|----|
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image16.png" style="width:6.70833in;height:4.36389in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 08-52-43.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image16.png)
 
 Рисунок 4.5 – Выполнение скрипта установки
 
 Подключиться к созданной в процессе установки базе и создать в ней расширение:
 
-> CREATE EXTENSION pg_repack;
+```
+CREATE EXTENSION pg_repack;
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image17.png" style="width:6.69792in;height:1.31181in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 12-54-18.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image17.png)
 
 Рисунок 4.6 – SQL-команда создания расширения pg_repack
 
@@ -537,25 +577,35 @@
 
 Пакет pg-monitor располагается в каталоге с разархивированными пакетами JDS:
 
-> cd /usr/share/jds/packages
+```
+cd /usr/share/jds/packages
+```
 
-Установка пакета pg-monitor_\<version\>-\<buildnumber\>_amd64.deb выполняется командой:
+Установка пакета pg-monitor_<version>-<buildnumber>_amd64.deb выполняется командой:
 
-> apt install ./pg-monitor_1.5.6-20240216_amd64.deb
+```
+apt install ./pg-monitor_1.5.6-20240216_amd64.deb
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image18.png" style="width:6.60417in;height:3.10347in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 15-15-49.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image18.png)
 
 Рисунок 4.7 – Установка пакета pg-monitor
 
 Перейти в каталог /usr/local/lib/pg-monitor:
 
-> cd /usr/local/lib/pg-monitor
+```
+cd /usr/local/lib/pg-monitor
+```
 
 Переименовать файл app.cfg.json.example в файл app.cfg.json с помощью команды:
 
-> mv app.cfg.json.example app.cfg.json
+```
+mv app.cfg.json.example app.cfg.json
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image19.png" style="width:6.6875in;height:1.59306in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 15-54-41.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image19.png)
 
 Рисунок 4.8 – Переименование файла
 
@@ -603,7 +653,8 @@
 >
 > . . .
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image20.png" style="width:6.66087in;height:5.28596in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-20 10-47-17.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image20.png)
 
 Рисунок 4.9 – Содержание конфигурационного файла app.cfg.json
 
@@ -621,19 +672,21 @@
 # systemctl status pg-monitor
 ```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image21.png" style="width:6.67164in;height:2.73819in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 16-13-23.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image21.png)
 
 Рисунок 4.10 – Запуск и статус службы «pg-monitor»
 
 В веб-браузере проверить состояние службы:
 
-> http://\<ip-адрес-сервиса-pg-monitor\>:8000
+> http://<ip-адрес-сервиса-pg-monitor>:8000
 
 В рассматриваемом примере адрес будет следующим:
 
 > http://10.116.102.59:8000
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image22.png" style="width:7.08681in;height:1.50833in" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image22.png)
 
 Рисунок 4.11 – Веб-интерфейс «pg-monitor»
 
@@ -651,7 +704,8 @@
 # systemctl status pg-monitor-collector
 ```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image23.png" style="width:6.65672in;height:3.23056in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-17 16-36-36.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image23.png)
 
 Рисунок 4.12 – Статус службы «pg-monitor-collector»
 
@@ -665,7 +719,8 @@
 
 > ssh-keygen
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image24.png" style="width:6.64935in;height:1.03194in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 10-35-22.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image24.png)
 
 Рисунок 4.13 – Команда генерации ключей
 
@@ -675,13 +730,15 @@
 
 Затем утилита предложит ввести пароль для дополнительного шифрования ключа на диске. Его можно не указывать, нажав «Enter».
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image25.png" style="width:6.64935in;height:1.14861in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 13-04-24.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image25.png)
 
 Рисунок 4.14 – Шаг ввода пароля для генерируемого ключа
 
 Далее утилита сгенерирует ключи SSH.
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image26.png" style="width:6.65584in;height:4.02566in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 13-05-18.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image26.png)
 
 Рисунок 4.15 – Генерирование ключей SSH
 
@@ -697,7 +754,8 @@
 
 > ssh-copy-id -i ~/.ssh/id_rsa.pub admin1@10.116.102.56
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image27.png" style="width:6.688in;height:3.45555in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-01-33.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image27.png)
 
 Рисунок 4.16 – Копирование ключа SSH на сервер SSH целевой СУБД
 
@@ -717,7 +775,8 @@
 
 > ssh admin1@10.116.102.56
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image28.png" style="width:6.712in;height:3.97569in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-19-38.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image28.png)
 
 Рисунок 4.17 – Проверка подключения по SSH к целевой СУБД
 
@@ -729,7 +788,8 @@
 # cp ~/.ssh/id_rsa /usr/local/lib/pg-monitor/ssh_keys
 ```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image29.png" style="width:6.68in;height:1.2875in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-33-19.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image29.png)
 
 Рисунок 4.18 – Копирование ключа SSH в каталог pg-monitor
 
@@ -739,17 +799,20 @@
 # chown explain:explain /usr/local/lib/pg-monitor/ssh_keys/id_rsa
 ```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image30.png" style="width:6.63759in;height:1.60694in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 14-35-57.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image30.png)
 
 Рисунок 4.19 – Установка прав
 
 Перезапустить службу коллектора:
 
-> systemctl restart pg-monitor-collector.service
+```
+systemctl restart pg-monitor-collector.service
+```
 
 ### Установка pg-explain
 
-Установить пакет pg-explain_\<version\>-\<buildnumber\>_amd64.deb командами:
+Установить пакет pg-explain_<version>-<buildnumber>_amd64.deb командами:
 
 ```
 # cd /usr/share/jds/packages
@@ -759,29 +822,38 @@
 # apt install ./pg-explain_1.5.9-20240216_amd64.deb
 ```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image31.png" style="width:6.63958in;height:3.904in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 15-08-17.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image31.png)
 
 Рисунок 4.20 – Установка пакета pg-explain
 
 Перейти в каталог /usr/local/lib/pg-explain:
 
-> cd /usr/local/lib/pg-explain
+```
+cd /usr/local/lib/pg-explain
+```
 
 Переименовать файл app.conf.example:
 
-> mv app.conf.example app.conf
+```
+mv app.conf.example app.conf
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image32.png" style="width:6.696in;height:0.99923in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 16-03-34.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image32.png)
 
 Рисунок 4.21 – Команда переименования файла
 
 Отредактировать app.conf под требуемые настройки СУБД (БД по умолчанию pg-monitor):
 
-> nano app.conf
+```
+nano app.conf
+```
 
 Параметры используются такие же, как и при установке компонента explain db, как описано в п. 4.3 настоящего документа и показано на рисунке Рисунок 4.5.
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image33.png" style="width:6.60298in;height:1.79221in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 16-20-44.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image33.png)
 
 Рисунок 4.22 – Содержание файла app.conf
 
@@ -799,19 +871,25 @@
 # systemctl status pg-explain.service
 ```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image34.png" style="width:6.68in;height:1.6875in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-21 16-29-50.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image34.png)
 
 Рисунок 4.23 – Запуск и вывод статуса службы pg-explain.service
 
 В веб-браузере проверить состояние службы:
 
-> http://\<ip-адрес-сервиса-pg-explain\>:8080
+```
+http://<ip-адрес-сервиса-pg-explain>:8080
+```
 
 В рассматриваемом примере адрес сервиса pg-explain будет следующим:
 
-> http://10.116.102.59:8080/
+```
+http://10.116.102.59:8080/
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image35.png" style="width:7.05933in;height:3.70939in" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image35.png)
 
 Рисунок 4.24 – Веб-страница сервиса pg-explain
 
@@ -841,26 +919,32 @@
 
 До конфигурирования компонентов должны быть выполнены действия, описанные в разделах:
 
-- 
-- 
+- 3 «Установка и настройка целевой СУБД «Jatoba»;
+- 4 «Установка и настройка pg-explain».
 
-#### 3 «Установка и настройка целевой СУБД «Jatoba»;4 «Установка и настройка pg-explain».Установка веб-сервера nginx на сервере служебной СУБД pg-explain
+#### Установка веб-сервера nginx на сервере служебной СУБД pg-explain
 
 Установка пакета nginx выполняется из репозитория ОС. Использование скрипта установки nginx.sh, расположенного в каталоге /usr/share/jds/utils, нецелесообразно, т.к. он выполнит конфигурирование веб-сервера для компонента JDS.
 
 Установить nginx:
 
-> apt install -y nginx
+```
+apt install -y nginx
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image37.png" style="width:6.64286in;height:2.45411in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 14-53-30.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image37.png)
 
 Рисунок 5.1 – Установка nginx
 
 Проверить статус веб-сервера:
 
-> systemctl status nginx
+```
+systemctl status nginx
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image38.png" style="width:6.69481in;height:1.33056in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 14-55-58.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image38.png)
 
 Рисунок 5.2 – Статус службы nginx
 
@@ -868,13 +952,18 @@
 
 Создать папку для сертификата и ключа командой:
 
-> mkdir /etc/nginx/ssl
+```
+mkdir /etc/nginx/ssl
+```
 
 Создать сертификат и ключ: 4096
 
-> openssl req -x509 -nodes -days 3650 -newkey rsa:4096 -keyout /etc/nginx/ssl/nginx-explain.key -out /etc/nginx/ssl/nginx-explain.crt
+```
+openssl req -x509 -nodes -days 3650 -newkey rsa:4096 -keyout /etc/nginx/ssl/nginx-explain.key -out /etc/nginx/ssl/nginx-explain.crt
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image39.png" style="width:6.66956in;height:1.16458in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-27 15-30-24.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image39.png)
 
 Рисунок 5.3 – Команда создания ключа и сертификата
 
@@ -892,7 +981,8 @@
 
 Таблица 5.2 – Параметры формирования сертификата
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image40.png" style="width:6.66883in;height:3.23958in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 15-34-24.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image40.png)
 
 Рисунок 5.4 – Вводимые параметры для формирования сертификата
 
@@ -900,7 +990,9 @@
 
 Создать файл конфигурации сайта командой:
 
-> nano /etc/nginx/conf.d/explain.https.conf
+```
+nano /etc/nginx/conf.d/explain.https.conf
+```
 
 Вставить текст и сохранить:
 
@@ -926,27 +1018,36 @@
 >
 > }
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image41.png" style="width:6.7013in;height:2.75889in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 16-01-07.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image41.png)
 
 Рисунок 5.5 – Содержание файл конфигурации сайта
 
 Перезапустить службу nginx:
 
-> systemctl restart nginx
+```
+systemctl restart nginx
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image42.png" style="width:6.699in;height:1.50556in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-22 16-04-28.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image42.png)
 
 Рисунок 5.6 – Перезапуск и вывод статуса службы nginx
 
 Проверить в браузере работу explain по https, дать подтверждение системе безопасности при запросе про недействительный сертификат:
 
-> https://\<адрес сервера explain\>
+```
+https://<адрес сервера explain>
+```
 
 В рассматриваемом примере используется адрес:
 
-> <https://localhost:8080/>
+```
+https://localhost:8080/
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image43.png" style="width:7.08681in;height:2.97027in" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image43.png)
 
 Рисунок 5.7 – Проверка работы сайта
 
@@ -958,15 +1059,18 @@
 
 Выполнить команду редактирования файла appsettings.json:
 
-> nano /opt/jds/appsettings.json
+```
+nano /opt/jds/appsettings.json
+```
 
 Установить строки с синтаксисом:
 
 > "PgExplainConfig": {
 >
-> "BaseAddress": "https://\<адрес сервера explain\>"
+> "BaseAddress": "https://<адрес сервера explain>"
 
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" /> | Адрес должен быть указан без знака дробной черты (solidus) «/» |
+| 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png)
 |----|----|
 
 В рассматриваемом примере один из узлов имеет IP-адрес 10.116.102.59 и строка конфигурационного файла appsettings.json компонента JDS будет иметь следующий вид:
@@ -975,14 +1079,16 @@
 >
 > "BaseAddress": "https://10.116.102.59"
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image44.png" style="width:7.08681in;height:0.99583in" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image44.png)
 
 Рисунок 5.8 – Содержание конфигурационного файла appsettings.json компонента JDS
 
 Войти в веб-интерфейс компонента JDS. Перейти в подраздел «Анализ запросов».  
 На вкладке «Настройки» нажать кнопку «Добавить». Ввести IP-адрес узла с наблюдаемой СУБД, порт (если он отличается от стандартного 5432) и отметить флагами пункты собираемой статистики и сохранить.
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image45.png" style="width:7.08681in;height:3.02609in" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image45.png)
 
 Рисунок 5.9 – Вкладка «Настройки» раздела «Анализ запросов»
 
@@ -1042,7 +1148,8 @@
 >
 > }
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image47.png" style="width:6.84934in;height:3.01739in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-28 10-52-01.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image47.png)
 
 Рисунок 5.11 – Содержание файла explain.https.conf
 
@@ -1064,13 +1171,15 @@
 
 > "PgExplainConfig": {
 >
-> "BaseAddress": "https://\<адрес сервера explain\>:444"
+> "BaseAddress": "https://<адрес сервера explain>:444"
 >
 > },
 
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" /> | Адрес должен быть указан без знака дробной черты (solidus) «/» |
+| 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png)
 |:--:|----|
-| <img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png" style="width:0.25in;height:0.25in" /> | Сервис explain работает на том же хосте, что и JDS, но в свойстве BaseAddress нужно указывать внешний IP-адрес (не localhost), т.к. обращение к pg-explain идет не от JDS, а от веб-браузера пользователя. |
+| 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image1.png)
 
 В рассматриваемом примере один из узлов имеет IP-адрес 10.116.102.59 и строка конфигурационного файла appsettings.json компонента JDS будет иметь следующий вид:
 
@@ -1078,7 +1187,8 @@
 >
 > "BaseAddress": "https://10.116.102.59:444"
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image48.png" style="width:6.65217in;height:1.28611in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC3\Screenshot from 2024-05-28 11-05-57.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image48.png)
 
 Рисунок 5.12 – Содержание конфигурационного файла приложения JDS appsettings.json
 
@@ -1096,7 +1206,8 @@
 
 > https://10.116.102.59/
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image49.png" style="width:7.02758in;height:3.18201in" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image49.png)
 
 Войти в веб-интерфейс компонента JDS. Перейти в подраздел «Анализ запросов».  
 На вкладке «Настройки» нажать кнопку «Добавить». Ввести IP-адрес узла с наблюдаемой СУБД, порт (если он отличается от стандартного 5432) и отметить флагами пункты собираемой статистики и сохранить.
@@ -1109,7 +1220,8 @@
 
 Ошибка появляется при вводе некорректного пароля привилегированного пользователя СУБД.
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image50.png" style="width:6.67164in;height:3.08889in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 15-32-30.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image50.png)
 
 Рисунок 6.1 – Ошибка ввода пароля
 
@@ -1119,15 +1231,19 @@
 
 Ошибка появляется при отсутствии установленной в ОС локали «ru_RU.UTF-8».
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image51.png" style="width:6.6708in;height:3.08696in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 15-08-27.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image51.png)
 
 Рисунок 6.2 – Ошибка при неустановленной локали
 
 Необходимо установить системную локаль «ru_RU.UTF-8» командой:
 
-> dpkg-reconfigure locales
+```
+dpkg-reconfigure locales
+```
 
-<img src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image52.png" style="width:6.26866in;height:3.82778in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC2\Screenshot from 2024-05-16 14-41-24.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/explain/media/image52.png)
 
 Рисунок 6.3 – Выбор локали в скрипте установки
 
@@ -1149,11 +1265,12 @@
 
 **OpenSSH** – набор программ, предоставляющих шифрование сеансов связи по компьютерным сетям с использованием протокола SSH. OpenSSH включает программы для клиента и сервера, а также инструменты для генерации ключей и аутентификации.
 
-## 
+## Перечень сокращений
 
-| <span id="_Toc195524712" class="anchor"></span>Перечень сокращенийSQL | – | Structured Query Language |
-|:---|----|----|
-| БД | – | База данных |
-| ОС | – | Операционная система |
-| СУБД | – | Система управления базами данных |
+| Сокращение | Расшифровка                      |
+|------------|----------------------------------|
+| SQL        | Structured Query Language        |
+| БД         | База данных                      |
+| ОС         | Операционная система             |
+| СУБД       | Система управления базами данных |
 
