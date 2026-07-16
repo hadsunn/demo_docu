@@ -54,7 +54,7 @@
     ],
     "description": "Insert a image for MD"
   },
-  "Wrap selection with code block": {
+  "Wrap selection with code block minus2": {
     "scope": "md",
     "prefix": "wraptag",
     "body": [
@@ -64,5 +64,15 @@
     "```"
     ],
     "description": "Wrap selected text with a tag (asks for tag name) and leave an empty line"
-}
+  },
+  "Wrap selection with code block": {
+    "scope": "md",
+    "prefix": "wraptag",
+    "body": [
+    "```",
+    "$TM_SELECTED_TEXT",
+    "```"
+    ],
+    "description": "Wrap selected text with a tag (asks for tag name) and leave an empty line"
+  }
 }

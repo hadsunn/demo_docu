@@ -74,7 +74,7 @@
           "Shift ####", "Shift ###", "Shift ##", "Shift #",
           "Fix warnings", "Fix infos", "Fix warnings 2", "Fix infos 2",
           "Fix images",  "Fix images3", "Fix images3", "Fix code lines",
-          "Fix <> escapes", "Fix _ escapes"
+          "Fix <> escapes", "Fix _ escapes", "Fix /< escapes", "Fix /> escapes"
         ]
       }
       
@@ -149,6 +149,14 @@
       "Fix <> escapes": {
           "find": "\\\\<ver\\\\>",
           "replace": "<ver>",
+      },
+      "Fix /< escapes": {
+          "find": "\\\\<",
+          "replace": "<",
+      },
+      "Fix /> escapes": {
+          "find": "\\\\>",
+          "replace": ">",
       },
       "Fix _ escapes": {
           "find": "\\\\_",

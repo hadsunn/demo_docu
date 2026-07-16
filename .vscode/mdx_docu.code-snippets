@@ -54,7 +54,7 @@
     ],
     "description": "Insert a image for MDX/Docusaurus"
   },
-  "Wrap selection with code block": {
+  "Wrap selection with code block minus2": {
     "scope": "mdx",
     "prefix": "wraptag",
     "body": [
