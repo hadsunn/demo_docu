@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">admin | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/admin"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="admin | Postgres"><meta data-rh="true" name="description" content="АННОТАЦИЯ"><meta data-rh="true" property="og:description" content="АННОТАЦИЯ"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/admin"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/admin" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/admin" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Сертифицированные версии 6.8.4,5.12.4,4.17.4","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/"},{"@type":"ListItem","position":2,"name":"admin","item":"https://hadsunn.github.io/demo_docu/cert6.8.4,5.12.4,4.17.4/admin"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
-<script src="/demo_docu/assets/js/runtime~main.cbebf560.js" defer="defer"></script>
-<script src="/demo_docu/assets/js/main.2f8c1cba.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/runtime~main.2cbf21e4.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.d3310779.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -323,6 +323,7 @@
 <p>Задает максимальное число транзакций, которые могут одновременно находиться в «подготовленном» состоянии.</p>
 <p>По умолчанию max_prepared_transactions = 0 отключается механизм подготовленных транзакций. Задать данный параметр можно только при запуске сервера.</p>
 <p>Если нет необходимости использовать подготовленные транзакции, следует обнулить параметр, чтобы не допустить непреднамеренного создания подготовленных транзакций. Если подготовленные транзакции используются, то max_prepared_transactions должен быть не меньше, чем max_connections для подготовки транзакции в каждом сеансе.</p>
+<p>|</p>
 
 
 
@@ -330,7 +331,7 @@
 
 
 
-<table><thead><tr><th><img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Для ведомого сервера значение этого параметра должно быть больше или равно значению на ведущем. В противном случае, на ведомом сервере запросы будут запрещены.</th></tr></thead></table>
+<table><thead><tr><th>![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg&quot; style=&quot;width:0.25in;height:0.25in&quot; /&gt;</th><th>Для ведомого сервера значение этого параметра должно быть больше или равно значению на ведущем. В противном случае, на ведомом сервере запросы будут запрещены.</th></tr></thead></table>
 <blockquote>
 <p>work_mem (integer)</p>
 </blockquote>
@@ -1429,7 +1430,7 @@
 <blockquote>
 <p>SELECT securityprofile.create_profile(&#x27;password_user&#x27;);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image10.png" style="width:7.08648in;height:1.768in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 03-42-59.png" class="img_ev3q">
+<p>&lt;img src=&quot;./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image10.png))</p>
 <p>Рисунок . – Создание профиля «password_user»</p>
 <p><strong>Шаг 2</strong>. Просмотреть список имеющихся профилей, выполнив SQL-команду:</p>
 <blockquote>
@@ -1439,20 +1440,20 @@
 <blockquote>
 <p>SELECT prflprofileoid, prflprofilename FROM securityprofile.profiles;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image11.png" style="width:7.02347in;height:2.90435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 06-48-48.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image11-8a453c486df8b5a4501c7ce9c59a170d.png" width="786" height="353" class="img_ev3q">)</p>
 <p>Рисунок . – Список профилей парольных политик</p>
 <p>В результате видно, что новый профиль создан и унаследовал параметры парольной политики по умолчанию.</p>
 <p><strong>Шаг 3</strong>. Привязать пользователя «test1» к профилю «password_user», выполнив команду:</p>
 <blockquote>
 <p>SELECT securityprofile.bind_profile (&#x27;password_user&#x27;, &#x27;test1&#x27;);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image12.png" style="width:7.08652in;height:1.792in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 04-11-58.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image12-20f5b6141e73a406374bcb1d37e61fdd.png" width="734" height="542" class="img_ev3q">)</p>
 <p>Рисунок . – Привязка пользователя к профилю</p>
 <p><strong>Шаг 4</strong>. Установить минимальную длину пароля пользователя равную 9 символам, выполнив команду:</p>
 <blockquote>
 <p>SELECT securityprofile.set_profile_password_min_len (&#x27;password_user&#x27;,9);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image13.png" style="width:7.08652in;height:1.944in" alt="C:\Users\KUZNET~1\AppData\Local\Temp\vmware-kuznetsov-a\VMwareDnD\6258accd\Screenshot from 2023-02-08 04-12-54.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image13-41dd390924bdbebe11a1ef7a24fe8a3b.png" width="734" height="542" class="img_ev3q">)</p>
 <p>Рисунок . – Установка длины пароля в профиле «password_user»</p>
 <p>На данном шаге требуемое задание выполнено.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="взаимодействие-с-компонентом-управления-кластером-ja_dog">Взаимодействие с компонентом управления кластером «ja_Dog»<a href="#взаимодействие-с-компонентом-управления-кластером-ja_dog" class="hash-link" aria-label="Direct link to Взаимодействие с компонентом управления кластером «ja_Dog»" title="Direct link to Взаимодействие с компонентом управления кластером «ja_Dog»">​</a></h4>
@@ -1475,7 +1476,7 @@
 <blockquote>
 <p>SHOW securityprofile.user_function_creation;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image14.png" style="width:7.03737in;height:1.82079in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-08 08-46-55.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image14-d275e757c1f2c879cfbcf7727f54cce8.png" width="786" height="533" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод статуса функции блокировки создания функций пользователями</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="управление-доступом-субъектов-доступа-к-объектам-доступа">Управление доступом субъектов доступа к объектам доступа<a href="#управление-доступом-субъектов-доступа-к-объектам-доступа" class="hash-link" aria-label="Direct link to Управление доступом субъектов доступа к объектам доступа" title="Direct link to Управление доступом субъектов доступа к объектам доступа">​</a></h3>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="блокирование-и-разблокирование-учетных-записей">Блокирование и разблокирование учетных записей<a href="#блокирование-и-разблокирование-учетных-записей" class="hash-link" aria-label="Direct link to Блокирование и разблокирование учетных записей" title="Direct link to Блокирование и разблокирование учетных записей">​</a></h4>
@@ -1497,7 +1498,7 @@
 <blockquote>
 <p>SELECT securityprofile.lock_account(&#x27;test&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image15.png" style="width:7.15903in;height:1.74212in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 06-56-46.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image15-187e245f4dfd8efb7aeca288c9bf4cef.png" width="786" height="353" class="img_ev3q">)</p>
 <p>Рисунок . – Блокировка пользователя</p>
 <p>Примечание: bigint – задержка, с которой будет выполнена блокировка в днях.</p>
 <p>select lock_account_seconds(&#x27;имя_пользователя&#x27;, bigint) – задержка, с которой будет выполнена блокировка в секундах.</p>
@@ -1509,7 +1510,7 @@
 <blockquote>
 <p>SELECT securityprofile.unlock_account(&#x27;test&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image16.png" style="width:6.53933in;height:1.61518in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 06-57-44.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image16-8fc4b130725c3c77e11e27c22a8c4b94.png" width="786" height="353" class="img_ev3q">)</p>
 <p>Рисунок . – SQL-команда блокирования пользователя</p>
 <p>unlock_account_seconds (&#x27;имя_пользователя&#x27;, bigint) – задержка, с которой будет выполнено снятие блокировки в секундах.</p>
 <p>Для проверки факта блокировки и времени, в течение которого она будет действовать, администратору СУБД необходимо выполнить следующую команду:</p>
@@ -1520,7 +1521,7 @@
 <blockquote>
 <p>SELECT * from securityprofile.is_locked (&#x27;&#x27;);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image17.png" style="width:7.02042in;height:1.69565in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 07-00-57.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image17-0ff20adbcee8e5845e506f3d61c231dd.png" width="894" height="353" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод списка состояния пользователей</p>
 <p>В выводе команды присутствуют столбы:</p>
 <ul>
@@ -1562,19 +1563,19 @@
 <blockquote>
 <p>SELECT securityprofile.suspend_users(&#x27;db_test&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image18.png" style="width:6.97396in;height:1.59907in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-13 17-39-41.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image18-cb227c8cfe5e1cfa57cede2aac7dcbf9.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Блокировка пользователей БД «db_test»</p>
 <p>При проверке статуса блокировки, будет добавлена строка с OID БД «16909».</p>
 <blockquote>
 <p>SELECT * FROM securityprofile.status;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image19.png" style="width:7.10054in;height:1.9924in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-13 17-43-35.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image19-bb9b8f11bb35bfa7973cce460ba4588a.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Проверка статуса блокировки</p>
 <p>Данный OID БД «16909» принадлежит БД «db_test», что проверяется SQL-командой:</p>
 <blockquote>
 <p>SELECT oid FROM pg_database WHERE datname = &#x27;db_test&#x27;;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image20.png" style="width:7.17013in;height:1.6087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-13 17-47-07.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image20-4fed444c1ced728bac8df19fe208f1a7.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Команда проверки OID БД</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="разблокирование-группы-пользователей-securityprofileresume_users">Разблокирование группы пользователей (securityprofile.resume_users)<a href="#разблокирование-группы-пользователей-securityprofileresume_users" class="hash-link" aria-label="Direct link to Разблокирование группы пользователей (securityprofile.resume_users)" title="Direct link to Разблокирование группы пользователей (securityprofile.resume_users)">​</a></h5>
 <p>Разблокировка пользователей выполняется функцией «resume_users» имеющей синтаксис SQL-команды:</p>
@@ -1584,10 +1585,10 @@
 <p>Разблокируем пользователей БД «db_test» SQL-командой:</p>
 <p>SELECT securityprofile.resume_users(&#x27;db_test&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image21.png" style="width:6.99332in;height:1.53819in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 09-03-58.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image21-06d20934b96b842b28398f704b531e44.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Команда разблокировки пользователей БД</p>
 <p>Проверка статуса блокировки покажет изменение даты в поле «suspendeduserstime».</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image22.png" style="width:7.0152in;height:2.93044in" alt="C:\Users\KUZNET~1\AppData\Local\Temp\vmware-kuznetsov-a\VMwareDnD\42048c27\Screenshot from 2023-11-14 09-04-31.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image22-4d7302e2ca928482183635ecdf060952.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Статус блокировки пользователей</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="блокировка-группы-пользователей-с-задержкой-блокировки-в-устанавливаемой-в-секундах-securityprofilesuspend_users_seconds">Блокировка группы пользователей с задержкой блокировки в устанавливаемой в секундах (securityprofile.suspend_users_seconds)<a href="#блокировка-группы-пользователей-с-задержкой-блокировки-в-устанавливаемой-в-секундах-securityprofilesuspend_users_seconds" class="hash-link" aria-label="Direct link to Блокировка группы пользователей с задержкой блокировки в устанавливаемой в секундах (securityprofile.suspend_users_seconds)" title="Direct link to Блокировка группы пользователей с задержкой блокировки в устанавливаемой в секундах (securityprofile.suspend_users_seconds)">​</a></h5>
 <p>Функция «suspend_users_seconds» служит для блокировки пользователей БД с задержкой блокировки и имеет синтаксис SQL-команды:</p>
@@ -1600,7 +1601,7 @@
 <p>SELECT securityprofile.suspend_users_seconds(&#x27;db_test&#x27;, 60);</p>
 </blockquote>
 <p>В SQL-команде указывается БД и время задержки блокировки, устанавливаемой в секундах.</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image23.png" style="width:7.04166in;height:1.55652in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 09-49-17.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image23-ebc7d9dc39b839b6503598177970aff0.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Блокирование пользователей БД с отсрочкой блокировки устанавливаемой в секундах</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="разблокирование-группы-пользователей-с-задержкой-блокировки-в-устанавливаемой-в-секундах-securityprofileresume_users_seconds">Разблокирование группы пользователей с задержкой блокировки в устанавливаемой в секундах (securityprofile.resume_users_seconds)<a href="#разблокирование-группы-пользователей-с-задержкой-блокировки-в-устанавливаемой-в-секундах-securityprofileresume_users_seconds" class="hash-link" aria-label="Direct link to Разблокирование группы пользователей с задержкой блокировки в устанавливаемой в секундах (securityprofile.resume_users_seconds)" title="Direct link to Разблокирование группы пользователей с задержкой блокировки в устанавливаемой в секундах (securityprofile.resume_users_seconds)">​</a></h5>
 <p>Разблокирование пользователей выполняется функцией «resume_users_seconds» имеющей синтаксис:</p>
@@ -1610,13 +1611,13 @@
 <p>Разблокируем пользователей БД «db_test» с задержкой в секундах, SQL-командой:</p>
 <p>SELECT securityprofile.resume_users_seconds(&#x27;db_test&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image24.png" style="width:7.067in;height:1.56522in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 10-31-54.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image24-164b892f3fd7152b9167aaf86c60d5fa.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Команда разблокировки пользователей БД с установленной задержкой по времени</p>
 <p>Проверка статуса блокировки покажет изменение даты в поле «suspendeduserstime».</p>
 <blockquote>
 <p>SELECT * FROM securityprofile.status;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image25.png" style="width:7.08802in;height:2.90435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 10-32-08.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image25-4f3ec10f82eb8670ea249ef08fcd4b15.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Просмотр состояния блокировки</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="блокировка-группы-пользователей-с-игнорированием-ошибки-securityprofilesuspend_users_noerror">Блокировка группы пользователей с игнорированием ошибки (securityprofile.suspend_users_noerror)<a href="#блокировка-группы-пользователей-с-игнорированием-ошибки-securityprofilesuspend_users_noerror" class="hash-link" aria-label="Direct link to Блокировка группы пользователей с игнорированием ошибки (securityprofile.suspend_users_noerror)" title="Direct link to Блокировка группы пользователей с игнорированием ошибки (securityprofile.suspend_users_noerror)">​</a></h5>
 <p>Функция «suspend_users_noerror» аналогично suspend_users, только не выдает ошибки при наличии уже установленной блокировки и имеет синтаксис SQL-команды:</p>
@@ -1628,7 +1629,7 @@
 <blockquote>
 <p>SELECT securityprofile.suspend_users_noerror (&#x27;db_test&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image26.png" style="width:7.08958in;height:1.72845in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 15-17-31.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image26-17c6899a7a0e31a1037471c3829c0b5c.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Блокировка пользователей БД «db_test» игнорированием ошибки</p>
 <p>В результате выполнения SQL-команды компонент заблокирует пользователей указанной БД и выведет сообщение, в котором сообщается, что «Пользователи уже были отключены от базы данных»:</p>
 <blockquote>
@@ -1644,7 +1645,7 @@
 <blockquote>
 <p>SELECT securityprofile.resume_users_noerror (&#x27;db_test&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image27.png" style="width:6.89722in;height:2.33913in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 12-21-21.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image27-a6ab7f84bfcb0f9f35ef80d5d5fbfa42.png" width="885" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – Выполнение команды разблокировки пользователей</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="блокированиеразблокирование-группы-пользователей-администраторов-бд">Блокирование/разблокирование группы пользователей администраторов БД<a href="#блокированиеразблокирование-группы-пользователей-администраторов-бд" class="hash-link" aria-label="Direct link to Блокирование/разблокирование группы пользователей администраторов БД" title="Direct link to Блокирование/разблокирование группы пользователей администраторов БД">​</a></h5>
 <p>К группе пользователей администраторов БД относятся привилегированные пользователи СУБД, имеющие атрибут CREATEROLE, и возможные атрибуты BYPASSRLS, REPLICATION, а также прочие системные привилегии относительно БД, кроме атрибута CREATEDB.</p>
@@ -1665,14 +1666,14 @@
 <blockquote>
 <p>SELECT securityprofile.suspend_admins(&#x27;postgres&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image28.png" style="width:7.11432in;height:1.54167in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 18-13-39.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image28-b45469c1d9f1e792d583c17fc1ee9804.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Команда блокировки администраторов БД в БД «postgres»</p>
 <p>При проверке статуса блокировки, будет добавлена строка с OID БД «5», что соответствует БД «postgres».</p>
 <blockquote>
 <p>SELECT * FROM securityprofile.status;</p>
 <p>SELECT oid FROM pg_database WHERE datname = &#x27;postgres&#x27;;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image29.png" style="width:7.04457in;height:2.88889in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 18-25-30.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image29-7ff5facc32fb7a178bcd782c7071ab32.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Проверка наличия блокировок</p>
 <p>Вывод информации о всех пользователях выполняется SQL-командой:</p>
 <blockquote>
@@ -1686,13 +1687,13 @@
 <p>Разблокируем пользователей БД «db_test» SQL-командой:</p>
 <p>SELECT securityprofile.resume_admins(&#x27;postgres&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image30.png" style="width:7.06129in;height:1.59306in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 10-40-56.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image30-0d675b66641560f4e59b33e3dd5c2fb2.png" width="885" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – Разблокирование администраторов БД</p>
 <p>Проверка статуса блокировки покажет изменение даты в поле «suspendedadminstime».</p>
 <blockquote>
 <p>SELECT * FROM securityprofile.status;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image31.png" style="width:7.02654in;height:2.04167in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 10-41-26.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image31-49fc8fd8c35871487b7f642f45e2aa76.png" width="885" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – Проверка статуса блокировки</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="блокировка-группы-пользователей-администраторов-бд-с-задержкой-блокировки-в-устанавливаемой-в-секундах-securityprofilesuspend_admins_seconds">Блокировка группы пользователей администраторов БД с задержкой блокировки в устанавливаемой в секундах (securityprofile.suspend_admins_seconds)<a href="#блокировка-группы-пользователей-администраторов-бд-с-задержкой-блокировки-в-устанавливаемой-в-секундах-securityprofilesuspend_admins_seconds" class="hash-link" aria-label="Direct link to Блокировка группы пользователей администраторов БД с задержкой блокировки в устанавливаемой в секундах (securityprofile.suspend_admins_seconds)" title="Direct link to Блокировка группы пользователей администраторов БД с задержкой блокировки в устанавливаемой в секундах (securityprofile.suspend_admins_seconds)">​</a></h5>
 <p>Функция «suspend_admins_seconds» служит для блокировки администраторов БД с задержкой блокировки и имеет синтаксис SQL-команды:</p>
@@ -1703,7 +1704,7 @@
 <p>Блокирование администраторов БД «postgres» с отсрочкой блокировки устанавливаемой в секундах, выполняется SQL-командой:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">SELECT securityprofile.suspend_admins_seconds(&#x27;postgres&#x27;, 60);</span><br></span></code></pre></div></div>
 <p>В SQL-команде указывается БД и время задержки блокировки, устанавливаемой в секундах.</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image32.png" style="width:7.15902in;height:1.57292in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 11-41-04.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image32-00addd0e134e5b5b67970f28d6c9f62e.png" width="885" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – Блокирование администраторов БД с отсрочкой блокировки устанавливаемой в секундах</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="разблокирование-группы-пользователей-администраторов-бд-с-задержкой-блокировки-в-устанавливаемой-в-секундах-securityprofileresume_admins_seconds">Разблокирование группы пользователей администраторов БД с задержкой блокировки в устанавливаемой в секундах (securityprofile.resume_admins_seconds)<a href="#разблокирование-группы-пользователей-администраторов-бд-с-задержкой-блокировки-в-устанавливаемой-в-секундах-securityprofileresume_admins_seconds" class="hash-link" aria-label="Direct link to Разблокирование группы пользователей администраторов БД с задержкой блокировки в устанавливаемой в секундах (securityprofile.resume_admins_seconds)" title="Direct link to Разблокирование группы пользователей администраторов БД с задержкой блокировки в устанавливаемой в секундах (securityprofile.resume_admins_seconds)">​</a></h5>
 <p>Разблокирование администраторов БД выполняется функцией «resume_admins_seconds» имеющей синтаксис:</p>
@@ -1715,7 +1716,7 @@
 <blockquote>
 <p>SELECT securityprofile.resume_admins_seconds(&#x27;postgres&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image33.png" style="width:7.03556in;height:1.55129in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 11-43-55.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image33-93e518533a5afab4849828a50d595e2f.png" width="885" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – Команда разблокировки администраторов БД с установленной задержкой по времени</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="блокировка-группы-пользователей-администраторов-бд-с-игнорированием-ошибки-securityprofileadmins_users_noerror">Блокировка группы пользователей администраторов БД с игнорированием ошибки (securityprofile.admins_users_noerror)<a href="#блокировка-группы-пользователей-администраторов-бд-с-игнорированием-ошибки-securityprofileadmins_users_noerror" class="hash-link" aria-label="Direct link to Блокировка группы пользователей администраторов БД с игнорированием ошибки (securityprofile.admins_users_noerror)" title="Direct link to Блокировка группы пользователей администраторов БД с игнорированием ошибки (securityprofile.admins_users_noerror)">​</a></h5>
 <p>Функция «suspend_admins_noerror» аналогично «suspend_admins», только не выдает ошибки при наличии уже установленной блокировки и имеет синтаксис SQL-команды:</p>
@@ -1727,7 +1728,7 @@
 <blockquote>
 <p>SELECT securityprofile.suspend_admins_noerror (&#x27;postgres&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image34.png" style="width:7.08056in;height:1.60788in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 12-16-43.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image34-bbd9c289d1e0f99ee5696ba2412a0f94.png" width="885" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – Блокировка администраторов БД «postgres» игнорированием ошибки</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="разблокировка-группы-пользователей-администраторов-бд-с-игнорированием-ошибки-resume_admins_noerror">Разблокировка группы пользователей администраторов БД с игнорированием ошибки (resume_admins_noerror)<a href="#разблокировка-группы-пользователей-администраторов-бд-с-игнорированием-ошибки-resume_admins_noerror" class="hash-link" aria-label="Direct link to Разблокировка группы пользователей администраторов БД с игнорированием ошибки (resume_admins_noerror)" title="Direct link to Разблокировка группы пользователей администраторов БД с игнорированием ошибки (resume_admins_noerror)">​</a></h5>
 <p>Разблокирование администраторов БД выполняется функцией «resume_admins_noerror» имеющей синтаксис:</p>
@@ -1739,7 +1740,7 @@
 <blockquote>
 <p>SELECT securityprofile.resume_admins_seconds(&#x27;db_test&#x27;, 0);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image35.png" style="width:7.22622in;height:1.67708in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 12-18-07.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image35-3ce98ffbb0f4c51850f634359a8eb4fe.png" width="885" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – Выполнение команды разблокировки пользователей</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-установленных-блокировок">Проверка установленных блокировок<a href="#проверка-установленных-блокировок" class="hash-link" aria-label="Direct link to Проверка установленных блокировок" title="Direct link to Проверка установленных блокировок">​</a></h4>
 <p>Компонент «securityprofile» обладает функциональной возможностью проверки установленных блокировок учетных записей пользователей функциями:</p>
@@ -1760,7 +1761,7 @@
 <blockquote>
 <p>SELECT securityprofile.is_users_suspended (&#x27;db_test&#x27;);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image36.png" style="width:7.0717in;height:1.54734in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 12-06-52.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image36-8973a6a2d04366ce0a1ae36bd5b29940.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод состояния блокировки пользователей в БД</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="-1"><a href="#-1" class="hash-link" aria-label="Direct link to -1" title="Direct link to -1">​</a></h5>
 <p>Проверка блокировки группы администраторов БДПроверка блокировки группы администраторов БД выполняется SQL-командой, имеющей синтаксис:</p>
@@ -1772,7 +1773,7 @@
 <blockquote>
 <p>SELECT securityprofile.is_admins_suspended (&#x27;db_test&#x27;);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image37.png" style="width:7.14087in;height:1.66087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 13-18-58.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image37-7a33d0acfd2814ac1e03379075fbb137.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод состояния блокировки администраторов БД</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="-2"><a href="#-2" class="hash-link" aria-label="Direct link to -2" title="Direct link to -2">​</a></h5>
 <p>Проверка существования блокировкиПроверка блокировки любой группы пользователей СУБД, как группы администраторов БД, так и группы пользователей, выполняется SQL-командой, имеющей синтаксис:</p>
@@ -1784,7 +1785,7 @@
 <blockquote>
 <p>SELECT securityprofile.is_suspended (&#x27;db_test&#x27;);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image38.png" style="width:7.12436in;height:1.53913in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 12-10-21.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image38-b25b4b8404f9a57a23da3fcee0ee7fa1.png" width="894" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод состояния блокировок в БД</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="создание-новых-ролей-присвоение-атрибутов-и-системных-привилегий">Создание новых ролей, присвоение атрибутов и системных привилегий<a href="#создание-новых-ролей-присвоение-атрибутов-и-системных-привилегий" class="hash-link" aria-label="Direct link to Создание новых ролей, присвоение атрибутов и системных привилегий" title="Direct link to Создание новых ролей, присвоение атрибутов и системных привилегий">​</a></h4>
 <p>СУБД «Jatoba» поддерживает создание новых ролей (пользователей) с атрибутами ролей, приведенных в таблице Таблица 6.12. Для назначения атрибутов ролям необходимо выполнить следующую команду:</p>
@@ -1928,7 +1929,7 @@
 <p>АLTER ROLE &lt;имя учетной записи пользователя&gt; password &#x27;&lt;пароль пользователя&gt;&#x27;;</p>
 </blockquote>
 <p>Смена пароля через команду «password» недоступна. СУБД «Jatoba» блокирует выполнение данной команды и предложит сменить пароль через команду «аlter role».</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image39.png" style="width:7.08638in;height:2.464in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 04-16-40.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image39-fdfe2a9754635b94f4a5ecdad8da9649.png" width="734" height="488" class="img_ev3q">)</p>
 <p>Рисунок . – Ошибка установки пароля пользователя через команду «password»</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="блокирование-сеанса-доступа-в-субд-после-установленного-времени-бездействия-неактивности-пользователя">Блокирование сеанса доступа в СУБД после установленного времени бездействия (неактивности) пользователя<a href="#блокирование-сеанса-доступа-в-субд-после-установленного-времени-бездействия-неактивности-пользователя" class="hash-link" aria-label="Direct link to Блокирование сеанса доступа в СУБД после установленного времени бездействия (неактивности) пользователя" title="Direct link to Блокирование сеанса доступа в СУБД после установленного времени бездействия (неактивности) пользователя">​</a></h4>
 <p>Блокирование сеанса доступа в СУБД после установленного времени бездействия (неактивности) пользователя выполняется установкой параметров:</p>
@@ -1937,7 +1938,7 @@
 <li></li>
 </ul>
 <p>idle_session_timeout;idle_in_transaction_session_timeout.Параметры устанавливаются в разделе «CLIENT CONNECTION DEFAULTS» конфигурационного файла postgresql.conf.</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image40.png" style="width:7.14019in;height:0.992in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-09 03-06-19.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image40-df0d7a8d4ce1e05c0fd8b6f238febff0.png" width="952" height="799" class="img_ev3q">)</p>
 <p>Рисунок . – Параметры «idle_session_timeout» и «idle_in_transaction_session_timeout» в конфигурационном файле postgresql.conf</p>
 <blockquote>
 <p>idle_session_timeout</p>
@@ -1963,7 +1964,7 @@
 <blockquote>
 </blockquote>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># \dx</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image41.png" style="width:7.09722in;height:2.46368in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-15 05-08-03.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image41-1c119ed65b3bb464029b5aa6413bc7f1.png" width="786" height="533" class="img_ev3q">)</p>
 <p>Рисунок . – Установка расширения «pwgen»</p>
 <p>Расширение работает только в той базе, в которой его установил администратор.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="генерация-пароля">Генерация пароля<a href="#генерация-пароля" class="hash-link" aria-label="Direct link to Генерация пароля" title="Direct link to Генерация пароля">​</a></h4>
@@ -1973,7 +1974,7 @@
 <blockquote>
 <p>SELECT pwgen();</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image42.png" style="width:6.97826in;height:1.76389in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-15 05-14-42.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image42-16af27aada31b941475b5c1d8cb18c18.png" width="786" height="299" class="img_ev3q">)</p>
 <p>Рисунок . – Генерация пароля с параметрами по умолчанию</p>
 <p>SQL-команда с указанием последовательности значений имеет синтаксис:</p>
 <blockquote>
@@ -2001,7 +2002,7 @@
 </ul>
 <p>длиной 10 символов:2 строчными буквами;2 прописными буквами;1 цифрой;1специальным символом;допустимый набором строчных символов - &#x27;abcde&#x27;;допустимым набором прописных символов - &#x27;ABCDE&#x27;;допустимым набором специальных символов - &#x27;@!&#x27;;будет следующей:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># SELECT pwgen(10,2,2,1,1,&#x27;abcde&#x27;,&#x27;ABCDE&#x27;,&#x27;@!&#x27;);</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image43.png" style="width:7.15972in;height:1.48032in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-15 22-39-08.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image43-33958e20a2116d53c041a27275439f87.png" width="786" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – SQL-команда генерации пароля по последовательности параметров</p>
 <p>Количество задаваемых букв не должно превышать длину пароля.</p>
 <p>Значение 0 в параметрах количества символов функции pwgen означает, что не накладывается никаких ограничений на присутствие символов из соответствующего алфавита, заданного параметрами 6-10.</p>
@@ -2069,7 +2070,7 @@
 <blockquote>
 <p>длиной 10 символов (pw_len =&gt;10);3 строчными символами в пароле (pw_lc_char_cnt =&gt;3);2 цифрами в пароле (pw_num_cnt =&gt; 5).# SELECT pwgen(pw_len =&gt;10, pw_lc_char_cnt =&gt;3, pw_num_cnt =&gt; 5);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image44.png" style="width:7.09192in;height:1.77778in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-15 23-05-27.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image44-01cd4ff2327588f8acc99ce6c488408b.png" width="786" height="479" class="img_ev3q">)</p>
 <p>Рисунок . – Генерация пароля по заданным параметрам</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="генерация-множества-паролей">Генерация множества паролей<a href="#генерация-множества-паролей" class="hash-link" aria-label="Direct link to Генерация множества паролей" title="Direct link to Генерация множества паролей">​</a></h4>
 <p>Расширение «pwgen» для генерации множества паролей использует функцию СУБД возвращения множества. В которой задается начало отсчета и конец отсчета.</p>
@@ -2082,7 +2083,7 @@
 <blockquote>
 <p>select pwgen() from generate_series(1, 10);</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image45.png" style="width:6.65887in;height:3.08333in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-16 00-09-10.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image45-4ced2feb6e38a3b942e2248a9f6144fa.png" width="786" height="407" class="img_ev3q">)</p>
 <p>Рисунок . – Генерация множества паролей</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="удаление-расширения-pwgen">Удаление расширения «pwgen»<a href="#удаление-расширения-pwgen" class="hash-link" aria-label="Direct link to Удаление расширения «pwgen»" title="Direct link to Удаление расширения «pwgen»">​</a></h4>
 <p>Расширение удаляется SQL-командой:</p>
@@ -2170,7 +2171,8 @@
 <p>log_truncate_on_rotation = on</p>
 <p>log_line_prefix = &#x27;%m [%p] &#x27;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image46.png" style="width:7.09701in;height:1.94776in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 02-31-08.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image46-2a22715cf81929fd12fb4c9edafcec3f.png" width="952" height="362" class="img_ev3q">)</p>
+<p>|</p>
 
 
 
@@ -2178,7 +2180,7 @@
 
 
 
-<table><thead><tr><th><img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Если не планируется использовать компоненты pgAudit и pgauditlogtofile, то будет целесообразным установить параметр регистрации событий СУБД log_statement.</th></tr></thead></table>
+<table><thead><tr><th>![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg&quot; style=&quot;width:0.25in;height:0.25in&quot; /&gt;</th><th>Если не планируется использовать компоненты pgAudit и pgauditlogtofile, то будет целесообразным установить параметр регистрации событий СУБД log_statement.</th></tr></thead></table>
 <p>Рисунок . – Предустановленные параметры логирования</p>
 <ol start="3">
 <li></li>
@@ -2968,7 +2970,7 @@
 <blockquote>
 <p>Установить параметр в конфигурационном файле в postgresql.conf:shared_preload_libraries = &#x27;pgaudit&#x27;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image47.png" style="width:7.05764in;height:1.76402in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 02-01-24.png" class="img_ev3q">
+<p>&lt;img src=&quot;./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image47.png))</p>
 <p>Рисунок . – Параметр загрузки библиотеки компонента «pgAudit»</p>
 <ol start="3">
 <li></li>
@@ -2992,7 +2994,7 @@
 <blockquote>
 <p>Войти в СУБД от имени и с правами пользователя «SUPERUSER», выполнить SQL–команду:CREATE EXTENSION pgaudit;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image48.png" style="width:7.08955in;height:1.10348in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 05-58-00.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image48-5c970ea71cdb18baf17085643a7de24e.png" width="777" height="461" class="img_ev3q">)</p>
 <p>Рисунок . – Установка расширения «pgaudit»</p>
 <ol start="5">
 <li></li>
@@ -3251,7 +3253,7 @@
 <blockquote>
 <p>Задать запись всех событий в журнал аудита, выполнив SQL-команду:ALTER SYSTEM SET pgaudit.log = &#x27;All&#x27;;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image49.png" style="width:7.17164in;height:1.09269in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 06-00-03.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image49-83afd26b9a1e54ce872615d9be704ac6.png" width="777" height="245" class="img_ev3q">)</p>
 <p>Рисунок . – Установка параметра записи всех событий в журнал аудита</p>
 <ol start="3">
 <li></li>
@@ -3414,6 +3416,7 @@
 <p>Проверить созданные записи в логе аудита:nano /var/lib/jatoba/<ver>/data/log/jatoba-день_недели.log</ver></p>
 </blockquote>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="компонент-pgauditlogtofile-хранение-событий-безопасности-в-отдельном-хранилище">Компонент «pgauditlogtofile». Хранение событий безопасности в отдельном хранилище<a href="#компонент-pgauditlogtofile-хранение-событий-безопасности-в-отдельном-хранилище" class="hash-link" aria-label="Direct link to Компонент «pgauditlogtofile». Хранение событий безопасности в отдельном хранилище" title="Direct link to Компонент «pgauditlogtofile». Хранение событий безопасности в отдельном хранилище">​</a></h4>
+<p>|</p>
 
 
 
@@ -3421,7 +3424,7 @@
 
 
 
-<table><thead><tr><th><img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Компонент не поставляется с сертифицированной версией изделия</th></tr></thead></table>
+<table><thead><tr><th>![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg&quot; style=&quot;width:0.25in;height:0.25in&quot; /&gt;</th><th>Компонент не поставляется с сертифицированной версией изделия</th></tr></thead></table>
 <p>Компонент «pgauditlogtofile» служит дополнением к компоненту «pgAudit» и предназначен для хранения событий безопасности в отдельном хранилище, в частности событий подключения и отключения к СУБД. Версия компонента – 1.5.12.</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="установка-расширения-pgauditlogtofile">Установка расширения pgauditlogtofile<a href="#установка-расширения-pgauditlogtofile" class="hash-link" aria-label="Direct link to Установка расширения pgauditlogtofile" title="Direct link to Установка расширения pgauditlogtofile">​</a></h5>
 <p>Установка пакета компонента описана в документе 643.72410666.00067-07 97 01 «Руководство по установке». Компонент выполнен в виде расширения СУБД.</p>
@@ -3432,7 +3435,7 @@
 <blockquote>
 <p>Установить параметр загрузки библиотеки компонента в разделе «shared_preload_libraries» в конфигурационном файле postgresql.conf:shared_preload_libraries = &#x27;pgaudit, auditlogtofile&#x27;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image50.png" style="width:7.11458in;height:1.27839in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-18 01-37-29.png" class="img_ev3q">
+<p>&lt;img src=&quot;./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image50.png))</p>
 <p>Рисунок . – Строка для загрузки библиотеки расширения «pgauditlogtofile»</p>
 <p>Библиотека компонента «pgauditlogtofile» должна загружаться после библиотеки компонента «pgaudit».</p>
 <ol start="2">
@@ -3450,7 +3453,7 @@
 <blockquote>
 <p>SQL-командой в СУБД:SELECT pg_reload_conf();</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image51.png" style="width:7.13433in;height:1.79488in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-17 06-21-29.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image51-94f22953aa3ce0d981656c76ec664b23.png" width="786" height="407" class="img_ev3q">)</p>
 <p>Рисунок . – SQL-команда применения изменений в конфигурационных файлах</p>
 <ol start="3">
 <li></li>
@@ -3458,11 +3461,11 @@
 <blockquote>
 <p>Установить расширение SQL-командой:CREATE EXTENSION pgauditlogtofile;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image52.png" style="width:7.01334in;height:1.0597in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-17 06-23-12.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image52-c0da82abe2c81f42414c9427c3c1cb6b.png" width="786" height="407" class="img_ev3q">)</p>
 <p>Рисунок . – SQL-команда установки расширения «pgauditlogtofile»</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="функциональные-возможности-компонента-pgauditlogtofile">Функциональные возможности компонента pgauditlogtofile<a href="#функциональные-возможности-компонента-pgauditlogtofile" class="hash-link" aria-label="Direct link to Функциональные возможности компонента pgauditlogtofile" title="Direct link to Функциональные возможности компонента pgauditlogtofile">​</a></h5>
 <p>Конфигурирование компонента проводится установкой параметров в конфигурационном файле postgresql.conf.</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image53.png" style="width:6.97408in;height:2.66981in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-18 01-12-02.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image53-f62bbdf52d4536f7a0aaf2235dfce5fa.png" width="952" height="491" class="img_ev3q">)</p>
 <p>Рисунок . – Параметры компонента «pgauditlogtofile»</p>
 <p><strong>pgaudit.log_directory</strong></p>
 <p>Параметр «pgaudit.log_directory» определяет директорию хранения журнала аудита СУБД. Это ключевой параметр, который перенаправит события безопасности в отдельное хранилище.</p>
@@ -3480,7 +3483,7 @@
 <blockquote>
 </blockquote>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># ls -ld /audit_log/</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image54.png" style="width:7.16038in;height:1.4478in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-18 01-06-37.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image54-1ded9407cb6ef0943092b6400e6b976b.png" width="777" height="227" class="img_ev3q">)</p>
 <p>Рисунок . – Установка прав на директорию</p>
 <p><strong>pgaudit.log_filename</strong></p>
 <p>Параметр определяет имя файла, в который будет записан аудит. При записи в существующий файл будут добавлены новые записи.</p>
@@ -3516,7 +3519,7 @@
 <p>параметр регистрации событий СУБД «log_statement», определяющий какие SQL-команды будут регистрироваться (см. таблицу Таблица 6.17);параметр регистрации событий СУБД «log_duration», определяющий будет ли регистрироваться длительность каждого выполненного SQL-запроса (см. таблицу Таблица 6.17);параметр включения/отключения маскирования «log_mask_password» который может принимать следующие значения: 1/0, on/off, true/false, yes/no.log_statement=&#x27;all&#x27;<br>
 log_mask_password=1</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image55.png" style="width:6.74515in;height:2.08209in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 03-32-46.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image55-03bc471ea9a2ade6f01aa4fcfb11f317.png" width="952" height="393" class="img_ev3q">)</p>
 <p>Рисунок . – Параметры postgresql.conf обязательные для маскирования паролей</p>
 <p>Применение установленных параметров в конфигурационных файлах выполняется от имени и справами привилегированного пользователя СУБД SQL-командой:</p>
 <blockquote>
@@ -3527,7 +3530,7 @@ log_mask_password=1</p>
 <blockquote>
 <p>SHOW log_mask_password;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image56.png" style="width:7.11267in;height:1.72917in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 06-58-27.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image56-6da95a2c55217c9047d0988fc7b1547e.png" width="786" height="299" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод режим маскирования паролей</p>
 <p>Маскирование паролей выполняется при создании пользователей.</p>
 <p><strong>Например</strong></p>
@@ -3535,10 +3538,10 @@ log_mask_password=1</p>
 <blockquote>
 <p>CREATE USER user1 with password &#x27;n123456&#x27;;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image57.png" style="width:7.1875in;height:1.08782in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 07-05-25.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image57-e64705e619bff83a987beeba1ffc754d.png" width="786" height="299" class="img_ev3q">)</p>
 <p>Рисунок . – SQL-команда создания пользователя</p>
 <p>В журнале аудита СУБД установленный пароль будет маскирован.</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image58.png" style="width:7.10833in;height:0.60329in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 07-07-01.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image58-b324043533850b1676f878ca942c6034.png" width="952" height="269" class="img_ev3q">)</p>
 <p>Рисунок . – Журнал аудита СУБД с записью создания пользователя</p>
 <p>Аналогично маскируются вводимые значения хэшированных паролей в формате SHA256 и MD5.</p>
 <p><strong>Например</strong></p>
@@ -3547,13 +3550,13 @@ log_mask_password=1</p>
 <blockquote>
 </blockquote>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># ALTER ROLE user1 with password &#x27;md5kvosmkwgokrpokewrpokerpokporkorgk&#x27;;</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image59.png" style="width:7.08371in;height:1.36111in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 22-42-07.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image59-66695b95d13e84fdfcfd0ca50d7a3f68.png" width="831" height="299" class="img_ev3q">)</p>
 <p>Рисунок . – Установка хэшированного пароля пользователя</p>
 <p>В журнале аудита СУБД установленный пароль в хэшированном формате будет маскирован.</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image60.png" style="width:7.01389in;height:0.74209in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 22-43-14.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image60-07fb1f717d52ab68b1733f3d5f6c42d4.png" width="952" height="254" class="img_ev3q">)</p>
 <p>Рисунок . – Отображение хэшированного пароля пользователя</p>
 <p>При использовании компонента «ja_seceventlog» и сохранении событий безопасности в формате JSON, маскирование паролей будет выполняться.</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image61.png" style="width:6.8884in;height:2.18868in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC\Screenshot from 2024-08-04 23-50-43.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image61-181149a3b339871a3232b2f986c7e965.png" width="973" height="341" class="img_ev3q">)</p>
 <p>Рисунок . – Маскирование пароля при использовании компонента «ja_seceventlog»</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="резервное-копирование-и-восстановление-баз-данных">Резервное копирование и восстановление баз данных<a href="#резервное-копирование-и-восстановление-баз-данных" class="hash-link" aria-label="Direct link to Резервное копирование и восстановление баз данных" title="Direct link to Резервное копирование и восстановление баз данных">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="выгрузка-кластера-баз-данных-субд-jatoba-в-формате-скрипта">Выгрузка кластера баз данных СУБД «Jatoba» в формате скрипта<a href="#выгрузка-кластера-баз-данных-субд-jatoba-в-формате-скрипта" class="hash-link" aria-label="Direct link to Выгрузка кластера баз данных СУБД «Jatoba» в формате скрипта" title="Direct link to Выгрузка кластера баз данных СУБД «Jatoba» в формате скрипта">​</a></h3>
@@ -3626,14 +3629,16 @@ log_mask_password=1</p>
 <ul>
 <li></li>
 </ul>
-<p>На первом сервере СУБД:если отсутствует диск Е то, через консоль диспетчера отказоустойчивости кластера, необходимо подключить диск E (см. рисунок Рисунок 8.1) к первому серверу;<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image62.png" style="width:6.94398in;height:2.30723in" class="img_ev3q"></p>
+<p>На первом сервере СУБД:если отсутствует диск Е то, через консоль диспетчера отказоустойчивости кластера, необходимо подключить диск E (см. рисунок Рисунок 8.1) к первому серверу;
+<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image62-e82a72f5277e2fce23039116099bcb92.png" width="1435" height="478" class="img_ev3q">)</p>
 <p>Рисунок . – Консоль диспетчера отказоустойчивости кластера. Подключение диска Е</p>
 <ul>
 <li></li>
 <li></li>
 </ul>
 <blockquote>
-<p>создать на диске Е каталог pgdata;запустить установку СУБД «Jatoba» из дистрибутива. Во время установки указать путь к БД e:\pgbase (см. рисунок Рисунок 8.2), остальные параметры необходимо выбрать стандартно (пароль для пользователя postgres –должен быть доменный, локализация, порт и т.д.);<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image63.png" style="width:3.70833in;height:1.51042in" class="img_ev3q"></p>
+<p>создать на диске Е каталог pgdata;запустить установку СУБД «Jatoba» из дистрибутива. Во время установки указать путь к БД e:\pgbase (см. рисунок Рисунок 8.2), остальные параметры необходимо выбрать стандартно (пароль для пользователя postgres –должен быть доменный, локализация, порт и т.д.);
+<img decoding="async" loading="lazy" src="data:image/png;base64,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" width="356" height="145" class="img_ev3q">)</p>
 </blockquote>
 <p>Рисунок . – Путь к БД</p>
 <ul>
@@ -3652,22 +3657,26 @@ log_mask_password=1</p>
 <li></li>
 <li></li>
 </ol>
-<p>Перезапустить службу JatobaServer.Добавить роль универсальной службы. Эта роль позволяет автоматически переключать БД на другой сервер, в случае отказа первого.Запустить диспетчер отказоустойчивого кластера. Добавить необходимую роль, как показано на рисунке Рисунок 8.3.<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image64.png" style="width:6.84177in;height:4.25251in" class="img_ev3q"></p>
+<p>Перезапустить службу JatobaServer.Добавить роль универсальной службы. Эта роль позволяет автоматически переключать БД на другой сервер, в случае отказа первого.Запустить диспетчер отказоустойчивого кластера. Добавить необходимую роль, как показано на рисунке Рисунок 8.3.
+<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image64-4decde04517c1877a3a55d47e5a0741d.png" width="834" height="518" class="img_ev3q">)</p>
 <p>Рисунок .– Добавление роли</p>
 <ol start="9">
 <li></li>
 </ol>
-<p>Нажать на кнопку далее и выбрать службу JatobaServer, как показано на рисунке Рисунок 8.4;<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image65.png" style="width:6.30405in;height:2.48312in" class="img_ev3q"></p>
+<p>Нажать на кнопку далее и выбрать службу JatobaServer, как показано на рисунке Рисунок 8.4;
+<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image65-85587761d138cf599587fb470f2954b5.png" width="655" height="258" class="img_ev3q">)</p>
 <p>Рисунок . – Выбор службы JatobaServer</p>
 <ol start="10">
 <li></li>
 </ol>
-<p>Нажать кнопку «Далее» и затем выбрать имя и IP-адреса точки подключения к СУБД «Jatoba» (см. пример на рисунке Рисунок 8.5).<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image66.png" style="width:6.08633in;height:2.75047in" class="img_ev3q"></p>
+<p>Нажать кнопку «Далее» и затем выбрать имя и IP-адреса точки подключения к СУБД «Jatoba» (см. пример на рисунке Рисунок 8.5).
+<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image66-c0a554de709798f612a9a1a3660289f6.png" width="655" height="296" class="img_ev3q">)</p>
 <p>Рисунок 8.5 – Выбор имя и IP-адреса точки подключения к Jatoba</p>
 <ol start="11">
 <li></li>
 </ol>
-<p>Нажать «Далее» и выбрать хранилище, на рисунке Рисунок 8.6 – диск Е.<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image67.png" style="width:6.17792in;height:2.95925in" class="img_ev3q"></p>
+<p>Нажать «Далее» и выбрать хранилище, на рисунке Рисунок 8.6 – диск Е.
+<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image67-558d79fb3b0c21f6d1671d656919824a.png" width="643" height="308" class="img_ev3q">)</p>
 <p>Рисунок . – Выбор хранилища</p>
 <ol start="12">
 <li></li>
@@ -3707,7 +3716,8 @@ log_mask_password=1</p>
 <li></li>
 <li></li>
 </ol>
-<p>Создать задачу в планировщике.В задании используется именно пользователь «postgres».Добавить триггер, как показано на рисунке Рисунок 8.7.<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image68.png" style="width:4.61887in;height:4.54888in" class="img_ev3q"></p>
+<p>Создать задачу в планировщике.В задании используется именно пользователь «postgres».Добавить триггер, как показано на рисунке Рисунок 8.7.
+<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image68-1d6db693c38814573f925cf6d6a7df63.png" width="636" height="625" class="img_ev3q">)</p>
 <p>Рисунок . – Добавление триггера</p>
 <ol start="19">
 <li></li>
@@ -3719,17 +3729,19 @@ log_mask_password=1</p>
 <blockquote>
 <p>-File &quot;C:\tmp\pg_check.ps1&quot;,</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image69.png" style="width:6.23018in;height:4.461in" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image69-3fcb8f215d031a5c1a201e7d8f97f70f.png" width="655" height="469" class="img_ev3q">)</p>
 <p>Рисунок . – Путь к PowerShell. Путь к файлу скрипта</p>
 <ol start="20">
 <li></li>
 </ol>
-<p>Указать условия запуска, как показано на рисунке Рисунок 8.9.<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image70.png" style="width:6.30382in;height:3.648in" class="img_ev3q"></p>
+<p>Указать условия запуска, как показано на рисунке Рисунок 8.9.
+<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image70-8f0e697caa3dc945e10d73f2b14a5113.png" width="629" height="364" class="img_ev3q">)</p>
 <p>Рисунок . – Условия запуска</p>
 <ol start="21">
 <li></li>
 </ol>
-<p>Затем параметры, как показано на рисунке Рисунок 8.10.<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image71.png" style="width:5.86309in;height:4.128in" class="img_ev3q"></p>
+<p>Затем параметры, как показано на рисунке Рисунок 8.10.
+<img decoding="async" loading="lazy" src="/demo_docu/assets/images/image71-ad61e9ec99907bb27e47884e18efcb86.png" width="615" height="433" class="img_ev3q">)</p>
 <p>Рисунок . – Параметры</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-отказоустойчивого-кластера-субд-jatoba-с-использованием-компонента-jadog">Настройка отказоустойчивого кластера СУБД «Jatoba» с использованием компонента «jaDog»<a href="#настройка-отказоустойчивого-кластера-субд-jatoba-с-использованием-компонента-jadog" class="hash-link" aria-label="Direct link to Настройка отказоустойчивого кластера СУБД «Jatoba» с использованием компонента «jaDog»" title="Direct link to Настройка отказоустойчивого кластера СУБД «Jatoba» с использованием компонента «jaDog»">​</a></h3>
 <p>Настройка отказоустойчивого кластера СУБД «Jatoba» c использованием встроенного модуля jaDog описана в документах:</p>
@@ -3797,7 +3809,7 @@ log_mask_password=1</p>
 <p>WAL Recovery – это функциональность ядра СУБД «Jatoba» по восстановлению поврежденных WAL записей в процессе потоковой репликации данных.</p>
 <p>WAL – это журнал, в который попадают изменения данных до того, как они физически применятся к самой БД. Каждая запись журнала содержит информацию, достаточную для повторения изменений в случае необходимости.</p>
 <p>При потоковой репликации с Главного сервера на Резервные передаются WAL файлы, которые при успешной проверке их контрольных сумм (CRC) применяются на Резервных узлах, за счет чего данные на Резервных узлах синхронизируются с данными на Главном сервере.</p>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image72.png" style="width:5.35972in;height:4.54452in" alt="C:\Users\Cherevan-Y\AppData\Local\Microsoft\Windows\INetCache\Content.MSO\D19438A5.tmp" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image72-aca2460258967678fb4f83b69b5a08fa.png" width="915" height="776" class="img_ev3q">)</p>
 <p>Рисунок 9.1 – Схема работы</p>
 <p>Если на Главном узле произошла ошибка и файл журнала WAL повредился, то после передачи WAL записей на Резервные узлы, на них не совпадут контрольные суммы. В результате репликация прервется с ошибкой в логах.</p>
 <p>Для включения восстановления поврежденных WAL записей необходимо установить параметр в файле postgresql.conf:</p>
@@ -3853,29 +3865,29 @@ log_mask_password=1</p>
 <blockquote>
 </blockquote>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># EXPLAIN (costs off) SELECT \*, a \&lt;-\&gt; 50000 AS dist FROM test ORDER BY a \&lt;-\&gt; 50000 LIMIT 10;</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image75.png" style="width:7.02468in;height:2.98261in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-26-10.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image75-b752597c0bc14983720ab9da62f2ba2b.png" width="984" height="497" class="img_ev3q">)</p>
 <p>Рисунок . – Создание плана запроса для тестовой таблицы</p>
 <p>Создадим план запроса:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># EXPLAIN (analyze, costs off) SELECT \*, a \&lt;-\&gt; 50000 AS dist FROM test ORDER BY a \&lt;-\&gt; 50000 LIMIT 10;</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image76.png" style="width:7.00742in;height:2.25217in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-27-29.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image76-3f2867245c785d33d809d8e140154b23.png" width="984" height="371" class="img_ev3q">)</p>
 <p>Рисунок . – Создание плана запроса</p>
 <p>Создадим индекс для тестовой таблицы и план запроса:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># CREATE INDEX test_gistidx ON test USING GIST (a);</span><br></span></code></pre></div></div>
 <blockquote>
 </blockquote>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># explain (costs off) SELECT \*, a \&lt;-\&gt; 50000 AS dist FROM test ORDER BY a \&lt;-\&gt; 50000 LIMIT 10;</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image77.png" style="width:7.04653in;height:1.93043in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-41-05.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image77-a8b91670f68c87f3effcfc440a78f3c7.png" width="984" height="371" class="img_ev3q">)</p>
 <p>Рисунок 10.5 – Создание индекса GIST</p>
 <p>Создадим план запроса:</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># EXPLAIN (analyze, costs off) SELECT \*, a \&lt;-\&gt; 50000 AS dist FROM test ORDER BY a \&lt;-\&gt; 50000 LIMIT 10;</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image78.png" style="width:7.02971in;height:2.19791in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-42-25.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image78-a3847fac3e3a6ecc7426a4464c3d37d6.png" width="984" height="371" class="img_ev3q">)</p>
 <p>Рисунок . – Создание плана запроса</p>
 <p>Создадим B-Tree индекс и выведем все доступные информационные схемы (information schemas) в СУБД. Вывод показывает список таблиц, колонок, индексов, триггеров, и т.д., которые определены в каждой из информационных схем.</p>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># CREATE INDEX test_btreeidx ON test USING btree (a);</span><br></span></code></pre></div></div>
 <blockquote>
 </blockquote>
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># \di+</span><br></span></code></pre></div></div>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image79.png" style="width:7.15897in;height:2.16522in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-44-07.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image79-a18c4506e112a159903c5f1552162549.png" width="1020" height="371" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод информации о таблицах</p>
 <p>Из примера видно следующее:</p>
 <ul>
@@ -3961,7 +3973,7 @@ join pg_am on pg_amop.amopmethod = pg_am.oid<br>
 join pg_opfamily as opsortfamily on pg_amop.amopsortfamily = opsortfamily.oid<br>
 where amopstrategy=6 order by 2, 3, 4;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image80.png" style="width:6.99308in;height:4.31304in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 03-26-13.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image80-2ddd04fe3ec163cdc5f0bcdf467dda03.png" width="1236" height="785" class="img_ev3q">)</p>
 <p>Рисунок . – Список операторов дистанции</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="системная-таблица-pg_operator">Системная таблица pg_operator<a href="#системная-таблица-pg_operator" class="hash-link" aria-label="Direct link to Системная таблица pg_operator" title="Direct link to Системная таблица pg_operator">​</a></h4>
 <p>Системная таблица pg_operator хранит информацию об операторах, которые можно использовать в выражениях SQL-запросов (например, в выражении a &lt; 5, &#x27;&lt;&#x27; - оператор). Оператор может быть бинарным, а именно, операнд слева (тип операнда) и операнд справа (тип операнда), а также должен возвращать какое-то значение (зависит от оператора, в примере сравнивает значения целочисленных типов и возвращает значение булевого типа). KNN для возможности выполнения описанных выше видов запросов вводит 26 новых операторов дистанции для простых типов. Список таких операторов можно получить следующим запросом:</p>
@@ -3987,7 +3999,7 @@ o.oprname = &#x27;&lt;-&gt;&#x27; and<br>
 array[ltt.typname::text, rtt.typname::text, rst.typname::text] &lt;@ array[&#x27;int2&#x27;, &#x27;int4&#x27;, &#x27;int8&#x27;, &#x27;oid&#x27;, &#x27;float4&#x27;, &#x27;float8&#x27;, &#x27;money&#x27;, &#x27;date&#x27;, &#x27;time&#x27;, &#x27;timestamp&#x27;, &#x27;timestamptz&#x27;, &#x27;interval&#x27;]<br>
 order by 8, 9, 10;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image81.png" style="width:7.02322in;height:4.10435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 03-30-37.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image81-34c45fb13d7c22dda0f81b021b4dc20d.png" width="1445" height="866" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод операторов дистанции для простых типов.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="системная-таблица-pg_proc">Системная таблица pg_proc<a href="#системная-таблица-pg_proc" class="hash-link" aria-label="Direct link to Системная таблица pg_proc" title="Direct link to Системная таблица pg_proc">​</a></h4>
 <p>Системная таблица pg_proc хранит информацию о функциях, которые можно использовать в SQL-запросах. Под каждый оператор (специальные знаки в выражениях) также подставляется какая-либо функция, которая выполняет конечный код. KNN для возможности выполнения описанных выше видов запросов (выполнения операторов дистанции) вводит 26 новых функций, которые вычисляют дистанцию между двумя значениями перечисленных выше типов данных, и которые можно посмотреть следующим запросом:</p>
@@ -4002,7 +4014,7 @@ where<br>
 p.proname = any(array[&#x27;int2dist&#x27;, &#x27;int4dist&#x27;, &#x27;int8dist&#x27;, &#x27;oiddist&#x27;, &#x27;float4dist&#x27;, &#x27;float8dist&#x27;, &#x27;cash_distance&#x27;, &#x27;date_distance&#x27;, &#x27;time_distance&#x27;, &#x27;timestamp_distance&#x27;, &#x27;timestamptz_distance&#x27;, &#x27;interval_distance&#x27;, &#x27;int24dist&#x27;, &#x27;int28dist&#x27;, &#x27;int42dist&#x27;, &#x27;int48dist&#x27;, &#x27;int82dist&#x27;, &#x27;int84dist&#x27;, &#x27;float48dist&#x27;, &#x27;float84dist&#x27;, &#x27;date_dist_timestamp&#x27;, &#x27;date_dist_timestamptz&#x27;, &#x27;timestamp_dist_date&#x27;, &#x27;timestamp_dist_timestamptz&#x27;, &#x27;timestamptz_dist_date&#x27;, &#x27;timestamptz_dist_timestamp&#x27;])<br>
 order by 5, 4;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image82.png" style="width:7.0978in;height:3.68696in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 03-35-33.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image82-e1d32f106077a36e3dbf174077cafe9e.png" width="1605" height="947" class="img_ev3q">)</p>
 <p>Рисунок . – Вывод функций</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="очистка-памяти-в-субд">Очистка памяти в СУБД<a href="#очистка-памяти-в-субд" class="hash-link" aria-label="Direct link to Очистка памяти в СУБД" title="Direct link to Очистка памяти в СУБД">​</a></h2>
 <p>Согласно нормативному документу «Требования по безопасности информации к системам управления базами данных (выписка)», утвержденному приказом ФСТЭК России от 14.04.2023 № 64, необходимо выполнять очистку памяти в СУБД.</p>
@@ -4095,6 +4107,7 @@ order by 5, 4;</p>
 <p>(1 row)</p>
 </blockquote>
 <p>Выполнить нормализацию на русский язык (преобразование в лексемы) слов в предложении:</p>
+<p>|</p>
 
 
 
@@ -4102,7 +4115,7 @@ order by 5, 4;</p>
 
 
 
-<table><thead><tr><th><img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Перед выполнением на ОС Windows выполнить команду в тертинале - chcp 1251</th></tr></thead></table>
+<table><thead><tr><th>![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg&quot; style=&quot;width:0.25in;height:0.25in&quot; /&gt;</th><th>Перед выполнением на ОС Windows выполнить команду в тертинале - chcp 1251</th></tr></thead></table>
 <blockquote>
 <p>SELECT to_tsvector2(&#x27;russian&#x27;, &#x27;Это пример текста для тестирования.&#x27;);</p>
 </blockquote>
@@ -5692,7 +5705,7 @@ order by 5, 4;</p>
 <blockquote>
 <p>Войти в СУБД от имени и с правами пользователя «postgres» и изменить пароль в СУБД при помощи команды:АLTER ROLE &lt;имя учетной записи пользователя&gt; password &#x27;&lt;пароль пользователя&gt;&#x27;;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image83.png" style="width:7.08652in;height:1.832in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 07-56-15.png" class="img_ev3q">
+<p>&lt;img src=&quot;./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image83.png))</p>
 <p>Рисунок . – Смена пароля пользователя «postgres»</p>
 <ol start="5">
 <li></li>
@@ -5791,7 +5804,7 @@ order by 5, 4;</p>
 <blockquote>
 <p>SELECT securityprofile.synchronize();</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image84.png" style="width:7.08652in;height:1.8in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 04-23-32.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image84-7a74ec332d8492ba7a0959b2ab82cec7.png" width="734" height="542" class="img_ev3q">)</p>
 <p>Рисунок . – Команда выполнения инициализации расширения «SecurityProfile»</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="ошибки-создания-пользователя">Ошибки создания пользователя<a href="#ошибки-создания-пользователя" class="hash-link" aria-label="Direct link to Ошибки создания пользователя" title="Direct link to Ошибки создания пользователя">​</a></h3>
 <p>При попытке пользователя, обладающего привилегией создания ролей «Create roles», создать пользователя может возникнуть ошибка:</p>
@@ -5949,7 +5962,7 @@ order by 5, 4;</p>
 <blockquote>
 <p>Запустить cmd.exe.Выполнить:psql -U postgres;</p>
 </blockquote>
-<img decoding="async" loading="lazy" src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image85.png" style="width:6.69935in;height:1.48958in" alt="https://tfs.gaz-is.ru/jatoba/981020a7-f838-41e3-ae9d-f0e47d9ec553/_apis/wit/attachments/36da2a72-c12f-4f88-9cd7-bb2b197f7e04?filename=pic1.png" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image85-e718a372788778f940c345c26d94e71a.png" width="1103" height="639" class="img_ev3q">)</p>
 <p>Рисунок . – Окно командной строки с ошибкой</p>
 <ol start="3">
 <li>Решение проблемы:</li>
