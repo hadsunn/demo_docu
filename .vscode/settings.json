@@ -73,8 +73,8 @@
           "Delete old TOC", "Delete 1st page", "Replace emf", "Delete reg changes list",
           "Shift ####", "Shift ###", "Shift ##", "Shift #",
           "Fix warnings", "Fix infos", "Fix warnings 2", "Fix infos 2",
-          "Fix images",  "Fix images3", "Fix code lines", "Fix <> escapes",
-          "Fix _ escapes",
+          "Fix images",  "Fix images3", "Fix images3", "Fix code lines",
+          "Fix <> escapes", "Fix _ escapes"
         ]
       }
       
