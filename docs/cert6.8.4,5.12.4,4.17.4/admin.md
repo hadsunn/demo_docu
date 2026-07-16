@@ -1040,7 +1040,8 @@
 
 Если нет необходимости использовать подготовленные транзакции, следует обнулить параметр, чтобы не допустить непреднамеренного создания подготовленных транзакций. Если подготовленные транзакции используются, то max_prepared_transactions должен быть не меньше, чем max_connections для подготовки транзакции в каждом сеансе.
 
-| <img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" /> | Для ведомого сервера значение этого параметра должно быть больше или равно значению на ведущем. В противном случае, на ведомом сервере запросы будут запрещены. |
+| 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" /> | Для ведомого сервера значение этого параметра должно быть больше или равно значению на ведущем. В противном случае, на ведомом сервере запросы будут запрещены. |
 |----|----|
 
 > work_mem (integer)
@@ -3439,7 +3440,7 @@ securityprofile.failed_login_attempts = 5 – пять неудачных поп
 
 > SELECT securityprofile.create_profile('password_user');
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image10.png" style="width:7.08648in;height:1.768in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 03-42-59.png" />
+<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image10.png))
 
 Рисунок . – Создание профиля «password_user»
 
@@ -3451,7 +3452,8 @@ securityprofile.failed_login_attempts = 5 – пять неудачных поп
 
 > SELECT prflprofileoid, prflprofilename FROM securityprofile.profiles;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image11.png" style="width:7.02347in;height:2.90435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 06-48-48.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image11.png))
 
 Рисунок . – Список профилей парольных политик
 
@@ -3461,7 +3463,8 @@ securityprofile.failed_login_attempts = 5 – пять неудачных поп
 
 > SELECT securityprofile.bind_profile ('password_user', 'test1');
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image12.png" style="width:7.08652in;height:1.792in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 04-11-58.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image12.png))
 
 Рисунок . – Привязка пользователя к профилю
 
@@ -3469,7 +3472,8 @@ securityprofile.failed_login_attempts = 5 – пять неудачных поп
 
 > SELECT securityprofile.set_profile_password_min_len ('password_user',9);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image13.png" style="width:7.08652in;height:1.944in" alt="C:\Users\KUZNET~1\AppData\Local\Temp\vmware-kuznetsov-a\VMwareDnD\6258accd\Screenshot from 2023-02-08 04-12-54.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image13.png))
 
 Рисунок . – Установка длины пароля в профиле «password_user»
 
@@ -3506,7 +3510,8 @@ securityprofile.failed_login_attempts = 5 – пять неудачных поп
 
 > SHOW securityprofile.user_function_creation;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image14.png" style="width:7.03737in;height:1.82079in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-08 08-46-55.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image14.png))
 
 Рисунок . – Вывод статуса функции блокировки создания функций пользователями
 
@@ -3536,7 +3541,8 @@ securityprofile.failed_login_attempts = 5 – пять неудачных поп
 
 > SELECT securityprofile.lock_account('test', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image15.png" style="width:7.15903in;height:1.74212in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 06-56-46.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image15.png))
 
 Рисунок . – Блокировка пользователя
 
@@ -3552,7 +3558,8 @@ select lock_account_seconds('имя_пользователя', bigint) – за�
 
 > SELECT securityprofile.unlock_account('test', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image16.png" style="width:6.53933in;height:1.61518in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 06-57-44.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image16.png))
 
 Рисунок . – SQL-команда блокирования пользователя
 
@@ -3566,7 +3573,8 @@ unlock_account_seconds ('имя_пользователя', bigint) – заде�
 
 > SELECT \* from securityprofile.is_locked ('');
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image17.png" style="width:7.02042in;height:1.69565in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 07-00-57.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image17.png))
 
 Рисунок . – Вывод списка состояния пользователей
 
@@ -3615,7 +3623,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 > SELECT securityprofile.suspend_users('db_test', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image18.png" style="width:6.97396in;height:1.59907in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-13 17-39-41.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image18.png))
 
 Рисунок . – Блокировка пользователей БД «db_test»
 
@@ -3623,7 +3632,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 > SELECT \* FROM securityprofile.status;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image19.png" style="width:7.10054in;height:1.9924in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-13 17-43-35.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image19.png))
 
 Рисунок . – Проверка статуса блокировки
 
@@ -3631,7 +3641,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 > SELECT oid FROM pg_database WHERE datname = 'db_test';
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image20.png" style="width:7.17013in;height:1.6087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-13 17-47-07.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image20.png))
 
 Рисунок . – Команда проверки OID БД
 
@@ -3647,13 +3658,15 @@ unlock_hint – подсказка по разблокировке.Отобра�
 >
 > SELECT securityprofile.resume_users('db_test', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image21.png" style="width:6.99332in;height:1.53819in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 09-03-58.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image21.png))
 
 Рисунок . – Команда разблокировки пользователей БД
 
 Проверка статуса блокировки покажет изменение даты в поле «suspendeduserstime».
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image22.png" style="width:7.0152in;height:2.93044in" alt="C:\Users\KUZNET~1\AppData\Local\Temp\vmware-kuznetsov-a\VMwareDnD\42048c27\Screenshot from 2023-11-14 09-04-31.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image22.png))
 
 Рисунок . – Статус блокировки пользователей
 
@@ -3671,7 +3684,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 В SQL-команде указывается БД и время задержки блокировки, устанавливаемой в секундах.
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image23.png" style="width:7.04166in;height:1.55652in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 09-49-17.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image23.png))
 
 Рисунок . – Блокирование пользователей БД с отсрочкой блокировки устанавливаемой в секундах
 
@@ -3687,7 +3701,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 >
 > SELECT securityprofile.resume_users_seconds('db_test', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image24.png" style="width:7.067in;height:1.56522in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 10-31-54.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image24.png))
 
 Рисунок . – Команда разблокировки пользователей БД с установленной задержкой по времени
 
@@ -3695,7 +3710,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 > SELECT \* FROM securityprofile.status;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image25.png" style="width:7.08802in;height:2.90435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 10-32-08.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image25.png))
 
 Рисунок . – Просмотр состояния блокировки
 
@@ -3711,7 +3727,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 > SELECT securityprofile.suspend_users_noerror ('db_test', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image26.png" style="width:7.08958in;height:1.72845in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 15-17-31.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image26.png))
 
 Рисунок . – Блокировка пользователей БД «db_test» игнорированием ошибки
 
@@ -3731,7 +3748,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 > SELECT securityprofile.resume_users_noerror ('db_test', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image27.png" style="width:6.89722in;height:2.33913in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 12-21-21.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image27.png))
 
 Рисунок . – Выполнение команды разблокировки пользователей
 
@@ -3759,7 +3777,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 > SELECT securityprofile.suspend_admins('postgres', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image28.png" style="width:7.11432in;height:1.54167in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 18-13-39.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image28.png))
 
 Рисунок . – Команда блокировки администраторов БД в БД «postgres»
 
@@ -3769,7 +3788,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 >
 > SELECT oid FROM pg_database WHERE datname = 'postgres';
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image29.png" style="width:7.04457in;height:2.88889in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 18-25-30.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image29.png))
 
 Рисунок . – Проверка наличия блокировок
 
@@ -3789,7 +3809,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 >
 > SELECT securityprofile.resume_admins('postgres', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image30.png" style="width:7.06129in;height:1.59306in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 10-40-56.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image30.png))
 
 Рисунок . – Разблокирование администраторов БД
 
@@ -3797,7 +3818,8 @@ unlock_hint – подсказка по разблокировке.Отобра�
 
 > SELECT \* FROM securityprofile.status;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image31.png" style="width:7.02654in;height:2.04167in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 10-41-26.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image31.png))
 
 Рисунок . – Проверка статуса блокировки
 
@@ -3817,7 +3839,8 @@ SELECT securityprofile.suspend_admins_seconds('postgres', 60);
 
 В SQL-команде указывается БД и время задержки блокировки, устанавливаемой в секундах.
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image32.png" style="width:7.15902in;height:1.57292in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 11-41-04.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image32.png))
 
 Рисунок . – Блокирование администраторов БД с отсрочкой блокировки устанавливаемой в секундах
 
@@ -3833,7 +3856,8 @@ SELECT securityprofile.suspend_admins_seconds('postgres', 60);
 
 > SELECT securityprofile.resume_admins_seconds('postgres', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image33.png" style="width:7.03556in;height:1.55129in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 11-43-55.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image33.png))
 
 Рисунок . – Команда разблокировки администраторов БД с установленной задержкой по времени
 
@@ -3849,7 +3873,8 @@ SELECT securityprofile.suspend_admins_seconds('postgres', 60);
 
 > SELECT securityprofile.suspend_admins_noerror ('postgres', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image34.png" style="width:7.08056in;height:1.60788in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 12-16-43.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image34.png))
 
 Рисунок . – Блокировка администраторов БД «postgres» игнорированием ошибки
 
@@ -3865,7 +3890,8 @@ SELECT securityprofile.suspend_admins_seconds('postgres', 60);
 
 > SELECT securityprofile.resume_admins_seconds('db_test', 0);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image35.png" style="width:7.22622in;height:1.67708in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-15 12-18-07.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image35.png))
 
 Рисунок . – Выполнение команды разблокировки пользователей
 
@@ -3893,7 +3919,8 @@ is_users_suspended – блокировка пользователей (см. п
 
 > SELECT securityprofile.is_users_suspended ('db_test');
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image36.png" style="width:7.0717in;height:1.54734in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 12-06-52.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image36.png))
 
 Рисунок . – Вывод состояния блокировки пользователей в БД
 
@@ -3909,7 +3936,8 @@ is_users_suspended – блокировка пользователей (см. п
 
 > SELECT securityprofile.is_admins_suspended ('db_test');
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image37.png" style="width:7.14087in;height:1.66087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 13-18-58.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image37.png))
 
 Рисунок . – Вывод состояния блокировки администраторов БД
 
@@ -3925,7 +3953,8 @@ is_users_suspended – блокировка пользователей (см. п
 
 > SELECT securityprofile.is_suspended ('db_test');
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image38.png" style="width:7.12436in;height:1.53913in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-14 12-10-21.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image38.png))
 
 Рисунок . – Вывод состояния блокировок в БД
 
@@ -4186,7 +4215,8 @@ is_users_suspended – блокировка пользователей (см. п
 
 Смена пароля через команду «password» недоступна. СУБД «Jatoba» блокирует выполнение данной команды и предложит сменить пароль через команду «аlter role».
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image39.png" style="width:7.08638in;height:2.464in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 04-16-40.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image39.png))
 
 Рисунок . – Ошибка установки пароля пользователя через команду «password»
 
@@ -4199,7 +4229,8 @@ is_users_suspended – блокировка пользователей (см. п
 
 idle_session_timeout;idle_in_transaction_session_timeout.Параметры устанавливаются в разделе «CLIENT CONNECTION DEFAULTS» конфигурационного файла postgresql.conf.
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image40.png" style="width:7.14019in;height:0.992in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-11-09 03-06-19.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image40.png))
 
 Рисунок . – Параметры «idle_session_timeout» и «idle_in_transaction_session_timeout» в конфигурационном файле postgresql.conf
 
@@ -4239,7 +4270,8 @@ idle_session_timeout;idle_in_transaction_session_timeout.Параметры ус
 # \dx
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image41.png" style="width:7.09722in;height:2.46368in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-15 05-08-03.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image41.png))
 
 Рисунок . – Установка расширения «pwgen»
 
@@ -4255,7 +4287,8 @@ idle_session_timeout;idle_in_transaction_session_timeout.Параметры ус
 
 > SELECT pwgen();
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image42.png" style="width:6.97826in;height:1.76389in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-15 05-14-42.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image42.png))
 
 Рисунок . – Генерация пароля с параметрами по умолчанию
 
@@ -4298,7 +4331,8 @@ SQL-команда генерации пароля со следующими х�
 # SELECT pwgen(10,2,2,1,1,'abcde','ABCDE','@!');
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image43.png" style="width:7.15972in;height:1.48032in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-15 22-39-08.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image43.png))
 
 Рисунок . – SQL-команда генерации пароля по последовательности параметров
 
@@ -4333,7 +4367,8 @@ SQL-команда генерации пароля со следующими х�
 
 > длиной 10 символов (pw_len =\>10);3 строчными символами в пароле (pw_lc_char_cnt =\>3);2 цифрами в пароле (pw_num_cnt =\> 5).# SELECT pwgen(pw_len =\>10, pw_lc_char_cnt =\>3, pw_num_cnt =\> 5);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image44.png" style="width:7.09192in;height:1.77778in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-15 23-05-27.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image44.png))
 
 Рисунок . – Генерация пароля по заданным параметрам
 
@@ -4351,7 +4386,8 @@ SQL-команда генерации множества паролей с на�
 
 > select pwgen() from generate_series(1, 10);
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image45.png" style="width:6.65887in;height:3.08333in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-16 00-09-10.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image45.png))
 
 Рисунок . – Генерация множества паролей
 
@@ -4436,9 +4472,11 @@ SQL-команда генерации множества паролей с на�
 >
 > log_line_prefix = '%m \[%p\] '
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image46.png" style="width:7.09701in;height:1.94776in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 02-31-08.png" />
 
-| <img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" /> | Если не планируется использовать компоненты pgAudit и pgauditlogtofile, то будет целесообразным установить параметр регистрации событий СУБД log_statement. |
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image46.png))
+
+| 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" /> | Если не планируется использовать компоненты pgAudit и pgauditlogtofile, то будет целесообразным установить параметр регистрации событий СУБД log_statement. |
 |----|----|
 
 Рисунок . – Предустановленные параметры логирования
@@ -4575,7 +4613,7 @@ SQL-команда генерации множества паролей с на�
 
 > Установить параметр в конфигурационном файле в postgresql.conf:shared_preload_libraries = 'pgaudit'
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image47.png" style="width:7.05764in;height:1.76402in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 02-01-24.png" />
+<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image47.png))
 
 Рисунок . – Параметр загрузки библиотеки компонента «pgAudit»
 
@@ -4595,7 +4633,8 @@ SQL-команда генерации множества паролей с на�
 
 > Войти в СУБД от имени и с правами пользователя «SUPERUSER», выполнить SQL–команду:CREATE EXTENSION pgaudit;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image48.png" style="width:7.08955in;height:1.10348in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 05-58-00.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image48.png))
 
 Рисунок . – Установка расширения «pgaudit»
 
@@ -4737,7 +4776,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 > Задать запись всех событий в журнал аудита, выполнив SQL-команду:ALTER SYSTEM SET pgaudit.log = 'All';
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image49.png" style="width:7.17164in;height:1.09269in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-04-17 06-00-03.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image49.png))
 
 Рисунок . – Установка параметра записи всех событий в журнал аудита
 
@@ -4865,7 +4905,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 #### Компонент «pgauditlogtofile». Хранение событий безопасности в отдельном хранилище
 
-| <img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" /> | Компонент не поставляется с сертифицированной версией изделия |
+| 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" /> | Компонент не поставляется с сертифицированной версией изделия |
 |----|----|
 
 Компонент «pgauditlogtofile» служит дополнением к компоненту «pgAudit» и предназначен для хранения событий безопасности в отдельном хранилище, в частности событий подключения и отключения к СУБД. Версия компонента – 1.5.12.
@@ -4880,7 +4921,7 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 > Установить параметр загрузки библиотеки компонента в разделе «shared_preload_libraries» в конфигурационном файле postgresql.conf:shared_preload_libraries = 'pgaudit, auditlogtofile'
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image50.png" style="width:7.11458in;height:1.27839in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-18 01-37-29.png" />
+<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image50.png))
 
 Рисунок . – Строка для загрузки библиотеки расширения «pgauditlogtofile»
 
@@ -4896,7 +4937,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 > SQL-командой в СУБД:SELECT pg_reload_conf();
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image51.png" style="width:7.13433in;height:1.79488in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-17 06-21-29.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image51.png))
 
 Рисунок . – SQL-команда применения изменений в конфигурационных файлах
 
@@ -4904,7 +4946,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 > Установить расширение SQL-командой:CREATE EXTENSION pgauditlogtofile;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image52.png" style="width:7.01334in;height:1.0597in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-17 06-23-12.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image52.png))
 
 Рисунок . – SQL-команда установки расширения «pgauditlogtofile»
 
@@ -4912,7 +4955,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 Конфигурирование компонента проводится установкой параметров в конфигурационном файле postgresql.conf.
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image53.png" style="width:6.97408in;height:2.66981in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-18 01-12-02.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image53.png))
 
 Рисунок . – Параметры компонента «pgauditlogtofile»
 
@@ -4942,7 +4986,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 # ls -ld /audit_log/
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image54.png" style="width:7.16038in;height:1.4478in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC2\Screenshot from 2024-04-18 01-06-37.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image54.png))
 
 Рисунок . – Установка прав на директорию
 
@@ -4991,7 +5036,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 > параметр регистрации событий СУБД «log_statement», определяющий какие SQL-команды будут регистрироваться (см. таблицу Таблица 6.17);параметр регистрации событий СУБД «log_duration», определяющий будет ли регистрироваться длительность каждого выполненного SQL-запроса (см. таблицу Таблица 6.17);параметр включения/отключения маскирования «log_mask_password» который может принимать следующие значения: 1/0, on/off, true/false, yes/no.log_statement='all'  
 > log_mask_password=1
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image55.png" style="width:6.74515in;height:2.08209in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 03-32-46.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image55.png))
 
 Рисунок . – Параметры postgresql.conf обязательные для маскирования паролей
 
@@ -5005,7 +5051,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 > SHOW log_mask_password;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image56.png" style="width:7.11267in;height:1.72917in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 06-58-27.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image56.png))
 
 Рисунок . – Вывод режим маскирования паролей
 
@@ -5017,13 +5064,15 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 > CREATE USER user1 with password 'n123456';
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image57.png" style="width:7.1875in;height:1.08782in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 07-05-25.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image57.png))
 
 Рисунок . – SQL-команда создания пользователя
 
 В журнале аудита СУБД установленный пароль будет маскирован.
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image58.png" style="width:7.10833in;height:0.60329in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 07-07-01.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image58.png))
 
 Рисунок . – Журнал аудита СУБД с записью создания пользователя
 
@@ -5041,19 +5090,22 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 # ALTER ROLE user1 with password 'md5kvosmkwgokrpokewrpokerpokporkorgk';
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image59.png" style="width:7.08371in;height:1.36111in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 22-42-07.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image59.png))
 
 Рисунок . – Установка хэшированного пароля пользователя
 
 В журнале аудита СУБД установленный пароль в хэшированном формате будет маскирован.
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image60.png" style="width:7.01389in;height:0.74209in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC4\Screenshot from 2024-06-18 22-43-14.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image60.png))
 
 Рисунок . – Отображение хэшированного пароля пользователя
 
 При использовании компонента «ja_seceventlog» и сохранении событий безопасности в формате JSON, маскирование паролей будет выполняться.
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image61.png" style="width:6.8884in;height:2.18868in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure_2\Пользовательская документация\Draft\PIC\Screenshot from 2024-08-04 23-50-43.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image61.png))
 
 Рисунок . – Маскирование пароля при использовании компонента «ja_seceventlog»
 
@@ -5130,14 +5182,16 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 - 
 
-На первом сервере СУБД:если отсутствует диск Е то, через консоль диспетчера отказоустойчивости кластера, необходимо подключить диск E (см. рисунок Рисунок 8.1) к первому серверу;<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image62.png" style="width:6.94398in;height:2.30723in" />
+На первом сервере СУБД:если отсутствует диск Е то, через консоль диспетчера отказоустойчивости кластера, необходимо подключить диск E (см. рисунок Рисунок 8.1) к первому серверу;
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image62.png))
 
 Рисунок . – Консоль диспетчера отказоустойчивости кластера. Подключение диска Е
 
 - 
 - 
 
-> создать на диске Е каталог pgdata;запустить установку СУБД «Jatoba» из дистрибутива. Во время установки указать путь к БД e:\pgbase (см. рисунок Рисунок 8.2), остальные параметры необходимо выбрать стандартно (пароль для пользователя postgres –должен быть доменный, локализация, порт и т.д.);<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image63.png" style="width:3.70833in;height:1.51042in" />
+> создать на диске Е каталог pgdata;запустить установку СУБД «Jatoba» из дистрибутива. Во время установки указать путь к БД e:\pgbase (см. рисунок Рисунок 8.2), остальные параметры необходимо выбрать стандартно (пароль для пользователя postgres –должен быть доменный, локализация, порт и т.д.);
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image63.png))
 
 Рисунок . – Путь к БД
 
@@ -5153,25 +5207,29 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 7)  
 8)  
 
-Перезапустить службу JatobaServer.Добавить роль универсальной службы. Эта роль позволяет автоматически переключать БД на другой сервер, в случае отказа первого.Запустить диспетчер отказоустойчивого кластера. Добавить необходимую роль, как показано на рисунке Рисунок 8.3.<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image64.png" style="width:6.84177in;height:4.25251in" />
+Перезапустить службу JatobaServer.Добавить роль универсальной службы. Эта роль позволяет автоматически переключать БД на другой сервер, в случае отказа первого.Запустить диспетчер отказоустойчивого кластера. Добавить необходимую роль, как показано на рисунке Рисунок 8.3.
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image64.png))
 
 Рисунок .– Добавление роли
 
 9)  
 
-Нажать на кнопку далее и выбрать службу JatobaServer, как показано на рисунке Рисунок 8.4;<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image65.png" style="width:6.30405in;height:2.48312in" />
+Нажать на кнопку далее и выбрать службу JatobaServer, как показано на рисунке Рисунок 8.4;
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image65.png))
 
 Рисунок . – Выбор службы JatobaServer
 
 10) 
 
-Нажать кнопку «Далее» и затем выбрать имя и IP-адреса точки подключения к СУБД «Jatoba» (см. пример на рисунке Рисунок 8.5).<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image66.png" style="width:6.08633in;height:2.75047in" />
+Нажать кнопку «Далее» и затем выбрать имя и IP-адреса точки подключения к СУБД «Jatoba» (см. пример на рисунке Рисунок 8.5).
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image66.png))
 
 Рисунок 8.5 – Выбор имя и IP-адреса точки подключения к Jatoba
 
 11) 
 
-Нажать «Далее» и выбрать хранилище, на рисунке Рисунок 8.6 – диск Е.<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image67.png" style="width:6.17792in;height:2.95925in" />
+Нажать «Далее» и выбрать хранилище, на рисунке Рисунок 8.6 – диск Е.
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image67.png))
 
 Рисунок . – Выбор хранилища
 
@@ -5234,7 +5292,8 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 17) 
 18) 
 
-Создать задачу в планировщике.В задании используется именно пользователь «postgres».Добавить триггер, как показано на рисунке Рисунок 8.7.<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image68.png" style="width:4.61887in;height:4.54888in" />
+Создать задачу в планировщике.В задании используется именно пользователь «postgres».Добавить триггер, как показано на рисунке Рисунок 8.7.
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image68.png))
 
 Рисунок . – Добавление триггера
 
@@ -5246,19 +5305,22 @@ READ – регистрируются SQL-команды SELECT, COPY в слу�
 
 > -File "C:\tmp\pg_check.ps1",
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image69.png" style="width:6.23018in;height:4.461in" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image69.png))
 
 Рисунок . – Путь к PowerShell. Путь к файлу скрипта
 
 20) 
 
-Указать условия запуска, как показано на рисунке Рисунок 8.9.<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image70.png" style="width:6.30382in;height:3.648in" />
+Указать условия запуска, как показано на рисунке Рисунок 8.9.
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image70.png))
 
 Рисунок . – Условия запуска
 
 21) 
 
-Затем параметры, как показано на рисунке Рисунок 8.10.<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image71.png" style="width:5.86309in;height:4.128in" />
+Затем параметры, как показано на рисунке Рисунок 8.10.
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image71.png))
 
 Рисунок . – Параметры
 
@@ -5345,7 +5407,8 @@ WAL – это журнал, в который попадают изменени
 
 При потоковой репликации с Главного сервера на Резервные передаются WAL файлы, которые при успешной проверке их контрольных сумм (CRC) применяются на Резервных узлах, за счет чего данные на Резервных узлах синхронизируются с данными на Главном сервере.
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image72.png" style="width:5.35972in;height:4.54452in" alt="C:\Users\Cherevan-Y\AppData\Local\Microsoft\Windows\INetCache\Content.MSO\D19438A5.tmp" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image72.png))
 
 Рисунок 9.1 – Схема работы
 
@@ -5429,7 +5492,8 @@ WAL – это журнал, в который попадают изменени
 # EXPLAIN (costs off) SELECT \*, a \<-\> 50000 AS dist FROM test ORDER BY a \<-\> 50000 LIMIT 10;
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image75.png" style="width:7.02468in;height:2.98261in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-26-10.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image75.png))
 
 Рисунок . – Создание плана запроса для тестовой таблицы
 
@@ -5439,7 +5503,8 @@ WAL – это журнал, в который попадают изменени
 # EXPLAIN (analyze, costs off) SELECT \*, a \<-\> 50000 AS dist FROM test ORDER BY a \<-\> 50000 LIMIT 10;
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image76.png" style="width:7.00742in;height:2.25217in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-27-29.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image76.png))
 
 Рисунок . – Создание плана запроса
 
@@ -5453,7 +5518,8 @@ WAL – это журнал, в который попадают изменени
 # explain (costs off) SELECT \*, a \<-\> 50000 AS dist FROM test ORDER BY a \<-\> 50000 LIMIT 10;
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image77.png" style="width:7.04653in;height:1.93043in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-41-05.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image77.png))
 
 Рисунок 10.5 – Создание индекса GIST
 
@@ -5463,7 +5529,8 @@ WAL – это журнал, в который попадают изменени
 # EXPLAIN (analyze, costs off) SELECT \*, a \<-\> 50000 AS dist FROM test ORDER BY a \<-\> 50000 LIMIT 10;
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image78.png" style="width:7.02971in;height:2.19791in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-42-25.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image78.png))
 
 Рисунок . – Создание плана запроса
 
@@ -5477,7 +5544,8 @@ WAL – это журнал, в который попадают изменени
 # \di+
 ```
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image79.png" style="width:7.15897in;height:2.16522in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-22 07-44-07.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image79.png))
 
 Рисунок . – Вывод информации о таблицах
 
@@ -5588,7 +5656,8 @@ KNN вносит следующие, видимые для пользовате�
 > join pg_opfamily as opsortfamily on pg_amop.amopsortfamily = opsortfamily.oid  
 > where amopstrategy=6 order by 2, 3, 4;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image80.png" style="width:6.99308in;height:4.31304in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 03-26-13.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image80.png))
 
 Рисунок . – Список операторов дистанции
 
@@ -5617,7 +5686,8 @@ KNN вносит следующие, видимые для пользовате�
 > array\[ltt.typname::text, rtt.typname::text, rst.typname::text\] \<@ array\['int2', 'int4', 'int8', 'oid', 'float4', 'float8', 'money', 'date', 'time', 'timestamp', 'timestamptz', 'interval'\]  
 > order by 8, 9, 10;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image81.png" style="width:7.02322in;height:4.10435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 03-30-37.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image81.png))
 
 Рисунок . – Вывод операторов дистанции для простых типов.
 
@@ -5635,7 +5705,8 @@ KNN вносит следующие, видимые для пользовате�
 > p.proname = any(array\['int2dist', 'int4dist', 'int8dist', 'oiddist', 'float4dist', 'float8dist', 'cash_distance', 'date_distance', 'time_distance', 'timestamp_distance', 'timestamptz_distance', 'interval_distance', 'int24dist', 'int28dist', 'int42dist', 'int48dist', 'int82dist', 'int84dist', 'float48dist', 'float84dist', 'date_dist_timestamp', 'date_dist_timestamptz', 'timestamp_dist_date', 'timestamp_dist_timestamptz', 'timestamptz_dist_date', 'timestamptz_dist_timestamp'\])  
 > order by 5, 4;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image82.png" style="width:7.0978in;height:3.68696in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_Azure\Пользовательская документация\Draft\PIC\Screenshot from 2024-03-25 03-35-33.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image82.png))
 
 Рисунок . – Вывод функций
 
@@ -5714,7 +5785,8 @@ to_tsvector2 (from text, json, jsonb types) - преобразование 
 
 Выполнить нормализацию на русский язык (преобразование в лексемы) слов в предложении:
 
-| <img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" /> | Перед выполнением на ОС Windows выполнить команду в тертинале - chcp 1251 |
+| 
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image4.svg" style="width:0.25in;height:0.25in" /> | Перед выполнением на ОС Windows выполнить команду в тертинале - chcp 1251 |
 |----|----|
 
 > SELECT to_tsvector2('russian', 'Это пример текста для тестирования.');
@@ -7499,7 +7571,7 @@ rum_type_opsСохраняет лексемы соответствующего �
 
 > Войти в СУБД от имени и с правами пользователя «postgres» и изменить пароль в СУБД при помощи команды:АLTER ROLE \<имя учетной записи пользователя\> password '\<пароль пользователя\>';
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image83.png" style="width:7.08652in;height:1.832in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 07-56-15.png" />
+<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image83.png))
 
 Рисунок . – Смена пароля пользователя «postgres»
 
@@ -7589,7 +7661,8 @@ rum_type_opsСохраняет лексемы соответствующего �
 
 > SELECT securityprofile.synchronize();
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image84.png" style="width:7.08652in;height:1.8in" alt="C:\Users\kuznetsov-a\Documents\!Наработки!\securityprofile\PIC\Screenshot from 2023-02-08 04-23-32.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image84.png))
 
 Рисунок . – Команда выполнения инициализации расширения «SecurityProfile»
 
@@ -7977,7 +8050,8 @@ rum_type_opsСохраняет лексемы соответствующего �
 
 > Запустить cmd.exe.Выполнить:psql -U postgres;
 
-<img src="./docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image85.png" style="width:6.69935in;height:1.48958in" alt="https://tfs.gaz-is.ru/jatoba/981020a7-f838-41e3-ae9d-f0e47d9ec553/_apis/wit/attachments/36da2a72-c12f-4f88-9cd7-bb2b197f7e04?filename=pic1.png" />
+
+![](@site/docs/assets/images/cert6.8.4,5.12.4,4.17.4/admin/media/image85.png))
 
 Рисунок . – Окно командной строки с ошибкой
 

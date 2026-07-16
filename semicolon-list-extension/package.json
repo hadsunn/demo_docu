@@ -7,7 +7,10 @@
   "engines": {
     "vscode": "^1.80.0"
   },
-  "main": "./extension.js",
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
   "activationEvents": [
     "onCommand:semicolonList.convert"
   ],
@@ -21,9 +24,19 @@
     "keybindings": [
       {
         "command": "semicolonList.convert",
-        "key": "ctrl+alt+shift+b",
+        "key": "ctrl+alt+b",
         "when": "editorTextFocus && editorLangId == markdown"
       }
     ]
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
   }
 }

@@ -73,8 +73,8 @@
           "Delete old TOC", "Delete 1st page", "Replace emf", "Delete reg changes list",
           "Shift ####", "Shift ###", "Shift ##", "Shift #",
           "Fix warnings", "Fix infos", "Fix warnings 2", "Fix infos 2",
-          "Fix images", "Fix code lines", "Fix <> escapes", "Fix _ escapes",
-          
+          "Fix images",  "Fix images3", "Fix code lines", "Fix <> escapes",
+          "Fix _ escapes",
         ]
       }
       
@@ -99,6 +99,14 @@
       "Fix images": {
           "find": "<img src=[^>]+\\.\/assets\/images\/([^\/]+)\/media\/image(\\d+)\\.(png|PNG)\" style=[^\n]+",
           "replace": "\n\n![](@site/docs/assets/images/$1/media/image$2.png)",
+      },
+      "Fix images2": {
+          "find": "<img src=[^>]+\\.\\/docs\\/assets\\/images\\/([^\\/]+)\\/([\\s\\S]*?)\\/media\\/image(\\d+)\\.(png|PNG)\" style=[^\\n]+",
+          "replace": "\n![](@site/docs/assets/images/$1/$2/media/image$3.png))",
+      },
+      "Fix images3": {
+          "find": "<figure>\\n<img src=[^>]+\\.\\/docs\\/assets\\/images\\/([^\\/]+)\\/([\\s\\S]*?)\\/media\\/image(\\d+)\\.(png|PNG)\" style=[^\\n]+\\n<figcaption><p>(Рисунок[\\s\\S]*?)<.p>[\\s\\S]*?<\\/figure>",
+          "replace": "![](@site/docs/assets/images/$1/$2/media/image$3.png)\n\n$5",
       },
       "Fix warnings": {
           "find": "\\| <img src=[^>]+\\.\/assets/images\/([^\/]+)\/media/image1\\.png\" style=\"[^\"]*\" /> \\| ([^|]+) \\|\n\\|----\\|----\\|",

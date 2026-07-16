@@ -1,6 +1,6 @@
-const vscode = require('vscode');
+import * as vscode from 'vscode';
 
-function activate(context) {
+export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand('semicolonList.convert', async () => {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
@@ -8,7 +8,7 @@ function activate(context) {
     }
 
     const selection = editor.selection;
-    const text = editor.document.getText(selection);
+    const text = editor.document.getText(selection).trim();
 
     if (!text) {
       return;
@@ -24,10 +24,9 @@ function activate(context) {
     }
 
     const result = parts
-      .map((part, i) => {
-        const isLast = i === parts.length - 1;
-        const clean = isLast ? part.replace(/\.$/, '') + '.' : part.replace(/\.$/, '') + ';';
-        return `- ${clean}`;
+      .map((part, index) => {
+        const clean = part.replace(/\.$/, '');
+        return index === parts.length - 1 ? `- ${clean}.` : `- ${clean};`;
       })
       .join('\n');
 
@@ -39,9 +38,4 @@ function activate(context) {
   context.subscriptions.push(disposable);
 }
 
-function deactivate() {}
-
-module.exports = {
-  activate,
-  deactivate
-};
+export function deactivate() {}
