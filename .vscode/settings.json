@@ -78,7 +78,7 @@
           "Fix warnings", "Fix infos", "Fix warnings 2", "Fix images3", "Fix infos 2",
           "Fix images",  "Fix images3", "Fix images figure", "Fix code lines",
           "Fix <> escapes", "Fix _ escapes", "Fix /< escapes", "Fix /> escapes",
-          "Delete blockquotes"
+          "Delete blockquotes", "Delete >", "Delete > v2"
         ]
       }
       
