@@ -72,7 +72,8 @@
       },
       "Fix all for DS": {
         "rules": [
-          "Delete old TOC", "Delete 1st page", "Replace emf", "Delete reg changes list",
+          "Delete old TOC", "Delete old TOC v2", "Delete 1st page",
+          "Delete 1st page v2", "Replace emf", 
           "Shift ####", "Shift ###", "Shift ##", "Shift #",
           "Fix warnings", "Fix infos", "Fix warnings 2", "Fix infos 2",
           "Fix images",  "Fix images3", "Fix images figure", "Fix code lines",
@@ -132,8 +133,16 @@
           "find": "\\*\\*СОДЕРЖАНИЕ\\*\\*\n[\\s|\\S]*# Назначение компонент(а|ов)",
           "replace": "# Назначение компонента",
       },
+      "Delete old TOC v2": {
+          "find": "# СОДЕРЖАНИЕ\\n[\\s|\\S]*# НАЗНАЧЕНИЕ КОМПОНЕНТ(А|ОВ)",
+          "replace": "# НАЗНАЧЕНИЕ КОМПОНЕНТА",
+      },
       "Delete 1st page": {
           "find": "<table>\n[\\s\\S]*?\\*\\*АННОТАЦИЯ\\*\\*",
+          "replace": "**АННОТАЦИЯ**",
+      },
+      "Delete 1st page v2": {
+          "find": "<table>\\n[\\s\\S]*?# АННОТАЦИЯ",
           "replace": "**АННОТАЦИЯ**",
       },
       "Replace emf": {
@@ -174,6 +183,16 @@
           /* пока не юзаем, * без экрана потом ломает текст */
           "find": "<blockquote>|<\\/blockquote>",
           "replace": "",
+      },
+      "Delete >": {
+          /* пока не юзаем, * без экрана потом ломает текст */
+          "find": "^> ",
+          "replace": "",
+      },
+      "Delete > v2": {
+          /* пока не юзаем, * без экрана потом ломает текст */
+          "find": "^>\\n",
+          "replace": "\n",
       },
 
   }
