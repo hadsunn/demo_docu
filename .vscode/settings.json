@@ -75,7 +75,7 @@
           "Delete old TOC", "Delete old TOC v2", "Delete 1st page",
           "Delete 1st page v2", "Replace emf", 
           "Shift ####", "Shift ###", "Shift ##", "Shift #",
-          "Fix warnings", "Fix infos", "Fix warnings 2", "Fix infos 2",
+          "Fix warnings", "Fix infos", "Fix warnings 2", "Fix images3", "Fix infos 2",
           "Fix images",  "Fix images3", "Fix images figure", "Fix code lines",
           "Fix <> escapes", "Fix _ escapes", "Fix /< escapes", "Fix /> escapes",
           "Delete blockquotes"
@@ -107,6 +107,10 @@
       "Fix images2": {
           "find": "<img src=[^>]+\\.\\/docs\\/assets\\/images\\/([^\\/]+)\\/([\\s\\S]*?)\\/media\\/image(\\d+)\\.(png|PNG)\" style=[^\\n]+",
           "replace": "\n![](@site/docs/assets/images/$1/$2/media/image$3.png)",
+      },
+      "Fix images3": {
+          "find": "<img src=[^>]+\\.\\/docs\\/assets\\/images\\/([^\\/]+)\\/([\\s\\S]*?)\\/media\\/image(\\d+)\\.(png|PNG|jpeg|jpg)\\\" style=[^\\n]+",
+          "replace": "![](@site/docs/assets/images/$1/$2/media/image$3.$4)",
       },
       "Fix images figure": {
           "find": "<figure>\\n<img src=[^>]+\\.\\/docs\\/assets\\/images\\/([^\\/]+)\\/([\\s\\S]*?)\\/media\\/image(\\d+)\\.(png|PNG)\" style=[^\\n]+\\n<figcaption><p>(Рисунок[\\s\\S]*?)<.p>[\\s\\S]*?<\\/figure>",

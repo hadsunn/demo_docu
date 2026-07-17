@@ -1,3 +1,8 @@
+---
+title: Компонент «ja_Anonymizer». Маскирование данных.
+
+---
+
 **АННОТАЦИЯ**
 
 Компонент «ja_Anonymizer» входит в состав СУБД «Jatoba» и обеспечивает защиту данных за счёт их маскировки или обезличивания. Это позволяет скрывать конфиденциальную информацию и персональные данные пользователей.
@@ -140,21 +145,31 @@ SHOW shared_preload_libraries;
 
 ### Установка расширения в БД
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image1.png)
+:::info Дополнительная информация
+Здесь и далее расширение устанавливается в БД «anon_db» в качестве примера
+:::
 
 Последовательность действий при установке расширения в БД следующая:
 
 1)  Создать БД, в которую будет устанавливаться расширение компонента:
 
+```
 CREATE DATABASE anon_db;
+```
 
+```
 \connect anon_db
+```
 
 2)  Загрузку компонента в БД рекомендуется выполнять следующим образом:
 
+```
 ALTER DATABASE anon_db SET session_preload_libraries = 'anon';
+```
 
+```
 \connect anon_db
+```
 
 Данный способ имеет ряд преимуществ:
 
@@ -167,57 +182,38 @@ ALTER DATABASE anon_db SET session_preload_libraries = 'anon';
 
 Рисунок 2.3 – Создание БД anon_db и регистрация загрузки библиотеки компонента
 
-3)  <span id="_bookmark8" class="anchor"></span>Установка и инициализация расширения:
+3) Установка и инициализация расширения:
 
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image6.jpeg" style="width:5.59577in;height:1.73635in" />
-
+```
 CREATE EXTENSION anon CASCADE;
 
 SELECT anon.init();
+```
+
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image6.jpeg)
+
+
 
 Рисунок 2.4 – Установка в БД расширения компонента и инициализация
 
-4)  <span id="_bookmark9" class="anchor"></span>Просмотр установленных расширений в БД:
+4) Просмотр установленных расширений в БД:
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 32%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="3">
-<p>\dx</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<p>№ изменения:</p>
-</td>
-<td>
-<p>Подпись отв. лица:</p>
-</td>
-<td>
-<p>Дата внесения изм:</p>
-</td>
-</tr>
-</tbody>
-</table>
+```
+\dx
+```
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image7.png)
+
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image7.png)
 
 Рисунок 2.5 – Просмотр установленных расширений Проверка загруженных расширений в БД:
 
 
 ![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image8.png)
 
+```
 SHOW session_preload_libraries;
-
-SELECT \* FROM pg_extension WHERE extname= 'anon'; SELECT anon.is_initialized();
+SELECT * FROM pg_extension WHERE extname= 'anon'; SELECT anon.is_initialized();
+```
 
 Рисунок 2.6 – Просмотр установленных расширений
 
@@ -227,15 +223,21 @@ SELECT \* FROM pg_extension WHERE extname= 'anon'; SELECT anon.is_initialized();
 
 1)  Загрузку компонента в БД рекомендуется выполнять следующим образом:
 
+```
 ALTER SYSTEM SET shared_preload_libraries = 'anon';
+```
 
 2)  Выполнить перезагрузку СУБД:
 
-\# systemctl restart jatoba-<ver>
+```
+# systemctl restart jatoba-<ver>
+```
 
 3)  Проверить статус службы СУБД:
 
-\# systemctl status jatoba-<ver>
+```
+# systemctl status jatoba-<ver>
+```
 
 4)  Далее выполнить установку и проверку расширения согласно пунткам [3)](#_bookmark8)-[4)](#_bookmark9) из п.п. [2.3.1](#установка-расширения-в-бд).
 
@@ -283,20 +285,26 @@ ALTER SYSTEM SET shared_preload_libraries = 'anon';
 
 Полная маскировка данных возможна при использовании синтаксической конструкции:
 
+```
 MASKED WITH VALUE $$текст$$
+```
 
 Или
 
+```
 $$MASKED WITH VALUE 'текст'$$
+```
 
-В данном случае символы экранирования ($$) находятся снаружи от маскирующего значения.
+:::info Дополнительная информация
+В	данном	случае	символы	экранирования	($$)	находятся	снаружи	от маскирующего значения
+:::
 
-### 
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image1.png)
+Равнозначные примеры:
 
+```
 MASKED WITH VALUE $$CONFIDENTIAL$$
-
 $$MASKED WITH VALUE 'CONFIDENTIAL'$$
+```
 
 ### Частичная маскировка данных
 
@@ -447,8 +455,13 @@ $$MASKED WITH VALUE 'CONFIDENTIAL'$$
 </tbody>
 </table>
 
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image2.png)
+:::warning Важная информация
+Функции маскирования «noise()» уязвимы для повторных атак, особенно при использовании «динамического маскирования». Пользователь под маской может угадать исходное значение, запросив его замаскированное значение
+ 
+несколько раз, а затем просто использовать «AVG()» функцию для получения приближенного значения.
+Вкратце, эти функции лучше всего подходят для «анонимных дампов» и
+«статического маскирования». Их следует избегать при использовании «динамического маскирования»
+:::
 
 несколько раз, а затем просто использовать «AVG()» функцию для получения приближенного значения.
 
@@ -845,20 +858,29 @@ $$MASKED WITH VALUE 'CONFIDENTIAL'$$
 </tbody>
 </table>
 
+:::info Дополнительная информация
+Символы '[' и ']' – означают включение значения в диапазон. Символы '(' и ')' – означают исключение значения в диапазона.
+Например, (anon.random_in_int4range('[n1,n2)') – случайное число INT от n1 (включительно) до n2 (исключается).
 
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image1.png)
+:::
 
-Например, (anon.random_in_int4range('\[n1,n2)') – случайное число INT от n1 (включительно) до n2 (исключается).
-
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image1.png)
-
-anon.random_in_int4range('\[2022,)')
+:::info Дополнительная информация
+Невозможно получить случайное значение из диапазона с бесконечной границей. Например:
+```
+anon.random_in_int4range('[2022,)')	
+```
+возвращается NULL.
+:::
 
 возвращается NULL.
 
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image2.png)
+:::warning Важная информация
+Каждый вызов функций генерации последовательных значений будет возвращать увеличенное значение, во многом похожее на функцию [nextval()].
+В любой момент вы можете сбросить текущее значение последовательности, заменив его новым значением. Например:
+```
+SELECT pg_catalog.setval('anon.random_id_seq', 42);
+```
+:::
 
 В любой момент вы можете сбросить текущее значение последовательности, заменив его новым значением. Например:
 
@@ -1067,8 +1089,9 @@ SELECT pg_catalog.setval('anon.random_id_seq', 42);
 </tbody>
 </table>
 
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image2.png)
+:::warning Важная информация
+Этот набор данных представлен на английском языке и очень мал (1000 значений для каждой категории). Если вы хотите использовать локализованные данные или загрузить определённый набор данных, ознакомьтесь с разделом 3.8 Пользовательские функции и наборы поддельных данных
+:::
 
 ### Хэширование исходных данных
 
@@ -1136,16 +1159,21 @@ SELECT pg_catalog.setval('anon.random_id_seq', 42);
 
 Для того чтобы определить общие параметры функций хэширования необходимо использовать следующие запросы:
 
-ALTER DATABASE anon_db SET anon.salt TO '\[anon.salt\]';
+```
+ALTER DATABASE anon_db SET anon.salt TO '[anon.salt]';
+```
 
 Где anon.salt – случайные символы, например xsfnjefnjsnfjsnf.
 
-ALTER DATABASE anon_db SET anon.algorithm TO '\[anon.algorithm\]';
+```
+ALTER DATABASE anon_db SET anon.algorithm TO '[anon.algorithm]';
+```
 
 Где algorithm – используемый алгоритм хэширования, например md5, sha1, sha224, sha256, sha384, sha512.
 
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image2.png)
+:::warning Важная информация
+Функции хеширования не будут работать, если входные данные содержат неэкранированный символ (особенно одинарный обратный слеш). В большинстве случаев это признак ошибки в приложении, как правило, когда входные данные не проходят надлежащую очистку
+:::
 
 ### Обобщение исходных данных
 
@@ -1578,13 +1606,17 @@ ALTER DATABASE anon_db SET anon.algorithm TO '\[anon.algorithm\]';
 </table>
 
 
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image2.png)
+:::warning Важная информация
+Условное маскирование может создать частично детерминированную «связь» между исходными и замаскированными данными. Эта связь может быть использована для извлечения персонифицированных данных из замаскированных
+:::
 
 ### Пользовательские функции и наборы поддельных данных
 
 При работе с пользовательскими функциями необходимо создать пользователя с маской. Для этого необходимо выполнить следующий запрос:
 
+```
 CREATE ROLE maskuser LOGIN;
+```
 
 ### Пользовательские наборы данных
 
@@ -1594,11 +1626,13 @@ lorem_ipsum.csv, siret.csv, city.csv, country.csv, first_name.csv, identifier.cs
 
 Набор файлов поддельных данных на английском языке расположен в каталоге
 
-/usr/jatoba-<ver>/share/extension/anon/.
+> /usr/jatoba-<ver>/share/extension/anon/.
 
 Для того чтобы функция anon.fake_\* работала с пользовательскими данными, необходимо подготовить собственные наборы по образцу из файлов, затем их можно импортировать из файлов в формате CSV с помощью запроса:
 
+```
 SELECT anon.init('/path/to/custom_csv_files/');
+```
 
 Где /path/to/custom_csv_files/ - путь к каталогу с набором пользовательских данных.
 
@@ -1608,6 +1642,7 @@ SELECT anon.init('/path/to/custom_csv_files/');
 
 Для пользовательской функции потребуется создать таблицу, которая будет служить справочником значений:
 
+```
 CREATE TABLE anon.ru_city (id INT, city TEXT); INSERT INTO anon.ru_city VALUES
 
 (1,'Москва'),
@@ -1617,16 +1652,16 @@ CREATE TABLE anon.ru_city (id INT, city TEXT); INSERT INTO anon.ru_city VALUES
 (3,'Екатеринбург');
 
 GRANT SELECT ON anon.ru_city TO maskuser; GRANT SELECT ON public.users TO maskuser;
+```
 
 
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image9.jpeg" style="width:5.5301in;height:2.31875in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image9.jpeg)
 
 Рисунок 3.1 – Создание таблицы-справочника значений
 
 В данном руководстве в качестве примера предлагается создать функцию маскирования исходных данных, которая будет возвращать названия российских городов и применить созданную функцию для динамического маскирования таблицы:
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image10.jpeg" style="width:5.5562in;height:2.00375in" />
-
+```
 CREATE FUNCTION anon.fake_ru_city() RETURNS TEXT
 
 VOLATILE LANGUAGE SQL
@@ -1636,11 +1671,17 @@ AS \$func\$
 SELECT city FROM anon.ru_city ORDER BY RANDOM() LIMIT 1
 
 \$func\$;
+```
+
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image10.jpeg)
+
+
 
 Рисунок 3.2 – Создание функции anon.fake_ru_city
 
 Создание таблицы, для которой будет применяться пользовательская функция anon.fake_ru_city:
 
+```
 CREATE TABLE users
 
 (id INT, login TEXT, city TEXT); INSERT INTO users
@@ -1652,71 +1693,46 @@ VALUES
 (2,'emilkina','Уфа'),
 
 (3,'afonin','Суздаль');
+```
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image11.jpeg" style="width:5.55628in;height:2.00375in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image11.jpeg)
 
 Рисунок 3.3 – Создание таблицы с исходными данными для маскирования
 
 Далее необходимо применить правило маскирования к столбцу users.city, которое будет использовать пользовательскую функцию anon.fake_ru_city:
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image12.jpeg" style="width:5.55926in;height:1.05in" />
-
+```
 SECURITY LABEL FOR anon ON COLUMN users.city IS 'MASKED WITH FUNCTION anon.fake_ru_city()'; SELECT anon.anonymize_column('users','city');
+```
+
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image12.jpeg)
+
+
 
 Рисунок 3.4 – Применение правил маскирования данных к таблице
 
 После активации правила маскирования необходимо убедится в том, что данные из исходной таблицы users успешно маскируются:
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 32%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="3">
-<p>\c - maskuser</p>
-<p>You are now connected to database "anon_db" as user "maskuser".</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<p>№ изменения:</p>
-</td>
-<td>
-<p>Подпись отв. лица:</p>
-</td>
-<td>
-<p>Дата внесения изм:</p>
-</td>
-</tr>
-</tbody>
-</table>
 
-SELECT \* FROM users;
+```
+\c - maskuser
 
-id \| login
+You are now connected to database "anon_db" as user "maskuser".
 
-\+
+SELECT * FROM users;
+```
 
-\|
-
-\+
-
-city
-
-1.  \| divanov \| Екатеринбург
-
-2.  \| emilkina \| Санкт-Петербург
-
-3.  \| afonin \| Москва
+> id  \| login \| city
+> 
+> 1.  \| divanov \| Екатеринбург
+> 
+> 2.  \| emilkina \| Санкт-Петербург
+> 
+> 3.  \| afonin \| Москва
 
 Как можно увидеть, данные в столбце users.city выводятся данные, которые маскируют исходные, подменяя значения из таблицы-справочника anon.ru_city.
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image13.jpeg" style="width:6.34713in;height:2.2825in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image13.jpeg)
 
 Рисунок 3.5 – Проверка маскирования исходных данных при использовании пользовательской функции anon.fake_ru_city
 
@@ -1726,42 +1742,43 @@ city
 
 Статический метод подменяет данные другими значениями.
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image2.png)
+:::warning Важная информация
+Статический метод маскировки безвозвратно изменяет данные в таблицах или всей БД
+:::
 
 Статическое маскирование данных в случае, если для столбца таблицы есть ограничение внешнего ключа (например, references city(name), где city - список городов) может привести к ошибке, если исходное значение заменяется из маскирующего набора данных, которого нет во внешнем ключе. Это следствие нарушения ограничений внешнего ключа. Если маскирующее значение совпадает с одним из элементов внешнего ключа, то статическое маскирование не приводит к возникновению ошибок.
 
 В качестве примера будет представлен пример с несколькими функциями маскировки:
 
+```
 CREATE TABLE employees ( id SERIAL,
-
 firstname TEXT, lastname TEXT, company TEXT, postcode TEXT
-
 );
-
 INSERT INTO employees VALUES
-
 (111,'Maria','Belova','Bank of Saratov','405657'),
-
 (222,'Pavel','Petrov','Head and Hands','601245');
+```
 
 
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image14.jpeg" style="width:4.89487in;height:2.30479in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image14.jpeg)
 
 Рисунок 4.1 – Создание таблицы с исходными данными
 
-Таблица employees будет содержать информацию, представленную на рисунке [4.2](#_bookmark28).
+Таблица employees будет содержать информацию, представленную на рисунке 4.2
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image15.jpeg" style="width:4.85931in;height:1.84948in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image15.jpeg)
 
-<span id="_bookmark28" class="anchor"></span>Рисунок 4.2 – Исходные данные в таблице employees
+Рисунок 4.2 – Исходные данные в таблице employees
 
 В качестве маскируемых данных будет выбран столбец postcode. Для этого определяется правило статической маскировки следующего вида:
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image16.jpeg" style="width:5.51683in;height:0.98312in" />
 
+```
 SECURITY LABEL FOR anon ON COLUMN employees.postcode
+IS 'MASKED WITH FUNCTION anon.partial(postcode,1,$$****$$,1)';
 
-IS 'MASKED WITH FUNCTION anon.partial(postcode,1,$$\*\*\*\*$$,1)';
+```
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image16.jpeg)
 
 Рисунок 4.3 – Регистрация правила статического маскирования исходных данных таблицы employees
 
@@ -1769,15 +1786,19 @@ IS 'MASKED WITH FUNCTION anon.partial(postcode,1,$$\*\*\*\*$$,1)';
 
 После определения правила статической маскировки она применяется к столбцу postcode с помощью следующего запроса:
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image17.jpeg" style="width:5.73913in;height:1.47656in" />
-
+```
 SELECT anon.anonymize_column('employees','postcode');
+```
+
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image17.jpeg)
+
+
 
 Рисунок 4.4 – Применение правила anon.anonymize_column статического маскирования исходных данных таблицы employees к столбцу postcode
 
 С целью проверки статической маскировки можно повторно выполнить запрос на чтение данных из таблицы employees:
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image18.jpeg" style="width:5.72904in;height:1.62844in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image18.jpeg)
 
 Рисунок 4.5 –Данные таблицы employees после использования статического маскирования к столбцу postcode
 
@@ -1785,36 +1806,43 @@ SELECT anon.anonymize_column('employees','postcode');
 
 Дополнительно можно выполнить статическую маскировку других столбцов таблицы employees определяя новые правила, например маскировка фамилии или названия компании (столбцы lastname и company):
 
+```
 SECURITY LABEL FOR anon ON COLUMN employees.lastname IS 'MASKED WITH FUNCTION anon.dummy_last_name()'; SECURITY LABEL FOR anon ON COLUMN employees.company
 
 IS 'MASKED WITH FUNCTION anon.fake_company()';
+```
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image19.png)
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image19.png)
 
 Рисунок 4.6 –Дополнительные правила маскирования исходных данных к таблице employees
 
 После этого необходимо выполнить запросы на применение указанных правил к данным, содержащимся в таблице employees:
 
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image20.jpeg" style="width:5.88378in;height:1.40365in" />
-
+```
 SELECT anon.anonymize_table('employees');
+```
 
-Рисунок 4.7 –Дополнительные правила маскирования исходных данных к таблице employees
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image20.jpeg)
+
+Рисунок 4.7 – Дополнительные правила маскирования исходных данных к таблице employees
 
 Либо статическая маскировка данных во всех таблицах БД в соответствии с определяемыми правилами:
 
+```
 SELECT anon.anonymize_database();
+```
 
 С целью проверки статической маскировки можно повторно выполнить запрос на чтение данных из таблицы employees:
 
-SELECT \* FROM employees;
+```
+SELECT * FROM employees;
+```
 
-Как видно из рисунка [4.8](#_bookmark29), в таблице employees столбцы lastname, company содержат новые данные.
+Как видно из рисунка 4.8, в таблице employees столбцы lastname, company содержат новые данные.
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image21.jpeg" style="width:6.25251in;height:1.64854in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image21.jpeg)
 
-<span id="_bookmark29" class="anchor"></span>Рисунок 4.8 – Данные таблицы employees после использования статического маскирования к столбцам lastname, company, postcode
+Рисунок 4.8 – Данные таблицы employees после использования статического маскирования к столбцам lastname, company, postcode
 
 ### Динамическое маскирование данных
 
@@ -1834,12 +1862,18 @@ SELECT \* FROM employees;
 
 ALTER DATABASE anon_db SET anon.transparent_dynamic_masking TO true;
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image22.png)
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image22.png)
 
 Рисунок 4.9 – Включение динамического маскирования исходных данных
 
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image1.png)
+:::info Дополнительная информация
+При	использовании	динамической	маскировки	исходных	данных	не используются следующие запросы:
+```
+SELECT anon.anonymize_table('table_name');
+SELECT anon.anonymize_database('database_name');
+SELECT anon.anonymize_column(' column_name',' column_name');
+```
+:::
 
 SELECT anon.anonymize_table('table_name'); SELECT anon.anonymize_database('database_name'); SELECT anon.anonymize_column(' column_name',' column_name');
 
@@ -1870,7 +1904,7 @@ GRANT SELECT ON ALL TABLES IN SCHEMA anon TO maskuser; GRANT SELECT ON ALL TABLE
 Правило замены данных запроса фиксированным значением активируется следующим образом:
 
 
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image25.jpeg" style="width:6.49893in;height:1.07135in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image25.jpeg)
 
 SECURITY LABEL FOR anon ON COLUMN employees.lastname IS 'MASKED WITH VALUE $$CONFIDENTIAL$$';
 
@@ -1882,34 +1916,7 @@ SECURITY LABEL FOR anon ON COLUMN employees.lastname IS $$MASKED WITH VALUE 'CON
 
 При выполнении запроса от имени пользователя maskuser в столбце lastname будет отображаться замаскированное значение «CONFIDENTIAL».
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image26.png)
-
-Рисунок 4.13 – Данные таблицы employees после использования динамического маскирования к столбцам lastname при выполнении запроса от имени пользователя maskuser
-
-### Замена символами исходных данных
-
-Правило замены исходных данных запроса на символы активируется с помощью выполнения следующего SQL-запроса:
-
-
-![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image27.jpeg" style="width:6.55206in;height:1.07135in" />
-
-SECURITY LABEL FOR anon ON COLUMN employees.postcode
-
-IS 'MASKED WITH FUNCTION anon.partial(postcode,1,$$\*\*\*\*$$,1)';
-
-Рисунок 4.14 – Регистрация правила динамического маскирования исходных данных таблицы employees в столбце postcode
-
-### Замена исходных данных на случайное правдоподобное значение
-
-В данном правиле маскирования используется функция dummy_\*.
-
-Функция dummy_\* при каждом запросе данных подставляет разные правдоподобные значения.
-
-Правило для замены данных запроса на случайное правдоподобное значение активируется с помощью выполнения следующим образом:
-
-SECURITY LABEL FOR anon ON COLUMN employees.company IS 'MASKED WITH FUNCTION anon.dummy_company_name()';
-
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image28.jpeg" style="width:6.55207in;height:1.07135in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image28.jpeg)
 
 Рисунок 4.15 – Регистрация правила динамического маскирования исходных данных таблицы employees в столбце company
 
@@ -1921,7 +1928,7 @@ SECURITY LABEL FOR anon ON COLUMN employees.company IS 'MASKED WITH FUNCTION ano
 
 Правило для замены данных запроса на псевдонимизированные данные активируется с помощью выполнения следующим образом:
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image29.jpeg" style="width:6.55206in;height:1.07135in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image29.jpeg)
 
 SECURITY LABEL FOR anon ON COLUMN employees.firstname
 
@@ -1933,7 +1940,7 @@ IS 'MASKED WITH FUNCTION anon.pseudo_first_name(firstname)';
 
 После определения одного или нескольких правил динамического маскирования данных таблица, к которой имеет доступ пользователь без маски, будет иметь вид, представленный на рисунке [4.17](#_bookmark37).
 
-<img src="../docs/assets/images/com18.3.1/ja_anonymizer/media/image30.jpeg" style="width:5.58567in;height:1.62844in" />
+![](@site/docs/assets/images/com18.3.1/ja_anonymizer/media/image30.jpeg)
 
 <span id="_bookmark37" class="anchor"></span>Рисунок 4.17 – Исходные данные в таблице employees
 
@@ -1949,28 +1956,10 @@ IS 'MASKED WITH FUNCTION anon.pseudo_first_name(firstname)';
 SELECT * FROM employees;
 ```
 
-\| CONFIDENTIAL \| Zulauf and Abbott LLC \| 6\*\*\*\*5
-
-\| 4\*\*\*\*7
-
-\| CONFIDENTIAL \| Erdman and Sons
-
-111 \| Abigail
-
-222 \| Steve
-
-----+-----------+--------------+-----------------------+---------
-
-\| postcode
-
-company
-
-\|
-
-lastname
-
-id \| firstname \|
-
+| id  | firstname | lastname     | company               | postcode |
+|-----|-----------|--------------|-----------------------|----------|
+| 111 | Abigail   | CONFIDENTIAL | Erdman and Sons       | 4****7   |
+| 222 | Steve     | CONFIDENTIAL | Zulauf and Abbott LLC | 6****5   |
 
 
 ### Отключение правила динамической маскировки
