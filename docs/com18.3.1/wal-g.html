@@ -1,0 +1,2588 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-com18.3.1/wal-g" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">wal-g | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/com18.3.1/wal-g"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="wal-g | Postgres"><meta data-rh="true" name="description" content="Подп. и дата"><meta data-rh="true" property="og:description" content="Подп. и дата"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/com18.3.1/wal-g"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/wal-g" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/wal-g" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"wal-g","item":"https://hadsunn.github.io/demo_docu/com18.3.1/wal-g"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.e5b1ae04.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.f63415a3.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/com18.3.1/1c">com18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/1c">Поддержка платформы 1С</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/firewall">firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_anonymizer">ja_anonymizer</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_seceventlog3.3">ja_seceventlog3.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_similar">ja_similar</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_sync_ldap1.3">ja_sync_ldap1.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_1">jadog_4.2_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_2">jadog_4.2_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_3">jadog_4.2_3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_secur">jadog_secur</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jalog">jalog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/map">map</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/secur_func">secur_func</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/secur_guide">secur_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/timescale">timescale</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/user_guide">user_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/com18.3.1/wal-g">wal-g</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">com18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">wal-g</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:41%">
+<col style="width:58%">
+</colgroup><thead><tr><th><blockquote>
+<p>Подп. и дата</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td><blockquote>
+<p>Инв. № дубл.</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Взам. инв. №</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Подп. и дата</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Инв. № подл.</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 34.</strong></p>
+<p><strong>Архивация и восстановление данных.</strong></p>
+<p><strong>Компонент «wal-g»</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p><strong>643.72410666.00067-08 98 01-34</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>Листов 70</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>2026</p>
+</blockquote></td></tr><tr><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<header><h1>АННОТАЦИЯ</h1></header>
+<blockquote>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации ком-понента «wal-g» (далее по тексту – «компонент» или wal-g), предназначенного для создания резервных копий (далее – РК) и архивирования WAL (Write-Ahead Logging) и восстановле-ния из архивов в СУБД «Jatoba».</p>
+<p>Настоящее руководство предназначено для администраторов СУБД.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24999in" class="img_ev3q"> Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра</p>
+<p>6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Версия компонента — 3.0.7.</p>
+<p>Степени важности примечаний, применяемые в документе:</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25138in;height:0.25138in" class="img_ev3q"> <strong>Важная информация</strong> – указания, требующие особого внимания</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24958in" class="img_ev3q"> <strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"> Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
+</blockquote>
+<h1>СОДЕРЖАНИЕ</h1>
+<h1></h1>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Назначение компонента 5</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Условия применения 5</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5-%D1%81-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%BC">Ограничения при работе с компонентом 5</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">Установка и настройка 6</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-%D0%B2-%D0%BE%D1%81-gnulinux">Установка компонента в ОС GNU/Linux 6</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Настройка конфигурационного файла компонента 7</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D1%81%D1%80%D0%B5%D0%B4%D1%8B-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">Переменные среды окружения 9</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D0%B0-%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">Настройка каталога сохранения резервных копий 10</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0-%D1%81%D0%B6%D0%B0%D1%82%D0%B8%D1%8F-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">Настройка метода сжатия данных резервных копий 10</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B8%D0%BD%D0%BA%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">Настройка параметров создания инкрементальных резервных копий 10</a></p>
+</li>
+<li>
+<p><a href="#_bookmark10">Настройка параметров восстановления 13</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D1%8B%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9">Настройка ограничений дисковых операций 14</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D1%8B%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9">Настройка ограничений сетевых операций 15</a></p>
+</li>
+<li>
+<p><a href="#%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA-%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">Включение метрик мониторинга 20</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA-%D1%81%D1%83%D0%B1%D0%B4">Настройка параметров подключения к СУБД 20</a></p>
+</li>
+<li>
+<p><a href="#_bookmark17">Настройка защищенного соединения 23</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9">Параметры журналирования событий 24</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%BC%D0%BC-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">Настройка проверки контрольных сумм данных СУБД 25</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%81%D1%83%D0%B1%D0%B4">Настройка СУБД 25</a></p>
+<ol>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8-%D0%B8-%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">Создание пользователя для выполнения архивации и восстановления данных 25</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BD%D0%B5%D0%BF%D1%80%D0%B5%D1%80%D1%8B%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-wal">Настройка непрерывного архивирования WAL 25</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Функциональные возможности компонента 28</a></p>
+<ol>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Создание резервной копии 28</a></p>
+<ol>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B9-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Создание полной резервной копии 28</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%BE%D0%B9-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Создание постоянной резервной копии 31</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D0%BA%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Создание инкрементальной резервной копии 33</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D0%BA%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8-%D0%BD%D0%B0-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B9-%D1%80%D0%BA">Создание инкрементальной резервной копии на основе базовой РК 35</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8-%D1%81-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%83%D0%B7%D0%BB%D0%B0">Создание резервной копии с удаленного узла 36</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">Просмотр созданных резервных копий 38</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">Проверка созданных резервных копий 40</a></p>
+<ol>
+<li>
+<p><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-integrity">Использование аргумента integrity 40</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-timeline">Использование аргумента timeline 42</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D0%BE%D0%B8%D1%85-%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">Использование обоих аргументов 43</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%BC%D0%BC-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4-%D0%BF%D1%80%D0%B8-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B8-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Проверка контрольных сумм данных СУБД при создании резервной копии 44</a></p>
+<ol>
+<li>
+<p><a href="#%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%BC%D0%BC-%D0%B2-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B5">Включение контрольных сумм в кластере 44</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D1%86%D0%B5%D0%BB%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BF%D1%80%D0%B8-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B8-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Проверка целостности данных при создании резервной копии 45</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D1%86%D0%B5%D0%BB%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BF%D1%80%D0%B8-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B8-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Проверка целостности при создании резервной копии 45</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%BE%D0%B2-%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B9-wal-%D0%B2-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5">Загрузка резервных копий журналов транзакций (WAL) в хранилище 46</a></p>
+</li>
+<li>
+<p><a href="#%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8%D0%B7-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Восстановление данных из резервной копии 47</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8%D0%B7-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">Предварительные условия для выполнения восстановления данных из резервной копии 47</a></p>
+</li>
+<li>
+<p><a href="#_bookmark43">Восстановление данных из последней резервной копии 48</a></p>
+</li>
+<li>
+<p><a href="#%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8%D0%B7-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8-%D0%BD%D0%B0-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BC%D0%BE%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8">Восстановление данных из резервной копии на определенный момент времени 50</a></p>
+</li>
+<li>
+<p><a href="#%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BD%D0%B0-%D0%BC%D0%BE%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%80%D0%B0%D0%B7%D1%83-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%80%D0%BA">Восстановление данных на момент сразу после создания РК 54</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">Удаление резервных копий 54</a></p>
+<ol>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-retain">Режим retain 55</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-before">Режим before 57</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-everything">Режим everything 59</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-target">Режим target 60</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-garbage">Режим garbage 64</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">Перемещение резервных копий 65</a></p>
+</li>
+<li>
+<p><a href="#%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Журнал работы компонента 65</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F">Удаление расширения 68</a></p>
+</li>
+</ol>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 69</a></p>
+<h1>НАЗНАЧЕНИЕ КОМПОНЕНТА</h1>
+<blockquote>
+<p>Компонент «wal-g» — представляет собой расширение функционала СУБД «Jatoba» и предназначен для управления резервным копированием и восстановлением баз данных СУБД «Jatoba», для регулярного создания резервных копий (РК), позволяющих восстанав-ливать работу СУБД в случае аварийной ситуации, порчи или потери данных.</p>
+<p>Для управления резервными копиями «wal-g» создает каталог, в который сохраня-ются все файлы резервных копий (РК) с дополнительной метаинформацией, а также архивы журнала транзакций (WAL), необходимые для восстановления на выбранный момент вре-мени.</p>
+<p>Используя «wal-g», можно выполнить полное или инкрементальное резервное копи-рование:</p>
+</blockquote>
+<ul>
+<li>
+<p>Полные РК содержат все файлы данных, необходимые для восстановления сер-вера баз данных с нулевой точки.</p>
+</li>
+<li>
+<p>Инкрементальные РК создаются на уровне страниц данных и включают только ту информацию, которая изменилась со времени последнего резервного копирования.</p>
+</li>
+</ul>
+<blockquote>
+<p>Инкрементальное копирование позволяет экономить место на диске и создавать РК быстрее, чем при полном копировании.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения">​</a></h2>
+<blockquote>
+<p>Компонент «wal-g» может использоваться с СУБД «Jatoba» версий 6.x и выше, и только под управлением операционных систем GNU/Linux.</p>
+<p>Компонент выполнен в форме расширения СУБД и не имеет ограничений по совме-стимости с другими компонентами.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ограничения-при-работе-с-компонентом">Ограничения при работе с компонентом<a href="#ограничения-при-работе-с-компонентом" class="hash-link" aria-label="Direct link to Ограничения при работе с компонентом" title="Direct link to Ограничения при работе с компонентом">​</a></h2>
+<blockquote>
+<p>Имеет ряд особенностей по функциональным возможностям:</p>
+</blockquote>
+<ul>
+<li>
+<p>Создание РК в форматах LZ4, LZMA, ZSTD и Brotli. По умолчанию для сжатия РК применятся LZ4;</p>
+</li>
+<li>
+<p>Преобразование резервных копий ограничивается алгоритмом AES-256.</p>
+</li>
+</ul>
+<h1>УСТАНОВКА И НАСТРОЙКА</h1>
+<blockquote>
+<p>Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в ОС.</p>
+<p>Установка компонента под управлением ОС GNU/Linux приведено ниже.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-компонента-в-ос-gnulinux">Установка компонента в ОС GNU/Linux<a href="#установка-компонента-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка компонента в ОС GNU/Linux" title="Direct link to Установка компонента в ОС GNU/Linux">​</a></h2>
+<blockquote>
+<p>Компонент «wal-g» устанавливается в составе СУБД «Jatoba». Его возможно устано-вить при первичной установке либо при последующей эксплуатации СУБД.</p>
+<p>Установку пакета компонента возможно провести двумя способами:</p>
+</blockquote>
+<ol>
+<li>
+<p>установка из локального репозитория (CDROM) – производится из файлов, за-писанных на компакт-диск или скопированных с него;</p>
+</li>
+<li>
+<p>установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.</p>
+</li>
+</ol>
+<blockquote>
+<p>Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менедже-ров команда установки немного отличается. Ниже приведены основные типы:</p>
+</blockquote>
+<ul>
+<li>для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:</li>
+</ul>
+<blockquote>
+<p># apt-get install jatoba&lt;ver&gt;-wal-g</p>
+</blockquote>
+<ul>
+<li>для систем на основе пакетных менеджеров YUM/DNF (к таким системам от-носятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки, следующая:</li>
+</ul>
+<blockquote>
+<p># yum install jatoba&lt;ver&gt;-wal_g</p>
+</blockquote>
+<ul>
+<li>ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:</li>
+</ul>
+<blockquote>
+<p># apt-get install jatoba&lt;ver&gt;-wal_g</p>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется ана-логично. Отличие будет только в номере версии СУБД, в составе которой он распространя-ется.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-важная-информация"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25139in;height:0.25036in" class="img_ev3q"> Важная информация<a href="#-важная-информация" class="hash-link" aria-label="Direct link to -важная-информация" title="Direct link to -важная-информация">​</a></h2>
+<blockquote>
+<p>В ОС РОСА 7.9 перед начало установки компонента необходимо:</p>
+</blockquote>
+<ol>
+<li>Выполнить установку репозитория:</li>
+</ol>
+<blockquote>
+<p># dnf install <a href="https://archives.fedo-raproject.org/pub/archive/epel/7/x86_64/Pack-ages/e/epel-release-7-14.noarch.rpm" target="_blank" rel="noopener noreferrer">https://archives.fedo-raproject.org/pub/archive/epel/7/x86_64/Pack-ages/e/epel-release-7-14.noarch.rpm</a></p>
+</blockquote>
+<ol start="2">
+<li>Обновить состояние репозиториев:</li>
+</ol>
+<blockquote>
+<p># yum makecache</p>
+</blockquote>
+<ol start="3">
+<li>Выполнить обновление:</li>
+</ol>
+<blockquote>
+<p># yum update -y</p>
+</blockquote>
+<ol start="4">
+<li>Выполнить установку компонента для систем на основе пакетных мене-ров YUM/DNF</li>
+</ol>
+<blockquote>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обра-титься к документации по ОС.</p>
+<p>Для удобства работы с компонентом рекомендуется создать символическую ссылку на исполняемый файл при помощи команды:</p>
+<p># ln -s /usr/jatoba-&lt;ver&gt;/bin/wal-g /usr/bin/wal-g</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-конфигурационного-файла-компонента">Настройка конфигурационного файла компонента<a href="#настройка-конфигурационного-файла-компонента" class="hash-link" aria-label="Direct link to Настройка конфигурационного файла компонента" title="Direct link to Настройка конфигурационного файла компонента">​</a></h2>
+<blockquote>
+<p>Для использования компонента «wal-g» необходимо создать пользователя СУБД backup с атрибутом Login и придерживаться принципа минимизации назначаемых атрибу-тов и привилегий. Назначение дополнительных атрибутов роли, системных привилегий и прав осуществляется в соответствии с выбранным типом и режимом резервного копирова-ния.</p>
+<p>Для настройки компонента используется конфигурационный файл walg.json.</p>
+<p>Значения параметров, указанных в конфигурационном файле walg.json, переопреде-ляют встроенные значения по умолчанию.</p>
+<p>После установки компонента необходимо вручную создать конфигурационный файл walg.json в домашнем каталоге пользователя postgres при помощи команды:</p>
+<p># touch /var/lib/jatoba/.walg.json</p>
+<p>Если в домашнем каталоге пользователя postgres отсутствует конфигурацион-ный файл walg.json, то при выполнении команд компонента будет отображаться ошибка «Failed to find any configured storage».</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24861in" class="img_ev3q">При вызове команд компонента возможно указание другого расположения конфигу-рационного файла walg.json через использование флага «--config», например:</p>
+<p>postgres@node1:~$ wal-g backup-list --config $HOME/.walg.json</p>
+<p>Пример конфигурационного файла walg.json компонента представлен в следующем листинге:</p>
+<p>{</p>
+<p>&quot;WALG_FILE_PREFIX&quot;: &quot;/nfs/walg_archive/server1&quot;, &quot;WALG_COMPRESSION_METHOD&quot;: &quot;lz4&quot;, &quot;WALG_DELTA_MAX_STEPS&quot;: &quot;2&quot;,</p>
+<p>&quot;PGDATA&quot;: &quot;/var/lib/jatoba/&lt;ver&gt;/data&quot;, &quot;PGHOST&quot;: &quot;/var/run/jatoba/&quot;, &quot;PGUSER&quot;: &quot;backup&quot;,</p>
+<p>&quot;PGPASSWORD&quot;: &quot;PasSwOrd&quot;,</p>
+<p>&quot;WALG_LOG_DESTINATION&quot;: &quot;/var/lib/jatoba/wal-g.log&quot;</p>
+<p>}</p>
+<p>После создания конфигурационного файла .walg.json и определения параметров со-здания РК необходимо установить для него права доступа для пользователя postgres:</p>
+<p># chown postgres: /var/lib/jatoba/.walg.json</p>
+<p>Чтение параметров из конфигурационного файла .walg.json производится компонен-том при каждом вызове команд.</p>
+<p>В случае если конфигурационный файл .walg.json располагается в каталоге отличном от используемого пользователем postgres, его расположение возможно указать при помощи флага --config, например:</p>
+<p>postgres@node1:~$ wal-g backup-push /var/lib/jatoba/&lt;ver&gt;/data</p>
+<p>--config /var/lib/jatoba/.walg.json</p>
+<p>При отсутствии конфигурационного файла .walg.json при выполнении команд компо-нента будет отображаться ошибка:</p>
+<p>ERROR: 2025/05/29 15:45:23.531890 Failed to find any configured storage</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="переменные-среды-окружения">Переменные среды окружения<a href="#переменные-среды-окружения" class="hash-link" aria-label="Direct link to Переменные среды окружения" title="Direct link to Переменные среды окружения">​</a></h2>
+<blockquote>
+<p>Переменные среды могут используются для определения значений параметров по умолчанию при подключении компонента к СУБД.</p>
+<p>Таблица 2.1 – Значения параметров переменных среды окружения в файле walg.json</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><strong>Описание</strong></th></tr></thead><tbody><tr><td><blockquote>
+<p>PGHOST</p>
+</blockquote></td><td><blockquote>
+<p>&quot;/var/run/jatoba&quot;, &quot;localhost&quot;, &quot;remotehostname.domain&quot;, &quot;10.81.250.6:5432&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Название хоста для удаленного подключения. Если имя хоста выглядит как абсолютный путь, то это указывает на использова-ние межпроцессного взаимодей-ствия Unix-домена вместо TCP/IP-соединения. Этот пара-метр предпочтительный для ло-кальных подключений</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>PGHOSTADDR</p>
+</blockquote></td><td><blockquote>
+<p>&quot;10.81.250.6:5432&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>URI-адрес хоста для подключе-ния. Этот параметр предпочти-тельный для удаленных подклю-чений</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>PGDATA</p>
+</blockquote></td><td><blockquote>
+<p>&quot;/var/lib/jatoba/6/data&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Расположение каталога данных СУБД</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-каталога-сохранения-резервных-копий">Настройка каталога сохранения резервных копий<a href="#настройка-каталога-сохранения-резервных-копий" class="hash-link" aria-label="Direct link to Настройка каталога сохранения резервных копий" title="Direct link to Настройка каталога сохранения резервных копий">​</a></h2>
+<blockquote>
+<p>Для хранения создаваемых РК необходимо использовать отдельный каталог.</p>
+<p>WALG_FILE_PREFIX определяет для каждого сервера отдельный каталог, что позво-ляет при выполнении восстановления провести процедуру.</p>
+<p>В конфигурационном файле отдельно определяется параметр WALG_FILE_PREFIX, который указывает путь к каталогу для хранения резервных копий и журнальных файлов.</p>
+<p>Таблица 2.2 – Значения параметра WALG_FILE_PREFIX</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th style="text-align:right"><strong>Возможные значения</strong></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>WALG_FILE_PREFIX</p>
+</blockquote></td><td style="text-align:right">&quot;/nfs/walg_archive/server1&quot;</td><td style="text-align:left"><blockquote>
+<p>Расположение каталога для хра-нения резервных копий и жур-нальных файлов.</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>В качестве каталога сохранения РК может выступать подключенный в файловую си-стему ОС каталог NFS-сервера, в этом случае путь к такому каталогу может иметь вид &quot;/mnt/wal-g/backups/&quot;.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-метода-сжатия-данных-резервных-копий">Настройка метода сжатия данных резервных копий<a href="#настройка-метода-сжатия-данных-резервных-копий" class="hash-link" aria-label="Direct link to Настройка метода сжатия данных резервных копий" title="Direct link to Настройка метода сжатия данных резервных копий">​</a></h2>
+<blockquote>
+<p>Для определения метода сжатия, используемого для резервных копий, используется параметр WALG_COMPRESSION_METHOD.</p>
+<p>Таблица 2.3 – Значения параметра WALG_COMPRESSION_METHOD</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>WALG_COMPRES-SION_METHOD</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>&quot;lz4&quot;, &quot;lzma&quot;, &quot;zstd&quot;, &quot;brotli&quot;</p>
+</blockquote></td><td><blockquote>
+<p>Выбранный метод сжатия дан-ных РК</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Одновременно может быть определен только один метод сжатия данных. Применяемый в компоненте метод сжатия данных РК по умолчанию: lz4.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметров-создания-инкрементальных-резервных-копий">Настройка параметров создания инкрементальных резервных копий<a href="#настройка-параметров-создания-инкрементальных-резервных-копий" class="hash-link" aria-label="Direct link to Настройка параметров создания инкрементальных резервных копий" title="Direct link to Настройка параметров создания инкрементальных резервных копий">​</a></h2>
+<blockquote>
+<p>Инкрементальные РК хранят не полную копию данных, а только список изменений (дельту) между последней полной РК и текущим состоянием СУБД.</p>
+<p>Такой подход позволяет значительно экономить дисковое пространство, поскольку вместо создания новых полных копий каждый раз сохраняются лишь те данные, которые были изменены.</p>
+<p>Для управления количеством инкрементальных РК, которые могут быть созданы пе-ред следующей полной РК, используется параметр WALG_DELTA_MAX_STEPS.</p>
+<p>Параметр WALG_DELTA_MAX_STEPS определяет максимальное количество ин-крементальных шагов (дельт) между двумя полными РК, что помогает балансировать между экономией места и необходимостью периодического создания полных бэкапов для обеспе-чения надежности.</p>
+<p>Например, если для параметра WALG_DELTA_MAX_STEPS задано значение &quot;3&quot;, то после создания трех инкрементальных РК компонент принудительно создаст новую полную РК.</p>
+<p>Таблица 2.4 – Значения параметра WALG_DELTA_MAX_STEPS</p>
+</blockquote>
+<table><colgroup>
+<col style="width:34%">
+<col style="width:30%">
+<col style="width:34%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>WALG_DELTA_MAX_STEPS</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[число]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Количество инкрементальных РК между созданием полных РК.</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24971in" class="img_ev3q">По умолчанию значение параметра WALG_DELTA_MAX_STEPS равно «0» в случае, если параметр явно не указан в конфигурационном файле walg.json</p>
+<p>Параметр WALG_DELTA_ORIGIN определяет исходную РК, относительно которой формируются последующие инкрементальные РК.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24878in" class="img_ev3q">Параметр WALG_DELTA_ORIGIN рекомендуется использовать совместно с параметром WALG_DELTA_MAX_STEPS</p>
+<p>Таблица 2.5 – Значения параметра WALG_DELTA_ORIGIN</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>WALG_DELTA_ORIGIN</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>&quot;LATEST&quot; (по умолчанию) - инкрементальная РК созда-ется относительно послед-ней РК</p>
+<p>&quot;LATEST_FULL&quot; – инкре-ментальная РК создается от-носительно последней пол-ной РК</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Определение РК, на основании которой будут созданы инкре-ментальные РК.</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Если параметр WALG_DELTA_ORIGIN не определен, компонент автоматически вы-бирает последнюю РК в качестве основы для создания инкрементальных РК.</p>
+<p>Если для параметра WALG_DELTA_ORIGIN указано значение LATEST_FULL, то даже если при создании указано название инкрементальной РК (например с помощью флага</p>
+<p>--delta-from-name), компонент восстановит цепочку до полной РК, и создаст новую инкре-ментальную РК на ее основе:</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:33%">
+</colgroup><thead><tr><th colspan="3"><blockquote>
+<p>list of backups in storage:</p>
+<p><strong>base_000000010000000100000040</strong> # полная РК base_000000010000000100000046_D_000000010000000100000040 # 1я инкрем. РК base_000000010000000100000061_D_000000010000000100000046 # 2я инкрем. РК base_000000010000000100000070 # полная РК</p>
+<p>export WALG_DELTA_ORIGIN=LATEST_FULL # настройка параметра WALG_DELTA_ORIGIN в файле walg.json</p>
+<p>wal-g backup-push /path --delta-from-name base_000000010000000100000046_D_000000010000000100000040 # в качестве ис-</p>
+<p>ходной указана инкрементальная РК</p>
+<p>wal-g logs: # в журнале компонента выводится информация о том, что инкре-ментальная РК проигнорирована и выбрана родительская полная РК</p>
+<p>INFO: Selecting the backup with name base_000000010000000100000046_D_000000010000000100000040 as the base for</p>
+<p>the current delta backup...</p>
+<p>INFO: Delta will be made from full backup.</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>INFO: Delta backup from <strong>base_000000010000000100000040</strong> with LSN 140000060.</p>
+<p>Параметр WALG_PREVENT_WAL_OVERWRITE управляет режимом защиты WAL-файлов (Write-Ahead Log) от перезаписи при выполнении операций резервного копирова-ния.</p>
+<p>Таблица 2.6 – Значения параметра WALG_PREVENT_WAL_OVERWRITE</p>
+</blockquote>
+<table><colgroup>
+<col style="width:45%">
+<col style="width:26%">
+<col style="width:28%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Возможные значе-ния</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>WALG_PREVENT_WAL_OVERWRITE</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>&quot;false&quot; (по умолча-нию) – отключение за-щиты</p>
+<p>&quot;true&quot; – включение за-щиты</p>
+</blockquote></td><td><blockquote>
+<p>Режим защиты РК от пе-резаписи</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Параметр применяется только при использовании компонента для:</p>
+</blockquote>
+<ul>
+<li>
+<p>Резервного копирования (команда backup-push);</p>
+</li>
+<li>
+<p>Управления РК (команды wal-push, wal-fetch).</p>
+</li>
+</ul>
+<blockquote>
+<p>При активации параметра WALG_PREVENT_WAL_OVERWRITE компонент прове-ряет наличие существующих WAL-файлов в целевом хранилище. При обнаружении дубли-ката операция создания РК завершается с ошибкой. В этом случае гарантируется целост-ность архивов для PITR (Point-in-Time Recovery).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметров-восстановления">Настройка параметров восстановления<a href="#настройка-параметров-восстановления" class="hash-link" aria-label="Direct link to Настройка параметров восстановления" title="Direct link to Настройка параметров восстановления">​</a></h2>
+<ol>
+<li><strong>Параметр WALG_DOWNLOAD_FILE_RETRIES</strong></li>
+</ol>
+<blockquote>
+<p>Параметр WALG_DOWNLOAD_FILE_RETRIES определяет максимальное количе-ство попыток повторной загрузки РК из хранилища при возникновении ошибок в процессе восстановления данных.</p>
+<p>Параметр WALG_DOWNLOAD_FILE_RETRIES применяется исключительно для операций:</p>
+</blockquote>
+<ul>
+<li>
+<p>Восстановления из резервной копии (backup-fetch);</p>
+</li>
+<li>
+<p>Получения WAL-файлов (wal-fetch).</p>
+</li>
+</ul>
+<blockquote>
+<p>Параметр WALG_DOWNLOAD_FILE_RETRIES действует для всех поддерживае-мых типов хранилищ (SSH, файловая система и других).</p>
+<p>Таблица 2.7 – Значения параметра WALG_DOWNLOAD_FILE_RETRIES</p>
+</blockquote>
+<table><colgroup>
+<col style="width:43%">
+<col style="width:26%">
+<col style="width:29%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значе-ния</strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>WALG_DOWNLOAD_FILE_RETRIES</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[число]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Максимальное количе-ство попыток повторной загрузки РК из храни-лища</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>По умолчанию значение параметра WALG_DOWNLOAD_FILE_RETRIES – 15. Взаимодействие параметра WALG_DOWNLOAD_FILE_RETRIES с другими пара-</p>
+<p>метрами:</p>
+</blockquote>
+<ul>
+<li>
+<p>WALG_DOWNLOAD_CONCURRENCY – влияет на параллельные загрузки РК из хранилища (см. п.п. <a href="#_bookmark13">2.2.7.1</a>);</p>
+</li>
+<li>
+<p>WALG_SENTINEL_USER_DATA – может содержать информацию о попытках загрузки РК.</p>
+</li>
+</ul>
+<blockquote>
+<p>Каждая попытка загрузки РК использует для установления соединения с сервером хранилища новый TCP-сеанс.</p>
+<p>Журнал работы компонента содержит информационное поле retry_attempt о количе-стве попыток.</p>
+<p>При исчерпании, установленных в конфигурационном файле, числа попыток загрузки РК из хранилища журнал работы компонента будет содержать код ошибки WAL-E-RETRY-LIMIT.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-ограничений-дисковых-операций">Настройка ограничений дисковых операций<a href="#настройка-ограничений-дисковых-операций" class="hash-link" aria-label="Direct link to Настройка ограничений дисковых операций" title="Direct link to Настройка ограничений дисковых операций">​</a></h2>
+<blockquote>
+<p>Параметр WALG_DISK_RATE_LIMIT регулирует максимальную скорость чтения данных с диска при выполнении компонентом операций резервного копирования, предот-вращая перегрузку системы ввода-вывода (I/O).</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Ограничение параметра WALG_DISK_RATE_LIMIT применяется на уровне <strong>чтения данных с диска</strong>, а не записи в хранилище</p>
+<p>Таблица 2.8 – Значения параметра WALG_DISK_RATE_LIMIT</p>
+</blockquote>
+<table><colgroup>
+<col style="width:32%">
+<col style="width:31%">
+<col style="width:35%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>WALG_DISK_RATE_LIMIT</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[число]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Ограничение скорости чтения диска во время выполнения ко-манды backup-push, в байтах в секунду</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>При значении параметра «WALG_DISK_RATE_LIMIT=0» ограничение скорости чте-ния диска во время выполнения команды backup-push отключено (максимальная производи-тельность).</p>
+<p>При некорректном значении параметра WALG_DISK_RATE_LIMIT (например, отри-цательном) – отображается ошибка WAL-E-CONFIG-INVALID.</p>
+<p>Взаимодействие параметра WALG_DISK_RATE_LIMIT с другими параметрами:</p>
+</blockquote>
+<ul>
+<li>
+<p>WALG_NETWORK_RATE_LIMIT – ограничение скорости передачи данных по сети (дополняет WALG_DISK_RATE_LIMIT);</p>
+</li>
+<li>
+<p>WALG_UPLOAD_CONCURRENCY – может влиять на общую производитель-ность при ограничении дискового I/O (см. п.п. <a href="#_bookmark14">2.2.7.2</a>).</p>
+</li>
+</ul>
+<blockquote>
+<p>Журнал работы компонента содержит информационное поле «disk_read_rate» при ак-тивированном ограничении параметра WALG_DISK_RATE_LIMIT.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-ограничений-сетевых-операций">Настройка ограничений сетевых операций<a href="#настройка-ограничений-сетевых-операций" class="hash-link" aria-label="Direct link to Настройка ограничений сетевых операций" title="Direct link to Настройка ограничений сетевых операций">​</a></h2>
+<ol>
+<li><span id="_bookmark13" class="anchor"></span><strong>Параметр WALG_DOWNLOAD_CONCURRENCY</strong></li>
+</ol>
+<blockquote>
+<p>Параметр WALG_DOWNLOAD_CONCURRENCY определяет максимальное количе-ство параллельных потоков загрузки данных из удаленного хранилища при выполнении операций восстановления.</p>
+<p>Параметр WALG_DOWNLOAD_CONCURRENCY применяется исключительно для следующих операций:</p>
+</blockquote>
+<ul>
+<li>
+<p>Восстановления из резервной копии (backup-fetch);</p>
+</li>
+<li>
+<p>Извлечения WAL-файлов (wal-fetch).</p>
+</li>
+</ul>
+<blockquote>
+<p>Параметр WALG_DOWNLOAD_CONCURRENCY действует для всех поддерживае-мых типов хранилищ (SSH, файловая система и других).</p>
+<p>Таблица 2.9 – Значения параметра WALG_DOWNLOAD_CONCURRENCY</p>
+</blockquote>
+<table><colgroup>
+<col style="width:45%">
+<col style="width:25%">
+<col style="width:28%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значе-ния</strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>WALG_DOWNLOAD_CONCURRENCY</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[число потоков]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Максимальное количе-ство параллельных по-токов загрузки РК</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Рекомендуемые значения параметра WALG_DOWNLOAD_CONCURRENCY: от 1 до</p>
+<p>16.</p>
+<p>По умолчанию значение параметра WALG_DOWNLOAD_CONCURRENCY: 10. Влияние параметра WALG_DOWNLOAD_CONCURRENCY на работу компонента:</p>
+</blockquote>
+<ul>
+<li>
+<p>При значениях &gt; 1:</p>
+<ul>
+<li>
+<p>Увеличивается скорость восстановления за счет параллельной загрузки РК;</p>
+</li>
+<li>
+<p>Возрастает сетевой трафик;</p>
+</li>
+<li>
+<p>Возрастает нагрузка на центральный процессор;</p>
+</li>
+<li>
+<p>Требуется увеличение доступной оперативной памяти.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>При значении 1:</p>
+<ul>
+<li>
+<p>Данные РК загружаются из хранилища последовательно;</p>
+</li>
+<li>
+<p>Минимальное потребление ресурсов.</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Взаимодействие параметра WALG_DOWNLOAD_CONCURRENCY с другими пара-</p>
+<p>метрами:</p>
+</blockquote>
+<ul>
+<li>
+<p>WALG_UPLOAD_CONCURRENCY – аналогичный параметр для операций за-грузки РК в хранилище (см. п.п. <a href="#_bookmark14">2.2.7.2</a>);</p>
+</li>
+<li>
+<p>WALG_NETWORK_RATE_LIMIT – может ограничивать общую скорость пе-редачи РК из/в хранилище.</p>
+</li>
+</ul>
+<blockquote>
+<p>Журнал работы компонента содержит информационное поле о количестве активных входящих потоков.</p>
+<p>При некорректном значении параметра WALG_UPLOAD_CONCURRENCY (напри-мер, превышение возможностей хранилища) – отображается ошибка WAL-E-STROAGE-LIMIT.</p>
+</blockquote>
+<ol start="2">
+<li><span id="_bookmark14" class="anchor"></span><strong>Параметр WALG_UPLOAD_CONCURRENCY</strong></li>
+</ol>
+<blockquote>
+<p>Параметр WALG_UPLOAD_CONCURRENCY определяет максимальное количество параллельных потоков для загрузки данных в удалённое хранилище при выполнении опера-ций резервного копирования.</p>
+<p>Параметр WALG_UPLOAD_CONCURRENCY применяется исключительно для сле-дующих операций:</p>
+</blockquote>
+<ul>
+<li>
+<p>Создания резервных копий (backup-push);</p>
+</li>
+<li>
+<p>Отправки WAL-файлов (wal-push).</p>
+</li>
+</ul>
+<blockquote>
+<p>Параметр WALG_UPLOAD_CONCURRENCY действует для всех поддерживаемых типов хранилищ (SSH, файловая система и других).</p>
+<p>Таблица 2.10 – Значения параметра WALG_UPLOAD_CONCURRENCY</p>
+</blockquote>
+<table><colgroup>
+<col style="width:45%">
+<col style="width:25%">
+<col style="width:28%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значе-ния</strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>WALG_UPLOAD_CONCURRENCY</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[число потоков]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Максимальное количе-ство параллельных по-токов передачи данных</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Допустимые значения параметра WALG_UPLOAD_CONCURRENCY:</p>
+</blockquote>
+<ul>
+<li>
+<p>Положительное целое число (рекомендуемый диапазон 1-16);</p>
+</li>
+<li>
+<p>1 (по умолчанию) – последовательная загрузка РК.</p>
+</li>
+</ul>
+<blockquote>
+<p>Влияние параметра WALG_UPLOAD_CONCURRENCY на работу компонента:</p>
+</blockquote>
+<ul>
+<li>
+<p>При значениях &gt; 1:</p>
+<ul>
+<li>
+<p>Увеличивается скорость загрузки РК в хранилище;</p>
+</li>
+<li>
+<p>Возрастает сетевой трафик;</p>
+</li>
+<li>
+<p>Возрастает нагрузка на центральный процессор;</p>
+</li>
+<li>
+<p>Требуется увеличение доступной оперативной памяти.</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>рами:</p>
+</blockquote>
+<ul>
+<li>
+<p>При значении 1:</p>
+<ul>
+<li>
+<p>Данные РК загружаются в хранилище последовательно;</p>
+</li>
+<li>
+<p>Минимальное потребление ресурсов.</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Взаимодействие параметра WALG_UPLOAD_CONCURRENCY с другими парамет-</p>
+</blockquote>
+<ul>
+<li>WALG_DOWNLOAD_CONCURRENCY – аналогичный параметр для опера-</li>
+</ul>
+<blockquote>
+<p>ций восстановления из РК (см. <a href="#_bookmark13">2.2.7.1</a>);</p>
+</blockquote>
+<ul>
+<li>
+<p>WALG_NETWORK_RATE_LIMIT – может ограничивать общую скорость пе-редачи;</p>
+</li>
+<li>
+<p>WALG_DISK_RATE_LIMIT - влияет на скорость чтения с диска (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D1%8B%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9">2.2.6</a>).</p>
+</li>
+</ul>
+<blockquote>
+<p>Журнал работы компонента содержит информационное поле о количестве активных исходящих потоков.</p>
+<p>При некорректном значении параметра WALG_UPLOAD_CONCURRENCY (напри-мер, превышение возможностей хранилища) – отображается ошибка WAL-E-STROAGE-LIMIT.</p>
+</blockquote>
+<ol>
+<li><strong>Параметр WALG_NETWORK_RATE_LIMIT</strong></li>
+</ol>
+<blockquote>
+<p>Параметр WALG_NETWORK_RATE_LIMIT устанавливает ограничение максималь-ной скорости передачи данных по сети при выполнении операций резервного копирования и восстановления.</p>
+<p>Параметр WALG_NETWORK_RATE_LIMIT применяется для всех сетевых опера-</p>
+<p>ций:</p>
+</blockquote>
+<ul>
+<li>
+<p>Загрузки данных в хранилище (backup-push, wal-push);</p>
+</li>
+<li>
+<p>Выгрузки данных из хранилища (backup-fetch, wal-fetch).</p>
+</li>
+</ul>
+<blockquote>
+<p>Параметр WALG_NETWORK_RATE_LIMIT действует для всех поддерживаемых ти-пов хранилищ (SSH, файловая система и других).</p>
+<p>Таблица 2.11 – Значения параметра WALG_NETWORK_RATE_LIMIT</p>
+</blockquote>
+<table><colgroup>
+<col style="width:39%">
+<col style="width:28%">
+<col style="width:32%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>WALG_NETWORK_RATE_LIMIT</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>&quot;[целое число]&quot;</p>
+<p>&quot;0&quot; (по умолчанию) – от-сутствие ограничения скорости</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Ограничение максималь-ной скорости передачи дан-ных, килобит в секунду</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Влияние параметра WALG_NETWORK_RATE_LIMIT на работу компонента:</p>
+</blockquote>
+<ul>
+<li>
+<p>При значениях &gt; 0:</p>
+<ul>
+<li>
+<p>Ограничивает скорость передачи данных;</p>
+</li>
+<li>
+<p>Снижает нагрузку на сетевой интерфейс;</p>
+</li>
+<li>
+<p>Может увеличивать время выполнения операций восстановления из РК.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>При значении 0: используется максимально доступная скорость сети.</p>
+</li>
+</ul>
+<blockquote>
+<p>рами:</p>
+<p>Взаимодействие параметра WALG_NETWORK_RATE_LIMIT с другими парамет-</p>
+</blockquote>
+<ul>
+<li>WALG_UPLOAD_CONCURRENCY – влияет на общую производительность</li>
+</ul>
+<blockquote>
+<p>(см. п.п. <a href="#_bookmark14">2.2.7.2</a>);</p>
+</blockquote>
+<ul>
+<li>
+<p>WALG_DOWNLOAD_CONCURRENCY – аналогично для операций восста-новления (см. п.п. <a href="#_bookmark13">2.2.7.1</a>);</p>
+</li>
+<li>
+<p>WALG_DISK_RATE_LIMIT – может стать узким местом при высоких сетевых ограничениях (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D1%8B%D1%85-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9">2.2.6</a>).</p>
+</li>
+</ul>
+<blockquote>
+<p>Журнал работы компонента содержит информационное поле о фактической скорости передачи данных.</p>
+<p>При некорректном значении параметра WALG_NETWORK_RATE_LIMIT (напри-мер, превышение возможностей локальной вычислительной сети) – отображается ошибка WAL-E-NETWORK-THROTTLE. Сбои сетевого соединения приводят к возникновению ошибки WAL-E-NETWORK-TIMEOUT</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="включение-метрик-мониторинга">Включение метрик мониторинга<a href="#включение-метрик-мониторинга" class="hash-link" aria-label="Direct link to Включение метрик мониторинга" title="Direct link to Включение метрик мониторинга">​</a></h2>
+<blockquote>
+<p>Для включения и настройки метрик мониторинга компонента применяются пара-метры:</p>
+</blockquote>
+<ul>
+<li>
+<p>WALG_STATSD_ADDRESS;</p>
+</li>
+<li>
+<p>WALG_STATSD_EXTRA_TAGS.</p>
+</li>
+</ul>
+<blockquote>
+<p>Для сбора метрик производительности рекомендуется к использованию инструмент</p>
+<p>StatD.</p>
+<p>Таблица 2.12 – Значения параметров WALG_STATSD_*</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>WALG_STATSD_AD-DRESS</p>
+</blockquote></td><td></td><td><blockquote>
+<p>Адрес сервиса сбора значений метрик производительности</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>WALG_STATSD_EX-TRA_TAGS</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>host, operation, database и т.д.</p>
+</blockquote></td><td><blockquote>
+<p>Выбор статических тегов к мет-рикам</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметров-подключения-к-субд">Настройка параметров подключения к СУБД<a href="#настройка-параметров-подключения-к-субд" class="hash-link" aria-label="Direct link to Настройка параметров подключения к СУБД" title="Direct link to Настройка параметров подключения к СУБД">​</a></h2>
+<blockquote>
+<p>Для определения параметров подключения к СУБД «Jatoba» используются параметры PGDATA и PGHOST.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Для авторизации и доступа компонента к БД должны быть обеспечены соответ-ствующие разрешения в файле pg_hba.conf.</p>
+<p>Для роли пользователя, от лица которого будет выполняться создание РК, должно быть обеспечено разрешение на репликацию данных, например:</p>
+<p>CREATE ROLE backup WITH NOSUPERUSER NOCREATEDB NOCRE-ATEROLE REPLICATION LOGIN PASSWORD &#x27;password&#x27;;</p>
+<p>GRANT EXECUTE ON FUNCTION pg_backup_start to backup; GRANT EXECUTE ON FUNCTION pg_backup_stop to backup; GRANT EXECUTE ON FUNCTION pg_switch_wal to backup; GRANT pg_read_all_settings to backup;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметра-pgdata">Настройка параметра PGDATA<a href="#настройка-параметра-pgdata" class="hash-link" aria-label="Direct link to Настройка параметра PGDATA" title="Direct link to Настройка параметра PGDATA">​</a></h2>
+<blockquote>
+<p>Параметр PGDATA определяет путь к основному каталогу данных СУБД «Jatoba», содержащему все файлы базы данных, конфигурации и служебную информацию.</p>
+<p>Каталог, определенный в параметре PGDATA, используется для операций:</p>
+</blockquote>
+<ul>
+<li>
+<p>Резервного копирования через (backup-push);</p>
+</li>
+<li>
+<p>Восстановления данных (backup-fetch);</p>
+</li>
+<li>
+<p>Управления журналами WAL (wal-push, wal-fetch).</p>
+</li>
+</ul>
+<blockquote>
+<p>Таблица 2.13 – Значения параметра PGDATA</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>PGDATA</p>
+</blockquote></td><td><blockquote>
+<p>&quot;/var/lib/jatoba/6/data/&quot;</p>
+</blockquote></td><td><blockquote>
+<p>Путь к каталогу с СУБД</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25138in;height:0.25037in" class="img_ev3q">При отсутствии настроенного доступа к директории, указанной в параметре PGDATA, при создании РК будет отображаться ошибка Invalid PGDATA: di-rectory not exist</p>
+<p>Необходимо убедится в наличии прав доступа к каталогу СУБД и переопреде-лить при необходимости:</p>
+<p># chown -R postgres:postgres</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data/</p>
+<p># chmod 700 /var/lib/jatoba/&lt;ver&gt;/data/</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметра-pghost">Настройка параметра PGHOST<a href="#настройка-параметра-pghost" class="hash-link" aria-label="Direct link to Настройка параметра PGHOST" title="Direct link to Настройка параметра PGHOST">​</a></h2>
+<blockquote>
+<p>PGHOST определяет для подключения сетевой адрес (или сокет) сервера СУБД</p>
+<p>«Jatoba».</p>
+<p>Таблица 2.14 – Значения параметра PGHOST</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>PGHOST</p>
+</blockquote></td><td><blockquote>
+<p>&quot;/var/run/jatoba&quot;</p>
+<p>&quot;10.116.102.54&quot;</p>
+</blockquote></td><td><blockquote>
+<p>IP-адрес, имя узла или сокет для подключения к СУБД</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>В случае использования параметра PGHOST сетевого имени узла оно должно успешно разрешаться DNS-сервером.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметра-pgport">Настройка параметра PGPORT<a href="#настройка-параметра-pgport" class="hash-link" aria-label="Direct link to Настройка параметра PGPORT" title="Direct link to Настройка параметра PGPORT">​</a></h2>
+<blockquote>
+<p>Параметр PGPORT определяет TCP-порт для подключения к серверу СУБД «Jatoba» при выполнении операций резервного копирования.</p>
+<p>По умолчанию для подключения к серверу СУБД «Jatoba» используется TCP-порт 5432. В случае если для СУБД «Jatoba» определен другой номер TCP-порта, его необходимо указать в параметре PGPORT.</p>
+<p>Таблица 2.15 – Значения параметра PGPORT</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>PGPORT</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[номер_порта]&quot;</p>
+</blockquote></td><td><blockquote>
+<p>TCP-порт для подключения к серверу СУБД «Jatoba»</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25138in;height:0.25138in" class="img_ev3q">Если указанный в параметре PGPORT TCP-порт для подключения к серверу СУБД «Jatoba» недоступен или указан ошибочно, то будет отображена ошибка:</p>
+<p>ERROR: 2025/05/30 13:26:05.646915 Failed to connect using provided PGHOST and PGPORT, trying lo-calhost:5432</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметра-pguser">Настройка параметра PGUSER<a href="#настройка-параметра-pguser" class="hash-link" aria-label="Direct link to Настройка параметра PGUSER" title="Direct link to Настройка параметра PGUSER">​</a></h2>
+<blockquote>
+<p>Параметр PGUSER определяет пользователя для аутентификации при выполнении операций резервного копирования.</p>
+<p>Параметр PGUSER используется при:</p>
+</blockquote>
+<ul>
+<li>
+<p>Авторизации при выполнении резервного копирования и создания РК;</p>
+</li>
+<li>
+<p>Проверки прав доступа к журналам WAL;</p>
+</li>
+<li>
+<p>Взаимодействии с системными функциями СУБД. Таблица 2.16 – Значения параметров PGUSER</p>
+</li>
+</ul>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>PGUSER</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[имя_пользователя]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Определяет пользователя для аутентификации и создания РК, например backup (см. п. <a href="#настройка-параметров-подключения-к-субд">2.2.9</a>)</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:7%">
+<col style="width:92%">
+</colgroup><thead><tr><th><blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25307in;height:0.25208in" class="img_ev3q"></p>
+</blockquote></th><th><blockquote>
+<p>Если указанное в параметре PGUSER имя пользователя для подключения к</p>
+<p>серверу СУБД «Jatoba» указано ошибочно, то будет отображена ошибка:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<blockquote>
+<p>ERROR: 2025/05/30 14:44:35.701169 failed to connect to</p>
+<p>`user=postgrest database=`:</p>
+<p>/var/run/jatoba/.s.PGSQL.5432 (/var/run/jatoba): failed SASL auth: FATAL: password authentication failed for user &quot;postgrest&quot; (SQLSTATE 28P01)</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметра-pgpassword">Настройка параметра PGPASSWORD<a href="#настройка-параметра-pgpassword" class="hash-link" aria-label="Direct link to Настройка параметра PGPASSWORD" title="Direct link to Настройка параметра PGPASSWORD">​</a></h2>
+<blockquote>
+<p>Параметр PGPASSWORD определяет пароль для аутентификации пользователя при выполнении операций резервного копирования.</p>
+<p>Таблица 2.17 – Значения параметров PGPASSWORD</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>PGPASSWORD</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[пароль]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Определяет пароль пользова-теля для аутентификации и со-здания РК</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-защищенного-соединения">Настройка защищенного соединения<a href="#настройка-защищенного-соединения" class="hash-link" aria-label="Direct link to Настройка защищенного соединения" title="Direct link to Настройка защищенного соединения">​</a></h2>
+<blockquote>
+<p>WALG_SSH_PREFIX параметр, который позволяет определить параметры подклю-чения при загрузке РК с использованием протокола SSH.</p>
+<p>Таблица 2.18 – Значения параметров WALG_SSH_PREFIX</p>
+</blockquote>
+<table><colgroup>
+<col style="width:32%">
+<col style="width:32%">
+<col style="width:34%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>WALG_SSH_PREFIX</p>
+</blockquote></td><td><blockquote>
+<p>&quot;ssh://[host-name]:/home/[username]/ walg_archive/server&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Строка подключения к уда-ленному серверу с использо-ванием протокола SSH</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>SSH_PORT</p>
+</blockquote></td><td><blockquote>
+<p>&quot;22&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Номер порта, используемого при установлении соединения по протоколу SSH</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>SSH_USERNAME</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[username]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Название пользователя, от имени которого устанавлива-ется защищенное соединение на удаленном сервере</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>SSH_PASSWORD</p>
+</blockquote></td><td><blockquote>
+<p>&quot;[password]&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Пароль по пользователя, от имени которого устанавлива-ется защищенное соединение на удаленном сервере</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:32%">
+<col style="width:32%">
+<col style="width:34%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>SSH_PRIVATE_KEY_PATH</p>
+</blockquote></td><td><blockquote>
+<p>&quot;~/.ssh/private_key&quot;</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Путь к каталогу, в котором располагается закрытый ключ для установления защищен-ного соединения</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">С целю обеспечения достаточного уровня информационной безопасности и предотвращения передачи паролей в открытом виде рекомендуется к использо-ванию параметр SSH_PRIVATE_KEY_PATH вместо SSH_PASSWORD.</p>
+<p>Доступ пользователя, указанного в параметре SSH_USERNAME, должен быть пред-варительно настроен:</p>
+</blockquote>
+<ul>
+<li>
+<p>Настроен SSH-ключ без использования пароля;</p>
+</li>
+<li>
+<p>Пользователь должен иметь права на запись в целевой каталог, в котором будут сохраняться РК.</p>
+</li>
+</ul>
+<blockquote>
+<p>Для обеспечения требуемого уровня безопасности работы компонента с хранилищем в параметре WALG_SSH_PORT рекомендуется указывать номер сетевого порта, отличного от используемого по умолчанию (порт 22).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметры-журналирования-событий">Параметры журналирования событий<a href="#параметры-журналирования-событий" class="hash-link" aria-label="Direct link to Параметры журналирования событий" title="Direct link to Параметры журналирования событий">​</a></h2>
+<blockquote>
+<p>Для определения параметров журналирования событий резервного копирования/вос-становления СУБД «Jatoba» используются параметры WALG_LOG_LEVEL и S3_LOG_LEVEL=DEVEL.</p>
+<p>Таблица 2.19 – Значения параметров WALG_LOG_LEVEL и S3_LOG_LEVEL</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><strong>Описание</strong></th></tr></thead><tbody><tr><td><blockquote>
+<p>WALG_LOG_LEVEL</p>
+</blockquote></td><td><blockquote>
+<p>DEVEL, ERROR, INFO</p>
+</blockquote></td><td><blockquote>
+<p>Включение режима журналиро-вания</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>S3_LOG_LEVEL</p>
+</blockquote></td><td><blockquote>
+<p>DEVEL, ERROR, INFO</p>
+</blockquote></td><td><blockquote>
+<p>Включение режима журналиро-вания с S3</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-проверки-контрольных-сумм-данных-субд">Настройка проверки контрольных сумм данных СУБД<a href="#настройка-проверки-контрольных-сумм-данных-субд" class="hash-link" aria-label="Direct link to Настройка проверки контрольных сумм данных СУБД" title="Direct link to Настройка проверки контрольных сумм данных СУБД">​</a></h2>
+<blockquote>
+<p>Для поддержки проверки контрольных при создании РК используется параметр WALG_VERIFY_PAGE_CHECKSUMS.</p>
+<p>Таблица 2.20 – Значения параметра WALG_VERIFY_PAGE_CHECKSUMS</p>
+</blockquote>
+<table><colgroup>
+<col style="width:30%">
+<col style="width:32%">
+<col style="width:37%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Возможные значения</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>WALG_VER-IFY_PAGE_CHECK-SUMS</p>
+</blockquote></td><td><blockquote>
+<p>&quot;true&quot;</p>
+</blockquote></td><td><blockquote>
+<p>Включение проверки контроль-ных сумм РК</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-субд">Настройка СУБД<a href="#настройка-субд" class="hash-link" aria-label="Direct link to Настройка СУБД" title="Direct link to Настройка СУБД">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-пользователя-для-выполнения-архивации-и-восстановления-данных">Создание пользователя для выполнения архивации и восстановления данных<a href="#создание-пользователя-для-выполнения-архивации-и-восстановления-данных" class="hash-link" aria-label="Direct link to Создание пользователя для выполнения архивации и восстановления данных" title="Direct link to Создание пользователя для выполнения архивации и восстановления данных">​</a></h2>
+<blockquote>
+<p>Для использования компонента «wal-g» необходимо создать пользователя СУБД backup с атрибутом Login и придерживаться принципа минимизации назначаемых атрибу-тов и привилегий.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например">Например<a href="#например" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например">​</a></h2>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image3.jpeg" style="width:7.11064in;height:0.99781in" class="img_ev3q">
+<blockquote>
+<p>CREATE ROLE backup WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATER-OLE;</p>
+<p>Рисунок 2.1 – Создание пользователя backup для СУБД в GNU Linux Назначение дополнительных атрибутов роли, системных привилегий и прав осу-</p>
+<p>ществляется в соответствии с выбранным типом и режимом резервного копирования.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-непрерывного-архивирования-wal">Настройка непрерывного архивирования WAL<a href="#настройка-непрерывного-архивирования-wal" class="hash-link" aria-label="Direct link to Настройка непрерывного архивирования WAL" title="Direct link to Настройка непрерывного архивирования WAL">​</a></h2>
+<blockquote>
+<p>Для настройки непрерывного архивирования WAL необходимо выполнить следую-щие действия:</p>
+</blockquote>
+<ol>
+<li>
+<p>открыть для редактирования конфигурационный файл postgresql.conf;</p>
+</li>
+<li>
+<p>в разделе «Write-Ahead Log» – «Settings» задать для параметра wal_level значе-ние выше replica или logical;</p>
+</li>
+</ol>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image4.png" style="width:6.37331in;height:2.48667in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 2.2 – Внесение параметра wal_level в конфигурационный файл post-</p>
+<p>gresql.conf в GNU Linux</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">При настройке резервного копирования на <u>ведущем</u> сервере, параметр archive_mode должен иметь значение on или always.</p>
+<p>Для выполнения резервного копирования на <u>ведомом</u> сервере параметр archive_mode должен иметь значение always.</p>
+</blockquote>
+<ol start="3">
+<li>В разделе «Archiving» установить параметр:</li>
+</ol>
+<blockquote>
+<p>archive_mode = on</p>
+</blockquote>
+<ol start="4">
+<li>В разделе «Archiving» установить параметр archive_command:</li>
+</ol>
+<blockquote>
+<p>archive_command = &#x27;/usr/jatoba-&lt;ver&gt;/bin/wal-g wal-push %p&#x27;</p>
+<p>Рисунок 2.3 – Вид конфигурационного файла postgresql.conf с внесенной строчкой пара-метра arhive_command в GNU Linux</p>
+</blockquote>
+<ol start="5">
+<li>В разделе «Archive Recovery» установить параметр restore_command:</li>
+</ol>
+<blockquote>
+<p>restore_command = &#x27;/usr/jatoba-&lt;ver&gt;/bin/wal-g wal-fetch %f %p&#x27;</p>
+</blockquote>
+<ol start="6">
+<li>В разделе «Recovery Target» установить параметр recovery_target_action:</li>
+</ol>
+<blockquote>
+<p>recovery_target_action = &#x27;promote&#x27;</p>
+</blockquote>
+<ol start="7">
+<li>Для вступления параметров конфигурационного файла postgresql.conf выпол-нить перезагрузку СУБД «Jatoba»:</li>
+</ol>
+<blockquote>
+<p># systemctl restart jatoba-&lt;ver&gt;</p>
+<p>После выполненных подготовительных действий при помощи компонента возможно создавать РК (см. п.п. <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.1</a>).</p>
+<p>Текущее состояние архива WAL можно просмотреть, воспользовавшись командой:</p>
+<p>postgres@node1:~$ wal-g wal-show</p>
+</blockquote>
+<h1>ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА</h1>
+<blockquote>
+<p>Компонент предоставляет следующие функциональные возможности при взаимодей-ствии с РК:</p>
+</blockquote>
+<ul>
+<li>
+<p>Создание РК:</p>
+<ul>
+<li>
+<p>Полной;</p>
+</li>
+<li>
+<p>Инкрементальной;</p>
+</li>
+<li>
+<p>Сжатие данных РК (LZ4, ZSTD, Brotli).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Отображение списка доступных РК;</p>
+</li>
+<li>
+<p>Восстановление данных из РК:</p>
+<ul>
+<li>
+<p>Полное восстановление;</p>
+</li>
+<li>
+<p>Point-in-Time Recovery (PITR);</p>
+</li>
+<li>
+<p>Восстановление WAL-журналов.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Удаление:</p>
+<ul>
+<li>
+<p>Удаление устаревших копий;</p>
+</li>
+<li>
+<p>Точечное удаление;</p>
+</li>
+<li>
+<p>Полная очистка хранилища.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Журналирование выполняемых операций.</p>
+</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Работа с командами компонента должна выполняться от имени пользователя postgres.</p>
+<p>Исполняемый файл компонента расположен в каталоге /usr/jatoba-&lt;ver&gt;/bin</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-резервной-копии">Создание резервной копии<a href="#создание-резервной-копии" class="hash-link" aria-label="Direct link to Создание резервной копии" title="Direct link to Создание резервной копии">​</a></h2>
+<blockquote>
+<p>При выполнении создания РК, в качестве аргумента пользователь должен передать расположение каталога данных СУБД «Jatoba».</p>
+<p>Предварительные условия: выполнена настройка СУБД согласно п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%BC%D0%BC-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">2.2.12</a>.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-полной-резервной-копии">Создание полной резервной копии<a href="#создание-полной-резервной-копии" class="hash-link" aria-label="Direct link to Создание полной резервной копии" title="Direct link to Создание полной резервной копии">​</a></h2>
+<blockquote>
+<p>Для обеспечения отказоустойчивости рекомендуется:</p>
+</blockquote>
+<ul>
+<li>
+<p>Регулярно проверять целостность полных РК;</p>
+</li>
+<li>
+<p>Хранить несколько поколений полных РК.</p>
+</li>
+</ul>
+<blockquote>
+<p>Синтаксис команды создания новой полной РК выглядит следующим образом:</p>
+<p>wal-g backup-push --full $PGDATA</p>
+<p>где $PGDATA – путь к рабочему каталогу СУБД «Jatoba».</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24834in" class="img_ev3q">Для дальнейшего использования переменной окружения $PGDATA необхо-димо выполнить команду:</p>
+<p>export PGDATA=/var/lib/jatoba/&lt;ver&gt;/data</p>
+<p>Здесь /var/lib/jatoba/&lt;ver&gt;/data – путь к каталогу данных СУБД по умолчанию и, в зависимости от настроек СУБД, в некоторых случаях может отличаться. Здесь и далее при описании синтаксиса команд применяется $PGDATA, а для практи-ческих примеров – путь к местоположению каталога данных СУБД.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример">Пример:<a href="#пример" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-push --full</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image6.png" style="width:7.02844in;height:4.36219in" class="img_ev3q">
+<p>Рисунок 3.1 – Процесс выполнения команды wal-g backup-push --full Длительность создания полной РК зависит от объема данных, доступных технических</p>
+<p>ресурсов, а также ограничений, указанных в конфигурационном файле walg.json (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">2.2</a>).</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image7.png" style="width:7.05836in;height:2.32604in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.2 – Созданная полная РК при помощи команды wal-g backup-push --full При создании РК компонент будет проверять, что аргумент команды, переменная</p>
+<p>PGDATA в окружении ОС и настройка конфигурации в файле .walg.json совпадают. В ином</p>
+<p>случае создание РК будет прервано, а результат будет записан в журнал выполнения.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-постоянной-резервной-копии">Создание постоянной резервной копии<a href="#создание-постоянной-резервной-копии" class="hash-link" aria-label="Direct link to Создание постоянной резервной копии" title="Direct link to Создание постоянной резервной копии">​</a></h2>
+<blockquote>
+<p>Постоянная РК обеспечивает:</p>
+</blockquote>
+<ul>
+<li>
+<p>Защиту критических РК от автоматического удаления;</p>
+</li>
+<li>
+<p>Ручной контроль за архивацией ключевых точек восстановления;</p>
+</li>
+<li>
+<p>Соблюдение регламентов хранения РК.</p>
+</li>
+</ul>
+<blockquote>
+<p>Постоянная РК не удаляется при использовании команд управления жизненным цик-лом РК, например, wal-g delete retain (см. п.п. <a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-retain">3.7.1</a>) и wal-g delete before (см. п.п. <a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-before">3.7.2</a>) (Ис-ключение использование опции FORCE с указанными командами).</p>
+<p>Постоянную РК можно создать при помощи:</p>
+</blockquote>
+<ul>
+<li>
+<p>Использования флага --permanent в команде wal-g backup-push;</p>
+</li>
+<li>
+<p>Использования команды backup-mark.</p>
+</li>
+</ul>
+<blockquote>
+<p>Синтаксис команды создания новой постоянной РК выглядит следующим образом:</p>
+<p>wal-g backup-push --full --permanent $PGDATA</p>
+<p>Где флаг --permanent необходим при создании РК с свойством «постоянная»;</p>
+<p>$PGDATA – путь к рабочему каталогу СУБД «Jatoba». Данное свойство предотвратит уда-ление РК при выполнении команды delete в режимах retain и before (см. п.п. <a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">3.7</a>).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-1">Пример:<a href="#пример-1" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-push --full --permanent</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data</p>
+<p>Команда backup-mark изменяет значение признака «is_permanent» для существующей РК. Синтаксис команды для изменения свойства «is_permanent» РК выглядит следующим образом:</p>
+<p>wal-g backup-mark [base_name]</p>
+<p>Где base_name – название РК.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-2">Пример:<a href="#пример-2" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-1"><a href="#-1" class="hash-link" aria-label="Direct link to -1" title="Direct link to -1">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-mark base_000000230000000000000026</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image8.png" style="width:7.05844in;height:0.88229in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.3 – Создание постоянной РК при помощи команды wal-g backup-mark После этого необходимо проверить значение признака «is_permanent» при помощи</p>
+<p>команды backup-list с флагом --detail:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image9.png" style="width:7.08345in;height:1.68031in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-list --detail</p>
+<p>Рисунок 3.4 – Список созданных РК (постоянная РК отмечена признаком</p>
+<p>is_permanent = true)</p>
+<p>Узнать текущее количество постоянных РК можно при помощи следующей команды:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image10.png" style="width:7.14613in;height:0.95625in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-list --detail | grep -c &#x27;is_per-manent&#x27;</p>
+<p>Рисунок 3.5 – Просмотр количества постоянных РК</p>
+<p>Для того чтобы убрать признак is_permanent, которым отмечаются постоянные РК, необходимо выполнить команду с флагом -i:</p>
+<p>postgres@node1:~$ wal-g backup-mark -i base_000000230000000000000026</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-инкрементальной-резервной-копии">Создание инкрементальной резервной копии<a href="#создание-инкрементальной-резервной-копии" class="hash-link" aria-label="Direct link to Создание инкрементальной резервной копии" title="Direct link to Создание инкрементальной резервной копии">​</a></h2>
+<blockquote>
+<p>Инкрементальные РК содержат изменения относительно полной или другой инкре-ментальной РК, поэтому:</p>
+</blockquote>
+<ul>
+<li>
+<p>Являются производными от выбранной РК;</p>
+</li>
+<li>
+<p>Не содержат полного набора данных;</p>
+</li>
+<li>
+<p>Требуют доступа к неповреждённой РК для корректного восстановления дан-</p>
+</li>
+</ul>
+<blockquote>
+<p>ных.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25208in;height:0.25208in" class="img_ev3q">
+<p>Если значение параметра WALG_DELTA_MAX_STEPS &gt; 0, то в этом случае при создании инкрементальной РК используется последняя РК в качестве базы. Это поведение можно изменить с помощью следующих флагов:</p>
+</blockquote>
+<ul>
+<li>
+<p>Флаг «--delta-from-name» или переменная окружения WALG_DELTA_FROM_NAME для выбора РК с указанным именем в качестве основы для инкрементальной РК;</p>
+</li>
+<li>
+<p>Флаг «--delta-from-user-data» переменная окружения WALG_DELTA_FROM_USER_DATA для выбора РК с указанными пользова-тельскими данными в качестве основы для инкрементальной РК.</p>
+</li>
+</ul>
+<blockquote>
+<p>Создание инкрементальной РК выполняется в следующей последовательности:</p>
+</blockquote>
+<ol>
+<li>В первую очередь необходимо предварительно создать полную РК с флагом «-</li>
+</ol>
+<blockquote>
+<p>-full» (см. п.п. <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B9-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.1.1</a>).</p>
+</blockquote>
+<ol start="2">
+<li>Затем выполнить создание инкрементальной РК при помощи команды:</li>
+</ol>
+<blockquote>
+<p>wal-g backup-push $PGDATA</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-3">Пример:<a href="#пример-3" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-push /var/lib/jatoba/&lt;ver&gt;/data</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image11.png" style="width:6.98076in;height:2.40365in" class="img_ev3q">
+<p>Рисунок 3.6 – Созданная инкрементальная РК при помощи команды wal-g backup-push</p>
+</blockquote>
+<ol start="3">
+<li>Проверить наличие созданной инкрементальной РК (см. п.п. <a href="#_bookmark30">0</a>).</li>
+</ol>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24999in" class="img_ev3q">Если выполнить команду backup-push без использования флагов, то будет со-здана полная РК, в случае если:</p>
+</blockquote>
+<ul>
+<li>
+<p>Это первая созданная РК;</p>
+</li>
+<li>
+<p>Количество инкрементальных РК, созданных для последней полной, равно WALG_DELTA_MAX_STEPS (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B8%D0%BD%D0%BA%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">2.2.4</a>).</p>
+</li>
+</ul>
+<blockquote>
+<p>Название инкрементальной РК состоит из двух частей:</p>
+</blockquote>
+<ul>
+<li>
+<p>первая часть указывает на идентификатор РК, на основании которой создана инкрементальная РК. В качестве родительской РК при этом может выступать как полная, так и другая инкрементальная РК;</p>
+</li>
+<li>
+<p>вторая часть – это уникальное название созданной РК.</p>
+</li>
+</ul>
+<table><colgroup>
+<col style="width:7%">
+<col style="width:37%">
+<col style="width:11%">
+<col style="width:36%">
+<col style="width:8%">
+</colgroup><thead><tr><th><blockquote>
+<p>|</p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p>идентификатор</p>
+</blockquote></th><th><blockquote>
+<p>|</p>
+</blockquote></th><th><blockquote>
+<p>идентификатор</p>
+</blockquote></th><th style="text-align:right">|</th></tr></thead><tbody><tr><td><blockquote>
+<p>|</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>родительской РК</p>
+</blockquote></td><td><blockquote>
+<p>|</p>
+</blockquote></td><td><blockquote>
+<p>созданной РК</p>
+</blockquote></td><td style="text-align:right">|</td></tr></tbody></table>
+<blockquote>
+<p>При использовании инкрементальных РК имеются следующие функциональные огра-ничения:</p>
+<p>base_000000230000000000000026_D_00000023000000000000004С</p>
+</blockquote>
+<ul>
+<li>Процесс восстановления из инкрементальной РК требует сборки цепочки дан-ных из инкрементальных РК, что может быть медленнее, чем восстановление из полной РК.</li>
+</ul>
+<blockquote>
+<p>Чем большее число указано для параметра WALG_DELTA_MAX_STEPS (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B8%D0%BD%D0%BA%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">2.2.4</a>), тем дольше выполняется процесс восстановления данных;</p>
+</blockquote>
+<ul>
+<li>Целостность инкрементальных резервных копий напрямую зависит от сохран-ности, соответствующей полной РК. В случае повреждения или утраты базовой полной ко-пии все связанные с ней инкрементальные резервные копии теряют функциональность и не могут быть использованы для восстановления данных.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-инкрементальной-резервной-копии-на-основе-базовой-рк">Создание инкрементальной резервной копии на основе базовой РК<a href="#создание-инкрементальной-резервной-копии-на-основе-базовой-рк" class="hash-link" aria-label="Direct link to Создание инкрементальной резервной копии на основе базовой РК" title="Direct link to Создание инкрементальной резервной копии на основе базовой РК">​</a></h2>
+<blockquote>
+<p>При создании дельта бэкапа (при значении WALG_DELTA_MAX_STEPS &gt; 0), ком-понент по умолчанию использует последнюю РК как базовую.</p>
+<p>Это поведение может быть изменено с помощью следующих флагов:</p>
+</blockquote>
+<ul>
+<li>
+<p>--delta-from-name (или WALG_DELTA_FROM_NAME в конфигурационном файле walg.json) – определяет название РК, которая будет использована в качестве базовой для инкрементальной РК;</p>
+</li>
+<li>
+<p>--delta-from-user-data (или WALG_DELTA_FROM_USER_DATA в конфигура-ционном файле walg.json) – определяет user-data РК, которая будет использована в качестве базовой для инкрементальной РК.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="примеры">Примеры:<a href="#примеры" class="hash-link" aria-label="Direct link to Примеры:" title="Direct link to Примеры:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-push /var/lib/jatoba/&lt;ver&gt;/data</p>
+<p>--delta-from-name base_000000010000000000000006_D_000000010000000000000004</p>
+<p>postgres@node1:~$ wal-g backup-push /var/lib/jatoba/&lt;ver&gt;/data</p>
+<p>--delta-from-user-data &quot;{ \x\: [3], \y\: 4 }&quot;</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image12.png" style="width:7.0446in;height:3.045in" class="img_ev3q">
+<p>Рисунок 3.7 – Результат выполнения wal-g backup-push с флагом --delta-from-name</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-резервной-копии-с-удаленного-узла">Создание резервной копии с удаленного узла<a href="#создание-резервной-копии-с-удаленного-узла" class="hash-link" aria-label="Direct link to Создание резервной копии с удаленного узла" title="Direct link to Создание резервной копии с удаленного узла">​</a></h2>
+<blockquote>
+<p>Компонент «wal-g» поддерживает создание резервных копий (РК) с удаленных узлов СУБД.</p>
+<p>Параметры подключения к удаленному узлу могут быть указаны в конфигурацион-ном файле walg.json (см. п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">2.2</a>) или как дополнительные параметры в командной строке:</p>
+</blockquote>
+<ol>
+<li>
+<p>В конфигурационном файле walg.json указываются следующие параметры под-ключения к СУБД, расположенной на удаленном узле:</p>
+<ul>
+<li>
+<p>PGHOST – обязательный параметр;</p>
+</li>
+<li>
+<p>PGPASSWORD, PGPORT, PGUSER, PGDATABASE – опциональные пара-метры.</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25138in;height:0.25078in" class="img_ev3q">Пользователь postgres должен иметь права доступа к каталогу, который указан в параметре WALG_FILE_PREFIX:</p>
+<p>chown -R postgres:postgres [/path/to/backups]</p>
+<p>Для создания РК с использованием конфигурационного файла выполните:</p>
+<p>wal-g backup-push --config /var/lib/jatoba/.walg.json</p>
+<p>Для каждого из удаленных узлов необходимо создать свой конфигурационный файл walg.json с параметрами подключения, например:</p>
+<p>wal-g backup-push --config</p>
+<p>/var/lib/jatoba/.walg_10_116_102_54.json</p>
+</blockquote>
+<ol start="2">
+<li>Также можно задать напрямую в команде backup-push:</li>
+</ol>
+<blockquote>
+<p>wal-g backup-push --pghost [IP-адрес] --pgdatabase [db_name] --pgport 5432 --pguser postgres --pgpassword [password] --walg-file-prefix [/path/to/backups]</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например-1">Например:<a href="#например-1" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h2>
+<blockquote>
+<p>wal-g backup-push --pghost 192.168.223.161 --pgdatabase post-gres --pgport 5432 --pguser postgres --pgpassword 123456Aa --walg-file-prefix /nfs/wal/backups</p>
+<p><span id="_bookmark30" class="anchor"></span>Создание РК с удаленных узлов также поддерживается через защищенные соедине-ния, например, по протоколу SSH.</p>
+<p>Для этого на узле, на котором установлен компонент «wal-g», выполняется создание ключа SSH, с помощью которого будет выполняться подключение к удаленному узлу:</p>
+<p>su - postgres</p>
+<p>ssh-keygen -t rsa -b 4096 -f /var/lib/jatoba/.ssh/id_rsa</p>
+<p>Далее необходимо скопировать созданный ключ SSH на удаленный узел при помощи команды с синтаксисом:</p>
+<p>ssh-copy-id [имя пользователя]@[ip-адрес]</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-4">Пример:<a href="#пример-4" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>ssh-copy-id <a href="mailto:postgres@192.168.223.161" target="_blank" rel="noopener noreferrer">postgres@192.168.223.161</a></p>
+<p>После этого в конфигурационном файле компонента wal-g необходимо определить следующие параметры:</p>
+<p>&quot;WALG_SSH_PREFIX&quot; : &quot;ssh://postgres@&lt;IP-адрес&gt;/nfs/wal/back-ups/&quot;,</p>
+<p>&quot;SSH_USERNAME&quot; : &quot;postgres&quot;,</p>
+<p>&quot;SSH_PASSWORD&quot; : &quot;[password]&quot;,</p>
+<p>&quot;SSH_PRIVATE_KEY_PATH&quot; : &quot;/var/lib/jatoba/.ssh/id_rsa&quot;</p>
+<p>Восстановление из РК выполняется также как это указано в п. <a href="#%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8%D0%B7-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.6</a>.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="просмотр-созданных-резервных-копий">Просмотр созданных резервных копий<a href="#просмотр-созданных-резервных-копий" class="hash-link" aria-label="Direct link to Просмотр созданных резервных копий" title="Direct link to Просмотр созданных резервных копий">​</a></h2>
+<blockquote>
+<p>Для отображения списка названий и времени создания РК необходимо выполнить ко-манду:</p>
+<p>wal-g backup-list [--pretty] [--json] [--detail]</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-5">Пример:<a href="#пример-5" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image13.png" style="width:7.11838in;height:1.25927in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-list</p>
+<p>Рисунок 3.8 – Список созданных РК</p>
+<p>Список созданных РК по умолчанию содержит следующую информацию:</p>
+</blockquote>
+<ul>
+<li>
+<p>backup_name – название файла РК;</p>
+</li>
+<li>
+<p>modified – дата и время изменения РК;</p>
+</li>
+<li>
+<p>wal_file_name – название файла WAL;</p>
+</li>
+<li>
+<p>storage_name – название хранилища РК.</p>
+</li>
+</ul>
+<blockquote>
+<p>Таблица 3.1 – Дополнительные ключи команды backup-list</p>
+</blockquote>
+<table><colgroup>
+<col style="width:27%">
+<col style="width:72%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Ключ</strong></p>
+</blockquote></th><th style="text-align:center"><strong>Описание</strong></th></tr></thead><tbody><tr><td><blockquote>
+<p>--pretty</p>
+</blockquote></td><td><blockquote>
+<p>Отображение списка РК в табличном виде</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>--json</p>
+</blockquote></td><td><blockquote>
+<p>Отображение списка РК в формате JSON</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>--detail</p>
+</blockquote></td><td><blockquote>
+<p>Отображение дополнительной информации о созданных РК</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image14.png" style="width:6.98075in;height:1.30677in" class="img_ev3q">
+<p>Рисунок 3.9 – Список созданных РК в табличном виде при использовании флага --pretty При использовании флага --detail список РК содержит следующую информацию:</p>
+</blockquote>
+<ul>
+<li>
+<p>backup_name – название файла РК;</p>
+</li>
+<li>
+<p>modified – дата и время изменения РК;</p>
+</li>
+<li>
+<p>wal_file_name – название файла WAL;</p>
+</li>
+<li>
+<p>storage_name – название хранилища РК;</p>
+</li>
+<li>
+<p>start_time – дата и время начала создания РК;</p>
+</li>
+<li>
+<p>finish_time – дата и время завершения создания РК;</p>
+</li>
+<li>
+<p>hostname – название сервера, на котором создана РК;</p>
+</li>
+<li>
+<p>data_dir – путь к каталогу БД;</p>
+</li>
+<li>
+<p>pg_version – версия СУБД;</p>
+</li>
+<li>
+<p>start_lsn – позиция «головы» файла WAL;</p>
+</li>
+<li>
+<p>finish_lsn – позиция «хвоста» файла WAL;</p>
+</li>
+<li>
+<p>is_permanent – признак постоянной РК (true, false).</p>
+</li>
+</ul>
+<blockquote>
+<p>Список созданных РК может быть представлен в формате данных JSON при помощи флага --json.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image15.png" style="width:7.12136in;height:1.04667in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-list --json</p>
+<p>Рисунок 3.10 – Список созданных РК в виде данных JSON при использовании флага --json</p>
+<p>При отсутствии в назначенном каталоге (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D0%B0-%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9">2.2.2</a>) созданных РК (полных или инкрементальных) будет выведено сообщение No backups found.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image16.png" style="width:7.05512in;height:1.12177in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.11 – Сообщение компонента при отсутствии в хранилище созданных РК</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-созданных-резервных-копий">Проверка созданных резервных копий<a href="#проверка-созданных-резервных-копий" class="hash-link" aria-label="Direct link to Проверка созданных резервных копий" title="Direct link to Проверка созданных резервных копий">​</a></h2>
+<blockquote>
+<p>Функционал компонента позволяет выполнять проверку корректности созданных РК для того, чтобы убедиться в том, что хранилище сегментов WAL находится в рабочем со-стоянии.</p>
+<p>Доступные методы проверки определяются с помощью аргументов:</p>
+</blockquote>
+<ul>
+<li>
+<p>integrity – на основании последовательности сегментов;</p>
+</li>
+<li>
+<p>timeline – на основании временной шкалы.</p>
+</li>
+</ul>
+<blockquote>
+<p>Аргументы можно использовать вместе или по отдельности.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="использование-аргумента-integrity">Использование аргумента integrity<a href="#использование-аргумента-integrity" class="hash-link" aria-label="Direct link to Использование аргумента integrity" title="Direct link to Использование аргумента integrity">​</a></h2>
+<blockquote>
+<p>Аргумент integrity проверяет, что существует последовательная история сегментов WAL в диапазоне [старейший начальный сегмент - текущий сегмент] доступны в хранилище WAL. Это условие требуется для успешного выполнения PITR.</p>
+<p>Команда проверки с использованием аргумента integrity:</p>
+<p>postgres@node1:~$ wal-g wal-verify integrity</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image17.png" style="width:6.53125in;height:1.94562in" class="img_ev3q">
+<p>Рисунок 3.12 – Проверка созданных РК при помощи wal-verify integrity Вывод команды wal-verify integrity состоит из:</p>
+</blockquote>
+<ol>
+<li>
+<p>Статуса проверки РК:</p>
+<ul>
+<li>
+<p>OK – нет отсутствующих сегментов;</p>
+</li>
+<li>
+<p>WARNING – есть некоторые отсутствующие сегменты, но они не отмечены статусом MISSING_LOST;</p>
+</li>
+<li>
+<p>FAILURE – есть некоторые сегменты, отмеченные статусом MISSING_LOST.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Список, который содержит сегменты WAL в хронологическом порядке, сгруп-пированные по временной шкале и статусу.</p>
+</li>
+</ol>
+<blockquote>
+<p>В выводе проверки целостности, существуют четыре статуса сегментов WAL:</p>
+</blockquote>
+<ul>
+<li>
+<p>FOUND – сегменты присутствуют в хранилище WAL;</p>
+</li>
+<li>
+<p>MISSING_DELAYED – сегменты отсутствуют в хранилище WAL, но в СУБД не выполнялась их архивация с помощью archive_command (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%BC%D0%BC-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">2.2.12</a>);</p>
+</li>
+<li>
+<p>MISSING_UPLOADING – сегменты, которые отсутствуют в хранилище WAL, но находятся в процессе загрузки в хранилище;</p>
+</li>
+<li>
+<p>MISSING_LOST – некоторые сегменты отсутствуют в хранилище WAL и не соответствуют другим статусам проверки.</p>
+</li>
+</ul>
+<blockquote>
+<p>Ограничение на размер диапазона сегментов (ProbablyUploading) определяется пара-метром WALG_UPLOAD_CONCURRENCY.</p>
+<p>Размер диапазона сегментов (ProbablyDelayed) регулируется с помощью параметра WALG_INTEGRITY_MAX_DELAYED_WALS.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="использование-аргумента-timeline">Использование аргумента timeline<a href="#использование-аргумента-timeline" class="hash-link" aria-label="Direct link to Использование аргумента timeline" title="Direct link to Использование аргумента timeline">​</a></h2>
+<blockquote>
+<p>Аргумент timeline проверяет, что текущая временная шкала кластера больше или равна любой из временных шкал сегментов WAL хранилища.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24887in" class="img_ev3q">Стоит обратить внимание на то, что проверка с использованием аргумента timeline работает корректно только в том случае, если создано новое хранилище WAL или существующее хранилище очищено при восстановлении из РК или выполнении pg_upgrade.</p>
+<p>Команда проверки с использованием аргумента timeline:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image18.png" style="width:6.69853in;height:1.62646in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g wal-verify timeline</p>
+<p>Рисунок 3.13 – Проверка созданных РК при помощи wal-verify timeline Вывод команды wal-verify timeline состоит из:</p>
+</blockquote>
+<ol>
+<li>
+<p>Статус проверки:</p>
+<ul>
+<li>
+<p>OK – если текущий идентификатор временной шкалы совпадает с наивысшим идентификатором временной шкалы, найденным в хранилище WAL;</p>
+</li>
+<li>
+<p>WARNING – если не удалось определить, совпадает ли текущая временная шкала с самой высокой в хранилище WAL;</p>
+</li>
+<li>
+<p>FAILURE – если текущий идентификатор временной шкалы не равен наивыс-шему идентификатору временной шкалы, найденному в хранилище WAL.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Текущий идентификатор временной шкалы.</p>
+</li>
+<li>
+<p>Самый высокий идентификатор временной шкалы, найденный в каталоге хра-нения WAL.</p>
+</li>
+</ol>
+<blockquote>
+<p>По умолчанию вывод команды wal-verify осуществляется обычным текстом. Чтобы включить вывод в формате JSON, необходимо использовать флаг «--json»:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image19.png" style="width:7.09523in;height:1.16115in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g wal-verify timeline --json</p>
+<p>Рисунок 3.14 – Проверка созданных РК при помощи wal-verify timeline в формате данных JSON</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="использование-обоих-аргументов">Использование обоих аргументов<a href="#использование-обоих-аргументов" class="hash-link" aria-label="Direct link to Использование обоих аргументов" title="Direct link to Использование обоих аргументов">​</a></h2>
+<blockquote>
+<p>Использование обоих аргументов позволяет отобразить одновременно всю сводную информацию о состоянии созданных РК.</p>
+<p>В этом случае команда выглядит следующим образом:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image20.png" style="width:5.99548in;height:3.79375in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g wal-verify integrity timeline</p>
+<p>Рисунок 3.15 – Проверка созданных РК при помощи аргументов integrity и timeline</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-контрольных-сумм-данных-субд-при-создании-резервной-копии">Проверка контрольных сумм данных СУБД при создании резервной копии<a href="#проверка-контрольных-сумм-данных-субд-при-создании-резервной-копии" class="hash-link" aria-label="Direct link to Проверка контрольных сумм данных СУБД при создании резервной копии" title="Direct link to Проверка контрольных сумм данных СУБД при создании резервной копии">​</a></h2>
+<blockquote>
+<p>Для обеспечения сохранности данных резервных копий и контроля за физической це-лостностью файлов БД в составе компонента предусмотрены механизмы проверки кон-трольных сумм (checksums).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="включение-контрольных-сумм-в-кластере">Включение контрольных сумм в кластере<a href="#включение-контрольных-сумм-в-кластере" class="hash-link" aria-label="Direct link to Включение контрольных сумм в кластере" title="Direct link to Включение контрольных сумм в кластере">​</a></h2>
+<blockquote>
+<p>Контрольные суммы страниц данных СУБД позволяют обнаружить повреждения, вы-званные сбоями оборудования или ошибками ввода-вывода.</p>
+<p>Данный метод позволяет обнаружить повреждения на страницах данных СУБД, кото-рые редко читаются в обычном режиме работы, тем самым повышая надежность информа-ции, хранимой в РК.</p>
+<p>Если найдены поврежденные номера блоков (в настоящее время не более 10), они бу-дут записаны в РК в формате JSON, например:</p>
+<p>...</p>
+<p>&quot;/base/13690/13535&quot;: { &quot;IsSkipped&quot;: true,</p>
+<p>&quot;MTime&quot;: &quot;2020-08-20T21:02:56.690095409+05:00&quot;,</p>
+<p>&quot;IsIncremented&quot;: false</p>
+<p>},</p>
+<p>&quot;/base/16384/16397&quot;: { &quot;CorruptBlocks&quot;: [</p>
+<p>1</p>
+<p>],</p>
+<p>&quot;IsIncremented&quot;: false, &quot;IsSkipped&quot;: false,</p>
+<p>&quot;MTime&quot;: &quot;2020-08-21T19:09:52.966149937+05:00&quot;</p>
+<p>},</p>
+<p>...</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-целостности-данных-при-создании-резервной-копии">Проверка целостности данных при создании резервной копии<a href="#проверка-целостности-данных-при-создании-резервной-копии" class="hash-link" aria-label="Direct link to Проверка целостности данных при создании резервной копии" title="Direct link to Проверка целостности данных при создании резервной копии">​</a></h2>
+<blockquote>
+<p>Компонент позволяет выполнять проверку контрольных сумм всех страниц данных непосредственно в процессе создания резервной копии без остановки работы СУБД.</p>
+</blockquote>
+<ul>
+<li>Включение по умолчанию: для вновь создаваемых кластеров (начиная с СУБД</li>
+</ul>
+<blockquote>
+<p>«Jatoba» версии 18) контрольные суммы включаются автоматически при инициализации че-рез initdb;</p>
+</blockquote>
+<ul>
+<li>Проверка состояния: для определения, включены ли контрольные суммы в те-кущем кластере, необходимо выполнить команду:</li>
+</ul>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image21.jpeg" style="width:7.11068in;height:1.69531in" class="img_ev3q">
+<blockquote>
+<p>SHOW data_checksums;</p>
+<p>Рисунок 3.16 – Результат проверки поддержки контрольных сумм в СУБД</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.2498in" class="img_ev3q">Если контрольные суммы отключены, при использовании флага --verify будет выведено предупреждение, а сама проверка будет пропущена.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-целостности-при-создании-резервной-копии">Проверка целостности при создании резервной копии<a href="#проверка-целостности-при-создании-резервной-копии" class="hash-link" aria-label="Direct link to Проверка целостности при создании резервной копии" title="Direct link to Проверка целостности при создании резервной копии">​</a></h2>
+<blockquote>
+<p>Компонент позволяет выполнять проверку контрольных сумм всех страниц данных в СУБД непосредственно в процессе создания резервной копии без остановки работы кла-стера с помощью флага --verify.</p>
+<p>wal-g backup-push --verify $PGDATA</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image22.png" style="width:7.09167in;height:4.30833in" class="img_ev3q">
+<p>Рисунок 3.17 – Результат выполнения команды backup-push с флагом --verify Проверка целостности может выполняться без с флага --verify в случае активации па-</p>
+<p>раметра WALG_VERIFY_PAGE_CHECKSUMS в конфигурационном файле walg.json (см.</p>
+<p>п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%BC%D0%BC-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">2.2.12</a>).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="загрузка-резервных-копий-журналов-транзакций-wal-в-хранилище">Загрузка резервных копий журналов транзакций (WAL) в хранилище<a href="#загрузка-резервных-копий-журналов-транзакций-wal-в-хранилище" class="hash-link" aria-label="Direct link to Загрузка резервных копий журналов транзакций (WAL) в хранилище" title="Direct link to Загрузка резервных копий журналов транзакций (WAL) в хранилище">​</a></h2>
+<blockquote>
+<p>После создания и проверки РК журналов транзакций (WAL) необходимо загрузить в хранилище. В большинстве случаев данная процедура выполняется автоматически СУБД.</p>
+<p>Созданные, но не загруженные в хранилище РК журналы транзакций (WAL) отмеча-ются статусом MISSING_UPLOADING (см. пример в п.п. <a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-integrity">3.3.1</a>).</p>
+<p>В случае если необходимо загрузить РК журналы транзакций (WAL) вручную приме-няется команда с следующим синтаксисом:</p>
+<p>wal-g wal-push $PGDATA/pg_wal/[backup_name]</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-6">Пример:<a href="#пример-6" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g wal-push</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data/pg_wal/000000250000000000000077</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image23.png" style="width:6.89284in;height:2.42219in" class="img_ev3q">
+<p>Рисунок 3.18 – Результат выполнения команды wal-push</p>
+<p>В случае, если загрузка РК журналов транзакций (WAL) уже выполнялась ранее, в ответ будет выведено сообщение Files will be uploaded to storage: [storage_name]. В качестве значения [storage_name] по умолчанию используется «default».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="восстановление-данных-из-резервной-копии">Восстановление данных из резервной копии<a href="#восстановление-данных-из-резервной-копии" class="hash-link" aria-label="Direct link to Восстановление данных из резервной копии" title="Direct link to Восстановление данных из резервной копии">​</a></h2>
+<blockquote>
+<p>Использование компонента позволяет восстановить исходные данные СУБД на мо-мент создания РК.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="предварительные-условия-для-выполнения-восстановления-данных-из-резервной-копии">Предварительные условия для выполнения восстановления данных из резервной копии<a href="#предварительные-условия-для-выполнения-восстановления-данных-из-резервной-копии" class="hash-link" aria-label="Direct link to Предварительные условия для выполнения восстановления данных из резервной копии" title="Direct link to Предварительные условия для выполнения восстановления данных из резервной копии">​</a></h2>
+<blockquote>
+<p>Предварительными условиями выполнения компонентом процедур восстановления являются:</p>
+</blockquote>
+<ul>
+<li>
+<p>настроенное непрерывное архивирование WAL (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BD%D0%B5%D0%BF%D1%80%D0%B5%D1%80%D1%8B%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-wal">2.3.2</a>);</p>
+</li>
+<li>
+<p>настроено резервное копирование СУБД с помощью backup-push (см. п.п. <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.1</a>);</p>
+</li>
+<li>
+<p>с целью обеспечения безопасности созданных ранее РК рекомендуется выпол-нять восстановление данных в новый каталог, из содержимого которого будут в дальнейшем созданы новый РК. Далее в примерах восстановление данных СУБД выполняется в каталог</p>
+</li>
+</ul>
+<blockquote>
+<p>/var/lib/jatoba/6/data_new</p>
+</blockquote>
+<table><colgroup>
+<col style="width:8%">
+<col style="width:91%">
+</colgroup><thead><tr><th><blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25208in;height:0.25208in" class="img_ev3q"></p>
+</blockquote></th><th><blockquote>
+<p>В случае использования для восстановления каталога СУБД (по умолчанию</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data) повторно его необходимо удалить при помощи ко-манды:</p>
+<p># rm -rf /var/lib/jatoba/&lt;ver&gt;/data</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<blockquote>
+<p>ВАЖНО! Данное действие приведет к удалению текущего экземпляра СУБД.</p>
+</blockquote>
+<p>РК.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="восстановление-данных-из-последней-резервной-копии">Восстановление данных из последней резервной копии<a href="#восстановление-данных-из-последней-резервной-копии" class="hash-link" aria-label="Direct link to Восстановление данных из последней резервной копии" title="Direct link to Восстановление данных из последней резервной копии">​</a></h2>
+<blockquote>
+<p>В качестве последней РК может использоваться как полная, так и инкрементальная</p>
+<p>Восстановление данных из последней РК выполняется в несколько шагов:</p>
+</blockquote>
+<ol>
+<li>
+<p>Выполнить предварительные условия (см. <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8%D0%B7-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.6.1</a>);</p>
+</li>
+<li>
+<p>Остановить СУБД при помощи команды:</p>
+</li>
+</ol>
+<blockquote>
+<p># systemctl stop jatoba-&lt;ver&gt;</p>
+</blockquote>
+<ol start="3">
+<li>Создать новый каталог СУБД для восстановления:</li>
+</ol>
+<blockquote>
+<p>postgres@node1:~$ mkdir /var/lib/jatoba/&lt;ver&gt;/data_new/</p>
+</blockquote>
+<ol start="4">
+<li>Выполнить загрузку данных СУБД из последней полной РК. Общий синтаксис команды выглядит следующим образом:</li>
+</ol>
+<blockquote>
+<p>wal-g backup-fetch $PGDATA LATEST</p>
+<p>Где $PGDATA – путь к новому каталогу распаковки данных СУБД. Если каталог для распаковки не существует, то в таком случае компонент создаст его и все промежуточные подкаталоги; LATEST – указание использовать в качестве источника последнюю полную РК.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-7">Пример:<a href="#пример-7" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-fetch</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new LATEST</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">
+<blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image24.png" style="width:7.06543in;height:2.325in" class="img_ev3q">
+<p>Рисунок 3.19 – Запуск и успешное восстановление СУБД из РК</p>
+</blockquote>
+<ol start="5">
+<li>В конфигурационный файл СУБД «Jatoba» postgresql.conf, расположенный в каталоге /var/lib/jatoba/&lt;ver&gt;/data_new, внести необходимые изменения:</li>
+</ol>
+<blockquote>
+<p>а) Настроить параметры для выполнения восстановления:</p>
+<p>data_directory = &#x27;/var/lib/jatoba/&lt;ver&gt;/data_new&#x27;</p>
+<p>б) Отключить непрерывное архивирование WAL с помощью изменения следующих параметров:</p>
+<p>archive_mode = off</p>
+</blockquote>
+<ol start="6">
+<li>Запустить сервисы СУБД «Jatoba» и убедиться в доступе к восстановленным данным:</li>
+</ol>
+<blockquote>
+<p># /usr/jatoba-6/bin/pg_ctl start -D</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new -l</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new/startup.log</p>
+</blockquote>
+<ol start="7">
+<li>Остановить СУБД после завершения восстановления при помощи команды:</li>
+</ol>
+<blockquote>
+<p># /usr/jatoba-&lt;ver&gt;/bin/pg_ctl stop -D</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new</p>
+<p>Если необходимо сохранить каталог данных, то его необходимо переименовать:</p>
+<p>mv /var/lib/jatoba/&lt;ver&gt;/data</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data.old</p>
+</blockquote>
+<ol start="8">
+<li>При восстановлении СУБД в другой каталог данных, переместить его в исход-ный при помощи команды:</li>
+</ol>
+<blockquote>
+<p># mv -f /var/lib/jatoba/&lt;ver&gt;/data_new</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data</p>
+<p>В этом случае в конфигурационном файле postgresql.conf необходимо изменить пара-метры:</p>
+<p>data_directory = &#x27;/var/lib/jatoba/&lt;ver&gt;/data&#x27; archive_mode = &#x27;on&#x27;</p>
+</blockquote>
+<ol start="9">
+<li>Изменить в конфигурационном файле walg.json (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">2.2</a>) параметр</li>
+</ol>
+<blockquote>
+<p>&quot;WALG_FILE_PREFIX&quot; указав новое расположение создаваемых РК:</p>
+<p>&quot;WALG_FILE_PREFIX&quot;: &quot;/nfs/walg_archive/server2&quot;</p>
+</blockquote>
+<ol start="10">
+<li>В конфигурационном файле postgresql.conf повторно настроить параметры не-прерывного архивирования WAL (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BD%D0%B5%D0%BF%D1%80%D0%B5%D1%80%D1%8B%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-wal">2.3.2</a>) и выполнить перезагрузку сервиса СУБД:</li>
+</ol>
+<blockquote>
+<p># systemctl stop jatoba-&lt;ver&gt; # systemctl start jatoba-&lt;ver&gt;</p>
+<p>После выполнения восстановления данных СУБД из последней полной РК необхо-димо убедится в доступе и в их корректности.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="восстановление-данных-из-резервной-копии-на-определенный-момент-времени">Восстановление данных из резервной копии на определенный момент времени<a href="#восстановление-данных-из-резервной-копии-на-определенный-момент-времени" class="hash-link" aria-label="Direct link to Восстановление данных из резервной копии на определенный момент времени" title="Direct link to Восстановление данных из резервной копии на определенный момент времени">​</a></h2>
+<blockquote>
+<p>Восстановление данных из РК на определенный момент времени доступно при ис-пользовании:</p>
+</blockquote>
+<ul>
+<li>
+<p>названия РК, созданной в требуемый период времени;</p>
+</li>
+<li>
+<p>требуемой даты и времени.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="с-использованием-названия-резервной-копии">С использованием названия резервной копии<a href="#с-использованием-названия-резервной-копии" class="hash-link" aria-label="Direct link to С использованием названия резервной копии" title="Direct link to С использованием названия резервной копии">​</a></h2>
+<blockquote>
+<p>Восстановление данных из РК с использованием названия резервной копии, создан-ной в требуемый период времени, выполняется в несколько шагов:</p>
+</blockquote>
+<ol>
+<li>
+<p>Выполнить предварительные условия (см. п. <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8%D0%B7-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.6.1</a>);</p>
+</li>
+<li>
+<p>Остановить СУБД при помощи команды:</p>
+</li>
+</ol>
+<blockquote>
+<p># systemctl stop jatoba-&lt;ver&gt;</p>
+</blockquote>
+<ol start="3">
+<li>Вывести детализированный список доступных в хранилище РК при помощи ко-манды:</li>
+</ol>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-list --detail</p>
+</blockquote>
+<ol start="4">
+<li>Определить наименование полной РК, дата создания которой (по столбцу &quot;finish_time&quot; ) раньше момента возникновения проблем в СУБД.</li>
+</ol>
+<blockquote>
+<p>Например, если требуется выполнить восстановление на дату и время 09:00 17.06.2025 года, то в списке определяется РК, с наиболее близкими датой и временем к тре-буемой. На рисунке <a href="#_bookmark46">3.20</a> РК с названием base_000000010000000000000004 и значением finish_time 2025-06-17T08:53:52Z.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image25.png" style="width:7.12254in;height:2.09in" class="img_ev3q">
+<blockquote>
+<p><span id="_bookmark46" class="anchor"></span>Рисунок 3.20 – Просмотр детальной информации о РК</p>
+<p>Стоит также учитывать столбец hostname, который отображает название сервера, на котором создана РК.</p>
+</blockquote>
+<ol start="5">
+<li>Выполнить загрузку данных СУБД из последней полной РК. Общий синтаксис команды выглядит следующим образом:</li>
+</ol>
+<blockquote>
+<p>wal-g backup-fetch $PGDATANEW [backup_name]</p>
+<p>Где $PGDATANEW – путь к новому каталогу данных для распаковки. Если каталог для распаковки не существует, то в таком случае компонент создаст его и все промежуточ-ные подкаталоги; backup_name – название РК.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-8">Пример:<a href="#пример-8" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-fetch</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new base_00000001000000000000000C</p>
+</blockquote>
+<ol start="6">
+<li>В конфигурационный файл СУБД «Jatoba» postgersql.conf, расположенный в каталоге /var/lib/jatoba/6/data_new, внести необходимые изменения:</li>
+</ol>
+<blockquote>
+<p>а) Настроить параметры для выполнения восстановления:</p>
+<p>recovery_target_name = &#x27;rp1&#x27; recovery_target_action = &#x27;promote&#x27;</p>
+<p>data_directory = &#x27;/var/lib/jatoba/&lt;ver&gt;/data_new&#x27;</p>
+<p>б) Отключить непрерывное архивирование WAL с помощью изменения следующих параметров:</p>
+<p>archive_mode = off</p>
+</blockquote>
+<ol start="7">
+<li>Запустить сервисы СУБД «Jatoba» и убедиться в доступе к восстановленным данным:</li>
+</ol>
+<blockquote>
+<p># /usr/jatoba-&lt;ver&gt;/bin/pg_ctl start -D</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new -l</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new/startup.log</p>
+</blockquote>
+<ol start="8">
+<li>Изменить в конфигурационном файле walg.json (см. п.п. 2.2) параметр &quot;WALG_FILE_PREFIX&quot; указав новое расположение создаваемых РК в хранилище:</li>
+</ol>
+<blockquote>
+<p>&quot;WALG_FILE_PREFIX&quot;: &quot;/ nfs/walg_archive/server2&quot;</p>
+</blockquote>
+<ol start="9">
+<li>В конфигурационном файле postgresql.conf повторно настроить параметры не-прерывного архивирования WAL (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BD%D0%B5%D0%BF%D1%80%D0%B5%D1%80%D1%8B%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-wal">2.3.2</a>) и выполнить перезагрузку и проверить ста-тус сервиса СУБД:</li>
+</ol>
+<blockquote>
+<p># systemctl stop jatoba-&lt;ver&gt; # systemctl start jatoba-&lt;ver&gt;</p>
+<p># systemctl status jatoba-&lt;ver&gt;</p>
+<p>После выполнения восстановления данных СУБД из последней полной РК необхо-димо убедится в доступе к ним и в их корректности.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="с-использованием-даты-и-времени-резервной-копии-pitr">С использованием даты и времени резервной копии (PITR)<a href="#с-использованием-даты-и-времени-резервной-копии-pitr" class="hash-link" aria-label="Direct link to С использованием даты и времени резервной копии (PITR)" title="Direct link to С использованием даты и времени резервной копии (PITR)">​</a></h2>
+<blockquote>
+<p>Восстановление данных из РК на определенный момент времени с указанием даты и времени выполняется в следующей последовательности:</p>
+</blockquote>
+<ol>
+<li>
+<p>Выполнить предварительные условия (см. п. <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8%D0%B7-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.6.1</a>);</p>
+</li>
+<li>
+<p>Остановить СУБД при помощи команды:</p>
+</li>
+</ol>
+<blockquote>
+<p># systemctl stop jatoba-&lt;ver&gt;</p>
+</blockquote>
+<ol start="3">
+<li>Выполнить загрузку данных СУБД с использованием указанием даты и вре-мени. Общий синтаксис команды выглядит следующим образом:</li>
+</ol>
+<blockquote>
+<p>wal-g backup-fetch $PGDATANEW --pitr-timestamp=[&quot;YYYY-MM-DDThh:mm:ss+hh:mm&quot;]</p>
+<p>Где $PGDATANEW – путь к новому каталогу данных для распаковки. Если каталог для распаковки не существует, то в таком случае компонент создаст его и все промежуточ-ные подкаталоги; YYYY-MM-DDThh:mm:ss+hh:mm – дата и время, на которое необходимо выполнить восстановление СУБД.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-9">Пример:<a href="#пример-9" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g backup-fetch</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new --pitr-timestamp= &quot;2025-09-09T14:02:08+00:00&quot;</p>
+<p>В случае, если в параметре --pitr-timestamp указывается момент времени мень-ший, чем момент проведения последней транзакции, то выполнение последую-щего запуска СУБД с восстановленным каталогом данных (шаг 5 перечня дан-ного раздела) завершится с ошибкой.</p>
+</blockquote>
+<ol start="4">
+<li><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25138in;height:0.25139in" class="img_ev3q">Запустить сервисы СУБД «Jatoba» и убедиться в доступе к восстановленным данным:</li>
+</ol>
+<blockquote>
+<p># /usr/jatoba-&lt;ver&gt;/bin/pg_ctl start -D</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new -l</p>
+<p>/var/lib/jatoba/&lt;ver&gt;/data_new/startup.log</p>
+</blockquote>
+<ol start="5">
+<li>Изменить в конфигурационном файле walg.json (см. п.п. 2.2) параметр &quot;WALG_FILE_PREFIX&quot; указав новое расположение создаваемых РК в хранилище:</li>
+</ol>
+<blockquote>
+<p>&quot;WALG_FILE_PREFIX&quot;: &quot;/nfs/walg_archive/server2&quot;</p>
+</blockquote>
+<ol start="6">
+<li>Выполнить перезагрузку и проверить статус службы СУБД:</li>
+</ol>
+<blockquote>
+<p># systemctl stop jatoba-&lt;ver&gt; # systemctl start jatoba-&lt;ver&gt;</p>
+<p># systemctl status jatoba-&lt;ver&gt;</p>
+<p>После выполнения восстановления данных СУБД из последней полной РК необхо-димо убедится в доступе к ним и в их корректности.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="восстановление-данных-на-момент-сразу-после-создания-рк">Восстановление данных на момент сразу после создания РК<a href="#восстановление-данных-на-момент-сразу-после-создания-рк" class="hash-link" aria-label="Direct link to Восстановление данных на момент сразу после создания РК" title="Direct link to Восстановление данных на момент сразу после создания РК">​</a></h2>
+<blockquote>
+<p>Восстановление данных на момент сразу после создания РК выполняется в той же последовательности, что и в п. <a href="#%D1%81-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.6.3.1</a> кроме шага 6а. Здесь при настройке параметров для выполнения восстановления необходимо вместо параметра recovery_target_name указать:</p>
+<p>recovery_target = &#x27;immediate&#x27;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="удаление-резервных-копий">Удаление резервных копий<a href="#удаление-резервных-копий" class="hash-link" aria-label="Direct link to Удаление резервных копий" title="Direct link to Удаление резервных копий">​</a></h2>
+<blockquote>
+<p>Для того чтобы удалить ранее созданные РК применяется команда, имеющая следу-ющий синтаксис:</p>
+<p>wal-g delete [retain|before|everything|target] --confirm</p>
+<p>По умолчанию при вызове команды wal-g delete фактическое удаление РК не произ-водится. Вместо этого выводится список архивов с данными, содержащихся в РК, для оценки и дальнейшего принятия решения.</p>
+<p>Для окончательного удаления РК при вызове команды wal-g delete применяется флаг</p>
+<p>--confirm.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Созданные РК, для которых установлен признак «постоянная» при создании или при помощи команды backup-mark с флагом -i (см. 3.1.2), будут сохранены в хранилище.</p>
+<p>Для РК с признаком «постоянная» игнорируются задаваемые условия удаления.</p>
+<p>Команда wal-g delete выполняется с специальными режимами, описание которых представлено далее в руководстве.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-retain">Режим retain<a href="#режим-retain" class="hash-link" aria-label="Direct link to Режим retain" title="Direct link to Режим retain">​</a></h2>
+<blockquote>
+<p>Режим retain предоставляет функционал удаления РК из хранилища, но с сохранением определенного пользователем количества РК по заданным условиям.</p>
+<p>Режим retain может использоваться в случае необходимости автоматизированного контроля количества РК в хранилище.</p>
+<p>Синтаксис команды wal-g delete в режиме retain выглядит следующим образом:</p>
+<p>wal-g delete retain [FULL|FIND_FULL] [number] [--after [backup_name|timestamp] [--confirm]</p>
+<p>Аргумент number определяет количество РК, которые необходимо сохранить в хра-нилище в режиме retain.</p>
+<p>Если для команды wal-g delete в режиме retain указан флаг FULL, то при выполнении удаления в хранилище сохраняется число полных РК, указанных в параметре number и все зависимые от них инкрементальные РК. Например, при запуске wal-g delete retain FULL 3 после выполнения команды в хранилище останутся 3 последних полных РК, а также инкре-ментальные РК, созданные на их основе.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24834in" class="img_ev3q">Промежуточные инкрементальные РК при выполнении команды wal-g delete retain FULL будут удалены. Для сохранения инкрементальных РК, сделанных между полными РК, необходимо использовать параметр FIND_FULL.</p>
+<p>Если для команды wal-g delete в режиме retain используется флаг --after, то в этом случае сохраняются:</p>
+</blockquote>
+<ul>
+<li>
+<p>Количество number последних полных РК (в том числе инкрементальные РК, созданные на их основе полных РК) созданных после РК с названием backup_name. В каче-стве backup_name рекомендуется использовать названия полных РК;</p>
+</li>
+<li>
+<p>Количество number последних полных РК, созданных после timestamp (дата и время в формате RFC3339: yyyy-MM-ddTHH:mm:ss.SSSZ).</p>
+</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"> В случае когда в команде wal-g delete в режиме retain <u>не используется</u> параметр</p>
+<p>FULL, выполнение команды может быть прервано при проверке условий. Например, имеется следующая конфигурация РК (лишние столбцы команды wal-g backup-list удалены для удобства представления):</p>
+<p>postgres@node1:~$ wal-g backup-list</p>
+<p>INFO: 2025/06/05 15:52:17.530839 List backups from storages: [de-fault]</p>
+<p>backup_name base_000000250000000000000046 base_000000250000000000000047</p>
+<p>base_000000250000000000000049_D_000000250000000000000047 <strong>base_00000025000000000000004B_D_000000250000000000000049</strong> base_00000025000000000000004D</p>
+<p>postgres@node1:~$ wal-g delete retain 2 --after base_00000025000000000000004D --confirm</p>
+<p>INFO: 2025/06/05 15:53:02.136911 Backup to delete will be searched in storages: [default]</p>
+<p>INFO: 2025/06/05 15:53:02.137122 retrieving permanent objects ERROR: 2025/06/05 15:53:02.154943</p>
+<p><strong>base_00000025000000000000004B_D_000000250000000000000049</strong>_backup_stop_</p>
+<p>sentinel.json is incremental and it&#x27;s predecessors cannot be deleted. Consider FIND_FULL option</p>
+<p>В данном случае команда wal-g delete retain прерывается по причине того, что задан-ные условия приведут к сохранению в хранилище в качестве последней инкремен-тальной РК (выделена полужирным начертанием). Но так как инкрементальная РК связана с удаляемыми полными РК, то нарушится их связность.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="примеры-1">Примеры:<a href="#примеры-1" class="hash-link" aria-label="Direct link to Примеры:" title="Direct link to Примеры:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g delete retain FULL 5 --after 2019-12-12T12:12:12 --confirm</p>
+<p>При выполнении данной команды компонент сохранит в хранилище 5 последних РК (включая зависимые от них инкрементальные РК), а также РК, созданные начиная с даты и времени 2019-12-12 12:12:12 включительно.</p>
+<p>postgres@node1:~$ wal-g delete retain FULL 3 --after base_00000025000000000000003D --confirm</p>
+<p>При выполнении данной команды компонент сохранит в хранилище три последних РК, созданных после РК base_00000025000000000000003D включительно.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image26.png" style="width:7.08345in;height:2.10781in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.21 – Удаление РК с использованием режима retain</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-before">Режим before<a href="#режим-before" class="hash-link" aria-label="Direct link to Режим before" title="Direct link to Режим before">​</a></h2>
+<blockquote>
+<p>Режим before предоставляет функционал удаления РК, но с сохранением в хранилище определенного количества РК по заданным в команде wal-g delete условиям. Режим before может использоваться в случае необходимости автоматизированного контроля количества РК в хранилище.</p>
+<p>Синтаксис команды wal-g delete в режиме before выглядит следующим образом:</p>
+<p>wal-g delete before [FIND_FULL] [backup_name|timestamp] [--con-firm]</p>
+<p>Где [backup_name] – название РК, до которой должно выполнятся удаление РК из хра-нилища; [timestamp] – дата и время в формате RFC3339: yyyy-MM-ddTHH:mm:ss.SSSZ.</p>
+</blockquote>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:94%">
+</colgroup><thead><tr><th><blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25208in;height:0.25208in" class="img_ev3q"></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p>Если флаг FIND_FULL не указан, а выполнение удаления РК (полной или инкремен-тальной) может привести к появлению осиротевших инкрементальных РК, то выпол-нение команды wal-g delete в режиме before завершится с выводом сообщения об ошибке «[backup_name] is incremental and it&#x27;s predecessors cannot be deleted. Consider FIND_FULL option».</p>
+<p>Например, имеется следующая конфигурация РК (лишние столбцы команды wal-g</p>
+<p>backup-list удалены для удобства представления):</p>
+<p>postgres@node1:~$ wal-g backup-list</p>
+<p>INFO: 2025/06/05 18:24:09.393863 List backups from storages: [de-fault]</p>
+<p>backup_name</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<blockquote>
+<p>base_00000025000000000000005A base_00000025000000000000005C <strong>base_00000025000000000000005E_D_00000025000000000000005C</strong> base_000000250000000000000060</p>
+<p>postgres@node1:~$ wal-g delete before <strong>base_00000025000000000000005E_D_00000025000000000000005C</strong> --confirm</p>
+<p>INFO: 2025/06/05 18:24:39.574223 Backup to delete will be searched in storages: [default]</p>
+<p>INFO: 2025/06/05 18:24:39.574389 retrieving permanent objects ERROR: 2025/06/05 18:24:39.584080</p>
+<p><strong>base_00000025000000000000005E_D_00000025000000000000005C</strong>_backup_stop_</p>
+<p>sentinel.json is incremental and it&#x27;s predecessors cannot be deleted. Consider FIND_FULL option.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image27.png" style="width:7.13611in;height:3.08303in" class="img_ev3q">Здесь при выполнении команды wal-g delete before в качестве РК, до которой будет выполняться удаление указана инкрементальная (выделена полужирным начерта-нием). В случае выполнения данного условия указанная инкрементальная РК поте-ряет связность, поэтому компонент прерывает выполнение команды (см. рисунок <a href="#_bookmark51">3.22</a>).</p>
+<p><span id="_bookmark51" class="anchor"></span>Рисунок 3.22 – Прерывание выполнения команды wal-g delete before при возникно-вении ошибки удаления РК</p>
+<p>Если для команды wal-g delete в режиме before указан флаг FIND_FULL, то при вы-полнении удаления РК из хранилища будет определена полная РК, необходимая для сохра-нения всех зависимых от нее инкрементальных РК.</p>
+<p>postgres@node1:~$ wal-g delete before FIND_FULL base_00000025000000000000005E_D_00000025000000000000005C --con-</p>
+<p>firm</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image28.png" style="width:7.15555in;height:2.97323in" class="img_ev3q">
+<p>Рисунок 3.23 – Удаление РК командой wal-g delete в режиме before с использова-</p>
+<p>нием флага FIND_FULL</p>
+<p>В данном случае несмотря на то, что для удаления указана инкрементальная РК base_00000025000000000000005E_D_00000025000000000000005C компонент оставляет в хранилище ее родительскую постоянную РК с названием base_00000025000000000000005C.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image29.png" style="width:7.16534in;height:1.95542in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.24 – Результат выполнения команды wal-g delete в режиме before с ис-пользованием флага FIND_FULL</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-everything">Режим everything<a href="#режим-everything" class="hash-link" aria-label="Direct link to Режим everything" title="Direct link to Режим everything">​</a></h2>
+<blockquote>
+<p>Режим everything выполняет полную очистку всех резервных копий в хранилище в соответствии с задаваемыми условиями.</p>
+<p>Синтаксис команды wal-g delete в режиме everything выглядит следующим образом:</p>
+<p>postgres@node1:~$ wal-g delete everything [FORCE] [--confirm]</p>
+<p>Таблица 3.2 – Флаги команды wal-g delete в режиме everything</p>
+</blockquote>
+<table><colgroup>
+<col style="width:15%">
+<col style="width:53%">
+<col style="width:31%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Флаг</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Пример</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Без флага</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Удаляет все непостоянные РК (полные и ин-крементальные)</p>
+</blockquote></td><td><blockquote>
+<p>everything</p>
+</blockquote></td></tr><tr><td></td></tr><tr><td><blockquote>
+<p>FORCE</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Принудительное удаление всех РК (включая постоянные)</p>
+</blockquote></td><td><blockquote>
+<p>everything FORCE</p>
+</blockquote></td></tr><tr><td></td><td></td></tr></tbody></table>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image30.png" style="width:7.05751in;height:3.3375in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.25 – Удаление РК с использованием режима everything</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image31.png" style="width:7.05752in;height:1.5825in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.26 – Отсутствие РК в хранилище в результате выполнения команды wal-g delete в режиме everything</p>
+<p>При использовании флага FORCE будут удалены постоянные РК с признаком permanent (см. п.п. <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.1</a>).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-target">Режим target<a href="#режим-target" class="hash-link" aria-label="Direct link to Режим target" title="Direct link to Режим target">​</a></h2>
+<blockquote>
+<p>Режим target позволяет выполнять удаление РК с возможностью выбора стратегии об-работки зависимых (родительских или дочерних) РК.</p>
+<p>wal-g delete target [FIND_FULL] [backup_name] --confirm</p>
+<p>Таблица 3.3 – Флаги команды wal-g delete в режиме target</p>
+</blockquote>
+<table><colgroup>
+<col style="width:17%">
+<col style="width:47%">
+<col style="width:35%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Флаг</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th><th style="text-align:center"><strong>Пример</strong></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Без флага</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Удаляет указанную РК и зависимые ин-крементальные РК</p>
+</blockquote></td><td><blockquote>
+<p>target [backup_name]</p>
+</blockquote></td></tr><tr><td></td></tr><tr><td><blockquote>
+<p>FIND_FULL</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Удаляет все зависимые полные РК от указанной инкрементальной РК</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>target FIND_FULL [backup_name]</p>
+</blockquote></td></tr><tr><td></td></tr></tbody></table>
+<blockquote>
+<p>В режиме target выполнение команды delete по умолчанию приведет к удалению РК с указанным названием.</p>
+<p>В отличие от других режимов удаления РК, команда wal-g delete target позволяет уда-лить РК, отмеченные признаком «permanent», то есть постоянная РК (см. п.п. <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%BE%D0%B9-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.1.2</a>).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="примеры-2">Примеры:<a href="#примеры-2" class="hash-link" aria-label="Direct link to Примеры:" title="Direct link to Примеры:">​</a></h2>
+<blockquote>
+<p>Выполнить удаление полной РК, а также всех зависимых от нее инкрементальных РК:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image32.png" style="width:7.05758in;height:2.5275in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g delete target base_000000250000000000000062 --confirm</p>
+<p>Рисунок 3.27 – Удаление полной РК с использованием режима target</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image33.png" style="width:7.05753in;height:2.5275in" class="img_ev3q">
+<p>Рисунок 3.28 – Результат удаления полной РК с использованием режима target Удаление инкрементальной РК и зависимых от нее инкрементальных РК:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image34.png" style="width:7.05752in;height:2.6625in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g delete target base_000000025000000000000068_D_000000025000000000000066 --con-</p>
+<p>firm</p>
+<p>Рисунок 3.29 – Удаление инкрементальной РК и зависимых от нее инкрементальных РК с использованием режима target</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image35.png" style="width:6.95949in;height:2.62552in" class="img_ev3q">
+<p>Рисунок 3.30 – Результат удаления инкрементальной РК и зависимых от нее инкременталь-ных РК с использованием режима target</p>
+<p>Удаление инкрементальной РК, а также ее родительской РК, и зависимых инкремен-тальных РК, выполняется следующей командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image36.png" style="width:7.06846in;height:2.94198in" class="img_ev3q">
+<blockquote>
+<p>postgres@node1:~$ wal-g delete target FIND_FULL base_000000250000000000000080_D_00000025000000000000007E --con-</p>
+<p>firm</p>
+<p>Рисунок 3.31 – Удаление инкрементальной РК, а также ее родительской РК, и зависимых инкрементальных РК с использованием режима target</p>
+<p>В случае если удаление с флагом FIND_FULL в режиме target выполняется для край-ней инкрементальной РК, то будет выполнено удаление по цепочке РК вплоть до полной РК, которая является родительской по отношению ко всем дочерним.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image37.png" style="width:7.06583in;height:2.94198in" class="img_ev3q">
+<p>Рисунок 3.32 – Результат удаления инкрементальной РК, а также ее родительской РК, и за-висимых инкрементальных РК с использованием режима target</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-garbage">Режим garbage<a href="#режим-garbage" class="hash-link" aria-label="Direct link to Режим garbage" title="Direct link to Режим garbage">​</a></h2>
+<blockquote>
+<p>Режим garbage позволяет выполнять удаление устаревших архивов WAL и остаточ-ных файлов РК из хранилища, например, неудачные РК или частично удаленные.</p>
+<p>В режиме garbage удаляются все не постоянные объекты (см. п.п. <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%BE%D0%B9-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8">3.1.2</a>) до самой ран-ней не постоянной РК.</p>
+<p>Этот режим полезен в случаях, когда РК удаляются командой delete target (см. <a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-target">3.7.4</a>), после которой возможно появление инкрементальных РК без привязки к полным РК.</p>
+<p>Синтаксис команды wal-g delete в режиме garbage выглядит следующим образом:</p>
+<p>wal-g delete garbage [ARCHIVES| BACKUPS] [--confirm]</p>
+<p>Где флаг ARCHIVES – удаляет из хранилища только устаревшие архивы WAL; BACKUPS – удаляет из хранилища только оставшиеся (частично удаленные или неудачные) файлы РК.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Если запустить команду wal-g delete в режиме garbage без флагов, то выполня-ются и ARCHIVES, и BACKUPS.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-10">Пример:<a href="#пример-10" class="hash-link" aria-label="Direct link to Пример:" title="Direct link to Пример:">​</a></h2>
+<blockquote>
+<p>postgres@node1:~$ wal-g delete garbage --confirm</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image38.jpeg" style="width:7.13693in;height:1.68031in" class="img_ev3q">
+<p>Рисунок 3.33 – Удаление устаревших РК с использованием режима garbage</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="перемещение-резервных-копий">Перемещение резервных копий<a href="#перемещение-резервных-копий" class="hash-link" aria-label="Direct link to Перемещение резервных копий" title="Direct link to Перемещение резервных копий">​</a></h2>
+<blockquote>
+<p>При выполнении перемещения РК в хранилище необходимо выполнить изменение в конфигурационном файле walg.json параметра &quot;WALG_FILE_PREFIX&quot; указав актуальное местонахождение РК в хранилище.</p>
+<p>Дополнительных действий после изменения параметра &quot;WALG_FILE_PREFIX&quot; не требуется.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="журнал-работы-компонента">Журнал работы компонента<a href="#журнал-работы-компонента" class="hash-link" aria-label="Direct link to Журнал работы компонента" title="Direct link to Журнал работы компонента">​</a></h2>
+<blockquote>
+<p>Система ведения журналов работы компонента обеспечивает фиксацию событий и операций резервного копирования/восстановления.</p>
+<p>При установке компонента журнал работы не будет создан. Необходимо в конфигу-рационном файле (см. п.п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">2.2</a>) указать расположение файла журнала работы при помощи параметра WALG_LOG_DESTINATION, например:</p>
+<p>&quot;WALG_LOG_DESTINATION&quot;: &quot;/var/lib/jatoba/wal-g.log&quot;</p>
+<p>После указания в конфигурационном файле расположения файла журнала он будет создан автоматически при первом вызове команды компонента.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image39.png" style="width:7.06126in;height:4.725in" class="img_ev3q">
+<p>Рисунок 3.34 – Фрагмент содержимого журнала работы компонента</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">При активации записи событий в файл журнал работы компонента прекраща-ется вывод результатов выполнения команд в системной консоли ОС. Компо-нент не поддерживает одновременный вывод информации в журнал работы и системную консоль ОС.</p>
+<p>Иначе можно в конфигурационном файле walg.json указать в качестве получа-теля сообщений стандартный системный вывод:</p>
+<p>&quot;WALG_LOG_DESTINATION&quot;: &quot;stderr&quot;</p>
+<p>ния;</p>
+<p>Журнал поддерживает следующие уровни детализации событий:</p>
+</blockquote>
+<ul>
+<li>
+<p>ERROR – только критические сбои и события;</p>
+</li>
+<li>
+<p>NORMAL – основные этапы операций резервного копирования/восстановле-</p>
+</li>
+<li>
+<p>DEVEL – подробная отладочная информация.</p>
+</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/wal-g/media/image1.png" style="width:0.25in;height:0.24956in" class="img_ev3q">Уровень детализации журнала работы компонента указывается при помощи парамет-ров конфигурационного файла (см. п.п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9">2.2.11</a>), например:</p>
+<p>&quot;WALG_LOG_LEVEL&quot;: &quot;NORMAL&quot;</p>
+<p>Если параметр не WALG_LOG_LEVEL не определен в конфигурационном файле используется внутреннее значение NORMAL.</p>
+</blockquote>
+<h1>УДАЛЕНИЕ РАСШИРЕНИЯ</h1>
+<blockquote>
+<p>Удаление компонента должна производится от имени пользователя, обладающего ад-министративными привилегиями в ОС.</p>
+<p>Удаление компонента вместе с установленными конфигурационными файлами вы-полняется при помощи стандартных средств управления программным обеспечением ОС GNU/Linux.</p>
+<p>В качестве примера будет приведена процедура удаления компонента в ОС Ubuntu. Для удаления компонента необходимо выполнить следующую команду:</p>
+<p># apt-get purge jatoba&lt;ver&gt;-wal-g</p>
+<p>Для получения детальной информации по используемому пакетному менеджеру ре-комендуется обратиться к документации по ОС.</p>
+<p>После удаления необходимо удалить конфигурационный файл walg.json при помощи следующей команды:</p>
+<p># rm /var/lib/jatoba/.walg.json</p>
+<p>После удаления компонента «wal-g» необходимо удалить пользователя СУБД backup.</p>
+</blockquote>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:16%">
+<col style="width:12%">
+<col style="width:71%">
+</colgroup><thead><tr><th><blockquote>
+<p>NFS</p>
+</blockquote></th><th><blockquote>
+<p>–</p>
+</blockquote></th><th><blockquote>
+<p>Network File System</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>SSH</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Secure Shell</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>WAL</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Write-Ahead Logging</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>РК</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Резервная копия</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Всего листов (страниц) в доку-менте</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Номер до-кумента</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входящий номер со-проводи-тельного до-кумента и</p>
+<p>дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подпись</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>изме-ненных</p>
+</blockquote></td><td><blockquote>
+<p>заме-ненных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>аннули-рован-ных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/com18.3.1/user_guide"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">user_guide</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/jalog3"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">jalog3</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#ограничения-при-работе-с-компонентом" class="table-of-contents__link toc-highlight">Ограничения при работе с компонентом</a></li><li><a href="#установка-компонента-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка компонента в ОС GNU/Linux</a></li><li><a href="#-важная-информация" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/wal-g/media/image2.png" style="width:0.25139in;height:0.25036in"> Важная информация</a></li><li><a href="#настройка-конфигурационного-файла-компонента" class="table-of-contents__link toc-highlight">Настройка конфигурационного файла компонента</a></li><li><a href="#переменные-среды-окружения" class="table-of-contents__link toc-highlight">Переменные среды окружения</a></li><li><a href="#настройка-каталога-сохранения-резервных-копий" class="table-of-contents__link toc-highlight">Настройка каталога сохранения резервных копий</a></li><li><a href="#настройка-метода-сжатия-данных-резервных-копий" class="table-of-contents__link toc-highlight">Настройка метода сжатия данных резервных копий</a></li><li><a href="#настройка-параметров-создания-инкрементальных-резервных-копий" class="table-of-contents__link toc-highlight">Настройка параметров создания инкрементальных резервных копий</a></li><li><a href="#настройка-параметров-восстановления" class="table-of-contents__link toc-highlight">Настройка параметров восстановления</a></li><li><a href="#настройка-ограничений-дисковых-операций" class="table-of-contents__link toc-highlight">Настройка ограничений дисковых операций</a></li><li><a href="#настройка-ограничений-сетевых-операций" class="table-of-contents__link toc-highlight">Настройка ограничений сетевых операций</a></li><li><a href="#включение-метрик-мониторинга" class="table-of-contents__link toc-highlight">Включение метрик мониторинга</a></li><li><a href="#настройка-параметров-подключения-к-субд" class="table-of-contents__link toc-highlight">Настройка параметров подключения к СУБД</a></li><li><a href="#настройка-параметра-pgdata" class="table-of-contents__link toc-highlight">Настройка параметра PGDATA</a></li><li><a href="#настройка-параметра-pghost" class="table-of-contents__link toc-highlight">Настройка параметра PGHOST</a></li><li><a href="#настройка-параметра-pgport" class="table-of-contents__link toc-highlight">Настройка параметра PGPORT</a></li><li><a href="#настройка-параметра-pguser" class="table-of-contents__link toc-highlight">Настройка параметра PGUSER</a></li><li><a href="#настройка-параметра-pgpassword" class="table-of-contents__link toc-highlight">Настройка параметра PGPASSWORD</a></li><li><a href="#настройка-защищенного-соединения" class="table-of-contents__link toc-highlight">Настройка защищенного соединения</a></li><li><a href="#параметры-журналирования-событий" class="table-of-contents__link toc-highlight">Параметры журналирования событий</a></li><li><a href="#настройка-проверки-контрольных-сумм-данных-субд" class="table-of-contents__link toc-highlight">Настройка проверки контрольных сумм данных СУБД</a></li><li><a href="#настройка-субд" class="table-of-contents__link toc-highlight">Настройка СУБД</a></li><li><a href="#создание-пользователя-для-выполнения-архивации-и-восстановления-данных" class="table-of-contents__link toc-highlight">Создание пользователя для выполнения архивации и восстановления данных</a></li><li><a href="#например" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#настройка-непрерывного-архивирования-wal" class="table-of-contents__link toc-highlight">Настройка непрерывного архивирования WAL</a></li><li><a href="#создание-резервной-копии" class="table-of-contents__link toc-highlight">Создание резервной копии</a></li><li><a href="#создание-полной-резервной-копии" class="table-of-contents__link toc-highlight">Создание полной резервной копии</a></li><li><a href="#пример" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#создание-постоянной-резервной-копии" class="table-of-contents__link toc-highlight">Создание постоянной резервной копии</a></li><li><a href="#пример-1" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#пример-2" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#создание-инкрементальной-резервной-копии" class="table-of-contents__link toc-highlight">Создание инкрементальной резервной копии</a></li><li><a href="#пример-3" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#создание-инкрементальной-резервной-копии-на-основе-базовой-рк" class="table-of-contents__link toc-highlight">Создание инкрементальной резервной копии на основе базовой РК</a></li><li><a href="#примеры" class="table-of-contents__link toc-highlight">Примеры:</a></li><li><a href="#создание-резервной-копии-с-удаленного-узла" class="table-of-contents__link toc-highlight">Создание резервной копии с удаленного узла</a></li><li><a href="#например-1" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#пример-4" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#просмотр-созданных-резервных-копий" class="table-of-contents__link toc-highlight">Просмотр созданных резервных копий</a></li><li><a href="#пример-5" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#проверка-созданных-резервных-копий" class="table-of-contents__link toc-highlight">Проверка созданных резервных копий</a></li><li><a href="#использование-аргумента-integrity" class="table-of-contents__link toc-highlight">Использование аргумента integrity</a></li><li><a href="#использование-аргумента-timeline" class="table-of-contents__link toc-highlight">Использование аргумента timeline</a></li><li><a href="#использование-обоих-аргументов" class="table-of-contents__link toc-highlight">Использование обоих аргументов</a></li><li><a href="#проверка-контрольных-сумм-данных-субд-при-создании-резервной-копии" class="table-of-contents__link toc-highlight">Проверка контрольных сумм данных СУБД при создании резервной копии</a></li><li><a href="#включение-контрольных-сумм-в-кластере" class="table-of-contents__link toc-highlight">Включение контрольных сумм в кластере</a></li><li><a href="#проверка-целостности-данных-при-создании-резервной-копии" class="table-of-contents__link toc-highlight">Проверка целостности данных при создании резервной копии</a></li><li><a href="#проверка-целостности-при-создании-резервной-копии" class="table-of-contents__link toc-highlight">Проверка целостности при создании резервной копии</a></li><li><a href="#загрузка-резервных-копий-журналов-транзакций-wal-в-хранилище" class="table-of-contents__link toc-highlight">Загрузка резервных копий журналов транзакций (WAL) в хранилище</a></li><li><a href="#пример-6" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#восстановление-данных-из-резервной-копии" class="table-of-contents__link toc-highlight">Восстановление данных из резервной копии</a></li><li><a href="#предварительные-условия-для-выполнения-восстановления-данных-из-резервной-копии" class="table-of-contents__link toc-highlight">Предварительные условия для выполнения восстановления данных из резервной копии</a></li><li><a href="#восстановление-данных-из-последней-резервной-копии" class="table-of-contents__link toc-highlight">Восстановление данных из последней резервной копии</a></li><li><a href="#пример-7" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#восстановление-данных-из-резервной-копии-на-определенный-момент-времени" class="table-of-contents__link toc-highlight">Восстановление данных из резервной копии на определенный момент времени</a></li><li><a href="#с-использованием-названия-резервной-копии" class="table-of-contents__link toc-highlight">С использованием названия резервной копии</a></li><li><a href="#пример-8" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#с-использованием-даты-и-времени-резервной-копии-pitr" class="table-of-contents__link toc-highlight">С использованием даты и времени резервной копии (PITR)</a></li><li><a href="#пример-9" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#восстановление-данных-на-момент-сразу-после-создания-рк" class="table-of-contents__link toc-highlight">Восстановление данных на момент сразу после создания РК</a></li><li><a href="#удаление-резервных-копий" class="table-of-contents__link toc-highlight">Удаление резервных копий</a></li><li><a href="#режим-retain" class="table-of-contents__link toc-highlight">Режим retain</a></li><li><a href="#примеры-1" class="table-of-contents__link toc-highlight">Примеры:</a></li><li><a href="#режим-before" class="table-of-contents__link toc-highlight">Режим before</a></li><li><a href="#режим-everything" class="table-of-contents__link toc-highlight">Режим everything</a></li><li><a href="#режим-target" class="table-of-contents__link toc-highlight">Режим target</a></li><li><a href="#примеры-2" class="table-of-contents__link toc-highlight">Примеры:</a></li><li><a href="#режим-garbage" class="table-of-contents__link toc-highlight">Режим garbage</a></li><li><a href="#пример-10" class="table-of-contents__link toc-highlight">Пример:</a></li><li><a href="#перемещение-резервных-копий" class="table-of-contents__link toc-highlight">Перемещение резервных копий</a></li><li><a href="#журнал-работы-компонента" class="table-of-contents__link toc-highlight">Журнал работы компонента</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,2243 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-com18.3.1/jadog_4.2_3" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">jadog_4.2_3 | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/com18.3.1/jadog_4.2_3"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="jadog_4.2_3 | Postgres"><meta data-rh="true" name="description" content="Подп. и дата"><meta data-rh="true" property="og:description" content="Подп. и дата"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/com18.3.1/jadog_4.2_3"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/jadog_4.2_3" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/jadog_4.2_3" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"jadog_4.2_3","item":"https://hadsunn.github.io/demo_docu/com18.3.1/jadog_4.2_3"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.e5b1ae04.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.f63415a3.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/com18.3.1/1c">com18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/1c">Поддержка платформы 1С</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/firewall">firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_anonymizer">ja_anonymizer</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_seceventlog3.3">ja_seceventlog3.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_similar">ja_similar</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_sync_ldap1.3">ja_sync_ldap1.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_1">jadog_4.2_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_2">jadog_4.2_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_3">jadog_4.2_3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_secur">jadog_secur</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jalog">jalog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/map">map</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/secur_func">secur_func</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/secur_guide">secur_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/timescale">timescale</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/user_guide">user_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/wal-g">wal-g</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">com18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">jadog_4.2_3</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:41%">
+<col style="width:58%">
+</colgroup><thead><tr><th><blockquote>
+<p>Подп. и дата</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td><blockquote>
+<p>Инв. № дубл.</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Взам. инв. №</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Подп. и дата</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Инв. № подл.</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 3.</strong></p>
+<p><strong>Краткое руководство по настройке.</strong></p>
+<p><strong>Компонент «jaDog»</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p><strong>643.72410666.00067-08 98 02-03</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>Листов 59</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>2026</p>
+</blockquote></td></tr><tr><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<header><h1><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25208in;height:0.25208in" class="img_ev3q">АННОТАЦИЯ</h1></header>
+<blockquote>
+<p>Во третьей части документа приведены основные сведения по проектированию и настройке отказоустойчивого кластера jaDog защищенной системы управления базами данных «Jatoba» (далее — СУБД «Jatoba»).</p>
+<p>Настоящее руководство предназначено для администратора СУБД «Jatoba», включая требования к архитектуре, варианты развёртывания и детальные инструкции по конфигурации.</p>
+<p>Представленные в документе снимки экрана могут отличаться для различных версий настраиваемой СУБД и предназначены для демонстрации хода настройки отказоустойчивого кластера СУБД «Jatoba».</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">Администратор СУБД «Jatoba» должен иметь навыки по работе с системами управления базами данных (СУБД) PostgreSQL или защищенной СУБД «Jatoba» (ООО «Газинформсервис»).</p>
+<p>Примеры в данном документе приведены для СУБД «Jatoba» версии ядра 5, а также для СУБД «Jatoba» версии ядра 6.</p>
+<p>Для СУБД «Jatoba» версий ядра 5, 6 и 18 используется версия компонента — 4.1</p>
+<p>На приведенных в руководстве иллюстрациях версия компонента «jaDog» может отличаться от фактической.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25292in;height:0.25208in" class="img_ev3q"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.24764in;height:0.24635in" class="img_ev3q">Степени важности примечаний, применяемые в документе:</p>
+</blockquote>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Важная информация</strong> – указания, требующие особого внимания</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p><strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Настоящий документ оснащён навигацией, гиперссылками и перекрестными ссылками. В приложении Adobe Acrobat навигация вызывается кнопкой «Закладки», как показано на рисунке <a href="#_bookmark0">1.1</a>.</p>
+<p><span id="_bookmark0" class="anchor"></span>Рисунок 1.1 - Структура документа</p>
+</blockquote>
+<h1>СОДЕРЖАНИЕ</h1>
+<h1></h1>
+<ol>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Проектирование кластера 6</a></p>
+<ol>
+<li>
+<p><a href="#%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D1%8B">Выбор архитектуры 6</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%BE%D0%B9%D1%87%D0%B8%D0%B2%D0%B0%D1%8F-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Устойчивая архитектура кластера 6</a></p>
+<ol>
+<li>
+<p><a href="#_bookmark4">Устойчивый вариант кластера с хранилищем WAL-файлов 7</a></p>
+</li>
+<li>
+<p><a href="#_bookmark5">Устойчивый вариант кластера без хранилища WAL-файлов 8</a></p>
+</li>
+<li>
+<p><a href="#_bookmark6">Устойчивая архитектура при использовании нескольких дата-центров 9</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#_bookmark7">Минимальная архитектура кластера 10</a></p>
+<ol>
+<li>
+<p><a href="#_bookmark8">Кластер минимальной конфигурации с узлом-арбитром и хранилищем WAL-файлов 10</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D1%81-%D1%83%D0%B7%D0%BB%D0%BE%D0%BC-%D0%B0%D1%80%D0%B1%D0%B8%D1%82%D1%80%D0%BE%D0%BC-%D0%B1%D0%B5%D0%B7-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-wal-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2">Кластер минимальной конфигурации с узлом-арбитром без хранилища WAL-файлов 11</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D1%81-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-trusted-address">Кластер минимальной конфигурации с использованием Trusted Address 12</a></p>
+</li>
+<li>
+<p><a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D1%80%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85-%D0%B4%D0%B0%D1%82%D0%B0-%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%BE%D0%B2">Минимальная архитектура при использовании нескольких дата-центров 13</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B0-wal-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2">Размещение хранилища WAL-файлов 14</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D1%8B-%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BE%D1%82%D0%BA%D0%B0%D0%B7%D0%BE%D1%83%D1%81%D1%82%D0%BE%D0%B9%D1%87%D0%B8%D0%B2%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Варианты построения отказоустойчивого кластера 15</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-%D0%B8-%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">Построение нового кластера и перенос данных СУБД 15</a></p>
+<ol>
+<li><a href="#%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9-%D0%B8%D0%BD%D1%84%D1%80%D0%B0%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B">Планирование на основании новой инфраструктуры 15</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B5%D0%B9-%D0%B8%D0%BD%D1%84%D1%80%D0%B0%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B">Использование существующей инфраструктуры 16</a></p>
+<ol>
+<li><a href="#%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B5%D0%B9-%D0%B8%D0%BD%D1%84%D1%80%D0%B0%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B">Планирование на основании существующей инфраструктуры 16</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%B0">Организация дискового пространства 16</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Определение конфигурации кластера 17</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Минимальная конфигурация кластера 17</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D0%BC%D0%B0%D1%8F-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Рекомендуемая конфигурация кластера 17</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%BE%D0%B2">Шаблоны файлов ответов для проектирования кластеров 17</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8-%D0%B4%D0%BB%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Подготовка информации для проекта кластера 18</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Название кластера 18</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%BE%D0%BB%D0%B8-%D1%83%D0%B7%D0%BB%D0%BE%D0%B2-%D0%B8-%D0%B8%D1%85-ip-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0">Роли узлов и их IP-адреса 19</a></p>
+</li>
+<li>
+<p><a href="#%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-ip-%D0%B0%D0%B4%D1%80%D0%B5%D1%81-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-public-address">Виртуальный IP-адрес кластера (Public Address) 19</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%B0">Название сетевого интерфейса 19</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0-%D1%81%D1%83%D0%B1%D0%B4">Название сервиса СУБД 19</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%87%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9">Учетные записи пользователей 19</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B1%D0%B4">Название БД 21</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2">Шаблоны файлов ответов 22</a></p>
+<ol>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BA-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2">Заголовок файла ответов 23</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B1%D1%89%D0%B8%D0%B5-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%83%D0%B7%D0%BB%D0%BE%D0%B2-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Общие параметры узлов кластера 23</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D1%81%D1%83%D0%B1%D0%B4">Секция инициализации СУБД 23</a></p>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Запуск скриптов при формировании кластера 24</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Секция настроек кластера 25</a></p>
+</li>
+<li>
+<p><a href="#%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA-%D1%83%D0%B7%D0%BB%D0%BE%D0%B2-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-%D0%BF%D0%BE-%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E">Группа настроек узлов кластера по умолчанию 27</a></p>
+</li>
+<li>
+<p><a href="#%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0-%D0%BA-wal-%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B0%D0%BC">Группа настроек доступа к WAL-архивам 28</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA-%D0%B4%D0%B0%D1%82%D0%B0-%D1%86%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">Секция настроек дата-центов 29</a></p>
+<ol>
+<li>
+<p><a href="#%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA-%D1%83%D0%B7%D0%BB%D0%BE%D0%B2-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Группа настроек узлов кластера 29</a></p>
+</li>
+<li>
+<p><a href="#_bookmark42">Группа настроек узла-арбитра 31</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-%D1%81-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8">Автоматическое формирование кластера с использованием готовой конфигурации 32</a></p>
+<ol>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B0-jadog0">Запуск специального режима jadog0 32</a></p>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%80%D0%B0%D0%B7%D0%B2%D0%B5%D1%80%D1%82%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Запуск развертывания кластера 32</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%80%D1%83%D1%87%D0%BD%D0%BE%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Ручное формирование кластера 34</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-jadog-%D1%81-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-jadog_ctl">Установка экземпляра компонента «jaDog» с использованием утилиты jadog_ctl 34</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-jadog-%D1%81-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%BC-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2">Установка экземпляра компонента «jaDog» с файлом ответов 34</a></p>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8-%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-jadog-%D1%81-%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%BC-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2">Запуск настройки экземпляра компонента «jaDog» с подготовленным файлом ответов 34</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-jadog-rest-api">Использование jaDog REST API 36</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B5%D0%BF%D0%BE%D0%BB%D0%B0%D0%B4%D0%BE%D0%BA">Устранение неполадок 37</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0-%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B8-%D0%BA-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%83-%D1%81-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-jadog_ctl-%D0%B8%D0%BB%D0%B8-rest-api">Ошибка при подключении к компоненту с использованием jadog_ctl или REST API 37</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B5-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-jadog">Не создан пользователь компонента «jaDog» 37</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B5%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%82%D0%BD%D1%8B%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC-%D1%84%D0%B0%D0%B9%D0%BB%D0%B5-jadog_hba.yml">Некорректные настройки в конфигурационном файле jadog_hba.yml 37</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82-ssl-%D0%BD%D0%B5-%D1%82%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B8%D0%BB%D0%B8-%D0%BD%D0%B5-%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9">При подключении используется сертификат SSL не того пользователя или не действительный. 38</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B0%D1%81%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Рассинхронизация кластера 39</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BC%D0%B0%D0%BB%D1%8B%D0%B5-%D0%B8-%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BC%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">Малые и средние объемы данных СУБД 39</a></p>
+</li>
+<li>
+<p><a href="#%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BC%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">Большие объемы данных СУБД 40</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B5%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%82%D0%BD%D0%B0%D1%8F-%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-%D0%B8%D0%B8%D0%BB%D0%B8-%D1%81%D1%83%D0%B1%D0%B4">Некорректная перезагрузка кластера и/или СУБД 42</a></p>
+</li>
+<li>
+<p><a href="#%D0%B4%D0%B8%D0%B0%D0%B3%D0%BD%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BE%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Диагностика работоспособности кластера 43</a></p>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-1">Приложение 1 45</a></p>
+<p><a href="#%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D1%8B%D1%85-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2-%D0%B8-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2-jadog">Расположение служебных файлов, скриптов и шаблонов jaDog 45</a></p>
+<p><a href="#%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE-%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC%D1%8B%D0%B5-%D0%B2-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B5-jadog">Значения по умолчанию, используемые в компоненте «jaDog» 45</a></p>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-2">Приложение 2 47</a></p>
+<p><a href="#%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%BE%D0%B9-jadog_ctl-%D0%B8%D0%B7-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B9-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8">Работа с консольной утилитой jadog_ctl из командной строки 47</a></p>
+<p><a href="#%D0%B4%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B6%D0%B8%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-jadog_ctl">Длительное ожидание выполнения консольной утилиты jadog_ctl 47</a></p>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-3">Приложение 3 48</a></p>
+<p><a href="#%D0%BA%D0%BB%D1%8E%D1%87%D0%B8-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-jadog_ctl">Ключи запуска консольной утилиты jadog_ctl 48</a></p>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-4">Приложение 4 49</a></p>
+<p><a href="#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-jadog_ctl">Команды консольной утилиты jadog_ctl 49</a></p>
+<p><a href="#%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D1%8B-%D0%B8-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">Термины и определения 57</a></p>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 58</a></p>
+<h1>ПРОЕКТИРОВАНИЕ КЛАСТЕРА</h1>
+<blockquote>
+<p>При проектировании отказоустойчивого кластера необходимо учитывать требования к доступности Recovery Time Objective (RTO), допустимой потере данных Recovery Point Objective (RPO), а также бюджетные и инфраструктурные ограничения.</p>
+<p>В данном разделе рассматриваются рекомендуемые архитектурные решения, их преимущества, недостатки и сферы применения.</p>
+<p>Описание применяемых терминов дано в разделе «<a href="#%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D1%8B-%D0%B8-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">Термины и определения</a>».</p>
+<p>Применение сертификатов TLS (SSL) для компонента «jaDog» при проектировании кластера приводится в документах «Инструкция по безопасной настройке кластера на основе компонента «jaDog» 643.72410666.00067-08 98 02-04 и «Руководство по</p>
+<p>безопасности СУБД Jatoba» 643.72410666.00067-08 97 01-27.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="выбор-архитектуры">Выбор архитектуры<a href="#выбор-архитектуры" class="hash-link" aria-label="Direct link to Выбор архитектуры" title="Direct link to Выбор архитектуры">​</a></h3>
+<blockquote>
+<p>В качестве рассматриваемых в данном руководстве примеров проектируемого отказоустойчивого кластера (далее – кластера) предлагаются следующие варианты архитектуры:</p>
+</blockquote>
+<ul>
+<li>
+<p>устойчивая (рекомендуемая);</p>
+</li>
+<li>
+<p>минимально допустимая.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="устойчивая-архитектура-кластера">Устойчивая архитектура кластера<a href="#устойчивая-архитектура-кластера" class="hash-link" aria-label="Direct link to Устойчивая архитектура кластера" title="Direct link to Устойчивая архитектура кластера">​</a></h3>
+<blockquote>
+<p>Устойчивая архитектура кластера, для поддержания его работоспособности, предполагает наличие в его составе нечетного количества узлов. К данному числу относятся главный и резервные узлы, узлы-арбитры (Referee).</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Применение в кластере узла-арбитра совместно с использованием параметра main:trusted_address (см. первую часть документа «Компонент jaDog. Управление режимом работы узлов кластера» 643.72410666.00067-08 98 02-</p>
+<p>01) не рекомендуется. Совместное использование, в некоторых случаях, может привести к сетевому разделению узлов (split brain) или полной остановке кластера.</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">Рекомендуется размещать узел-арбитр во внешнем, по отношению к кластеру СУБД, ресурсе (дата-центре, площадке и пр.).</p>
+<p>Хорошей практикой устойчивой архитектуры кластера также является использование хранилища WAL-файлов для обеспечения восстановления данных при возникновении сбоев.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="устойчивый-вариант-кластера-с-хранилищем-wal-файлов">Устойчивый вариант кластера с хранилищем WAL-файлов<a href="#устойчивый-вариант-кластера-с-хранилищем-wal-файлов" class="hash-link" aria-label="Direct link to Устойчивый вариант кластера с хранилищем WAL-файлов" title="Direct link to Устойчивый вариант кластера с хранилищем WAL-файлов">​</a></h3>
+<blockquote>
+<p>Устойчивый вариант кластера с хранилищем WAL-файлов применяется для конфигураций критически важных систем с требованиями к RPO и RTO, а также при высокой нагрузке на чтение данных.</p>
+<p>Пример данного вида кластера имеет следующий состав узлов:</p>
+</blockquote>
+<ul>
+<li>
+<p>главный узел;</p>
+</li>
+<li>
+<p>резервный узел №1;</p>
+</li>
+<li>
+<p>резервный узел №2;</p>
+</li>
+<li>
+<p>хранилище WAL-файлов.</p>
+</li>
+</ul>
+<blockquote>
+<p>WAL архив</p>
+<p>Главный узел</p>
+<p>Резервный узел 2</p>
+<p>Резервный узел 1</p>
+<p>Рисунок 1.1 – Архитектура кластера с хранилищем WAL-файлов Преимущества данной архитектуры кластера с хранилищем WAL-файлов:</p>
+</blockquote>
+<ul>
+<li>
+<p>Кластер устойчивого варианта архитектуры из трех узлов:</p>
+<ul>
+<li>
+<p>различные варианты построения типов репликации данных (синхронная, асинхронная, каскадная);</p>
+</li>
+<li>
+<p>меньшее время восстановления RTO в случае возникновения аварии.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Использование хранилища WAL-файлов:</p>
+<ul>
+<li>
+<p>меньший объем безвозвратных потерь информации RPO;</p>
+</li>
+<li>
+<p>допустимые длительные остановки с восстановлением из журналов без полного бэкапирования.</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Актуальная версия файла шаблона YML для конфигурации «главный узел + резервный + резервный узел + WAL» располагается в каталоге /usr/jatoba-</p>
+<p>&lt;ver&gt;/share/doc/jadog/clusters_kits/jadog_referee_wa.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="устойчивый-вариант-кластера-без-хранилища-wal-файлов">Устойчивый вариант кластера без хранилища WAL-файлов<a href="#устойчивый-вариант-кластера-без-хранилища-wal-файлов" class="hash-link" aria-label="Direct link to Устойчивый вариант кластера без хранилища WAL-файлов" title="Direct link to Устойчивый вариант кластера без хранилища WAL-файлов">​</a></h3>
+<blockquote>
+<p>Устойчивый вариант кластера без использования хранилища WAL-файлов обеспечивает баланс между расходами на инфраструктуру и надежностью.</p>
+<p>Резервный узел 1</p>
+</blockquote>
+<p>FO</p>
+<p>Главный</p>
+<blockquote>
+<p>узел</p>
+</blockquote>
+<p>Резервный</p>
+<p>узел 2</p>
+<blockquote>
+<p>Рисунок 1.2 – Архитектура кластера без хранилища WAL-файлов Преимущества архитектуры кластера без хранилища WAL-файлов:</p>
+<p>– Кластер из трех узлов:</p>
+</blockquote>
+<ul>
+<li>
+<p>остается отказоустойчивым при временном или полном выходе из строя одного из узлов;</p>
+</li>
+<li>
+<p>если приложение одновременно работает с главным и резервным узлами для чтения данных - оно продолжит работать без помех;</p>
+</li>
+<li>
+<p>различные варианты построения типов репликации (синхронная, асинхронная, каскадная).</p>
+</li>
+</ul>
+<blockquote>
+<p>Недостатком архитектуры без хранилища WAL-файлов является ограниченное время восстановления резервного узла без полного бэкапирования.</p>
+<p>Актуальная версия файла шаблона конфигурации «главный узел + резервный + резервный узел» располагается в каталоге /usr/jatoba-</p>
+<p>&lt;ver&gt;/share/doc/jadog/clusters_kits/jadog_trusted_ip.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="устойчивая-архитектура-при-использовании-нескольких-дата-центров">Устойчивая архитектура при использовании нескольких дата-центров<a href="#устойчивая-архитектура-при-использовании-нескольких-дата-центров" class="hash-link" aria-label="Direct link to Устойчивая архитектура при использовании нескольких дата-центров" title="Direct link to Устойчивая архитектура при использовании нескольких дата-центров">​</a></h3>
+<blockquote>
+<p>Устойчивый вариант при использовании нескольких дата-центров, в которых располагаются узлы геораспределенного кластера, состоит из следующих элементов:</p>
+</blockquote>
+<ol>
+<li>
+<p>Дата-центр №1:</p>
+<ul>
+<li>
+<p>главный узел;</p>
+</li>
+<li>
+<p>резервный узел;</p>
+</li>
+<li>
+<p>узел арбитр.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Дата-центр №2:</p>
+<ul>
+<li>
+<p>главный узел;</p>
+</li>
+<li>
+<p>резервный узел;</p>
+</li>
+<li>
+<p>узел арбитр.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Дата-центр №3:</p>
+<ul>
+<li>
+<p>узел-арбитр;</p>
+</li>
+<li>
+<p>хранилище WAL.</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Актуальная версия шаблона файлов для архитектуры при использовании нескольких дата-центров располагается в каталоге /usr/jatoba-</p>
+<p>&lt;ver&gt;/share/doc/jadog/clusters_kits/ja_dtc_as.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="минимальная-архитектура-кластера">Минимальная архитектура кластера<a href="#минимальная-архитектура-кластера" class="hash-link" aria-label="Direct link to Минимальная архитектура кластера" title="Direct link to Минимальная архитектура кластера">​</a></h3>
+<blockquote>
+<p>Минимально допустимая архитектура кластера содержит только два узла: главный и резервный с применением дополнительных средств.</p>
+<p>К дополнительным средствам относится использование:</p>
+</blockquote>
+<ul>
+<li>
+<p>узла-арбитра (Referee);</p>
+</li>
+<li>
+<p>хранилища WAL-файлов.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="кластер-минимальной-конфигурации-с-узлом-арбитром-и-хранилищем-wal-файлов">Кластер минимальной конфигурации с узлом-арбитром и хранилищем WAL-файлов<a href="#кластер-минимальной-конфигурации-с-узлом-арбитром-и-хранилищем-wal-файлов" class="hash-link" aria-label="Direct link to Кластер минимальной конфигурации с узлом-арбитром и хранилищем WAL-файлов" title="Direct link to Кластер минимальной конфигурации с узлом-арбитром и хранилищем WAL-файлов">​</a></h3>
+<blockquote>
+<p>Кластер минимально допустимой конфигурации с узлом-арбитром и хранилищем WAL-файлов применяется для систем с умеренными требованиями к RPO, а также при ограниченном бюджете на инфраструктуру.</p>
+<p>Узел-арбитр в рассматриваемом кластере может одновременно выполнять роль хранилища WAL-файлов.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Применение в кластере узла-арбитра совместно с использованием параметра main:trusted_address (см. первую часть документа «Компонент jaDog. Управление режимом работы узлов кластера» 643.72410666.00067-08 98 02-</p>
+<p>01) не рекомендуется. Совместное использование, в некоторых случаях, может привести к сетевому разделению узлов (split brain) или полной остановке кластера.</p>
+<p>Преимущества данной архитектуры с точки зрения отказоустойчивости:</p>
+</blockquote>
+<ul>
+<li>
+<p>узел-рефери для интеллектуального определения состояния кластера при отработке аварийной ситуации;</p>
+</li>
+<li>
+<p>обеспечение сетевой связности узлов кластера;</p>
+</li>
+<li>
+<p>наличие хранилища WAL-файлов.</p>
+</li>
+</ul>
+<blockquote>
+<p>Недостатки: при выходе из строя главного узла отказоустойчивость кластера нарушается, поскольку в работе остаётся единственный резервный узел, к которому переходит роль главного.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image27.png" style="width:3.16712in;height:2.78853in" class="img_ev3q">jaDog Referee</p>
+<p>WAL архив</p>
+<p>Главный узел</p>
+<p>Резервный узел 1</p>
+<p>Рисунок 1.3 – Минимальная архитектура кластера с узлом-рефери и хранилищем WAL-файлов</p>
+<p>Актуальная версия файла шаблона конфигурации «главный узел + резервный + узел-арбитр + WAL» располагается в каталоге /usr/jatoba-</p>
+<p>&lt;ver&gt;/share/doc/jadog/clusters_kits/jadog_referee_wa.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="кластер-минимальной-конфигурации-с-узлом-арбитром-без-хранилища-wal-файлов">Кластер минимальной конфигурации с узлом-арбитром без хранилища WAL-файлов<a href="#кластер-минимальной-конфигурации-с-узлом-арбитром-без-хранилища-wal-файлов" class="hash-link" aria-label="Direct link to Кластер минимальной конфигурации с узлом-арбитром без хранилища WAL-файлов" title="Direct link to Кластер минимальной конфигурации с узлом-арбитром без хранилища WAL-файлов">​</a></h3>
+<blockquote>
+<p>Кластер минимально допустимой конфигурации с узлом-арбитром без хранилища WAL-файлов обеспечивает баланс между расходами на инфраструктуру и надежностью.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Применение в кластере узла-арбитра совместно с использованием параметра main:trusted_address (см. первую часть документа «Компонент jaDog. Управление режимом работы узлов кластера» 643.72410666.00067-08 98 02-</p>
+<p>03) не рекомендуется. Совместное использование, в некоторых случаях, может привести к сетевому разделению узлов (split brain) или полной остановке кластера.</p>
+<p>Преимущества данной архитектуры с точки зрения отказоустойчивости:</p>
+</blockquote>
+<ul>
+<li>
+<p>узел-рефери для интеллектуального определения состояния кластера при отработке аварийной ситуации;</p>
+</li>
+<li>
+<p>обеспечение сетевой связности узлов кластера. Недостатки:</p>
+</li>
+<li>
+<p>при выходе из строя главного узла отказоустойчивость кластера нарушается, поскольку в работе остаётся единственный резервный узел, к которому переходит роль главного;</p>
+</li>
+<li>
+<p>отсутствие хранилища WAL-файлов.</p>
+</li>
+</ul>
+<blockquote>
+<p>jaDog Referee</p>
+</blockquote>
+<p>Сервер</p>
+<p>Главный</p>
+<p>узел</p>
+<p>Резервный</p>
+<p>узел 1</p>
+<blockquote>
+<p>Рисунок 1.4 – Минимальная архитектура кластера с узлом-рефери без хранилища WAL-файлов</p>
+<p>Актуальная версия файла шаблона конфигурации «главный узел + резервный + узел-арбитр» располагается в каталоге /usr/jatoba-&lt;ver&gt;/share/doc/jadog/clusters_kits/jadog_referee.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="кластер-минимальной-конфигурации-с-использованием-trusted-address">Кластер минимальной конфигурации с использованием Trusted Address<a href="#кластер-минимальной-конфигурации-с-использованием-trusted-address" class="hash-link" aria-label="Direct link to Кластер минимальной конфигурации с использованием Trusted Address" title="Direct link to Кластер минимальной конфигурации с использованием Trusted Address">​</a></h3>
+<blockquote>
+<p>Минимальная архитектура кластера с использованием Trusted Address обеспечивает минимальные требования к инфраструктуре и простоту развёртывания.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25139in;height:0.25049in" class="img_ev3q">Применение в кластере узла-арбитра совместно с использованием параметра main:trusted_address (см. первую часть документа «Компонент jaDog. Управление режимом работы узлов кластера» 643.72410666.00067-08 98 02-</p>
+<p>01) не рекомендуется. Совместное использование, в некоторых случаях, может привести к сетевому разделению узлов (split brain) или полной остановке кластера.</p>
+<p>Преимущества данной архитектуры с точки зрения отказоустойчивости:</p>
+</blockquote>
+<ul>
+<li>Trusted Address для определения состояния кластера при отработке аварийной ситуации;</li>
+</ul>
+<blockquote>
+<p>Недостатки:</p>
+</blockquote>
+<ul>
+<li>
+<p>риск возникновения сетевого разделения узлов кластера (Split Brain) при одновременном применении в кластере узла-арбитра;</p>
+</li>
+<li>
+<p>увеличение объема безвозвратных потерь информации (RPO);</p>
+</li>
+<li>
+<p>увеличение времени восстановления (RTO) в случае возникновения аварии. Актуальная версия шаблона файлов конфигурации «главный узел + резервный +</p>
+</li>
+</ul>
+<blockquote>
+<p>Trusted Address» располагается в каталоге /usr/jatoba-</p>
+<p>&lt;ver&gt;/share/doc/jadog/clusters_kits/jadog_trusted_ip.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image38.png" style="width:2.79341in;height:2.98494in" class="img_ev3q">Trusted IP-address</p>
+</blockquote>
+<p>Gateway</p>
+<blockquote>
+<p>Главный узел</p>
+<p>Резервный узел 1</p>
+<p>Рисунок 1.5 – Кластер минимально допустимой конфигурации с использованием Trusted Address</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="минимальная-архитектура-при-использовании-нескольких-дата-центров">Минимальная архитектура при использовании нескольких дата-центров<a href="#минимальная-архитектура-при-использовании-нескольких-дата-центров" class="hash-link" aria-label="Direct link to Минимальная архитектура при использовании нескольких дата-центров" title="Direct link to Минимальная архитектура при использовании нескольких дата-центров">​</a></h3>
+<blockquote>
+<p>Вариант минимальной архитектуры при использовании нескольких дата-центров, в которых располагаются узлы геораспределенного кластера, состоит из следующих</p>
+<p>элементов:</p>
+</blockquote>
+<ol>
+<li>
+<p>Дата-центр №1:</p>
+<ul>
+<li>
+<p>главный узел;</p>
+</li>
+<li>
+<p>резервный узел.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Дата-центр №2:</p>
+<ul>
+<li>
+<p>главный узел;</p>
+</li>
+<li>
+<p>резервный узел;</p>
+</li>
+<li>
+<p>узел арбитр.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="размещение-хранилища-wal-файлов">Размещение хранилища WAL-файлов<a href="#размещение-хранилища-wal-файлов" class="hash-link" aria-label="Direct link to Размещение хранилища WAL-файлов" title="Direct link to Размещение хранилища WAL-файлов">​</a></h3>
+<blockquote>
+<p>WAL-архив рекомендуется располагать за пределами дата-центра, в котором расположен кластер.</p>
+<p>В случае возникновения проблем в дата-центре данные из WAL-архива позволят сохранить больше данных и, соответственно, уменьшить RPO.</p>
+<p>При отсутствии возможности размещения WAL-архива за пределами дата-центра, допустимо расположить WAL-архив внутри ДЦ, к примеру на узле-арбитре (см. пример из п.п. <a href="#_bookmark8">1.3.1</a>).</p>
+</blockquote>
+<h1>ВАРИАНТЫ ПОСТРОЕНИЯ ОТКАЗОУСТОЙЧИВОГО КЛАСТЕРА</h1>
+<blockquote>
+<p>В данном разделе приводятся два основных подхода к созданию отказоустойчивого кластера.</p>
+</blockquote>
+<ul>
+<li>
+<p>развертывание нового кластера с последующей миграцией данных;</p>
+</li>
+<li>
+<p>преобразование существующей (Stand-Alone, SA) конфигурации в отказоустойчивый кластер.</p>
+</li>
+</ul>
+<blockquote>
+<p>Оба варианта включают общие этапы, такие как проектирование архитектуры, подготовка серверов и настройка SSL, но отличаются деталями выполнения.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="построение-нового-кластера-и-перенос-данных-субд">Построение нового кластера и перенос данных СУБД<a href="#построение-нового-кластера-и-перенос-данных-субд" class="hash-link" aria-label="Direct link to Построение нового кластера и перенос данных СУБД" title="Direct link to Построение нового кластера и перенос данных СУБД">​</a></h3>
+<blockquote>
+<p>Развертывание нового кластера с миграцией данных применяется в случаях когда:</p>
+</blockquote>
+<ul>
+<li>
+<p>требуется создать новый кластер без зависимостей от существующей инфраструктуры;</p>
+</li>
+<li>
+<p>данные можно перенести без длительного простоя.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="планирование-на-основании-новой-инфраструктуры">Планирование на основании новой инфраструктуры<a href="#планирование-на-основании-новой-инфраструктуры" class="hash-link" aria-label="Direct link to Планирование на основании новой инфраструктуры" title="Direct link to Планирование на основании новой инфраструктуры">​</a></h3>
+<blockquote>
+<p>В общем случае план создания подобного кластера состоит в выполнении следующих действий.</p>
+</blockquote>
+<ul>
+<li>
+<p>создание проекта архитектуры кластера (см. раздел <a href="#%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">1</a>):</p>
+<ul>
+<li>
+<p>определение роли узлов (Master, Slave, Referee, WAL-архив);</p>
+</li>
+<li>
+<p>определение количества узлов (нечетное);</p>
+</li>
+<li>
+<p>выбор типа репликации данных (синхронная/асинхронная);</p>
+</li>
+<li>
+<p>планирование сетевой адресации и интерфейсов.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>подготовка инфраструктуры: дисковых пространств и сетевых служб (firewall,</p>
+</li>
+</ul>
+<blockquote>
+<p>DNS).</p>
+</blockquote>
+<ul>
+<li>
+<p>выпуск сертификатов SSL;</p>
+</li>
+<li>
+<p>заполнение YML-файла ответов с параметрами для автоматизированного</p>
+</li>
+</ul>
+<blockquote>
+<p>формирования кластера;</p>
+</blockquote>
+<ul>
+<li>
+<p>запуск служебной утилиты jadog0 на всех узлах формируемого кластера;</p>
+</li>
+<li>
+<p>запустить автоматизированное формирование кластера с узла (будущий главный</p>
+</li>
+</ul>
+<blockquote>
+<p>узел);</p>
+</blockquote>
+<ul>
+<li>перенос данных из существующей SA-конфигурации в новый кластер с помощью</li>
+</ul>
+<blockquote>
+<p>инструментов репликации или дампа.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="использование-существующей-инфраструктуры">Использование существующей инфраструктуры<a href="#использование-существующей-инфраструктуры" class="hash-link" aria-label="Direct link to Использование существующей инфраструктуры" title="Direct link to Использование существующей инфраструктуры">​</a></h3>
+<blockquote>
+<p>Развертывание кластера с использованием существующей инфраструктуры применяется в случаях, когда:</p>
+</blockquote>
+<ul>
+<li>
+<p>требуется модернизировать работающую SA-систему без полного перестроения;</p>
+</li>
+<li>
+<p>необходимо минимизировать простой.</p>
+</li>
+</ul>
+<blockquote>
+<p>При использовании существующей архитектуры необходимо довести количество узлов до нечетного добавив или удалив.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="планирование-на-основании-существующей-инфраструктуры">Планирование на основании существующей инфраструктуры<a href="#планирование-на-основании-существующей-инфраструктуры" class="hash-link" aria-label="Direct link to Планирование на основании существующей инфраструктуры" title="Direct link to Планирование на основании существующей инфраструктуры">​</a></h3>
+<blockquote>
+<p>В общем случае план преобразования существующей инфраструктуры в кластер состоит в выполнении следующих действий:</p>
+</blockquote>
+<ul>
+<li>
+<p>создание проекта архитектуры кластера (см. раздел <a href="#%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">1</a>) аналогично первому варианту, но с учетом интеграции существующего узла SA;</p>
+</li>
+<li>
+<p>подготовка инфраструктуры: дисковых пространств и сетевых служб (firewall,</p>
+</li>
+</ul>
+<blockquote>
+<p>DNS).</p>
+</blockquote>
+<ul>
+<li>
+<p>выпуск сертификатов SSL;</p>
+</li>
+<li>
+<p>заполнение YML-файла ответов с параметрами для автоматизированного</p>
+</li>
+</ul>
+<blockquote>
+<p>формирования кластера;</p>
+</blockquote>
+<ul>
+<li>
+<p>запуск служебной утилиты jadog0 на всех узлах формируемого кластера;</p>
+</li>
+<li>
+<p>запустить автоматизированное формирование кластера с узла (будущий главный</p>
+</li>
+</ul>
+<blockquote>
+<p>узел).</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="организация-дискового-пространства">Организация дискового пространства<a href="#организация-дискового-пространства" class="hash-link" aria-label="Direct link to Организация дискового пространства" title="Direct link to Организация дискового пространства">​</a></h3>
+<blockquote>
+<p>При планировании нового кластера или использовании существующей</p>
+<p>инфраструктуры необходимо убедится в том, что дисковое пространство на каждом узле составляет не менее X*3, где X — размер каталога данных (pg_data) СУБД.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Допускается использовать X*2, но в этом случае при возникновении первого сбоя и последующей попытке восстановить работоспособность кластера, свободного места может не хватить, что приведёт к вынужденной остановке кластера.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="определение-конфигурации-кластера">Определение конфигурации кластера<a href="#определение-конфигурации-кластера" class="hash-link" aria-label="Direct link to Определение конфигурации кластера" title="Direct link to Определение конфигурации кластера">​</a></h3>
+<blockquote>
+<p>Здесь и далее условные обозначения:</p>
+</blockquote>
+<ul>
+<li>
+<p>M – главный узел с ролью «Master»;</p>
+</li>
+<li>
+<p>S(r) – резервный узел с ролью «Slave», а (r) – выбранный тип репликации данных: a</p>
+</li>
+<li>
+<p>асинхронный (Async), s – синхронный (Sync).</p>
+</li>
+</ul>
+<blockquote>
+<p>– Referee – узел-арбитр.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="минимальная-конфигурация-кластера">Минимальная конфигурация кластера<a href="#минимальная-конфигурация-кластера" class="hash-link" aria-label="Direct link to Минимальная конфигурация кластера" title="Direct link to Минимальная конфигурация кластера">​</a></h3>
+<blockquote>
+<p>Минимальная конфигурация кластера, состоящая из трех узлов, имеет следующую формулу:</p>
+<p>my_cluster = M + S(a) + S(a)</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="рекомендуемая-конфигурация-кластера">Рекомендуемая конфигурация кластера<a href="#рекомендуемая-конфигурация-кластера" class="hash-link" aria-label="Direct link to Рекомендуемая конфигурация кластера" title="Direct link to Рекомендуемая конфигурация кластера">​</a></h3>
+<blockquote>
+<p>Рекомендуемая конфигурация кластера имеет следующую формулу:</p>
+<p>my_cluster = M + S(a)*x + Referee + WALarchive</p>
+<p>Где x – четное количество резервных узлов.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="шаблоны-файлов-ответов-для-проектирования-кластеров">Шаблоны файлов ответов для проектирования кластеров<a href="#шаблоны-файлов-ответов-для-проектирования-кластеров" class="hash-link" aria-label="Direct link to Шаблоны файлов ответов для проектирования кластеров" title="Direct link to Шаблоны файлов ответов для проектирования кластеров">​</a></h3>
+<blockquote>
+<p>Параметры проектируемого кластера указываются в шаблоне файла ответов.</p>
+<p>Шаблоны файлов ответов входят в поставку СУБД «Jatoba» и располагаются в каталогах /usr/jatoba-&lt;ver&gt;/share/doc/jadog/clusters_kits.</p>
+<p>Названия шаблонов файлов ответов и формула проектируемого кластера:</p>
+</blockquote>
+<ul>
+<li>
+<p>init_jadog_referee_wa.yml - M + S(a)*2 + Referee + WALarchive;</p>
+</li>
+<li>
+<p>init_jadog_referee.yml - M + S(a)*2 + Referee;</p>
+</li>
+<li>
+<p>init_jadog_trusted_ip.yml - M + S(a)*2 + Trusted Address</p>
+</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Применение в кластере узла-арбитра совместно с использованием параметра main:trusted_address (см. первую часть документа «Компонент jaDog. Управление режимом работы узлов кластера» 643.72410666.00067-08 98 02-</p>
+<p>03) не рекомендуется. Совместное использование, в некоторых случаях, может привести к сетевому разделению узлов (split brain) или полной остановке кластера.</p>
+<p>Описание процедуры заполнения шаблона файла ответов при проектировании кластера приводится в разделе <a href="#%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2">3</a> данного руководства.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="подготовка-информации-для-проекта-кластера">Подготовка информации для проекта кластера<a href="#подготовка-информации-для-проекта-кластера" class="hash-link" aria-label="Direct link to Подготовка информации для проекта кластера" title="Direct link to Подготовка информации для проекта кластера">​</a></h3>
+<blockquote>
+<p>В соответствии с ранее приведенными рекомендациями из данного документа подготавливается информация для внесения в шаблон файла ответов, примеры которой приводятся далее в этом документе.</p>
+<p>Курсивом приводится название параметра в шаблоне файла ответов.</p>
+<p>Public IP-address (PIP)</p>
+<p>jadog 12345</p>
+<p>jadog 12345</p>
+<p>Главный узел</p>
+<p>Interface: ens33</p>
+<p>IP: 192.168.72.10:5432</p>
+<p>OS: postgres/postgres DB: jatoba Login:jatoba Pass:change_on_install</p>
+<p>jadog referee 12345</p>
+<p>Архив WAL</p>
+<p>Резервный узел 1</p>
+<p>Рисунок 2.1 – Проект конфигурации кластера</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="название-кластера">Название кластера<a href="#название-кластера" class="hash-link" aria-label="Direct link to Название кластера" title="Direct link to Название кластера">​</a></h3>
+<blockquote>
+<p>Уникальное название кластера (например, my_cluster), которое будет использоваться для идентификации в системе.</p>
+<p>cluster_name: my_cluster</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="роли-узлов-и-их-ip-адреса">Роли узлов и их IP-адреса<a href="#роли-узлов-и-их-ip-адреса" class="hash-link" aria-label="Direct link to Роли узлов и их IP-адреса" title="Direct link to Роли узлов и их IP-адреса">​</a></h3>
+<blockquote>
+<p>Роли узлов и их IP-адреса (здесь и далее IP адреса приводятся как примеры):</p>
+</blockquote>
+<ul>
+<li>
+<p>Master: главный узел, 192.168.72.11. DNS-запись: jatoba-11.</p>
+</li>
+<li>
+<p>Slave (асинхронный): резервный узел, 192.168.72.12. DNS-запись: jatoba-12</p>
+</li>
+<li>
+<p>Slave (асинхронный): резервный узел, 192.168.72.13. DNS-запись: jatoba-13</p>
+</li>
+<li>
+<p>Referee (опционально): узел-арбитр для разрешения конфликтов, 192.168.72.14.</p>
+</li>
+</ul>
+<blockquote>
+<p>DNS-запись: jatoba-14</p>
+</blockquote>
+<ul>
+<li>WAL-архив (опционально): сервер для хранения журналов транзакций, 192.168.72.15.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="виртуальный-ip-адрес-кластера-public-address">Виртуальный IP-адрес кластера (Public Address)<a href="#виртуальный-ip-адрес-кластера-public-address" class="hash-link" aria-label="Direct link to Виртуальный IP-адрес кластера (Public Address)" title="Direct link to Виртуальный IP-адрес кластера (Public Address)">​</a></h3>
+<blockquote>
+<p>Адрес, через который будет осуществляться доступ к кластеру (например, 192.168.72.10). DNS-запись: jatoba-10.</p>
+<p>public_address: 192.168.72.10</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="название-сетевого-интерфейса">Название сетевого интерфейса<a href="#название-сетевого-интерфейса" class="hash-link" aria-label="Direct link to Название сетевого интерфейса" title="Direct link to Название сетевого интерфейса">​</a></h3>
+<blockquote>
+<p>Название сетевого интерфейса на узлах, используемого для работы кластера (например, ens33). В ОС Linux название сетевого интерфейса отображается при использовании команды «ip a».</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="название-сервиса-субд">Название сервиса СУБД<a href="#название-сервиса-субд" class="hash-link" aria-label="Direct link to Название сервиса СУБД" title="Direct link to Название сервиса СУБД">​</a></h3>
+<blockquote>
+<p>Название сервиса СУБД, например, jatoba-&lt;ver&gt;.</p>
+<p>db_service_name: jatoba-&lt;ver&gt;</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="учетные-записи-пользователей">Учетные записи пользователей<a href="#учетные-записи-пользователей" class="hash-link" aria-label="Direct link to Учетные записи пользователей" title="Direct link to Учетные записи пользователей">​</a></h3>
+<blockquote>
+<p>Для администрирования и взаимодействия между узлами потребуются следующие технологические учетные записи:</p>
+</blockquote>
+<ul>
+<li>
+<p>УЗ администратора jaDog (admin);</p>
+</li>
+<li>
+<p>УЗ для взаимодействия узлов (interdog);</p>
+</li>
+<li>
+<p>УЗ для репликации данных в СУБД (jadog_user).</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="технологическая-уз-администратора-кластера">Технологическая УЗ администратора кластера<a href="#технологическая-уз-администратора-кластера" class="hash-link" aria-label="Direct link to Технологическая УЗ администратора кластера" title="Direct link to Технологическая УЗ администратора кластера">​</a></h3>
+<blockquote>
+<p>Название технологической УЗ администратора кластера:</p>
+<p>name: admin</p>
+<p>Пароль технологической УЗ администратора кластера:</p>
+<p>pass: change_on_install</p>
+<p>Разрешенные адреса или подсети для доступа к кластеру. Значения: &#x27;all&#x27;, имя хоста (&#x27;myhost.local.net&#x27;) или IP адрес c маской (&#x27;192.168.100.1/24&#x27;):</p>
+<p>address: all</p>
+</blockquote>
+<p>Метод доступа. Значения: &quot;sha-256&quot;, &quot;ssl&quot;. &quot;sha-256&quot; по умолчанию:</p>
+<blockquote>
+<p>method: sha-256</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="технологическая-уз-для-взаимодействия-с-узлами-кластера">Технологическая УЗ для взаимодействия с узлами кластера<a href="#технологическая-уз-для-взаимодействия-с-узлами-кластера" class="hash-link" aria-label="Direct link to Технологическая УЗ для взаимодействия с узлами кластера" title="Direct link to Технологическая УЗ для взаимодействия с узлами кластера">​</a></h3>
+<blockquote>
+<p>Название технологической УЗ:</p>
+<p>name: interdog</p>
+<p>Пароль технологической УЗ:</p>
+<p>pass: change_on_install</p>
+<p>Разрешенные адреса или подсети для доступа к кластеру. Значения: &#x27;all&#x27;, имя хоста (&#x27;myhost.local.net&#x27;) или IP адрес c маской (&#x27;192.168.100.1/24&#x27;):</p>
+<p>address: all</p>
+</blockquote>
+<p>Метод доступа. Значения: &quot;sha-256&quot;, &quot;ssl&quot;. &quot;sha-256&quot; по умолчанию:</p>
+<blockquote>
+<p>method: sha-256</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="технологическая-уз-для-репликации-данных">Технологическая УЗ для репликации данных<a href="#технологическая-уз-для-репликации-данных" class="hash-link" aria-label="Direct link to Технологическая УЗ для репликации данных" title="Direct link to Технологическая УЗ для репликации данных">​</a></h3>
+<blockquote>
+<p>jadog_user</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="название-бд">Название БД<a href="#название-бд" class="hash-link" aria-label="Direct link to Название БД" title="Direct link to Название БД">​</a></h3>
+<blockquote>
+<p>Название базы данных (БД), где будет установлена серверная часть кластера (&quot;postgres&quot; по умолчанию):</p>
+<p>database: jatoba</p>
+</blockquote>
+<h1>ШАБЛОНЫ ФАЙЛОВ ОТВЕТОВ</h1>
+<blockquote>
+<p>Шаблоны файлов ответов, с помощью которых выполняется разворачивание кластеров из данного руководства, располагаются в каталогах /usr/jatoba-</p>
+<p>&lt;ver&gt;/share/doc/jadog/clusters_kits. В данном каталоге также размещен файл read-me_first.md, в котором приводится краткое описание назначения файлов ответов.</p>
+<p>В каталоге /usr/jatoba-&lt;ver&gt;/share/doc/jadog/clusters_kits размещены каталоги с файлами ответов для автоматизированного разворачивания кластеров, указанные в таблице <a href="#_bookmark32">3.1</a>.</p>
+<p><span id="_bookmark32" class="anchor"></span>Таблица 3.1– Каталоги с файлами ответов в /usr/jatoba-</p>
+<p>&lt;ver&gt;/share/doc/jadog/clusters_kits</p>
+</blockquote>
+<table><colgroup>
+<col style="width:29%">
+<col style="width:44%">
+<col style="width:26%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Каталог</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Схема кластера</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>jadog_referee</p>
+</blockquote></td><td><blockquote>
+<p>Двухузловой кластер с узлом-</p>
+<p>арбитром</p>
+</blockquote></td><td><blockquote>
+<p>M+S(a)+R</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog_referee_wa</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Двухузловой кластер с узлом-арбитром и WAL-архивом, расположенном на узле-арбитре</p>
+</blockquote></td><td><blockquote>
+<p>M+S(a)+R+Wa</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog_trusted_ip</p>
+</blockquote></td><td><blockquote>
+<p>Двухузловой кластер с Trusted IP</p>
+</blockquote></td><td><blockquote>
+<p>M+S(a)</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog_trusted_ip_ssl</p>
+</blockquote></td><td><blockquote>
+<p>Двухузловой кластер с Trusted IP с SSL</p>
+<p>аутентификацией всех соединений</p>
+</blockquote></td><td><blockquote>
+<p>M+S(a)</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ja_dtc_as</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Отказоустойчивый, географически распределенный кластер Active-StandBy</p>
+</blockquote></td><td><blockquote>
+<p>DC1(M+S(a)) + DC2(S(a)+S(a)+R)</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ja_hipe_cluster</p>
+</blockquote></td><td><blockquote>
+<p>Отказоустойчивый, высокопроизводительный кластер - ja_Hipe_Cluster и создание группы</p>
+<p>кластеров (bundle)</p>
+</blockquote></td><td><blockquote>
+<p>-</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ja_hipe_cluster_fqdn_ssl</p>
+</blockquote></td><td><blockquote>
+<p>Отказоустойчивый, высокопроизводительный кластер - ja_Hipe_Cluster на FQDN и SSL, Cluster</p>
+<p>и создание группы кластеров (bundle)</p>
+</blockquote></td><td><blockquote>
+<p>-</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>standalone</p>
+</blockquote></td><td><blockquote>
+<p>Настройки отдельного сервиса</p>
+<p>«jaDog» для standalone сервера СУБД</p>
+<p>«Jatoba»</p>
+</blockquote></td><td><blockquote>
+<p>-</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>В качестве примера при проектировании кластера будет рассмотрен шаблон файла ответов init_jadog_referee_wa.yml.in.</p>
+<p>Шаблон файла ответов разделен на секции, подсекции и блоки параметров.</p>
+<p>Шаблон файла ответов содержит перечень параметров, а также комментарии (отмеченные символом #) с описанием назначения параметра.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="заголовок-файла-ответов">Заголовок файла ответов<a href="#заголовок-файла-ответов" class="hash-link" aria-label="Direct link to Заголовок файла ответов" title="Direct link to Заголовок файла ответов">​</a></h3>
+<blockquote>
+<p>Заголовок файла ответов не требует внесения изменений и содержит служебную информацию о версиях компонента «jaDog» и назначении:</p>
+</blockquote>
+<p>api_version: jaDog v4</p>
+<p>kind: jadog_referee_wal</p>
+<blockquote>
+<p># Версия jaDog</p>
+</blockquote>
+<p># Назначение скрипта</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="общие-параметры-узлов-кластера">Общие параметры узлов кластера<a href="#общие-параметры-узлов-кластера" class="hash-link" aria-label="Direct link to Общие параметры узлов кластера" title="Direct link to Общие параметры узлов кластера">​</a></h3>
+<blockquote>
+<p>Секция общих параметров узлов кластера предназначена для описания универсальных параметров кластера или кластеров (если они создаются одновременно).</p>
+<p>Значения из этой секции параметров применяются к каждому узлу кластера при его формировании. Например, параметр db_init_conn_string предназначается для параметров инициализации СУБД.</p>
+<p>Для формирования кластера на основе существующей СУБД параметры доступа (user, password и так далее) к ней должны совпадать с теми, что уже установлены в настройках СУБД. Для кластера на основе новой СУБД параметры доступа создаются при инициализации.</p>
+</blockquote>
+<p>default_cluster_params:</p>
+<p>каждого кластера</p>
+<p># Блок атрибутов используемый для</p>
+<p>db_init_conn_string: host=127.0.0.1 port=5432 user=postgres dbname=postgres password=&#x27;change_on_install&#x27;</p>
+<p># Строка коннекта к СУБД для установки расширений и выполнения скриптов. Требует прав доступа администратора</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="секция-инициализации-субд">Секция инициализации СУБД<a href="#секция-инициализации-субд" class="hash-link" aria-label="Direct link to Секция инициализации СУБД" title="Direct link to Секция инициализации СУБД">​</a></h3>
+<blockquote>
+<p>Блок initdb содержит атрибуты для инициализации СУБД</p>
+</blockquote>
+<p>initdb:</p>
+<p># Блок инициализации СУБД. Содержит параметры</p>
+<p>инициализации СУБД</p>
+<p>initdb_options: &quot;--locale=ru_RU.utf8 --encoding=UTF-8&quot; # Строка параметров инициализации СУБД Jatoba.</p>
+<blockquote>
+<p>Секция postgresql.conf используется для установки параметров в СУБД сразу после инициализации. В секции postgresql.conf можно вносить необходимые для настройки СУБД изменения:</p>
+</blockquote>
+<p>postgresql.conf:</p>
+<p># Параметры будут установлены при</p>
+<p>формировании кластера в конец файла postgresql.conf. listen_addresses: &quot;&#x27;*&#x27;&quot;</p>
+<blockquote>
+<p>log_destination: &quot;&#x27;stderr&#x27;&quot; logging_collector: on log_directory: &quot;&#x27;log&#x27;&quot;</p>
+<p>log_filename: &quot;&#x27;jatoba-%Y-%m-%d_%H%M%S.log&#x27;&quot; log_rotation_age: 1d</p>
+<p>log_rotation_size: 0 log_truncate_on_rotation: off log_line_prefix: &quot;&#x27;%m [%p] &#x27;&quot;</p>
+<p>log_statement: ddl</p>
+<p>Секция pg_hba.conf используется для установки параметров доступа к СУБД.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25138in;height:0.25053in" class="img_ev3q">Параметры секции pg_hba.conf полностью заменяют значения из файла pg_hba.conf.</p>
+</blockquote>
+<p>pg_hba.conf:</p>
+<p># Параметры будут установлены в файл pg_hba.conf</p>
+<p>при формировании кластера</p>
+<ul>
+<li>
+<p>local all postgres scram-sha-256</p>
+</li>
+<li>
+<p>local jatoba jadog_user scram-sha-256</p>
+</li>
+<li>
+<p>host all postgres 192.168.72.0/24 trust</p>
+</li>
+<li>
+<p>host all postgres 127.0.0.1/32 scram-sha-256</p>
+</li>
+<li>
+<p>host jatoba jadog_user 127.0.0.1/32 scram-sha-256</p>
+</li>
+<li>
+<p>host replication jadog_user 127.0.0.1/32 scram-sha-256</p>
+</li>
+<li>
+<p>host replication jadog_user 192.168.72.0/24 scram-sha-256</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-скриптов-при-формировании-кластера">Запуск скриптов при формировании кластера<a href="#запуск-скриптов-при-формировании-кластера" class="hash-link" aria-label="Direct link to Запуск скриптов при формировании кластера" title="Direct link to Запуск скриптов при формировании кластера">​</a></h3>
+<blockquote>
+<p>Скрипты из секции sql_scripts выполняются во время формирования каждого кластера также сразу после инициализации СУБД.</p>
+</blockquote>
+<p>sql_scripts:</p>
+<p># Секция пользовательских скриптов, выполняемых</p>
+<p>на главном узле каждого создаваемого кластера. Скрипты определяются администратором кластера.</p>
+<p>- /home/user/cluster_default_script.sql # Пользовательский SQL скрипт выполняемый с аутентификационными данными cluster_settings.db_init_conn_string после создания всех расширений</p>
+<blockquote>
+<p>Ключевые особенности:</p>
+</blockquote>
+<ul>
+<li>
+<p>скрипты выполняются с учётными данными, указанными в параметре db_init_conn_string;</p>
+</li>
+<li>
+<p>целевой базой данных для выполнения скриптов является БД, заданная в cluster_settings:db_connection_settings:database ;</p>
+</li>
+<li>
+<p>поддерживается выполнение нескольких скриптов последовательно. Типичные сценарии использования скриптов:</p>
+</li>
+<li>
+<p>наполнение базы начальными данными.</p>
+</li>
+<li>
+<p>установка дополнительных расширений (при наличии соответствующих пакетов).</p>
+</li>
+<li>
+<p>выполнение специальных настроек.</p>
+</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.25in;height:0.24935in" class="img_ev3q">Примечание: администратор кластера самостоятельно определяет состав и содержание выполняемых скриптов в соответствии с требованиями конкретного проекта.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="секция-настроек-кластера">Секция настроек кластера<a href="#секция-настроек-кластера" class="hash-link" aria-label="Direct link to Секция настроек кластера" title="Direct link to Секция настроек кластера">​</a></h3>
+<blockquote>
+<p>Следующий блок cluster_settings и входящие в него подгруппы предназначены для описания характеристик конкретного кластера.</p>
+<p>Данные атрибуты требуют переназначения, если есть необходимость индивидуализировать конкретный кластер. Описание атрибутов даны в комментариях к ним.</p>
+</blockquote>
+<p>cluster_settings:</p>
+<blockquote>
+<p>- cluster_name: my_cluster</p>
+</blockquote>
+<p># Наименование кластера.</p>
+<p>Обязательный параметр. Кластер может быть один или несколько.</p>
+<blockquote>
+<p>cluster_master_node: node_11</p>
+</blockquote>
+<p>Обязательный параметр.</p>
+<p># Название главного узла.</p>
+<blockquote>
+<p>cluster_referee_nodes: # Блок узлов, являющимися</p>
+</blockquote>
+<p>referee. Их может быть несколько.</p>
+<p>- node_referee referee.</p>
+<blockquote>
+<p>activated: true</p>
+</blockquote>
+<p># Название узла, выступающей в роли</p>
+<p># Флаг активации кластера после формирования. true - активировать (назначать public_address), false - не активировать.</p>
+<blockquote>
+<p>Внутри секции cluster_settings может располагаться подсекция sql_scripts. Скрипты в данной подсекции будут выполняться только для данного конкретного кластера с указанным cluster_name.</p>
+</blockquote>
+<p>sql_scripts:</p>
+<blockquote>
+<p>- /home/user/cl_coord_inside_script.sql</p>
+</blockquote>
+<p>#</p>
+<p>Пользовательский SQL скрипт выполняемый с аутентификационными данными cluster_settings.db_init_conn_string после создания всех расширений</p>
+<blockquote>
+<p>Примечание: администратор кластера самостоятельно определяет состав и содержание выполняемых скриптов в соответствии с требованиями конкретного проекта.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">Подсекция jadog_users описывает учетные записи для компонента «jaDog». Это персонифицированные УЗ для администраторов кластера и технологические для взаимодействия служб компонента с другими экземплярами в кластере или работы с jaDog REST API.</p>
+<p>Описание УЗ позволяет указать логин (name), пароль (pass) (если он необходим), данные для внесения в файл jadog_hba.cfg – маска адреса доступа (address) и метод аутентификации в jadog (method).</p>
+</blockquote>
+<p>jadog_users:</p>
+<p># Учетные записи для администрирования jaDog.</p>
+<p>Создаются УЗ и запись в jadog_hba.cfg.</p>
+<blockquote>
+<p>- name: admin # Имя учетной записи. Обязательный параметр.</p>
+</blockquote>
+<p>pass: change_on_install # Пароль учетной записи. Обязательный параметр. Для обеспечения безопасности смените пароль УЗ после установки.</p>
+<p>address: all</p>
+<p># Разрешенные адреса или подсети для доступа к</p>
+<p>jaDog. Значения:&#x27;all&#x27;, имя хоста( &#x27;myhost.local.net&#x27; ) или IP адрес c маской (&#x27;192.168.100.1/24&#x27;).</p>
+<p>method: sha-256 &quot;sha-256&quot; по умолчанию.</p>
+<blockquote>
+<p>- name: interdog</p>
+</blockquote>
+<p># Метод доступа. Значения: &quot;sha-256&quot;, &quot;ssl&quot;.</p>
+<p># УЗ можно создать несколько. Для обеспечения безопасности смените пароль УЗ после установки.</p>
+<p>pass: change_on_install # Для обеспечения безопасности смените пароль УЗ после установки.</p>
+<blockquote>
+<p>address: all</p>
+</blockquote>
+<p># - name: restuser # УЗ можно создать несколько. Для обеспечения безопасности смените пароль УЗ после установки.</p>
+<p># address: all</p>
+<p># method: ssl</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="группа-настроек-узлов-кластера-по-умолчанию">Группа настроек узлов кластера по умолчанию<a href="#группа-настроек-узлов-кластера-по-умолчанию" class="hash-link" aria-label="Direct link to Группа настроек узлов кластера по умолчанию" title="Direct link to Группа настроек узлов кластера по умолчанию">​</a></h3>
+<blockquote>
+<p>Группа атрибутов default_node_params служит для определения параметров, которые будут применены к каждому узлу создаваемого кластера.</p>
+<p>default_node_params: # Параметры по-умолчанию, которые будут использовать для каждой ноды. Записи включаются в нотации конфигурационного файла jadog.yml.</p>
+<p>main: # Параметры конфигурирования экземпляра jaDog.</p>
+<p># service_name: jadog # Имя сервиса jaDog для ноды. &quot;jadog&quot; по умолчанию</p>
+<p>public_address: 192.168.72.10 # Виртуальный IP адрес кластера. Public address. Обязательный параметр.</p>
+<p>network_interface: ens33 # Наименование сетевого интерфейса для виртуального IP кластера. Network interface name.</p>
+<p>Обязательный параметр.</p>
+<p>interconnect_user: interdog # Имя технологической учетной записи для взаимодействия с другими jaDog сервисами. Обязательный параметр.</p>
+</blockquote>
+<p>log: # Параметры логирования</p>
+<blockquote>
+<p>file_name: jadog-%Y-%m-%d_%H%M%S # Шаблон для файлов функциональных</p>
+<p>логов</p>
+<p>screen: true # Включение вывода логов на экран.</p>
+<p>&quot;false&quot; по умолчанию</p>
+<p>type: json # Форматы файлов функционального и лога.</p>
+<p>level: debug2 # Уровень функционального логирования</p>
+<p>security_log: # Параметры журнала событий информационной безопасности (ИБ)</p>
+<p>file_name: security_jadog-%Y-%m-%d_%H%M%S # Шаблон для файлов журнала событий информационной безопасности (ИБ)</p>
+<p>type: json # Форматы файлов журнала событий информационной безопасности (ИБ)</p>
+<p>postgresql: # Блок параметров для работы с СУБД</p>
+<p>db_service_name: jatoba-@JATOBA_MAJ_VER@ # Название сервиса экземпляра СУБД в операционной системе</p>
+<p>db_connection_settings: # Параметры для соединения с</p>
+<p>СУБД</p>
+<p>database: jatoba # Имя базы данных для установки</p>
+<p>расширения jaDog. &quot;postgres&quot; по умолчанию</p>
+</blockquote>
+<p>passfile: /var/lib/jatoba/.pgpass # Jatoba passfile</p>
+<blockquote>
+<p>user: jadog_user # Имя УЗ для работы с СУБД. Обязательный параметр.</p>
+<p>user_pass: change_on_install # Пароль УЗ для работы с СУБД. Обязательный параметр. Сменить пароль УЗ в СУБД после формирования кластера.</p>
+<p>rest_api: # Блок параметров для REST-</p>
+<p>сервера</p>
+<p>api_use: false # Признак использования REST-</p>
+<p>сервера</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="группа-настроек-доступа-к-wal-архивам">Группа настроек доступа к WAL-архивам<a href="#группа-настроек-доступа-к-wal-архивам" class="hash-link" aria-label="Direct link to Группа настроек доступа к WAL-архивам" title="Direct link to Группа настроек доступа к WAL-архивам">​</a></h3>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">В группе wal_archive необходимо определить пути к каталогам и команды работы с WAL-архивом.</p>
+<p>Примечание: администратору системы необходимо заранее создать и смонтировать указанные каталоги на каждом узле кластера, где требуется хранение WAL-файлов.</p>
+<p>При настройке путей для WAL-архивов необходимо учитывать следующие требования:</p>
+</blockquote>
+<ul>
+<li>
+<p>должны указываться локальные пути файловой системы.</p>
+</li>
+<li>
+<p>соответствующие каталоги должны быть предварительно смонтированы.</p>
+</li>
+<li>
+<p>использование сетевых адресов (UNC-путей) в конфигурационных файлах не поддерживается.</p>
+</li>
+</ul>
+<p>#Параметры архивации</p>
+<p>wal_archive:</p>
+<blockquote>
+<p>directory: &quot;/mnt/wals/&quot; # Путь до сохранения архивов</p>
+<p>command: &quot;cp %p /mnt/wals/%f&quot; # Команды архивирования</p>
+<p>cleanup_command: &quot;/usr/jatoba-6/bin/pg_archivecleanup</p>
+</blockquote>
+<p>/mnt/wals/ %s&quot;</p>
+<blockquote>
+<p>cleanup_needed: true</p>
+</blockquote>
+<p>очистки</p>
+<p>cleanup_timeout: 500000 очистки(ms)</p>
+<p>#Параметры восстановления</p>
+<p>restore:</p>
+<blockquote>
+<p>command: &quot;cp /mnt/wals/%f %p&quot;</p>
+</blockquote>
+<p># Команды очистки</p>
+<p># Признак необходимости</p>
+<p># Временной промежуток</p>
+<p># Команда восстановления</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="секция-настроек-дата-центов">Секция настроек дата-центов<a href="#секция-настроек-дата-центов" class="hash-link" aria-label="Direct link to Секция настроек дата-центов" title="Direct link to Секция настроек дата-центов">​</a></h3>
+<blockquote>
+<p>Секция datacenters описывает конфигурацию дата-центов и распределение по ним узлов. Необходим, как минимум, один дата-центр. В примере название дата-центра: DC_Piter</p>
+</blockquote>
+<p>datacenters: #</p>
+<blockquote>
+<p>- datacenter: DC_Piter</p>
+</blockquote>
+<p># Уникальное наименование</p>
+<p>датацентра. Датацентр может быть один или несколько.</p>
+<blockquote>
+<p>nodes: # Блок описания нод кластера</p>
+<p>...</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="группа-настроек-узлов-кластера">Группа настроек узлов кластера<a href="#группа-настроек-узлов-кластера" class="hash-link" aria-label="Direct link to Группа настроек узлов кластера" title="Direct link to Группа настроек узлов кластера">​</a></h3>
+<blockquote>
+<p>Уникальные параметры для каждого узла указываются в группе nodes, входящей в секцию datacenters.</p>
+</blockquote>
+<p>- node_name: node_11</p>
+<p># Кластерное имя ноды. Все записи</p>
+<p>конфигурирования включаются в нотации конфигурационного файла jadog.yml.</p>
+<blockquote>
+<p>main: # Параметры конфигурирования экземпляра</p>
+</blockquote>
+<p>jaDog.</p>
+<blockquote>
+<p>ip: 192.168.72.11 # IP адрес ноды</p>
+</blockquote>
+<p>#</p>
+<p>network_interface: ens33</p>
+<p># Наименование сетевого</p>
+<p>интерфейса для виртуального IP кластера. Network interface name. Обязательный параметр.</p>
+<blockquote>
+<p>Для использования синхронной репликации узла необходимо применять следующие настройки узла:</p>
+</blockquote>
+<p>synchronous:</p>
+<p># Раскомментировать блок параметров, если</p>
+<p>потребуется синхронная репликация данных</p>
+<p># synchronous_commit: on # Тип синхронного коммита согласно документации postgresql: on, remote_apply, remote_write, local, off</p>
+<p># synchronous_type: ANY # Как будет работать синхронная репликация по принципам: FIRST или ANY</p>
+<p># synchronous_commit_max_nodes: 1 # Количество нод, требующих подтверждения синхронного коммита</p>
+<p>replication:</p>
+<p># Параметры репликации ноды</p>
+<p>slot_name: rs_node_11 # Уникальное в рамках кластера имя слота репликации.</p>
+<blockquote>
+<p>В результате настройки узла с синхронной репликацией будут выглядеть следующим образом:</p>
+</blockquote>
+<p>- node_name: node_12</p>
+<blockquote>
+<p>main:</p>
+<p>ip: 192.168.72.12</p>
+<p>replication:</p>
+<p>slot_name: rs_node_12 replication_type: async</p>
+</blockquote>
+<p>ноды. &quot;async&quot; по умолчанию</p>
+<p># Тип репликации для</p>
+<p># synchronous: # Раскомментировать блок параметров, если потребуется синхронная репликация данных</p>
+<p># synchronous_commit: on # Тип синхронного коммита согласно документации postgresql: on, remote_apply, remote_write, local, off</p>
+<p># synchronous_type: ANY # Как будет работать синхронная репликация по принципам: FIRST или ANY</p>
+<p>#</p>
+<p>synchronous_commit_max_nodes: 1 # Количество</p>
+<p>нод, требующих подтверждения синхронного коммита</p>
+<blockquote>
+<p><span id="_bookmark42" class="anchor"></span>блоке</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="группа-настроек-узла-арбитра">Группа настроек узла-арбитра<a href="#группа-настроек-узла-арбитра" class="hash-link" aria-label="Direct link to Группа настроек узла-арбитра" title="Direct link to Группа настроек узла-арбитра">​</a></h3>
+<blockquote>
+<p>Информация по параметрам узла jadog-referee также описывается в соответствующем</p>
+</blockquote>
+<p>- node_name: node_referee</p>
+<p># Заготовка для новой ноды в</p>
+<p>клстере, например, с ролью referee</p>
+<p>main:</p>
+<blockquote>
+<p>ip: 192.168.72.23</p>
+<p>replication: slot_name: rs_r</p>
+</blockquote>
+<h1>АВТОМАТИЧЕСКОЕ ФОРМИРОВАНИЕ КЛАСТЕРА С ИСПОЛЬЗОВАНИЕМ ГОТОВОЙ КОНФИГУРАЦИИ</h1>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-специального-режима-jadog0">Запуск специального режима jadog0<a href="#запуск-специального-режима-jadog0" class="hash-link" aria-label="Direct link to Запуск специального режима jadog0" title="Direct link to Запуск специального режима jadog0">​</a></h3>
+<blockquote>
+<p>Автоматическое формирование кластера на узлах, описанных в файле ответов, производится с помощью запуска компонента «jaDog» в специальном режиме jadog0 на каждом узле кластера.</p>
+<p>sudo /usr/jatoba-&lt;ver&gt;/bin/jadog jadog0 --sslcafile</p>
+<p>/var/lib/jatoba/ssl/jatoba_ca.crt --sslcertfile</p>
+<p>/var/lib/jatoba/ssl/jadog_cert/jadog_server.crt --sslkeyfile</p>
+<p>/var/lib/jatoba/ssl/jadog_cert/jadog_server.key</p>
+<p>Специальный режим jadog0 запускается с указанием путей к расположению SSL сертификатов. Сертификаты SSL должны быть сформированы для каждого узла адресно (см. документ «Компонент jaDog. Инструкция по безопасной настройке кластера на основе компонента «jaDog» 643.72410666.00067-08 98 02-04).</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Запуск специального режима jadog0 без указания сертификатов SSL возможен с использованием режима --basic. Описание режима приведено в первой части</p>
+<p>«Компонент jaDog. Управление режимом работы узлов кластера» 643.72410666.00067-08 98 02-01.</p>
+<p>После запуска специального режима jadog0 компонент «jaDog» находится в режиме ожидания запуска развертывания кластера с использованием файла ответов.</p>
+<p>В процессе формирования кластера в консоли ОС отображается процесс настройки компонента «jaDog» на данном узле кластера.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-развертывания-кластера"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">Запуск развертывания кластера<a href="#запуск-развертывания-кластера" class="hash-link" aria-label="Direct link to запуск-развертывания-кластера" title="Direct link to запуск-развертывания-кластера">​</a></h3>
+<blockquote>
+<p>Команду развертывания кластера можно запустить с любого узла, на котором запущен jadog0. Рекомендуется выполнять команду с узла, который согласно проекту будет главным узлом будущего кластера.</p>
+<p>Развертывание кластера происходит при помощи выполнения следующей команды:</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:31%">
+<col style="width:1%">
+</colgroup><thead><tr><th colspan="4"><blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl create_cluster -T 9999999 -c</p>
+<p>/&lt;dir1&gt;/ jadog_cross_cluster.yml --ssl --sslcafile</p>
+<p>/var/lib/jatoba/ssl/jatoba_ca.crt --sslcertfile</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td><td></td></tr></tbody></table>
+<blockquote>
+<p>/var/lib/jatoba/ssl/jadog_cert/jadog_server.crt --sslcrlfile</p>
+<p>/var/lib/jatoba/ssl/jadog_cert/jadog_server.crl --sslkeyfile</p>
+<p>/var/lib/jatoba/ssl/jadog_cert/jadog_server.key</p>
+</blockquote>
+<h1>РУЧНОЕ ФОРМИРОВАНИЕ КЛАСТЕРА</h1>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="установка-экземпляра-компонента-jadog-с-использованием-утилиты-jadog_ctl">Установка экземпляра компонента «jaDog» с использованием утилиты jadog_ctl<a href="#установка-экземпляра-компонента-jadog-с-использованием-утилиты-jadog_ctl" class="hash-link" aria-label="Direct link to Установка экземпляра компонента «jaDog» с использованием утилиты jadog_ctl" title="Direct link to Установка экземпляра компонента «jaDog» с использованием утилиты jadog_ctl">​</a></h3>
+<blockquote>
+<p>Подробное описание использования утилиты jadog_ctl при установке экземпляра компонента «jaDog» приведено в первой части документа «Компонент jaDog. Управление режимом работы узлов кластера» 643.72410666.00067-08 98 02-03.</p>
+<p>Ручное формирование кластера с использованием jadog_ctl выполняется при помощи следующей команды:</p>
+<p>cd /usr/jatoba-&lt;ver&gt;/bin</p>
+<p>./jadog setup</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="установка-экземпляра-компонента-jadog-с-файлом-ответов">Установка экземпляра компонента «jaDog» с файлом ответов<a href="#установка-экземпляра-компонента-jadog-с-файлом-ответов" class="hash-link" aria-label="Direct link to Установка экземпляра компонента «jaDog» с файлом ответов" title="Direct link to Установка экземпляра компонента «jaDog» с файлом ответов">​</a></h3>
+<blockquote>
+<p>Шаблоны файлов ответов установки компонента «jaDog» располагаются в каталоге</p>
+<p>/usr/jatoba-6/share/doc/jadog/clusters_kits/standalone:</p>
+</blockquote>
+<ul>
+<li>
+<p>jadog_setup_faq.yml – только основные обязательные параметры, все дополнительные параметры установлены в значения по умолчанию;</p>
+</li>
+<li>
+<p>jadog_setup_faq_full.yml – с полным набором конфигурационных параметров.</p>
+</li>
+</ul>
+<blockquote>
+<p>Подготовку шаблона файлов ответов требуется выполнять для настройки каждого отдельного узла проектируемого кластера.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-настройки-экземпляра-компонента-jadog-с-подготовленным-файлом-ответов">Запуск настройки экземпляра компонента «jaDog» с подготовленным файлом ответов<a href="#запуск-настройки-экземпляра-компонента-jadog-с-подготовленным-файлом-ответов" class="hash-link" aria-label="Direct link to Запуск настройки экземпляра компонента «jaDog» с подготовленным файлом ответов" title="Direct link to Запуск настройки экземпляра компонента «jaDog» с подготовленным файлом ответов">​</a></h3>
+<blockquote>
+<p>Ручное формирование кластера с использованием файла выполняется при помощи следующей команды:</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin# ./jadog setup -c jadog_setup_faq.yml</p>
+<p>Процесс настройки экземпляра компонента «jaDog» с файлом ответов подробно описан во второй части документации «Компонент jaDog. Управление режимом работы узлов кластера».</p>
+<p>При ручном формировании кластера могут не понадобиться TLS (SSL) сертификаты, если нет необходимости включать режим использования jaDog REST API.</p>
+<p>Режим REST API можно будет включить после формирования кластера.</p>
+<p>Необходимо добавить, что кроме прямого диалогового режима формирования кластера в утилите управления - jadog_ctl, можно использовать возможность запуска команд не в диалоговом режиме.</p>
+<p>Приведенный в подразделе <a href="#%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8-%D0%B4%D0%BB%D1%8F-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">2.6</a> кластер возможно сформировать, при условии предварительной настройки компонента «jaDog» на каждом узле, следующим набором команд:</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl –h 192.168.72.11 -U admin -W &#x27;change_on_install&#x27; -q -f json -C &quot;add cluster &#x27;my_cluster&#x27;&quot;</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl –h 192.168.72.11 -U admin -W &#x27;change_on_install&#x27; -q -f json -C &quot;cluster add master 192.168.72.11 54321 as &#x27;node_11&#x27;&quot;</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl –h 192.168.72.11 -U admin -W &#x27;change_on_install&#x27; -q -f json -C &quot;cluster add slave 192.168.72.12 54321 as &#x27;node_12&#x27;&quot;</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl –h 192.168.72.11 -U admin -W &#x27;change_on_install&#x27; -q -f json -C &quot;cluster add slave 192.168.72.13 54321 as &#x27;node_13&#x27;&quot;</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl –h 192.168.72.11 -U admin -W &#x27;change_on_install&#x27; -q -f json -C &quot;cluster add referee 192.168.72.23 54321 as &#x27;node_referee&#x27;&quot;</p>
+<p>После выполнения каждой команды будет формироваться ответ в формате JSON, который может быть использован для автоматической обработки.</p>
+<p>Получить статус сформированного кластера можно при помощи команды:</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl -U admin -W &#x27;admin&#x27; -q -f json</p>
+<p>-C &quot;cluster&quot;</p>
+</blockquote>
+<h1>ИСПОЛЬЗОВАНИЕ JADOG REST API</h1>
+<blockquote>
+<p>Компонент «jaDog», помимо утилиты управления jadog_ctl, имеет встроенный функционал REST API.</p>
+<p>YML-файл с описанием команд REST API (в нотации OpenAPI V3) расположен в каталоге /usr/jatoba-&lt;ver&gt;/share/doc/jadog/api.yml</p>
+<p>Функционал использования «jaDog REST API» работает только по защищенному протоколу HTTPS. Для использования jaDog REST API потребуются выпущенные сертификаты SSL (см. документы «Инструкция по безопасной настройке кластера на основе компонента «jaDog» 643.72410666.00067-08 98 02-04 и «Руководство по безопасности СУБД Jatoba» 643.72410666.00067-08 97 01-27.), а также указание пути к ним в параметрах файла ответов при развертывании кластера или в последствии при включении данного функционала в работу.</p>
+<p>Описание команд jaDog REST API приведено во второй части документа «Компонент jaDog. Управление режимом работы узлов кластера».</p>
+<p>Если выполнена настройка REST API, проверка работоспособности возможна с использованием следующей команды:</p>
+<p>curl --cacert /&lt;dir&gt;/root.crt --cert /&lt;dir&gt;/client.crt --key</p>
+<p>/&lt;dir&gt;/client.key -k https://host_name(ip):54443/metrics</p>
+<p>где &lt;dir&gt; - каталог с сертификатами SSL</p>
+</blockquote>
+<h1>УСТРАНЕНИЕ НЕПОЛАДОК</h1>
+<blockquote>
+<p>При поиске и устранении неполадок, возникающих при работе с компонентом</p>
+<p>«jaDog», необходимо в первую очередь просмотреть журналы событий на предмет сообщений, указывающих на причину возникновения проблемы.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ошибка-при-подключении-к-компоненту-с-использованием-jadog_ctl-или-rest-api">Ошибка при подключении к компоненту с использованием jadog_ctl или REST API<a href="#ошибка-при-подключении-к-компоненту-с-использованием-jadog_ctl-или-rest-api" class="hash-link" aria-label="Direct link to Ошибка при подключении к компоненту с использованием jadog_ctl или REST API" title="Direct link to Ошибка при подключении к компоненту с использованием jadog_ctl или REST API">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="не-создан-пользователь-компонента-jadog">Не создан пользователь компонента «jaDog»<a href="#не-создан-пользователь-компонента-jadog" class="hash-link" aria-label="Direct link to Не создан пользователь компонента «jaDog»" title="Direct link to Не создан пользователь компонента «jaDog»">​</a></h3>
+<blockquote>
+<p>Первой вероятной причиной данной проблемы является отсутствие пользователя в компоненте «jaDog». Для того чтобы добавить пользователя, необходимо на главном узле (роль Master) выполнить команду с использованием утилиты jadog_ctl следующего синтаксиса:</p>
+<p>user create &#x27;[user_name]&#x27; with password &#x27;[password]&#x27;</p>
+<p>Если у создаваемого пользователя будет определен режим доступа с использованием сертификатов SSL, то в указанной команде пароль задавать не обязательно.</p>
+<p>После создания необходимо внести правила доступа для данного пользователя в конфигурационный файл jadog_hba.yml.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="некорректные-настройки-в-конфигурационном-файле-jadog_hbayml">Некорректные настройки в конфигурационном файле jadog_hba.yml<a href="#некорректные-настройки-в-конфигурационном-файле-jadog_hbayml" class="hash-link" aria-label="Direct link to Некорректные настройки в конфигурационном файле jadog_hba.yml" title="Direct link to Некорректные настройки в конфигурационном файле jadog_hba.yml">​</a></h3>
+<blockquote>
+<p>Следующей вероятной причиной упомянутой проблемы являются некорректные правила доступа пользователя в конфигурационном файле jadog_hba.yml.</p>
+<p>При отсутствии правил внести в конфигурационный файл jadog_hba.yml:</p>
+</blockquote>
+<p># USER</p>
+<p>new_user_name</p>
+<p>ADDRESS</p>
+<p>all</p>
+<blockquote>
+<p>METHOD</p>
+</blockquote>
+<p>ssl</p>
+<blockquote>
+<p>После этого синхронизировать конфигурационный файл jadog_hba.yml с другими узлами кластера при помощи:</p>
+</blockquote>
+<ul>
+<li>
+<p>копированием файла вручную;</p>
+</li>
+<li>
+<p>при помощи механизма синхронизации файлов компонента «jaDog» (описание данного функционала приводится в первой части документа «Компонент jaDog. Управление режимом работы узлов кластера» 643.72410666.00067-08 98 02-01).</p>
+</li>
+</ul>
+<blockquote>
+<p>Для того чтобы измененные настройки вступили в силу, необходимо перезагрузить конфигурацию на главном узле одним из следующих способов:</p>
+</blockquote>
+<ul>
+<li>с использованием утилиты jadog_ctl:</li>
+</ul>
+<blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl -U admin -W &#x27;[password]&#x27; -q -C &quot;reload jadog master&quot; -T 20000</p>
+</blockquote>
+<ul>
+<li>с использованием REST API с любого узла кластера:</li>
+</ul>
+<blockquote>
+<p>curl -X POST --cacert /&lt;dir&gt;/root.crt --cert /&lt;dir&gt;/client.crt</p>
+<p>--key /&lt;dir&gt;/client.key -k https://host_name(ip):54443/cluster/[cluster_name]/node/[node_n ame]/jadog/reload</p>
+<p>или</p>
+<p>curl -X POST --cacert /&lt;dir&gt;/root.crt --cert /&lt;dir&gt;/client.crt</p>
+<p>--key /&lt;dir&gt;/client.key -k https://host_name(ip):54443/cluster/[cluster_name]/node/[ip]/[p ort]/jadog/reload</p>
+<p>где &lt;dir&gt; – каталог с сертификатами SSL.</p>
+</blockquote>
+<ul>
+<li>с использованием REST API с главного узла кластера:</li>
+</ul>
+<blockquote>
+<p>curl -X POST --cacert /&lt;dir&gt;/root.crt --cert /&lt;dir&gt;/client.crt</p>
+<p>--key /&lt;dir&gt;/client.key -k https://host_name(ip):54443/reload</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="при-подключении-используется-сертификат-ssl-не-того-пользователя-или-не-действительный">При подключении используется сертификат SSL не того пользователя или не действительный<a href="#при-подключении-используется-сертификат-ssl-не-того-пользователя-или-не-действительный" class="hash-link" aria-label="Direct link to При подключении используется сертификат SSL не того пользователя или не действительный" title="Direct link to При подключении используется сертификат SSL не того пользователя или не действительный">​</a></h3>
+<blockquote>
+<p>Синтаксис запроса через REST:</p>
+<p>curl --cacert /var/lib/jatoba/ssl/jatoba_ca.crt --cert</p>
+<p>/home/new_user/clusters/cert-gen/certs/users/new_user_pers.crt</p>
+<p>--key</p>
+<p>/home/new_user/clusters/certgen/certs/users/new_user_pers.key - k https://host_name(ip):54443/metrics</p>
+<p>Где &lt;dir&gt; - путь к каталогу с сертификатами SSL. В этом случае необходимо:</p>
+</blockquote>
+<ul>
+<li>
+<p>проверить, что используется сертификат SSL нужного пользователя;</p>
+</li>
+<li>
+<p>проверить корректность сертификата и его внутреннюю информацию при помощи команды:</p>
+</li>
+</ul>
+<blockquote>
+<p>openssl x509 -in new_user_pers.crt -noout -text</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="рассинхронизация-кластера">Рассинхронизация кластера<a href="#рассинхронизация-кластера" class="hash-link" aria-label="Direct link to Рассинхронизация кластера" title="Direct link to Рассинхронизация кластера">​</a></h3>
+<blockquote>
+<p>Степень критичности возникшей рассинхронизации кластера зависит от имеющегося объема данных в СУБД. В зависимости от этого необходимо применять разные подходы к восстановлению штатной работы узлов кластера.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="малые-и-средние-объемы-данных-субд">Малые и средние объемы данных СУБД<a href="#малые-и-средние-объемы-данных-субд" class="hash-link" aria-label="Direct link to Малые и средние объемы данных СУБД" title="Direct link to Малые и средние объемы данных СУБД">​</a></h3>
+<blockquote>
+<p>Симптом проблемы: кластер «развалился», нет возможности восстановить и узлы находятся в постоянном статусе «recovery».</p>
+<p>Решение заключается в возможности разборки кластера и повторной его сборки, и зависит от объема данных СУБД. Приемлемым объемом для применения предлагаемого способа восстановления считается такой объем данных, который реплицируется на резервный узел за приемлемое время.</p>
+</blockquote>
+<ol>
+<li>Ознакомиться с содержанием журналов работы СУБД «Jatoba» и компонента</li>
+</ol>
+<blockquote>
+<p>«jaDog».</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>Проконсультироваться с техподдержкой.</p>
+</li>
+<li>
+<p>На резервных узла остановить компонент «jaDog» и СУБД «Jatoba»:</p>
+</li>
+</ol>
+<blockquote>
+<p>systemctl stop jadog | systemctl stop jatoba-&lt;ver&gt;</p>
+</blockquote>
+<ol start="4">
+<li>Остановить службу компонент «jaDog» на главном узле:</li>
+</ol>
+<blockquote>
+<p>systemctl stop jadog</p>
+</blockquote>
+<ol start="5">
+<li>Удалить файлы состояний компонента «jaDog» на каждом узле кластера:</li>
+</ol>
+<blockquote>
+<p>rm -f /usr/jatoba-&lt;ver&gt;/etc/jadog/jadog_state.yml</p>
+</blockquote>
+<ol start="6">
+<li>Отчистить каталог data только на резервных узлах:</li>
+</ol>
+<blockquote>
+<p>rm -rf /var/lib/jatoba/&lt;ver&gt;/data/*</p>
+</blockquote>
+<ol start="7">
+<li>Подключиться на главном узле кластера к утилите psql под правами superuser и удалить слоты репликации:</li>
+</ol>
+<blockquote>
+<p>SELECT * FROM pg_replication_slots;</p>
+<p>SELECT pg_drop_replication_slot(&#x27;название_слота_репликации&#x27;);</p>
+</blockquote>
+<ol start="8">
+<li>Запустить компонент «jaDog» на всех узлах кластера:</li>
+</ol>
+<blockquote>
+<p>systemctl start jadog</p>
+</blockquote>
+<ol start="9">
+<li>На главном узле авторизоваться в утилите jadog_ctl и собрать кластер с использованием инструкций из документа «Компонент jaDog. Управление режимом работы узлов кластера».</li>
+</ol>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.25in;height:0.24965in" class="img_ev3q">Для добавления в кластер узлов с методом репликации sync рекомендуется использовать команду с следующим синтаксисом:</p>
+<p>cluster add sync slave [host_ip/host_name] [Jadog PORT number (port)</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="большие-объемы-данных-субд">Большие объемы данных СУБД<a href="#большие-объемы-данных-субд" class="hash-link" aria-label="Direct link to Большие объемы данных СУБД" title="Direct link to Большие объемы данных СУБД">​</a></h3>
+<blockquote>
+<p>Описание: проблемы с реплицированием данных (на хватило дискового пространства, не запустился процесс восстановления).</p>
+<p>Данный аварийно-восстановительный сценарий выполнять только под руководством специалистов технической поддержки.</p>
+</blockquote>
+<ol>
+<li>
+<p>Проконсультироваться с техподдержкой.</p>
+</li>
+<li>
+<p>Снять нагрузку (входящие, исходящие подключения) с кластера;</p>
+</li>
+<li>
+<p>На главном узле рекомендуется увеличить параметр max_wal_size = 16GB (до 32GB) на время аварийно-восстановительных работ. После изменения параметра выполнить:</p>
+</li>
+</ol>
+<blockquote>
+<p>select pg_reload_conf();</p>
+</blockquote>
+<ol start="4">
+<li>На резервных узлах остановить компонент «jaDog» и СУБД «Jatoba»:</li>
+</ol>
+<blockquote>
+<p>systemctl stop jadog | systemctl stop jatoba-&lt;ver&gt;</p>
+</blockquote>
+<ol start="5">
+<li>Отчистить каталог data только на резервных узлах:</li>
+</ol>
+<blockquote>
+<p>rm -rf /var/lib/jatoba/&lt;ver&gt;/data/*</p>
+</blockquote>
+<ol start="6">
+<li>На резервных узлах запустить компонент «jaDog»:</li>
+</ol>
+<blockquote>
+<p>systemctl start jadog</p>
+</blockquote>
+<ol start="7">
+<li>
+<p>На главном узле авторизоваться в утилите jadog_ctl и собрать кластер с использованием инструкций из документа «Компонент jaDog. Управление режимом работы узлов кластера».</p>
+</li>
+<li>
+<p>Дождаться копирования БД с главного узла на резервные узлы. Завершение процесса контролировать с использованием информации из журналов работы компонента</p>
+</li>
+</ol>
+<blockquote>
+<p>«jaDog»:</p>
+<p>2025-05-16 21:39:45 Jadog 10.250.4.69():12345 INFO Script</p>
+<p>output: pg_basebackup: начинается базовое резервное копирование, ожидается завершение контрольной точки</p>
+<p>,,,</p>
+<p>2025-05-16 21:39:45 Jadog 10.250.4.69():12345 INFO Script</p>
+<p>finished successfully: /usr/jatoba-6/share/jadog/scripts/backup.sh /u01/postgres /usr/jatoba-6/bin</p>
+<p>/usr/jatoba-6/bin/db_passfile postgres node1 &quot;host=10.250.4.70 port=5433 user=jadog_user&quot; DefaultCluster.10.250.4.69():12345 Jadog ver. 3.3.0</p>
+<p>2025-05-16 21:39:45 Jadog 10.250.4.69():12345 INFO</p>
+<p>Postgresql.conf: port = 5433 now set to new value = 5433 DefaultCluster.10.250.4.69():12345 Jadog ver. 3.3.0</p>
+<p>2025-05-16 21:39:45 Jadog 10.250.4.69():12345 INFO</p>
+<p>Postgresql.conf: cluster_name = &#x27;node1&#x27; now set to new value = &#x27;node1&#x27;</p>
+</blockquote>
+<ol start="9">
+<li>Остановить компонент «jaDog» на резервных узлах:</li>
+</ol>
+<blockquote>
+<p>systemctl stop jadog</p>
+</blockquote>
+<ol start="10">
+<li>
+<p>Аналогично остановить компонент «jaDog» на главном узле.</p>
+</li>
+<li>
+<p>Заменить файл /usr/jatoba-6/etc/jadog/jadog_state.yml из приложенного на обоих узлах. В случае, если на резервных узлах данный файл отсутствует, просто добавить в указанный каталог.</p>
+</li>
+<li>
+<p>На главном узле запустить компонент «jaDog»:</p>
+</li>
+</ol>
+<blockquote>
+<p>systemctl start jadog</p>
+</blockquote>
+<ol start="13">
+<li>
+<p>Аналогично запустить компонент «jaDog» на резервных узлах.</p>
+</li>
+<li>
+<p>На главном узле авторизоваться в утилите jadog_ctl и выполнить команду присвоения публичного IP-адреса кластеру:</p>
+</li>
+</ol>
+<blockquote>
+<p>cluster ip activate</p>
+</blockquote>
+<ol start="15">
+<li>Подключить нагрузку (входящие, исходящие подключения) и проверить при помощи журнала событий работу кластера.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="некорректная-перезагрузка-кластера-иили-субд">Некорректная перезагрузка кластера и/или СУБД<a href="#некорректная-перезагрузка-кластера-иили-субд" class="hash-link" aria-label="Direct link to Некорректная перезагрузка кластера и/или СУБД" title="Direct link to Некорректная перезагрузка кластера и/или СУБД">​</a></h3>
+<blockquote>
+<p>Не корректная перезагрузка кластера и/или СУБД, в большинстве случаев, заключается в не правильном порядке перезагрузки узлов кластера или СУБД. Следствием чего часто является FO и нежелательная смена конфигурации (смена ролей узлов кластера).</p>
+</blockquote>
+<ol>
+<li>
+<p>В документации описан порядок перезагрузки узлов кластера. Основным принципом является то, что главный узел перезагружается последним. Утверждение справедливо как для СУБД, так и для компонента «jaDog».</p>
+</li>
+<li>
+<p>Если СУБД функционирует в кластере под управлением компонента «jaDog», то рекомендуется воспользоваться командами, которые обязательно следует выполнять на главном узле):</p>
+<ul>
+<li>остановка СУБД кластера в правильной последовательности:</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>stop dbs cluster</p>
+</blockquote>
+<ul>
+<li>запуск СУБД кластера в правильной последовательности:</li>
+</ul>
+<blockquote>
+<p>start dbs cluster</p>
+</blockquote>
+<ul>
+<li>перезагрузка СУБД кластера в правильной последовательности:</li>
+</ul>
+<blockquote>
+<p>restart dbs cluster</p>
+</blockquote>
+<ul>
+<li>проверка параметров СУБД (reload()) кластера в правильной последовательности:</li>
+</ul>
+<blockquote>
+<p>reload dbs cluster</p>
+</blockquote>
+<ul>
+<li>проверка всех компонента «jaDog» кластера в правильной последовательности:</li>
+</ul>
+<blockquote>
+<p>reload jadog master</p>
+</blockquote>
+<ol start="3">
+<li>Выполнять изменение параметров и перезагрузку (см. предыдущий пункт) в режиме технического обслуживания (maintenance):</li>
+</ol>
+<blockquote>
+<p>maintenance set cluster</p>
+</blockquote>
+<ol start="4">
+<li>Отключение режима технического обслуживания после завершения работ:</li>
+</ol>
+<blockquote>
+<p>maintenance reset cluster</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="диагностика-работоспособности-кластера">Диагностика работоспособности кластера<a href="#диагностика-работоспособности-кластера" class="hash-link" aria-label="Direct link to Диагностика работоспособности кластера" title="Direct link to Диагностика работоспособности кластера">​</a></h3>
+<blockquote>
+<p>В целях получения информации о состоянии работы кластера и/или его узлов в компоненте «jaDog» реализованы сервисные команды:</p>
+</blockquote>
+<ol>
+<li>Статус кластера и входящих в него узлов.</li>
+</ol>
+<blockquote>
+<p>Пример с использованием интерфейса утилиты jadog_ctl</p>
+<p>cluster</p>
+<p>Пример с внешним использованием утилиты jadog_ctl</p>
+<p>/usr/jatoba-6/bin/jadog_ctl -U admin -W &#x27;[password_admin]&#x27; -q - f json -T 30000 -C &quot;cluster&quot;</p>
+<p>Синтаксис с использованием jaDog REST API:</p>
+<p>curl --cacert /&lt;dir&gt;/root.crt --cert /&lt;dir&gt;/client.crt --key</p>
+<p>/&lt;dir&gt;/client.key -k https://host_name(ip):54443/cluster/[cluster_name]</p>
+<p>Где &lt;dir&gt; - каталог с сертификатами SSL.</p>
+<p>Штатное значение параметра &quot;State&quot; для узлов: &quot;Master(ACTIVE)&quot;, &quot;Slave(ACTIVE)&quot;, &quot;Referee(ACTIVE)&quot;.</p>
+</blockquote>
+<ol start="2">
+<li>Статус бандла:</li>
+</ol>
+<blockquote>
+<p>bundle</p>
+</blockquote>
+<ol start="3">
+<li>Статус отдельного узла:</li>
+</ol>
+<blockquote>
+<p>node is</p>
+<p>node is {&#x27;checked_role&#x27;} node is {&#x27;checked_status&#x27;}</p>
+<p>Синтаксис с использованием jaDog REST API:</p>
+<p>curl --cacert /&lt;dir&gt;/root.crt --cert /&lt;dir&gt;/client.crt --key</p>
+<p>/&lt;dir&gt;/client.key -k https://host_name(ip):54443/node_is</p>
+<p>Где &lt;dir&gt; - каталог с сертификатами SSL.</p>
+</blockquote>
+<ol start="4">
+<li>Значение встроенных метрик компонента: Синтаксис с использованием jaDog REST API:</li>
+</ol>
+<blockquote>
+<p>curl --cacert /&lt;dir&gt;/root.crt --cert /&lt;dir&gt;/client.crt --key</p>
+<p>/&lt;dir&gt;/client.key -k https://host_name(ip):54443/metrics</p>
+<p>Где &lt;dir&gt; - каталог с сертификатами SSL.</p>
+</blockquote>
+<h1>ПРИЛОЖЕНИЕ 1</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="расположение-служебных-файлов-скриптов-и-шаблонов-jadog">Расположение служебных файлов, скриптов и шаблонов jaDog<a href="#расположение-служебных-файлов-скриптов-и-шаблонов-jadog" class="hash-link" aria-label="Direct link to Расположение служебных файлов, скриптов и шаблонов jaDog" title="Direct link to Расположение служебных файлов, скриптов и шаблонов jaDog">​</a></h2>
+<blockquote>
+<p>Таблица П.1.1 – Расположение служебных файлов, скриптов и шаблонов компонента</p>
+<p>«jaDog» для ОС Linux</p>
+</blockquote>
+<table><colgroup>
+<col style="width:45%">
+<col style="width:54%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Описание</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Значение</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td colspan="2"><blockquote>
+<p><strong>Журналы</strong></p>
+</blockquote></td></tr><tr><td colspan="2"><blockquote>
+<p>Журналы работы компонента: /usr/jatoba-&lt;ver&gt;/var/log</p>
+</blockquote></td></tr><tr><td colspan="2"><blockquote>
+<p><strong>Конфигурация кластера и узлов</strong></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Основные конфигурационные файлы</p>
+</blockquote></td><td><blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/etc/jadog</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>bundle_state.yml</p>
+</blockquote></td><td><blockquote>
+<p>Состояние бандла ja_hipe_bundle (citus)</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog.yml</p>
+</blockquote></td><td><blockquote>
+<p>Параметры компонента «jaDog»</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog_hba.cfg</p>
+</blockquote></td><td><blockquote>
+<p>Правила доступа к компоненту «jaDog»</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog_state.yml</p>
+</blockquote></td><td><blockquote>
+<p>Состояние кластера и его узлов</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>users.yml</p>
+</blockquote></td><td><blockquote>
+<p>Перечень УЗ компонента «jaDog»</p>
+</blockquote></td></tr><tr><td colspan="2"><blockquote>
+<p><strong>Сертификаты</strong></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Расположение сертификатов TLS (SSL):</p>
+</blockquote></td><td><blockquote>
+<p>/var/lib/jatoba/ssl (рекомендуется)</p>
+</blockquote></td></tr><tr><td colspan="2"><blockquote>
+<p><strong>Шаблоны файлов ответов установки компонента «jaDog» и формирования кластеров</strong></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Расположение шаблонов</p>
+</blockquote></td><td><blockquote>
+<p>/usr/jatoba-6/share/doc/jadog/clusters_kits</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog_setup_faq.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Настройка одного узла (сокращенная)</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog_setup_faq_full.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Настройка одного узла (расширенная)</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>init_ja_dtc_as.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Развертывание географически распределенного кластера</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>init_ja_hipe_cluster.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Развертывание высокопроизводительного кластера с группой кластеров</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>init_ja_hipe_cluster_fqdn_ssl.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Развертывание высокопроизводительного кластера c</p>
+<p>FQDN и SSL, и с группой кластеров</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>init_jadog_referee.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Развертывание отказоустойчивого кластера с узлом-</p>
+<p>арбитром</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>init_jadog_referee_wa.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Развертывание отказоустойчивого кластера с узлом-арбитром с архивом WAL</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>init_jadog_trusted_ip.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Развертывание отказоустойчивого кластера с trusted</p>
+<p>address</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>init_jadog_trusted_ip_ssl.yml.in</p>
+</blockquote></td><td><blockquote>
+<p>Развертывание отказоустойчивого кластера с trusted address и SSL</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="значения-по-умолчанию-используемые-в-компоненте-jadog">Значения по умолчанию, используемые в компоненте «jaDog»<a href="#значения-по-умолчанию-используемые-в-компоненте-jadog" class="hash-link" aria-label="Direct link to Значения по умолчанию, используемые в компоненте «jaDog»" title="Direct link to Значения по умолчанию, используемые в компоненте «jaDog»">​</a></h2>
+<ul>
+<li>
+<p>база данных: postgres;</p>
+</li>
+<li>
+<p>учетные записи:</p>
+<ul>
+<li>
+<p>admin – УЗ администратора «jaDog»;</p>
+</li>
+<li>
+<p>jadog_user – УЗ для репликации данных;</p>
+</li>
+<li>
+<p>Пароли по умолчанию: admin, change_on_install.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>TCP порты:</p>
+<ul>
+<li>
+<p>12345 – компонент «jaDog»;</p>
+</li>
+<li>
+<p>54321 – интерфейс при подключении в jadog_ctl;</p>
+</li>
+<li>
+<p>64321 – служебный режим jadog0;</p>
+</li>
+<li>
+<p>54443 – REST API.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1>ПРИЛОЖЕНИЕ 2</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="работа-с-консольной-утилитой-jadog_ctl-из-командной-строки">Работа с консольной утилитой jadog_ctl из командной строки<a href="#работа-с-консольной-утилитой-jadog_ctl-из-командной-строки" class="hash-link" aria-label="Direct link to Работа с консольной утилитой jadog_ctl из командной строки" title="Direct link to Работа с консольной утилитой jadog_ctl из командной строки">​</a></h2>
+<blockquote>
+<p>Для того чтобы получить быстрый ответ от компонента «jaDog» команды следует выполнять с ключом «–С»:</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl -U ivanoff -W &#x27;change_on_install&#x27; -q -C &quot;\h&quot;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="длительное-ожидание-выполнения-консольной-утилиты-jadog_ctl">Длительное ожидание выполнения консольной утилиты jadog_ctl<a href="#длительное-ожидание-выполнения-консольной-утилиты-jadog_ctl" class="hash-link" aria-label="Direct link to Длительное ожидание выполнения консольной утилиты jadog_ctl" title="Direct link to Длительное ожидание выполнения консольной утилиты jadog_ctl">​</a></h2>
+<blockquote>
+<p>Некоторые команды компонента «jaDog», например, смены роли узла или формирование кластеров и групп кластеров, требуют длительного ожидания результата.</p>
+<p>Для того чтобы дождаться окончания выполнения команды и получения результата необходимо воспользоваться ключом «–T» с указанием времени ожидания.</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl -U ivanoff -W &#x27;change_on_install&#x27; -q –f json -C &quot;cluster&quot; –T 30000</p>
+</blockquote>
+<h1>ПРИЛОЖЕНИЕ 3</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ключи-запуска-консольной-утилиты-jadog_ctl">Ключи запуска консольной утилиты jadog_ctl<a href="#ключи-запуска-консольной-утилиты-jadog_ctl" class="hash-link" aria-label="Direct link to Ключи запуска консольной утилиты jadog_ctl" title="Direct link to Ключи запуска консольной утилиты jadog_ctl">​</a></h2>
+<blockquote>
+<p>При управлении кластером при помощи консольной утилиты jadog_ctl применяются следующие ключи:</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl --help Usage: jadog_ctl [OPTION]...</p>
+<p>Jadog_Ctl - Jadog console utility.</p>
+<p>List of OPTIONs:</p>
+<p>-h, --host=host Jadog master node to connect</p>
+<p>-p, --port=port Port to connect to jadog node</p>
+<p>-U, --username=username Username to connect to jadog node</p>
+<p>-W, --password=password password to connect to jadog node</p>
+<p>-C, --command=command command to fast execute and exit</p>
+<p>-q, --quiet command execution without explanatory messages</p>
+<p>-f, --format output message format: table (default) or json</p>
+<p>-T, --timeout=timeout timeout(in milliseconds) to wait execution command with -C</p>
+<p>--ssl ssl connection enabled</p>
+<p>--sslcafile ssl CA file</p>
+<p>--sslcertfile ssl certificate file</p>
+<p>--sslcrlfile ssl obsolete credential list file</p>
+<p>--sslkeyfile ssl private key file</p>
+<p>List of COMMANDs:</p>
+<p>create_cluster Installed jadog and create clusters cluster_update Update existing cluster structure</p>
+</blockquote>
+<h1>ПРИЛОЖЕНИЕ 4</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="команды-консольной-утилиты-jadog_ctl">Команды консольной утилиты jadog_ctl<a href="#команды-консольной-утилиты-jadog_ctl" class="hash-link" aria-label="Direct link to Команды консольной утилиты jadog_ctl" title="Direct link to Команды консольной утилиты jadog_ctl">​</a></h2>
+<blockquote>
+<p>При управлении кластером при помощи консольной утилиты jadog_ctl применяются следующие команды:</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:31%">
+<col style="width:1%">
+</colgroup><thead><tr><th colspan="4"><blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/bin/jadog_ctl -U dogadmin -W w12345678 -q -C &quot;\h&quot;</p>
+<p>Reply: Supported commands:</p>
+<p>Commands for jadog:</p>
+<p>\h - this help</p>
+<p>\q - terminate console</p>
+<p>\password - change current user password</p>
+<p>\protocol - show jadog protocol version</p>
+<p>\clear - clear console</p>
+<p>\connect {ip} {port} {&#x27;login&#x27;} - connect to jadog node</p>
+<p>\disconnect - disconnect from jadog node</p>
+<p>Commands for work with parameters of jadog:</p>
+<p>parameter set {&#x27;parameter_name&#x27;} = {parameter_value} - single parameter setting (use &#x27;parameter_name = ~ &#x27; to set the default value)</p>
+<p>parameter set node {node_name} {&#x27;parameter_name&#x27;} =</p>
+<p>{parameter_value} - single parameter setting for the specified cluster node (use &#x27;parameter_name = ~ &#x27; to set the default value)</p>
+<p>parameter set cluster {&#x27;parameter_name&#x27;} = {parameter_value} - single parameter setting in a cluster-wide (use &#x27;parameter_name</p>
+<p>= ~ &#x27; to set the default value)</p>
+<p>parameter set list - setting a set of parameters in a transaction</p>
+<p>parameter set list node {node_name} - setting a set of parameters in a transaction for the specified cluster node</p>
+<p>parameter set list cluster - setting a set of parameters in a cluster-wide transaction</p>
+<p>parameter {&#x27;parameter_name&#x27; | all} - show parameter value or show values of all parameters</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td><td></td></tr></tbody></table>
+<blockquote>
+<p>parameter save - save parameter set transaction parameter cancel - cancel parameter set transaction</p>
+<p>Commands for work with scheduled jobs:</p>
+<p>schedule ls - show the list of scheduled jobs</p>
+<p>schedule completed ls - show the list of result completed scheduled jobs</p>
+<p>schedule set [job_name] &quot;{job_time}&quot; &quot;{job_command}&quot; - set the schedule job by timestamp.</p>
+<p>example: schedule set JobSwitchover &quot;2025-05-28 14:21:52+00:00&quot; &quot;cluster switchover &#x27;node1&#x27;&quot;</p>
+<p>schedule set [job_name] {job_delay_interval} &quot;{job_command}&quot; - set the schedule job by delay interval.</p>
+<p>example: schedule set testJobMaintenance 15m &quot;maintenance set cluster&quot;</p>
+<p>schedule drop {job_name} - remove job from schedule</p>
+<p>Commands for work over API:</p>
+<p>api set async - setup asynchronous command processing api set sync - setup synchronous command processing</p>
+<p>api response - print last message from server excluding status</p>
+<p>api response {id} - print last message from server by the given id excluding status</p>
+<p>Commands for work with bundle:</p>
+<p>bundle create {&#x27;bundle_name&#x27;} - create new cluster bundle bundle drop {&#x27;bundle_name&#x27;} - delete empty bundle</p>
+<p>bundle attach cluster {ip} {port} - attach cluster to bundle with specified ip, port of master</p>
+<p>bundle attach cluster {ip} {port} {&#x27;interconnect_user&#x27;} - attach cluster to bundle with specified ip, port of master and interconnect_user</p>
+<p>bundle detach cluster {ip} {port} - detach cluster from bundle with specified ip, port of master</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:32%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:31%">
+<col style="width:1%">
+</colgroup><thead><tr><th colspan="4"><blockquote>
+<p>bundle detach cluster {cluster_name} - detach cluster from bundle with specified cluster name</p>
+<p>bundle promote - promote all bundle in this node datacenter bundle - show list of clusters in bundle</p>
+<p>Commands for work with cluster:</p>
+<p>cluster create {&#x27;cluster_name&#x27;} - create new cluster</p>
+<p>cluster drop - delete empty cluster, reverse command to add cluster</p>
+<p>cluster add master {ip} {port} as {&#x27;node_name&#x27;} - add jadog with specified ip, port and node name as master</p>
+<p>cluster add master {ip} {port} - add jadog with specified ip and port as master</p>
+<p>cluster add slave [nodata] {ip} {port} as {&#x27;node_name&#x27;} - add jadog with specified ip, port and node name as slave. [nodata]</p>
+<p>- without backup</p>
+<p>cluster add slave [nodata] {ip} {port} - add jadog with specified ip and port as slave. [nodata] - without backup</p>
+<p>cluster add sync slave [nodata] {ip} {port} as {&#x27;node_name&#x27;} - add jadog with specified ip, port and node name as sync slave. [nodata] - without backup</p>
+<p>cluster add sync slave [nodata] {ip} {port} - add jadog with specified ip, port as sync slave. [nodata] - without backup</p>
+<p>cluster add async slave [nodata] {ip} {port} as {&#x27;node_name&#x27;} - add jadog with specified ip, port and node name as async slave. [nodata] - without backup</p>
+<p>cluster add async slave [nodata] {ip} {port} - add jadog with specified ip, port as async slave. [nodata] - without backup</p>
+<p>cluster add cascade slave [nodata] {ip} {port} primary</p>
+<p>{primary_ip} {primary_port} as {&#x27;node_name&#x27;} - add jadog with specified ip, port and node name as cascade slave with primary. [nodata] - without backup</p>
+<p>cluster add cascade slave [nodata] {ip} {port} primary</p>
+<p>{primary_ip} {primary_port} - add jadog with specified ip and port as cascade slave with primary. [nodata] - without backup</p>
+<p>cluster add cascade slave [nodata] {ip} {port} primary</p>
+<p>{&#x27;primary_node_name&#x27;} as {&#x27;node_name&#x27;} - add jadog with specified ip, port and node name as cascade slave with primary. [nodata] - without backup</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:31%">
+<col style="width:1%">
+</colgroup><thead><tr><th colspan="4"><blockquote>
+<p>cluster add cascade slave [nodata] {ip} {port} primary</p>
+<p>{&#x27;primary_node_name&#x27;} - add jadog with specified ip and port as cascade slave with primary. [nodata] - without backup</p>
+<p>cluster add referee {ip} {port} as {&#x27;node_name&#x27;} - add jadog with specified ip, port and node name as referee</p>
+<p>cluster add referee {ip} {port} - add jadog with specified ip and port as referee</p>
+<p>cluster drop node {&#x27;node_name&#x27;} - delete jadog with specified node name from cluster</p>
+<p>cluster drop node {ip} {port} - delete jadog with specified ip from cluster</p>
+<p>cluster - show list of nodes in cluster, with short health info</p>
+<p>cluster short - show list of nodes in cluster, with short health info</p>
+<p>cluster full - show a full list of nodes in cluster with detailed health info</p>
+<p>cluster ip activate - provide external access to cluster by setting up public address</p>
+<p>cluster ip deactivate - forbid external access to cluster by removing public address</p>
+<p>cluster update {&#x27;yml_file_path&#x27;} - updating the structure of an existing cluster using yml-configuration</p>
+<p>cluster structure - getting a short version of the yml template of the current cluster</p>
+<p>cluster structure full - getting a full version of the yml template of the current cluster</p>
+<p>cluster reinit node [nodata] {&#x27;node_name&#x27;} - reinitialize jadog with specified node name to the cluster. [nodata] - without backup</p>
+<p>cluster reinit node [nodata] {ip} {port} - reinitialize jadog with specified ip to the cluster. [nodata] - without backup</p>
+<p>cluster reinit [nodata] - reinitialize jadog to the cluster. [nodata] - without backup</p>
+<p>cluster switchover {ip} {port} - switch slave jadog with specified ip to master</p>
+<p>cluster switchover {&#x27;node_name&#x27;} - switch slave jadog with specified node name to master</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td><td></td></tr></tbody></table>
+<blockquote>
+<p>Commands for work with datacenters:</p>
+<p>datacenter create {&#x27;dc_name&#x27;} - create new data center datacenter drop {&#x27;dc_name&#x27;} - delete data center</p>
+<p>datacenter {&#x27;dc_name&#x27;} attach node {&#x27;node_name&#x27;} - attach node to data center with specified node name from cluster</p>
+<p>datacenter {&#x27;dc_name&#x27;} attach node {ip} {port} - attach node to data center with specified ip from cluster</p>
+<p>datacenter {&#x27;dc_name&#x27;} detach node {&#x27;node_name&#x27;} - detach node from data center with specified node name from cluster</p>
+<p>datacenter {&#x27;dc_name&#x27;} detach node {ip} {port} - detach node from data center with specified ip from cluster</p>
+<p>datacenter promote - forced switchover to the current datacenter</p>
+<p>Commands for work with accounts of jadog:</p>
+<p>user create {&#x27;user_name&#x27;} - create account in cluster with password in console</p>
+<p>user create {&#x27;user_name&#x27;} with password {&#x27;password&#x27;} - create account with password</p>
+<p>user drop {&#x27;user_name&#x27;} - drop account</p>
+<p>user {&#x27;user_name&#x27;} set password {&#x27;password&#x27;} - change account password</p>
+<p>user {&#x27;user_name&#x27;} set name {&#x27;new name&#x27;} - rename account user lock {&#x27;user_name&#x27;} - block account</p>
+<p>user unlock {&#x27;user_name&#x27;} - unlock account user ls - show accounts list</p>
+<p>Commands for work with nodes:</p>
+<p>node {&#x27;old_node_name&#x27;} set name {&#x27;new_node_name&#x27;} - rename jadog node</p>
+<p>node {ip} {port} set name {&#x27;new_node_name&#x27;} - rename jadog node with specified ip from cluster</p>
+<p>node {&#x27;node_name&#x27;} set replication type = {&#x27;replication_type&#x27;}</p>
+<p>- set replication type (sync, async)</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:32%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:31%">
+<col style="width:1%">
+</colgroup><thead><tr><th colspan="4"><blockquote>
+<p>node {ip} {port} set replication type = {&#x27;replication_type&#x27;} - set replication type (sync, async)</p>
+<p>node {&#x27;node_name&#x27;} set primary = {&#x27;primary_node&#x27;} - set primary node with node name</p>
+<p>node {&#x27;node_name&#x27;} set primary {primary_ip} {primary_port} - set primary node with ip and port</p>
+<p>node {ip} {port} set primary = {&#x27;primary_node&#x27;} - set primary node with node name</p>
+<p>node {ip} {port} set primary {primary_ip} {primary_port} - set primary node with ip and port</p>
+<p>node - show node info with current ip from cluster</p>
+<p>node {ip} {port} - show node info with specified ip from cluster</p>
+<p>node {&#x27;node_name&#x27;} - show node info with node_name from cluster</p>
+<p>node is - show current node info about role and state in the cluster</p>
+<p>node is {&#x27;checked_role&#x27;} - check current node role { master | slave | primary | referee } in the cluster</p>
+<p>node in {&#x27;checked_status&#x27;} - check current node replication type or maintenance mode { maintenance | cascade | sync | async</p>
+<p>}</p>
+<p>Commands for work with files:</p>
+<p>fm ls - show list of sync files</p>
+<p>fm drop - removing all paths from the sync list</p>
+<p>fm drop {file_id} - removing path with id from the sync list</p>
+<p>fm set {&#x27;file_path&#x27;} - add path with file path to the sync list fm copy - copy files to cluster nodes, without referee</p>
+<p>fm copy --referee - copy files to cluster nodes, with referee</p>
+<p>fm copy -n {node_name_array} - copy files to specified nodes</p>
+<p>fm copy {file_id} - copy file with file id to cluster nodes, without referee</p>
+<p>fm copy {file_id} --referee - copy file with file id to cluster nodes, with referee</p>
+<p>fm copy {file_id} -n {node_name_array} - copy file with file id to specified nodes</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:31%">
+<col style="width:1%">
+</colgroup><thead><tr><th colspan="4"><blockquote>
+<p>Commands for work with maintenance mode:</p>
+<p>maintenance set cluster - set the maintenance mode on the cluster</p>
+<p>maintenance reset cluster - reset the maintenance mode on the cluster. All nodes will switch to recovery mode</p>
+<p>maintenance set node {&#x27;node_name&#x27;} - set the maintenance mode on the node with node_name and its slave nodes</p>
+<p>maintenance reset node {&#x27;node_name&#x27;} - reset the maintenance mode on the node with node_name. The node will switch to recovery mode</p>
+<p>maintenance set node {ip} {port} - set the maintenance mode on the node with ip and port and its slave nodes</p>
+<p>maintenance reset node {ip} {port} - reset the maintenance mode on the node with ip and port. The node will switch to recovery mode</p>
+<p>Commands to reload jadog and RDBMS:</p>
+<p>reload jadog cluster - reload jadog on all cluster reload jadog master - reload jadog on master</p>
+<p>reload jadog node {ip} {port} - reload jadog on node with ip and port</p>
+<p>reload jadog node {&#x27;node_name&#x27;} - reload jadog on node with name</p>
+<p>reload dbs cluster - reload database on all cluster reload dbs master - reload database on master</p>
+<p>reload dbs node {ip} {port} - reload database on jadog with ip and port</p>
+<p>reload dbs node {&#x27;node_name&#x27;} - reload database on jadog with node name</p>
+<p>Commands to restart RDBMS:</p>
+<p>restart dbs cluster - restart database on all cluster restart dbs master - restart database on master</p>
+<p>restart dbs node {ip} {port} - restart database on node with ip and port</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td><td></td></tr></tbody></table>
+<blockquote>
+<p>restart dbs node {&#x27;node_name&#x27;} - restart database on node with node name</p>
+<p>Commands to stop RDBMS:</p>
+<p>stop dbs cluster - stop database on all cluster stop dbs master - stop database on master</p>
+<p>stop dbs node {ip} {port} - stop database on node with ip and port</p>
+<p>stop dbs node {&#x27;node_name&#x27;} - stop database on node with node name</p>
+<p>Commands to start RDBMS:</p>
+<p>start dbs cluster - start database on all cluster start dbs master - start database on master</p>
+<p>start dbs node {ip} {port} - start database on node with ip and port</p>
+<p>start dbs node {&#x27;node_name&#x27;} - start database on node with node name</p>
+<p>Use \h &lt;group_prefix&gt; to list commands in that section. The group_prefix is the first word of commands in that group.</p>
+<p>Example: \h api, \h bundle, \h maintenance, for commands for jadog use \h jadog</p>
+<p>Supported shortcuts:</p>
+<p>&lt;TAB&gt; - autocomplete of the current command</p>
+<p>Double &lt;TAB&gt; - show autocomplete candidates for the current input</p>
+</blockquote>
+<h1>ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</h1>
+<blockquote>
+<p><strong>Master</strong> – главный узел кластера, обрабатывающий запросы на запись.</p>
+<p><strong>Slave</strong> – резервный узел с синхронной и асинхронной репликацией данных для чтения и резервирования.</p>
+<p><strong>Referee</strong> – узел-арбитр для выбора нового главного узла кластера при возникновении</p>
+<p>сбоев.</p>
+</blockquote>
+<p><strong>Trusted Address</strong> – IP-адрес для аварийного переключения.</p>
+<p><strong>WAL-архив</strong> – отдельное хранилище журналов транзакций для аварийного</p>
+<blockquote>
+<p>восстановления данных.</p>
+</blockquote>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:10%">
+<col style="width:7%">
+<col style="width:82%">
+</colgroup><thead><tr><th><blockquote>
+<p>SQL</p>
+</blockquote></th><th><blockquote>
+<p>–</p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p>Structured Query Language – язык структурированных запросов</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>SSL</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Secure Sockets Layer – уровень защищенных сокетов. Криптографический протокол, который подразумевает безопасную связь</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Всего листов (страниц) в документе</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Номер документа</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входящий номер сопроводите льного документа и</p>
+<p>дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подпись</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>измене нных</p>
+</blockquote></td><td><blockquote>
+<p>замене нных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td><blockquote>
+<p>аннулир ованных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/com18.3.1/jadog_4.2_2"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">jadog_4.2_2</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/com18.3.1/jadog_secur"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">jadog_secur</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#выбор-архитектуры" class="table-of-contents__link toc-highlight">Выбор архитектуры</a></li><li><a href="#устойчивая-архитектура-кластера" class="table-of-contents__link toc-highlight">Устойчивая архитектура кластера</a></li><li><a href="#устойчивый-вариант-кластера-с-хранилищем-wal-файлов" class="table-of-contents__link toc-highlight">Устойчивый вариант кластера с хранилищем WAL-файлов</a></li><li><a href="#устойчивый-вариант-кластера-без-хранилища-wal-файлов" class="table-of-contents__link toc-highlight">Устойчивый вариант кластера без хранилища WAL-файлов</a></li><li><a href="#устойчивая-архитектура-при-использовании-нескольких-дата-центров" class="table-of-contents__link toc-highlight">Устойчивая архитектура при использовании нескольких дата-центров</a></li><li><a href="#минимальная-архитектура-кластера" class="table-of-contents__link toc-highlight">Минимальная архитектура кластера</a></li><li><a href="#кластер-минимальной-конфигурации-с-узлом-арбитром-и-хранилищем-wal-файлов" class="table-of-contents__link toc-highlight">Кластер минимальной конфигурации с узлом-арбитром и хранилищем WAL-файлов</a></li><li><a href="#кластер-минимальной-конфигурации-с-узлом-арбитром-без-хранилища-wal-файлов" class="table-of-contents__link toc-highlight">Кластер минимальной конфигурации с узлом-арбитром без хранилища WAL-файлов</a></li><li><a href="#кластер-минимальной-конфигурации-с-использованием-trusted-address" class="table-of-contents__link toc-highlight">Кластер минимальной конфигурации с использованием Trusted Address</a></li><li><a href="#минимальная-архитектура-при-использовании-нескольких-дата-центров" class="table-of-contents__link toc-highlight">Минимальная архитектура при использовании нескольких дата-центров</a></li><li><a href="#размещение-хранилища-wal-файлов" class="table-of-contents__link toc-highlight">Размещение хранилища WAL-файлов</a></li><li><a href="#построение-нового-кластера-и-перенос-данных-субд" class="table-of-contents__link toc-highlight">Построение нового кластера и перенос данных СУБД</a></li><li><a href="#планирование-на-основании-новой-инфраструктуры" class="table-of-contents__link toc-highlight">Планирование на основании новой инфраструктуры</a></li><li><a href="#использование-существующей-инфраструктуры" class="table-of-contents__link toc-highlight">Использование существующей инфраструктуры</a></li><li><a href="#планирование-на-основании-существующей-инфраструктуры" class="table-of-contents__link toc-highlight">Планирование на основании существующей инфраструктуры</a></li><li><a href="#организация-дискового-пространства" class="table-of-contents__link toc-highlight">Организация дискового пространства</a></li><li><a href="#определение-конфигурации-кластера" class="table-of-contents__link toc-highlight">Определение конфигурации кластера</a></li><li><a href="#минимальная-конфигурация-кластера" class="table-of-contents__link toc-highlight">Минимальная конфигурация кластера</a></li><li><a href="#рекомендуемая-конфигурация-кластера" class="table-of-contents__link toc-highlight">Рекомендуемая конфигурация кластера</a></li><li><a href="#шаблоны-файлов-ответов-для-проектирования-кластеров" class="table-of-contents__link toc-highlight">Шаблоны файлов ответов для проектирования кластеров</a></li><li><a href="#подготовка-информации-для-проекта-кластера" class="table-of-contents__link toc-highlight">Подготовка информации для проекта кластера</a></li><li><a href="#название-кластера" class="table-of-contents__link toc-highlight">Название кластера</a></li><li><a href="#роли-узлов-и-их-ip-адреса" class="table-of-contents__link toc-highlight">Роли узлов и их IP-адреса</a></li><li><a href="#виртуальный-ip-адрес-кластера-public-address" class="table-of-contents__link toc-highlight">Виртуальный IP-адрес кластера (Public Address)</a></li><li><a href="#название-сетевого-интерфейса" class="table-of-contents__link toc-highlight">Название сетевого интерфейса</a></li><li><a href="#название-сервиса-субд" class="table-of-contents__link toc-highlight">Название сервиса СУБД</a></li><li><a href="#учетные-записи-пользователей" class="table-of-contents__link toc-highlight">Учетные записи пользователей</a></li><li><a href="#технологическая-уз-администратора-кластера" class="table-of-contents__link toc-highlight">Технологическая УЗ администратора кластера</a></li><li><a href="#технологическая-уз-для-взаимодействия-с-узлами-кластера" class="table-of-contents__link toc-highlight">Технологическая УЗ для взаимодействия с узлами кластера</a></li><li><a href="#технологическая-уз-для-репликации-данных" class="table-of-contents__link toc-highlight">Технологическая УЗ для репликации данных</a></li><li><a href="#название-бд" class="table-of-contents__link toc-highlight">Название БД</a></li><li><a href="#заголовок-файла-ответов" class="table-of-contents__link toc-highlight">Заголовок файла ответов</a></li><li><a href="#общие-параметры-узлов-кластера" class="table-of-contents__link toc-highlight">Общие параметры узлов кластера</a></li><li><a href="#секция-инициализации-субд" class="table-of-contents__link toc-highlight">Секция инициализации СУБД</a></li><li><a href="#запуск-скриптов-при-формировании-кластера" class="table-of-contents__link toc-highlight">Запуск скриптов при формировании кластера</a></li><li><a href="#секция-настроек-кластера" class="table-of-contents__link toc-highlight">Секция настроек кластера</a></li><li><a href="#группа-настроек-узлов-кластера-по-умолчанию" class="table-of-contents__link toc-highlight">Группа настроек узлов кластера по умолчанию</a></li><li><a href="#группа-настроек-доступа-к-wal-архивам" class="table-of-contents__link toc-highlight">Группа настроек доступа к WAL-архивам</a></li><li><a href="#секция-настроек-дата-центов" class="table-of-contents__link toc-highlight">Секция настроек дата-центов</a></li><li><a href="#группа-настроек-узлов-кластера" class="table-of-contents__link toc-highlight">Группа настроек узлов кластера</a></li><li><a href="#группа-настроек-узла-арбитра" class="table-of-contents__link toc-highlight">Группа настроек узла-арбитра</a></li><li><a href="#запуск-специального-режима-jadog0" class="table-of-contents__link toc-highlight">Запуск специального режима jadog0</a></li><li><a href="#запуск-развертывания-кластера" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/jadog_4.2_3/media/image2.png" style="width:0.25in;height:0.25in">Запуск развертывания кластера</a></li><li><a href="#установка-экземпляра-компонента-jadog-с-использованием-утилиты-jadog_ctl" class="table-of-contents__link toc-highlight">Установка экземпляра компонента «jaDog» с использованием утилиты jadog_ctl</a></li><li><a href="#установка-экземпляра-компонента-jadog-с-файлом-ответов" class="table-of-contents__link toc-highlight">Установка экземпляра компонента «jaDog» с файлом ответов</a></li><li><a href="#запуск-настройки-экземпляра-компонента-jadog-с-подготовленным-файлом-ответов" class="table-of-contents__link toc-highlight">Запуск настройки экземпляра компонента «jaDog» с подготовленным файлом ответов</a></li><li><a href="#ошибка-при-подключении-к-компоненту-с-использованием-jadog_ctl-или-rest-api" class="table-of-contents__link toc-highlight">Ошибка при подключении к компоненту с использованием jadog_ctl или REST API</a></li><li><a href="#не-создан-пользователь-компонента-jadog" class="table-of-contents__link toc-highlight">Не создан пользователь компонента «jaDog»</a></li><li><a href="#некорректные-настройки-в-конфигурационном-файле-jadog_hbayml" class="table-of-contents__link toc-highlight">Некорректные настройки в конфигурационном файле jadog_hba.yml</a></li><li><a href="#при-подключении-используется-сертификат-ssl-не-того-пользователя-или-не-действительный" class="table-of-contents__link toc-highlight">При подключении используется сертификат SSL не того пользователя или не действительный</a></li><li><a href="#рассинхронизация-кластера" class="table-of-contents__link toc-highlight">Рассинхронизация кластера</a></li><li><a href="#малые-и-средние-объемы-данных-субд" class="table-of-contents__link toc-highlight">Малые и средние объемы данных СУБД</a></li><li><a href="#большие-объемы-данных-субд" class="table-of-contents__link toc-highlight">Большие объемы данных СУБД</a></li><li><a href="#некорректная-перезагрузка-кластера-иили-субд" class="table-of-contents__link toc-highlight">Некорректная перезагрузка кластера и/или СУБД</a></li><li><a href="#диагностика-работоспособности-кластера" class="table-of-contents__link toc-highlight">Диагностика работоспособности кластера</a></li><li><a href="#расположение-служебных-файлов-скриптов-и-шаблонов-jadog" class="table-of-contents__link toc-highlight">Расположение служебных файлов, скриптов и шаблонов jaDog</a></li><li><a href="#значения-по-умолчанию-используемые-в-компоненте-jadog" class="table-of-contents__link toc-highlight">Значения по умолчанию, используемые в компоненте «jaDog»</a></li><li><a href="#работа-с-консольной-утилитой-jadog_ctl-из-командной-строки" class="table-of-contents__link toc-highlight">Работа с консольной утилитой jadog_ctl из командной строки</a></li><li><a href="#длительное-ожидание-выполнения-консольной-утилиты-jadog_ctl" class="table-of-contents__link toc-highlight">Длительное ожидание выполнения консольной утилиты jadog_ctl</a></li><li><a href="#ключи-запуска-консольной-утилиты-jadog_ctl" class="table-of-contents__link toc-highlight">Ключи запуска консольной утилиты jadog_ctl</a></li><li><a href="#команды-консольной-утилиты-jadog_ctl" class="table-of-contents__link toc-highlight">Команды консольной утилиты jadog_ctl</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

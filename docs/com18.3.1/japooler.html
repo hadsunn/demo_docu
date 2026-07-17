@@ -1,0 +1,2055 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-com18.3.1/japooler" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">japooler | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/com18.3.1/japooler"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="japooler | Postgres"><meta data-rh="true" name="description" content="УТВЕРЖДЕН"><meta data-rh="true" property="og:description" content="УТВЕРЖДЕН"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/com18.3.1/japooler"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/japooler" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/japooler" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"japooler","item":"https://hadsunn.github.io/demo_docu/com18.3.1/japooler"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.e5b1ae04.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.f63415a3.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/com18.3.1/1c">com18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/1c">Поддержка платформы 1С</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/firewall">firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_anonymizer">ja_anonymizer</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_seceventlog3.3">ja_seceventlog3.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_similar">ja_similar</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_sync_ldap1.3">ja_sync_ldap1.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_1">jadog_4.2_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_2">jadog_4.2_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_3">jadog_4.2_3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_secur">jadog_secur</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jalog">jalog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/com18.3.1/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/map">map</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/secur_func">secur_func</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/secur_guide">secur_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/timescale">timescale</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/user_guide">user_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/wal-g">wal-g</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">com18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">japooler</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:51%">
+<col style="width:48%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН</p>
+<p>643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td colspan="2"><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 15.</strong></p>
+<p><strong>Балансировка подключений пользователей к СУБД.</strong></p>
+<p><strong>Компонент «jaPooler»</strong></p>
+</blockquote></td></tr><tr><td colspan="2"><blockquote>
+<p><strong>643.72410666.00067-08 98 01-15</strong></p>
+</blockquote></td></tr><tr><td colspan="2" style="text-align:center"><blockquote>
+<p>Листов 65</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p><strong>Подп. и дата</strong></p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p><strong>Инв. № дубл.</strong></p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p><strong>Взам. инв. №</strong></p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p><strong>Подп. и дата</strong></p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p><strong>Инв. № подл.</strong></p>
+</blockquote></td><td><blockquote>
+<p>2026</p>
+<p>Литера О<sub>1</sub></p>
+</blockquote></td></tr></tbody></table>
+<p><strong>АННОТАЦИЯ</strong></p>
+<blockquote>
+<p>В документе приведены сведения необходимые для установки и эксплуатации компонента балансировки подключений к СУБД «jaPooler» (далее по тексту – компонент либо jaPooler).</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image1.png" style="width:0.23993in;height:0.2399in" class="img_ev3q"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image2.png" style="width:0.23993in;height:0.2399in" class="img_ev3q">Настоящее руководство предназначено для администраторов СУБД «Jatoba». Степени важности примечаний, применяемые в документе:</p>
+</blockquote>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Дополнительная информация</strong></p>
+<p>Указания, позволяющие упростить работу с изделием.</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p><strong>Важная информация</strong></p>
+<p>Указания, требующие особого внимания.</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image3.png" style="width:0.25in;height:0.24929in" class="img_ev3q"> Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра</p>
+<p>4.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 5.x по умолчанию устанавливается в директорию ОС Linux – «/usr/jatoba-5/bin».</p>
+<p>Для СУБД «Jatoba» используется версия компонента — 2.1</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image4.png" style="width:0.25139in;height:0.25069in" class="img_ev3q"><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
+</blockquote>
+<p><strong>СОДЕРЖАНИЕ</strong></p>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-japooler">Назначение компонента jaPooler 7</a></p>
+<ol>
+<li><a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Условия применения 8</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">Установка и настройка 9</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-japooler-%D0%B2-%D0%BE%D1%81-gnulinux">Установка компонента «jaPooler» в ОС GNU/Linux 9</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-japooler">Установка расширения «japooler» 10</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-japooler">Создание служебного пользователя «japooler» 11</a></p>
+</li>
+<li>
+<p><a href="#%D1%84%D0%B0%D0%B9%D0%BB-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D0%B5%D0%B9-%D0%B4%D0%BB%D1%8F-%D1%81%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-japooler">Файл паролей для служебного пользователя «japooler» 12</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-japooler">Конфигурирование компонента jaPooler 13</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8-generic-settings">Основные настройки Generic settings 13</a></p>
+<ol>
+<li>
+<p><a href="#logfile-%D1%84%D0%B0%D0%B9%D0%BB-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B0">Logfile – файл журнала 13</a></p>
+</li>
+<li>
+<p><a href="#pidfile">pidfile 14</a></p>
+</li>
+<li>
+<p><a href="#listen_addr-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%BE%D0%B2">listen_addr – список адресов 14</a></p>
+</li>
+<li>
+<p><a href="#listen_port-%D0%BD%D0%BE%D0%BC%D0%B5%D1%80-%D0%BF%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE-%D0%BF%D0%BE%D1%80%D1%82%D0%B0">listen_port – номер принимающего порта 14</a></p>
+</li>
+<li>
+<p><a href="#unix_socket_dir-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-unix-%D1%81%D0%BE%D0%BA%D0%B5%D1%82%D0%BE%D0%B2">unix_socket_dir – расположение Unix сокетов 14</a></p>
+</li>
+<li>
+<p><a href="#unix_socket_mode-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B4%D0%BB%D1%8F-%D1%81%D0%BE%D0%BA%D0%B5%D1%82%D0%B0-unix">unix_socket_mode – режим файловой системы для сокета Unix 14</a></p>
+</li>
+<li>
+<p><a href="#unix_socket_group-%D0%B8%D0%BC%D1%8F-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B-%D0%B4%D0%BB%D1%8F-%D1%81%D0%BE%D0%BA%D0%B5%D1%82%D0%B0">unix_socket_group – имя группы для сокета 15</a></p>
+</li>
+<li>
+<p><a href="#user-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C-unix">User – пользователь Unix 15</a></p>
+</li>
+<li>
+<p><a href="#pool_mode-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">pool_mode – режим работы 15</a></p>
+</li>
+<li>
+<p><a href="#max_client_conn-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D1%85-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">max_client_conn – максимальное количество клиентских подключений 15</a></p>
+</li>
+<li>
+<p><a href="#default_pool_size-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B2-%D0%BF%D1%83%D0%BB%D0%B5">default_pool_size – количество подключений в пуле 16</a></p>
+</li>
+<li>
+<p><a href="#min_pool_size-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9">min_pool_size – минимальное количество дополнительных соединений 16</a></p>
+</li>
+<li>
+<p><a href="#reserve_pool_size-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">reserve_pool_size – количество дополнительно разрешенных подключений 16</a></p>
+</li>
+<li>
+<p><a href="#reserve_pool_timeout-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D1%8F-%D0%BF%D1%83%D0%BB%D0%B0">reserve_pool_timeout – резервное время пула 16</a></p>
+</li>
+<li>
+<p><a href="#max_db_connections-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">max_db_connections – максимальное количество подключений 16</a></p>
+</li>
+<li>
+<p><a href="#max_user_connections-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">max_user_connections – максимальное количество подключений для</a> <a href="#max_user_connections-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">пользователя 17</a></p>
+</li>
+<li>
+<p><a href="#server_round_robin---%D1%86%D0%B8%D0%BA%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D1%80-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BE%D0%B2">server_round_robin - циклический перебор серверов 17</a></p>
+</li>
+<li>
+<p><a href="#ignore_startup_parameters-%D0%B8%D0%B3%D0%BD%D0%BE%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D1%8B%D1%85-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2">ignore_startup_parameters – игнорирование стартовых параметров 17</a></p>
+</li>
+<li>
+<p><a href="#disable_pqexec-%D0%BE%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0-pqexec">disable_pqexec – отключение протокола PQexec 18</a></p>
+</li>
+<li>
+<p><a href="#application_name_add_host-%D0%B8%D0%BC%D1%8F-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B5-%D1%85%D0%BE%D1%81%D1%82%D0%B0">application_name_add_host – имя приложения в адресе хоста 18</a></p>
+</li>
+<li>
+<p><a href="#conffile-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8">conffile – расположение файла конфигурации 18</a></p>
+</li>
+<li>
+<p><a href="#job_name-%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8">job_name – название задачи 18</a></p>
+</li>
+<li>
+<p><a href="#stats_period-%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8">stats_period – периодичность вывода статистики 19</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B">Аутентификационные параметры 19</a></p>
+<ol>
+<li>
+<p><a href="#auth_type-%D1%82%D0%B8%D0%BF-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8">auth_type – тип аутентификации 19</a></p>
+</li>
+<li>
+<p><a href="#auth_hba_file-%D1%84%D0%B0%D0%B9%D0%BB-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-hba">auth_hba_file – файл конфигурации HBA 20</a></p>
+</li>
+<li>
+<p><a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8">auth_file – имя файла аутентификации 20</a></p>
+</li>
+<li>
+<p><a href="#auth_user-%D0%B8%D0%BC%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8-%D0%B2-%D0%B1%D0%B4">auth_user – имя пользователя для аутентификации в БД 21</a></p>
+</li>
+<li>
+<p><a href="#auth_query-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%B8%D0%B7%D0%B2%D0%BB%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8F">auth_query – запрос извлечения пароля 21</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#_bookmark40">Настройка соединения по SSL 21</a></p>
+<ol>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81-%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D0%BE%D0%BC">Соединение с клиентом 21</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BE%D0%BC">Соединение с сервером 23</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%B1%D0%B4">Параметры БД 24</a></p>
+<ol>
+<li>
+<p><a href="#dbname-%D0%B8%D0%BC%D1%8F-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%BE%D0%B9-%D0%B1%D0%B0%D0%B7%D1%8B">dbname – имя целевой базы 25</a></p>
+</li>
+<li>
+<p><a href="#host-%D0%B0%D0%B4%D1%80%D0%B5%D1%81-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BA-%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%BC%D1%83-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%83">host – адрес подключений к главному серверу 25</a></p>
+</li>
+<li>
+<p><a href="#host_ro-%D0%B0%D0%B4%D1%80%D0%B5%D1%81-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BA-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%83-%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B5%D0%B3%D0%BE-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0">host_ro – адрес подключений к серверу горячего резерва 25</a></p>
+</li>
+<li>
+<p><a href="#port-%D0%BF%D0%BE%D1%80%D1%82-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F">port – порт подключения 26</a></p>
+</li>
+<li>
+<p><a href="#port_ro-%D0%BF%D0%BE%D1%80%D1%82-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%83-%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B5%D0%B3%D0%BE-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0">port_ro – порт подключения к серверу горячего резерва 26</a></p>
+</li>
+<li>
+<p><a href="#strategy-%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D1%8F-%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2">strategy – стратегия балансировки запросов 26</a></p>
+</li>
+<li>
+<p><a href="#user-%D0%B8%D0%BC%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">user – имя пользователя 26</a></p>
+</li>
+<li>
+<p><a href="#password-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">password – пароль пользователя 26</a></p>
+</li>
+<li>
+<p><a href="#auth_user">auth_user 26</a></p>
+</li>
+<li>
+<p><a href="#pool_size-%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80-%D0%BF%D1%83%D0%BB%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%B1%D0%B4">pool_size – размер пулов для БД 26</a></p>
+</li>
+<li>
+<p><a href="#min_pool_size-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80-%D0%BF%D1%83%D0%BB%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%B1%D0%B4">min_pool_size – минимальный размер пулов для БД 26</a></p>
+</li>
+<li>
+<p><a href="#reserve_pool-%D1%87%D0%B8%D1%81%D0%BB%D0%BE-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BA-%D0%B1%D0%B4">reserve_pool – число дополнительных подключений к БД 27</a></p>
+</li>
+<li>
+<p><a href="#connect_query-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D0%BC%D1%8B%D0%B9-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81">connect_query – выполняемый запрос 27</a></p>
+</li>
+<li>
+<p><a href="#pool_mode-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BF%D1%83%D0%BB%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%B1%D0%B4">pool_mode – режим пула для БД 27</a></p>
+</li>
+<li>
+<p><a href="#max_db_connections-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B4%D0%BB%D1%8F-%D0%B1%D0%B4">max_db_connections – максимальное количество подключений для БД 27</a></p>
+</li>
+<li>
+<p><a href="#client_encoding-%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BB%D0%B8%D0%B5%D0%BD%D1%82%D0%B0">client_encoding – кодировка клиента 27</a></p>
+</li>
+<li>
+<p><a href="#datestyle-%D1%81%D1%82%D0%B8%D0%BB%D1%8C-%D0%B4%D0%B0%D1%82%D1%8B">datestyle – стиль даты 27</a></p>
+</li>
+<li>
+<p><a href="#timezone-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F-%D0%B7%D0%BE%D0%BD%D0%B0">Timezone – временная зона 27</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C">Раздел «пользователь» 27</a></p>
+<ol>
+<li>
+<p><a href="#pool_mode-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">pool_mode – режим работы пользователя 27</a></p>
+</li>
+<li>
+<p><a href="#max_user_connections-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">max_user_connections – максимальное количество подключений</a> <a href="#max_user_connections-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">пользователя 28</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9">Параметры регистрации событий 28</a></p>
+<ol>
+<li>
+<p><a href="#syslog_ident-%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81-%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9">syslog_ident – префикс имени событий 28</a></p>
+</li>
+<li>
+<p><a href="#syslog_facility-%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81-%D1%81%D1%83%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0-%D0%B2-%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9">syslog_facility – префикс субъекта в имени событий 28</a></p>
+</li>
+<li>
+<p><a href="#log_connections-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%83%D1%81%D0%BF%D0%B5%D1%88%D0%BD%D1%8B%D1%85-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">log_connections – регистрация успешных подключений 28</a></p>
+</li>
+<li>
+<p><a href="#_bookmark69">log_disconnections – регистрация отключений 28</a></p>
+</li>
+<li>
+<p><a href="#log_pooler_errors-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85-%D0%BE%D1%88%D0%B8%D0%B1%D0%BE%D0%BA">log_pooler_errors – регистрация выводимых ошибок 28</a></p>
+</li>
+<li>
+<p><a href="#log_stats-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8">log_stats – запись статистики 28</a></p>
+</li>
+<li>
+<p><a href="#verbose-%D1%83%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9">verbose – уровень детализации событий 29</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BD%D0%B0-japooler">Регистрация службы (демона) jaPooler 29</a></p>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-japooler">Функциональные возможности компонента «jaPooler» 29</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F">Команды подключения 29</a></p>
+</li>
+<li>
+<p><a href="#%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%D1%8F-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C-admin-console">Административная консоль (Admin console) 30</a></p>
+</li>
+<li>
+<p><a href="#show-commands-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">Show commands – команды мониторинга 31</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0%D0%BC%D0%B8">Команды управления процессами 43</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B">Прочие команды 45</a></p>
+</li>
+<li>
+<p><a href="#signals">Signals 46</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Примеры использования компонента 47</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B5%D0%B3%D0%BE-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0-%D0%B2-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8-balancing">Кластер горячего резерва в режиме стратегии «balancing» 47</a></p>
+<ol>
+<li>
+<p><a href="#_bookmark95">Установка главного сервера (Master-сервер) 48</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0-%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B5%D0%B3%D0%BE-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0-slave-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80">Установка сервера горячего резерва (Slave-сервер) 49</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Создание кластера 50</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-japooler">Инициализация компонента «jaPooler» 50</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B8-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2-rw-ro">Подключение пользователя и выполнение запросов RW, RO 53</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82">Результат 55</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#_bookmark103">Кластер горячего резерва в режиме стратегии «always_rw» 56</a></p>
+<ol>
+<li><a href="#%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82-1">Результат 59</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B5%D0%B3%D0%BE-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0-%D0%B2-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8-always_ro">Кластер горячего резерва в режиме стратегии «always_ro» 59</a></p>
+<ol>
+<li><a href="#%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82-2">Результат 62</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Обновление компонента 63</a></p>
+</li>
+</ol>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 64</a></p>
+<header><h1>НАЗНАЧЕНИЕ КОМПОНЕНТА jaPooler</h1></header>
+<blockquote>
+<p>Компонент jaPooler предназначен для управления соединениями, позволяет подключиться к СУБД большому числу клиентов без существенного снижения производительности. Между jaPooler и СУБД поддерживаются соединения, которые можно повторно использовать. После отключения клиента соединение возвращается в пул и может быть повторно использовано тем же самым или новым клиентом.</p>
+<p>Балансировка в jaPooler представлена в функциях умного распределения RW (ReadWrite)/RO (ReadOnly) запросов.</p>
+<p>Компонент имеет функциональную возможность распределять нагрузку при запросах от пользователя (ей) к серверу при их подключении к серверу СУБД на указанный порт, как представлено рисунке <a href="#_bookmark1">1.1</a>.</p>
+</blockquote>
+<p><strong>Write req</strong></p>
+<p><strong>Read req</strong></p>
+<blockquote>
+<p><span id="_bookmark1" class="anchor"></span>Рисунок 1.1 – Балансировка запросов пользователя</p>
+<p>Также компонент обладает функциональной возможностью балансировки подключений множества пользователей к серверам СУБД, как представлено на рисунке <a href="#_bookmark2">1.2</a>.</p>
+<p>RW, MASTER RO, SLAVE</p>
+</blockquote>
+<p><strong>Read req</strong></p>
+<p>repl</p>
+<p><strong>Write req</strong></p>
+<p>sync</p>
+<p><strong>Write req</strong></p>
+<p>repl</p>
+<p>sync</p>
+<p><strong>Write req</strong></p>
+<p>repl</p>
+<p><strong>Read req</strong></p>
+<blockquote>
+<p>RW, MASTER RO, SLAVE</p>
+</blockquote>
+<p><span id="_bookmark2" class="anchor"></span>Рисунок 1.2 – Балансировка запросов пользователей к серверам СУБД</p>
+<blockquote>
+<p>Подключения формируются как от пользователей, так и от пользовательских приложений.</p>
+<p>Компонент работает по серверной технологии. На серверах СУБД устанавливается компонент, работающий на уровне службы (демона) операционной системы.</p>
+<p>Передача данных осуществляется по протоколу Libpq по порту 6432.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения">​</a></h2>
+<blockquote>
+<p>Компонент «jaPooler» может использоваться совместно с СУБД «Jatoba» версии</p>
+<p>4.x и выше в ОС, указанных в таблице 1.1 документа «Руководство по установке СУБД Jatoba» 643.72410666.00067-08 97 01.</p>
+<p>В текущей реализации не поддерживается управление с помощью пользовательского веб-интерфейса для администраторов «Jatoba Data Safe».</p>
+<p>Управление осуществляется через корректировку управляющих параметров и конфигурационных файлов.</p>
+</blockquote>
+<h1>УСТАНОВКА И НАСТРОЙКА</h1>
+<blockquote>
+<p>Установка модуля должна производиться от имени пользователя, обладающего административными привилегиями в системе. Компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-компонента-japooler-в-ос-gnulinux">Установка компонента «jaPooler» в ОС GNU/Linux<a href="#установка-компонента-japooler-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка компонента «jaPooler» в ОС GNU/Linux" title="Direct link to Установка компонента «jaPooler» в ОС GNU/Linux">​</a></h2>
+<blockquote>
+<p>Установка компонента осуществляется в процессе установки СУБД «Jatoba», также компонент можно установить опционально после основной инсталляции СУБД.</p>
+<p>Установку компонента возможно провести двумя способами:</p>
+</blockquote>
+<ol>
+<li>
+<p>установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;</p>
+</li>
+<li>
+<p>установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.</p>
+</li>
+</ol>
+<blockquote>
+<p>Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:</p>
+<p>– для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:</p>
+<p>apt-get install jatoba&lt;ver&gt;-japooler</p>
+</blockquote>
+<ul>
+<li>для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:</li>
+</ul>
+<blockquote>
+<p>yum install jatoba&lt;ver&gt;-japooler</p>
+<p>Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.</p>
+</blockquote>
+<ul>
+<li>ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:</li>
+</ul>
+<blockquote>
+<p>apt-get install jatoba&lt;ver&gt;-japooler</p>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba4-japooler и т.п.</p>
+<p>В процессе установки пакета компонента создается системный пользователь <img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image9.png" style="width:0.24025in;height:0.24022in" class="img_ev3q"> pgbouncer, от имени которого работает системная служба компонента. Также</p>
+<p>системный пользователь pgbouncer имеет права доступа к каталогам и файлам, используемым компонентом «jaPoole»r.</p>
+<p>Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-расширения-japooler">Установка расширения «japooler»<a href="#установка-расширения-japooler" class="hash-link" aria-label="Direct link to Установка расширения «japooler»" title="Direct link to Установка расширения «japooler»">​</a></h2>
+<blockquote>
+<p>Расширение СУБД «japooler» служит, для:</p>
+</blockquote>
+<ul>
+<li>
+<p>проведения балансировки подключений между узлами кластера;</p>
+</li>
+<li>
+<p>установки дополнительных функций, таких как «add_japooler_user» и</p>
+</li>
+</ul>
+<blockquote>
+<p>«drop_japooler_user».</p>
+<p>Расширение «japooler» устанавливается при помощи SQL-команды:</p>
+<p>CREATE EXTENSION japooler;</p>
+<p><strong>ВАЖНО!</strong> В случае совместной работы компонента «jaPooler» с SecurityProfile в одной СУБД, расширение «japooler» должно устанавливаться в ту же БД, в которую установлено расширение «securityprofile».</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image10.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">Справочная информация по настройке SecurityProfile приведена в документе</p>
+<p>«Руководство администратора СУБД Jatoba» 643.72410666.00067-08 95 01</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image11.png" style="width:7.08839in;height:2.4725in" class="img_ev3q">
+</blockquote>
+<p>Рисунок 2.1 – Установка расширения</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-служебного-пользователя-japooler">Создание служебного пользователя «japooler»<a href="#создание-служебного-пользователя-japooler" class="hash-link" aria-label="Direct link to Создание служебного пользователя «japooler»" title="Direct link to Создание служебного пользователя «japooler»">​</a></h2>
+<blockquote>
+<p>Служебный пользователь «japooler» создаётся от имени и с правами привилегированного пользователя. SQL-команда имеет синтаксис:</p>
+<p>select add_japooler_user(&#x27;japooler&#x27;, &#x27;[password]&#x27;);</p>
+<p>Например, в рассматриваемом примере служебный пользователь «japooler» создаётся SQL-командой:</p>
+<p>select add_japooler_user(&#x27;japooler&#x27;, &#x27;P@ssword&#x27;);</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image12.png" style="width:7.01272in;height:2.80396in" class="img_ev3q">
+</blockquote>
+<p>Рисунок 2.2 – Создание пользователя</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="файл-паролей-для-служебного-пользователя-japooler">Файл паролей для служебного пользователя «japooler»<a href="#файл-паролей-для-служебного-пользователя-japooler" class="hash-link" aria-label="Direct link to Файл паролей для служебного пользователя «japooler»" title="Direct link to Файл паролей для служебного пользователя «japooler»">​</a></h2>
+<blockquote>
+<p>Установленный пароль для служебного пользователя требуется сохранить в файле паролей, который будет использоваться для подключений.</p>
+<p>Файл паролей .japooler.pgpass создаётся по пути:</p>
+<p>/var/lib/jatoba</p>
+<p>командой в терминале ОС:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image13.png" style="width:6.90161in;height:0.70312in" class="img_ev3q">
+<blockquote>
+<p># nano /var/lib/jatoba/.japooler.pgpass</p>
+<p>Рисунок 2.3 – Команда создания файла паролей В созданном файле добавить строку:</p>
+<p>127.0.0.1:5432:postgres:japooler:P@ssword</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image14.png" style="width:7.07494in;height:2.06042in" class="img_ev3q">
+<p>Рисунок 2.4 – Строка подключения в фале паролей Сохранить внесённые изменения.</p>
+<p>В GNU/Linux разрешения для файла паролей должны запрещать любой доступ к нему всем и группе. Для этого владельцем файла назначается пользователь ОС postgres и командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image15.png" style="width:7.03232in;height:1.05219in" class="img_ev3q">
+<blockquote>
+<p># chown postgres: /var/lib/jatoba/.japooler.pgpass # chmod 600 /var/lib/jatoba/.japooler.pgpass</p>
+<p>Рисунок 2.5 – Установка разрешений на файл паролей</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="конфигурирование-компонента-japooler">Конфигурирование компонента jaPooler<a href="#конфигурирование-компонента-japooler" class="hash-link" aria-label="Direct link to Конфигурирование компонента jaPooler" title="Direct link to Конфигурирование компонента jaPooler">​</a></h2>
+<blockquote>
+<p>Основные настройки компонента jaPooler проводятся в файле /usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer.ini. Неактивные параметры маркируются символами «;» «#» в начале строки.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="основные-настройки-generic-settings">Основные настройки Generic settings<a href="#основные-настройки-generic-settings" class="hash-link" aria-label="Direct link to Основные настройки Generic settings" title="Direct link to Основные настройки Generic settings">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="logfile--файл-журнала">Logfile – файл журнала<a href="#logfile--файл-журнала" class="hash-link" aria-label="Direct link to Logfile – файл журнала" title="Direct link to Logfile – файл журнала">​</a></h2>
+<blockquote>
+<p>Указывает имя файла журнала. Для работы в режиме демона (-d) должен быть задан либо этот параметр, либо syslog. Файл журнала остается открытым, так что после смены имени для прокрутки следует выполнить kill –HUP или «<a href="#_bookmark88"><u>RELOAD</u></a>» в консоли.</p>
+<p>Обратите внимание, что параметр logfile сам по себе не отключает вывод сообщений в stderr. Отключить его можно, воспользовавшись параметром командной строки –q или -d.</p>
+<p>Установить рекомендуемое значение:</p>
+<p>/usr/jatoba-&lt;ver&gt;/var/log/pgbouncer/pgbouncer.log</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pidfile">pidfile<a href="#pidfile" class="hash-link" aria-label="Direct link to pidfile" title="Direct link to pidfile">​</a></h2>
+<blockquote>
+<p>Указывает имя файла PID. Без этого указания работа в режиме демона (-d) не допускается.</p>
+<p>Установить рекомендуемое значение:</p>
+<p>/usr/jatoba-&lt;ver&gt;/var/run/pgbouncer/pgbouncer.pid</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="listen_addr--список-адресов">listen_addr – список адресов<a href="#listen_addr--список-адресов" class="hash-link" aria-label="Direct link to listen_addr – список адресов" title="Direct link to listen_addr – список адресов">​</a></h2>
+<blockquote>
+<p>Указывает список адресов, по которым должны приниматься TCP-подключения. При указании * будет означать «принимать по всем адресам». Когда этот параметр не задан, принимаются только подключения через Unix-сокеты.</p>
+<p>Адреса могут задаваться числами (в формате IPv4/IPv6) или именами. Значение по умолчанию: не установлено.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="listen_port--номер-принимающего-порта">listen_port – номер принимающего порта<a href="#listen_port--номер-принимающего-порта" class="hash-link" aria-label="Direct link to listen_port – номер принимающего порта" title="Direct link to listen_port – номер принимающего порта">​</a></h2>
+<blockquote>
+<p>Номер принимающего порта. Задается и для сокетов TCP, и для Unix-сокетов. По умолчанию: 6432.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="unix_socket_dir--расположение-unix-сокетов">unix_socket_dir – расположение Unix сокетов<a href="#unix_socket_dir--расположение-unix-сокетов" class="hash-link" aria-label="Direct link to unix_socket_dir – расположение Unix сокетов" title="Direct link to unix_socket_dir – расположение Unix сокетов">​</a></h2>
+<blockquote>
+<p>Указывает расположение Unix-сокетов. Действует и для принимающего сокета, и для подключений к серверу. Если задана пустая строка, сокеты Unix отключаются. При указании значения, начинающегося с @, будет создан сокет Unix в абстрактном пространстве имен (в настоящее время поддерживается в ОС Linux).</p>
+<p>Чтобы работала перезагрузка «на лету» (-R), необходимо настроить сокет Unix, который должен находиться в пространстве имен файловой системы.</p>
+<p>По умолчанию: /tmp.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="unix_socket_mode--режим-файловой-системы-для-сокета-unix">unix_socket_mode – режим файловой системы для сокета Unix<a href="#unix_socket_mode--режим-файловой-системы-для-сокета-unix" class="hash-link" aria-label="Direct link to unix_socket_mode – режим файловой системы для сокета Unix" title="Direct link to unix_socket_mode – режим файловой системы для сокета Unix">​</a></h2>
+<blockquote>
+<p>Режим файловой системы для сокета Unix. Игнорируется для сокетов в абстрактном пространстве имен.</p>
+<p>По умолчанию: 0777.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="unix_socket_group--имя-группы-для-сокета">unix_socket_group – имя группы для сокета<a href="#unix_socket_group--имя-группы-для-сокета" class="hash-link" aria-label="Direct link to unix_socket_group – имя группы для сокета" title="Direct link to unix_socket_group – имя группы для сокета">​</a></h2>
+<blockquote>
+<p>Имя группы для сокета Unix. Игнорируется для сокетов в абстрактном пространстве имен.</p>
+<p>Значение по умолчанию: не установлено.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="user--пользователь-unix">User – пользователь Unix<a href="#user--пользователь-unix" class="hash-link" aria-label="Direct link to User – пользователь Unix" title="Direct link to User – пользователь Unix">​</a></h2>
+<blockquote>
+<p>Данный параметр определяет, на какого пользователя Unix нужно переключиться после запуска. Работает при условии, если компонент запускается от имени root или уже запущен от имени заданного пользователя.</p>
+<p>Значение по умолчанию: не установлено.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pool_mode--режим-работы">pool_mode – режим работы<a href="#pool_mode--режим-работы" class="hash-link" aria-label="Direct link to pool_mode – режим работы" title="Direct link to pool_mode – режим работы">​</a></h2>
+<blockquote>
+<p>Указывает, когда подключение к серверу могут повторно использовать другие клиенты. Режим работы может быть:</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>session</strong> – серверное подключение возвращается в пул после отключения клиента. Это вариант по умолчанию;</p>
+</li>
+<li>
+<p><strong>transaction</strong> – сервер возвращается в пул после завершения транзакции;</p>
+</li>
+<li>
+<p><strong>statement</strong> – сервер возвращается в пул после завершения запроса. В этом режиме не допускаются транзакции, охватывающие несколько операторов.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="max_client_conn--максимальное-количество-клиентских-подключений">max_client_conn – максимальное количество клиентских подключений<a href="#max_client_conn--максимальное-количество-клиентских-подключений" class="hash-link" aria-label="Direct link to max_client_conn – максимальное количество клиентских подключений" title="Direct link to max_client_conn – максимальное количество клиентских подключений">​</a></h2>
+<blockquote>
+<p>Максимально допустимое число клиентских подключений. При увеличении должно также увеличиваться ограничение на число файловых дескрипторов. Фактическое число занятых файловых дескрипторов будет больше, чем max_client_conn. Если каждый пользователь подключается к серверу под своим именем, теоретически возможный максимум равен:</p>
+<p>max_client_conn + (max pool_size * total databases * total users)</p>
+<p>Если пользователь задан в строке соединения (все пользователи подключаются под одним именем), теоретический максимум равен:</p>
+<p>max_client_conn + (max pool_size * total databases)</p>
+<p>Теоретический максимум не должен достигаться никогда, если только намеренно не предпринимаются специальные меры для этого. Тем не менее это значит, что число файловых дескрипторов должно ограничиваться довольно большим числом.</p>
+<p>Значение по умолчанию: 100.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="default_pool_size--количество-подключений-в-пуле">default_pool_size – количество подключений в пуле<a href="#default_pool_size--количество-подключений-в-пуле" class="hash-link" aria-label="Direct link to default_pool_size – количество подключений в пуле" title="Direct link to default_pool_size – количество подключений в пуле">​</a></h2>
+<blockquote>
+<p>Максимально возможное количество подключений к серверу для пары пользователь/база. Может быть переопределено в конфигурации базы данных.</p>
+<p>Значение по умолчанию: 20.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="min_pool_size--минимальное-количество-дополнительных-соединений">min_pool_size – минимальное количество дополнительных соединений<a href="#min_pool_size--минимальное-количество-дополнительных-соединений" class="hash-link" aria-label="Direct link to min_pool_size – минимальное количество дополнительных соединений" title="Direct link to min_pool_size – минимальное количество дополнительных соединений">​</a></h2>
+<blockquote>
+<p>Число серверных подключений для пары пользователь/база, которые доступны в пуле со старта сервера. Дает положительный эффект, когда нагрузка появляется внезапно после периода простоя. Это значение будет ограничено размером пула.</p>
+<p>Значение по умолчанию: 0 (отключено).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="reserve_pool_size--количество-дополнительно-разрешенных-подключений">reserve_pool_size – количество дополнительно разрешенных подключений<a href="#reserve_pool_size--количество-дополнительно-разрешенных-подключений" class="hash-link" aria-label="Direct link to reserve_pool_size – количество дополнительно разрешенных подключений" title="Direct link to reserve_pool_size – количество дополнительно разрешенных подключений">​</a></h2>
+<blockquote>
+<p>Число дополнительно разрешенных подключений в пуле (см. <a href="https://postgrespro.ru/docs/postgrespro/10/pgbouncer#PGBOUNCER-RESERVE-POOL-TIMEOUT" target="_blank" rel="noopener noreferrer">reserve_pool_timeout)</a>. При 0 резерв отсутствует.</p>
+<p>Значение по умолчанию: 0 (отключено).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="reserve_pool_timeout--резервное-время-пула">reserve_pool_timeout – резервное время пула<a href="#reserve_pool_timeout--резервное-время-пула" class="hash-link" aria-label="Direct link to reserve_pool_timeout – резервное время пула" title="Direct link to reserve_pool_timeout – резервное время пула">​</a></h2>
+<blockquote>
+<p>Если клиент не обслуживается заданное число секунд, pgbouncer задействует дополнительные подключения из резервного пула. При 0 это не происходит.</p>
+<p>Значение по умолчанию: 5.0</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="max_db_connections--максимальное-количество-подключений">max_db_connections – максимальное количество подключений<a href="#max_db_connections--максимальное-количество-подключений" class="hash-link" aria-label="Direct link to max_db_connections – максимальное количество подключений" title="Direct link to max_db_connections – максимальное количество подключений">​</a></h2>
+<blockquote>
+<p>Не допускать больше заданного числа серверных подключений к базе данных, независимо от пользователя. При этом учитывается база данных компонента jaPooler, к которой подключен клиент, а не база данных СУБД «Jatoba» исходящего подключения. Данный предел можно установить для каждой базы данных в разделе [databases].</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image16.png" style="width:0.24025in;height:0.24022in" class="img_ev3q">Обратите внимание, при достижении предела, закрытие подключения клиента в одном пуле не позволяет немедленно установить другое подключение к серверу через другой пул, так как подключение первого пула по-прежнему</p>
+<p>открыто. Когда сервер закроет его по тайм-ауту неактивности, новое подключение будет немедленно установлено для ожидающего пула.</p>
+<p>Значение по умолчанию: 0 (нет ограничения).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="max_user_connections--максимальное-количество-подключений-для-пользователя">max_user_connections – максимальное количество подключений для пользователя<a href="#max_user_connections--максимальное-количество-подключений-для-пользователя" class="hash-link" aria-label="Direct link to max_user_connections – максимальное количество подключений для пользователя" title="Direct link to max_user_connections – максимальное количество подключений для пользователя">​</a></h2>
+<blockquote>
+<p>Не допускать больше заданного числа подключений к серверу для пользователя (независимо от базы данных). При этом учитывается пользователь pgbouncer, связанный с пулом. В данной роли может выступать либо пользователь, указанный для подключения к серверу, либо, в отсутствие этого указания, пользователь, от имени которого подключился клиент. Этот предел можно установить для каждого пользователя в разделе [users].</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image17.png" style="width:0.24025in;height:0.24022in" class="img_ev3q">Обратите внимание, при достижении предела, закрытие подключения клиента в одном пуле не позволяет немедленно установить другое подключение к серверу через другой пул, так как подключение первого пула по-прежнему открыто. Когда сервер закроет его по тайм-ауту неактивности, новое подключение будет немедленно установлено для ожидающего пула.</p>
+<p>Значение по умолчанию: 0 (нет ограничения).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="server_round_robin---циклический-перебор-серверов">server_round_robin - циклический перебор серверов<a href="#server_round_robin---циклический-перебор-серверов" class="hash-link" aria-label="Direct link to server_round_robin - циклический перебор серверов" title="Direct link to server_round_robin - циклический перебор серверов">​</a></h2>
+<blockquote>
+<p>По умолчанию компонент повторно использует подключения сервера в порядке LIFO (последнее пришло, первое ушло), так что основная загрузка распределяется по нескольким последним соединениям. Это дает наибольшую производительность, если базу данных обслуживает один сервер. Но если за IP-адресом базы данных скрывается балансировщик TCP-соединений, лучше, если компонент будет использовать подключения в данном режиме, обеспечивая таким образом равномерную нагрузку.</p>
+<p>Значение по умолчанию: 0.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ignore_startup_parameters--игнорирование-стартовых-параметров">ignore_startup_parameters – игнорирование стартовых параметров<a href="#ignore_startup_parameters--игнорирование-стартовых-параметров" class="hash-link" aria-label="Direct link to ignore_startup_parameters – игнорирование стартовых параметров" title="Direct link to ignore_startup_parameters – игнорирование стартовых параметров">​</a></h2>
+<blockquote>
+<p>По умолчанию компонент принимает только параметры, которые он может отслеживать в стартовых пакетах:</p>
+</blockquote>
+<ul>
+<li>
+<p>client_encoding;</p>
+</li>
+<li>
+<p>datestyle;</p>
+</li>
+<li>
+<p>timezone;</p>
+</li>
+<li>
+<p>standard_conforming_strings.</p>
+</li>
+</ul>
+<blockquote>
+<p>Все другие параметры вызывают ошибку. Чтобы принимались и другие параметры, их нужно указать здесь, чтобы pgbouncer знал, что они обрабатываются администратором и их можно игнорировать.</p>
+<p>Значение по умолчанию: пустая строка.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="disable_pqexec--отключение-протокола-pqexec">disable_pqexec – отключение протокола PQexec<a href="#disable_pqexec--отключение-протокола-pqexec" class="hash-link" aria-label="Direct link to disable_pqexec – отключение протокола PQexec" title="Direct link to disable_pqexec – отключение протокола PQexec">​</a></h2>
+<blockquote>
+<p>Отключает протокол простых запросов (PQexec). В отличие от протокола расширенных запросов, этот протокол допускает указание нескольких запросов в одном пакете, что оставляет место для атак с SQL-инъекцией. Отключение этого протокола может улучшить безопасность. При этом означает, что смогут работать только клиенты, которые используют исключительно протокол расширенных запросов.</p>
+<p>Значение по умолчанию: 0.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="application_name_add_host--имя-приложения-в-адресе-хоста">application_name_add_host – имя приложения в адресе хоста<a href="#application_name_add_host--имя-приложения-в-адресе-хоста" class="hash-link" aria-label="Direct link to application_name_add_host – имя приложения в адресе хоста" title="Direct link to application_name_add_host – имя приложения в адресе хоста">​</a></h2>
+<blockquote>
+<p>Добавляет адрес компьютера и порт клиента к имени приложения, задаваемого при установлении подключения. Это помогает идентифицировать источник плохих запросов и т.п. Это выполняется, только когда подключение устанавливается. Если свойство application_name будет изменено позднее командой SET, компонент его уже не поменяет.</p>
+<p>Значение по умолчанию: 0.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conffile--расположение-файла-конфигурации">conffile – расположение файла конфигурации<a href="#conffile--расположение-файла-конфигурации" class="hash-link" aria-label="Direct link to conffile – расположение файла конфигурации" title="Direct link to conffile – расположение файла конфигурации">​</a></h2>
+<blockquote>
+<p>Показывает расположение текущего файла конфигурации. При изменении этого параметра pgbouncer будет использовать другой файл конфигурации после команд</p>
+<p>«<a href="#_bookmark88"><u>RELOAD</u></a>» или «<a href="#_bookmark90"><u>SIGHUP</u></a>».</p>
+<p>Значение по умолчанию: файл, заданный в командной строке.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="job_name--название-задачи">job_name – название задачи<a href="#job_name--название-задачи" class="hash-link" aria-label="Direct link to job_name – название задачи" title="Direct link to job_name – название задачи">​</a></h2>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image16.png" style="width:0.24025in;height:0.24022in" class="img_ev3q">Аналог параметра service_name. Параметр используется в GNU Linux</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="stats_period--периодичность-вывода-статистики">stats_period – периодичность вывода статистики<a href="#stats_period--периодичность-вывода-статистики" class="hash-link" aria-label="Direct link to stats_period – периодичность вывода статистики" title="Direct link to stats_period – периодичность вывода статистики">​</a></h2>
+<blockquote>
+<p>Определяет, с какой периодичностью (в секундах) будут пересчитываться средние значения, выводимые различными командами SHOW, и как часто агрегированная статистика будет записываться в журнал (см. <a href="https://postgrespro.ru/docs/postgrespro/10/pgbouncer#PGBOUNCER-LOG-STATS" target="_blank" rel="noopener noreferrer">log_stats)</a>.</p>
+<p>Значение по умолчанию: 60.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="аутентификационные-параметры">Аутентификационные параметры<a href="#аутентификационные-параметры" class="hash-link" aria-label="Direct link to Аутентификационные параметры" title="Direct link to Аутентификационные параметры">​</a></h2>
+<blockquote>
+<p>Компонент поддерживает аутентификацию пользователей по собственной базе по методам, указываемым в параметре «<a href="#auth_type-%D1%82%D0%B8%D0%BF-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"><u>auth_type</u></a>».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="auth_type--тип-аутентификации">auth_type – тип аутентификации<a href="#auth_type--тип-аутентификации" class="hash-link" aria-label="Direct link to auth_type – тип аутентификации" title="Direct link to auth_type – тип аутентификации">​</a></h2>
+<blockquote>
+<p>Устанавливаются следующие типы аутентификации:</p>
+</blockquote>
+<ul>
+<li>cert</li>
+</ul>
+<blockquote>
+<p>Клиент должен подключаться по соединению TLS с действительным клиентским сертификатом. Имя пользователя берется из поля «CommonName» (Общее имя) сертификата.</p>
+</blockquote>
+<ul>
+<li>md5</li>
+</ul>
+<blockquote>
+<p>Применять проверку пароля по хеш MD5. Этот метод аутентификации выбирается по умолчанию. Файл <a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"><u>auth_file</u></a> может содержать как зашифрованные MD5, так и открытые пароли. Даже при выборе md5, если пароль пользователя задан для метода SCRAM, автоматически будет применяться проверка по алгоритму SCRAM.</p>
+</blockquote>
+<ul>
+<li>scram-sha-256</li>
+</ul>
+<blockquote>
+<p>Применять проверку пароля по алгоритму SCRAM-SHA-256. Заданный параметром <a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"><u>auth_file</u></a> файл должен содержать зашифрованные SCRAM или открытые пароли. Зашифрованные SCRAM пароли могут использоваться только для проверки пароли клиентов, но не для входа на сервер. Чтобы использовать SCRAM для серверных подключений, пароли необходимо задать открытым текстом.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image10.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">В СУБД «Jatoba» версии 4 по умолчанию поддерживается шифрование пароля по алгоритму scram-sha-256</p>
+</blockquote>
+<ul>
+<li>plain</li>
+</ul>
+<blockquote>
+<p>По каналу передается пароль в открытом тексте. Устаревший вариант.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image18.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">Использования метода аутентификации «plain» не рекомендуется</p>
+</blockquote>
+<ul>
+<li>trust</li>
+</ul>
+<blockquote>
+<p>Аутентификация не выполняется. Тем не менее имя пользователя должно присутствовать в auth_file.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image19.png" style="width:0.24159in;height:0.24155in" class="img_ev3q"> Использования метода аутентификации «trust» не рекомендуется</p>
+</blockquote>
+<ul>
+<li>any</li>
+</ul>
+<blockquote>
+<p>Подобен методу «trust», но переданное имя пользователя игнорируется. Требует, чтобы для всех баз данных было настроено подключение заданного пользователя. Кроме того, база данных консоли допускает подключение любого пользователя в качестве администратора.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image19.png" style="width:0.24159in;height:0.24155in" class="img_ev3q"> Использования метода аутентификации «any» не рекомендуется</p>
+</blockquote>
+<ul>
+<li>hba</li>
+</ul>
+<blockquote>
+<p>Фактический тип аутентификации загружается из <a href="#auth_hba_file-%D1%84%D0%B0%D0%B9%D0%BB-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-hba"><u>auth_hba_file</u></a>. Это позволяет применять разные методы аутентификации для разных вариантов доступа.</p>
+<p>Например: для подключений через сокет Unix применять метод peer, а для TCP — TLS.</p>
+</blockquote>
+<ul>
+<li>pam</li>
+</ul>
+<blockquote>
+<p>Для проверки подлинности пользователей используется инфраструктура PAM (Pluggable Authentication Modules – подключаемые модули аутентификации). Файл <u><a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8">auth_fil</a>e</u> игнорируется. Этот метод несовместим с базами данных, для которых используется <a href="https://postgrespro.ru/docs/postgrespro/10/pgbouncer#PGBOUNCER-AUTH-USER" target="_blank" rel="noopener noreferrer">auth_user.</a> PAM в файле конфигурации HBA не поддерживается.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="auth_hba_file--файл-конфигурации-hba">auth_hba_file – файл конфигурации HBA<a href="#auth_hba_file--файл-конфигурации-hba" class="hash-link" aria-label="Direct link to auth_hba_file – файл конфигурации HBA" title="Direct link to auth_hba_file – файл конфигурации HBA">​</a></h2>
+<blockquote>
+<p>Файл конфигурации HBA, который используется, когда параметр <a href="https://postgrespro.ru/docs/postgrespro/10/pgbouncer#PGBOUNCER-AUTH-TYPE" target="_blank" rel="noopener noreferrer">auth_type</a> равен hba.</p>
+<p>Значение по умолчанию: не задано.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="auth_file--имя-файла-аутентификации">auth_file – имя файла аутентификации<a href="#auth_file--имя-файла-аутентификации" class="hash-link" aria-label="Direct link to auth_file – имя файла аутентификации" title="Direct link to auth_file – имя файла аутентификации">​</a></h2>
+<blockquote>
+<p>Имя файла, из которого будут загружаться имена и пароли пользователей.</p>
+<p>Значение по умолчанию: не задано.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="auth_user--имя-пользователя-для-аутентификации-в-бд">auth_user – имя пользователя для аутентификации в БД<a href="#auth_user--имя-пользователя-для-аутентификации-в-бд" class="hash-link" aria-label="Direct link to auth_user – имя пользователя для аутентификации в БД" title="Direct link to auth_user – имя пользователя для аутентификации в БД">​</a></h2>
+<blockquote>
+<p>Если установлен параметр auth_user, то любой пользователь, не указанный в <a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"><u>auth_file</u></a>, будет запрошен с помощью запроса auth_query из pg_shadow в базе данных с использованием auth_user. Пароль auth_user будет взят из auth_file. Если auth_user не требует пароля, то его не нужно определять в <a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"><u>auth_file</u></a>.</p>
+<p>Для прямого доступа к pg_shadow требуются права администратора. Значение по умолчанию: не установлено.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="auth_query--запрос-извлечения-пароля">auth_query – запрос извлечения пароля<a href="#auth_query--запрос-извлечения-пароля" class="hash-link" aria-label="Direct link to auth_query – запрос извлечения пароля" title="Direct link to auth_query – запрос извлечения пароля">​</a></h2>
+<blockquote>
+<p>Запрос для извлечения пароля пользователя из базы данных.</p>
+<p>Для прямого доступа к pg_shadow требуются права администратора. Поэтому рекомендуется, чтобы обычный пользователь обращался к ней, вызывая функцию SECURITY DEFINER (с контекстом безопасности определившего).</p>
+<p>Заметьте, что этот запрос выполняется в целевой базе данных, так что, если в нем используются функции, они должны быть установлены в каждой базе.</p>
+<p>По умолчанию:</p>
+<p>SELECT usename, passwd FROM pg_shadow WHERE usename=$1</p>
+<p><span id="_bookmark40" class="anchor"></span>ПО).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-соединения-по-ssl">Настройка соединения по SSL<a href="#настройка-соединения-по-ssl" class="hash-link" aria-label="Direct link to Настройка соединения по SSL" title="Direct link to Настройка соединения по SSL">​</a></h2>
+<blockquote>
+<p>В случае необходимости настройки SSL соединения, необходимо произвести:</p>
+</blockquote>
+<ul>
+<li>
+<p>создать серверный сертификат и ключ к нему (подключение к серверу БД);</p>
+</li>
+<li>
+<p>создать клиентский сертификат и ключ к нему (подключение к клиентскому</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="соединение-с-клиентом">Соединение с клиентом<a href="#соединение-с-клиентом" class="hash-link" aria-label="Direct link to Соединение с клиентом" title="Direct link to Соединение с клиентом">​</a></h2>
+<blockquote>
+<p>Настройка соединения с клиентом выполняется внесением параметров в</p>
+<p>конфигурационный файл pgbouncer.ini.</p>
+<p>client_tls_sslmode = verify-full</p>
+<p>client_tls_ca_file = /usr/jatoba-&lt;ver&gt;/etc/pgbouncer/root.crt client_tls_key_file = /usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer/pgbouncer.key client_tls_cert_file =/usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer/pgbouncer.crt</p>
+<p>client_tls_crl_file = /usr/jatoba-&lt;ver&gt;/etc/pgbouncer/root.crl</p>
+<p><strong>Параметр client_tls_sslmode</strong></p>
+<p>Параметр client_tls_sslmode должен иметь значение verify-full.</p>
+<p>client_tls_sslmode = verify-full</p>
+<p>При создании клиентского сертификата, значение поля CN (Common Name) в сертификате (как пример pgbouncer.crt) должно соответствовать доменному имени сервера или его IP адреса, на котором расположен продукт. В случае, если используется система виртуальных IP в системах «failover», таких как «keepalived», то необходимо прописать виртуальный IP адрес или виртуальный DNS сервер.</p>
+<p><strong>Параметр client_tls_ca_file</strong></p>
+<p>Параметр client_tls_ca_file определяет полный путь до корневого сертификата. Все сертификаты можно хранить в текущей директории настроек:</p>
+<p>client_tls_ca_file = /usr/jatoba-&lt;ver&gt;/etc/pgbouncer/root.crt</p>
+<p><strong>Параметр client_tls_key_file</strong></p>
+<p>Параметр client_tls_key_file определяет полный путь до файла ключа сертификата X-509.</p>
+<p>client_tls_key_file = /usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer/pgbouncer.key</p>
+<p><strong>Параметр client_tls_cert_file</strong></p>
+<p>Параметр client_tls_cert_file определяет полный путь до файла сертификата X-509.</p>
+<p>client_tls_cert_file =/usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer/pgbouncer.crt</p>
+<p>Так же необходимо в файле userlist.txt () указать имена пользователей, которые будут подключаться к базе данных, в качестве пароля – указать пустую строку:</p>
+<p>”user1” “”</p>
+<p>”user2” “”</p>
+<p>Полный путь до файла определяется в параметре auth_file, как описано в п. <a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8">2.7.3</a>.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="соединение-с-сервером">Соединение с сервером<a href="#соединение-с-сервером" class="hash-link" aria-label="Direct link to Соединение с сервером" title="Direct link to Соединение с сервером">​</a></h2>
+<blockquote>
+<p>Настройка соединения с сервером выполняется внесением параметров в конфигурационный файл pgbouncer.ini.</p>
+<p>server_tls_sslmode = verify-full</p>
+<p>server_tls_ca_file = /usr/jatoba-&lt;ver&gt;/etc/pgbouncer/root.crt server_tls_key_file = /usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer/reporter.key server_tls_cert_file = /usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer/reporter.crt</p>
+<p>server_tls_crl_file = /usr/jatoba-&lt;ver&gt;/etc/pgbouncer/root.crl server_tls_ciphers = fast</p>
+<p>Значение поля CN (Common Name) в клиентском сертификате (user.crt) должно соответствовать имени пользователя, от имени которого клиентское программное обеспечение подключается к СУБД «Jatoba».</p>
+<p><strong>Параметр server_tls_sslmode</strong></p>
+<p>Параметр server_tls_sslmode должен иметь значение verify-full.</p>
+<p>server_tls_sslmode = verify-full</p>
+<p><strong>Параметр server_tls_ca_file</strong></p>
+<p>Параметр server_tls_ca_file полный путь до корневого сертификата. Все сертификаты можно хранить в текущей директории настроек:</p>
+<p>server_tls_ca_file = /usr/jatoba-&lt;ver&gt;/etc/pgbouncer/root.crt</p>
+<p><strong>Параметр server_tls_key_file</strong></p>
+<p>Параметр server_tls_key_file указывает полный путь до файла ключа сертификата X-509.</p>
+<p>server_tls_key_file = /usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer/reporter.key</p>
+<p><strong>Параметр server_tls_cert_file</strong></p>
+<p>Параметр server_tls_cert_file определяет полный путь до файла сертификата X-509.</p>
+<p>server_tls_cert_file = /usr/jatoba-</p>
+<p>&lt;ver&gt;/etc/pgbouncer/reporter.crt</p>
+<p><strong>Параметр server_tls_ciphers</strong></p>
+<p>Параметр server_tls_ciphers определяет использование алгоритмов шифрования.</p>
+<p>server_tls_ciphers = fast</p>
+<p>Параметр может иметь значения:</p>
+</blockquote>
+<ul>
+<li>
+<p>default;</p>
+</li>
+<li>
+<p>secure</p>
+</li>
+<li>
+<p>fast;</p>
+</li>
+<li>
+<p>normal.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметры-бд">Параметры БД<a href="#параметры-бд" class="hash-link" aria-label="Direct link to Параметры БД" title="Direct link to Параметры БД">​</a></h2>
+<blockquote>
+<p>Этот раздел содержит пары ключ=значение, где в качестве ключа принимается имя базы данных, а в качестве значения — строка подключения для libpq в виде пар ключ=значение. Так как сама libpq не используется, в этой строке можно задать не все свойства, которые понимает libpq (service=, .pgpass).</p>
+<p>Имя базы данных может содержать символы _0-9A-Za-z без кавычек. Имена, содержащие другие символы, должны заключаться в двойные кавычки по правилам для идентификаторов SQL (две кавычки (&quot;&quot;) воспринимаются внутри строки как одна).</p>
+<p>Имя базы данных pgbouncer зарезервировано для административной консоли и не может использоваться здесь в качестве ключа.</p>
+<p>«*» воспринимается как имя всех остальных баз: если точного соответствия имени для запрошенной базы данных не находится, в качестве строки подключения выбирается</p>
+<p>данное значение. Например, если есть следующая запись и нет других переопределяющих записей:</p>
+<p>* = host=foo</p>
+<p>В этом случае подключение к pgbouncer с указанием базы данных bar будет работать так, как если бы существовала следующая запись. В качестве dbname по умолчанию используется имя базы, полученное от клиента:</p>
+<p>bar = host=foo dbname=bar</p>
+<p>Такие автоматически создаваемые записи баз данных очищаются, если они простаивают больше времени, задаваемого параметром <a href="https://postgrespro.ru/docs/postgrespro/10/pgbouncer#PGBOUNCER-AUTODB-IDLE-TIMEOUT" target="_blank" rel="noopener noreferrer">autodb_idle_timeout.</a></p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="dbname--имя-целевой-базы">dbname – имя целевой базы<a href="#dbname--имя-целевой-базы" class="hash-link" aria-label="Direct link to dbname – имя целевой базы" title="Direct link to dbname – имя целевой базы">​</a></h2>
+<blockquote>
+<p>dbname</p>
+<p>Имя целевой базы данных.</p>
+<p>По умолчанию: имя базы данных, полученное от клиента.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="host--адрес-подключений-к-главному-серверу">host – адрес подключений к главному серверу<a href="#host--адрес-подключений-к-главному-серверу" class="hash-link" aria-label="Direct link to host – адрес подключений к главному серверу" title="Direct link to host – адрес подключений к главному серверу">​</a></h2>
+<blockquote>
+<p>host</p>
+<p>Имя или IP-адрес сервера, к которому нужно подключиться. Имена компьютеров разрешаются в момент подключения, и результат кешируется в течение времени, заданного параметром dns_max_ttl. Если результат разрешения имени меняется, существующие подключения к серверу автоматически закрываются при их освобождении в соответствии с режимом пула, и изменение немедленно отражается на новых подключениях. Если DNS возвращает несколько записей, они используются по очереди.</p>
+<p>Если значение начинается с /, используется сокет Unix в пространстве имен файловой системы. Если значение начинается с @, используется сокет Unix в абстрактном пространстве имен.</p>
+<p>По умолчанию: не задан, что подразумевает использование сокетов Unix.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="host_ro--адрес-подключений-к-серверу-горячего-резерва">host_ro – адрес подключений к серверу горячего резерва<a href="#host_ro--адрес-подключений-к-серверу-горячего-резерва" class="hash-link" aria-label="Direct link to host_ro – адрес подключений к серверу горячего резерва" title="Direct link to host_ro – адрес подключений к серверу горячего резерва">​</a></h2>
+<blockquote>
+<p>host_ro</p>
+<p>Имя или IP-адрес сервера горячего резерва.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="port--порт-подключения">port – порт подключения<a href="#port--порт-подключения" class="hash-link" aria-label="Direct link to port – порт подключения" title="Direct link to port – порт подключения">​</a></h2>
+<blockquote>
+<p>По умолчанию: 5432.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="port_ro--порт-подключения-к-серверу-горячего-резерва">port_ro – порт подключения к серверу горячего резерва<a href="#port_ro--порт-подключения-к-серверу-горячего-резерва" class="hash-link" aria-label="Direct link to port_ro – порт подключения к серверу горячего резерва" title="Direct link to port_ro – порт подключения к серверу горячего резерва">​</a></h2>
+<blockquote>
+<p>По умолчанию: 5432.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="strategy--стратегия-балансировки-запросов">strategy – стратегия балансировки запросов<a href="#strategy--стратегия-балансировки-запросов" class="hash-link" aria-label="Direct link to strategy – стратегия балансировки запросов" title="Direct link to strategy – стратегия балансировки запросов">​</a></h2>
+<blockquote>
+<p>strategy</p>
+<p>Отвечает за стратегию балансировки запросов. Параметр может принимать 3 значения:</p>
+</blockquote>
+<ul>
+<li>
+<p>always_rw – все запросы всегда отправляются на главный сервер;</p>
+</li>
+<li>
+<p>always_ro – все запросы отправляются на сервер горячего резерва;</p>
+</li>
+<li>
+<p>balancing – определяется тип запроса и в зависимости от него отправляется на нужный сервер, как представлено на рисунке <a href="#_bookmark2">1.2</a>. RW – Master (главный сервер), RO – Slave (сервер горячего резерва).</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="user--имя-пользователя">user – имя пользователя<a href="#user--имя-пользователя" class="hash-link" aria-label="Direct link to user – имя пользователя" title="Direct link to user – имя пользователя">​</a></h2>
+<blockquote>
+<p>Если задано user=, все подключения к целевой базе данных будут выполняться с заданным именем пользователя, что означает, что для этой базы данных будет всего один пул.</p>
+<p>В противном случае pgbouncer подключается к целевой базе данных с именем пользователя, переданным клиентом, что означает, что для каждого пользователя будет отдельный пул.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="password--пароль-пользователя">password – пароль пользователя<a href="#password--пароль-пользователя" class="hash-link" aria-label="Direct link to password – пароль пользователя" title="Direct link to password – пароль пользователя">​</a></h2>
+<blockquote>
+<p>Если пароль здесь не задается, будет использован пароль из <a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"><u>auth_file</u></a> или <a href="#auth_query-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%B8%D0%B7%D0%B2%D0%BB%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8F"><u>auth_query</u></a>.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="auth_user">auth_user<a href="#auth_user" class="hash-link" aria-label="Direct link to auth_user" title="Direct link to auth_user">​</a></h2>
+<blockquote>
+<p>Переопределяет глобальную переменную auth_user, если она задана.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pool_size--размер-пулов-для-бд">pool_size – размер пулов для БД<a href="#pool_size--размер-пулов-для-бд" class="hash-link" aria-label="Direct link to pool_size – размер пулов для БД" title="Direct link to pool_size – размер пулов для БД">​</a></h2>
+<blockquote>
+<p>Задает максимальный размер пулов для этой базы данных. Если не задано, применяется значение default_pool_size.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="min_pool_size--минимальный-размер-пулов-для-бд">min_pool_size – минимальный размер пулов для БД<a href="#min_pool_size--минимальный-размер-пулов-для-бд" class="hash-link" aria-label="Direct link to min_pool_size – минимальный размер пулов для БД" title="Direct link to min_pool_size – минимальный размер пулов для БД">​</a></h2>
+<blockquote>
+<p>Задает минимальный размер пулов для этой базы данных. Если не задано, применяется глобальное значение min_pool_size.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="reserve_pool--число-дополнительных-подключений-к-бд">reserve_pool – число дополнительных подключений к БД<a href="#reserve_pool--число-дополнительных-подключений-к-бд" class="hash-link" aria-label="Direct link to reserve_pool – число дополнительных подключений к БД" title="Direct link to reserve_pool – число дополнительных подключений к БД">​</a></h2>
+<blockquote>
+<p>Задает число дополнительных подключений для этой базы данных. Если не задано, применяется значение reserve_pool_size.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="connect_query--выполняемый-запрос">connect_query – выполняемый запрос<a href="#connect_query--выполняемый-запрос" class="hash-link" aria-label="Direct link to connect_query – выполняемый запрос" title="Direct link to connect_query – выполняемый запрос">​</a></h2>
+<blockquote>
+<p>Запрос, который будет выполняться сразу после установления соединения, но до того, как его смогут использовать какие-либо клиенты. Если при запросе возникают ошибки, они только фиксируются в журнале, другой реакции не следует.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pool_mode--режим-пула-для-бд">pool_mode – режим пула для БД<a href="#pool_mode--режим-пула-для-бд" class="hash-link" aria-label="Direct link to pool_mode – режим пула для БД" title="Direct link to pool_mode – режим пула для БД">​</a></h2>
+<blockquote>
+<p>Задает режим пула для данной базы данных. Если этот параметр не задается, применяется значение pool_mode по умолчанию.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="max_db_connections--максимальное-количество-подключений-для-бд">max_db_connections – максимальное количество подключений для БД<a href="#max_db_connections--максимальное-количество-подключений-для-бд" class="hash-link" aria-label="Direct link to max_db_connections – максимальное количество подключений для БД" title="Direct link to max_db_connections – максимальное количество подключений для БД">​</a></h2>
+<blockquote>
+<p>Задает максимум подключений для базы данных, то есть используя все пулы этой базы данных, нельзя будет установить больше этого числа подключений к серверу.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="client_encoding--кодировка-клиента">client_encoding – кодировка клиента<a href="#client_encoding--кодировка-клиента" class="hash-link" aria-label="Direct link to client_encoding – кодировка клиента" title="Direct link to client_encoding – кодировка клиента">​</a></h2>
+<blockquote>
+<p>Запрашивает у сервера использование указанной клиентской кодировки client_encoding.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="datestyle--стиль-даты">datestyle – стиль даты<a href="#datestyle--стиль-даты" class="hash-link" aria-label="Direct link to datestyle – стиль даты" title="Direct link to datestyle – стиль даты">​</a></h2>
+<blockquote>
+<p>Запрашивает у сервера использование указанного стиля даты datestyle.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="timezone--временная-зона">Timezone – временная зона<a href="#timezone--временная-зона" class="hash-link" aria-label="Direct link to Timezone – временная зона" title="Direct link to Timezone – временная зона">​</a></h2>
+<blockquote>
+<p>Запрашивает у сервера использование указанного часового пояса timezone.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="раздел-пользователь">Раздел «пользователь»<a href="#раздел-пользователь" class="hash-link" aria-label="Direct link to Раздел «пользователь»" title="Direct link to Раздел «пользователь»">​</a></h2>
+<blockquote>
+<p>Этот раздел содержит пары ключ=значение, где в качестве ключа принимается имя пользователя, а в качестве значения – переопределяемые для него параметры конфигурации в виде пар ключ=значение в формате строк подключения libpq. Таким образом переопределить можно лишь немногие параметры.</p>
+<p>user1 = settings</p>
+<p>user1 = pool_mode=session</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pool_mode--режим-работы-пользователя">pool_mode – режим работы пользователя<a href="#pool_mode--режим-работы-пользователя" class="hash-link" aria-label="Direct link to pool_mode – режим работы пользователя" title="Direct link to pool_mode – режим работы пользователя">​</a></h2>
+<blockquote>
+<p>Задает режим пула для всех подключений данного пользователя. Если этот параметр не задается, применяется значение <u><a href="#pool_mode-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BF%D1%83%D0%BB%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%B1%D0%B4">pool_mode</a></u> по умолчанию или заданное для базы данных.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="max_user_connections--максимальное-количество-подключений-пользователя">max_user_connections – максимальное количество подключений пользователя<a href="#max_user_connections--максимальное-количество-подключений-пользователя" class="hash-link" aria-label="Direct link to max_user_connections – максимальное количество подключений пользователя" title="Direct link to max_user_connections – максимальное количество подключений пользователя">​</a></h2>
+<blockquote>
+<p>Задает максимум подключений для пользователя, то есть, используя все пулы, нельзя будет установить больше этого числа подключений к серверу.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметры-регистрации-событий">Параметры регистрации событий<a href="#параметры-регистрации-событий" class="hash-link" aria-label="Direct link to Параметры регистрации событий" title="Direct link to Параметры регистрации событий">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="syslog_ident--префикс-имени-событий">syslog_ident – префикс имени событий<a href="#syslog_ident--префикс-имени-событий" class="hash-link" aria-label="Direct link to syslog_ident – префикс имени событий" title="Direct link to syslog_ident – префикс имени событий">​</a></h2>
+<blockquote>
+<p>Имя, с которым события передаются в syslog. Значение по умолчанию: pgbouncer (имя программы).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="syslog_facility--префикс-субъекта-в-имени-событий">syslog_facility – префикс субъекта в имени событий<a href="#syslog_facility--префикс-субъекта-в-имени-событий" class="hash-link" aria-label="Direct link to syslog_facility – префикс субъекта в имени событий" title="Direct link to syslog_facility – префикс субъекта в имени событий">​</a></h2>
+<blockquote>
+<p>Субъект, который будет указываться в событиях, отправляемых в syslog.</p>
+<p>Возможные варианты:</p>
+</blockquote>
+<ul>
+<li>
+<p>auth;</p>
+</li>
+<li>
+<p>authpriv;</p>
+</li>
+<li>
+<p>daemon;</p>
+</li>
+<li>
+<p>user;</p>
+</li>
+<li>
+<p>local0 -7.</p>
+</li>
+</ul>
+<blockquote>
+<p>Значение по умолчанию: daemon.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="log_connections--регистрация-успешных-подключений">log_connections – регистрация успешных подключений<a href="#log_connections--регистрация-успешных-подключений" class="hash-link" aria-label="Direct link to log_connections – регистрация успешных подключений" title="Direct link to log_connections – регистрация успешных подключений">​</a></h2>
+<blockquote>
+<p>Фиксировать в журнале успешные подключения. Значение по умолчанию: 1.</p>
+</blockquote>
+<ol>
+<li><span id="_bookmark69" class="anchor"></span><strong>log_disconnections – регистрация отключений</strong> Фиксировать отключения с указаниями их причин. Значение по умолчанию: 1.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="log_pooler_errors--регистрация-выводимых-ошибок">log_pooler_errors – регистрация выводимых ошибок<a href="#log_pooler_errors--регистрация-выводимых-ошибок" class="hash-link" aria-label="Direct link to log_pooler_errors – регистрация выводимых ошибок" title="Direct link to log_pooler_errors – регистрация выводимых ошибок">​</a></h2>
+<blockquote>
+<p>Фиксировать сообщения об ошибках, которые компонент передает клиентам. Значение по умолчанию: 1.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="log_stats--запись-статистики">log_stats – запись статистики<a href="#log_stats--запись-статистики" class="hash-link" aria-label="Direct link to log_stats – запись статистики" title="Direct link to log_stats – запись статистики">​</a></h2>
+<blockquote>
+<p>Записывать агрегированную статистику в журнал, с периодичностью по параметру</p>
+<p>«<a href="#stats_period-%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8"><u>stats_period</u></a>». Это может быть лишним, если ту же статистику запрашивают внешние средства мониторинга, вызывая команды <a href="#_bookmark77"><u>SHOW</u></a>.</p>
+<p>Значение по умолчанию: 1.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="verbose--уровень-детализации-событий">verbose – уровень детализации событий<a href="#verbose--уровень-детализации-событий" class="hash-link" aria-label="Direct link to verbose – уровень детализации событий" title="Direct link to verbose – уровень детализации событий">​</a></h2>
+<blockquote>
+<p>Увеличивает уровень детализации. Соответствует ключу –v в командной строке.</p>
+<p>Указание –v –v в командной строке равносильно записи verbose=2 в конфигурации.</p>
+<p>Значение по умолчанию: 0.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="регистрация-службы-демона-japooler">Регистрация службы (демона) jaPooler<a href="#регистрация-службы-демона-japooler" class="hash-link" aria-label="Direct link to Регистрация службы (демона) jaPooler" title="Direct link to Регистрация службы (демона) jaPooler">​</a></h2>
+<blockquote>
+<p>Регистрация службы jaPooler возможно только после предварительной настройки конфигурационного файла «config.ini».</p>
+<p>$ japooler -regservice config.ini</p>
+<p>Для удаления службы используется команда:</p>
+<p>$ japooler r -unregservice config.ini</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функциональные-возможности-компонента-japooler">Функциональные возможности компонента «jaPooler»<a href="#функциональные-возможности-компонента-japooler" class="hash-link" aria-label="Direct link to Функциональные возможности компонента «jaPooler»" title="Direct link to Функциональные возможности компонента «jaPooler»">​</a></h2>
+<blockquote>
+<p>Компонент работает в трех основных режимах:</p>
+</blockquote>
+<ul>
+<li>Режим сеансов «Session pooling»</li>
+</ul>
+<blockquote>
+<p>Метод используется по умолчанию и является самым мягким для пользователя. Установленное соединение сохраняется на протяжении всего времени работы и возвращается в пул после отключения клиента.</p>
+</blockquote>
+<ul>
+<li>Режим транзакций «Transaction pooling»</li>
+</ul>
+<blockquote>
+<p>Соединение с сервером назначается клиенту только во время транзакции. Когда pgbouncer заметит, что транзакция завершена, соединение с сервером будет возвращено в пул.</p>
+</blockquote>
+<ul>
+<li>Режим операторов «Statement pooling»</li>
+</ul>
+<blockquote>
+<p>Самый агрессивный метод. Соединение с сервером будет возвращено в пул сразу после завершения запроса. Транзакции с несколькими операторами в этом режиме запрещены, поскольку они могут быть нарушены.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="команды-подключения">Команды подключения<a href="#команды-подключения" class="hash-link" aria-label="Direct link to Команды подключения" title="Direct link to Команды подключения">​</a></h2>
+<blockquote>
+<p>Переключатели командной строки:</p>
+<p>-d, --daemon</p>
+<p>Запуск в фоновом режиме, в режиме демона в ОС GNU Linux. Потребуется настройка pid-файла, а также файла журнала или системного журнала. Никакие сообщения журнала не будут записываться в stderr после перехода в фоновый режим.</p>
+<p>-R, --reboot</p>
+<p>Выполнение перезагрузки в режиме онлайн. Это означает подключение к запущенному процессу, загрузку из него открытых сокетов и последующее их использование.</p>
+<p>Команда поддерживается в ОС GNU Linux, если ОС поддерживает сокеты Unix <img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image19.png" style="width:0.24159in;height:0.24155in" class="img_ev3q"> и unix_socket_dir не отключен в конфигурации</p>
+<p>А также не работает с подключениями TLS, они отбрасываются.</p>
+<p>-u <em>USERNAME</em>, --user=<em>USERNAME</em></p>
+<p>Подключение от имени и с правами пользователя.</p>
+<p>-v, --verbose</p>
+<p>Подробное протоколирование.</p>
+<p>-q, --quiet</p>
+<p>Тихий режим. Не влияет на детализацию ведения журнала</p>
+<p>-V, --version</p>
+<p>Вызов версии компонента.</p>
+<p>-h, --help</p>
+<p>Вызов справки по компоненту.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="административная-консоль-admin-console">Административная консоль (Admin console)<a href="#административная-консоль-admin-console" class="hash-link" aria-label="Direct link to Административная консоль (Admin console)" title="Direct link to Административная консоль (Admin console)">​</a></h2>
+<blockquote>
+<p>Для подключения к административной консоли потребуется использовать команду:</p>
+<p>$ psql -p 6432 pgbouncer</p>
+<p><span id="_bookmark77" class="anchor"></span>Только пользователи, указанные в параметрах конфигурации admin_users или stats_users, могут входить в консоль. За исключением случая auth_type=any, тогда любой пользователь может войти в качестве stats_user.</p>
+<p>Кроме того, пользователю с именем pgbouncer разрешается входить в систему без пароля, если вход осуществляется через сокет Unix, а клиент имеет тот же UID пользователя Unix, что и запущенный процесс.</p>
+<p>Консоль администратора в настоящее время поддерживает только простой протокол запросов.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="show-commands--команды-мониторинга">Show commands – команды мониторинга<a href="#show-commands--команды-мониторинга" class="hash-link" aria-label="Direct link to Show commands – команды мониторинга" title="Direct link to Show commands – команды мониторинга">​</a></h2>
+<blockquote>
+<p>Команда SHOW предназначена для вывода информации. Каждая команда описана</p>
+<p>ниже.</p>
+</blockquote>
+<ol>
+<li><strong>Статистические команды (SHOW STATS)</strong></li>
+</ol>
+<blockquote>
+<p>Показывает статистику. В этой и связанных с ней командах общие показатели</p>
+<p>указаны с момента запуска процесса, средние значения обновляются каждый stats_period.</p>
+<p>database</p>
+<p>Представление статистика по каждой БД.</p>
+<p>total_xact_count</p>
+<p>Общее количество SQL-транзакций, объединенных компонентом.</p>
+<p>total_query_count</p>
+<p>Общее количество SQL-запросов, объединенных компонентом.</p>
+<p>total_received</p>
+<p>Общий объем в байтах сетевого трафика, полученного компонентом.</p>
+<p>total_sent</p>
+<p>Общий объем в байтах сетевого трафика, отправленного компонентом.</p>
+<p>total_xact_time</p>
+<p>Общее количество микросекунд, затраченных компонентом при подключении к СУБД в транзакции, либо в режиме ожидания в транзакции, либо при выполнении запросов.</p>
+<p>total_query_time</p>
+<p>Общее количество микросекунд, затраченных компонентом при активном подключении к СУБД на выполнение запросов.</p>
+<p>total_wait_time</p>
+<p>Время, затраченное клиентами на ожидание сервера, в микросекундах.</p>
+<p>avg_xact_count</p>
+<p>Среднее количество транзакций в секунду за последний период статистики.</p>
+<p>avg_query_count</p>
+<p>Среднее количество запросов в секунду за последний период статистики.</p>
+<p>avg_recv</p>
+<p>Среднее количество полученных (от клиентов) байт в секунду.</p>
+<p>avg_sent</p>
+<p>Среднее количество отправленных (клиентам) байт в секунду.</p>
+<p>avg_xact_time</p>
+<p>Средняя продолжительность транзакции в микросекундах.</p>
+<p>avg_query_time</p>
+<p>Средняя продолжительность запроса в микросекундах.</p>
+<p>avg_wait_time</p>
+<p>Время, затраченное клиентами на ожидание сервера, в микросекундах (в среднем в секунду).</p>
+</blockquote>
+<ol start="2">
+<li><strong>SHOW STATS_TOTALS</strong></li>
+</ol>
+<blockquote>
+<p>Команда показывает общие значения.</p>
+</blockquote>
+<ol start="3">
+<li><strong>SHOW STATS_AVERAGES</strong></li>
+</ol>
+<blockquote>
+<p>Команда показывает средние значения.</p>
+</blockquote>
+<ol start="4">
+<li><strong>SHOW TOTALS</strong></li>
+</ol>
+<blockquote>
+<p>Команда показывает статистику по всем базам данных.</p>
+</blockquote>
+<ol start="5">
+<li><span id="_bookmark79" class="anchor"></span><strong>SHOW SERVERS - просмотр состояния сервера</strong></li>
+</ol>
+<blockquote>
+<p>Команда показывает состояние сервера со следующими параметрами:</p>
+<p>type</p>
+<p>«S», для сервера.</p>
+<p>user</p>
+<p>Имя пользователя, используемое для подключения к серверу.</p>
+<p>database</p>
+<p>База данных используемая для подключения.</p>
+<p>state</p>
+<p>Показ состояния соединения с сервером, которое может иметь значения:</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Active</strong> – активное;</p>
+</li>
+<li>
+<p><strong>Idle</strong> – бездействующее;</p>
+</li>
+<li>
+<p><strong>Used</strong> – используемое;</p>
+</li>
+<li>
+<p><strong>Tested</strong> – проверяемое;</p>
+</li>
+<li>
+<p><strong>New</strong> – новое.</p>
+</li>
+</ul>
+<blockquote>
+<p>addr</p>
+<p>IP-адрес сервера СУБД.</p>
+<p>port</p>
+<p>Порт подключения к серверу СУБД.</p>
+<p>local_addr</p>
+<p>Начальный адрес подключения на локальной машине.</p>
+<p>local_port</p>
+<p>Порт начала подключения на локальной машине.</p>
+<p>connect_time</p>
+<p>Время начала подключения.</p>
+<p>request_time</p>
+<p>Время, когда был отправлен запрос.</p>
+<p>wait</p>
+<p>Текущее время ожидания в секундах.</p>
+<p>wait_us</p>
+<p>Микросекундная часть текущего времени ожидания.</p>
+<p>close_needed</p>
+<p>Немедленное закрытие соединение, т.к. требуется перезагрузка конфигурационного файла или требуется обновление DNS или был выполнена команда <strong>RECONNECT</strong></p>
+<p>ptr</p>
+<p>Адрес внутреннего объекта для этого соединения. Используется как уникальный идентификатор.</p>
+<p>link</p>
+<p>Адрес клиентского подключения, с которым связан сервер.</p>
+<p>remote_pid</p>
+<p>PID серверного процесса. В случае, если соединение осуществляется через сокет Unix, а ОС поддерживает получение информации об идентификаторе процесса, его PID ОС. В противном случае он извлекается из пакета отмены, отправленного сервером, который должен быть PID, если сервер является СУБД, но это случайное число, если сервер является другим компонентом.</p>
+<p>tls</p>
+<p>Строка с информацией о соединении TLS или пустая, если TLS не используется.</p>
+</blockquote>
+<ol start="6">
+<li><span id="_bookmark80" class="anchor"></span><strong>SHOW CLIENTS - просмотр состояние клиента</strong></li>
+</ol>
+<blockquote>
+<p>Команда показывает состояние клиента с следующими параметрами:</p>
+<p>type</p>
+<p>Тип клиента (пользователя).</p>
+<p>user</p>
+<p>Имя подключенного пользователя.</p>
+<p>database</p>
+<p>Имя базы данных.</p>
+<p>state</p>
+<p>Состояние клиентского соединения, которое может иметь значение:</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>active</strong> – активное;</p>
+</li>
+<li>
+<p><strong>waiting</strong> – ожидание.</p>
+</li>
+</ul>
+<blockquote>
+<p>addr</p>
+<p>IP-адрес клиента.</p>
+<p>port</p>
+<p>Исходящий порт клиента.</p>
+<p>local_addr</p>
+<p>Конечный адрес соединения на локальной машине.</p>
+<p>local_port</p>
+<p>Конечный порт подключения на локальной машине.</p>
+<p>connect_time</p>
+<p>Отметка времени подключения.</p>
+<p>request_time</p>
+<p>Метка времени последнего запроса клиента.</p>
+<p>wait</p>
+<p>Текущее время ожидания в секундах.</p>
+<p>wait_us</p>
+<p>Микросекундная часть текущего времени ожидания.</p>
+<p>ptr</p>
+<p>Адрес внутреннего объекта для этого соединения. Используется как уникальный идентификатор.</p>
+<p>link</p>
+<p>Адрес подключения к серверу, с которым связан клиент.</p>
+<p>remote_pid</p>
+<p>Идентификатор процесса, если клиент подключается через сокет Unix и ОС поддерживает его получение.</p>
+<p>tls</p>
+<p>Строка с информацией о соединении TLS или пустая, если TLS не используется.</p>
+</blockquote>
+<ol start="7">
+<li><strong>SHOW POOLS - просмотр пула</strong></li>
+</ol>
+<blockquote>
+<p>Для каждой пары (база данных, пользователь) создается новая запись в пуле.</p>
+<p>database</p>
+<p>Имя базы данных.</p>
+<p>user</p>
+<p>Имя пользователя.</p>
+<p>cl_active</p>
+<p>Клиентские соединения, которые связаны с соединением с сервером и могут обрабатывать запросы.</p>
+<p>cl_waiting</p>
+<p>Клиентские соединения, которые отправили запросы, но еще не получили соединение с сервером.</p>
+<p>cl_cancel_req</p>
+<p>Клиентские соединения, которые еще не передавали отмены запросов на сервер.</p>
+<p>sv_active</p>
+<p>Соединения с сервером, которые связаны с клиентом.</p>
+<p>sv_idle</p>
+<p>Соединения с сервером, которые не используются и могут быть немедленно использованы для клиентских запросов.</p>
+<p>sv_used</p>
+<p>Подключения к серверу, которые простаивали более server_check_delay, поэтому их необходимо server_check_query запустить, прежде чем их можно будет использовать снова.</p>
+<p>sv_tested</p>
+<p>Соединения с сервером, которые в настоящее время работают либо, server_reset_query либо server_check_query.</p>
+<p>sv_login</p>
+<p>Соединения с сервером в настоящее время находятся в процессе входа в систему.</p>
+<p>maxwait</p>
+<p>Время ожидания первого (самого старого) клиента в очереди в секундах. Если это число начнет увеличиваться, значит, текущий пул серверов недостаточно быстро обрабатывает запросы. Причиной может быть либо перегруженный сервер, либо слишком маленькое значение параметра <strong>pool_size</strong>.</p>
+<p>maxwait_us</p>
+<p>Микросекундная часть максимального времени ожидания.</p>
+<p>pool_mode</p>
+<p>Используемый режим объединения.</p>
+</blockquote>
+<ol start="8">
+<li><strong>Просмотр внутренней информации SHOW LISTS</strong></li>
+</ol>
+<blockquote>
+<p>Показать следующую внутреннюю информацию в столбцах (не в строках)</p>
+<p>databases</p>
+<p>Количество баз данных.</p>
+<p>users</p>
+<p>Количество пользователей.</p>
+<p>pools</p>
+<p>Количество пулов.</p>
+<p>free_clients</p>
+<p>Количество свободных клиентов.</p>
+<p>used_clients</p>
+<p>Количество активных клиентов.</p>
+<p>login_clients</p>
+<p>Количество клиентов в состоянии <strong>входа</strong> в систему.</p>
+<p>free_servers</p>
+<p>Количество свободных серверов.</p>
+<p>used_servers</p>
+<p>Количество используемых серверов.</p>
+<p>dns_names</p>
+<p>Количество DNS-имен в кеше.</p>
+<p>dns_zones</p>
+<p>Количество зон DNS в кеше.</p>
+<p>dns_queries</p>
+<p>Количество незавершенных DNS-запросов.</p>
+</blockquote>
+<ol start="9">
+<li><strong>SHOW USERS – просмотр пользователей</strong></li>
+</ol>
+<blockquote>
+<p>Команда используется для просмотра состояния пользователей с параметрами:</p>
+<p>name</p>
+<p>Имя пользователя.</p>
+<p>pool_mode</p>
+<p>Режим переопределения пользователя pool_mode или NULL, если вместо него будет использоваться значение по умолчанию.</p>
+</blockquote>
+<ol start="10">
+<li><strong>SHOW DATABASES - просмотр БД</strong></li>
+</ol>
+<blockquote>
+<p>Команда используется для просмотра состояния БД с параметрами:</p>
+<p>name</p>
+<p>Имя сконфигурированной БД.</p>
+<p>host</p>
+<p>Хост, к которому подключается компонент.</p>
+<p>port</p>
+<p>Порт, к которому подключается компонент.</p>
+<p>database</p>
+<p>Актуальное имя БД, к которой подключен компонент.</p>
+<p>force_user</p>
+<p>Когда пользователь является частью строки подключения, соединение между компонентом и СУБД принудительно устанавливается для данного пользователя, каким бы ни был клиентский пользователь.</p>
+<p>pool_size</p>
+<p>Максимальное количество подключений к серверу.</p>
+<p>min_pool_size</p>
+<p>Минимальное количество подключений к серверу.</p>
+<p>reserve_pool</p>
+<p>Максимальное количество дополнительных соединений для этой базы данных.</p>
+<p>pool_mode</p>
+<p>Максимальное количество дополнительных соединений для этой базы данных.</p>
+<p>max_connections</p>
+<p>Максимальное количество разрешенных соединений для этой базы данных, заданное параметром <strong>max_db_connections</strong>, либо глобально, либо для каждой базы данных.</p>
+<p>current_connections</p>
+<p>Текущее количество соединений для этой базы данных.</p>
+<p>paused</p>
+<p>1, если эта база данных в настоящее время приостановлена, иначе 0.</p>
+<p>disabled</p>
+<p>1, если эта база данных в настоящее время отключена, иначе 0.</p>
+</blockquote>
+<ol start="11">
+<li><strong>SHOW FDS – просмотр файловых дескрипторов</strong></li>
+</ol>
+<blockquote>
+<p>Внутренняя команда — показывает список используемых файловых дескрипторов с прикрепленным к ним внутренним состоянием.</p>
+<p>Когда подключенный пользователь имеет имя пользователя «pgbouncer», подключается через сокет Unix и имеет тот же UID, что и запущенный процесс, фактические FD передаются по соединению. Этот механизм используется для онлайн-перезагрузки.</p>
+<p>Эта команда также блокирует внутренний цикл обработки событий, поэтому ее нельзя использовать, пока используется компонент.</p>
+<p>fd</p>
+<p>Числовое значение дескриптора файла.</p>
+<p>task</p>
+<p>Один из пулеров, клиент или сервер.</p>
+<p>user</p>
+<p>Пользователь соединения с использованием FD.</p>
+<p>database</p>
+<p>База данных соединения с использованием FD.</p>
+<p>addr</p>
+<p>IP-адрес соединения с использованием FD, unix, если используется сокет Unix.</p>
+<p>port</p>
+<p>Порт, используемый соединением с помощью FD.</p>
+<p>cancel</p>
+<p>Отмена соединения.</p>
+<p>link</p>
+<p>FD для соответствующего сервера/клиента. NULL, если бездействует.</p>
+</blockquote>
+<ol start="12">
+<li><strong>SHOW SOCKETS, SHOW ACTIVE_SOCKETS</strong></li>
+</ol>
+<blockquote>
+<p>Показывает низкоуровневую информацию о сокетах или только об активных сокетах. Сюда входит информация, отображаемая в разделах <strong>«<a href="#_bookmark80">SHOW CLIENTS</a>»</strong> и</p>
+<p>«<strong><a href="#_bookmark79">SHOW SERVERS</a>»</strong>, а также другая более низкоуровневая информация.</p>
+</blockquote>
+<ol start="13">
+<li><strong>SHOW CONFIG – просмотр параметров конфигурации</strong></li>
+</ol>
+<blockquote>
+<p>Показать текущие параметры конфигурации, по одному в строке, со следующими столбцами:</p>
+<p>key</p>
+<p>Имя переменной конфигурации.</p>
+<p>value</p>
+<p>Значение конфигурации.</p>
+<p>default</p>
+<p>Значение конфигурации по умолчанию.</p>
+<p>changeable</p>
+<p>Либо «<strong>YES»</strong>, либо «<strong>NO</strong>», показывает, возможность изменения переменной во время работы. Если «<strong>NO</strong>», переменная может быть изменена только во время загрузки. Для изменения переменной во время выполнения необходимо использовать <strong>SET</strong>.</p>
+</blockquote>
+<ol start="14">
+<li><strong>SHOW MEM – просмотр памяти</strong></li>
+</ol>
+<blockquote>
+<p>Показывает низкоуровневую информацию о текущих размерах различных выделений внутренней памяти. Представленная информация может быть изменена.</p>
+</blockquote>
+<ol start="15">
+<li><strong>SHOW DNS_HOSTS – просмотр имен хостов</strong></li>
+</ol>
+<blockquote>
+<p>Команда используется для просмотра имен хостов в кеше DNS.</p>
+<p>hostname</p>
+<p>Имя хоста.</p>
+<p>ttl</p>
+<p>Количество секунд до следующего поиска.</p>
+<p>addrs</p>
+<p>Список адресов, разделенных запятыми.</p>
+</blockquote>
+<ol start="16">
+<li><strong>SHOW DNS_ZONES – просмотр зон DNS</strong></li>
+</ol>
+<blockquote>
+<p>Команда используется для просмотра зон DNS, находящихся в памяти.</p>
+<p>zonename</p>
+<p>Имя зоны DNS.</p>
+<p>serial</p>
+<p>Актуальный порядковый номер.</p>
+<p>count</p>
+<p>Имена хостов, принадлежащих этой зоне.</p>
+</blockquote>
+<ol start="17">
+<li><strong>SHOW VERSION – просмотр версии компонента</strong></li>
+</ol>
+<blockquote>
+<p>SHOW VERSION</p>
+<p>Команда покажет версию компонента.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="команды-управления-процессами">Команды управления процессами<a href="#команды-управления-процессами" class="hash-link" aria-label="Direct link to Команды управления процессами" title="Direct link to Команды управления процессами">​</a></h2>
+<ol>
+<li><span id="_bookmark82" class="anchor"></span><strong>PAUSE [db] - Пауза</strong></li>
+</ol>
+<blockquote>
+<p>PAUSE [db]</p>
+<p>При выполнении команды компонент попытается отключиться от всех серверов, сначала ожидая завершения всех запросов. Команда не будет закончена, пока все запросы не будут завершены. Команда используется во время перезапуска базы данных.</p>
+<p>Если указано имя базы данных, будет приостановлена только эта база данных.</p>
+<p>Новые клиентские подключения, к приостановленной БД, не будут производиться пока не будет выполнена команда «<a href="#_bookmark87"><u>RESUME</u></a>».</p>
+</blockquote>
+<ol start="2">
+<li><span id="_bookmark83" class="anchor"></span><strong>DISABLE db – отключение подключений к БД</strong></li>
+</ol>
+<blockquote>
+<p>DISABLE db</p>
+<p>При использовании команды все новые подключения к БД будут отклоняться.</p>
+</blockquote>
+<ol start="3">
+<li><strong>ENABLE db – разрешение подключений к БД</strong></li>
+</ol>
+<blockquote>
+<p>ENABLE db</p>
+<p>Команда разрешает новые клиентские подключения к БД после предыдущей команды «<a href="#_bookmark83"><u>DISABLE</u></a>».</p>
+</blockquote>
+<ol start="4">
+<li><span id="_bookmark84" class="anchor"></span><strong>RECONNECT [db] – переподключение к БД</strong></li>
+</ol>
+<blockquote>
+<p>RECONNECT [db]</p>
+<p>При выполнении команды закроются все активные соединения к БД или всем БД. Новые подключения будут созданы немедленно, и они будут подключаться по мере необходимости в соответствии с настройками размера пула.</p>
+<p>Эта команда полезна, когда настройки подключения к серверу изменились, например, для постепенного переключения на новый сервер.</p>
+<p>Нет необходимости запускать эту команду, когда строка подключения в pgbouncer.ini была изменена и перезагружена (см. RELOAD) или когда изменилось разрешение DNS, потому что тогда эквивалент этой команды будет запущен автоматически.</p>
+<p>Эта команда необходима только в том случае, если что-то ниже уровнем компонента маршрутизирует соединения. После запуска команды может наступить длительный период, когда некоторые соединения с сервером переходят к старому назначению, а некоторые соединения с сервером переходят к новому назначению.</p>
+<p>Применение команды целесообразно при переключении трафика только для чтения между репликами только для чтения или при переключении между узлами настройки репликации с несколькими мастерами. Если все соединения необходимо переключить одновременно, вместо этого рекомендуется использовать команду</p>
+<p>«<a href="#_bookmark82"><u>PAUSE</u></a>». Чтобы закрыть соединения с сервером без ожидания (например, при аварийном переходе на другой ресурс, а не в сценариях постепенного переключения), рекомендуется использовать команду «<a href="#_bookmark85"><u>KILL</u></a>».</p>
+</blockquote>
+<ol start="5">
+<li><span id="_bookmark85" class="anchor"></span><strong>KILL db – сброс клиентских подключений</strong></li>
+</ol>
+<blockquote>
+<p>KILL db</p>
+<p>Команда немедленно сбрасывает все клиентские подключения. Все новые подключения будут находиться в режиме ожидания до выполнения команды «RESUME».</p>
+</blockquote>
+<ol start="6">
+<li><span id="_bookmark86" class="anchor"></span><strong>SUSPEND – приостановка</strong></li>
+</ol>
+<blockquote>
+<p>SUSPEND</p>
+<p>При выполнении команды все буферы сокетов очищаются, и компонент перестает прослушивать данные в них. Команда будет повторяться до тех пор, пока все буферы не будут пусты.</p>
+<p>Новые клиентские подключения будут находиться в режиме ожидания до вызова команды «<strong><a href="#_bookmark87">RESUME</a>»</strong>.</p>
+</blockquote>
+<ol start="7">
+<li><span id="_bookmark87" class="anchor"></span><strong>RESUME [db] – возобновление работы с БД</strong></li>
+</ol>
+<blockquote>
+<p>RESUME [db]</p>
+<p>Команда возобновляет работу с БД после команд «<strong><a href="#_bookmark85">KILL</a>»</strong>, «<strong><a href="#_bookmark82">PAUSE</a>»</strong> или</p>
+<p>«<strong><a href="#_bookmark86">SUSPEND</a>».</strong></p>
+</blockquote>
+<ol start="8">
+<li><strong>SHUTDOWN – закрытие процесса</strong></li>
+</ol>
+<blockquote>
+<p>SHUTDOWN</p>
+<p>Команда закрывает процесс компонента в ОС.</p>
+</blockquote>
+<ol start="9">
+<li><span id="_bookmark88" class="anchor"></span><strong>RELOAD – перезапуск настроек компонента</strong></li>
+</ol>
+<blockquote>
+<p>RELOAD</p>
+<p>Команда перезапускает процесс компонента, перезагружает конфигурационные файлы и обновляет свои настройки. Перезагружаются настройки из основного конфигурационного файла и из файлов «<a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8"><u>auth_file</u></a>» и «<a href="#auth_hba_file-%D1%84%D0%B0%D0%B9%D0%BB-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-hba"><u>auth_hba_file</u></a>».</p>
+<p>Текущие подключения будут закрыты и восстановлены с новыми параметрами.</p>
+</blockquote>
+<ol start="10">
+<li><strong>WAIT_CLOSE [db] – ожидание закрытие подключения</strong></li>
+</ol>
+<blockquote>
+<p>WAIT_CLOSE [db]</p>
+<p>Команда заставляет компонент ожидать, когда все подключения к БД или всем БД перейдут в состояние “close_needed”.</p>
+</blockquote>
+<p>Команда может применяться после выполнения команд «<strong><a href="#_bookmark84">RECONNECT</a>»</strong> или</p>
+<p>«<strong><a href="#_bookmark88">RELOAD</a>»</strong> для полного применения внесенных изменений в конфигурацию компонента.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="прочие-команды">Прочие команды<a href="#прочие-команды" class="hash-link" aria-label="Direct link to Прочие команды" title="Direct link to Прочие команды">​</a></h2>
+<ol start="11">
+<li><span id="_bookmark90" class="anchor"></span><strong>SET key = arg – изменение параметра конфигурации в административной консоли</strong></li>
+</ol>
+<blockquote>
+<p>Команда в административной консоли изменяет параметры конфигурационного</p>
+<p>файла.</p>
+<p>Например:</p>
+<p>SET log_connections = 1;</p>
+<p>SET server_check_query = &#x27;select 2&#x27;;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="signals">Signals<a href="#signals" class="hash-link" aria-label="Direct link to Signals" title="Direct link to Signals">​</a></h2>
+<blockquote>
+<p>SIGHUP</p>
+<p>Перезагрузить конфигурацию. Аналогично вводу команды <strong>RELOAD</strong> на консоли.</p>
+<p>SIGINT</p>
+<p>Безопасное отключение. Аналогично, что и выдача <strong>PAUSE</strong> и <strong>SHUTDOWN</strong> на консоли.</p>
+<p>SIGTERM</p>
+<p>Немедленное отключение. Аналогично, что и выдача <strong>SHUTDOWN</strong> на консоли.</p>
+<p>SIGUSR1</p>
+<p>Аналогично, что и команда <strong>PAUSE</strong> на консоли.</p>
+<p>SIGUSR2</p>
+<p>Аналогично выдаче <strong>RESUME</strong> на консоли.</p>
+</blockquote>
+<h1>ПРИМЕРЫ ИСПОЛЬЗОВАНИЯ КОМПОНЕНТА</h1>
+<blockquote>
+<p>В качестве примера использования компонента, будут использованы 2 сервера под управлением Ubuntu 22.04, параметры которых приведены в таблице <a href="#_bookmark93">3.1</a>.</p>
+<p><span id="_bookmark93" class="anchor"></span>Таблица 3.1 – Параметры серверов стенда</p>
+</blockquote>
+<table><colgroup>
+<col style="width:22%">
+<col style="width:32%">
+<col style="width:25%">
+<col style="width:19%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Наименование</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Назначение</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>IP- адрес</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Имя</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>Master-сервер</p>
+</blockquote></td><td><blockquote>
+<p>Главный сервер</p>
+</blockquote></td><td><blockquote>
+<p>192.168.23.133/24</p>
+</blockquote></td><td style="text-align:center">j4@j4-ubuntu-1</td></tr><tr><td><blockquote>
+<p>Slave-сервер</p>
+</blockquote></td><td><blockquote>
+<p>Сервер горячего резерва</p>
+</blockquote></td><td><blockquote>
+<p>192.168.23.134/24</p>
+</blockquote></td><td style="text-align:center">j4@j4-ubuntu-2</td></tr></tbody></table>
+<blockquote>
+<p>Компонент устанавливается на Master-сервер, с него же будет осуществляться подключение пользователя к кластеру.</p>
+<p>В примере п. <a href="#%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B5%D0%B3%D0%BE-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0-%D0%B2-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8-balancing">3.1</a> «<a href="#%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B5%D0%B3%D0%BE-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0-%D0%B2-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8-balancing">Кластер горячего резерва в режиме стратегии «balancing»</a> рассматривается подготовительные действия для использования компонента. Последующие примеры строятся на основе сформированного стенда и для демонстрации режимов стратегии работы компонента будут меняться настройки компонента.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="кластер-горячего-резерва-в-режиме-стратегии-balancing">Кластер горячего резерва в режиме стратегии «balancing»<a href="#кластер-горячего-резерва-в-режиме-стратегии-balancing" class="hash-link" aria-label="Direct link to Кластер горячего резерва в режиме стратегии «balancing»" title="Direct link to Кластер горячего резерва в режиме стратегии «balancing»">​</a></h2>
+<blockquote>
+<p>Функционирование компонента jaPooler при установленной стратегии</p>
+<p>strategy = balancing</p>
+<p>в конфигурационном файле pgbouncer.ini, определяется как направление запросов типа:</p>
+</blockquote>
+<ul>
+<li>
+<p>RW – в адрес Master-сервера (IP 192.168.23.133);</p>
+</li>
+<li>
+<p>RO – в адрес Slave-сервера (IP 192.168.23.134).</p>
+</li>
+</ul>
+<blockquote>
+<p>Компонент слушает входящий трафик запросов, разбирает его и перенаправляет на сервера. Данный режим является основным в практическом применении.</p>
+<p>Принципиальная схема работы компонента при установленной стратегии</p>
+<p>«balancing» представлена на рисунке <a href="#_bookmark96">3.1</a></p>
+<p><strong>Write req Read req</strong></p>
+</blockquote>
+<p><strong>Write req</strong></p>
+<p><strong>Read req</strong></p>
+<blockquote>
+<p>repl</p>
+<p><span id="_bookmark95" class="anchor"><span id="_bookmark96" class="anchor"></span></span>Рисунок 3.1 – Схема работы при установленной стратегии «balancing»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-главного-сервера-master-сервер">Установка главного сервера (Master-сервер)<a href="#установка-главного-сервера-master-сервер" class="hash-link" aria-label="Direct link to Установка главного сервера (Master-сервер)" title="Direct link to Установка главного сервера (Master-сервер)">​</a></h2>
+<blockquote>
+<p>Установка осуществляется от имени и с правами привилегированного пользователя ОС при помощи команды:</p>
+<p>sudo apt install jatoba&lt;ver&gt;-server jatoba&lt;ver&gt;-client jatoba&lt;ver&gt;-japooler jatoba&lt;ver&gt;-libs jatoba&lt;ver&gt;-contrib</p>
+<p>Последующие действия приведены в документе 643.72410666.00067-08 97 01</p>
+<p>«Руководство по установке».</p>
+</blockquote>
+<ol>
+<li><strong>Параметры конфигурационного файла postgresql.conf</strong></li>
+</ol>
+<blockquote>
+<p>В конфигурационном файле «postgresql.conf» Master-сервера требуется установить приведенные ниже параметры в соответствующих разделах.</p>
+<p>#</p>
+<p># CONNECTIONS AND AUTHENTICATION #</p>
+<p># - Connection Settings - listen_addresses = &#x27;*&#x27;</p>
+<p>#</p>
+<p># WRITE-AHEAD LOG #</p>
+<p># - Settings - wal_level = replica #</p>
+<p># REPORTING AND LOGGING #</p>
+<p># - Where to Log - log_destination = &#x27;stderr&#x27; logging_collector = on</p>
+<p># - Authentication - password_encryption = md5</p>
+<p>После изменения метода шифрования паролей в postgresql.conf, необходимо переназначить пароль для пользователя, от имени которого будет происходить подключение к СУБД по порту jaPooler. Это необходимо сделать из-за того, что по умолчанию для шифрования паролей СУБД использует алгоритм SCRAM-SHA-256, а после его смены на md5 аутентификация пользователей со старыми паролями будет происходить с ошибкой.</p>
+</blockquote>
+<ol start="2">
+<li><strong>Параметры конфигурационного файла pg_hba</strong></li>
+</ol>
+<blockquote>
+<p>В конфигурационном файле «pg_hba» Master-сервера требуется установить приведенные ниже параметры.</p>
+</blockquote>
+<table><colgroup>
+<col style="width:13%">
+<col style="width:25%">
+<col style="width:15%">
+<col style="width:28%">
+<col style="width:17%">
+</colgroup><thead><tr><th><blockquote>
+<p>TYPE</p>
+</blockquote></th><th><blockquote>
+<p>DATABASE</p>
+</blockquote></th><th><blockquote>
+<p>USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td colspan="5"><blockquote>
+<p># Allow replication connections from localhost, by a user with the</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>host</p>
+</blockquote></td><td><blockquote>
+<p>all</p>
+</blockquote></td><td><blockquote>
+<p>all</p>
+</blockquote></td><td><blockquote>
+<p>192.168.23.0/24</p>
+</blockquote></td><td><blockquote>
+<p>md5</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>host</p>
+</blockquote></td><td><blockquote>
+<p>replication</p>
+</blockquote></td><td><blockquote>
+<p>all</p>
+</blockquote></td><td><blockquote>
+<p>192.168.23.0/24</p>
+</blockquote></td><td><blockquote>
+<p>md5</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-сервера-горячего-резерва-slave-сервер">Установка сервера горячего резерва (Slave-сервер)<a href="#установка-сервера-горячего-резерва-slave-сервер" class="hash-link" aria-label="Direct link to Установка сервера горячего резерва (Slave-сервер)" title="Direct link to Установка сервера горячего резерва (Slave-сервер)">​</a></h2>
+<blockquote>
+<p>Установка осуществляется от имени и с правами привилегированного пользователя ОС при помощи команды:</p>
+<p>sudo apt install jatoba&lt;ver&gt;-server jatoba&lt;ver&gt;-client jatoba&lt;ver&gt;-japooler jatoba&lt;ver&gt;-libs jatoba&lt;ver&gt;-contrib</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image9.png" style="width:0.24025in;height:0.24022in" class="img_ev3q">Для сервера горячего резерва установка компонента jaPooler не требуется</p>
+<p>Последующие действия приведены в документе 643.72410666.00067-08 97 01</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image26.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">«Руководство по установке» до этапа инициализации БД. Инициализация БД не требуется</p>
+<p>Если случайно была выполнена операция по инициализации БД, то удалить каталог БД возможно при помощи команды:</p>
+<p>rm -rf /var/lib/jatoba/&lt;ver&gt;/data</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-кластера">Создание кластера<a href="#создание-кластера" class="hash-link" aria-label="Direct link to Создание кластера" title="Direct link to Создание кластера">​</a></h2>
+<blockquote>
+<p>После основных действий по установке СУБД на серверах, выполняется процедура резервного копирования Master-сервера на Slave-сервер и автоматическое создание репликации между ними.</p>
+<p>Перейдя на Slave-сервер от имени и с правами привилегированного пользователя ОС, выполняется создание кластера серверов командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image27.jpeg" style="width:6.86974in;height:0.665in" class="img_ev3q">
+<blockquote>
+<p>sudo -u postgres ./pg_basebackup -h 192.168.23.133 -U postgres</p>
+<p>-D /var/lib/jatoba/&lt;ver&gt;/data -R</p>
+<p>Рисунок 3.2 – Создание кластера горячего резерва</p>
+<p>При успешном выполнении операции конфигурационные файлы «postgresql.conf» и «pg_hba» на серверах будут идентичными.</p>
+<p>Далее потребуется:</p>
+</blockquote>
+<ul>
+<li>запустить службу «jatoba-&lt;ver&gt;», командой:</li>
+</ul>
+<blockquote>
+<p>systemctl start jatoba-&lt;ver&gt;</p>
+</blockquote>
+<ul>
+<li>проверить статус службы «jatoba-6», командой:</li>
+</ul>
+<blockquote>
+<p>systemctl status jatoba-&lt;ver&gt;</p>
+<p>Служба должна иметь статус «active (running)».</p>
+</blockquote>
+<ul>
+<li>добавить демон «Jatoba-&lt;ver&gt;» в автозагрузку ОС командой:</li>
+</ul>
+<blockquote>
+<p>systemctl enable jatoba-&lt;ver&gt;</p>
+<p>На этом создание кластера горячего резерва завершено.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="инициализация-компонента-japooler">Инициализация компонента «jaPooler»<a href="#инициализация-компонента-japooler" class="hash-link" aria-label="Direct link to Инициализация компонента «jaPooler»" title="Direct link to Инициализация компонента «jaPooler»">​</a></h2>
+<ol>
+<li><strong>Конфигурирование pgbouncer.ini</strong></li>
+</ol>
+<blockquote>
+<p>В разделе «configuration file» указать параметры:</p>
+<p>postgres = host=192.168.23.133 dbname=postgres port=5432 host_ro=192.168.23.134 port_ro=5432 user=postgres strategy=balancing</p>
+<p>Рисунок 3.3 – Параметры конфигурационного файла pgbouncer.ini В строке указываются параметры, приведенные в таблице <a href="#_bookmark100">3.2</a></p>
+<p><span id="_bookmark100" class="anchor"></span>Таблица 3.2 – Параметры</p>
+</blockquote>
+<table><colgroup>
+<col style="width:59%">
+<col style="width:29%">
+<col style="width:11%">
+</colgroup><thead><tr><th style="text-align:center"><strong>Наименование</strong></th><th><blockquote>
+<p><strong>Параметр</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Ссылка</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>Адрес Master-сервера</p>
+</blockquote></td><td><blockquote>
+<p>host=192.168.23.133</p>
+</blockquote></td><td><blockquote>
+<p><a href="#host-адрес-подключений-к-главному-серверу">2.9.2</a></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Имя БД для подключения</p>
+</blockquote></td><td><blockquote>
+<p>dbname=postgres</p>
+</blockquote></td><td><blockquote>
+<p><a href="#dbname-имя-целевой-базы">2.9.1</a></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Порт подключения</p>
+</blockquote></td><td><blockquote>
+<p>port=5432</p>
+</blockquote></td><td><blockquote>
+<p><a href="#port-порт-подключения">2.9.4</a></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Адрес Slave-сервера</p>
+</blockquote></td><td><blockquote>
+<p>host_ro=192.168.23.134</p>
+</blockquote></td><td><blockquote>
+<p><a href="#host_ro-адрес-подключений-к-серверу-горячего-резерва">2.9.3</a></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Порт подключения к Slave – серверу (серверу горячего резерва)</p>
+</blockquote></td><td><blockquote>
+<p>port_ro=5432</p>
+</blockquote></td><td><blockquote>
+<p><a href="#port_ro-порт-подключения-к-серверу-горячего-резерва">2.9.5</a></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Пользователь</p>
+</blockquote></td><td><blockquote>
+<p>user=postgres</p>
+</blockquote></td><td><blockquote>
+<p><a href="#user-имя-пользователя">2.9.7</a></p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Стратегия балансировки запросов</p>
+</blockquote></td><td><blockquote>
+<p>strategy=balancing</p>
+</blockquote></td><td><blockquote>
+<p><a href="#strategy-стратегия-балансировки-запросов">2.9.6</a></p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Таким образом компонент jaPooler, в режиме определения типа запроса (strategy=balancing), запросы, приходящие от пользователя «postgres» будет разбирать и запросы типа:</p>
+</blockquote>
+<ul>
+<li>
+<p>RW направлять на Master-сервер;</p>
+</li>
+<li>
+<p>RO направлять на Slave-сервер.</p>
+</li>
+</ul>
+<blockquote>
+<p>В разделе «Administrative settings» указать параметры:</p>
+<p>logfile = /usr/jatoba-&lt;ver&gt;/var/log/pgbouncer/pgbouncer.log pidfile = /usr/jatoba-&lt;ver&gt;/var/run/pgbouncer/pgbouncer.pid</p>
+<p>Рисунок 3.4 – Раздел «Administrative settings» В разделе «Where to wait for clients» указать параметры:</p>
+<p>listen_addr = localhost listen_port = 6432</p>
+<p>Рисунок 3.5 – Раздел «Where to wait for clients»</p>
+<p>Параметры listen_addr (см. п. <a href="#listen_addr-%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%BE%D0%B2">2.6.3</a>) и listen_port (см. п. <a href="#listen_port-%D0%BD%D0%BE%D0%BC%D0%B5%D1%80-%D0%BF%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D1%8E%D1%89%D0%B5%D0%B3%D0%BE-%D0%BF%D0%BE%D1%80%D1%82%D0%B0">2.6.4</a>) частично формируют строку подключения пользователя к компоненту jaPooler.</p>
+<p>В разделе «Authentication settings» указать параметры:</p>
+<p>auth_type = md5</p>
+<p>auth_file = /usr/jatoba-&lt;ver&gt;/etc/pgbouncer/userlist.txt</p>
+<p>Рисунок 3.6 – Раздел «Authentication settings»</p>
+<p>Параметр auth_type (см. п. <a href="#auth_type-%D1%82%D0%B8%D0%BF-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8">2.7.1</a>) указывает на используемый метод аутентификации при доступе к компоненту, а в параметре auth_file (см. п. <a href="#auth_file-%D0%B8%D0%BC%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8">2.7.3</a>) приводится полный путь к файлу userlist.txt. Эти параметры влияют на формирование строки пользователя.</p>
+</blockquote>
+<ol start="2">
+<li><strong>Формирование userlist.txt</strong></li>
+</ol>
+<blockquote>
+<p>В конфигурационном файле «userlist.txt» указываются пользователи, имеющие право доступа к компоненту.</p>
+<p>Строка пользователя представляет собой указание имени учетной записи и хеш пароля пользователя.</p>
+<p>В представленном примере представлен хеш пароля по 128-битному алгоритм хеширования MD5.</p>
+<p>При этом указывается, алгоритм хеширования и без пробелов хеш пароля.</p>
+</blockquote>
+<ol start="3">
+<li><strong>Запуск компонента</strong></li>
+</ol>
+<blockquote>
+<p>Компонент запускается от имени и с правами привилегированного пользователя ОС при помощи команды:</p>
+<p>sudo systemctl start pgbouncer.service</p>
+<p>При этом указывается полный путь к конфигурационному файлу pgbouncer.ini для применения установленных параметров.</p>
+<p>После запуска компонента станет доступно подключение пользователя на порт</p>
+<p>6432.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="подключение-пользователя-и-выполнение-запросов-rw-ro">Подключение пользователя и выполнение запросов RW, RO<a href="#подключение-пользователя-и-выполнение-запросов-rw-ro" class="hash-link" aria-label="Direct link to Подключение пользователя и выполнение запросов RW, RO" title="Direct link to Подключение пользователя и выполнение запросов RW, RO">​</a></h2>
+<blockquote>
+<p>Для выполнения примера будут выполнены SQL-запросы RO и RW с выводом</p>
+<p>результатов.</p>
+<p>Первоначально устанавливается соединения пользователем командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image33.png" style="width:6.95202in;height:1.57354in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 00-10-34.png " class="img_ev3q">
+<blockquote>
+<p>psql -h localhost -p 6432 -U postgres -d postgres</p>
+<p>Рисунок 3.7 – Установление соединение с компонентом После ввода пароля пользователь получает доступ в СУБД.</p>
+<p>От имени и с правами пользователя, SQL-запросом:</p>
+<p>SELECT inet_server_addr();</p>
+<p>выводится IP-адрес сервера, с которым установлено соединение пользователем.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image34.png" style="width:6.95336in;height:2.62573in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 00-21-24.png " class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.8 – Вывод адреса Slave-сервера</p>
+<p>Это означает, что компонент разобрал SQL-запрос, определил его тип как RO и установил соединение с Slave-сервером j4@j4-ubuntu-2, IP: 192.168.23.134/24.</p>
+<p>Затем необходимо создать таблицу «t1» с помощью команды:</p>
+<p>CREATE table t1(g int);</p>
+<p>В информация компонента об обработке SQL-запроса CREATE видно, что запрос был определен как тип RW и направлен на Master-сервер j4@j4-ubuntu-1, IP: 192.168.23.133/24.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image35.png" style="width:6.87885in;height:1.76031in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-14 10-02-09.png " class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.9 – Информация компонента об обработке SQL-запроса CREATE Следующим действием помещаем данные в ранее созданную таблицу «t1» и</p>
+<p>определяем сервер, к которому подключены:</p>
+<p>INSERT into t1 values(1); SELECT inet_server_addr();</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image36.png" style="width:6.95202in;height:3.50729in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 00-25-29.png " class="img_ev3q">
+<p>Рисунок 3.10 – Последовательное выполнение SQL-запросов INSERT SELECT</p>
+<p>В этом случае при попадании первого SQL-запроса на запись (RW), остальные SQL-запросы автоматически перенаправляются на Master-сервер, чтобы имелся доступ к одним и тем же данным.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="результат">Результат<a href="#результат" class="hash-link" aria-label="Direct link to Результат" title="Direct link to Результат">​</a></h2>
+<blockquote>
+<p>В результате запросы типа:</p>
+</blockquote>
+<ul>
+<li>
+<p>RW – CREATE table t1(g int); были направлены компонентом в адрес Master-сервера (IP 192.168.23.133);</p>
+</li>
+<li>
+<p>RO - SELECT inet_server_addr() были направлены компонентом в адрес Slave-сервера (IP 192.168.23.134), что соответствует стратегии балансировки «balancing».</p>
+</li>
+</ul>
+<blockquote>
+<p>Схема работы стенда с IP-адресами серверов представлена на рисунке <a href="#_bookmark104">3.11</a>.</p>
+<p>Mast er</p>
+<p>j4 @j4 -ubunt u-1</p>
+<p>IP: 192.168 .23.133/ 24</p>
+</blockquote>
+<p><strong>Write req</strong></p>
+<p><strong>Read req</strong></p>
+<blockquote>
+<p><strong>Write req Read req</strong></p>
+<p>repl</p>
+<p>Sl av e</p>
+<p>j4 @j4 -ubunt u-2</p>
+<p>IP: 192.168 .23.134 / 24</p>
+<p><span id="_bookmark103" class="anchor"><span id="_bookmark104" class="anchor"></span></span>Рисунок 3.11 – Схема работы стенда при установленной стратегии «balancing».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="кластер-горячего-резерва-в-режиме-стратегии-always_rw">Кластер горячего резерва в режиме стратегии «always_rw»<a href="#кластер-горячего-резерва-в-режиме-стратегии-always_rw" class="hash-link" aria-label="Direct link to Кластер горячего резерва в режиме стратегии «always_rw»" title="Direct link to Кластер горячего резерва в режиме стратегии «always_rw»">​</a></h2>
+<blockquote>
+<p>Функционирование компонента jaPooler при установленной стратегии</p>
+<p>strategy=always_rw</p>
+<p>в конфигурационном файле pgbouncer.ini, определяется как направление всех типов SQL-запросов пользователя и RO и RW на Master-сервер.</p>
+<p>Принципиальная схема работы компонента при установленной стратегии</p>
+<p>«always_rw» представлена на рисунке <a href="#_bookmark105">3.12</a>.</p>
+<p><strong>Write req Read req</strong></p>
+<p><strong>Write req Read req</strong></p>
+<p>repl</p>
+<p><span id="_bookmark105" class="anchor"></span>Рисунок 3.12 – Схема работы при установленной стратегии «always_rw»</p>
+<p>Конфигурирование компонента в режим «always_rw» осуществляется через конфигурационный файл pgbouncer.ini внесением параметров:</p>
+<p>postgres = host=192.168.23.133 dbname=postgres port=5432 host_ro=192.168.23.134 port_ro=5432 user=postgres strategy=always_rw</p>
+<p>Рисунок 3.13 – Параметры конфигурационного файла pgbouncer.ini</p>
+<p>Для применения параметров следует перезагрузить компонент сочетанием клавиш CTRL+C и последующей командой запуска компонента:</p>
+<p>sudo systemctl start pgbouncer.service</p>
+<p>Для выполнения примера будут выполнены SQL-запросы RO и RW с выводом результатов.</p>
+<p>Первоначально устанавливается соединения пользователем командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image33.png" style="width:6.95207in;height:1.57354in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 00-10-34.png " class="img_ev3q">
+<blockquote>
+<p>psql -h localhost -p 6432 -U postgres -d postgres</p>
+<p>Рисунок 3.14 – Установление соединение с компонентом После ввода пароля пользователь получает доступ в СУБД.</p>
+<p>От имени и с правами пользователя SQL-запросом:</p>
+<p>SELECT inet_server_addr();</p>
+<p>выводится IP-адрес сервера, с которым установлено соединение пользователем.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image45.png" style="width:6.95202in;height:2.60677in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 00-37-56.png " class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.15 – Вывод адреса Master-сервера</p>
+<p>В данном случае установлено, соединение с Master – сервером j4@j4-ubuntu-1, IP: 192.168.23.133/24.</p>
+<p>Следующим действием помещаем данные в ранее созданную таблицу «t1»:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image46.png" style="width:6.95201in;height:4.00969in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 00-38-52.png " class="img_ev3q">
+<blockquote>
+<p>INSERT into t1 values(2);</p>
+</blockquote>
+<p>Рисунок 3.16 – Вставка данных в таблицу «t1»</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="результат-1">Результат<a href="#результат-1" class="hash-link" aria-label="Direct link to Результат" title="Direct link to Результат">​</a></h2>
+<blockquote>
+<p>В результате запросы типа:</p>
+</blockquote>
+<ul>
+<li>
+<p>RO – SELECT inet_server_addr();</p>
+</li>
+<li>
+<p>RW – INSERT into t1 values(2);</p>
+</li>
+</ul>
+<blockquote>
+<p>были направлены компонентом в адрес Master-сервера (IP 192.168.23.133), что соответствует стратегии балансировки «always_rw».</p>
+<p>Схема работы стенда с IP-адресами серверов представлена на рисунке <a href="#_bookmark107">3.17</a>.</p>
+<p>Mast er</p>
+<p>j4 @j4 -ubunt u-1</p>
+<p>IP: 192.168 .23.133/ 24</p>
+<p><strong>Write req Read req</strong></p>
+<p><strong>Write req Read req</strong></p>
+<p>repl</p>
+<p>Sl av e</p>
+<p>j4 @j4 -ubunt u-2</p>
+<p>IP: 192.168 .23.134 / 24</p>
+<p><span id="_bookmark107" class="anchor"></span>Рисунок 3.17 – Схема работы стенда при установленной стратегии «always_rw»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="кластер-горячего-резерва-в-режиме-стратегии-always_ro">Кластер горячего резерва в режиме стратегии «always_ro»<a href="#кластер-горячего-резерва-в-режиме-стратегии-always_ro" class="hash-link" aria-label="Direct link to Кластер горячего резерва в режиме стратегии «always_ro»" title="Direct link to Кластер горячего резерва в режиме стратегии «always_ro»">​</a></h2>
+<blockquote>
+<p>Функционирование компонента jaPooler при установленной стратегии</p>
+<p>strategy=always_ro</p>
+<p>в конфигурационном файле pgbouncer.ini, определяется как направление всех типов SQL-запросов пользователя и RO и RW, на Slave-сервер.</p>
+<p>Принципиальная схема работы компонента при установленной стратегии</p>
+<p>«always_ro» представлена на рисунке <a href="#_bookmark109">3.18</a>.</p>
+<p><strong>Write req Read req</strong></p>
+<p><strong>Write req Read req</strong></p>
+<p>repl</p>
+<p>psql -h localhost -p 6432 -U postgres -d postgres</p>
+<p><span id="_bookmark109" class="anchor"></span>Рисунок 3.18 – Схема работы при установленной стратегии «always_ro»</p>
+<p>Конфигурирование компонента в режим «always_ro» осуществляется через конфигурационный файл pgbouncer.ini внесением параметров:</p>
+<p>postgres = host=192.168.23.133 dbname=postgres port=5432 host_ro=192.168.23.134 port_ro=5432 user=postgres strategy=always_ro</p>
+<p>Рисунок 3.19 – Параметры конфигурационного файла pgbouncer.ini Устанавливается соединение пользователем командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image33.png" style="width:6.95206in;height:1.57354in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 00-10-34.png " class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.20 – Установление соединения с компонентом После ввода пароля пользователь получает доступ в СУБД.</p>
+<p>От имени и с правами пользователя SQL-запросом:</p>
+<p>SELECT inet_server_addr();</p>
+<p>выводится IP-адрес сервера, с которым установлено соединение пользователем.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image57.png" style="width:6.95203in;height:1.7726in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 05-31-43.png " class="img_ev3q">
+<p>Рисунок 3.21 – Вывод адреса Slave-сервера</p>
+<blockquote>
+<p>Соединение установлено с Slave – сервером j4@j4-ubuntu-2, IP: 192.168.23.134/24.</p>
+<p>От имени и с правами пользователя необходимо выполнить SQL-команду создания таблицы «t2»:</p>
+<p>CREATE table t2(g int);</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image58.png" style="width:6.95199in;height:2.0949in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 05-31-56.png " class="img_ev3q">
+<p>Рисунок 3.22 – SQL-команды создания таблицы «t2»</p>
+<blockquote>
+<p>SQL-командой пытаемся внести значение в ранее созданную таблицу «t1»:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image59.png" style="width:6.95208in;height:1.07115in" alt="D:\VM\ja_pooler\shared\pic\Screenshot from 2022-07-13 05-32-13.png " class="img_ev3q">
+<blockquote>
+<p>INSERT into t1 values(3);</p>
+</blockquote>
+<p>Рисунок 3.23 – Вставка значения в таблицу «t1»</p>
+<blockquote>
+<p>В результате выполнить SQL - команды, связанные с записью в БД невозможно, т.к. транзакции доступны только на чтение.</p>
+<p>СУБД выведет ошибку:</p>
+<p>cannot execute [operation] in a read-only transaction</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="результат-2">Результат<a href="#результат-2" class="hash-link" aria-label="Direct link to Результат" title="Direct link to Результат">​</a></h2>
+<blockquote>
+<p>В результате запросы типа:</p>
+</blockquote>
+<ul>
+<li>
+<p>RO – SELECT inet_server_addr();</p>
+</li>
+<li>
+<p>RW – INSERT into t1 values(2);</p>
+</li>
+</ul>
+<blockquote>
+<p>были направлены компонентом в адрес Slave-сервера (IP 192.168.23.134), что соответствует стратегии балансировки «always_rw».</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/japooler/media/image10.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">Запросы типа RW будут отвергнуты, т.к. Slave-сервер работает только на чтение и операции записи не выполняются.</p>
+<p>Схема работы стенда с IP-адресами серверов представлена на рисунке <a href="#_bookmark111">3.24</a></p>
+<p>Mast er</p>
+<p>j4 @j4 -ubunt u-1</p>
+<p>IP: 192.168 .23.133/ 24</p>
+<p><strong>Write req Read req</strong></p>
+<p><strong>Write req Read req</strong></p>
+<p>repl</p>
+<p>Sl av e</p>
+<p>j4 @j4 -ubunt u-2</p>
+<p>IP: 192.168 .23.134 / 24</p>
+</blockquote>
+<p><span id="_bookmark111" class="anchor"></span>Рисунок 3.24 – Схема работы при установленной стратегии «always_ro»</p>
+<h1>ОБНОВЛЕНИЕ КОМПОНЕНТА</h1>
+<blockquote>
+<p>В общем случае обновление компонента в ОС GNU/Linux выполняется согласно п. 1.1.4. Обновление компонентов СУБД из документа «Руководство по обновлению СУБД» 643.72410666.00067-08 93 01.</p>
+<p>В случае же обновления до версии 2.1.1 при установке пакета в ОС GNU/Linux возможно возникновение следующей ошибки:</p>
+<p>chown: invalid spec: ‘pgbouncer:’</p>
+<p>Данная ошибка связана с тем, что начиная с версии 2.1, в целях обеспечения требуемого уровня безопасности, выполнено изменение пользователя, от которого запускается служба japooler.</p>
+<p>Для того, чтобы исправить указанную ошибку, необходимо выполнить следующую команду:</p>
+<p># adduser --system --quiet --no-create-home --shell /bin/bash -</p>
+<p>-group --gecos &quot;Jatoba japooler user&quot; pgbouncer</p>
+<p>После этого необходимо повторить процедуру установки пакета с новой версией и продолжить следовать инструкциям из п. 1.1.4. Обновление компонентов СУБД из документа «Руководство по обновлению СУБД» 643.72410666.00067-08 93 01.</p>
+</blockquote>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:12%">
+<col style="width:8%">
+<col style="width:78%">
+</colgroup><thead><tr><th><blockquote>
+<p>SQL</p>
+</blockquote></th><th style="text-align:right">–</th><th><blockquote>
+<p>Structured Query Language – язык структурированных запросов</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td style="text-align:right">–</td><td><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td style="text-align:right">–</td><td><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td style="text-align:right">–</td><td><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ЭВМ</p>
+</blockquote></td><td style="text-align:right">–</td><td><blockquote>
+<p>Электронно-вычислительная машина</p>
+</blockquote></td></tr></tbody></table>
+<p>65</p>
+<p>643.72410666.00067-08 98 01-15</p>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:9%">
+<col style="width:9%">
+<col style="width:8%">
+<col style="width:11%">
+<col style="width:12%">
+<col style="width:9%">
+<col style="width:13%">
+<col style="width:10%">
+<col style="width:8%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Всего листов (страниц) в докум.</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>№ докум.</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входя-щий № сопрово-дитель-ного докум.</p>
+<p>и дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подп.</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>изме-нен-ных</p>
+</blockquote></td><td><blockquote>
+<p>заме-нен-ных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td><blockquote>
+<p>аннули-рованных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/com18.3.1/jalog"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">jalog</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/com18.3.1/jcs"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">jcs</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#установка-компонента-japooler-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка компонента «jaPooler» в ОС GNU/Linux</a></li><li><a href="#установка-расширения-japooler" class="table-of-contents__link toc-highlight">Установка расширения «japooler»</a></li><li><a href="#создание-служебного-пользователя-japooler" class="table-of-contents__link toc-highlight">Создание служебного пользователя «japooler»</a></li><li><a href="#файл-паролей-для-служебного-пользователя-japooler" class="table-of-contents__link toc-highlight">Файл паролей для служебного пользователя «japooler»</a></li><li><a href="#конфигурирование-компонента-japooler" class="table-of-contents__link toc-highlight">Конфигурирование компонента jaPooler</a></li><li><a href="#основные-настройки-generic-settings" class="table-of-contents__link toc-highlight">Основные настройки Generic settings</a></li><li><a href="#logfile--файл-журнала" class="table-of-contents__link toc-highlight">Logfile – файл журнала</a></li><li><a href="#pidfile" class="table-of-contents__link toc-highlight">pidfile</a></li><li><a href="#listen_addr--список-адресов" class="table-of-contents__link toc-highlight">listen_addr – список адресов</a></li><li><a href="#listen_port--номер-принимающего-порта" class="table-of-contents__link toc-highlight">listen_port – номер принимающего порта</a></li><li><a href="#unix_socket_dir--расположение-unix-сокетов" class="table-of-contents__link toc-highlight">unix_socket_dir – расположение Unix сокетов</a></li><li><a href="#unix_socket_mode--режим-файловой-системы-для-сокета-unix" class="table-of-contents__link toc-highlight">unix_socket_mode – режим файловой системы для сокета Unix</a></li><li><a href="#unix_socket_group--имя-группы-для-сокета" class="table-of-contents__link toc-highlight">unix_socket_group – имя группы для сокета</a></li><li><a href="#user--пользователь-unix" class="table-of-contents__link toc-highlight">User – пользователь Unix</a></li><li><a href="#pool_mode--режим-работы" class="table-of-contents__link toc-highlight">pool_mode – режим работы</a></li><li><a href="#max_client_conn--максимальное-количество-клиентских-подключений" class="table-of-contents__link toc-highlight">max_client_conn – максимальное количество клиентских подключений</a></li><li><a href="#default_pool_size--количество-подключений-в-пуле" class="table-of-contents__link toc-highlight">default_pool_size – количество подключений в пуле</a></li><li><a href="#min_pool_size--минимальное-количество-дополнительных-соединений" class="table-of-contents__link toc-highlight">min_pool_size – минимальное количество дополнительных соединений</a></li><li><a href="#reserve_pool_size--количество-дополнительно-разрешенных-подключений" class="table-of-contents__link toc-highlight">reserve_pool_size – количество дополнительно разрешенных подключений</a></li><li><a href="#reserve_pool_timeout--резервное-время-пула" class="table-of-contents__link toc-highlight">reserve_pool_timeout – резервное время пула</a></li><li><a href="#max_db_connections--максимальное-количество-подключений" class="table-of-contents__link toc-highlight">max_db_connections – максимальное количество подключений</a></li><li><a href="#max_user_connections--максимальное-количество-подключений-для-пользователя" class="table-of-contents__link toc-highlight">max_user_connections – максимальное количество подключений для пользователя</a></li><li><a href="#server_round_robin---циклический-перебор-серверов" class="table-of-contents__link toc-highlight">server_round_robin - циклический перебор серверов</a></li><li><a href="#ignore_startup_parameters--игнорирование-стартовых-параметров" class="table-of-contents__link toc-highlight">ignore_startup_parameters – игнорирование стартовых параметров</a></li><li><a href="#disable_pqexec--отключение-протокола-pqexec" class="table-of-contents__link toc-highlight">disable_pqexec – отключение протокола PQexec</a></li><li><a href="#application_name_add_host--имя-приложения-в-адресе-хоста" class="table-of-contents__link toc-highlight">application_name_add_host – имя приложения в адресе хоста</a></li><li><a href="#conffile--расположение-файла-конфигурации" class="table-of-contents__link toc-highlight">conffile – расположение файла конфигурации</a></li><li><a href="#job_name--название-задачи" class="table-of-contents__link toc-highlight">job_name – название задачи</a></li><li><a href="#stats_period--периодичность-вывода-статистики" class="table-of-contents__link toc-highlight">stats_period – периодичность вывода статистики</a></li><li><a href="#аутентификационные-параметры" class="table-of-contents__link toc-highlight">Аутентификационные параметры</a></li><li><a href="#auth_type--тип-аутентификации" class="table-of-contents__link toc-highlight">auth_type – тип аутентификации</a></li><li><a href="#auth_hba_file--файл-конфигурации-hba" class="table-of-contents__link toc-highlight">auth_hba_file – файл конфигурации HBA</a></li><li><a href="#auth_file--имя-файла-аутентификации" class="table-of-contents__link toc-highlight">auth_file – имя файла аутентификации</a></li><li><a href="#auth_user--имя-пользователя-для-аутентификации-в-бд" class="table-of-contents__link toc-highlight">auth_user – имя пользователя для аутентификации в БД</a></li><li><a href="#auth_query--запрос-извлечения-пароля" class="table-of-contents__link toc-highlight">auth_query – запрос извлечения пароля</a></li><li><a href="#настройка-соединения-по-ssl" class="table-of-contents__link toc-highlight">Настройка соединения по SSL</a></li><li><a href="#соединение-с-клиентом" class="table-of-contents__link toc-highlight">Соединение с клиентом</a></li><li><a href="#соединение-с-сервером" class="table-of-contents__link toc-highlight">Соединение с сервером</a></li><li><a href="#параметры-бд" class="table-of-contents__link toc-highlight">Параметры БД</a></li><li><a href="#dbname--имя-целевой-базы" class="table-of-contents__link toc-highlight">dbname – имя целевой базы</a></li><li><a href="#host--адрес-подключений-к-главному-серверу" class="table-of-contents__link toc-highlight">host – адрес подключений к главному серверу</a></li><li><a href="#host_ro--адрес-подключений-к-серверу-горячего-резерва" class="table-of-contents__link toc-highlight">host_ro – адрес подключений к серверу горячего резерва</a></li><li><a href="#port--порт-подключения" class="table-of-contents__link toc-highlight">port – порт подключения</a></li><li><a href="#port_ro--порт-подключения-к-серверу-горячего-резерва" class="table-of-contents__link toc-highlight">port_ro – порт подключения к серверу горячего резерва</a></li><li><a href="#strategy--стратегия-балансировки-запросов" class="table-of-contents__link toc-highlight">strategy – стратегия балансировки запросов</a></li><li><a href="#user--имя-пользователя" class="table-of-contents__link toc-highlight">user – имя пользователя</a></li><li><a href="#password--пароль-пользователя" class="table-of-contents__link toc-highlight">password – пароль пользователя</a></li><li><a href="#auth_user" class="table-of-contents__link toc-highlight">auth_user</a></li><li><a href="#pool_size--размер-пулов-для-бд" class="table-of-contents__link toc-highlight">pool_size – размер пулов для БД</a></li><li><a href="#min_pool_size--минимальный-размер-пулов-для-бд" class="table-of-contents__link toc-highlight">min_pool_size – минимальный размер пулов для БД</a></li><li><a href="#reserve_pool--число-дополнительных-подключений-к-бд" class="table-of-contents__link toc-highlight">reserve_pool – число дополнительных подключений к БД</a></li><li><a href="#connect_query--выполняемый-запрос" class="table-of-contents__link toc-highlight">connect_query – выполняемый запрос</a></li><li><a href="#pool_mode--режим-пула-для-бд" class="table-of-contents__link toc-highlight">pool_mode – режим пула для БД</a></li><li><a href="#max_db_connections--максимальное-количество-подключений-для-бд" class="table-of-contents__link toc-highlight">max_db_connections – максимальное количество подключений для БД</a></li><li><a href="#client_encoding--кодировка-клиента" class="table-of-contents__link toc-highlight">client_encoding – кодировка клиента</a></li><li><a href="#datestyle--стиль-даты" class="table-of-contents__link toc-highlight">datestyle – стиль даты</a></li><li><a href="#timezone--временная-зона" class="table-of-contents__link toc-highlight">Timezone – временная зона</a></li><li><a href="#раздел-пользователь" class="table-of-contents__link toc-highlight">Раздел «пользователь»</a></li><li><a href="#pool_mode--режим-работы-пользователя" class="table-of-contents__link toc-highlight">pool_mode – режим работы пользователя</a></li><li><a href="#max_user_connections--максимальное-количество-подключений-пользователя" class="table-of-contents__link toc-highlight">max_user_connections – максимальное количество подключений пользователя</a></li><li><a href="#параметры-регистрации-событий" class="table-of-contents__link toc-highlight">Параметры регистрации событий</a></li><li><a href="#syslog_ident--префикс-имени-событий" class="table-of-contents__link toc-highlight">syslog_ident – префикс имени событий</a></li><li><a href="#syslog_facility--префикс-субъекта-в-имени-событий" class="table-of-contents__link toc-highlight">syslog_facility – префикс субъекта в имени событий</a></li><li><a href="#log_connections--регистрация-успешных-подключений" class="table-of-contents__link toc-highlight">log_connections – регистрация успешных подключений</a></li><li><a href="#log_pooler_errors--регистрация-выводимых-ошибок" class="table-of-contents__link toc-highlight">log_pooler_errors – регистрация выводимых ошибок</a></li><li><a href="#log_stats--запись-статистики" class="table-of-contents__link toc-highlight">log_stats – запись статистики</a></li><li><a href="#verbose--уровень-детализации-событий" class="table-of-contents__link toc-highlight">verbose – уровень детализации событий</a></li><li><a href="#регистрация-службы-демона-japooler" class="table-of-contents__link toc-highlight">Регистрация службы (демона) jaPooler</a></li><li><a href="#функциональные-возможности-компонента-japooler" class="table-of-contents__link toc-highlight">Функциональные возможности компонента «jaPooler»</a></li><li><a href="#команды-подключения" class="table-of-contents__link toc-highlight">Команды подключения</a></li><li><a href="#административная-консоль-admin-console" class="table-of-contents__link toc-highlight">Административная консоль (Admin console)</a></li><li><a href="#show-commands--команды-мониторинга" class="table-of-contents__link toc-highlight">Show commands – команды мониторинга</a></li><li><a href="#команды-управления-процессами" class="table-of-contents__link toc-highlight">Команды управления процессами</a></li><li><a href="#прочие-команды" class="table-of-contents__link toc-highlight">Прочие команды</a></li><li><a href="#signals" class="table-of-contents__link toc-highlight">Signals</a></li><li><a href="#кластер-горячего-резерва-в-режиме-стратегии-balancing" class="table-of-contents__link toc-highlight">Кластер горячего резерва в режиме стратегии «balancing»</a></li><li><a href="#установка-главного-сервера-master-сервер" class="table-of-contents__link toc-highlight">Установка главного сервера (Master-сервер)</a></li><li><a href="#установка-сервера-горячего-резерва-slave-сервер" class="table-of-contents__link toc-highlight">Установка сервера горячего резерва (Slave-сервер)</a></li><li><a href="#создание-кластера" class="table-of-contents__link toc-highlight">Создание кластера</a></li><li><a href="#инициализация-компонента-japooler" class="table-of-contents__link toc-highlight">Инициализация компонента «jaPooler»</a></li><li><a href="#подключение-пользователя-и-выполнение-запросов-rw-ro" class="table-of-contents__link toc-highlight">Подключение пользователя и выполнение запросов RW, RO</a></li><li><a href="#результат" class="table-of-contents__link toc-highlight">Результат</a></li><li><a href="#кластер-горячего-резерва-в-режиме-стратегии-always_rw" class="table-of-contents__link toc-highlight">Кластер горячего резерва в режиме стратегии «always_rw»</a></li><li><a href="#результат-1" class="table-of-contents__link toc-highlight">Результат</a></li><li><a href="#кластер-горячего-резерва-в-режиме-стратегии-always_ro" class="table-of-contents__link toc-highlight">Кластер горячего резерва в режиме стратегии «always_ro»</a></li><li><a href="#результат-2" class="table-of-contents__link toc-highlight">Результат</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

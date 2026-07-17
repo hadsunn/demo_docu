@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-com18.3.1/pg_ulid" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">pg_ulid | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/com18.3.1/pg_ulid"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="pg_ulid | Postgres"><meta data-rh="true" name="description" content="Подп. и дата"><meta data-rh="true" property="og:description" content="Подп. и дата"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/com18.3.1/pg_ulid"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/pg_ulid" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/pg_ulid" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"pg_ulid","item":"https://hadsunn.github.io/demo_docu/com18.3.1/pg_ulid"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.e5b1ae04.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.f63415a3.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/com18.3.1/1c">com18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/1c">Поддержка платформы 1С</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/firewall">firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_anonymizer">ja_anonymizer</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_seceventlog3.3">ja_seceventlog3.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_similar">ja_similar</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_sync_ldap1.3">ja_sync_ldap1.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_1">jadog_4.2_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_2">jadog_4.2_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_4.2_3">jadog_4.2_3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jadog_secur">jadog_secur</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jalog">jalog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/map">map</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/com18.3.1/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/secur_func">secur_func</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/secur_guide">secur_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/timescale">timescale</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/user_guide">user_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/wal-g">wal-g</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">com18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">pg_ulid</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:41%">
+<col style="width:58%">
+</colgroup><thead><tr><th><blockquote>
+<p>Подп. и дата</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td><blockquote>
+<p>Инв. № дубл.</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Взам. инв. №</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Подп. и дата</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Инв. № подл.</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 10.</strong></p>
+<p><strong>Поддержка лексографического идентификатора.</strong></p>
+<p><strong>Компонент «pg_ulid»</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p><strong>643.72410666.00067-08 98 01-10</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>Листов 29</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>2026</p>
+</blockquote></td></tr><tr><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<header><h1>АННОТАЦИЯ</h1></header>
+<blockquote>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонента «pg_ulid» (далее по тексту – «компонент» или «pg_ulid»), предназначенного для поддержки типа данных ULID.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image1.png" style="width:0.24722in;height:0.24635in" class="img_ev3q">Настоящее руководство предназначено для администраторов СУБД.</p>
+</blockquote>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра</p>
+<p>5.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию ОС Linux – «/usr/jatoba-6/bin».</p>
+<p>Версия компонента — 0.0.1-15</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image2.png" style="width:0.25208in;height:0.25208in" class="img_ev3q">Степени важности примечаний, применяемые в документе:</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"> <strong>Важная информация</strong> – указания, требующие особого внимания</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"> <strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
+</blockquote>
+<h1>СОДЕРЖАНИЕ</h1>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Назначение компонента 4</a></p>
+<ol>
+<li><a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Условия применения 4</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">Установка и настройка 5</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-pg_ulid-%D0%B2-%D0%BE%D1%81-gnulinux">Установка компонента «pg_ulid» в ОС GNU/Linux 5</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-postgresql.conf">Настройка конфигурационного файла «postgresql.conf» 6</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-ulid">Установка расширения «ulid» 6</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Функциональные возможности компонента 8</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82-pg_ulid">Компонент pg_ulid 8</a></p>
+<ol>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-gen_ulid">Функция gen_ulid() 9</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F-%D1%82%D0%B8%D0%BF%D0%B0-ulid-%D0%BA-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83-%D0%B8-%D0%BD%D0%B0%D0%BE%D0%B1%D0%BE%D1%80%D0%BE%D1%82">Конструкции приведения типа ulid к тексту и наоборот 9</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F-%D1%82%D0%B8%D0%BF%D0%B0-ulid-%D0%BA-%D1%88%D1%82%D0%B0%D0%BC%D0%BF%D1%83-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8">Конструкции приведения типа ulid к штампу времени 10</a></p>
+</li>
+<li>
+<p><a href="#_bookmark11">Использование нового типа данных «ulid» в таблицах пользователя 11</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B2%D1%83%D1%85-ulid-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">Сравнение двух ulid-значений 13</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D1%82%D0%B8%D0%BF%D0%B0-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B2-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0%D1%85-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">Использование нового типа данных в индексах пользователя 15</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D0%B0-uuidv7">Применение идентификатора UUIDv7 19</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%81-ulid-%D0%BA-uuidv7">Миграция с ULID к UUIDv7 19</a></p>
+</li>
+<li>
+<p><a href="#ulid-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D0%B2-%D0%BA%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5-%D0%BF%D0%B5%D1%80%D0%B2%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BB%D1%8E%D1%87%D0%B0">ULID используется в качестве первичного ключа 19</a></p>
+<ol>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B9-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B">Создание тестовой таблицы 19</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BF%D0%B5%D1%80%D0%B2%D0%B8%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BB%D1%8E%D1%87%D0%B0-%D0%B2-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B5">Изменение ограничений первичного ключа в таблице 23</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#ulid-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D0%B2-%D0%BA%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B3%D0%BE-%D0%BA%D0%BB%D1%8E%D1%87%D0%B0">ULID используется в качестве внешнего ключа 23</a></p>
+<ol>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B9-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B-1">Создание тестовой таблицы 23</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B3%D0%BE-%D0%BA%D0%BB%D1%8E%D1%87%D0%B0">Изменение ограничений внешнего ключа 24</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Удаление компонента 26</a></p>
+</li>
+</ol>
+<p><a href="#%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D1%8B-%D0%B8-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">Термины и определения 27</a></p>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 28</a></p>
+<h1>НАЗНАЧЕНИЕ КОМПОНЕНТА</h1>
+<blockquote>
+<p>Компонент «pg_ulid» предназначен для поддержки в СУБД типа данных ULID (128 бит) с полноценным использованием в таблицах, запросах и индексах.</p>
+<p>Компонент обладает функцией монотонности в случае генерации большого количество случайных значений в рамках одной миллисекунды, в формате до 80 бит.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например">Например<a href="#например" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например">​</a></h2>
+<blockquote>
+<p>ulid() -- 01BX5ZZKBKACTAV9WEVGEMMVRY ulid() -- 01BX5ZZKBKACTAV9WEVGEMMVRZ ulid() -- 01BX5ZZKBKACTAV9WEVGEMMVS0</p>
+<p>В таком случае временная часть ULID будет постоянной, а случайная часть будет генерироваться в виде последовательности значений. Если же генерация значений происходит в разные миллисекунды реального времени, то случайная часть будет именно случайной. Свойство порядка будет обеспечивать временная часть.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения">​</a></h2>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image2.png" style="width:0.25138in;height:0.25125in" class="img_ev3q">Компонент «pg_ulid» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционной системы GNU/Linux.</p>
+<p>В текущей реализации не поддерживается управление компонентом «pg_ulid» из компонента пользовательского веб-интерфейса для администраторов</p>
+<p>«Jatoba data safe»Ограничений по совместимости с другими компонентами нет.</p>
+</blockquote>
+<h1>УСТАНОВКА И НАСТРОЙКА</h1>
+<blockquote>
+<p>Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-компонента-pg_ulid-в-ос-gnulinux">Установка компонента «pg_ulid» в ОС GNU/Linux<a href="#установка-компонента-pg_ulid-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка компонента «pg_ulid» в ОС GNU/Linux" title="Direct link to Установка компонента «pg_ulid» в ОС GNU/Linux">​</a></h2>
+<blockquote>
+<p>Компонент устанавливается в составе СУБД «Jatoba». Его возможно установить при первичной установке, либо доустановить.</p>
+<p>Установку компонента возможно провести двумя способами:</p>
+</blockquote>
+<ol>
+<li>
+<p>установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;</p>
+</li>
+<li>
+<p>установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.</p>
+</li>
+</ol>
+<blockquote>
+<p>Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:</p>
+</blockquote>
+<ul>
+<li>для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:</li>
+</ul>
+<blockquote>
+<p>apt-get install jatoba18-pg-ulid</p>
+</blockquote>
+<ul>
+<li>для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:</li>
+</ul>
+<blockquote>
+<p>yum install jatoba18-pg_ulid</p>
+<p>Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.</p>
+</blockquote>
+<ul>
+<li>ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:</li>
+</ul>
+<blockquote>
+<p>apt-get install jatoba18-pg_ulid</p>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba6-pg_ulid и т.п.</p>
+<p>Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-конфигурационного-файла-postgresqlconf">Настройка конфигурационного файла «postgresql.conf»<a href="#настройка-конфигурационного-файла-postgresqlconf" class="hash-link" aria-label="Direct link to Настройка конфигурационного файла «postgresql.conf»" title="Direct link to Настройка конфигурационного файла «postgresql.conf»">​</a></h2>
+<blockquote>
+<p>В разделе «Shared Library Preloading», для последующей загрузки расширения, установить параметр:</p>
+<p>shared_preload_libraries = &#x27;ulid&#x27;</p>
+<p>Рисунок 2.1 – Параметр загрузки расширения Для применения параметров потребуется перезапустить СУБД.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-расширения-ulid">Установка расширения «ulid»<a href="#установка-расширения-ulid" class="hash-link" aria-label="Direct link to Установка расширения «ulid»" title="Direct link to Установка расширения «ulid»">​</a></h2>
+<blockquote>
+<p>После перезагрузки СУБД станет доступной установка расширения «ulid».</p>
+<p>CREATE EXTENSION ulid;</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image4.png" style="width:7.00916in;height:1.88635in" class="img_ev3q">
+<p>Рисунок 2.2 – Команда установки расширения «ulid»</p>
+<p>В результате выполненных действий установится расширение «ulid».</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image5.png" style="width:6.94301in;height:2.07187in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 2.3 – Вывод установленных расширений</p>
+</blockquote>
+<h1>ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="компонент-pg_ulid">Компонент pg_ulid<a href="#компонент-pg_ulid" class="hash-link" aria-label="Direct link to Компонент pg_ulid" title="Direct link to Компонент pg_ulid">​</a></h2>
+<blockquote>
+<p>После установки расширения в составе выбранной базы данных пользователю становятся доступны следующие объекты БД, вносимые расширением:</p>
+</blockquote>
+<ol>
+<li>Тип данных ulid</li>
+</ol>
+<blockquote>
+<p>Размер поля 128 бит; временная часть= старшие 48 бит; случайная часть = младшие 80 бит.</p>
+<p>Временная часть отвечает за порядок следования случайных значений.</p>
+<p>Случайная часть за генерацию уникальных значений (вероятность коллизии 10^-24).</p>
+</blockquote>
+<ol start="2">
+<li>
+<p>Операторы и функции для работы с типом данных ulid:</p>
+<ul>
+<li>
+<p>функция gen_ulid() (см .п. <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-gen_ulid">3.1.1</a>);</p>
+</li>
+<li>
+<p>конструкции приведения типа ulid к тексту и наоборот (см .п. <a href="#%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F-%D1%82%D0%B8%D0%BF%D0%B0-ulid-%D0%BA-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83-%D0%B8-%D0%BD%D0%B0%D0%BE%D0%B1%D0%BE%D1%80%D0%BE%D1%82">3.1.2</a>)</p>
+</li>
+<li>
+<p>конструкции приведения типа ulid к штампу времени (см. п. <a href="#%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F-%D1%82%D0%B8%D0%BF%D0%B0-ulid-%D0%BA-%D1%88%D1%82%D0%B0%D0%BC%D0%BF%D1%83-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8">3.1.3</a>);</p>
+</li>
+<li>
+<p>сравнение двух ulid-значений (см. п. <a href="#%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B2%D1%83%D1%85-ulid-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B9">3.1.5</a>);</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Использование нового типа данных в таблицах пользователя (см. п. <a href="#_bookmark11">3.1.4</a>);</p>
+</li>
+<li>
+<p>Использование нового типа данных в индексах пользователя в том числе и в составных индексах указанных типов (см. п. <a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D1%82%D0%B8%D0%BF%D0%B0-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B2-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0%D1%85-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">3.1.6</a>);</p>
+</li>
+<li>
+<p>Использование нового типа данных в представлениях и материализованных представлениях в качестве полей результата запроса</p>
+</li>
+<li>
+<p>Использование нового типа данных в триггерных процедурах (поддерживается язык PL/pgSQL) в качестве элемента, который можно вставлять/изменять/удалять или читать значение этого элемента в составе кода триггерной процедуры.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функция-gen_ulid">Функция gen_ulid()<a href="#функция-gen_ulid" class="hash-link" aria-label="Direct link to Функция gen_ulid()" title="Direct link to Функция gen_ulid()">​</a></h2>
+<blockquote>
+<p>Функция gen_ulid() возвращает случайный идентификатор.</p>
+<p>Может применяться в SQL запросах в выражениях там, где допустим вызов функции.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например-1">Например<a href="#например-1" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например">​</a></h2>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image6.png" style="width:7.01911in;height:1.73469in" class="img_ev3q">
+<blockquote>
+<p>SELECT gen_ulid();</p>
+<p>SELECT ... FROM ... WHERE ... gen_ulid() ...</p>
+<p>Рисунок 3.1 – Генерация случайного ulid</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="конструкции-приведения-типа-ulid-к-тексту-и-наоборот">Конструкции приведения типа ulid к тексту и наоборот<a href="#конструкции-приведения-типа-ulid-к-тексту-и-наоборот" class="hash-link" aria-label="Direct link to Конструкции приведения типа ulid к тексту и наоборот" title="Direct link to Конструкции приведения типа ulid к тексту и наоборот">​</a></h2>
+<blockquote>
+<p>Конструкции приведения типа «ulid» к тексту и наоборот имеет синтаксис SQL-команды:</p>
+<p>SELECT ulid_field::text .... SELECT &#x27;XXXXXXX...&#x27;::ulid ...</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например-2">Например<a href="#например-2" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например">​</a></h2>
+<blockquote>
+<p>Преобразовать значение в текст:</p>
+<p>SELECT (&#x27;7ZZZZZZZZZZZZZZZZZZZZZZZZZ&#x27;::ulid)::text;</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image7.png" style="width:6.79039in;height:1.72333in" class="img_ev3q">
+<p>Рисунок 3.2 – Преобразование значения в тип данных «text» Преобразовать значение в тип данных «ulid»:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image8.png" style="width:7.08106in;height:1.7825in" class="img_ev3q">
+<blockquote>
+<p>SELECT (&#x27;7ZZZZZZZZZZZZZZZZZZZZZZZZZ&#x27;::ulid);</p>
+<p>Рисунок 3.3 - Преобразование значение в тип данных «ulid»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="конструкции-приведения-типа-ulid-к-штампу-времени">Конструкции приведения типа ulid к штампу времени<a href="#конструкции-приведения-типа-ulid-к-штампу-времени" class="hash-link" aria-label="Direct link to Конструкции приведения типа ulid к штампу времени" title="Direct link to Конструкции приведения типа ulid к штампу времени">​</a></h2>
+<blockquote>
+<p>SELECT ulid_field::timestamp ... SELECT ts_field::ulid ...</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например-3">Например<a href="#например-3" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например">​</a></h2>
+<blockquote>
+<p>Выполнить преобразование в timestamp:</p>
+<p>SELECT (&#x27;7ZZZZZZZZZZZZZZZZZZZZZZZZZ&#x27;::ulid)::timestamp; SELECT (&#x27;7ZZZZZZZZZZZZZZZZZZZZZZZZZ&#x27;::ulid)::timestamp; SELECT (&#x27;01H55TNAQ96WPSWE6WZRCH9G0C&#x27;::ulid)::timestamp;</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image9.png" style="width:7.06135in;height:3.83333in" class="img_ev3q">
+<p>Рисунок 3.4 – Преобразование значения из формата «ulid» в формат «timestamp» Выполнить преобразование в ulid:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image10.png" style="width:7.1057in;height:1.7825in" class="img_ev3q">
+<blockquote>
+<p>SELECT(&#x27;2023-07-12 19:53:43.401&#x27;::timestamp::ulid);</p>
+<p>Рисунок 3.5 – Преобразование значения из формата timestamp в формат ulid</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="использование-нового-типа-данных-ulid-в-таблицах-пользователя">Использование нового типа данных «ulid» в таблицах пользователя<a href="#использование-нового-типа-данных-ulid-в-таблицах-пользователя" class="hash-link" aria-label="Direct link to Использование нового типа данных «ulid» в таблицах пользователя" title="Direct link to Использование нового типа данных «ulid» в таблицах пользователя">​</a></h2>
+<blockquote>
+<p>Компонент «pg_ulid» вводит новый тип данных «ulid» в таблицах пользователя. При этом используется синтаксис SQL-команды:</p>
+<p>CREATE TABLE t ( id ulid ... );</p>
+<p>Допустимы и другие конструкции создания и изменений полей через оператора ALTER TABLE.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например-4">Например<a href="#например-4" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например">​</a></h2>
+<blockquote>
+<p>Создать таблицу:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image11.png" style="width:7.16114in;height:1.18187in" class="img_ev3q">
+<blockquote>
+<p># CREATE TABLE t0 (id ulid DEFAULT gen_ulid() NOT null);</p>
+<p>Рисунок 3.6 – Создание таблицы с типом данных «ulid» Вставить произвольный ulid:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image12.png" style="width:7.15646in;height:1.17219in" class="img_ev3q">
+<blockquote>
+<p># INSERT INTO t0 SELECT gen_ulid() FROM</p>
+<p>generate_series(1,100000);</p>
+<p>Рисунок 3.7 – Вставка произвольных значений Указать первичный ключ:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image13.png" style="width:7.07139in;height:1.09958in" class="img_ev3q">
+<blockquote>
+<p>ALTER TABLE t0 ADD PRIMARY KEY (id);</p>
+<p>Рисунок 3.8 – Установка первичного ключа Вывести содержание таблицы:</p>
+<p>SELECT id FROM public.t0;</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image14.png" style="width:7.00228in;height:3.26083in" class="img_ev3q">
+<p>Рисунок 3.9 – Вывод содержания таблицы</p>
+<p>Тип данных «ulid» допускает применение по отношению к нему всех типов ограничений таблицы: PRIMARY KEY, NULL/NOT NULL, UNIQUE, CHECK, REFERENCE, GENERATED</p>
+<p>CREATE TABLE t ( id ulid PRIMARY KEY, ... );</p>
+<p>и другие конструкции создания и изменений полей через ALTER TABLE.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="сравнение-двух-ulid-значений">Сравнение двух ulid-значений<a href="#сравнение-двух-ulid-значений" class="hash-link" aria-label="Direct link to Сравнение двух ulid-значений" title="Direct link to Сравнение двух ulid-значений">​</a></h2>
+<blockquote>
+<p>Данные выражения возвращают тип boolean и могут применяться в SQL запросах в контексте выражений:</p>
+<p>– = оператор равенства двух ulid;</p>
+</blockquote>
+<ul>
+<li>
+<p>&lt;&gt; оператор неравенства двух ulid;</p>
+</li>
+<li>
+<p>&gt; больше;</p>
+</li>
+<li>
+<p>&gt;= больше или равно;</p>
+</li>
+<li>
+<p>&lt; меньше;</p>
+</li>
+<li>
+<p>&lt;= меньше или равно.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например-5">Например<a href="#например-5" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например">​</a></h2>
+<blockquote>
+<p>Создать таблицу:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image15.png" style="width:7.08501in;height:1.76042in" class="img_ev3q">
+<blockquote>
+<p># CREATE TABLE ulid1 (</p>
+<p>ulid_field ULID,</p>
+<p>text_field TEXT DEFAULT(now())</p>
+<p>);</p>
+<p>Рисунок 3.10 – Создание таблицы</p>
+<p>Вставить данные:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image16.png" style="width:7.10668in;height:1.77083in" class="img_ev3q">
+<blockquote>
+<p># INSERT INTO ulid1(ulid_field) VALUES(&#x27;11111111111111111111111111&#x27;);</p>
+<p># INSERT INTO ulid1(ulid_field) VALUES(&#x27;22222222222222222222222222&#x27;);</p>
+<p># INSERT INTO ulid1(ulid_field) VALUES(&#x27;3F3E3C3B3A3039383736353433&#x27;);</p>
+<p>Рисунок 3.11 – Вставка значений в таблицу Выполнить проверку операторов сравнения:</p>
+<p># SELECT COUNT(*) FROM ulid1 WHERE ulid_field = &#x27;3F3E3C3B3A3039383736353433&#x27;;</p>
+<p># SELECT COUNT(*) FROM ulid1 WHERE ulid_field &lt;&gt; &#x27;11111111111111111111111111&#x27;;</p>
+<p># SELECT COUNT(*) FROM ulid1 WHERE ulid_field &lt; &#x27;22222222222222222222222222&#x27;;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image17.png" style="width:7.11227in;height:3.47375in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.12 – Проверка операторов сравнения</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="использование-нового-типа-данных-в-индексах-пользователя">Использование нового типа данных в индексах пользователя<a href="#использование-нового-типа-данных-в-индексах-пользователя" class="hash-link" aria-label="Direct link to Использование нового типа данных в индексах пользователя" title="Direct link to Использование нового типа данных в индексах пользователя">​</a></h2>
+<blockquote>
+<p>Компонент «pg_ulid» вводит новый тип данных «ulid» в индексах пользователя. В настоящее время поддерживаются типы индексов «BTREE» и «HASH».</p>
+<p>Пользователь может создать индекс по полю типа данных «ulid» используя синтаксис SQL-команды:</p>
+<p>CREATE INDEX my_idx on my_table [ USING btree | hash ] (id);</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="например-6">Например<a href="#например-6" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например">​</a></h2>
+<blockquote>
+<p>Создать таблицу:</p>
+<p># CREATE TABLE ulid1 (</p>
+<p>ulid_field ULID,</p>
+<p>text_field TEXT DEFAULT(now())</p>
+<p>);</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image18.png" style="width:7.1286in;height:1.77292in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.13 – Создание таблицы</p>
+<p>Вставить данные:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image19.png" style="width:7.06449in;height:1.71875in" class="img_ev3q">
+<blockquote>
+<p># INSERT INTO ulid1(ulid_field) VALUES(&#x27;11111111111111111111111111&#x27;);</p>
+<p># INSERT INTO ulid1(ulid_field) VALUES(&#x27;22222222222222222222222222&#x27;);</p>
+<p># INSERT INTO ulid1(ulid_field) VALUES(&#x27;3F3E3C3B3A3039383736353433&#x27;);</p>
+<p>Рисунок 3.14 – Вставка данных</p>
+<p>Сгенерировать записи:</p>
+<p>INSERT INTO ulid1 (ulid_field) SELECT gen_ulid() FROM generate_series(1,100000);</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image20.png" style="width:7.07167in;height:1.19437in" class="img_ev3q">
+<p>Рисунок 3.15 – Генерирование записей Создать индексы «BTREE», «HASH»:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image21.png" style="width:7.05709in;height:1.4375in" class="img_ev3q">
+<blockquote>
+<p># CREATE INDEX ulid1_btree ON ulid1 USING BTREE (ulid_field); # CREATE INDEX ulid1_hash ON ulid1 USING HASH (ulid_field);</p>
+<p>Рисунок 3.16 – Создание индексов Вывести план запроса:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image22.png" style="width:7.14261in;height:1.99969in" class="img_ev3q">
+<blockquote>
+<p>EXPLAIN SELECT * FROM public.ulid1 WHERE ulid_field = &#x27;11111111111111111111111111&#x27;;</p>
+<p>Рисунок 3.17 – Вывод плана запроса Вывести содержание таблицы:</p>
+<p>SELECT * FROM public.ulid1;</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image23.png" style="width:6.67579in;height:2.33812in" class="img_ev3q">
+<p>Рисунок 3.18 – Вывод содержания таблицы с индексами BTREE, HASH Индексы успешно созданы и используются.</p>
+</blockquote>
+<h1>ПРИМЕНЕНИЕ ИДЕНТИФИКАТОРА UUIDV7</h1>
+<blockquote>
+<p>В СУБД «Jatoba» 18 встроена поддержка идентификатора UUID версии 7 – новой версии стандарта UUID (Universally Unique Identifier).</p>
+<p>Идентификатор UUID версии 7 применяется в базах данных, распределённых системах и API.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="миграция-с-ulid-к-uuidv7">Миграция с ULID к UUIDv7<a href="#миграция-с-ulid-к-uuidv7" class="hash-link" aria-label="Direct link to Миграция с ULID к UUIDv7" title="Direct link to Миграция с ULID к UUIDv7">​</a></h2>
+<blockquote>
+<p>В СУБД «Jatoba» применяются механизмы миграции с идентификаторов ULID, поддерживаемых компонентом pg_ulid, на идентификаторы UUID версии 7. Далее приводится примеры процедур по миграции:</p>
+</blockquote>
+<ul>
+<li>
+<p>Миграция от ULID к UUIDv7, когда колонка с типом данных ULID используется в качестве первичного ключа;</p>
+</li>
+<li>
+<p>Миграция от ULID к UUIDv7, когда колонка с типом данных ULID используется в качестве внешнего ключа.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ulid-используется-в-качестве-первичного-ключа">ULID используется в качестве первичного ключа<a href="#ulid-используется-в-качестве-первичного-ключа" class="hash-link" aria-label="Direct link to ULID используется в качестве первичного ключа" title="Direct link to ULID используется в качестве первичного ключа">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-тестовой-таблицы">Создание тестовой таблицы<a href="#создание-тестовой-таблицы" class="hash-link" aria-label="Direct link to Создание тестовой таблицы" title="Direct link to Создание тестовой таблицы">​</a></h2>
+<blockquote>
+<p>Допустим, имеется таблица t_ulid с первичным ключом по столбцу id с типом данных ULID. Создадим таблицу t_ulid при помощи следующей команды:</p>
+<p>CREATE TABLE t_ulid(</p>
+<p>id ULID PRIMARY KEY DEFAULT gen_ulid()</p>
+<p>,load_id INTEGER</p>
+<p>,order_id INTEGER);</p>
+<p>Заполнение таблицы t_ulid случайными тестовыми данными производится при помощи команды:</p>
+<p>INSERT INTO t_ulid(order_id,load_id) SELECT n,1 FROM generate_series(1,10000) AS gs(n);</p>
+<p>Проверить содержимое таблицы t_ulid при помощи команды:</p>
+</blockquote>
+<p>№ изменения: Подпись отв. лица: Дата внесения изм:</p>
+<blockquote>
+<p>SELECT id, to_char(id::timestamp, &#x27;dd-mm-yyyy hh24:mi:ss,ff3&#x27;) AS ts FROM t_ulid ORDER BY id FETCH FIRST 10 ROWS ONLY;</p>
+<p>+ 01KA959YWGZTV653GC7M92F2SR | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SS | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2ST | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SV | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SW | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SX | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SY | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SZ | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2T0 | 17-11-2025 15:00:34,320</p>
+<p>Создание процедуры для формирования UUIDv7 на основе существующих значений ULID выполняется при помощи команды:</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:33%">
+</colgroup><thead><tr><th colspan="3"><blockquote>
+<p>CREATE OR REPLACE PROCEDURE ulid2uuid_1()</p>
+<p>LANGUAGE &#x27;plpgsql&#x27; AS $BODY$ DECLARE</p>
+<p>vepoch_old BIGINT := null; vepoch_new BIGINT;</p>
+<p>vnano INTEGER; vuuid_current TEXT; vuuid_new TEXT;</p>
+<p>vuuid UUID;</p>
+<p>c1 cursor for select id,id_uuid from t_ulid order by id for update;</p>
+<p>BEGIN</p>
+<p>for c1r in c1 loop</p>
+<p>vepoch_new := floor(extract(epoch from c1r.id::timestamp)*1000)::bigint;</p>
+<p>if vepoch_old is null or vepoch_new&lt;&gt;vepoch_old then</p>
+<p>vepoch_old := vepoch_new; vnano := 1;</p>
+</blockquote></th></tr></thead><tbody><tr><td></td><td></td><td></td></tr></tbody></table>
+<blockquote>
+<p>else</p>
+<p>vnano := vnano+1; end if;</p>
+<p>vuuid_current := uuidv7()::text; vuuid_new := lpad(to_hex(vepoch_new),12,&#x27;0&#x27;);</p>
+<p>vuuid_new := vuuid_new||substr(vuuid_current,15,1)||lpad(to_hex(vnano),3,&#x27;0&#x27;</p>
+<p>)||substr(vuuid_current,20,4)</p>
+<p>||substr(vuuid_current,25,12); vuuid := vuuid_new::uuid;</p>
+<p>UPDATE t_ulid SET id_uuid=vuuid WHERE CURRENT OF c1; end loop;</p>
+<p>COMMIT; END;</p>
+<p>$BODY$;</p>
+<p>Добавление в таблицу t_ulid нового столбца id_uuid с новым типом данных UUID при помощи команды:</p>
+<p>ALTER TABLE t_ulid ADD id_uuid UUID;</p>
+<p>Заполнение столбца id_uuid в таблице t_ulid значениями с использованием процедуры ulid2uuid_1 при помощи команды:</p>
+<p>CALL ulid2uuid_1();</p>
+<p>Пример выборки значений из таблицы t_ulid</p>
+<p>SELECT id, to_char(id::timestamp,&#x27;dd-mm-yyyy hh24:mi:ss,ff3&#x27;) AS ts,id_uuid, to_char(uuid_extract_timestamp(id_uuid) AT TIME ZONE &#x27;UTC&#x27;,&#x27;dd-mm-yyyy hh24:mi:ss,ff3&#x27;) AS ts_id_uuid FROM t_ulid ORDER BY id LIMIT 10;</p>
+<p>В результате будет представлено</p>
+<p>01KA959YWGZTV653GC7M92F2SQ | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7001-ba95-779652ad9221 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SR | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7002-b777-ba487bbb4db8 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SS | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7003-a036-538e36dc2cb6 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2ST | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7004-9fa8-4ed5ac39ee44 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SV | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7005-9b20-1d61a3af869c | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SW | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7006-bc02-6afcfbbdb452 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SX | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7007-b679-46edfcfbcc79 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SY | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7008-ad68-f8c22a5e39e1 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SZ | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7009-b824-8f2c74911c8d | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2T0 | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-700a-a304-77b1b1480705 | 17-11-2025 15:00:34,320</p>
+<p>Пример выборки значений из таблицы t_ulid</p>
+<p>SELECT id, to_char(id::timestamp,&#x27;dd-mm-yyyy hh24:mi:ss,ff3&#x27;) AS ts, id_uuid, to_char(uuid_extract_timestamp(id_uuid) AT TIME ZONE &#x27;UTC&#x27;,&#x27;dd-mm-yyyy hh24:mi:ss,ff3&#x27;) AS ts_id_uuid FROM t_ulid ORDER BY id_uuid LIMIT 10;</p>
+<p>В результате выполнения предыдущего запроса</p>
+<p>01KA959YWGZTV653GC7M92F2SQ | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7001-ba95-779652ad9221 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SR | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7002-b777-ba487bbb4db8 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SS | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7003-a036-538e36dc2cb6 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2ST | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7004-9fa8-4ed5ac39ee44 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SV | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7005-9b20-1d61a3af869c | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SW | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7006-bc02-6afcfbbdb452 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SX | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7007-b679-46edfcfbcc79 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SY | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7008-ad68-f8c22a5e39e1 | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2SZ | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-7009-b824-8f2c74911c8d | 17-11-2025 15:00:34,320</p>
+<p>01KA959YWGZTV653GC7M92F2T0 | 17-11-2025 15:00:34,320 |</p>
+<p>019a9254-fb90-700a-a304-77b1b1480705 | 17-11-2025 15:00:34,320</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="изменение-ограничений-первичного-ключа-в-таблице">Изменение ограничений первичного ключа в таблице<a href="#изменение-ограничений-первичного-ключа-в-таблице" class="hash-link" aria-label="Direct link to Изменение ограничений первичного ключа в таблице" title="Direct link to Изменение ограничений первичного ключа в таблице">​</a></h2>
+<blockquote>
+<p>Получение ограничений таблицы t_ulid:</p>
+<p>SELECT conname AS constraint_name,conrelid::regclass AS table_name,contype AS constraint_type,pg_get_constraintdef(oid) AS constraint_definition FROM pg_constraint WHERE conrelid = &#x27;<strong>t_ulid</strong>&#x27;::regclass;</p>
+<p>В ответ будет выведено следующее:</p>
+<p>t_ulid_pkey | t_ulid | p | PRIMARY KEY (id)</p>
+<p>Удаление ограничения первичного ключа в таблице t_ulid:</p>
+<p>ALTER TABLE t_ulid DROP CONSTRAINT t_ulid_pkey CASCADE;</p>
+<p>Добавление нового ограничения первичного ключа в таблицу t_ulid:</p>
+<p>ALTER TABLE t_ulid ADD PRIMARY KEY (id_uuid);</p>
+<p>Удаление столбца id из таблицы t_ulid:</p>
+<p>ALTER TABLE t_ulid DROP id CASCADE;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ulid-используется-в-качестве-внешнего-ключа">ULID используется в качестве внешнего ключа<a href="#ulid-используется-в-качестве-внешнего-ключа" class="hash-link" aria-label="Direct link to ULID используется в качестве внешнего ключа" title="Direct link to ULID используется в качестве внешнего ключа">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-тестовой-таблицы-1">Создание тестовой таблицы<a href="#создание-тестовой-таблицы-1" class="hash-link" aria-label="Direct link to Создание тестовой таблицы" title="Direct link to Создание тестовой таблицы">​</a></h2>
+<blockquote>
+<p>Допустим, имеется таблица t_ulid с первичным ключом по столбцу id с типом данных ULID. Создадим таблицу t_ulid при помощи следующей команды:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/pg_ulid/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">
+<blockquote>
+<p>CREATE TABLE t_ulid(</p>
+<p>id ULID PRIMARY KEY DEFAULT gen_ulid()</p>
+<p>,load_id INTEGER</p>
+<p>,order_id INTEGER);</p>
+<p>Допустим, имеется таблица t_ulid_detail с внешним ключом по столбцу id_fk с типом данных ULID, который указывает на первичный ключ в таблице t_ulid.</p>
+<p>После добавления и заполнения UUIDv7 в таблице t_ulid (см. п. <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B9-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B">4.2.1</a>), необходимо удалить старые и создать новые ограничения.</p>
+<p>Для этого следует добавить в таблицу t_ulid_detail нового столбца id_uuid_fk с типом данных UUID:</p>
+<p>ALTER TABLE t_ulid_detail ADD id_uuid_fk UUID;</p>
+<p>Заполнение данными столбца id_uuid_fk в таблице t_ulid_detail:</p>
+<p>UPDATE t_ulid_detail t1 SET id_uuid_fk = (SELECT t2.id_uuid FROM t_ulid t2 WHERE t2.id=t1.id_fk);</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="изменение-ограничений-внешнего-ключа">Изменение ограничений внешнего ключа<a href="#изменение-ограничений-внешнего-ключа" class="hash-link" aria-label="Direct link to Изменение ограничений внешнего ключа" title="Direct link to Изменение ограничений внешнего ключа">​</a></h2>
+<blockquote>
+<p>Получение ограничений таблицы t_ulid</p>
+<p>SELECT conname AS constraint_name,conrelid::regclass AS table_name,contype AS constraint_type,pg_get_constraintdef(oid) AS constraint_definition FROM pg_constraint WHERE conrelid = &#x27;<strong>t_ulid</strong>&#x27;::regclass;</p>
+<p>В ответ будет выведено следующее:</p>
+<p>t_ulid_pkey | t_ulid | p | PRIMARY KEY (id)</p>
+<p>Удаление ограничения первичного ключа в таблице t_ulid:</p>
+<p>ALTER TABLE t_ulid DROP CONSTRAINT t_ulid_pkey CASCADE;</p>
+<p>Удаление распространяется на объект ограничение t_ulid_detail_id_fk_fkey в отношении таблицы t_ulid_detail.</p>
+<p>Добавление нового ограничения первичного ключа в таблицу t_ulid:</p>
+<p>ALTER TABLE t_ulid ADD PRIMARY KEY (id_uuid);</p>
+<p>Добавление нового ограничения внешнего ключа в таблицу t_ulid_detail:</p>
+<p>ALTER TABLE t_ulid_detail ADD FOREIGN KEY (id_uuid_fk) REFERENCES t_ulid(id_uuid);</p>
+</blockquote>
+<h1>УДАЛЕНИЕ КОМПОНЕНТА</h1>
+<blockquote>
+<p>Удаление компонента проводится в несколько этапов. Удалить пакет:</p>
+<p>− для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда удаления следующая:</p>
+<p>apt-get remove jatoba&lt;version&gt;-pg-ulid</p>
+<p>− для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда удаления следующая:</p>
+<p>yum remove jatoba&lt;version&gt;-pg_ulid</p>
+<p>После чего необходимо убрать загрузку модуля из конфигурационного файла</p>
+<p>«postgresql.conf», поставив знак #, или удалить имя расширения из списка расширений.</p>
+<p>#shared_preload_libraries = &#x27;ulid&#x27;</p>
+<p>Расширение может быть удалено из базы данных пользователя SQL-командой:</p>
+<p>DROP EXTENSION ulid;</p>
+<p>Но при условии, что тип данных ulid нигде более в базе данных не используется.</p>
+<p>В противном случае будет ошибка о наличии зависимостей - это нормально, пользователь сам должен разрешить эту зависимость (удалить использование типа ulid или конвертировать такие поля в text).</p>
+<p>Расширение может быть удалено каскадным методом из базы данных пользователя SQL-командой:</p>
+<p>DROP EXTENSION ulid CASCADE;</p>
+</blockquote>
+<h1>ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</h1>
+<blockquote>
+<p><strong>ULID (Universally Unique Lexicographically Sortable Identifier)</strong> - это уникальный, глобально уникальный, лексикографически сортируемый идентификатор. ULID представляет собой строку, состоящую из двух частей: даты и времени создания объекта и уникального случайного числа. Обе части преобразуются в числовое значение, что позволяет сортировать объекты в лексикографическом порядке. ULID используется для уникальной идентификации объектов без использования централизованных серверов или баз данных, обеспечивая децентрализованное управление и хранение данных.</p>
+</blockquote>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:16%">
+<col style="width:12%">
+<col style="width:71%">
+</colgroup><thead><tr><th><blockquote>
+<p>SQL</p>
+</blockquote></th><th><blockquote>
+<p>–</p>
+</blockquote></th><th><blockquote>
+<p>Structured Query Language</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Всего листов (страниц) в документе</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Номер документа</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входящий номер сопроводите льного документа и</p>
+<p>дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подпись</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>измене нных</p>
+</blockquote></td><td><blockquote>
+<p>замене нных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td><blockquote>
+<p>аннулир ованных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/com18.3.1/pg_task"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">pg_task</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/com18.3.1/pgbadger"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">pgbadger</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#например" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#установка-компонента-pg_ulid-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка компонента «pg_ulid» в ОС GNU/Linux</a></li><li><a href="#настройка-конфигурационного-файла-postgresqlconf" class="table-of-contents__link toc-highlight">Настройка конфигурационного файла «postgresql.conf»</a></li><li><a href="#установка-расширения-ulid" class="table-of-contents__link toc-highlight">Установка расширения «ulid»</a></li><li><a href="#компонент-pg_ulid" class="table-of-contents__link toc-highlight">Компонент pg_ulid</a></li><li><a href="#функция-gen_ulid" class="table-of-contents__link toc-highlight">Функция gen_ulid()</a></li><li><a href="#например-1" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#конструкции-приведения-типа-ulid-к-тексту-и-наоборот" class="table-of-contents__link toc-highlight">Конструкции приведения типа ulid к тексту и наоборот</a></li><li><a href="#например-2" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#конструкции-приведения-типа-ulid-к-штампу-времени" class="table-of-contents__link toc-highlight">Конструкции приведения типа ulid к штампу времени</a></li><li><a href="#например-3" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#использование-нового-типа-данных-ulid-в-таблицах-пользователя" class="table-of-contents__link toc-highlight">Использование нового типа данных «ulid» в таблицах пользователя</a></li><li><a href="#например-4" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#сравнение-двух-ulid-значений" class="table-of-contents__link toc-highlight">Сравнение двух ulid-значений</a></li><li><a href="#например-5" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#использование-нового-типа-данных-в-индексах-пользователя" class="table-of-contents__link toc-highlight">Использование нового типа данных в индексах пользователя</a></li><li><a href="#например-6" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#миграция-с-ulid-к-uuidv7" class="table-of-contents__link toc-highlight">Миграция с ULID к UUIDv7</a></li><li><a href="#ulid-используется-в-качестве-первичного-ключа" class="table-of-contents__link toc-highlight">ULID используется в качестве первичного ключа</a></li><li><a href="#создание-тестовой-таблицы" class="table-of-contents__link toc-highlight">Создание тестовой таблицы</a></li><li><a href="#изменение-ограничений-первичного-ключа-в-таблице" class="table-of-contents__link toc-highlight">Изменение ограничений первичного ключа в таблице</a></li><li><a href="#ulid-используется-в-качестве-внешнего-ключа" class="table-of-contents__link toc-highlight">ULID используется в качестве внешнего ключа</a></li><li><a href="#создание-тестовой-таблицы-1" class="table-of-contents__link toc-highlight">Создание тестовой таблицы</a></li><li><a href="#изменение-ограничений-внешнего-ключа" class="table-of-contents__link toc-highlight">Изменение ограничений внешнего ключа</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
