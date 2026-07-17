@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-com18.3.1/ja_compression" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">ja_compression | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/com18.3.1/ja_compression"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ja_compression | Postgres"><meta data-rh="true" name="description" content="Подп. и дата"><meta data-rh="true" property="og:description" content="Подп. и дата"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/com18.3.1/ja_compression"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/ja_compression" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/ja_compression" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ja_compression","item":"https://hadsunn.github.io/demo_docu/com18.3.1/ja_compression"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.1fa2b7fe.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.ffb5ba9c.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/com18.3.1/1c">com18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/1c">1c</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/firewall">firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_anonymizer">ja_anonymizer</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/com18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">com18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">ja_compression</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:41%">
+<col style="width:58%">
+</colgroup><thead><tr><th><blockquote>
+<p>Подп. и дата</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td><blockquote>
+<p>Инв. № дубл.</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Взам. инв. №</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Подп. и дата</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Инв. № подл.</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 25. Сжатие данных на уровне страниц.</strong></p>
+<p><strong>Компонент «ja_Compression»</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p><strong>643.72410666.00067-08 98 01-25</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>Листов 43</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>2026</p>
+</blockquote></td></tr><tr><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<header><h1>АННОТАЦИЯ</h1></header>
+<blockquote>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонента «ja_Compression» (далее по тексту – «компонент» или ja_Compression), предназначенного для сжатия данных СУБД «Jatoba».</p>
+<p>Настоящее руководство предназначено для администраторов СУБД.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"> Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра</p>
+<p>6.x.</p>
+<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию ОС Linux – «/usr/jatoba-6/bin».</p>
+<p>Версия компонента — 1.0</p>
+<p>Степени важности примечаний, применяемые в документе:</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image2.png" style="width:0.25138in;height:0.25053in" class="img_ev3q"> <strong>Важная информация</strong> – указания, требующие особого внимания</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"> <strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-важная-информация"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image2.png" style="width:0.25138in;height:0.25004in" class="img_ev3q"> Важная информация<a href="#-важная-информация" class="hash-link" aria-label="Direct link to -важная-информация" title="Direct link to -важная-информация">​</a></h3>
+<blockquote>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
+</blockquote>
+<h1>СОДЕРЖАНИЕ</h1>
+<h1></h1>
+<ol>
+<li><a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Назначение компонента 5</a></li>
+</ol>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image3.png" style="width:0.22in;height:0.12333in" class="img_ev3q"> <a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Условия применения 5</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image4.png" style="width:0.22in;height:0.12333in" class="img_ev3q"> <a href="#%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE-%D1%8D%D0%BA%D1%81%D0%BF%D0%BB%D1%83%D0%B0%D1%82%D0%B0%D1%86%D0%B8%D0%B8">Ограничения по эксплуатации 5</a></p>
+</blockquote>
+<ol>
+<li>
+<p><a href="#%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-toast-%D0%B2-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%BC-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%B5">Двойная компрессия TOAST в табличном пространстве 5</a></p>
+</li>
+<li>
+<p><a href="#%D1%84%D1%80%D0%B0%D0%B3%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F">Фрагментация 6</a></p>
+</li>
+<li>
+<p><a href="#rum-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81">RUM индекс 6</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D1%81%D0%BE%D0%B1%D0%BE%D0%B3%D0%BE-%D0%B2%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F-%D1%82%D1%80%D0%B5%D0%B1%D1%83%D1%8E%D1%82-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%B0-%D1%82%D0%BF">Особого внимания требуют табличные пространства (ТП) 7</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D0%B8">Изменение алгоритма компрессии 7</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D1%82%D0%BF-%D1%81-%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D0%BC-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%BC-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D0%B8">Перемещение таблицы между ТП с разным алгоритмом компрессии 8</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%BD%D0%BA%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BE%D0%BF%D0%B8%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86-%D0%B2-%D1%81%D1%83%D0%B1%D0%B4-jatoba-18">Инкрементальные копии компрессированных таблиц в СУБД «Jatoba» 18 9</a></p>
+</li>
+</ol>
+<ol start="2">
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">Установка и настройка 11</a></p>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Функциональные возможности компонента 12</a></p>
+</li>
+</ol>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image5.png" style="width:0.23333in;height:0.12333in" class="img_ev3q"> <a href="#_bookmark13">Создание табличного пространства с сжатием данных 14</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image6.png" style="width:0.23333in;height:0.12332in" class="img_ev3q"> <a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81-%D0%B1%D0%B4-%D0%B2-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B5-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%B5-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE-%D1%81-%D1%81%D0%B6%D0%B0%D1%82%D0%B8%D0%B5%D0%BC-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">Перенос БД в новое табличное пространство с сжатием данных 15</a></p>
+</blockquote>
+<ol start="4">
+<li><a href="#sql-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%BD%D0%B0%D0%B4-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%D0%BC%D0%B8-%D0%B8-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0%D0%BC%D0%B8">SQL операции над компрессированными таблицами и индексами 17</a></li>
+</ol>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image7.png" style="width:0.23667in;height:0.12332in" class="img_ev3q"> <a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86">Компрессия таблиц 17</a></p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image8.png" style="width:0.23667in;height:0.12333in" class="img_ev3q"> <a href="#_bookmark17">Компрессия индексов таблиц 18</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image9.png" style="width:0.23667in;height:0.12333in" class="img_ev3q"> <a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D1%85-%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%BE%D0%B2">Компрессия других видов индексов 19</a></p>
+<ol>
+<li>
+<p><a href="#brin">BRIN 19</a></p>
+</li>
+<li>
+<p><a href="#gin">GIN 20</a></p>
+</li>
+<li>
+<p><a href="#hash">HASH 20</a></p>
+</li>
+<li>
+<p><a href="#gist">GIST 21</a></p>
+</li>
+<li>
+<p><a href="#sp-gist">SP GIST 21</a></p>
+</li>
+<li>
+<p><a href="#btree">Btree 22</a></p>
+</li>
+<li>
+<p><a href="#rum">RUM 22</a></p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image10.png" style="width:0.23667in;height:0.12333in" class="img_ev3q"> <a href="#%D1%81%D0%BC%D0%B5%D0%BD%D0%B0-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D0%B8-alter-table">Смена алгоритма компрессии (alter table) 23</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image11.png" style="width:0.23667in;height:0.12333in" class="img_ev3q"> <a href="#%D1%81%D0%BC%D0%B5%D0%BD%D0%B0-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D0%B8-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0-alter-index">Смена алгоритма компрессии индекса (alter index) 24</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image12.png" style="width:0.23667in;height:0.12333in" class="img_ev3q"> <a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86-logged-tables-%D0%B8-%D0%BD%D0%B5%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86-unlogged-tables-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86-temporary_tables-%D0%B8-%D0%B8%D1%85-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%BE%D0%B2">Компрессия журналируемых таблиц (logged tables) и нежурналируемых таблиц (unlogged tables),</a> <a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86-logged-tables-%D0%B8-%D0%BD%D0%B5%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86-unlogged-tables-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86-temporary_tables-%D0%B8-%D0%B8%D1%85-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%BE%D0%B2">временных таблиц (temporary_tables) и их индексов 24</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image13.png" style="width:0.23667in;height:0.12333in" class="img_ev3q"> <a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-toast-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2">Компрессия TOAST файлов 25</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image14.png" style="width:0.23667in;height:0.12333in" class="img_ev3q"> <a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%86%D0%B8%D0%B9">Компрессия партиций 25</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image15.png" style="width:0.23667in;height:0.12333in" class="img_ev3q"> <a href="#%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D1%8F-%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86">Компрессия распределенных таблиц 26</a></p>
+<ol start="5">
+<li><a href="#%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8-%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Резервирование и восстановление 29</a></li>
+</ol>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image16.png" style="width:0.23in;height:0.12332in" class="img_ev3q"> <a href="#%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0-pg_dump">Утилита pg_dump 29</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image17.png" style="width:0.23in;height:0.12333in" class="img_ev3q"> <a href="#%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0-pg_dumpall">Утилита pg_dumpall 29</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image18.png" style="width:0.23in;height:0.12333in" class="img_ev3q"> <a href="#%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0-pg_basebackup">Утилита pg_basebackup 29</a></p>
+</blockquote>
+<ol start="6">
+<li>
+<p><a href="#%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F">Репликация 30</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Удаление компонента 31</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-1%D1%81%D0%BA%D0%B8%D0%BF-%D1%81-%D0%B1%D0%B4-%D1%81-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D0%B5%D0%B9">Настройка 1С:КИП с БД с компрессией 32</a></p>
+</li>
+</ol>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image19.png" style="width:0.23in;height:0.12333in" class="img_ev3q"> <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F">Предварительные условия 32</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image20.png" style="width:0.23in;height:0.12333in" class="img_ev3q"> <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%B1%D0%B4-%D1%81-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D0%B5%D0%B9">Настройка БД с компрессией 32</a></p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image21.png" style="width:0.23in;height:0.12332in" class="img_ev3q"> <a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2-%D0%B2-1%D1%81-%D0%BA%D0%B8%D0%BF-%D1%82%D0%B5%D1%81%D1%82-%D1%86%D0%B5%D0%BD%D1%82%D1%80">Запуск тестов в 1С КИП (Тест-центр) 37</a></p>
+</blockquote>
+<p><a href="#%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D1%8B-%D0%B8-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">Термины и определения 40</a></p>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 42</a></p>
+<h1>НАЗНАЧЕНИЕ КОМПОНЕНТА</h1>
+<blockquote>
+<p>Компонент «ja_Сompression» предназначен для экономии имеющегося дискового пространства физического сервера СУБД.</p>
+<p>При использовании компонента «ja_Сompression» достигаемая экономия дискового пространства составляет от двух до семи раз в зависимости от сжимаемости данных. При этом степень компрессии зависит от сжимаемости данных.</p>
+<p>Имеют малый коэффициент сжатия:</p>
+</blockquote>
+<ul>
+<li>
+<p>GUID - статистически уникальный 128-битный идентификатор;</p>
+</li>
+<li>
+<p>бинарные данные и случайные данные, например, иллюстрации, сохраненные в базе данных;</p>
+</li>
+</ul>
+<blockquote>
+<p>Плохо сжимаются индексы, так как содержат бинарные данные. Совсем не сжимаются таблицы, созданные компонентом JCS, так как данные зашифрованы и хаотичны. Не сжимаются уже сжатые данные, см ниже про TOAST (тост-таблицах). Мало эффективно сжатие маленьких таблиц до 100 кб данных.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-условия-применения"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image22.png" style="width:0.27in;height:0.14in" class="img_ev3q"> Условия применения<a href="#-условия-применения" class="hash-link" aria-label="Direct link to -условия-применения" title="Direct link to -условия-применения">​</a></h3>
+<blockquote>
+<p>Компонент «ja_Сompression» может использоваться с СУБД «Jatoba» версий 6.x и выше, под управлением GNU/Linux.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-ограничения-по-эксплуатации"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image23.png" style="width:0.27in;height:0.14in" class="img_ev3q"> Ограничения по эксплуатации<a href="#-ограничения-по-эксплуатации" class="hash-link" aria-label="Direct link to -ограничения-по-эксплуатации" title="Direct link to -ограничения-по-эксплуатации">​</a></h3>
+<blockquote>
+<p>Для поддержки компрессии в ОС должен быть установлен zstd версии 1.4 и выше. Следует избегать применения функций, указанных в следующих подразделах.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="двойная-компрессия-toast-в-табличном-пространстве">Двойная компрессия TOAST в табличном пространстве<a href="#двойная-компрессия-toast-в-табличном-пространстве" class="hash-link" aria-label="Direct link to Двойная компрессия TOAST в табличном пространстве" title="Direct link to Двойная компрессия TOAST в табличном пространстве">​</a></h3>
+<blockquote>
+<p>Если в таблице присутствует длинный тип данных TOAST (LOB) и таблица помещена в ТП, то возможно двойное сжатие. То есть сначала применяется компрессия TOAST, потом поверх неё применяется компрессия на уровне страниц. Двойная компрессия может дать всего порядка 10% выигрыша по сравнению с одиночной.</p>
+<p>Чтобы избежать двойного сжатия следует:</p>
+</blockquote>
+<ul>
+<li>Вариант № 1</li>
+</ul>
+<blockquote>
+<p>Таблицы с TOAST не помещать сжатое ТП, а использовать индивидуальный признак компрессии. В этом случае TOAST будет сжат своим алгоритмом (по умолчанию используется алгоритм pglz).</p>
+</blockquote>
+<ul>
+<li>Вариант № 2</li>
+</ul>
+<blockquote>
+<p>Возможно снять компрессию TOAST путем изменения режима хранения колонок на EXTERNAL:</p>
+<p>ALTER TABLE mytable alter column mycol SET storage external;</p>
+<p>В этом случае будет использована только компрессия на уровне страниц.</p>
+<p>Дополнительным вариантом является снятие компрессии TOAST путем изменения режима хранения колонок на PLAIN:</p>
+<p>ALTER TABLE mytable alter column mycol SET storage PLAIN;</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="фрагментация">Фрагментация<a href="#фрагментация" class="hash-link" aria-label="Direct link to Фрагментация" title="Direct link to Фрагментация">​</a></h3>
+<blockquote>
+<p>После множества операций UPDATE/DELETE возникает фрагментация и хаотичное расположение блоков данных. Это приводит к тому, что головка магнитного диска будет хаотично перемещаться, что уменьшает скорость доступа к фрагментированным данным. Так же возрастает объем файлов и появляются неиспользованные промежутки между блоками данных.</p>
+<p>Чтобы дефрагментировать таблицу надо выполнить операции:</p>
+<p>VACUUM full mytable; REINDEX table mytable;</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="rum-индекс">RUM индекс<a href="#rum-индекс" class="hash-link" aria-label="Direct link to RUM индекс" title="Direct link to RUM индекс">​</a></h3>
+<blockquote>
+<p>Объекты такие как индекс RUM таблицы имеют названия алгоритма в пути до конкретного файла этого индекса, если оно находится в компрессированном табличном пространстве.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="особого-внимания-требуют-табличные-пространства-тп">Особого внимания требуют табличные пространства (ТП)<a href="#особого-внимания-требуют-табличные-пространства-тп" class="hash-link" aria-label="Direct link to Особого внимания требуют табличные пространства (ТП)" title="Direct link to Особого внимания требуют табличные пространства (ТП)">​</a></h3>
+<blockquote>
+<p>После создания ТП, его компрессию можно изменять только пока оно не содержит данных. Как только появляется хоть один объект (таблица, индекс и так далее), то изменение компрессии уже невозможно.</p>
+<p>CREATE TABLESPACE tablespace_c LOCATION &#x27;/dir/tablespace_c&#x27;; ALTER CREATE TABLESPACE tablespace_c SET (compression=zstd); ОК</p>
+<p>CREATE TABLESPACE TABLESPACE_c LOCATION &#x27;/dir/tablespace_c&#x27;; CREATE TABLE a(a int) TABLESPACE tablespace_c;</p>
+<p>ALTER CREATE TABLESPACE tablespace_c SET (compression=zstd);</p>
+<p>ОШИБКА смена алгоритма компрессии запрещена</p>
+<p>После переноса базы данных в компрессированное ТП, - компрессия сразу не применяется. Чтобы применилась компрессия к объектам БД, - надо выполнить запросы vacuum full; reindex database;</p>
+<p>CREATE TABLESPACE tablespace_c LOCATION &#x27;/var/lib/jatoba/6/tablespace_c&#x27; with(compression=zstd);</p>
+<p>ALTER DATABASE mydb SET TABLESPACE tablespace_c;</p>
+<p>\c mydb vacuum full;</p>
+<p>reindex database; checkpoint;</p>
+<p>После команд vacuum full, reindex database, компрессируются системные объекты типа pg_class. Так как эти объекты небольшие, то применение компрессии к ним будет малоэффективным. Но такого поведения можно избежать, если применять команду vacuum full только к отдельным таблицам.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="изменение-алгоритма-компрессии">Изменение алгоритма компрессии<a href="#изменение-алгоритма-компрессии" class="hash-link" aria-label="Direct link to Изменение алгоритма компрессии" title="Direct link to Изменение алгоритма компрессии">​</a></h3>
+<blockquote>
+<p>Нельзя изменять компрессию у объекта внутри компрессированного ТП.</p>
+<p>CREATE TABLESPACE tablespace_c LOCATION &#x27;/dir/tablespace_c&#x27; with(compression=zstd);</p>
+<p>CREATE TABLE a(a int) TABLESPACE tablespace_c; ALTER TABLE a SET (compression=lz4);</p>
+<p>ОШИБКА смена алгоритма компрессии запрещена</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="перемещение-таблицы-между-тп-с-разным-алгоритмом-компрессии">Перемещение таблицы между ТП с разным алгоритмом компрессии<a href="#перемещение-таблицы-между-тп-с-разным-алгоритмом-компрессии" class="hash-link" aria-label="Direct link to Перемещение таблицы между ТП с разным алгоритмом компрессии" title="Direct link to Перемещение таблицы между ТП с разным алгоритмом компрессии">​</a></h3>
+<blockquote>
+<p>Попытка переместить таблицу из ТП одним алгоритмом сжатия в ТП с другим алгоритмом, при последующем выполнении vacuum full приведет к возникновению ошибки:</p>
+<p>ERROR: table and tablespace option conflict</p>
+<p>Для того, чтобы безопасно переместить таблицу между табличными пространствами и исключить конфликт между алгоритмами сжатия необходимо:</p>
+</blockquote>
+<ol>
+<li>Переместить таблицу в табличное пространство по умолчанию pg_default:</li>
+</ol>
+<blockquote>
+<p>alter table [table_name] set tablespace pg_default;</p>
+</blockquote>
+<ol start="2">
+<li>Отключить компрессию данных таблицы:</li>
+</ol>
+<blockquote>
+<p>alter table [table_name] reset(compression);</p>
+</blockquote>
+<ol start="3">
+<li>Переместить таблицу в табличное пространство с компрессией:</li>
+</ol>
+<blockquote>
+<p>alter table [table_name] set tablespace [tablespace_compression];</p>
+</blockquote>
+<ol start="4">
+<li>Выполнить сжатие данных табличного пространства:</li>
+</ol>
+<blockquote>
+<p>vacuum full; reindex database; checkpoint;</p>
+</blockquote>
+<ol start="5">
+<li>После этого перемещенная таблица будет сжата по алгоритму, примененному к текущему табличному пространству.</li>
+</ol>
+<blockquote>
+<p>После перемещения таблицы возможно переместить БД при помощи выполнения запроса:</p>
+<p>alter database [db_name] set tablespace [tablespace_compression];</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="инкрементальные-копии-компрессированных-таблиц-в-субд-jatoba-18">Инкрементальные копии компрессированных таблиц в СУБД «Jatoba» 18<a href="#инкрементальные-копии-компрессированных-таблиц-в-субд-jatoba-18" class="hash-link" aria-label="Direct link to Инкрементальные копии компрессированных таблиц в СУБД «Jatoba» 18" title="Direct link to Инкрементальные копии компрессированных таблиц в СУБД «Jatoba» 18">​</a></h3>
+<blockquote>
+<p>Для корректного создания при помощи pg_basebackup резервных копий компрессированных таблиц, сжатых при помощи компонента ja_compress, в СУБД «Jatoba» 18 необходимо выполнить следующие процедуры:</p>
+</blockquote>
+<ol>
+<li>Открыть конфигурационный файл /var/lib/jatoba/18/data/postgresql.conf для активации параметров:</li>
+</ol>
+<blockquote>
+<p>summarize_wal = on wal_summary_keep_time = &#x27;10d&#x27;</p>
+<p>Активировать параметр summarize_wal возможно также через утилиту psql:</p>
+<p>postgres=# show summarize_wal; summarize_wal</p>
+<p>off</p>
+<p>postgres=# alter system set summarize_wal to on; postgres=# select pg_reload_conf();</p>
+<p>postgres=# show summarize_wal; summarize_wal</p>
+<p>on</p>
+<p>После активации указанных параметров будут созданы специальные файлы, в которых сохраняются номера с измененными блоками данных. После этого утилита pg_basebackup использует эти файлы для создания инкрементальных резервных копий.</p>
+</blockquote>
+<ol start="2">
+<li>Создать полную резервную копию компрессированных таблиц (здесь и далее в качестве директории используется /var/lib/jatoba/backup/full).</li>
+</ol>
+<blockquote>
+<p>./pg_basebackup -D /var/lib/jatoba/backup/full -Ft -P</p>
+</blockquote>
+<ol start="3">
+<li>Создать новую инкрементальную копию с компрессированными таблицами. Для этого необходимо использовать манифест после создания предыдущих резервных копий, например:</li>
+</ol>
+<blockquote>
+<p>pg_basebackup --incremental=/var/lib/jatoba/backup/full/backup_manifest -D</p>
+<p>/var/lib/jatoba/backup/incr_backup1/</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image1.png" style="width:0.25in;height:0.24862in" class="img_ev3q">Скомпрессированные компонентом ja_compress таблицы записываются в каждую инкрементальную резервную копию полностью.</p>
+</blockquote>
+<h1>УСТАНОВКА И НАСТРОЙКА</h1>
+<blockquote>
+<p>Компонент «ja_Сompression» выполнен в виде патча ядра СУБД «Jatoba» и не имеет отдельного пакета.</p>
+<p>Установка компонента «ja_Сompression» производится от имени пользователя, обладающего административными привилегиями в системе при базовой установке СУБД</p>
+<p>«Jatoba» в ОС GNU/Linux (см. документ «Защищенная система управления базами данных</p>
+<p>«Jatoba». Руководство по установке 643.72410666.00067-08 97 01).</p>
+</blockquote>
+<h1>ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА</h1>
+<blockquote>
+<p>Для каждой таблицы СУБД «Jatoba», соответствуют определённые файлы на диске. В файлы данные поступают в следующих обстоятельствах: после операций commit, checkpoint и вытеснения буфера из оперативной памяти на диск.</p>
+<p>Компрессия данных на уровне страниц происходит в момент поступления данных в компрессированные файлы. При этом ни буферы в памяти, ни сетевой трафик не сжимаются</p>
+<p>Возможны следующие варианты использования компрессии:</p>
+</blockquote>
+<ul>
+<li>
+<p>табличные пространства с компрессией;</p>
+</li>
+<li>
+<p>таблицы с компрессией;</p>
+</li>
+<li>
+<p>индексы с компрессией.</p>
+</li>
+</ul>
+<blockquote>
+<p>Все варианты использования компонента для компрессии данных приведены в таблице <a href="#_bookmark12">3.1</a>.</p>
+<p><span id="_bookmark12" class="anchor"></span>Таблица 3.1 – Варианты использования компрессии данных</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>Объект</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Индивидуальный признак компрессии</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Сжатие с использованием табличных пространств</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>Таблица</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Встроенный индекс btree,hash, gin,gist,spgist,brin</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Партиция</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>TOAST</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>RUM индекс</p>
+</blockquote></td><td><blockquote>
+<p>Нет</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>База данных</p>
+</blockquote></td><td><blockquote>
+<p>Нет</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Объект системного каталога</p>
+</blockquote></td><td><blockquote>
+<p>Нет</p>
+</blockquote></td><td><blockquote>
+<p>Да</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>13</p>
+<p>643.72410666.00067-08 98 01-25</p>
+</blockquote>
+<table style="width:100%"><colgroup>
+<col style="width:9%">
+<col style="width:81%">
+<col style="width:9%">
+</colgroup><thead><tr><th></th><th><blockquote>
+<p>Компрессия редкоиспользуемых данных</p>
+</blockquote></th><th></th></tr></thead><tbody></tbody></table>
+<blockquote>
+<p>Рисунок 3.1 – Схема применения сжатия данных к различным объектам</p>
+</blockquote>
+<p><strong>Тип объекта</strong></p>
+<blockquote>
+<p><strong>Табличное</strong></p>
+</blockquote>
+<p><strong>пространство</strong></p>
+<p><strong>Рспределенная</strong></p>
+<blockquote>
+<p><strong>таблица Citus</strong></p>
+<p><strong>Внешнее</strong></p>
+</blockquote>
+<p><strong>расширение</strong></p>
+<p><strong>Индекс</strong></p>
+<p><strong>Таблица</strong></p>
+<p><strong>База данных</strong></p>
+<blockquote>
+<p>Применение компрессии при</p>
+</blockquote>
+<p>создании или изменение если не содержит объекты</p>
+<p>Перемещение в ТП с компрессией</p>
+<p>Применение индивидуального</p>
+<p>признака компрессии / Перемещение в ТП с компрессией</p>
+<p>Компрессия не рекомендуется</p>
+<p>Применение</p>
+<p>индивидуального признака компрессии</p>
+<p>Устраивает</p>
+<blockquote>
+<p>Измерить</p>
+</blockquote>
+<p>снижение скорости</p>
+<p>Не</p>
+<p>устраивает</p>
+<p>Измерить снижение скорости.</p>
+<blockquote>
+<p>При негативном эффекте компрессию не применять</p>
+</blockquote>
+<p>Перемещение БД в ТП с</p>
+<blockquote>
+<p>компрессией</p>
+</blockquote>
+<p>Не применять компрессию</p>
+<p>TOAST</p>
+<p>Нет</p>
+<p>Да</p>
+<p>Применение индивидуального</p>
+<p>признака компрессии / Перемещение в ТП с компрессией</p>
+<blockquote>
+<p>Рекомендуется испол ьзовать</p>
+</blockquote>
+<p>хранение STORAGE EXTERNAL</p>
+<blockquote>
+<p>Можно разделить на партиции и редкоиспользуемые данные</p>
+<p>Нельзя разделить на партиции и редкоиспользуемые данные</p>
+<p>В небольшом кол-ве update/delete/insert</p>
+<p>Таблица и индекс расположены в pg_default</p>
+<p>ТП используется для таблицы или индекса</p>
+<p>В большом кол-ве update/delete/insert</p>
+<p>В небольшом кол-ве update/delete/insert</p>
+<p>В большом кол-ве update/delete/insert</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<blockquote>
+<p>Компонент «ja_Сompression» совместим с БД 1С и может использоваться с любыми конфигурациями (см. раздел <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-1%D1%81%D0%BA%D0%B8%D0%BF-%D1%81-%D0%B1%D0%B4-%D1%81-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D0%B5%D0%B9">8</a>).</p>
+<p>Компонент «ja_Сompression» позволяет компрессировать данные с использованием следующих алгоритмов сжатия без потерь:</p>
+</blockquote>
+<ul>
+<li>
+<p>zstd;</p>
+</li>
+<li>
+<p>lz4.</p>
+</li>
+</ul>
+<blockquote>
+<p>Далее по тексту в синтаксисе запросов compres_type может принимать значения zstd или lz4 в зависимости от выбранного алгоритма сжатия данных</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-создание-табличного-пространства-с-сжатием-данных"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image82.png" style="width:0.28in;height:0.14in" class="img_ev3q"> Создание табличного пространства с сжатием данных<a href="#-создание-табличного-пространства-с-сжатием-данных" class="hash-link" aria-label="Direct link to -создание-табличного-пространства-с-сжатием-данных" title="Direct link to -создание-табличного-пространства-с-сжатием-данных">​</a></h3>
+<blockquote>
+<p>При создании табличного пространства с сжатием данных применяется следующий синтаксис команды:</p>
+<p>CREATE TABLESPACE [name_ts] location &#x27;path to the tablespace&#x27; with(compression=[zstd|lz4]);</p>
+<p>Реализовать это можно при помощи следующих шагов. Создать каталог и назначить права в терминале ОС:</p>
+<p># mkdir -p /data/dbs</p>
+<p># chown postgres:postgres /data/dbs</p>
+<p>Создать табличное пространство в отдельном каталоге, например с использованием компрессии zstd:</p>
+<p>CREATE TABLESPACE tablespace_compressed LOCATION &#x27;/data/dbs&#x27; with(compression=zstd);</p>
+<p>Для того чтобы увидеть основные и дополнительные параметры созданного табличного пространства необходимо выполнить команду:</p>
+<p>\db+</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image83.png" style="width:6.73028in;height:2.58854in" class="img_ev3q">
+<p>Рисунок 3.2 – Создание табличного пространства с сжатием данных</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-перенос-бд-в-новое-табличное-пространство-с-сжатием-данных"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image84.png" style="width:0.28in;height:0.14in" class="img_ev3q"> Перенос БД в новое табличное пространство с сжатием данных<a href="#-перенос-бд-в-новое-табличное-пространство-с-сжатием-данных" class="hash-link" aria-label="Direct link to -перенос-бд-в-новое-табличное-пространство-с-сжатием-данных" title="Direct link to -перенос-бд-в-новое-табличное-пространство-с-сжатием-данных">​</a></h3>
+<blockquote>
+<p>В существующее табличное пространство возможно переместить БД. Применяется следующий синтаксис команды:</p>
+<p>ALTER DATABASE [name_db] SET TABLESPACE [name_ts];</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например">Например:<a href="#например" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<blockquote>
+<p>ALTER DATABASE test_db1 SET TABLESPACE tablespace_compressed;</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image85.png" style="width:7.04958in;height:1.1825in" class="img_ev3q">
+<p>Рисунок 3.3 – Перемещение БД в табличное пространство После переноса переключиться на БД:</p>
+<p>\c test_db1</p>
+<p>После переноса БД в компрессированное ТП компрессия к данным сразу не применяется. Чтобы применилась компрессия к объектам БД следует выполнить полный вакуум (vacuum full), реиндексацию БД (reindex database) и создать контрольные точки (checkpoint).</p>
+<p>В силу указанных причин следует выполнить SQL-команды:</p>
+<p>vacuum full; reindex database; checkpoint;</p>
+</blockquote>
+<h1>SQL ОПЕРАЦИИ НАД КОМПРЕССИРОВАННЫМИ ТАБЛИЦАМИ И ИНДЕКСАМИ</h1>
+<blockquote>
+<p>Компрессия индексов и таблиц разнесена в отдельные операции.</p>
+<p>Для задания компрессии на момент создания таблицы или индекса используется конструкция with(compression=[compression _type]), где compression _type может соответствовать одному из поддерживаемых компонентом алгоритмов сжатия данных без потерь:</p>
+</blockquote>
+<ul>
+<li>
+<p>zstd;</p>
+</li>
+<li>
+<p>lz4.</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-компрессия-таблиц"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image86.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Компрессия таблиц<a href="#-компрессия-таблиц" class="hash-link" aria-label="Direct link to -компрессия-таблиц" title="Direct link to -компрессия-таблиц">​</a></h3>
+<blockquote>
+<p>Таблицы могут создаваться с признаком компрессии данных в БД или в табличном пространстве.</p>
+<p>SQL-команда создания таблицы с компрессией имеет следующий синтаксис:</p>
+<p>CREATE TABLE [name_table] WITH (compression=[zstd|lz4]);</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-1">Например:<a href="#например-1" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image87.jpeg" style="width:7.09201in;height:1.1051in" class="img_ev3q">
+<blockquote>
+<p>CREATE TABLE table_example(a int) WITH (compression=zstd);</p>
+<p>Рисунок 4.1 – Создание таблицы с компрессией zstd</p>
+<p>SQL-команда для создания таблицы в табличном пространстве с компрессией имеет следующий синтаксис:</p>
+<p>CREATE TABLE [name_table] TABLESPACE [name_ts];</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-2">Например:<a href="#например-2" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:33%">
+</colgroup><thead><tr><th colspan="3"><blockquote>
+<p>CREATE TABLE table_example(a int) TABLESPACE tablespace_compressed;</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image88.jpeg" style="width:7.19794in;height:0.99781in" class="img_ev3q">
+<p>Рисунок 4.2 - SQL-команда для создания таблицы в табличном пространстве с</p>
+<p>компрессией</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-компрессия-индексов-таблиц"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image89.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Компрессия индексов таблиц<a href="#-компрессия-индексов-таблиц" class="hash-link" aria-label="Direct link to -компрессия-индексов-таблиц" title="Direct link to -компрессия-индексов-таблиц">​</a></h3>
+<blockquote>
+<p>Компонент «ja_Сompression» поддерживает компрессию индексов. Ниже приведены примеры сжатия индексов таблиц.</p>
+<p>Создание таблицы и индекса таблицы с компрессией:</p>
+<p>CREATE TABLE [name_table] ([key_name] primary key WITH (compression=[zstd|lz4])) WITH (compression=[zstd|lz4]);</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-3">Например:<a href="#например-3" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image90.jpeg" style="width:7.1206in;height:1.14042in" class="img_ev3q">
+<blockquote>
+<p>CREATE TABLE table_example (a int primary key WITH(compression=zstd)) WITH (compression=zstd);</p>
+<p>Рисунок 4.3 - Создание таблицы и индекса таблицы с компрессией zstd Компрессия создаваемого индекса таблицы:</p>
+<p>CREATE INDEX [index_name] ON [table_name]([column_name]) WITH (compression=[zstd|lz4]);</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-4">Например:<a href="#например-4" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<blockquote>
+<p>CREATE INDEX index_example ON table_example(a) with(compression=zstd);</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image91.png" style="width:7.12045in;height:1.31292in" class="img_ev3q">
+<p>Рисунок 4.4 - Компрессия создаваемого индекса таблицы c использованием алгоритма zstd Компрессия создаваемого индекса таблицы в табличном пространстве:</p>
+<p>CREATE INDEX [index_name] ON [table_name]([column_name]) TABLESPACE tablespace_compressed;</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-5">Например:<a href="#например-5" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image92.png" style="width:6.74987in;height:1.32312in" class="img_ev3q">
+<blockquote>
+<p>CREATE INDEX index_example ON table_example(a) TABLESPACE tablespace_compressed;</p>
+<p>Рисунок 4.5 - Компрессия создаваемого индекса таблицы в табличном пространстве</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-компрессия-других-видов-индексов"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image93.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Компрессия других видов индексов<a href="#-компрессия-других-видов-индексов" class="hash-link" aria-label="Direct link to -компрессия-других-видов-индексов" title="Direct link to -компрессия-других-видов-индексов">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="brin">BRIN<a href="#brin" class="hash-link" aria-label="Direct link to BRIN" title="Direct link to BRIN">​</a></h2>
+<blockquote>
+<p>Компонент «ja_Сompression» поддерживает компрессию индексов типа BRIN.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-6">Например:<a href="#например-6" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<blockquote>
+<p>CREATE TABLE compress_brin(a int);</p>
+<p>CREATE INDEX ix_brin on compress_brin using brin (a) with (compression=[zstd|lz4]);</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image94.png" style="width:7.11491in;height:1.59083in" class="img_ev3q">
+<p>Рисунок 4.6 – Компрессия индекса типа BRIN c использованием алгоритма zstd</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gin">GIN<a href="#gin" class="hash-link" aria-label="Direct link to GIN" title="Direct link to GIN">​</a></h2>
+<blockquote>
+<p>Компонент «ja_Сompression» поддерживает компрессию индексов типа GIN.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-7">Например:<a href="#например-7" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image95.png" style="width:6.97338in;height:1.92187in" class="img_ev3q">
+<blockquote>
+<p>CREATE TABLE compress_gin(doc text, doc_tsv tsvector); UPDATE compress_gin set doc_tsv = to_tsvector(doc); CREATE INDEX ix_gin on compress_gin USING gin(doc_tsv) with(compression=[zstd|lz4]);</p>
+<p>Рисунок 4.7 – Компрессия индекса типа GIN c использованием алгоритма zstd</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hash">HASH<a href="#hash" class="hash-link" aria-label="Direct link to HASH" title="Direct link to HASH">​</a></h2>
+<blockquote>
+<p>Компонент «ja_Сompression» поддерживает компрессию индексов типа HASH. Например:</p>
+<p>CREATE TABLE compress_hash(a int);</p>
+<p>CREATE INDEX ix_hash on compress_hash USING hash (a) with (compression=[zstd|lz4]);</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image96.png" style="width:7.10331in;height:1.59083in" class="img_ev3q">
+<p>Рисунок 4.8 – Компрессия индекса типа HASH c использованием алгоритма zstd</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gist">GIST<a href="#gist" class="hash-link" aria-label="Direct link to GIST" title="Direct link to GIST">​</a></h2>
+<blockquote>
+<p>Компонент «ja_Сompression» поддерживает компрессию индексов типа GIST. Например:</p>
+<p>CREATE TABLE compress_gist(a POINT);</p>
+<p>CREATE INDEX ix_gist on compress_gist USING gist (a) with (compression=[zstd|lz4]);</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image97.png" style="width:6.97015in;height:1.54687in" alt="C:\Users\KUZNET~1\AppData\Local\Temp\vmware-kuznetsov-a\VMwareDnD\d59d2698\Screenshot from 2025-01-14 03-14-46.png " class="img_ev3q">
+<blockquote>
+<p>Рисунок 4.9 – Компрессия индекса типа GIST c использованием алгоритма zstd</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sp-gist">SP GIST<a href="#sp-gist" class="hash-link" aria-label="Direct link to SP GIST" title="Direct link to SP GIST">​</a></h2>
+<blockquote>
+<p>Компонент «ja_Сompression» поддерживает компрессию индексов типа SP GIST. Например:</p>
+<p>CREATE TABLE compress_spgist(a POINT);</p>
+<p>CREATE INDEX ix_spgist on compress_spgist USING spgist (a) with (compression=[zstd|lz4]);</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image98.png" style="width:7.1303in;height:1.57167in" class="img_ev3q">
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Рисунок 4.10 – Компрессия индекса типа SP GIST c использованием алгоритма zstd Индекс SP GIST очень медленный индекс, лучше создавать его в конце после заполнения таблицы данными.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="btree">Btree<a href="#btree" class="hash-link" aria-label="Direct link to Btree" title="Direct link to Btree">​</a></h3>
+<blockquote>
+<p>Компонент «ja_Сompression» поддерживает компрессию индексов типа Btree.</p>
+<p>Например:</p>
+<p>CREATE TABLE compress_btree(a int);</p>
+<p>CREATE INDEX ix_brin on compress_btree using Btree (a) with (compression=[zstd|lz4]);</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rum">RUM<a href="#rum" class="hash-link" aria-label="Direct link to RUM" title="Direct link to RUM">​</a></h2>
+<blockquote>
+<p>Компонент RUM является внешним расширением.</p>
+<p>Установка компонента описана в документе «Руководство по установке» 643.72410666.00067-08 97 01.</p>
+<p>Функциональные возможности компонента описаны в документе «Руководство администратора» 643.72410666.00067-08 95 01.</p>
+<p>Компрессию RUM индекса можно включить, если использовать компрессированное табличное пространство.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-8">Например:<a href="#например-8" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<blockquote>
+<p>CREATE EXTENSION rum;</p>
+<p>CREATE TABLESPACE tablespace_compr ‘path/to/file’ with(compression=[zstd|lz4]);</p>
+<p>CREATE table test_rum (a tsvector);</p>
+<p>CREATE INDEX rumidx ON test_rum USING rum (a rum_tsvector_ops) tablespace tablespace_compr;</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-смена-алгоритма-компрессии-alter-table"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image99.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Смена алгоритма компрессии (alter table)<a href="#-смена-алгоритма-компрессии-alter-table" class="hash-link" aria-label="Direct link to -смена-алгоритма-компрессии-alter-table" title="Direct link to -смена-алгоритма-компрессии-alter-table">​</a></h3>
+<blockquote>
+<p>Для существующей таблицы возможно установить тип компрессии используя оператор SET.</p>
+<p>ALTER TABLE [table_name] SET (compression=[zstd|lz4]);</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-9">Например:<a href="#например-9" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image100.png" style="width:6.96563in;height:1.30312in" class="img_ev3q">
+<blockquote>
+<p>ALTER TABLE table_example SET (compression=zstd);</p>
+<p>Рисунок 4.11 – Установка типа компрессии Снять компрессию с таблицы возможно оператором RESET.</p>
+<p>ALTER TABLE [table_name] RESET (compression);</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-10">Например:<a href="#например-10" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image101.jpeg" style="width:7.12052in;height:0.98708in" class="img_ev3q">
+<blockquote>
+<p>ALTER TABLE table_example RESET (compression);</p>
+<p>Рисунок 4.12 – Снятие компрессии с таблицы</p>
+<p>Перенос таблицы в ТП с компрессией возможно с использованием оператора SET.</p>
+<p>ALTER TABLE [table_name] SET TABLESPACE [name_ts];</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-11">Например:<a href="#например-11" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<blockquote>
+<p>ALTER TABLE table_example SET TABLESPACE tablespace_compressed;</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image102.png" style="width:7.11077in;height:1.33208in" class="img_ev3q">
+<p>Рисунок 4.13 - Перенос таблицы в табличное пространство</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-смена-алгоритма-компрессии-индекса-alter-index"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image103.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Смена алгоритма компрессии индекса (alter index)<a href="#-смена-алгоритма-компрессии-индекса-alter-index" class="hash-link" aria-label="Direct link to -смена-алгоритма-компрессии-индекса-alter-index" title="Direct link to -смена-алгоритма-компрессии-индекса-alter-index">​</a></h3>
+<blockquote>
+<p>Смена индивидуального алгоритма компрессии у индексов не работает. Вместо этого необходимо пересоздать индексы или переместить в табличное пространство.</p>
+<p>Так же в целях уплотнения данных можно выполнить переиндексацию во время операций, подразумевающих переиндексацию, типа vacuum full, cluster, reindex.</p>
+<p>ALTER INDEX [index_name] set tablespace [name_ts];</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-12">Например:<a href="#например-12" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<blockquote>
+<p>ALTER INDEX index_example set tablespace tablespace_compressed;</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-компрессия-журналируемых-таблиц-logged-tables-и-нежурналируемых-таблиц-unlogged-tables-временных-таблиц-temporary_tables-и-их-индексов"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image104.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Компрессия журналируемых таблиц (logged tables) и нежурналируемых таблиц (unlogged tables), временных таблиц (temporary_tables) и их индексов<a href="#-компрессия-журналируемых-таблиц-logged-tables-и-нежурналируемых-таблиц-unlogged-tables-временных-таблиц-temporary_tables-и-их-индексов" class="hash-link" aria-label="Direct link to -компрессия-журналируемых-таблиц-logged-tables-и-нежурналируемых-таблиц-unlogged-tables-временных-таблиц-temporary_tables-и-их-индексов" title="Direct link to -компрессия-журналируемых-таблиц-logged-tables-и-нежурналируемых-таблиц-unlogged-tables-временных-таблиц-temporary_tables-и-их-индексов">​</a></h3>
+<blockquote>
+<p>Компонент «ja_Сompression» поддерживает компрессию журналируемых таблиц (logged tables), нежурналируемых таблиц (unlogged tables), временных таблиц (temporary_tables) и их индексов.</p>
+<p>CREATE [unlogged|temporary|temp] table [table_name]([key_name]) with(compression=[zstd|lz4]);</p>
+<p>ALTER TABLE [table_name] SET unlogged;</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="например-13">Например:<a href="#например-13" class="hash-link" aria-label="Direct link to Например:" title="Direct link to Например:">​</a></h3>
+<blockquote>
+<p>CREATE unlogged TABLE table_example(a int) with(compression=zstd);</p>
+<p>ALTER TABLE table_example set unlogged;</p>
+<p>- работает для постоянных (нежурналируемых) таблиц.</p>
+<p>ALTER TABLE table_example SET logged;</p>
+<p>- работает для постоянных (журналируемых) таблиц.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-компрессия-toast-файлов"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image105.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Компрессия TOAST файлов<a href="#-компрессия-toast-файлов" class="hash-link" aria-label="Direct link to -компрессия-toast-файлов" title="Direct link to -компрессия-toast-файлов">​</a></h3>
+<blockquote>
+<p>При наличии столбцов с длинным типом (LOB) помимо основного файла - может создаваться TOAST файл, который привязан к таблице.</p>
+<p>Концепция TOAST файлов предназначена для записи в таблицы длинных строк (так называемых LOB. TOAST файл создается, если в таблице объявлены колонки типа text или любого другого типа с большой длиной.</p>
+<p>TOAST не имеет своих опций и наследует их от таблицы. При перемещении таблицы между ТП, файлы TOAST также автоматически перемещаются другое ТП. Применение сжатия к таблице так же автоматически распространяется на TOAST.</p>
+<p>СУБД «Jatoba» предоставляет команды для управления TOAST:</p>
+<p>CREATE TABLE [table_name] ([column_name]TEXT STORAGE [PLAIN|EXTERNAL|EXTENDED|MAIN]);</p>
+<p>или</p>
+<p>ALTER TABLE [table_name] ALTER COLUMN [column_name] SET STORAGE [PLAIN|EXTERNAL|EXTENDED|MAIN];</p>
+<p>При этом некоторые режимы хранения подразумевают свой механизм сжатия данных. на уровне строк. Чтобы избежать двойного сжатия, рекомендуется использовать режим хранения EXTERNAL. В таком случае будет использоваться только сжатие на уровне страниц.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-компрессия-партиций"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image106.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Компрессия партиций<a href="#-компрессия-партиций" class="hash-link" aria-label="Direct link to -компрессия-партиций" title="Direct link to -компрессия-партиций">​</a></h3>
+<blockquote>
+<p>В данном подразделе приведен сценарий, позволяющий сжимать партиции, содержащие данные, которые редко используются.</p>
+<p>Создаем партицированную таблицу при помощи следующей команды:</p>
+<p>CREATE TABLE compressed_partitioned_table(a int) PARTITION BY range(a);</p>
+<p>Создаем компрессированную партицию при помощи команды:</p>
+<p>CREATE TABLE compressed_partition_1 PARTITION OF compressed_partitioned_table FOR VALUES FROM (0) TO (500000) WITH (compression=[zstd|lz4]);</p>
+<p>Создаем вторую некомпрессированную партицию при помощи команды:</p>
+<p>CREATE TABLE compressed_partition_2 PARTITION OF compressed_partitioned_table FOR VALUES FROM (500000) TO (1000000);</p>
+<p>Компрессируем вторую партицию с использованием одного из двух алгоритмов сжатия данных при помощи команды:</p>
+<p>ALTER TABLE compressed_partition_2 SET(compression=[zstd|lz4]);</p>
+<p>Либо выполняем перемещение второй компрессированной таблицы в другое ТП при помощи команды:</p>
+<p>ALTER TABLE compressed_partition_2 SET TABLESPACE tablespace_ compressed;</p>
+<p>Табличные пространства могут располагаться на более дешевых и более медленных дисках, поэтому следует следить за частотой обращения к партициям и вовремя предпринимать меры по оптимизации скорости доступа и степени сжатия.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image1.png" style="width:0.25in;height:0.24917in" class="img_ev3q">Алгоритм сжатия данных партиции и ТП при выполнении перемещения должны совпадать. Если для компрессированной партиции выбран алгоритм zstd, то перемещать такую партицию разрешено только в компрессированное ТП с алгоритмом сжатия данных zstd.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-компрессия-распределенных-таблиц"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image107.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Компрессия распределенных таблиц<a href="#-компрессия-распределенных-таблиц" class="hash-link" aria-label="Direct link to -компрессия-распределенных-таблиц" title="Direct link to -компрессия-распределенных-таблиц">​</a></h3>
+<blockquote>
+<p>При использовании компонента ja_Hipe_Cluster для реализации горизонтального масштабирования может применяться компрессия распределенных таблиц (шардов).</p>
+<p>В таком случае на координаторе кластера необходимо создать таблицу с использованием одного из алгоритмов сжатия:</p>
+<p>CREATE TABLE [table_name](f1 int) WITH(compression=[zstd|lz4]);</p>
+<p>Или применить на узле координатор кластера алгоритм сжатия к существующей таблице при помощи запроса:</p>
+<p>ALTER TABLE [table_name] SET(compression=[zstd|lz4]);</p>
+<p>После этого необходимо создать распределенную таблицу на узлах кластера при помощи запроса:</p>
+<p>SELECT create_distributed_table(&#x27;[table_name]&#x27;, &#x27;f1&#x27;, shard_count:=2);</p>
+<p>Количество шардов в предыдущем запросе указывается в параметре shard_count.</p>
+<p>После этого скомпрессированная таблица будет распределена на узлы кластера и к ней будет применяться выбранный ранее алгоритм сжатия.</p>
+<p>В связи с особенностями шардирования размер сжатой распределенной таблицы может отличаться на разных узлах кластера.</p>
+<p>Для того, чтобы отключить механизм сжатия данных для распределенных таблиц необходимо на узле координатор выбрать таблицу и выполнить следующий запрос</p>
+<p>ALTER TABLE [table_name] reset (compression);</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ограничения-по-применению-сжатия-распределенных-таблиц">Ограничения по применению сжатия распределенных таблиц.<a href="#ограничения-по-применению-сжатия-распределенных-таблиц" class="hash-link" aria-label="Direct link to Ограничения по применению сжатия распределенных таблиц." title="Direct link to Ограничения по применению сжатия распределенных таблиц.">​</a></h3>
+<blockquote>
+<p>Можно применять компрессию, если таблица и её индексы принадлежат табличному пространству pg_default. Данный сценарий является предпочтительным.</p>
+<p>Если же таблица или её индексы на координаторе принадлежит другому табличному пространству, и данное ТП не создано на узлах, то следующие запросы выполнятся с ошибками:</p>
+<p>CREATE TABLE a1(a text) tablespace tsp; SELECT create_distributed_table(&#x27;a1&#x27;, &#x27;a&#x27;); ERROR: tablespace &quot;tsp&quot; does not exist</p>
+<p>CONTEXT: while executing command on [IP-адрес]:5432</p>
+<p>Для решения такой ситуации необходимо создать таблицу a1 в ТП по умолчанию pg_default, или создать ТП tsp на распределенных узлах.</p>
+<p>Создание индексов в ТП, отличном от pg_default, имеет определенные ограничения:</p>
+<p>CREATE TABLE a2(a int);</p>
+<p>CREATE INDEX ix2 ON a2(a) tablespace tsp; SELECT create_distributed_table(&#x27;a2&#x27;, &#x27;a&#x27;); ERROR: tablespace &quot;tsp&quot; does not exist</p>
+<p>CONTEXT: while executing command on [IP-адрес]:5432</p>
+<p>Для решения такой ситуации необходимо создать индекс ix2 в ТП по умолчанию pg_default, или создать ТП tsp на распределенных узлах.</p>
+<p>Если распределяемая таблица или её индекс создается в ТП, для которого уже используется сжатие данных:</p>
+<p>CREATE TABLE [table_name](a int) tablespace [tablespace_zstd];</p>
+<p>То на распределенных узлах кластера эта же таблица будет располагаться в не сжатом ТП по умолчанию pg_default и не будет сжата.</p>
+</blockquote>
+<h1>РЕЗЕРВИРОВАНИЕ И ВОССТАНОВЛЕНИЕ</h1>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-утилита-pg_dump"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image108.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Утилита pg_dump<a href="#-утилита-pg_dump" class="hash-link" aria-label="Direct link to -утилита-pg_dump" title="Direct link to -утилита-pg_dump">​</a></h3>
+<blockquote>
+<p>Утилита pg_dump сохраняет атрибут компрессии у отдельных таблиц. После завершения восстановления таблиц данных компрессия также восстанавливается.</p>
+<p>Для ТП признак компрессии не сохраняется.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-утилита-pg_dumpall"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image109.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Утилита pg_dumpall<a href="#-утилита-pg_dumpall" class="hash-link" aria-label="Direct link to -утилита-pg_dumpall" title="Direct link to -утилита-pg_dumpall">​</a></h3>
+<blockquote>
+<p>Утилита pg_dumpall сохраняет атрибут компрессии для табличных пространств и для индивидуальных объектов и табличных пространств.</p>
+<p>При восстановлении требуется создать пустые директории, соответствующие ТП.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-утилита-pg_basebackup"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image110.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Утилита pg_basebackup<a href="#-утилита-pg_basebackup" class="hash-link" aria-label="Direct link to -утилита-pg_basebackup" title="Direct link to -утилита-pg_basebackup">​</a></h3>
+<blockquote>
+<p>Утилита pg_basebackup сохраняет атрибут компрессии. После восстановления данных компрессия тоже восстанавливается при условии, что версия СУБД поддерживает компрессию.</p>
+</blockquote>
+<h1>РЕПЛИКАЦИЯ</h1>
+<blockquote>
+<p>Следует заметить, что сетевой траффик не сжимается, а сжимается только дисковые данные.</p>
+<p>Различаются два вида репликации данных – физическая и логическая.</p>
+<p>Для логической репликации данных можно настроить отдельно сжатие таблицы на мастере и отдельно на реплике(ах). Можно, например, указать, что таблица будет компрессирована только на реплике, а на мастере не будет.</p>
+<p>Для физической репликации данных различается два случая:</p>
+</blockquote>
+<ul>
+<li>
+<p>Если таблица создана до настройки репликации. При этом признак компрессии передается на реплику через утилиту pg_basebackup</p>
+</li>
+<li>
+<p>Если таблица создана после настройки репликации. При этом признак компрессии данных передается посредством WAL-журналов в реплику.</p>
+</li>
+</ul>
+<blockquote>
+<p>На данный момент реализована передача признака компрессии для обоих приведенных случаев.</p>
+<p>Компрессия данных поддерживается компонентом «jaDog».</p>
+</blockquote>
+<h1>УДАЛЕНИЕ КОМПОНЕНТА</h1>
+<blockquote>
+<p>Выполнить удаление компонента «ja_Сompression» стандартными средствами управления пакетами ОС невозможно, т.к. он выполнен в виде патча ядра СУБД «Jatoba».</p>
+</blockquote>
+<h1>НАСТРОЙКА 1С:КИП С БД С КОМПРЕССИЕЙ</h1>
+<blockquote>
+<p>В данном разделе рассматривается пример настройки 1С для работы с БД под управлением СУБД «Jatoba» подвергнутой компрессии компонентом «ja_Сompression».</p>
+<p>1С:КИП является инструментом для тестирования совместимости СУБД с 1С. Функциональные возможности компонента «ja_Сompression» позволяют подвергать компрессии БД в любых конфигурациях 1С.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-предварительные-условия"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image111.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Предварительные условия<a href="#-предварительные-условия" class="hash-link" aria-label="Direct link to -предварительные-условия" title="Direct link to -предварительные-условия">​</a></h3>
+<ul>
+<li>
+<p>настройка производится на 2 серверах:</p>
+<ul>
+<li>
+<p>Windows Server 2019 (сервер 1С);</p>
+</li>
+<li>
+<p>Astra Linux 1.7 (сервер СУБД, версия Linux-сервера неважна);</p>
+</li>
+</ul>
+</li>
+<li>
+<p>На Windows-сервере установлена платформа 1С актуальной версии, к примеру, 8.3.25.1445 для совместимости с актуальными версиями СУБД, настроен сервер администрирования 1С («кластер 1С»);</p>
+</li>
+<li>
+<p>На сервере СУБД установлена Jatoba 6.4.1 с поддержкой компрессии;</p>
+</li>
+<li>
+<p>На сервере СУБД для супер-пользователя задан пароль;</p>
+</li>
+</ul>
+<blockquote>
+<p>Тестирование заключается в вычислении условного относительного коэффициента APDEX (значение от 0.0 до 1.0)</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-настройка-бд-с-компрессией"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image112.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Настройка БД с компрессией<a href="#-настройка-бд-с-компрессией" class="hash-link" aria-label="Direct link to -настройка-бд-с-компрессией" title="Direct link to -настройка-бд-с-компрессией">​</a></h3>
+<ul>
+<li>На сервере СУБД установить пакет компонента «1C_support»:</li>
+</ul>
+<blockquote>
+<p>apt install jatoba6-1csupport</p>
+</blockquote>
+<ul>
+<li>
+<p>В конфигурационный файл postgresql.conf внести рекомендуемые параметры для работы с 1С, как описано в п.п. 3.2 и 3.3 документа «Поддержка платформы 1С» 643.72410666.00067-08 98 01-13.</p>
+</li>
+<li>
+<p>В конфигурационный файл pg_hba.conf внести параметры, позволяющие серверу 1С подключаться к СУБД, к примеру</p>
+</li>
+</ul>
+<blockquote>
+<p># IPv4 local connections:</p>
+<p>host kip_compress postgres &lt;IP-адрес сервера 1С&gt; password</p>
+</blockquote>
+<ul>
+<li>Перезапустить СУБД в терминале ОС:</li>
+</ul>
+<blockquote>
+<p>systemctl restart jatoba-6.service</p>
+</blockquote>
+<ul>
+<li>На Windows-сервере создать пустую базу данных 1С. Для этого запустить клиент 1С, нажать «Добавить»</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.1 – Кнопка добавления БД</p>
+</blockquote>
+<ul>
+<li>
+<p>Выбрать «Создание новой информационной базы» и нажать кнопку «Далее»;</p>
+</li>
+<li>
+<p>Выбрать «Создание информационной базы без конфигурации…» и нажать кнопку «Далее»;</p>
+</li>
+<li>
+<p>Задать название будущей базы данных, выбрать «На сервере 1С-предприятия» и нажать кнопку «Далее»;</p>
+</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.2 – Окно «Добавление информационной базы»</p>
+</blockquote>
+<ul>
+<li>
+<p>Задать настройки БД в 1С-кластере и для подключения к серверу СУБД:</p>
+<ul>
+<li>
+<p>кластер серверов: localhost;</p>
+</li>
+<li>
+<p>имя базы в кластере: название БД в кластере 1С;</p>
+</li>
+<li>
+<p>тип СУБД: PostgreSQL;</p>
+</li>
+<li>
+<p>сервер баз данных: адрес сервера СУБД;</p>
+</li>
+<li>
+<p>имя базы данных: с каким названием БД будет создана на сервере СУБД;</p>
+</li>
+<li>
+<p>имя пользователя и пароль для доступа к серверу СУБД</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Дважды нажать кнопку «Далее»;</p>
+</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.3 – Окно «Добавление информационной базы»</p>
+</blockquote>
+<ul>
+<li>В клиенте 1С выбрать созданную БД, нажать кнопку «Конфигуратор»;</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.4 – Окно клиента 1С</p>
+</blockquote>
+<ul>
+<li>В открывшемся Конфигураторе выбрать Администрирование и опцию</li>
+</ul>
+<blockquote>
+<p>«Загрузить информационную базу»;</p>
+<p>Рисунок 8.5 – Опция «Загрузить информационную базу»</p>
+</blockquote>
+<ul>
+<li>
+<p>Выбрать файл дамп конфигурации и подтвердить загрузку дампа;</p>
+</li>
+<li>
+<p>По окончании загрузки можно закрыть Конфигуратор;</p>
+</li>
+<li>
+<p>На сервере СУБД использовать клиент psql для входа в СУБД;</p>
+</li>
+</ul>
+<blockquote>
+<p>sudo -u postgres psql</p>
+</blockquote>
+<ul>
+<li>В терминале ОС создать каталог для сжатого табличного пространства;</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image1.png" style="width:0.25in;height:0.24981in" class="img_ev3q">В представленном примере используется каталог /tmp/tsp. Для реальной БД следует выбрать более подходящее размещение</p>
+<p>\ mkdir /tmp/tsp</p>
+</blockquote>
+<ul>
+<li>В СУБД создать табличное пространство со сжатием (zstd или lz4);</li>
+</ul>
+<blockquote>
+<p>CREATE TABLESPACE tsp</p>
+<p>location &#x27;/tmp/tsp&#x27; with(compression=[zstd|lz4]);</p>
+<p>Внимание, каталог /tmp может периодически чиститься демоном systemd-tmpfiles-clean.timer.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Чтобы посмотреть его статус используйте команду ниже, либо создавайте tsp в другом каталоге, чтобы избежать внезапной очистки.</p>
+<p>#systemctl status systemd-tmpfiles-clean.timer</p>
+</blockquote>
+<ul>
+<li>
+<p>Убедиться, что нет нагрузки на целевую БД;</p>
+</li>
+<li>
+<p>Перенести БД в новое табличное пространство SQL-командой:</p>
+</li>
+</ul>
+<blockquote>
+<p>ALTER DATABASE kip_compress set tablespace tsp;</p>
+</blockquote>
+<ul>
+<li>После окончания переноса перейти в целевую БД:</li>
+</ul>
+<blockquote>
+<p>\c kip_compress</p>
+</blockquote>
+<ul>
+<li>Выполнить команды:</li>
+</ul>
+<blockquote>
+<p>vacuum full; reindex database; checkpoint;</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-запуск-тестов-в-1с-кип-тест-центр"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_compression/media/image118.png" style="width:0.27667in;height:0.14in" class="img_ev3q"> Запуск тестов в 1С КИП (Тест-центр)<a href="#-запуск-тестов-в-1с-кип-тест-центр" class="hash-link" aria-label="Direct link to -запуск-тестов-в-1с-кип-тест-центр" title="Direct link to -запуск-тестов-в-1с-кип-тест-центр">​</a></h3>
+<blockquote>
+<p>Выполнение теста требует выполнения следующих шагов:</p>
+</blockquote>
+<ul>
+<li>На сервере под управление ОС Windows запустить клиент 1С, войти в базу нажатием кнопки 1С:Предприятие и ввести аутентификационную информацию администратора СУБД;</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.6 – Окно аутентификации</p>
+</blockquote>
+<ul>
+<li>
+<p>В левом меню перейти в опции «Тест-центр» - «Агенты»;</p>
+</li>
+<li>
+<p>Если в списке уже есть значения, то следует нажать кнопку «Выгрузить» и дождаться окончания выгрузки;</p>
+</li>
+<li>
+<p>Нажать кнопку «Включить режим агента» и дождаться состояния</p>
+</li>
+</ul>
+<blockquote>
+<p>«Подключен»;</p>
+<p>Рисунок 8.7 – Агент Тест-центра</p>
+</blockquote>
+<ul>
+<li>
+<p>Не закрывая это окно 1С, запустить новый клиент, войти под тем же пользователем;</p>
+</li>
+<li>
+<p>В левом меню перейти в опции «Тест-центр» - «Сценарии тестирования»;</p>
+</li>
+<li>
+<p>Выбрать предпочтительный сценарий и нажать «Настроить запуск»;</p>
+</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.8 – Выбор сценария тестирования</p>
+</blockquote>
+<ul>
+<li>Нажать кнопку «Заполнить по запущенным агентам» (должен появиться агент). При необходимости изменить настройки тестов (количество виртуальных рабочих мест, итераций и пр.). Нажать «Запустить тест»;</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.9 – Окно «Настройка запуска тестов»</p>
+</blockquote>
+<ul>
+<li>После чего будет выведено окно с результатами тестов.</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.10 – Вывод результатов теста</p>
+</blockquote>
+<h1>ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</h1>
+<blockquote>
+<p><strong>Администратор СУБД</strong> – субъект доступа, выполняющий административные функции в СУБД и наделенный правами:</p>
+</blockquote>
+<ul>
+<li>
+<p>Создавать учетные записи пользователей системы управления базами данных;</p>
+</li>
+<li>
+<p>Модифицировать, блокировать и удалять учетные записи пользователей системы управления базами данных;</p>
+</li>
+<li>
+<p>Назначать права доступа пользователям системы управления базами данных к объектам доступа системы управления базами данных;</p>
+</li>
+<li>
+<p>Управлять конфигурацией системы управления базами данных;</p>
+</li>
+<li>
+<p>Создавать, подключать базы данных.</p>
+</li>
+</ul>
+<blockquote>
+<p>Администратор СУБД имеет атрибут SUPERUSER и/или обладает системной учетной записью «postgres».</p>
+<p><strong>Алгоритм адресации блока</strong> – у блока есть номер, по нему вычисляется сегмент и смещение в этом сегменте c помощью нехитрой математики.</p>
+<p><strong>ТП</strong> (табличное пространство) — это понятие, используемое системах управления базами данных (СУБД) для организации логического пространства, в котором совместно хранятся определённые объекты базы данных, такие как индексы, таблицы и другие. При создании табличного пространства определяется его имя, которое используется для указания на пространство в SQL-запросах.</p>
+<p><strong>TOAST</strong> (The Oversized Attribute Storage Technique) — это специальный механизм в PostgreSQL для хранения больших значений в отдельных таблицах («тост-таблицах»). Он используется для хранения сложных типов данных, таких как текст, бинарные последовательности, JSONB объекты и другие. TOAST работает автоматически и не требует вмешательства пользователя, но имеет некоторые ограничения, связанные с размером таблиц и количеством значений.</p>
+<p><strong>GUID</strong> (Globally Unique Identifier) — это статистически уникальный 128-битный идентификатор. Главная особенность GUID — уникальность, которая позволяет создавать расширяемые сервисы и приложения без риска конфликтов. GUID записывается в виде</p>
+<p>строки из тридцати двух шестнадцатеричных цифр, разделённых дефисами и опционально заключённых в фигурные скобки.</p>
+<p><strong>Zstd</strong> — это алгоритм сжатия данных без потерь, разработанный Яном Колле в 2015 году. Он сочетает словарный алгоритм сжатия данных типа LZ77 и эффективное энтропийное кодирование типа ANS (FSE). Алгоритм предназначен для достижения коэффициентов сжатия, сопоставимых или превосходящих классический алгоритм deflate, при более высокой скорости сжатия и распаковки.</p>
+<p><strong>LZ4</strong> — алгоритм сжатия данных без потерь, ориентированный на высокую скорость сжатия и распаковки. Он относится к семейству методов сжатия LZ77, работающих с байтовыми потоками. Отличается компактным кодом для распаковки.</p>
+</blockquote>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:16%">
+<col style="width:12%">
+<col style="width:71%">
+</colgroup><thead><tr><th><blockquote>
+<p>SQL</p>
+</blockquote></th><th><blockquote>
+<p>–</p>
+</blockquote></th><th><blockquote>
+<p>Structured Query Language</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ТП</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Табличное пространство</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Всего листов (страниц) в документе</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Номер документа</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входящий номер сопроводите льного документа и</p>
+<p>дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подпись</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>измене нных</p>
+</blockquote></td><td><blockquote>
+<p>замене нных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td><blockquote>
+<p>аннулир ованных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/com18.3.1/ja_anonymizer"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">ja_anonymizer</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/com18.3.1/ja_csum"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ja_csum</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-важная-информация" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image2.png" style="width:0.25138in;height:0.25004in"> Важная информация</a></li><li><a href="#-условия-применения" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image22.png" style="width:0.27in;height:0.14in"> Условия применения</a></li><li><a href="#-ограничения-по-эксплуатации" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image23.png" style="width:0.27in;height:0.14in"> Ограничения по эксплуатации</a></li><li><a href="#двойная-компрессия-toast-в-табличном-пространстве" class="table-of-contents__link toc-highlight">Двойная компрессия TOAST в табличном пространстве</a></li><li><a href="#фрагментация" class="table-of-contents__link toc-highlight">Фрагментация</a></li><li><a href="#rum-индекс" class="table-of-contents__link toc-highlight">RUM индекс</a></li><li><a href="#особого-внимания-требуют-табличные-пространства-тп" class="table-of-contents__link toc-highlight">Особого внимания требуют табличные пространства (ТП)</a></li><li><a href="#изменение-алгоритма-компрессии" class="table-of-contents__link toc-highlight">Изменение алгоритма компрессии</a></li><li><a href="#перемещение-таблицы-между-тп-с-разным-алгоритмом-компрессии" class="table-of-contents__link toc-highlight">Перемещение таблицы между ТП с разным алгоритмом компрессии</a></li><li><a href="#инкрементальные-копии-компрессированных-таблиц-в-субд-jatoba-18" class="table-of-contents__link toc-highlight">Инкрементальные копии компрессированных таблиц в СУБД «Jatoba» 18</a></li><li><a href="#-создание-табличного-пространства-с-сжатием-данных" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image82.png" style="width:0.28in;height:0.14in"> Создание табличного пространства с сжатием данных</a></li><li><a href="#-перенос-бд-в-новое-табличное-пространство-с-сжатием-данных" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image84.png" style="width:0.28in;height:0.14in"> Перенос БД в новое табличное пространство с сжатием данных</a></li><li><a href="#например" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#-компрессия-таблиц" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image86.png" style="width:0.27667in;height:0.14in"> Компрессия таблиц</a></li><li><a href="#например-1" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#например-2" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#-компрессия-индексов-таблиц" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image89.png" style="width:0.27667in;height:0.14in"> Компрессия индексов таблиц</a></li><li><a href="#например-3" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#например-4" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#например-5" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#-компрессия-других-видов-индексов" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image93.png" style="width:0.27667in;height:0.14in"> Компрессия других видов индексов</a></li><li><a href="#brin" class="table-of-contents__link toc-highlight">BRIN</a><ul><li><a href="#например-6" class="table-of-contents__link toc-highlight">Например:</a></li></ul></li><li><a href="#gin" class="table-of-contents__link toc-highlight">GIN</a><ul><li><a href="#например-7" class="table-of-contents__link toc-highlight">Например:</a></li></ul></li><li><a href="#hash" class="table-of-contents__link toc-highlight">HASH</a></li><li><a href="#gist" class="table-of-contents__link toc-highlight">GIST</a></li><li><a href="#sp-gist" class="table-of-contents__link toc-highlight">SP GIST</a><ul><li><a href="#btree" class="table-of-contents__link toc-highlight">Btree</a></li></ul></li><li><a href="#rum" class="table-of-contents__link toc-highlight">RUM</a><ul><li><a href="#например-8" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#-смена-алгоритма-компрессии-alter-table" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image99.png" style="width:0.27667in;height:0.14in"> Смена алгоритма компрессии (alter table)</a></li><li><a href="#например-9" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#например-10" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#например-11" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#-смена-алгоритма-компрессии-индекса-alter-index" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image103.png" style="width:0.27667in;height:0.14in"> Смена алгоритма компрессии индекса (alter index)</a></li><li><a href="#например-12" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#-компрессия-журналируемых-таблиц-logged-tables-и-нежурналируемых-таблиц-unlogged-tables-временных-таблиц-temporary_tables-и-их-индексов" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image104.png" style="width:0.27667in;height:0.14in"> Компрессия журналируемых таблиц (logged tables) и нежурналируемых таблиц (unlogged tables), временных таблиц (temporary_tables) и их индексов</a></li><li><a href="#например-13" class="table-of-contents__link toc-highlight">Например:</a></li><li><a href="#-компрессия-toast-файлов" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image105.png" style="width:0.27667in;height:0.14in"> Компрессия TOAST файлов</a></li><li><a href="#-компрессия-партиций" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image106.png" style="width:0.27667in;height:0.14in"> Компрессия партиций</a></li><li><a href="#-компрессия-распределенных-таблиц" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image107.png" style="width:0.27667in;height:0.14in"> Компрессия распределенных таблиц</a></li><li><a href="#ограничения-по-применению-сжатия-распределенных-таблиц" class="table-of-contents__link toc-highlight">Ограничения по применению сжатия распределенных таблиц.</a></li><li><a href="#-утилита-pg_dump" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image108.png" style="width:0.27667in;height:0.14in"> Утилита pg_dump</a></li><li><a href="#-утилита-pg_dumpall" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image109.png" style="width:0.27667in;height:0.14in"> Утилита pg_dumpall</a></li><li><a href="#-утилита-pg_basebackup" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image110.png" style="width:0.27667in;height:0.14in"> Утилита pg_basebackup</a></li><li><a href="#-предварительные-условия" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image111.png" style="width:0.27667in;height:0.14in"> Предварительные условия</a></li><li><a href="#-настройка-бд-с-компрессией" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image112.png" style="width:0.27667in;height:0.14in"> Настройка БД с компрессией</a></li><li><a href="#-запуск-тестов-в-1с-кип-тест-центр" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/ja_compression/media/image118.png" style="width:0.27667in;height:0.14in"> Запуск тестов в 1С КИП (Тест-центр)</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

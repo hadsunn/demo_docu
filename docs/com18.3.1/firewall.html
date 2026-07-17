@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-com18.3.1/firewall" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">firewall | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/com18.3.1/firewall"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="firewall | Postgres"><meta data-rh="true" name="description" content="Подп. и дата"><meta data-rh="true" property="og:description" content="Подп. и дата"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/com18.3.1/firewall"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/firewall" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/com18.3.1/firewall" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"firewall","item":"https://hadsunn.github.io/demo_docu/com18.3.1/firewall"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.1fa2b7fe.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.ffb5ba9c.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/com18.3.1/1c">com18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/1c">1c</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/container">container</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/describe">describe</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/com18.3.1/firewall">firewall</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_anonymizer">ja_anonymizer</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/com18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">com18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">firewall</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:41%">
+<col style="width:58%">
+</colgroup><thead><tr><th><blockquote>
+<p>Подп. и дата</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td><blockquote>
+<p>Инв. № дубл.</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Взам. инв. №</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Подп. и дата</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Инв. № подл.</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 17.</strong></p>
+<p><strong>Выявление и предотвращение исполнения нетипичных SQL-запросов.</strong></p>
+<p><strong>Компонент «SQL_Firewall»</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p><strong>643.72410666.00067-08 98 01-17</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>Листов 28</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>2026</p>
+</blockquote></td></tr><tr><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<header><h1>АННОТАЦИЯ</h1></header>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонента «SQL_Firewall» (далее – компонент или SQL_Firewall). Настоящее руководство предназначено для администратора защищенной системы управления базами данных (СУБД) «Jatoba».</p>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image1.png" style="width:0.24769in;height:0.24635in" class="img_ev3q">Администратор СУБД «Jatoba» должен иметь навыки по работе с СУБД PostgreSQL или защищенной СУБД Jatoba (ООО «Газинформсервис»).</p>
+</blockquote>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра</p>
+<p>4.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию ОС Linux – «/usr/jatoba-6/bin».</p>
+<p>Для СУБД «Jatoba» версии ядра 4 используется версия компонента — 0.8</p>
+<p>Для СУБД «Jatoba» версии ядра 5/6/18 используется версия компонента — 1.1</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image2.png" style="width:0.25343in;height:0.25208in" class="img_ev3q">Степени важности примечаний, применяемые в документе:</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"> <strong>Важная информация</strong> – указания, требующие особого внимания</p>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image1.png" style="width:0.25in;height:0.24961in" class="img_ev3q"> <strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
+</blockquote>
+<h1>СОДЕРЖАНИЕ</h1>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Назначение компонента 4</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Условия применения 4</a></p>
+<ol>
+<li>
+<p><a href="#%D0%B2%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D1%81%D1%83%D0%B1%D0%B4">Влияние на производительность СУБД 4</a></p>
+</li>
+<li>
+<p><a href="#%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC%D0%BE%D0%B9-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8-%D0%BE%D1%81">Требования к используемой локали ОС 5</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">Установка и настройка 6</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_firewall-%D0%B2-%D0%BE%D1%81-gnulinux">Установка компонента «SQL_Firewall» в ОС GNU/Linux 6</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%BB%D0%B0-postgresql.conf">Настройка конфигурационного фала postgresql.conf 7</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_firewall">Установка расширения компонента «SQL_Firewall» 7</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Функциональные возможности 9</a></p>
+<ol>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D1%8B-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-sql-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2">Режимы фильтрации SQL-запросов 9</a></p>
+<ol>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-learning">Режим обучения «learning» 9</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-enforcing">Режим применения «enforcing» 10</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B0%D1%8E%D1%89%D0%B8%D0%B9-permissive">Режим разрешающий «permissive» 11</a></p>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BE%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-disabled">Режим отключения компонента «disabled» 11</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-sql-%D0%B8%D0%BD%D1%8A%D0%B5%D0%BA%D1%86%D0%B8%D0%B9">Режим обнаружения SQL-инъекций 12</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-ml-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-%D0%B2-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B5-sql-firewall">Принцип работы ML-модели в компоненте SQL Firewall 12</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B0-%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-sql-%D0%B8%D0%BD%D1%8A%D0%B5%D0%BA%D1%86%D0%B8%D0%B9">Параметры режима обнаружения SQL-инъекций 14</a></p>
+</li>
+<li>
+<p><a href="#_bookmark17">Активация режима обнаружения SQL-инъекций 15</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D1%87%D0%B5%D1%82%D0%B0%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%BE%D0%B2-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-sql-firewall-%D0%BF%D1%80%D0%B8-%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8-sql-%D0%B8%D0%BD%D1%8A%D0%B5%D0%BA%D1%86%D0%B8%D0%B9">Сочетание режимов работы SQL Firewall при обнаружении SQL-инъекций 17</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B0-%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-sql-%D0%B8%D0%BD%D1%8A%D0%B5%D0%BA%D1%86%D0%B8%D0%B9">Проверка режима обнаружения SQL-инъекций 18</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9">Описание операций 20</a></p>
+<ol>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B0">Функции просмотра 20</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D0%B1%D1%80%D0%B0%D0%BD%D0%B4%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%B0-sql_firewall.sql_firewall_statements">Просмотр правил брандмауэра (sql_firewall.sql_firewall_statements) 20</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8-sql_firewall.sql_firewall_stat">Просмотр статистики (sql_firewall.sql_firewall_stat) 21</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F%D0%BC%D0%B8-%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">Управление функциями мониторинга 21</a></p>
+<ol>
+<li>
+<p><a href="#%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_firewall_export_rule">Экспорт правил компонента (sql_firewall_export_rule) 21</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_firewall_import_rule">Импорт правил компонента (sql_firewall_import_rule) 22</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-sql_firewall_reset">Очистка правил (sql_firewall_reset) 23</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%83%D0%BF%D1%80%D0%B5%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B8-%D0%BE%D1%88%D0%B8%D0%B1%D0%BE%D0%BA-sql_firewall_stat_reset">Очистка предупреждений и ошибок (sql_firewall_stat_reset) 24</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Обновление 25</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Удаление 26</a></p>
+</li>
+</ol>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 27</a></p>
+<h1>НАЗНАЧЕНИЕ КОМПОНЕНТА</h1>
+<p>Компонент «SQL_Firewall» просматривает запросы к СУБД, которые могут быть выполнены, и предотвращает либо предупреждает о выполнении запросов, которые не найдены в установленных правилах («белых списках», WhiteList) по аналогии с брандмауэром, т.е. фильтрует трафик SQL-запросов.</p>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image1.png" style="width:0.25in;height:0.24851in" class="img_ev3q">Компонент «SQL_Firewall» не является межсетевым экраном (firewall) в классическом понимании, как программный или программно-аппаратный элемент компьютерной сети, применяемого для фильтрации сетевого трафика.</p>
+</blockquote>
+<p>Компонент «SQL_Firewall» предназначен для защиты базы данных от SQL-инъекций или неожиданных запросов. Входящий запрос перед исполнением подается на обработку в обученную модель машинного обучения, которая возвращает в результате одно значение – вероятность содержания во входящем запросе SQL-инъекции. После этого вычисленная вероятность сравнивается со значением порога классификации, устанавливаемым с помощью параметра СУБД. Запросы с превышенной вероятностью наличия SQL-инъекций прерываются с выводом ошибки.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="влияние-на-производительность-субд">Влияние на производительность СУБД<a href="#влияние-на-производительность-субд" class="hash-link" aria-label="Direct link to Влияние на производительность СУБД" title="Direct link to Влияние на производительность СУБД">​</a></h2>
+<p>Применение режима обнаружения SQL-инъекций может приводить к снижению производительности СУБД.</p>
+<p>Суммарное влияние компонента «SQL_Firewall» (обнаружение SQL-инъекций + базовые функции фильтрации) на снижение производительности может составлять:</p>
+<ul>
+<li>
+<p>в части влияния на TPS - 39,8%, в случае если в белом списке нет запросов из теста и 6,1%, если белый список содержит все запросы теста производительности;</p>
+</li>
+<li>
+<p>в части метрики Latency - 3,14 мс и 0,21 мс, соответственно.</p>
+</li>
+</ul>
+<p>Влияние отдельных компонентов SQL Firewall на снижение производительности в проведенных может составить:</p>
+<ul>
+<li>
+<p>в части обнаружения SQL-инъекций - до 6,6% TPS и до 0,31 мс Latency (только для ОС, поддерживающих ML-модель);</p>
+</li>
+<li>
+<p>в части использования базовых функций фильтрации компонента</p>
+</li>
+</ul>
+<blockquote>
+<p>«SQL_Firewall» (белые списки) - до 38,6% TPS и 3,1 мс Latency, если в белом списке нет запросов из теста и до 1,4% TPS и 0,03 мс Latency, если белый список содержит все запросы теста производительности.</p>
+<p>Настройка мониторинга компонента «SQL_Firewall» приведена в документе</p>
+</blockquote>
+<p>«Поддержка мониторинга СУБД» 643.72410666.00067-08 98 01-28.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="требования-к-используемой-локали-ос">Требования к используемой локали ОС<a href="#требования-к-используемой-локали-ос" class="hash-link" aria-label="Direct link to Требования к используемой локали ОС" title="Direct link to Требования к используемой локали ОС">​</a></h2>
+<p>При использовании в компоненте SQL Firewall режима обнаружения SQL-инъекций для библиотеки ONNX Runtime (поставляется в составе установочного пакета компонента) в ОС должна быть обеспечена поддержка локали en_US.UTF8. Вывод список доступных локалей в ОС осуществляется при помощи команды:</p>
+<p># locale -a</p>
+<p>В случае, если поддержка локали en_US.UTF8 отсутствует в ОС, то необходимо сгенерировать локаль при помощи следующих команд:</p>
+<p># locale-gen en_US</p>
+<p># locale-gen en_US.UTF-8 # update-locale</p>
+<p># update-locale</p>
+<p>Необходимо в конфигурационном файле postgresql.conf определить следующие параметры поддержки локали:</p>
+<p>lc_messages = &#x27;en_US.UTF-8&#x27; lc_monetary = &#x27;en_US.UTF-8&#x27; lc_numeric = &#x27;en_US.UTF-8&#x27; lc_time = &#x27;en_US.UTF-8&#x27;</p>
+<h1>УСТАНОВКА И НАСТРОЙКА</h1>
+<p>Установка компонента должна производиться от имени пользователя, обладающего административными привилегиями в системе. Компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-компонента-sql_firewall-в-ос-gnulinux">Установка компонента «SQL_Firewall» в ОС GNU/Linux<a href="#установка-компонента-sql_firewall-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка компонента «SQL_Firewall» в ОС GNU/Linux" title="Direct link to Установка компонента «SQL_Firewall» в ОС GNU/Linux">​</a></h2>
+<p>Установка компонента осуществляется в процессе установки СУБД «Jatoba», также компонент можно установить опционально после основной инсталляции СУБД.</p>
+<blockquote>
+<p>Установку компонента возможно провести двумя способами:</p>
+</blockquote>
+<ol>
+<li>
+<p>установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;</p>
+</li>
+<li>
+<p>установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.</p>
+</li>
+</ol>
+<p>Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:</p>
+<ul>
+<li>для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:</li>
+</ul>
+<p>apt-get install jatoba&lt;ver&gt;-sql-firewall</p>
+<blockquote>
+<p>Здесь и далее &lt;ver&gt; - номер используемой версии СУБД «Jatoba».</p>
+</blockquote>
+<ul>
+<li>для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:</li>
+</ul>
+<p>yum install jatoba&lt;ver&gt;-sql-firewall</p>
+<p>Отдельного уточнения требуют операционные системы ALT Linux.</p>
+<ul>
+<li>ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:</li>
+</ul>
+<p>apt-get install jatoba&lt;ver&gt;-sql-firewall</p>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba5-sql-firewall и т.п.</p>
+<p>Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-конфигурационного-фала-postgresqlconf">Настройка конфигурационного фала postgresql.conf<a href="#настройка-конфигурационного-фала-postgresqlconf" class="hash-link" aria-label="Direct link to Настройка конфигурационного фала postgresql.conf" title="Direct link to Настройка конфигурационного фала postgresql.conf">​</a></h2>
+<p>В разделе «Shared Library Preloading», для последующей загрузки расширения, установить параметр:</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image3.png" style="width:6.95655in;height:1.3175in" class="img_ev3q">
+<p>shared_preload_libraries = &#x27;sql_firewall&#x27;</p>
+<blockquote>
+<p>Рисунок 2.1 – Параметр загрузки расширения</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">В случае, если в параметре shared_preload_libraries также используется значение pg_stat_statements, то значение sql_firewall должно быть в обязательном порядке через запятую установлено после него:</p>
+</blockquote>
+<p>shared_preload_libraries = &#x27;pg_stat_statements, sql_firewall&#x27;</p>
+<blockquote>
+<p>Для применения параметров потребуется перезапустить СУБД.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-расширения-компонента-sql_firewall">Установка расширения компонента «SQL_Firewall»<a href="#установка-расширения-компонента-sql_firewall" class="hash-link" aria-label="Direct link to Установка расширения компонента «SQL_Firewall»" title="Direct link to Установка расширения компонента «SQL_Firewall»">​</a></h2>
+<p>После перезагрузки СУБД и загрузки расширения станет доступной установка расширения «sql_firewall».</p>
+<blockquote>
+<p>Расширение устанавливается на всех узлах кластера при помощи SQL-команды:</p>
+</blockquote>
+<p>CREATE EXTENSION sql_firewall;</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image4.png" style="width:7.11579in;height:1.94719in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 2.2 – Команда установки расширения в ОС GNU/Linux</p>
+<p>В результате выполнения SQL-команды будет создано расширение (extension)</p>
+<p>«sql_firewall» в схеме данных.</p>
+</blockquote>
+<h1>ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ</h1>
+<p>Компонент «SQL_Firewall» выполнен в форме расширения СУБД и предназначен для фильтрации SQL-запросов (далее – «запрос»), поступающих в СУБД.</p>
+<blockquote>
+<p>Фильтрация выполняется в два этапа:</p>
+</blockquote>
+<ol>
+<li>
+<p>определение наличия SQL-инъекции в запросе. В случае наличия выполняется блокировка поступившего запроса в соответствии с указанными параметрами. Определение наличия SQL-инъекции выполняется с помощью обученной ML-модели (см. п. <a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-sql-%D0%B8%D0%BD%D1%8A%D0%B5%D0%BA%D1%86%D0%B8%D0%B9">3.2</a>).</p>
+</li>
+<li>
+<p>определяется наличие запроса в перечне разрешенных для выполнения запросов.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режимы-фильтрации-sql-запросов">Режимы фильтрации SQL-запросов<a href="#режимы-фильтрации-sql-запросов" class="hash-link" aria-label="Direct link to Режимы фильтрации SQL-запросов" title="Direct link to Режимы фильтрации SQL-запросов">​</a></h2>
+<p>Компонент «SQL_Firewall» функционирует в следующих режимах, указанных в параметре sql_firewall.firewall:</p>
+<ul>
+<li>
+<p>&quot;learning&quot; – режим обучения;</p>
+</li>
+<li>
+<p>&quot;enforcing&quot; – режим применения;</p>
+</li>
+<li>
+<p>&quot;permissive&quot; – режим разрешающий любые SQL запросы;</p>
+</li>
+<li>
+<p>&quot;disabled&quot; – режим отключенного модуля.</p>
+</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image1.png" style="width:0.25in;height:0.24932in" class="img_ev3q">Перед установкой параметра режима компонента «sql_firewall.firewall» в режимах «enforcing» или «permissive» необходимо активировать мониторинг всех метрик СУБД в режиме «learning» для того, чтобы используемые запросы вошли в состав разрешённых.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-обучения-learning">Режим обучения «learning»<a href="#режим-обучения-learning" class="hash-link" aria-label="Direct link to Режим обучения «learning»" title="Direct link to Режим обучения «learning»">​</a></h2>
+<p>В режиме обучения модуль собирает информацию о пользователе и его запросах. Собирает, записывает и связывает информацию об идентификаторе пользователя «userid» и идентификаторе SQL-запроса «query id».</p>
+<p>«query id» устанавливается по дереву синтаксического анализа, аналогично расширению «pg_stat_statements».</p>
+<blockquote>
+<p>Режим обучения инициализируется установкой параметра:</p>
+</blockquote>
+<p>sql_firewall.firewall = &#x27;learning&#x27;</p>
+<p>в конфигурационном файле СУБД postgresql.conf и последующей перезагрузкой СУБД.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image5.png" style="width:6.89368in;height:1.495in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.1 – Инициализация режима обучения</p>
+</blockquote>
+<p>По умолчанию в режиме обучения может обработаться 5000 запросов. Запросы превышающие данное значение не будут изучаться.</p>
+<p>Параметр изучаемых запросов может быть установлен от 100 до 5000, который устанавливается в конфигурационном файле СУБД postgresql.conf</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image6.png" style="width:7.10151in;height:1.47521in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.2 – Установка параметра количества обрабатываемых SQL - запросов</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-применения-enforcing">Режим применения «enforcing»<a href="#режим-применения-enforcing" class="hash-link" aria-label="Direct link to Режим применения «enforcing»" title="Direct link to Режим применения «enforcing»">​</a></h2>
+<p>В режиме применения «enforcing», модуль проверяет находятся ли идентификатор пользователя «userid» и его SQL-запрос «query id» в паре, которая была ранее записана в режиме обучения «learning».</p>
+<p>Если обнаруживается несоответствие, то пользователю выдается предупреждение о предотвращении выполнения.</p>
+<blockquote>
+<p>Режим применения инициализируется установкой параметра:</p>
+</blockquote>
+<p>sql_firewall.firewall = &#x27;enforcing&#x27;</p>
+<p>в конфигурационном файле СУБД postgresql.conf и последующей перезагрузкой СУБД.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image7.png" style="width:6.92987in;height:1.51417in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.3 – Инициализация режима применения</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-разрешающий-permissive">Режим разрешающий «permissive»<a href="#режим-разрешающий-permissive" class="hash-link" aria-label="Direct link to Режим разрешающий «permissive»" title="Direct link to Режим разрешающий «permissive»">​</a></h2>
+<p>В разрешающем режиме «permissive» модуль проверяет все запросы, но позволяет их выполнение, даже в случае, если таких запросов нет в правилах модуля. При несовпадениях выполняет запрос и сигнализирует пользователю о выявленном несоответствии.</p>
+<blockquote>
+<p>Режим разрешения инициализируется установкой параметра:</p>
+</blockquote>
+<p>sql_firewall.firewall = &#x27;permissive&#x27;</p>
+<p>в конфигурационном файле СУБД postgresql.conf и последующей перезагрузкой СУБД.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image8.png" style="width:6.89347in;height:0.96875in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.4 – Инициализация разрешающего режима</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-отключения-компонента-disabled">Режим отключения компонента «disabled»<a href="#режим-отключения-компонента-disabled" class="hash-link" aria-label="Direct link to Режим отключения компонента «disabled»" title="Direct link to Режим отключения компонента «disabled»">​</a></h2>
+<p>В данном режиме модуль отключен и не проводит никаких действий и включен по умолчанию.</p>
+<blockquote>
+<p>Режим отключения компонента инициализируется установкой параметра:</p>
+</blockquote>
+<p>sql_firewall.firewall = &#x27;disabled&#x27;</p>
+<p>в конфигурационном файле СУБД postgresql.conf и последующей перезагрузкой СУБД.</p>
+<blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image9.png" style="width:6.95486in;height:1.45312in" class="img_ev3q">
+<p>Рисунок 3.5 – Инициализация отключения модуля</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="режим-обнаружения-sql-инъекций">Режим обнаружения SQL-инъекций<a href="#режим-обнаружения-sql-инъекций" class="hash-link" aria-label="Direct link to Режим обнаружения SQL-инъекций" title="Direct link to Режим обнаружения SQL-инъекций">​</a></h2>
+<p>В данном режиме компонент «SQL_Firewall реализует функционал обнаружения SQL-инъекций в входящих запросах к СУБД.</p>
+<blockquote>
+<p>Режим обнаружения SQL-инъекций доступен для компонента «SQL_Firewall» версии</p>
+</blockquote>
+<ol>
+<li>с использованием СУБД «Jatoba» версии 5/6/18 при использовании ОС GNU/Linux. Список поддерживаемых ОС GNU/Linux приведен в документе «Руководство по установке» 643.72410666.00067-08 97 01</li>
+</ol>
+<blockquote>
+<p>SQL-инъекция – это уязвимость, которая позволяет атакующей стороне использовать фрагмент вредоносного кода на языке SQL для получения доступа к потенциально ценной (коммерческой, конфиденциальной, персональной) информации и манипулирования СУБД.</p>
+<p>Обнаружение SQL-инъекций производится с помощью обученной ML-модели (Machine Learning, машинное обучение), принцип которой приводится в п. <a href="#%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-ml-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-%D0%B2-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B5-sql-firewall">3.2.1</a>.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="принцип-работы-ml-модели-в-компоненте-sql-firewall">Принцип работы ML-модели в компоненте SQL Firewall<a href="#принцип-работы-ml-модели-в-компоненте-sql-firewall" class="hash-link" aria-label="Direct link to Принцип работы ML-модели в компоненте SQL Firewall" title="Direct link to Принцип работы ML-модели в компоненте SQL Firewall">​</a></h2>
+<blockquote>
+<p>Модель машинного обучения обучена распознавать широкий спектр техник SQL-инъекций, включая, но не ограничиваясь: IN-BAND (включая ERROR-BASED и UNION-BASED), BLIND (включая TIME-BASED) и OUT OF BAND атаки.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="определяемые-типы-sql-инъекций">Определяемые типы SQL-инъекций<a href="#определяемые-типы-sql-инъекций" class="hash-link" aria-label="Direct link to Определяемые типы SQL-инъекций" title="Direct link to Определяемые типы SQL-инъекций">​</a></h2>
+<blockquote>
+<p>ML-модель компонента SQL Firewall детектирует следующие основные типы SQL-инъекций:</p>
+</blockquote>
+<ol>
+<li>
+<p>IN-BAND SQLi – для атаки и получения данных используется один канал. К этому типу относятся:</p>
+<ul>
+<li>ERROR-BASED (на основе ошибок) – вид атаки, при проведении которой нарушители используют сообщения об ошибках сервера базы данных для разведки и определения её структуры. В результате атаки</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>будет передана ошибка, в тексте которой будет присутствовать полная версия используемой СУБД;</p>
+</blockquote>
+<p>AND (SELECT version())::int=1 -- -</p>
+<ul>
+<li>UNION-BASED – предоставляет возможность получения информации с помощью оператора UNION для объединения результатов двух или более запросов SELECT. В ходе проведения атаки позволяет определить количество столбцов в исходном запросе. При совпадении количества NULL с количеством столбцов запрос выполнится, иначе возникнет ошибка.</li>
+</ul>
+<p>UNION ALL SELECT NULL, NULL, NULL; -- -</p>
+<ol start="2">
+<li>BLIND SQLi («слепая» SQL-инъекция) – вид атаки, при которой ответ от базы данных можно получить лишь в формате «да»/«нет» (true/false) или через анализ времени ответа. Применение такой инъекции позволяет атакующему определить тип используемой базы данных: если это СУБД «Jatoba», то значение выражения будет True, иначе False.</li>
+</ol>
+<p>AND substr(version(),1,10) = &#x27;PostgreSQL&#x27; and &#x27;1&#x27;</p>
+<ol start="3">
+<li>TIME-BASED (на основе времени ответа) – еще один тип «слепой» SQL-инъекций, при которой атакующий специально заставляют СУБД задержать ответ на запрос на несколько секунд. Таким образом злоумышленник может понять корректность составленного запроса.</li>
+</ol>
+<p>SELECT CASE WHEN substring(datname,1,1)=&#x27;1&#x27; THEN pg_sleep(5) ELSE pg_sleep(0) END FROM pg_database LIMIT 1;</p>
+<ol start="4">
+<li>OUT OF BAND – атакующий отправляет SQL-запросы к СУБД способом, отличным от обычного взаимодействия. В качестве примера – использование DNS- или HTTP-запросов.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="определение-вероятности-sql-инъекции">Определение вероятности SQL-инъекции<a href="#определение-вероятности-sql-инъекции" class="hash-link" aria-label="Direct link to Определение вероятности SQL-инъекции" title="Direct link to Определение вероятности SQL-инъекции">​</a></h2>
+<p>Входящий запрос перед исполнением подается на обработку в ML-модель, которая возвращает в результате одно значение – вероятность (P) содержания во входящем запросе SQL-инъекции.</p>
+<p>После этого значение <em>P</em> сравнивается с пороговым значением <em>T</em>, которое устанавливает администратором (см. далее п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B0-%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-sql-%D0%B8%D0%BD%D1%8A%D0%B5%D0%BA%D1%86%D0%B8%D0%B9">3.2.2</a>).</p>
+<blockquote>
+<p>При P ≤ T запросы считаются безопасными и допускаются к выполнению.</p>
+</blockquote>
+<p>При P &gt; T запрос классифицируется как содержащий SQL-инъекцию, и его выполнение прерывается с ошибкой.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметры-режима-обнаружения-sql-инъекций">Параметры режима обнаружения SQL-инъекций<a href="#параметры-режима-обнаружения-sql-инъекций" class="hash-link" aria-label="Direct link to Параметры режима обнаружения SQL-инъекций" title="Direct link to Параметры режима обнаружения SQL-инъекций">​</a></h2>
+<p>Параметры режима обнаружения SQL-инъекций определяются в конфигурационном файле postgresql.conf.</p>
+<ol>
+<li><strong>sql_firewall.ml_enabled</strong></li>
+</ol>
+<blockquote>
+<p>Параметр отвечает за работу алгоритма определения SQL-инъекций.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">При включённом режиме обнаружения в SQL-инъекций (sql_firewall.ml_enabled = &#x27;true&#x27;) запросы, исполняемые суперпользователями (например, postgres), не проверяются на наличие SQL-инъекций!</p>
+<p>Тип: boolean</p>
+</blockquote>
+<p>При значении «true» режим обнаружения SQL-инъекций включён, при «false» - выключен.</p>
+<blockquote>
+<p>Значение по умолчанию: false</p>
+</blockquote>
+<ol start="2">
+<li><strong>sql_firewall.ml_score_threshold</strong></li>
+</ol>
+<p>Параметр определяет предельный порог <em>T</em>, при превышении которого обработанный запрос с значением P будет классифицироваться как содержащий SQL-инъекцию.</p>
+<blockquote>
+<p>Тип: float</p>
+<p>Значение по умолчанию: 0.35.</p>
+</blockquote>
+<table><colgroup>
+<col style="width:6%">
+<col style="width:93%">
+</colgroup><thead><tr><th><blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image1.png" style="width:0.25208in;height:0.25208in" class="img_ev3q"></p>
+</blockquote></th><th><blockquote>
+<p>В ходе тестирования ML-модели для компонента «SQL_Firewall» на</p>
+<p>синтетических данных установлено, что вариант с предобработкой</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<blockquote>
+<p>демонстрирует более высокие значения метрик качества при снижении порогового значения ml_score_threshold ниже 0.5. Оптимальные результаты в рамках проведенных испытаний достигаются в диапазоне значений 0.3–0.35.</p>
+<p>Следует учитывать, что значение параметра ml_score_threshold является подбираемым и зависит от особенностей конкретного экземпляра СУБД. Администратору рекомендуется самостоятельно определить оптимальное значение ml_score_threshold для своего экземпляра.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример">Пример.<a href="#пример" class="hash-link" aria-label="Direct link to Пример." title="Direct link to Пример.">​</a></h2>
+<blockquote>
+<p>Установлено стандартное значение порога ml_score_threshold = 0.35</p>
+<p>В СУБД поступают два запроса, их вычисленное значение P — 0.25 и 0.75 соответственно.</p>
+</blockquote>
+<p>В этом случае, первый запрос будет считаться безопасным, а второй – SQL-инъекцией, и он будет заблокирован компонентом.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="активация-режима-обнаружения-sql-инъекций">Активация режима обнаружения SQL-инъекций<a href="#активация-режима-обнаружения-sql-инъекций" class="hash-link" aria-label="Direct link to Активация режима обнаружения SQL-инъекций" title="Direct link to Активация режима обнаружения SQL-инъекций">​</a></h2>
+<blockquote>
+<p>Режим обнаружения SQL-инъекций инициализируется установкой параметров:</p>
+</blockquote>
+<p>shared_preload_libraries = &#x27;sql_firewall&#x27; sql_firewall.ml_enabled = &#x27;true&#x27;</p>
+<blockquote>
+<p>в конфигурационном файле СУБД postgresql.conf и последующей перезагрузкой СУБД.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image10.png" style="width:7.08166in;height:3.09031in" class="img_ev3q">
+<p>Рисунок 3.6 – Активация режима обнаружения SQL-инъекций в конфигурационном файле postgresql.conf</p>
+<p>Убедится в том, что установлена библиотека ONNX Runtime с помощью команды:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image11.png" style="width:7.04528in;height:1.61875in" class="img_ev3q">
+<p>ldd /usr/jatoba-&lt;ver&gt;/lib/sql_firewall.so</p>
+<blockquote>
+<p>Рисунок 3.7 – Проверка установки библиотеки onnxruntime</p>
+</blockquote>
+<p>Также для работы режима обнаружения SQL-инъекций необходимо установленное расширение в СУБД (см. п. <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_firewall">2.3</a>).</p>
+<p>Ознакомится с версией используемой ML-модели можно выполнив следующий запрос:</p>
+<p>SELECT sql_firewall_ml_version();</p>
+<blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image12.jpeg" style="width:7.09408in;height:1.63719in" class="img_ev3q">
+<p>Рисунок 3.8 – Проверка используемой ML-модели</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="сочетание-режимов-работы-sql-firewall-при-обнаружении-sql-инъекций">Сочетание режимов работы SQL Firewall при обнаружении SQL-инъекций<a href="#сочетание-режимов-работы-sql-firewall-при-обнаружении-sql-инъекций" class="hash-link" aria-label="Direct link to Сочетание режимов работы SQL Firewall при обнаружении SQL-инъекций" title="Direct link to Сочетание режимов работы SQL Firewall при обнаружении SQL-инъекций">​</a></h2>
+<blockquote>
+<p>Таблица 3.1 – Режимы работы SQL Firewall при обнаружении SQL-инъекций</p>
+</blockquote>
+<table><colgroup>
+<col style="width:4%">
+<col style="width:29%">
+<col style="width:23%">
+<col style="width:43%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>№</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>sqli_catcher (ml_enabled)</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>SQL Firewall (firewall)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Комментарий</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>1</p>
+</blockquote></td><td><blockquote>
+<p>False</p>
+</blockquote></td><td><blockquote>
+<p>disabled</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>2</p>
+</blockquote></td><td><blockquote>
+<p>False</p>
+</blockquote></td><td><blockquote>
+<p>learning</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>3</p>
+</blockquote></td><td><blockquote>
+<p>False</p>
+</blockquote></td><td><blockquote>
+<p>permissive</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>4</p>
+</blockquote></td><td><blockquote>
+<p>False</p>
+</blockquote></td><td><blockquote>
+<p>enforcing</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>5</p>
+</blockquote></td><td><blockquote>
+<p>True</p>
+</blockquote></td><td><blockquote>
+<p>disabled</p>
+</blockquote></td><td><blockquote>
+<p>Только обнаружение SQL-инъекций</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>6</p>
+</blockquote></td><td><blockquote>
+<p>True</p>
+</blockquote></td><td><blockquote>
+<p>learning</p>
+</blockquote></td><td><blockquote>
+<p>Обучение выполняется не для обнаружения SQL-инъекций</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>7</p>
+</blockquote></td><td><blockquote>
+<p>True</p>
+</blockquote></td><td><blockquote>
+<p>permissive</p>
+</blockquote></td><td style="text-align:left"><blockquote>
+<p>Только для запросов, не являющихся SQL-инъекции.</p>
+<p>В случае, если запрос не входит в белый список компонента «SQL_Firewall», выдается соответствующее предупреждение</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>8</p>
+</blockquote></td><td><blockquote>
+<p>True</p>
+</blockquote></td><td><blockquote>
+<p>enforcing</p>
+</blockquote></td><td><blockquote>
+<p>Только для запросов:</p>
+</blockquote>
+<ol type="1">
+<li><p>не являющихся SQL-инъекциями</p></li>
+<li><p>входящих в белый список SQL</p></li>
+</ol>
+<blockquote>
+<p>Firewall</p>
+</blockquote></td></tr></tbody></table>
+<p>Схема взаимодействия и обработки SQL-запросов в различных режимах работы компонента «SQL_Firewall» представлена на рисунке <a href="#_bookmark19">3.9</a>.</p>
+<p>disabled</p>
+<blockquote>
+<p>SQL-запрос</p>
+</blockquote>
+<p>имеется в &quot;белом списке&quot;</p>
+<blockquote>
+<p>Вычисление вероятности принадлежности к классу &quot;SQL-инъекция&quot; (P)</p>
+</blockquote>
+<p>Да</p>
+<p>learning</p>
+<p>P &gt; score_threshold</p>
+<p>firewall</p>
+<blockquote>
+<p>Обработка</p>
+<p>SQL-выражения</p>
+</blockquote>
+<p>Нет</p>
+<p>False</p>
+<p>True</p>
+<p>ml_enabled</p>
+<blockquote>
+<p>Получение</p>
+<p>SQL-запроса</p>
+<p>Запись информации в журнал работы</p>
+<p>Добавление SQL-запроса в &quot;белый список&quot;</p>
+<p>Сообщение &quot;Prohibited SQL-statement&quot;</p>
+<p>Запись информации в журнал работы</p>
+<p>Выполнение SQL-</p>
+<p>запроса</p>
+</blockquote>
+<p>permissive/</p>
+<blockquote>
+<p>enforcing</p>
+</blockquote>
+<p>Нет</p>
+<p>firewall</p>
+<p>permissive</p>
+<p>enfo rcing</p>
+<p>Да</p>
+<blockquote>
+<p>Ожидание</p>
+</blockquote>
+<p>следующего</p>
+<blockquote>
+<p>SQL-запроса</p>
+<p>Сообщение &quot;Обнаружена</p>
+<p>SQL-инъекция&quot;</p>
+<p><span id="_bookmark19" class="anchor"></span>Рисунок 3.9 – Схема взаимодействия и обработки SQL-запросов в различных режимах работы компонента «SQL_Firewall»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-режима-обнаружения-sql-инъекций">Проверка режима обнаружения SQL-инъекций<a href="#проверка-режима-обнаружения-sql-инъекций" class="hash-link" aria-label="Direct link to Проверка режима обнаружения SQL-инъекций" title="Direct link to Проверка режима обнаружения SQL-инъекций">​</a></h2>
+<p>После выполнения настройки режима обнаружения SQL-инъекций необходимо выполнить несколько тестовых запросов.</p>
+<p>Тестовые запросы составлены специальным образом и содержат наглядные примеры инъекций:</p>
+<p>SELECT * FROM tbl WHERE name=&#x27;admin&#x27; OR 1=1 UNION ALL SELECT NULL, NULL, NULL;</p>
+<p>SELECT * FROM tbl WHERE name=&#x27;user&#x27; AND 1=CAST((SELECT</p>
+<p>concat(&#x27;DATABASE: &#x27;,current_database())) AS int) AND &#x27;1&#x27;=&#x27;1&#x27;;</p>
+<p>Данные запросы должны быть заблокированы компонента «SQL_Firewall» с выводом следующего сообщения:</p>
+<p>ОШИБКА: Обнаружена SQL-инъекция! Выполнение запроса прервано</p>
+<h1>ОПИСАНИЕ ОПЕРАЦИЙ</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функции-просмотра">Функции просмотра<a href="#функции-просмотра" class="hash-link" aria-label="Direct link to Функции просмотра" title="Direct link to Функции просмотра">​</a></h2>
+<blockquote>
+<p>Компонент обладает функциональными возможностями просмотра:</p>
+</blockquote>
+<ul>
+<li>
+<p>правил брандмауэра;</p>
+</li>
+<li>
+<p>статистики брандмауэра.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="просмотр-правил-брандмауэра-sql_firewallsql_firewall_statements">Просмотр правил брандмауэра (sql_firewall.sql_firewall_statements)<a href="#просмотр-правил-брандмауэра-sql_firewallsql_firewall_statements" class="hash-link" aria-label="Direct link to Просмотр правил брандмауэра (sql_firewall.sql_firewall_statements)" title="Direct link to Просмотр правил брандмауэра (sql_firewall.sql_firewall_statements)">​</a></h2>
+<p>Представление «sql_firewall_statements» показывает правила брандмауэра и счетчик выполнения для каждого запроса.</p>
+<blockquote>
+<p>Просмотр правил брандмауэра выполняется SQL-командой:</p>
+</blockquote>
+<p>SELECT * from sql_firewall.sql_firewall_statements;</p>
+<p>Данную SQL-команду целесообразно использовать для специального программного обеспечения по управлению СУБД.</p>
+<p>При работе в CLI целесообразно изменить ее и использовать ограничение количества символов в поле «query» оператором «substring»:</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image16.png" style="width:7.11581in;height:1.97625in" class="img_ev3q">
+<p>SELECT userid, queryid, calls, substring (query from 0 for 90) from sql_firewall.sql_firewall_statements;</p>
+<blockquote>
+<p>Рисунок 4.1 – Просмотр правил брандмауэра в ОС GNU/Linux В полученном списке отражены поля:</p>
+</blockquote>
+<ul>
+<li>
+<p>userid – идентификационный номер пользователя (идентификационный номер 10 присваивается роли postgres);</p>
+</li>
+<li>
+<p>queryid – идентификационный номер запроса;</p>
+</li>
+<li>
+<p>query – тело запроса;</p>
+</li>
+<li>
+<p>calls – вызовы.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="просмотр-статистики-sql_firewallsql_firewall_stat">Просмотр статистики (sql_firewall.sql_firewall_stat)<a href="#просмотр-статистики-sql_firewallsql_firewall_stat" class="hash-link" aria-label="Direct link to Просмотр статистики (sql_firewall.sql_firewall_stat)" title="Direct link to Просмотр статистики (sql_firewall.sql_firewall_stat)">​</a></h2>
+<blockquote>
+<p>В представлении «sql_firewall_stat» есть два счетчика: &quot;sql_warning&quot; и &quot;sql_error&quot;.</p>
+<p>«sql_warning» показывает количество выполненных запросов с предупреждениями в</p>
+</blockquote>
+<p>«разрешающем»&quot; режиме (<u>permissive</u>).</p>
+<p>«sql_error» показывает количество предотвращенных запросов в «применительном» режиме (<u>enforcing</u>).</p>
+<blockquote>
+<p>Просмотр статистика выполняется SQL-командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image17.png" style="width:7.12073in;height:1.80187in" class="img_ev3q">
+<p>SELECT * from sql_firewall.sql_firewall_stat;</p>
+<blockquote>
+<p>Рисунок 4.2 – Просмотр статистики в ОС GNU/Linux</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="управление-функциями-мониторинга">Управление функциями мониторинга<a href="#управление-функциями-мониторинга" class="hash-link" aria-label="Direct link to Управление функциями мониторинга" title="Direct link to Управление функциями мониторинга">​</a></h2>
+<p>Компонент обладает функциональными возможностями управления правилами, такими как:</p>
+<ul>
+<li>
+<p>экспорт правил (п. <a href="#%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_firewall_export_rule">4.2.1</a>);</p>
+</li>
+<li>
+<p>импорт правил (п. <a href="#%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_firewall_import_rule">4.2.2</a>);</p>
+</li>
+<li>
+<p>очистка правил (п. <a href="#%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-sql_firewall_reset">4.2.3</a>);</p>
+</li>
+<li>
+<p>очистка предупреждений и ошибок (п. <a href="#%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%83%D0%BF%D1%80%D0%B5%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B8-%D0%BE%D1%88%D0%B8%D0%B1%D0%BE%D0%BA-sql_firewall_stat_reset">4.2.4</a>).</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="экспорт-правил-компонента-sql_firewall_export_rule">Экспорт правил компонента (sql_firewall_export_rule)<a href="#экспорт-правил-компонента-sql_firewall_export_rule" class="hash-link" aria-label="Direct link to Экспорт правил компонента (sql_firewall_export_rule)" title="Direct link to Экспорт правил компонента (sql_firewall_export_rule)">​</a></h2>
+<p>Функциональная возможность экспорта правил компонента «sql_firewall» доступна в режиме «<a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BE%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-disabled"><u>disabled</u></a>» от имени и с правами привилегированного пользователя с атрибутом</p>
+<p>«Superuser».</p>
+<blockquote>
+<p>SQL-команда экспорта правил SQL-брандмауэра имеет синтаксис:</p>
+</blockquote>
+<p>sql_firewall_export_rule(&#x27;/path/to/rule.txt&#x27;)</p>
+<p>Для предотвращения ошибки доступа к файлу рекомендуется размещать его в директории DATA, где у системной учетной записи postgres есть полные права на чтение и запись.</p>
+<blockquote>
+<p>В рассматриваемом примере для ОС GNU/Linux файл rule.txt расположен по пути:</p>
+</blockquote>
+<p>/var/lib/jatoba/&lt;ver&gt;/data/rule.txt</p>
+<blockquote>
+<p>SQL-команда будет иметь вид:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image18.png" style="width:7.0455in;height:1.75375in" class="img_ev3q">
+<p>SELECT</p>
+<p>sql_firewall_export_rule(&#x27;/var/lib/jatoba/&lt;ver&gt;/data/rule.txt&#x27;)</p>
+<blockquote>
+<p>;</p>
+<p>Рисунок 4.3 – Выполнение команды экспорта правил в ОС GNU/Linux</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="импорт-правил-компонента-sql_firewall_import_rule">Импорт правил компонента (sql_firewall_import_rule)<a href="#импорт-правил-компонента-sql_firewall_import_rule" class="hash-link" aria-label="Direct link to Импорт правил компонента (sql_firewall_import_rule)" title="Direct link to Импорт правил компонента (sql_firewall_import_rule)">​</a></h2>
+<p>Функциональная возможность импорта правил компонента «SQL_Firewall» доступна в режиме «<a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BE%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-disabled"><u>disabled</u></a>» от имени и с правами привилегированного пользователя с атрибутом</p>
+<p>«Superuser».</p>
+<blockquote>
+<p>SQL-команда импорта правил SQL-брандмауэра имеет синтаксис:</p>
+</blockquote>
+<p>sql_firewall_import_rule(&#x27;/path/to/rule.txt&#x27;)</p>
+<blockquote>
+<p>В рассматриваемом примере файл rule.txt расположен в директории «import». В ОС GNU/Linux SQL-команда будет иметь вид:</p>
+</blockquote>
+<p>SELECT sql_firewall_import_rule(&#x27;/import/rule.txt&#x27;);</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image19.png" style="width:7.1159in;height:1.96656in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 4.4 – Выполнение команды импорта правил в ОС GNU/Linux</p>
+</blockquote>
+<p>После этого необходимо проверить импортированные правила из файла с помощью функции «sql_firewall.sql_firewall_statements» (см. п. <a href="#%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D0%B1%D1%80%D0%B0%D0%BD%D0%B4%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%B0-sql_firewall.sql_firewall_statements">4.1.1</a>).</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="очистка-правил-sql_firewall_reset">Очистка правил (sql_firewall_reset)<a href="#очистка-правил-sql_firewall_reset" class="hash-link" aria-label="Direct link to Очистка правил (sql_firewall_reset)" title="Direct link to Очистка правил (sql_firewall_reset)">​</a></h2>
+<blockquote>
+<p>Функциональная возможность очистки правил компонента «SQL_Firewall» доступна в режиме «<a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BE%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-disabled"><u>disabled</u></a>» от имени и с правами привилегированного пользователя с атрибутом</p>
+</blockquote>
+<p>«Superuser» и выполняется SQL-командой:</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image20.png" style="width:7.11573in;height:1.76312in" class="img_ev3q">
+<p>SELECT sql_firewall_reset();</p>
+<blockquote>
+<p>Рисунок 4.5 – SQL-команда очистки правил в ОС GNU/Linux</p>
+<p>В итоге очистятся сформированные правила и перезапишется файл «rule.txt»</p>
+<p>Проверить выполнение очистки правил компонента возможно вызовом функции</p>
+</blockquote>
+<p>«<a href="#%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D0%B1%D1%80%D0%B0%D0%BD%D0%B4%D0%BC%D0%B0%D1%83%D1%8D%D1%80%D0%B0-sql_firewall.sql_firewall_statements"><u>sql_firewall.sql_firewall_statements</u></a>».</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="очистка-предупреждений-и-ошибок-sql_firewall_stat_reset">Очистка предупреждений и ошибок (sql_firewall_stat_reset)<a href="#очистка-предупреждений-и-ошибок-sql_firewall_stat_reset" class="hash-link" aria-label="Direct link to Очистка предупреждений и ошибок (sql_firewall_stat_reset)" title="Direct link to Очистка предупреждений и ошибок (sql_firewall_stat_reset)">​</a></h2>
+<blockquote>
+<p>Функциональная возможность очистки правил компонента «SQL_Firewall» доступна в режиме «<a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-%D0%BE%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-disabled"><u>disabled</u></a>» от имени и с правами привилегированного пользователя с атрибутом</p>
+</blockquote>
+<p>«Superuser» и выполняется SQL-командой:</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/firewall/media/image21.png" style="width:7.11983in;height:1.77281in" class="img_ev3q">
+<p>SELECT sql_firewall_reset();</p>
+<blockquote>
+<p>Рисунок 4.6 – SQL-команда очистки предупреждений и ошибок в ОС GNU/Linux</p>
+</blockquote>
+<p>По результатам выполнения команды выполнится очистка счетчиков предупреждений и ошибок.</p>
+<blockquote>
+<p>Проверить выполнение очистки правил компонента возможно вызовом функции</p>
+</blockquote>
+<p>«<a href="#%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8-sql_firewall.sql_firewall_stat"><u>sql_firewall.sql_firewall_stat</u></a>», через SQL-команду:</p>
+<p>SELECT * from sql_firewall.sql_firewall_stat;</p>
+<h1>ОБНОВЛЕНИЕ</h1>
+<p>Обновление компонента выполняется согласно документу «Руководство по обновлению» 643.72410666.00067-08 93 01.</p>
+<h1>УДАЛЕНИЕ</h1>
+<blockquote>
+<p>Для полного удаления компонента необходимо выполнить следующие действия:</p>
+</blockquote>
+<ol>
+<li>удалить расширение SQL-командой:</li>
+</ol>
+<p>DROP EXTENSION sql_firewall</p>
+<ol start="2">
+<li>удалить или закомментировать в конфигурационном файле postgresql.conf загрузку компонента:</li>
+</ol>
+<p>#shared_preload_libraries = &#x27;sql_firewall&#x27; #sql_firewall.firewall = &#x27;disabled&#x27; #sql_firewall.max = 5000</p>
+<ol start="3">
+<li>перезапустить службу СУБД.</li>
+</ol>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:8%">
+<col style="width:80%">
+</colgroup><thead><tr><th><blockquote>
+<p>SQL</p>
+</blockquote></th><th><blockquote>
+<p>–</p>
+</blockquote></th><th><blockquote>
+<p>Structured Query Language – язык структурированных запросов</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Всего листов (страниц) в документе</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Номер документа</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входящий номер сопроводите льного документа и</p>
+<p>дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подпись</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>измене нных</p>
+</blockquote></td><td><blockquote>
+<p>замене нных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td><blockquote>
+<p>аннулир ованных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/com18.3.1/explain"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">explain</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/com18.3.1/install"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">install</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#влияние-на-производительность-субд" class="table-of-contents__link toc-highlight">Влияние на производительность СУБД</a></li><li><a href="#требования-к-используемой-локали-ос" class="table-of-contents__link toc-highlight">Требования к используемой локали ОС</a></li><li><a href="#установка-компонента-sql_firewall-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка компонента «SQL_Firewall» в ОС GNU/Linux</a></li><li><a href="#настройка-конфигурационного-фала-postgresqlconf" class="table-of-contents__link toc-highlight">Настройка конфигурационного фала postgresql.conf</a></li><li><a href="#установка-расширения-компонента-sql_firewall" class="table-of-contents__link toc-highlight">Установка расширения компонента «SQL_Firewall»</a></li><li><a href="#режимы-фильтрации-sql-запросов" class="table-of-contents__link toc-highlight">Режимы фильтрации SQL-запросов</a></li><li><a href="#режим-обучения-learning" class="table-of-contents__link toc-highlight">Режим обучения «learning»</a></li><li><a href="#режим-применения-enforcing" class="table-of-contents__link toc-highlight">Режим применения «enforcing»</a></li><li><a href="#режим-разрешающий-permissive" class="table-of-contents__link toc-highlight">Режим разрешающий «permissive»</a></li><li><a href="#режим-отключения-компонента-disabled" class="table-of-contents__link toc-highlight">Режим отключения компонента «disabled»</a></li><li><a href="#режим-обнаружения-sql-инъекций" class="table-of-contents__link toc-highlight">Режим обнаружения SQL-инъекций</a></li><li><a href="#принцип-работы-ml-модели-в-компоненте-sql-firewall" class="table-of-contents__link toc-highlight">Принцип работы ML-модели в компоненте SQL Firewall</a></li><li><a href="#определяемые-типы-sql-инъекций" class="table-of-contents__link toc-highlight">Определяемые типы SQL-инъекций</a></li><li><a href="#определение-вероятности-sql-инъекции" class="table-of-contents__link toc-highlight">Определение вероятности SQL-инъекции</a></li><li><a href="#параметры-режима-обнаружения-sql-инъекций" class="table-of-contents__link toc-highlight">Параметры режима обнаружения SQL-инъекций</a></li><li><a href="#пример" class="table-of-contents__link toc-highlight">Пример.</a></li><li><a href="#активация-режима-обнаружения-sql-инъекций" class="table-of-contents__link toc-highlight">Активация режима обнаружения SQL-инъекций</a></li><li><a href="#сочетание-режимов-работы-sql-firewall-при-обнаружении-sql-инъекций" class="table-of-contents__link toc-highlight">Сочетание режимов работы SQL Firewall при обнаружении SQL-инъекций</a></li><li><a href="#проверка-режима-обнаружения-sql-инъекций" class="table-of-contents__link toc-highlight">Проверка режима обнаружения SQL-инъекций</a></li><li><a href="#функции-просмотра" class="table-of-contents__link toc-highlight">Функции просмотра</a></li><li><a href="#просмотр-правил-брандмауэра-sql_firewallsql_firewall_statements" class="table-of-contents__link toc-highlight">Просмотр правил брандмауэра (sql_firewall.sql_firewall_statements)</a></li><li><a href="#просмотр-статистики-sql_firewallsql_firewall_stat" class="table-of-contents__link toc-highlight">Просмотр статистики (sql_firewall.sql_firewall_stat)</a></li><li><a href="#управление-функциями-мониторинга" class="table-of-contents__link toc-highlight">Управление функциями мониторинга</a></li><li><a href="#экспорт-правил-компонента-sql_firewall_export_rule" class="table-of-contents__link toc-highlight">Экспорт правил компонента (sql_firewall_export_rule)</a></li><li><a href="#импорт-правил-компонента-sql_firewall_import_rule" class="table-of-contents__link toc-highlight">Импорт правил компонента (sql_firewall_import_rule)</a></li><li><a href="#очистка-правил-sql_firewall_reset" class="table-of-contents__link toc-highlight">Очистка правил (sql_firewall_reset)</a></li><li><a href="#очистка-предупреждений-и-ошибок-sql_firewall_stat_reset" class="table-of-contents__link toc-highlight">Очистка предупреждений и ошибок (sql_firewall_stat_reset)</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
