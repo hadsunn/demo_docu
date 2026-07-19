@@ -1,0 +1,1631 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-Коммерческая версия 18.3.1/ja_seceventlog3.3" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">ja_seceventlog3.3 | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/ja_seceventlog3.3"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ja_seceventlog3.3 | Postgres"><meta data-rh="true" name="description" content="Подп. и дата"><meta data-rh="true" property="og:description" content="Подп. и дата"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/ja_seceventlog3.3"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/ja_seceventlog3.3" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/ja_seceventlog3.3" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ja_seceventlog3.3","item":"https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/ja_seceventlog3.3"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.1732693c.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.76a35f44.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/Коммерческая версия 18.3.1/1c">Коммерческая версия 18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/1c">Поддержка платформы 1С</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/container">Инструкция по настройке и использованию контейнера</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/describe">СУБД Jatoba. Описание применения</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/firewall">Компонент «SQL_Firewall»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_anonymizer">Компонент «ja_Anonymizer». Маскирование данных.</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_seceventlog3.3">ja_seceventlog3.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_similar">Компонент «ja_Similar». Полнотекстовый поиск.</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_sync_ldap1.3">ja_sync_ldap1.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_1">jadog_4.2_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_2">jadog_4.2_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_3">jadog_4.2_3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_secur">jadog_secur</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jalog">jalog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/map">map</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/secur_func">secur_func</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/secur_guide">secur_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/timescale">timescale</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/user_guide">user_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/wal-g">Компонент «wal-g». Архивация и восстановление данных.</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Коммерческая версия 18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">ja_seceventlog3.3</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:41%">
+<col style="width:58%">
+</colgroup><thead><tr><th><blockquote>
+<p>Подп. и дата</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td><blockquote>
+<p>Инв. № дубл.</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Взам. инв. №</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Подп. и дата</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Инв. № подл.</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 30.</strong></p>
+<p><strong>Запись событий информационной безопасности.</strong></p>
+<p><strong>Компонент «ja_SecEventLog»</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p><strong>643.72410666.00067-08 98 01-30</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>Листов 49</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>2026</p>
+</blockquote></td></tr><tr><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<header><h1>АННОТАЦИЯ</h1></header>
+<blockquote>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонента «ja_SecEventLog» (далее по тексту – «компонент»), предназначенного для формирования событий безопасности СУБД в соответствии с ГОСТ-Р-59548-2022</p>
+<p>«Национальный стандарт Российской Федерации. Защита информации. Регистрация событий безопасности. Требования к регистрируемой информации» и хранения их в отдельном каталоге.</p>
+<p>Степени важности примечаний, применяемые в документе:</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image1.png" style="width:0.25138in;height:0.25138in" class="img_ev3q"> <strong>Важная информация</strong> – указания, требующие особого внимания</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.24862in" class="img_ev3q"> <strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
+<p>Настоящее руководство предназначено для администраторов СУБД.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.24958in" class="img_ev3q"> Примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.</p>
+<p>Для СУБД «Jatoba» версий ядра 5/6/18 используется версия компонента — 3.3.</p>
+</blockquote>
+<h1>СОДЕРЖАНИЕ</h1>
+<h1></h1>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Назначение компонента 5</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Условия применения 5</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D1%8F">Ограничения 5</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">Установка и настройка 6</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B2-%D0%BE%D1%81-gnu-linux">Установка в ОС GNU Linux 6</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-postgresql.conf-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Настройка конфигурационного файла «postgresql.conf» для компонента «ja_SecEventLog» 7</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%BC">Параметры регистрации событий безопасности компонентом «ja_SecEventLog» 10</a></p>
+<ol>
+<li>
+<p><a href="#ja_seceventlog.log">ja_seceventlog.log 11</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_destination">ja_seceventlog.log_destination 12</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_relation">ja_seceventlog.log_relation 12</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_directory">ja_seceventlog.log_directory 13</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_filename">ja_seceventlog.log_filename 13</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_rotation_size">ja_seceventlog.log_rotation_size 14</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_rotation_age">ja_seceventlog.log_rotation_age 14</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.code_desc_cache_limit">ja_seceventlog.code_desc_cache_limit 15</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.source_desc_cache_limit">ja_seceventlog.source_desc_cache_limit 15</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_parameter_max_size">ja_seceventlog.log_parameter_max_size 16</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_destination_table">ja_seceventlog.log_destination_table 16</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.db_name">ja_seceventlog.db_name 16</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.jasel_syslog_facility">ja_seceventlog.jasel_syslog_facility 17</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.jasel_syslog_ident">ja_seceventlog.jasel_syslog_ident 18</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.jasel_syslog_sequence_numbers">ja_seceventlog.jasel_syslog_sequence_numbers 18</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.jasel_syslog_split_messages">ja_seceventlog.jasel_syslog_split_messages 18</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.maxage">ja_seceventlog.maxage 19</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.maxsize">ja_seceventlog.maxsize 20</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_size_soft_limit">ja_seceventlog.log_size_soft_limit 20</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_size_hard_limit">ja_seceventlog.log_size_hard_limit 21</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.max_queue_size">ja_seceventlog.max_queue_size 22</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.log_autoclose_minutes">ja_seceventlog.log_autoclose_minutes 23</a></p>
+</li>
+<li>
+<p><a href="#log_hostname">log_hostname 24</a></p>
+</li>
+<li>
+<p><a href="#log_connections">log_connections 24</a></p>
+</li>
+<li>
+<p><a href="#log_disconnections-boolean">log_disconnections (boolean) 25</a></p>
+</li>
+<li>
+<p><a href="#ja_seceventlog.max_filters">ja_seceventlog.max_filters 25</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-ja_seceventlog">Установка расширения «ja_seceventlog» 25</a></p>
+</li>
+<li>
+<p><a href="#_bookmark37">Директория хранения журнала событий безопасности компонента «ja_SecEventLog» 28</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Функциональные возможности компонента 30</a></p>
+<ol>
+<li>
+<p><a href="#%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Фильтрация событий информационной безопасности 30</a></p>
+<ol>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0-create_filter">Функция создания фильтра (create_filter) 31</a></p>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%B2-show_filters">Функция отображения фильтров (show_filters) 32</a></p>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0-drop_filter">Функция удаления фильтра (drop_filter) 33</a></p>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0-drop_filter_id">Функция удаления фильтра (drop_filter_id) 33</a></p>
+</li>
+<li>
+<p><a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D1%81%D0%B5%D1%85-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%B2-reset_filters">Функция удаления всех фильтров (reset_filters) 33</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B8%D0%B1-%D0%B2-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%83-%D0%B1%D0%B4">Запись событий ИБ в таблицу БД 33</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Обновление компонента 36</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-%D0%B8%D0%B7-%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">Обновление пакета компонента из репозитория 36</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8">Обновление расширения с использованием пакета установки 36</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-ja_seceventlog-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8-2.0-%D0%B4%D0%BE-3.x">Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.x 36</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log">Параметр ja_seceventlog.log 37</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.max_filters">Параметр ja_seceventlog.max_filters 38</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_connections">Параметр ja_seceventlog.log_connections 39</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_disconnections">Параметр ja_seceventlog.log_disconnections 40</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_catalog">Параметр ja_seceventlog.log_catalog 40</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_relation">Параметр ja_seceventlog.log_relation 40</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.role">Параметр ja_seceventlog.role 41</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_parameter">Параметр ja_seceventlog.log_parameter 42</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_statement">!Параметр ja_seceventlog.log_statement 43</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_statement_once">Параметр ja_seceventlog.log_statement_once 43</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_client">Параметр ja_seceventlog.log_client 43</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_level">Параметр ja_seceventlog.log_level 44</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_parameter_max_size">Параметр ja_seceventlog.log_parameter_max_size 44</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_rows">Параметр ja_seceventlog.log_rows 44</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Удаление компонента 45</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F">Удаление расширения 45</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0">Удаление пакета 45</a></p>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-1">Приложение 1 46</a></p>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 48</a></p>
+<h1>НАЗНАЧЕНИЕ КОМПОНЕНТА</h1>
+<blockquote>
+<p>Компонент «ja_SecEventLog» предназначен для формирования событий безопасности СУБД в соответствии с ГОСТ-Р-59548-2022 «Национальный стандарт Российской Федерации. Защита информации. Регистрация событий безопасности. Требования к регистрируемой информации» и хранения их в отдельном каталоге.</p>
+<p>Компонент устанавливает собственные и независимые параметры регистрации событий и вырезает события безопасности из журнала аудита СУБД, складывая их в свой журнал.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения">​</a></h2>
+<blockquote>
+<p>Компонент «ja_SecEventLog» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционной системы GNU/Linux.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ограничения">Ограничения<a href="#ограничения" class="hash-link" aria-label="Direct link to Ограничения" title="Direct link to Ограничения">​</a></h2>
+<blockquote>
+<p>На данной стадии реализации отсутствует интеграция компонента «ja_SecEventLog» с разделом «Уведомления» компонента «Jatoba Data Safe».</p>
+<p>События журналов безопасности хранятся в формате JSON.</p>
+<p>При обновлении компонента «ja_SecEventLog» с версии 2.0 до 3.x необходимо создать фильтры формирования событий безопасности СУБД, так как это указано в разделе <a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">4</a>.</p>
+</blockquote>
+<h1>УСТАНОВКА И НАСТРОЙКА</h1>
+<blockquote>
+<p>Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в операционной системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-в-ос-gnu-linux">Установка в ОС GNU Linux<a href="#установка-в-ос-gnu-linux" class="hash-link" aria-label="Direct link to Установка в ОС GNU Linux" title="Direct link to Установка в ОС GNU Linux">​</a></h2>
+<blockquote>
+<p>Компонент возможно установить при первичной установке СУБД «Jatoba», либо доустановить.</p>
+<p>Установку компонента возможно провести двумя способами:</p>
+</blockquote>
+<ol>
+<li>
+<p>установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;</p>
+</li>
+<li>
+<p>установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.</p>
+</li>
+</ol>
+<blockquote>
+<p>Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:</p>
+</blockquote>
+<ul>
+<li>для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки, следующая:</li>
+</ul>
+<blockquote>
+<p>apt-get install jatoba6-ja-seceventlog</p>
+</blockquote>
+<ul>
+<li>для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки, следующая:</li>
+</ul>
+<blockquote>
+<p>yum install jatoba6-ja_seceventlog</p>
+<p>Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.</p>
+</blockquote>
+<ul>
+<li>ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:</li>
+</ul>
+<blockquote>
+<p>apt-get install jatoba6-ja_seceventlog</p>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba5-ja-seceventlog и т.п.</p>
+<p>Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-конфигурационного-файла-postgresqlconf-для-компонента">Настройка конфигурационного файла «postgresql.conf» для компонента<a href="#настройка-конфигурационного-файла-postgresqlconf-для-компонента" class="hash-link" aria-label="Direct link to Настройка конфигурационного файла «postgresql.conf» для компонента" title="Direct link to Настройка конфигурационного файла «postgresql.conf» для компонента">​</a></h2>
+<blockquote>
+<p><strong>«ja_SecEventLog»</strong></p>
+<p>Функциональные возможности компонента позволяют сохранять события безопасности:</p>
+</blockquote>
+<ul>
+<li>
+<p>в системный журнал операционной системы (SYSLOG);</p>
+</li>
+<li>
+<p>в отдельный каталог (JSON);</p>
+</li>
+<li>
+<p>в таблицу БД;</p>
+</li>
+<li>
+<p>параллельно в отдельный каталог и в таблицу БД.</p>
+</li>
+</ul>
+<blockquote>
+<p>Данные функциональные возможности выделяют ключевые, зависимые и дополнительные параметры компонента. Правильная установка которых напрямую влияет на работоспособность компонента.</p>
+<p>Взаимосвязи ключевых и зависимых параметров компонента представлены на рисунке <a href="#_bookmark6">2.1</a>.</p>
+</blockquote>
+<p>ja_secev en t log .log _rot ation _si ze</p>
+<blockquote>
+<p>ja_secev en t log .log _rot ation _ag e</p>
+<p>ja_secev en t log .m axag e</p>
+<p>ja_secev en t log .jasel_syslo g_ident</p>
+<p>ja_secev en t log .jasel_syslo g_sequence_num bers</p>
+<p>ja_secev en t log .jasel_sp l it _m essag es</p>
+<p>Хр ан ен и е событи й И Б</p>
+</blockquote>
+<p>ja_secev en t log .m axsi ze</p>
+<p>ja_secev en t log .log _d irec to ry</p>
+<p>ja_secev en t log .db _n am e</p>
+<p>t rue</p>
+<p>false</p>
+<p>json log</p>
+<p>syslo g</p>
+<p>off</p>
+<p>ja_secev en t log .log _d est in at ion _t ab le</p>
+<p>ja_secev en t log .log _dest inat ion</p>
+<p>В табли ц е БД</p>
+<p>Пар аллельн о</p>
+<p>В к аталог е (JSO N)</p>
+<blockquote>
+<p>ja_secev en t log .log _si ze _so ft _lim it</p>
+<p>ja_secev en t log .log _si ze _h ard _lim it</p>
+<p><span id="_bookmark6" class="anchor"></span>Рисунок 2.1 – Схема зависимости параметров компонента</p>
+<p>Установка параметров компонента осуществляются или через конфигурационный файл «postgresql.conf», или после установки расширения SQL-командой, как описано в п.п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%BC">2.3</a>.</p>
+<p>Загрузка библиотеки компонента, для последующей установки расширения, выполняется в разделе «Shared Library Preloading» установкой параметра:</p>
+<p>shared_preload_libraries = &#x27;ja_seceventlog&#x27;</p>
+<p>В случае конфигурирования компонента через конфигурационный файл СУБД, потребуется создать раздел «JATOBA LOGGING PARAMETERS # ja_seceventlog» и установить параметры регистрации событий в СУБД компонента «ja_SecEventLog».</p>
+<p>Рисунок 2.2 – Параметры регистрации событий безопасности компонентом</p>
+<p>«ja_SecEventLog»</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">Параметр сохранения событий безопасности ja_seceventlog.log_directory рекомендуется закомментировать или не включать в конфигурационный файл при первоначальном конфигурировании для исключения ошибки. Поскольку расширение на данном этапе еще не установлено, каталог хранения может быть не создан и не установлены права на каталог. #ja_seceventlog.log_directory = &#x27;audit_log&#x27;</p>
+<p>Пример минимальных параметров компонента «ja_SecEventLog» в</p>
+<p>конфигурационном файле СУБД приведен в следующем листинге:</p>
+<p>#</p>
+<p># JATOBA LOGGING PARAMETERS #ja_seceventlog #</p>
+<p>log_connections = on log_disconnections = on ja_seceventlog.log=&#x27;ALL&#x27; ja_seceventlog.db_name=&#x27;test&#x27;</p>
+<p>ja_seceventlog.log_destination =&#x27;jsonlog&#x27; ja_seceventlog.log_parameter_max_size=4096 ja_seceventlog.log_relation=on</p>
+<p>ja_seceventlog.log_destination_table = true</p>
+<p>Применение установленных параметров в конфигурационных файлах выполняется перезагрузкой службы СУБД:</p>
+<p>systemctl restart jatoba-&lt;ver&gt; systemctl status jatoba-&lt;ver&gt;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметры-регистрации-событий-безопасности-компонентом">Параметры регистрации событий безопасности компонентом<a href="#параметры-регистрации-событий-безопасности-компонентом" class="hash-link" aria-label="Direct link to Параметры регистрации событий безопасности компонентом" title="Direct link to Параметры регистрации событий безопасности компонентом">​</a></h2>
+<blockquote>
+<p><strong>«ja_SecEventLog»</strong></p>
+<p>После установки расширения компонента становится доступным вывод параметров</p>
+<p>SQL-командой:</p>
+<p>SELECT name,setting from pg_settings where name like &#x27;%seceventlog%&#x27;;</p>
+<p>Рисунок 2.3 – Вывод параметров компонента</p>
+<p>Установить или изменить параметры компонента в СУБД возможно от имени и с правами привилегированного пользователя SQL-командой:</p>
+<p>ALTER SYSTEM</p>
+<p>Применяются параметры при перезагрузке СУБД.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog">ja_seceventlog.log<a href="#ja_seceventloglog" class="hash-link" aria-label="Direct link to ja_seceventlog.log" title="Direct link to ja_seceventlog.log">​</a></h2>
+<blockquote>
+<p>Параметр определяет какие классы операторов будут регистрироваться в журнале событий безопасности СУБД.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">В зависимости от версии компонента имеются отличия в значениях параметров ja_seceventlog.log</p>
+<p>Значения параметра для версии 3.x могут быть следующими:</p>
+</blockquote>
+<ul>
+<li>
+<p>NONE – события аудита не регистрируются в независимости от установленных фильтров (см. п.п. <a href="#%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8">3.1</a>);</p>
+</li>
+<li>
+<p>ALL – регистрируются все события.</p>
+</li>
+</ul>
+<blockquote>
+<p>ja_seceventlog.log = &#x27;ALL&#x27;</p>
+<p>Тип параметра - string.</p>
+<p>Значения параметра для версии 2.0 могут быть следующими:</p>
+</blockquote>
+<ul>
+<li>
+<p>READ – регистрируются SQL-команды SELECT, COPY в случае если источником является отношение или запрос;</p>
+</li>
+<li>
+<p>WRITE – регистрируются SQL-команды INSERT, UPDATE, DELETE, TRUNCATE, и COPY;</p>
+</li>
+<li>
+<p>FUNCTION – регистрируются функции CALLS и DO;</p>
+</li>
+<li>
+<p>ROLE – регистрируются SQL-команды, относящиеся к ролям и системным привилегиям такие как, GRANT, REVOKE, CREATE/ALTER/DROP ROLE;</p>
+</li>
+<li>
+<p>DDL – регистрируются SQL-команды DDL не относящиеся к параметру ROLE;</p>
+</li>
+<li>
+<p>MISC – регистрируются прочие команды SQL-команды, такие как DISCARD, FETCH, CHECKPOINT, VACUUM, SET;</p>
+</li>
+<li>
+<p>MISC_SET – регистрируются SQL-команды типа SET.</p>
+</li>
+</ul>
+<blockquote>
+<p>Создание фильтров событий в версии 3.x, соответствующих версии 2.0 приводится в п.п. <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0-create_filter">3.1.1</a>.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_destination">ja_seceventlog.log_destination<a href="#ja_seceventloglog_destination" class="hash-link" aria-label="Direct link to ja_seceventlog.log_destination" title="Direct link to ja_seceventlog.log_destination">​</a></h2>
+<blockquote>
+<p>Параметр, определяет формат записи журнала событий безопасности СУБД.</p>
+<p>Расширение ja_seceventlog поддерживает несколько методов для регистрации сообщений сервера, включая jsonlog (JSON). При настройке параметра необходимо выбрать один из следующих методов:</p>
+</blockquote>
+<ul>
+<li>
+<p>jsonlog – логирование в отдельный каталог в формате JSON;</p>
+</li>
+<li>
+<p>syslog – логирование системный журнал операционной системы (SYSLOG);</p>
+</li>
+<li>
+<p>off – логирование в отдельный каталог (JSON) или в системный журнал операционной системы (SYSLOG) отключено.</p>
+</li>
+</ul>
+<blockquote>
+<p>ja_seceventlog.log_destination = &#x27;jsonlog&#x27;</p>
+<p>Тип параметра – string.</p>
+<p>Значение по умолчанию – jsonlog. Параметр csvlog отключен.</p>
+<p>Запись в журнальный файл или сервис SYSLOG будет производиться параллельно с записью в таблицу, если включен параметр <a href="#ja_seceventlog.log_destination_table"><u>ja_seceventlog.log_destination_table</u></a> (см. п.п <a href="#ja_seceventlog.log_destination_table">2.3.11</a>).</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_relation">ja_seceventlog.log_relation<a href="#ja_seceventloglog_relation" class="hash-link" aria-label="Direct link to ja_seceventlog.log_relation" title="Direct link to ja_seceventlog.log_relation">​</a></h2>
+<blockquote>
+<p>Параметр указывает, должно ли ведение журнала аудита сессии создавать отдельную запись журнала для каждого отношения (TABLE, VIEW и т. д.), на которое ссылается оператор SELECT или DML.</p>
+<p>ja_seceventlog.log_relation = on</p>
+<p>Тип параметра – boolean. Значение по умолчанию – off.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_directory">ja_seceventlog.log_directory<a href="#ja_seceventloglog_directory" class="hash-link" aria-label="Direct link to ja_seceventlog.log_directory" title="Direct link to ja_seceventlog.log_directory">​</a></h2>
+<blockquote>
+<p>Параметр указывает на директорию хранения журнала событий безопасности, если установлен параметр <a href="#ja_seceventlog.log_destination"><u>ja_seceventlog.log_destination</u></a>=&#x27;jsonlog&#x27; (см. п.п. <a href="#ja_seceventlog.log_destination">2.3.2</a>).</p>
+<p>ja_seceventlog.log_directory = &#x27;/audit_log&#x27;</p>
+<p>Тип параметра – string.</p>
+<p>Значение по умолчанию – LOG (/var/lib/jatoba/&lt;ver&gt;/data/log).</p>
+<p>У служебного пользователя ОС, под которым запускается СУБД «Jatoba», должны быть все права на директорию.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_filename">ja_seceventlog.log_filename<a href="#ja_seceventloglog_filename" class="hash-link" aria-label="Direct link to ja_seceventlog.log_filename" title="Direct link to ja_seceventlog.log_filename">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.log_filename» определяет формат названия журнала событий безопасности, если установлен параметр <a href="#ja_seceventlog.log_destination"><u>ja_seceventlog.log_destination</u></a>=&#x27;jsonlog&#x27; (см. п.п. <a href="#ja_seceventlog.log_destination">2.3.2</a>).</p>
+<p>В значении параметра допускается использовать только следующие спецификаторы:</p>
+<p>− %Y;</p>
+<p>− %m;</p>
+<p>− %d;</p>
+<p>− %H;</p>
+<p>− %M;</p>
+<p>− %S.</p>
+<p>Порядок указания спецификаторов в параметре «ja_seceventlog.log_filename» не имеет значения.</p>
+<p>ja_seceventlog.log_filename = &#x27;audit-%Y-%m-%d_%H%M%S&#x27;</p>
+<p>Тип параметра – string.</p>
+<p>Значение по умолчанию – audit-%Y-%m-%d_%H%M%S.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">Если в значении параметра «ja_seceventlog.log_filename» пропущен один или несколько спецификаторов, то выдается сообщение о некорректном значении параметра в журнал СУБД:</p>
+<p>The *** specifier is missing in the ja_seceventlog.log_filename parameter. The parameter must &quot;</p>
+<p>&quot;contain the date and time specifiers %%Y, %%m, %%d,</p>
+<p>%%H, %%M, %%S in any order.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_rotation_size">ja_seceventlog.log_rotation_size<a href="#ja_seceventloglog_rotation_size" class="hash-link" aria-label="Direct link to ja_seceventlog.log_rotation_size" title="Direct link to ja_seceventlog.log_rotation_size">​</a></h2>
+<blockquote>
+<p>Параметр, определяющий ротацию журнала по достижению установленного размера:</p>
+</blockquote>
+<ul>
+<li>
+<p>B – байт (bytes);</p>
+</li>
+<li>
+<p>kB – килобайт (kilobytes);</p>
+</li>
+<li>
+<p>MB – мегабайт (megabytes);</p>
+</li>
+<li>
+<p>GB – гигабайт (gigabytes);</p>
+</li>
+<li>
+<p>TB – терабайт (terabytes).</p>
+</li>
+</ul>
+<blockquote>
+<p>ja_seceventlog.log_rotation_size = 0</p>
+<p>Если это значение задаётся без единиц измерения, оно считается заданным в килобайтах.</p>
+<p>При нулевом значении смена файлов по размеру не производится. Тип параметра - integer with unit.</p>
+<p>Значение по умолчанию - 10MB.</p>
+<p>Диапазон значений параметра от 0 до 9 216 TB.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image6.png" style="width:0.24025in;height:0.24022in" class="img_ev3q">Не рекомендуется ставить небольшие значения, ротация журналов в таком случае будет происходить не чаще чем 1 раз в секунду.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_rotation_age">ja_seceventlog.log_rotation_age<a href="#ja_seceventloglog_rotation_age" class="hash-link" aria-label="Direct link to ja_seceventlog.log_rotation_age" title="Direct link to ja_seceventlog.log_rotation_age">​</a></h2>
+<blockquote>
+<p>Параметр определяет максимальное время жизни отдельного журнального файла, по истечении которого создаётся новый файл.</p>
+<p>Используются следующие единицы измерения:</p>
+</blockquote>
+<ul>
+<li>
+<p>min – минуты;</p>
+</li>
+<li>
+<p>h – часы;</p>
+</li>
+<li>
+<p>d – дни.</p>
+</li>
+</ul>
+<blockquote>
+<p>Если это значение задаётся без единиц измерения, оно считается заданным в минутах.</p>
+<p>ja_seceventlog.log_rotation_age = 0</p>
+<p>Не рекомендуется ставить небольшие значения, ротация журналов в таком случае будет происходить не чаще чем 1 раз в секунду.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image7.png" style="width:0.24025in;height:0.24022in" class="img_ev3q">При нулевом значении смена файлов по времени не производится. Тип параметра - integer with unit.</p>
+<p>Значение по умолчанию - 1440min.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogcode_desc_cache_limit">ja_seceventlog.code_desc_cache_limit<a href="#ja_seceventlogcode_desc_cache_limit" class="hash-link" aria-label="Direct link to ja_seceventlog.code_desc_cache_limit" title="Direct link to ja_seceventlog.code_desc_cache_limit">​</a></h2>
+<blockquote>
+<p>Служебный параметр, определяет максимальное количество значений описаний событий безопасности (из таблицы ja_seceventlog.secevent_code_desc), хранящихся в кеше.</p>
+<p>ja_seceventlog.code_desc_cache_limit = 200</p>
+<p>Тип параметра - integer Значение по умолчанию – 200.</p>
+<p>Параметр ja_seceventlog.code_desc_cache_limit меняется только при изменении состава событий расширения. Не должен быть меньше количества записей в служебной таблице ja_seceventlog.secevent_code_desc.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogsource_desc_cache_limit">ja_seceventlog.source_desc_cache_limit<a href="#ja_seceventlogsource_desc_cache_limit" class="hash-link" aria-label="Direct link to ja_seceventlog.source_desc_cache_limit" title="Direct link to ja_seceventlog.source_desc_cache_limit">​</a></h2>
+<blockquote>
+<p>Служебный параметр, определяет максимальное количество источников событий безопасности (из таблицы ja_seceventlog.secevent_source_desc), хранящихся в кеше.</p>
+<p>ja_seceventlog.source_desc_cache_limit = 20</p>
+<p>Тип параметра - integer. Значение по умолчанию – 20.</p>
+<p>Параметр меняется только при изменении состава источников событий безопасности (компонент), регистрируемых расширением. Не должен быть меньше количества записей в служебной таблице ja_seceventlog.secevent_source_desc.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_parameter_max_size">ja_seceventlog.log_parameter_max_size<a href="#ja_seceventloglog_parameter_max_size" class="hash-link" aria-label="Direct link to ja_seceventlog.log_parameter_max_size" title="Direct link to ja_seceventlog.log_parameter_max_size">​</a></h2>
+<blockquote>
+<p>Параметр определяет максимальный размер параметров SQL-команды, которые будут записываться в атрибут &quot;Parameter&quot;.</p>
+<p>ja_seceventlog.log_parameter_max_size = 0</p>
+<p>Тип параметра – integer. Значение по умолчанию – 4096.</p>
+<p>Диапазон значений от 0 до 2^30-1.</p>
+<p>Если значение равно 0 (по умолчанию), все параметры регистрируются независимо от длины.</p>
+<p>Если длина значения параметра SQL-команды больше заданного значения</p>
+<p>«ja_seceventlog.log_parameter_max_size», то вместо значения параметра, в атрибут &quot;Parameter&quot; будет записываться значение &quot;long param suppressed&quot;.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_destination_table">ja_seceventlog.log_destination_table<a href="#ja_seceventloglog_destination_table" class="hash-link" aria-label="Direct link to ja_seceventlog.log_destination_table" title="Direct link to ja_seceventlog.log_destination_table">​</a></h2>
+<p>Параметр определяет запись событий информационной безопасности в таблицу</p>
+<p>ja_seceventlog.secevent_log и непосредственно связан с параметром</p>
+<blockquote>
+<p>«ja_seceventlog.db_name».</p>
+<p>ja_seceventlog.log_destination_table = true</p>
+<p>Тип параметра – boolean. Значение по умолчанию – on.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogdb_name">ja_seceventlog.db_name<a href="#ja_seceventlogdb_name" class="hash-link" aria-label="Direct link to ja_seceventlog.db_name" title="Direct link to ja_seceventlog.db_name">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.db_name» определяет БД, в которую должно быть установлено расширение.</p>
+<p>ja_seceventlog.db_name = postgres</p>
+<p>Тип параметра – string.</p>
+<p>Значение по умолчанию – postgres.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image8.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">Если значение этого параметра не будет совпадать с БД, в которую <u>устанавливается расширение</u>, при начальной установке, то расширение может работать некорректно. Это является ошибкой установки! Расширение ja_seceventlog должно быть установлено в ту же БД, что и значение параметра</p>
+<p>«ja_seceventlog.db_name».</p>
+<p>При включенном протоколировании в таблицу БД, то есть при установленном параметре <a href="#ja_seceventlog.log_destination_table"><u>ja_seceventlog.log_destination_table</u></a> = true, определяет имя базы данных, в которой содержится таблица.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">Если изначально в конфигурационном файле postgresql.conf был установлен параметр записи событий безопасности в таблицу</p>
+<p>«ja_seceventlog.log_destination_table» и не установлен параметр определяющий размещение таблицы в БД «ja_seceventlog.db_name», то по будет использована БД по умолчанию «postgres».</p>
+<p>В последующем добавление либо изменение параметра</p>
+<p>«ja_seceventlog.db_name» невозможно, так как это потребует переустановки расширения «ja_seceventlog».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogjasel_syslog_facility">ja_seceventlog.jasel_syslog_facility<a href="#ja_seceventlogjasel_syslog_facility" class="hash-link" aria-label="Direct link to ja_seceventlog.jasel_syslog_facility" title="Direct link to ja_seceventlog.jasel_syslog_facility">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.jasel_syslog_facility» является зависимым от параметра</p>
+<p>«ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog».</p>
+<p>Параметр используется для указания типа протоколируемой программы (facility). Используются допустимые значения LOCAL0, LOCAL1, LOCAL2, LOCAL3, LOCAL4, LOCAL5, LOCAL6, LOCAL7.</p>
+<p>ja_seceventlog.jasel_syslog_facility = LOCAL0</p>
+<p>Значение по умолчанию – LOCAL0.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogjasel_syslog_ident">ja_seceventlog.jasel_syslog_ident<a href="#ja_seceventlogjasel_syslog_ident" class="hash-link" aria-label="Direct link to ja_seceventlog.jasel_syslog_ident" title="Direct link to ja_seceventlog.jasel_syslog_ident">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.jasel_syslog_ident» является зависимым от параметра</p>
+<p>«<a href="#ja_seceventlog.log_destination"><u>ja_seceventlog.log_destination</u></a>» (см. п.п. 2.3.2), который определяет формат записи событий безопасности, если установлено значение «syslog».</p>
+<p>Параметр «ja_seceventlog.jasel_syslog_ident» задаёт имя программы, которое будет использоваться для идентификации сообщений.</p>
+<p>ja_seceventlog.jasel_syslog_ident = jatoba</p>
+<p>Тип параметра – string.</p>
+<p>Значение по умолчанию – jatoba.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogjasel_syslog_sequence_numbers">ja_seceventlog.jasel_syslog_sequence_numbers<a href="#ja_seceventlogjasel_syslog_sequence_numbers" class="hash-link" aria-label="Direct link to ja_seceventlog.jasel_syslog_sequence_numbers" title="Direct link to ja_seceventlog.jasel_syslog_sequence_numbers">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.jasel_syslog_sequence_numbers» является зависимым от параметра «ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog». При данном значении параметр</p>
+<p>«ja_seceventlog.jasel_syslog_sequence_numbers» включен по умолчанию.</p>
+<p>Параметр «ja_seceventlog.jasel_syslog_sequence_numbers» при выводе событий безопасности в системный журнал операционной системы (SYSLOG) последовательно увеличивает номера сообщений</p>
+<p>Тип параметра – boolean. Значение по умолчанию – false.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogjasel_syslog_split_messages">ja_seceventlog.jasel_syslog_split_messages<a href="#ja_seceventlogjasel_syslog_split_messages" class="hash-link" aria-label="Direct link to ja_seceventlog.jasel_syslog_split_messages" title="Direct link to ja_seceventlog.jasel_syslog_split_messages">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.jasel_syslog_split_messages» является зависимым от параметра «<a href="#ja_seceventlog.log_destination"><u>ja_seceventlog.log_destination</u></a>» (см. п.п. 2.3.2), который определяет формат записи событий безопасности, если установлено значение «syslog».</p>
+<p>Когда параметр «ja_seceventlog.jasel_syslog_split_messages» имеет значение «syslog», т.е. активен вывод в системный журнал операционной системы (SYSLOG) событий</p>
+<p>безопасности, этот параметр определяет, как будут доставляться сообщения.</p>
+<p>Если он включён (по умолчанию), сообщения разделяются по строкам, а длинные строки разбиваются на строки не длиннее 1024 байт, что составляет типичное ограничение размера для традиционных реализаций syslog.</p>
+<p>ja_seceventlog.jasel_syslog_split_messages = on</p>
+<p>Тип параметра – boolean. Значение по умолчанию – true.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogmaxage">ja_seceventlog.maxage<a href="#ja_seceventlogmaxage" class="hash-link" aria-label="Direct link to ja_seceventlog.maxage" title="Direct link to ja_seceventlog.maxage">​</a></h2>
+<blockquote>
+<p>Параметр определяет количество дней, в течение которых будут храниться журналы событий безопасности СУБД в отдельном каталоге.</p>
+<p>Если значение равно «0», то удаление файлов по этому параметру производиться не</p>
+<p>будет.</p>
+<p>ja_seceventlog.maxage = 30</p>
+<p>Тип параметра – integer.</p>
+<p>Значение по умолчанию – 30 дней.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Единицу измерения указывать нельзя.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogmaxsize">ja_seceventlog.maxsize<a href="#ja_seceventlogmaxsize" class="hash-link" aria-label="Direct link to ja_seceventlog.maxsize" title="Direct link to ja_seceventlog.maxsize">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.maxsize» определяет объем дисковой памяти, выделенной администратором для хранения журналов событий безопасности СУБД в отдельном каталоге.</p>
+<p>Параметр устанавливается в следующих единицах измерения:</p>
+</blockquote>
+<ul>
+<li>
+<p>B – байт (bytes);</p>
+</li>
+<li>
+<p>kB – килобайт (kilobytes);</p>
+</li>
+<li>
+<p>MB – мегабайт (megabytes);</p>
+</li>
+<li>
+<p>GB – гигабайт (gigabytes);</p>
+</li>
+<li>
+<p>TB – терабайт (terabytes).</p>
+</li>
+</ul>
+<blockquote>
+<p>ja_seceventlog.maxsize = 10MB</p>
+<p>Тип параметра - integer with unit. Значение по умолчанию – 10MB.</p>
+<p>Если значение равно «0», то не будут выполняться проверки на программные (soft) лимиты по параметру «<a href="#ja_seceventlog.log_size_soft_limit"><u>ja_seceventlog.log_size_soft_limit</u></a>» (см. п.п. <a href="#ja_seceventlog.log_size_soft_limit">2.3.19</a>) и аппаратные (hard) лимиты по параметру «<a href="#ja_seceventlog.log_size_hard_limit"><u>ja_seceventlog.log_size_hard_limit</u></a>» (см. п.п. <a href="#ja_seceventlog.log_size_hard_limit">2.3.20</a>).</p>
+<p>Если значение не равно «0», то ротация по параметру «ja_seceventlog.maxsize» будет осуществляться по правилам, описанным в параметрах</p>
+</blockquote>
+<ul>
+<li>
+<p>«<a href="#ja_seceventlog.log_size_soft_limit">ja_seceventlog.log_size_soft_limit</a>» (см. п.п. <a href="#ja_seceventlog.log_size_soft_limit">2.3.19</a>);</p>
+</li>
+<li>
+<p>«<a href="#ja_seceventlog.log_size_hard_limit">ja_seceventlog.log_size_hard_limit</a>» (см. п.п. <a href="#ja_seceventlog.log_size_hard_limit">2.3.20</a>).</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_size_soft_limit">ja_seceventlog.log_size_soft_limit<a href="#ja_seceventloglog_size_soft_limit" class="hash-link" aria-label="Direct link to ja_seceventlog.log_size_soft_limit" title="Direct link to ja_seceventlog.log_size_soft_limit">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.log_size_soft_limit» является зависимым от параметра</p>
+<p>«ja_seceventlog.maxsize» который устанавливает размер каталога для хранения журналов событий безопасности СУБД.</p>
+<p>Параметр «ja_seceventlog.log_size_soft_limit» определяет процент заполнения журналами, от установленного размера каталога в параметре «ja_seceventlog.maxsize», при</p>
+<p>достижении которого будет записано соответствующее сообщение в журнал событий безопасности СУБД в отдельном каталоге.</p>
+<p>ja_seceventlog.log_size_soft_limit = 80</p>
+<p>Тип параметра – integer. Значение по умолчанию – 0.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">В значении параметра нельзя указывать символ %</p>
+<p>Если значение равно «0», то проверка выполняться не будет.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">Значение параметра должно быть не более 80%. Данное значение является оптимальным.</p>
+<p>При большем значении присваивается значение 80%.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_size_hard_limit">ja_seceventlog.log_size_hard_limit<a href="#ja_seceventloglog_size_hard_limit" class="hash-link" aria-label="Direct link to ja_seceventlog.log_size_hard_limit" title="Direct link to ja_seceventlog.log_size_hard_limit">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.log_size_hard_limit» является зависимым параметром от параметра «<a href="#ja_seceventlog.maxsize"><u>ja_seceventlog.maxsize</u></a>» (см. п.п. <a href="#ja_seceventlog.maxsize">2.3.18</a>), который определяет объем дисковой памяти, выделенной администратором для хранения журналов событий безопасности СУБД в отдельном каталоге.</p>
+<p>Параметр «ja_seceventlog.log_size_hard_limit» определяет процент заполнения объема выделенного каталога и при достижении порогового значения удаляет старый файл журнала событий безопасности. О выполненной операции выполняется делается запись в актуальном файле журналов событий безопасности СУБД</p>
+<p>ja_seceventlog.log_size_hard_limit = 0%</p>
+<p>Тип параметра – integer. Значение по умолчанию – 0.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image9.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">В значении параметра нельзя указывать символ %</p>
+<p>Если значение равно «0», то не будут выполняться проверки на аппаратный (hard) лимит.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image8.png" style="width:0.24159in;height:0.24155in" class="img_ev3q">Значение параметра «log_size_hard_limit» должно быть больше значения параметра log_size_soft_limit минимум на 10%.</p>
+<p>Максимальное значение параметра не должно превышать 90%</p>
+<p>Если указано значение параметра больше 90%, то значению параметра будет присвоено значение 90%.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogmax_queue_size">ja_seceventlog.max_queue_size<a href="#ja_seceventlogmax_queue_size" class="hash-link" aria-label="Direct link to ja_seceventlog.max_queue_size" title="Direct link to ja_seceventlog.max_queue_size">​</a></h2>
+<blockquote>
+<p>Параметр определяет, сколько блоков по 2048 байт выделяются в «Shared Memory» для очереди ожидания записи событий безопасности в служебную таблицу</p>
+<p>«ja_seceventlog.secevent_log» в базу данных, заданную параметров <a href="#ja_seceventlog.db_name"><u>ja_seceventlog.db_name</u></a> (см. п.п. <a href="#ja_seceventlog.db_name">2.3.12</a>).</p>
+<p>Размер данной очереди событий регулируется параметром ja_seceventlog.max_queue_size.</p>
+<p>Чем больше данный параметр, тем больше рабочих процессов может одновременно записать туда сообщения без значительного влияния на производительность этих рабочих процессов.</p>
+<p>ja_seceventlog.max_queue_size = 100000</p>
+<p>Тип параметра – integer.</p>
+<p>Допустимые значения от 1000 до 10000000. Значение по умолчанию – 100000.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image1.png" style="width:0.25138in;height:0.25044in" class="img_ev3q">Максимальное устанавливаемое значение параметра 10000000, что грубо соответствует размеру очереди событий в ОЗУ 19Гб (количество элементов в очереди * 2 Кб). В случае если комплекс технических средств не располагает доступным объемом ОЗУ выполняется остановка СУБД с выводом сообщения:</p>
+<p>FATAL: could not map anonymous shared memory: Cannot allocate memory</p>
+<p>LOG: database system is shut down</p>
+<p>Ниже содержатся рекомендации по установке значения параметра max_queue_size в зависимости от нагрузки СУБД:</p>
+</blockquote>
+<ul>
+<li>
+<p>нагрузка «чтение/запись»:</p>
+<ul>
+<li>
+<p>при 100 одновременных подключений и суммарном количестве запросов порядка 3000 TPS рекомендуем значение параметра max_queue_size &gt; = 100000. Объем выделяемой буферизуемой оперативной памяти 200 МБ;</p>
+</li>
+<li>
+<p>при 50 одновременных подключений и суммарном количестве запросов порядка 2500 TPS рекомендуем значение параметра max_queue_size &gt; = 50000. Объем выделяемой буферизуемой оперативной памяти 100 МБ;</p>
+</li>
+<li>
+<p>при 10 одновременных подключений и суммарном количестве запросов порядка 2000 TPS рекомендуем значение параметра max_queue_size &gt; = 10000. Объем выделяемой буферизуемой оперативной памяти 20 МБ.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>нагрузка «чтение»:</p>
+<ul>
+<li>
+<p>при 100 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size &gt; = 4000000. Объем выделяемой буферизуемой оперативной памяти 8 ГБ;</p>
+</li>
+<li>
+<p>при 50 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size &gt; = 3000000. Объем выделяемой буферизуемой оперативной памяти 6 ГБ;</p>
+</li>
+<li>
+<p>при 10 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size &gt; = 2000000. Объем выделяемой буферизуемой оперативной памяти 4 ГБ</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventloglog_autoclose_minutes">ja_seceventlog.log_autoclose_minutes<a href="#ja_seceventloglog_autoclose_minutes" class="hash-link" aria-label="Direct link to ja_seceventlog.log_autoclose_minutes" title="Direct link to ja_seceventlog.log_autoclose_minutes">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.log_autoclose_minutes» определяет количество минут бездействия сервера, по достижению которых произойдет автоматическое закрытие журнального файла.</p>
+<p>ja_seceventlog.log_autoclose_minutes = 0</p>
+<p>Значение по умолчанию – 0. Тип параметра – integer.</p>
+<p>При установленном значении параметра «0» – автоматическое закрытие журнального файла не производится.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="log_hostname">log_hostname<a href="#log_hostname" class="hash-link" aria-label="Direct link to log_hostname" title="Direct link to log_hostname">​</a></h2>
+<blockquote>
+<p>Параметр «log_hostname» принадлежит СУБД «Jatoba» и включает протоколирование имени узла подключаемого пользователя в атрибуте &quot;remote_host&quot; записи события безопасности.</p>
+<p>Параметр устанавливается в конфигурационном файле «postgresql.conf»:</p>
+<p>log_hostname=on</p>
+<p>Тип параметра - boolean. Значение по умолчанию – off.</p>
+<p>Условием получение имени узла подключаемого пользователя является установка параметра и возможность получения имени узла через DNS.</p>
+<p>В случае установки параметра log_hostname=off или невозможности получения имени узла через DNS, в атрибут &quot;remote_host&quot; будет записываться IP-адрес узла подключаемого пользователя.</p>
+<p>Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="log_connections">log_connections<a href="#log_connections" class="hash-link" aria-label="Direct link to log_connections" title="Direct link to log_connections">​</a></h2>
+<blockquote>
+<p>Параметр включает протоколирование всех попыток подключения к серверу, в том числе успешного завершения как аутентификации, так и авторизации клиентов.</p>
+<p>Он параметр принадлежит СУБД «Jatoba», но расширение «ja_seceventlog» проверяет его значение для регистрации событий входа.</p>
+<p>Устанавливается в конфигурационном файле «postgresql.conf»:</p>
+<p>log_connections = on</p>
+<p>Тип параметра - boolean. Значение по умолчанию – off.</p>
+<p>Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="log_disconnections-boolean">log_disconnections (boolean)<a href="#log_disconnections-boolean" class="hash-link" aria-label="Direct link to log_disconnections (boolean)" title="Direct link to log_disconnections (boolean)">​</a></h2>
+<blockquote>
+<p>Параметр включает протоколирование завершения сеанса.</p>
+<p>Он параметр принадлежит СУБД «Jatoba», но расширение «ja_seceventlog» проверяет его значение для регистрации событий завершения сеанса.</p>
+<p>Устанавливается в конфигурационном файле «postgresql.conf»:</p>
+<p>log_disconnections = on</p>
+<p>Тип параметра - boolean. Значение по умолчанию – off.</p>
+<p>Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ja_seceventlogmax_filters">ja_seceventlog.max_filters<a href="#ja_seceventlogmax_filters" class="hash-link" aria-label="Direct link to ja_seceventlog.max_filters" title="Direct link to ja_seceventlog.max_filters">​</a></h2>
+<blockquote>
+<p>Параметр определяет максимальное количество применяемых фильтров.</p>
+<p>ja_seceventlog.max_filters = 128</p>
+<p>Допустимые границы значения данного значения: от 6 до 1024. Тип параметра – integer.</p>
+<p>Значение по умолчанию – 128.</p>
+<p>Если в служебной таблице фильтров будет больше, чем значение этого параметра, то будут использоваться только первые max_filters фильтров по порядку возрастания их идентификаторов в таблице filters.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-расширения-ja_seceventlog">Установка расширения «ja_seceventlog»<a href="#установка-расширения-ja_seceventlog" class="hash-link" aria-label="Direct link to Установка расширения «ja_seceventlog»" title="Direct link to Установка расширения «ja_seceventlog»">​</a></h2>
+<blockquote>
+<p>Войти в СУБД от имени и с правами пользователя «SUPERUSER», выполнить SQL-команду:</p>
+<p>CREATE EXTENSION ja_seceventlog;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image10.png" style="width:7.03192in;height:1.05219in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 2.4 – Установка расширения «ja_seceventlog»</p>
+<p>В результате будет создана одноименная схема данных и служебные таблицы:</p>
+</blockquote>
+<ul>
+<li>
+<p>ja_seceventlog.secevent_code_desc, содержащую спецификацию событий безопасности СУБД (см. рисунок <a href="#_bookmark35">2.5</a>);</p>
+</li>
+<li>
+<p>ja_seceventlog.secevent_source_desc, содержащую спецификацию компонентов СУБД (см. рисунок <a href="#_bookmark36">2.6</a>);</p>
+</li>
+<li>
+<p>secevent_log – таблица временного хранения событий безопасности.</p>
+</li>
+</ul>
+<blockquote>
+<p>27</p>
+<p>643.72410666.00067-08 98 01-30</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image11.jpeg" style="width:10.65476in;height:1.67062in" class="img_ev3q">
+<blockquote>
+<p><span id="_bookmark35" class="anchor"></span>Рисунок 2.5 – Таблица «ja_seceventlog.secevent_code_desc»</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image12.jpeg" style="width:10.66322in;height:1.65687in" class="img_ev3q">
+<blockquote>
+<p><span id="_bookmark36" class="anchor"></span>Рисунок 2.6 – Таблица «ja_seceventlog.secevent_source_desc»</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup><thead><tr><th><blockquote>
+<p>№ изменения:</p>
+</blockquote></th><th><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></th><th><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></th></tr></thead><tbody></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="директория-хранения-журнала-событий-безопасности-компонента">Директория хранения журнала событий безопасности компонента<a href="#директория-хранения-журнала-событий-безопасности-компонента" class="hash-link" aria-label="Direct link to Директория хранения журнала событий безопасности компонента" title="Direct link to Директория хранения журнала событий безопасности компонента">​</a></h2>
+<blockquote>
+<p><strong>«ja_SecEventLog»</strong></p>
+<p>По умолчанию директория хранения журнала событий безопасности компонента</p>
+<p>«ja_seceventlog» /var/lib/jatoba/&lt;ver&gt;/data/log.</p>
+<p>Просмотреть текущую директорию хранения журнала событий безопасности компонента «ja_seceventlog» возможно SQL-командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image13.png" style="width:7.01406in;height:1.80167in" class="img_ev3q">
+<blockquote>
+<p>SHOW ja_seceventlog.log_directory;</p>
+<p>Рисунок 2.7 – Вывод хранения журнала событий безопасности компонента</p>
+<p>«ja_SecEventLog»</p>
+<p>Задание директории хранения журнала событий безопасности компонента</p>
+<p>«ja_SecEventLog» возможно только через установку параметра в конфигурационном файле postgresql.conf:</p>
+<p>ja_seceventlog.log_directory = &#x27;audit_log&#x27;</p>
+<p>Директория хранения может отличаться и в этом случае указывается полный путь к</p>
+<p>ней.</p>
+<p>В рассматриваемом примере директорией хранения журнала событий безопасности</p>
+<p>компонента «ja_SecEventLog» является директория в корневом каталоге «audit_log».</p>
+<p>Порядок действий для хранения журнала событий безопасности в отдельной директории будет следующий:</p>
+</blockquote>
+<ol>
+<li>Создать каталог audit_log:</li>
+</ol>
+<blockquote>
+<p>mkdir audit_log</p>
+</blockquote>
+<ol start="2">
+<li>Задать права на созданный каталог:</li>
+</ol>
+<blockquote>
+<p># chown postgres: audit_log # chmod 700 audit_log</p>
+<p># ls -ld audit_log</p>
+</blockquote>
+<ol start="3">
+<li>Установить параметр в конфигурационном файле «postgresql.conf»:</li>
+</ol>
+<blockquote>
+<p>ja_seceventlog.log_directory = &#x27;audit_log&#x27;</p>
+</blockquote>
+<ol start="4">
+<li>Перезагрузить службу СУБД «Jatoba».</li>
+</ol>
+<blockquote>
+<p>Таким образом журнала событий безопасности будет храниться отдельно от журнала аудита СУБД.</p>
+</blockquote>
+<h1>ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="фильтрация-событий-информационной-безопасности">Фильтрация событий информационной безопасности<a href="#фильтрация-событий-информационной-безопасности" class="hash-link" aria-label="Direct link to Фильтрация событий информационной безопасности" title="Direct link to Фильтрация событий информационной безопасности">​</a></h2>
+<blockquote>
+<p>Во время установки расширения будет создана служебная таблица фильтров ja_seceventlog.filter. Таблица ja_seceventlog.filter предназначена для хранения фильтров имеет следующую структуру:</p>
+</blockquote>
+<ul>
+<li>
+<p>db_name (тип данных text) – название БД фильтра;</p>
+</li>
+<li>
+<p>seceventid (тип данных text) – код события безопасности фильтра;</p>
+</li>
+<li>
+<p>object_type (тип данных text) – тип объекта фильтра;</p>
+</li>
+<li>
+<p>object_name (тип данных text) – название объекта фильтра;</p>
+</li>
+<li>
+<p>role_name (тип данных text) – название субъекта фильтра;</p>
+</li>
+<li>
+<p>comment (тип данных text) – текст комментария к фильтру.</p>
+</li>
+</ul>
+<blockquote>
+<p>При первоначальной установке расширения в таблице создаются предустановленные фильтры событий безопасности (см. таблицу <a href="#_bookmark40">3.1</a>).</p>
+<p><span id="_bookmark40" class="anchor"></span>Таблица 3.1 – Список предустановленных фильтров событий безопасности</p>
+</blockquote>
+<table><colgroup>
+<col style="width:4%">
+<col style="width:14%">
+<col style="width:14%">
+<col style="width:13%">
+<col style="width:14%">
+<col style="width:14%">
+<col style="width:23%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>id</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Название БД фильтра (db_name)</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Код события (seceventid)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Тип объекта (object_type)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Название объекта (object_name)</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Название субъекта (role_name)</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Комментарий (comment)</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center">1</td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>111162100</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>Запуск и останов СУБД</p>
+</blockquote></td></tr><tr><td style="text-align:center">2</td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>119193101</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>Журнал очищен</p>
+</blockquote></td></tr><tr><td style="text-align:center">3</td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>119194101</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>Журналирование отключено</p>
+</blockquote></td></tr><tr><td style="text-align:center">4</td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>119203101</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>Предупреждение о заполнении памяти</p>
+</blockquote></td></tr><tr><td style="text-align:center">5</td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>119205101</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>Журналирование включено</p>
+</blockquote></td></tr><tr><td style="text-align:center">6</td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>119206101</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>ALL</p>
+</blockquote></td><td><blockquote>
+<p>Перезапись событий</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.24968in" class="img_ev3q">Расшифровка кодов событий безопасности приведена в документе «Реализация функций безопасности» 643.72410666.00067-08 94 01 в таблице 4.2 – Структура справочной таблицы (ja_seceventlog.secevent_code_desc) с типами и уровнем важности событий безопасности</p>
+<p>Расширение предоставляет возможность управления фильтрами при помощи специальных функций:</p>
+</blockquote>
+<ul>
+<li>
+<p>create_filter (см. п.п. <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0-create_filter">3.1.1</a>).</p>
+</li>
+<li>
+<p>show_filters (см. п.п. <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%B2-show_filters">3.1.2</a>);</p>
+</li>
+<li>
+<p>drop_filter (см. п.п. <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0-drop_filter">3.1.3</a>);</p>
+</li>
+<li>
+<p>drop_filter_id (см. п.п. <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0-drop_filter_id">3.1.4</a>);</p>
+</li>
+<li>
+<p>reset_filters (см. п.п. <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D1%81%D0%B5%D1%85-%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%B2-reset_filters">3.1.5</a>).</p>
+</li>
+</ul>
+<blockquote>
+<p>Для просмотра установленных или созданных фильтров необходимо воспользоваться представлением ja_seceventlog.view_filters:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image14.png" style="width:7.11011in;height:1.9875in" class="img_ev3q">
+<blockquote>
+<p>SELECT * FROM ja_seceventlog.view_filters;</p>
+<p>Рисунок 3.1 – Просмотр установленных или созданных фильтров «ja_seceventlog» Предустановленные фильтры имеют значение идентификатора (id) от 1 до 999.</p>
+<p>Пользовательские фильтры начинаются с идентификатора 1000 и более.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функция-создания-фильтра-create_filter">Функция создания фильтра (create_filter)<a href="#функция-создания-фильтра-create_filter" class="hash-link" aria-label="Direct link to Функция создания фильтра (create_filter)" title="Direct link to Функция создания фильтра (create_filter)">​</a></h2>
+<blockquote>
+<p>Функция create_filter предназначена для создания нового правила регистрации событий (фильтра) компонента «ja_SecEventLog».</p>
+<p>Созданные фильтры сохраняются в отдельную таблицу filter в схеме ja_seceventlog. Функция create_filter содержит следующие параметры:</p>
+</blockquote>
+<ul>
+<li>
+<p>db_name – символьный параметр. Название БД, для которой задаётся фильтр. Указание NULL или пустой строки означает, что регистрируются события для всех БД;</p>
+</li>
+<li>
+<p>seceventid – символьный параметр. Идентификатор события безопасности, для которого задается фильтр. Указание NULL или пустой строки означает, что регистрируются события для всех идентификаторов событий безопасности. Список идентификаторов</p>
+</li>
+</ul>
+<blockquote>
+<p>событий безопасности содержится в документе «Реализация функций безопасности» 643.72410666.00067-08 94 01;</p>
+</blockquote>
+<ul>
+<li>
+<p>object_type – символьный параметр. Тип объекта, для которого задается фильтр. Указание NULL или пустой строки означает, что регистрируются события для всех типов объектов. Возможные значения: SCHEMA, TABLE, VIEW и так далее. Полный список типов объектов приведен в <a href="#%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-1">Приложение 1</a>;</p>
+</li>
+<li>
+<p>object_name – символьный параметр. Имя объекта, для которого задается фильтр. Указание NULL или пустой строки означает, что регистрируются события для всех объектов;</p>
+</li>
+<li>
+<p>role_name – символьный параметр. Имя роли, для которой задается фильтр. Если имя роли указано, то регистрируются действия, совершённые указанным пользователем или пользователем, который прямо или косвенно является членом указанной роли. Указание NULL или пустой строки означает, что регистрируются события для всех ролей.</p>
+</li>
+<li>
+<p>comment – комментарий, описывающий созданный фильтр.</p>
+</li>
+</ul>
+<blockquote>
+<p>Синтаксис функции создания нового фильтра:</p>
+<p>ja_seceventlog.create_filter(db_name text, seceventid text, object_type text, object_name text, role_name text, comment text)</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="примеры">Примеры:<a href="#примеры" class="hash-link" aria-label="Direct link to Примеры:" title="Direct link to Примеры:">​</a></h2>
+<blockquote>
+<p>SELECT ja_seceventlog.create_filter(&#x27;db1&#x27;, NULL, NULL, NULL, NULL, &#x27;все события для базы db1&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(&#x27;db1&#x27;, NULL, NULL, NULL, &#x27;user1&#x27;, &#x27;все события для пользователя user1 в базе db1&#x27;);</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функция-отображения-фильтров-show_filters">Функция отображения фильтров (show_filters)<a href="#функция-отображения-фильтров-show_filters" class="hash-link" aria-label="Direct link to Функция отображения фильтров (show_filters)" title="Direct link to Функция отображения фильтров (show_filters)">​</a></h2>
+<blockquote>
+<p>Функция show_filters выводит полный список текущих фильтров из таблицы фильтров filter. Пример отображения фильтров представлен выше (представление ja_seceventlog.view_filters, см. п.п. <a href="#%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8">3.1</a>).</p>
+<p>Функция show_filters выводит в каждой строке отдельное правило с указанием всех заполненных полей с номером идентификатора этого правила. Предустановленные фильтры имеют значение идентификатора (id) от 1 до 999. Пользовательские фильтры начинаются с идентификатора 1000 и более.</p>
+<p>Любое NULL значение заменяется на ключевое слово “ALL”, означая, что допускается запись любого события по данному атрибуту фильтра.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функция-удаления-фильтра-drop_filter">Функция удаления фильтра (drop_filter)<a href="#функция-удаления-фильтра-drop_filter" class="hash-link" aria-label="Direct link to Функция удаления фильтра (drop_filter)" title="Direct link to Функция удаления фильтра (drop_filter)">​</a></h2>
+<blockquote>
+<p>Функция drop_filter предназначена для удаления правила регистрации событий (фильтра).</p>
+<p>При использовании функции drop_filter происходит удаление фильтра из таблицы фильтров filter в схеме ja_seceventlog.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функция-удаления-фильтра-drop_filter_id">Функция удаления фильтра (drop_filter_id)<a href="#функция-удаления-фильтра-drop_filter_id" class="hash-link" aria-label="Direct link to Функция удаления фильтра (drop_filter_id)" title="Direct link to Функция удаления фильтра (drop_filter_id)">​</a></h2>
+<blockquote>
+<p>Функция drop_filter_id предназначена для удаления правила регистрации событий (фильтра) по идентификатору правила.</p>
+<p>При использовании функции drop_filter_id происходит удаление фильтра из таблицы фильтров filter в схеме ja_seceventlog.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="функция-удаления-всех-фильтров-reset_filters">Функция удаления всех фильтров (reset_filters)<a href="#функция-удаления-всех-фильтров-reset_filters" class="hash-link" aria-label="Direct link to Функция удаления всех фильтров (reset_filters)" title="Direct link to Функция удаления всех фильтров (reset_filters)">​</a></h2>
+<blockquote>
+<p>Функция reset_filters удаляет <strong>все</strong> фильтры из таблицы фильтров filter, кроме предустановленных.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="запись-событий-иб-в-таблицу-бд">Запись событий ИБ в таблицу БД<a href="#запись-событий-иб-в-таблицу-бд" class="hash-link" aria-label="Direct link to Запись событий ИБ в таблицу БД" title="Direct link to Запись событий ИБ в таблицу БД">​</a></h2>
+<blockquote>
+<p>Компонент обладает функциональной возможностью записи событий информационной безопасности в отдельную таблицу ja_seceventlog.secevent_log. Данная таблица создаётся при установке расширения.</p>
+<p>Таблица ja_seceventlog.secevent_log может использоваться для интеграции с SIEM системой.</p>
+<p>Параметр ja_seceventlog.log_destination_table имеет значение «true» по умолчанию:</p>
+<p>ja_seceventlog.log_destination_table = true</p>
+<p>Запись событий информационной безопасности в таблицу начинается автоматически.</p>
+<p>Очистка таблицы выполняется каждый час.</p>
+<p>Расположение таблицы в СУБД определяется параметром «ja_seceventlog.db_name».</p>
+<p>По умолчанию используется значение:</p>
+<p>ja_seceventlog.db_name = postgres</p>
+<p>Изменение параметра не рекомендуется, т.к. это приведет к переустановке компонента (см. описание параметра «ja_seceventlog.db_name»).</p>
+<p>Таблица имеет 2 поля:</p>
+</blockquote>
+<ul>
+<li>
+<p>log_time – штамп времени (во временной зоне сервера, заданной в postgresql.conf параметром timezone). Время сохраняется с точностью до микросекунд;</p>
+</li>
+<li>
+<p>log_data – содержание события в формате JSON.</p>
+</li>
+</ul>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image15.jpeg" style="width:7.10318in;height:2.20458in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.2 – Содержание таблицы ja_seceventlog.secevent_log</p>
+<p>Запись событий информационной безопасности выполняется параллельно и в таблицу, и в отдельный каталог если установлены параметры:</p>
+<p>ja_seceventlog.log_destination = jsonlog ja_seceventlog.log_destination_table = true</p>
+<p>В компоненте «ja_SecEventLog» доступно представление ja_seceventlog.secevent_log_last_hour. Данное представление выполняет сбор данных по таблицам хранения событий безопасности всех событий за последний час текущего времени сервера.</p>
+<p>Представление ja_seceventlog.secevent_log_last_hour содержит следующие поля:</p>
+</blockquote>
+<ul>
+<li>
+<p>log_time – штамп времени (во временной зоне сервера, заданной в postgresql.conf параметром timezone). Время сохраняется с точностью до микросекунд;</p>
+</li>
+<li>
+<p>log_data – содержание события в формате JSON.</p>
+</li>
+</ul>
+<blockquote>
+<p>Выводимые в представлении ja_seceventlog.secevent_log_last_hour записи выбираются в соответствии с временной зоной сервера, в которой записываются события, а не настройках временной зоны, в которой работает пользователь.</p>
+<p>Для получения данных из представления ja_seceventlog.secevent_log_last_hour можно воспользоваться следующей командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image16.jpeg" style="width:7.05829in;height:4.22333in" class="img_ev3q">
+<blockquote>
+<p>SELECT * FROM ja_seceventlog.secevent_log_last_hour;</p>
+<p>Рисунок 3.3 – Содержание представления ja_seceventlog.secevent_log_last_hour</p>
+</blockquote>
+<h1>ОБНОВЛЕНИЕ КОМПОНЕНТА</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="обновление-пакета-компонента-из-репозитория">Обновление пакета компонента из репозитория<a href="#обновление-пакета-компонента-из-репозитория" class="hash-link" aria-label="Direct link to Обновление пакета компонента из репозитория" title="Direct link to Обновление пакета компонента из репозитория">​</a></h2>
+<blockquote>
+<p>Перед началом процесса обновления компонента с версии 2.0 до 3.x необходимо:</p>
+</blockquote>
+<ol>
+<li>
+<p>Обновить локальный репозиторий согласно документу «Руководство по установке» 643.72410666.00067-08 97 01;</p>
+</li>
+<li>
+<p>Выполнить обновление пакета компонента при помощи штатных средств ОС:</p>
+</li>
+</ol>
+<blockquote>
+<p>apt --only-upgrade install jatoba6-ja-seceventlog</p>
+</blockquote>
+<ol start="3">
+<li>Или всех установленных в ОС пакетов:</li>
+</ol>
+<blockquote>
+<p>apt-get upgrade</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="обновление-расширения-с-использованием-пакета-установки">Обновление расширения с использованием пакета установки<a href="#обновление-расширения-с-использованием-пакета-установки" class="hash-link" aria-label="Direct link to Обновление расширения с использованием пакета установки" title="Direct link to Обновление расширения с использованием пакета установки">​</a></h2>
+<blockquote>
+<p>Другим вариантом обновления компонента является установка новой версии 3.x при помощи команды:</p>
+<p>dpkg -i jatoba6-ja-seceventlog_3.3.0-XXX_amd64.deb</p>
+<p>После завершения обновления пакетов компонента «ja_SecEventLog» необходимо выполнить перезагрузку службы СУБД «Jatoba» и проверить статус работы:</p>
+<p>systemctl stop jatoba-6 systemctl start jatoba-6 systemctl status jatoba-6</p>
+<p>Расширение «ja_seceventlog» для СУБД «Jatoba» обновляется при помощи SQL-команды:</p>
+<p>ALTER EXTENSION ja_seceventlog UPDATE TO &#x27;3.3&#x27;;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-расширения-ja_seceventlog-после-обновления-с-версии-20-до-3x">Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.x<a href="#настройка-расширения-ja_seceventlog-после-обновления-с-версии-20-до-3x" class="hash-link" aria-label="Direct link to Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.x" title="Direct link to Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.x">​</a></h2>
+<blockquote>
+<p>При обновлении версии расширения с версии 2.0 до 3.x в следующих параметрах произошли изменения.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog">Параметр ja_seceventlog.log<a href="#параметр-ja_seceventloglog" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log" title="Direct link to Параметр ja_seceventlog.log">​</a></h2>
+<blockquote>
+<p>После обновления расширения с версии 2.0 до 3.x необходимо установить значение параметров регистрации в журнале событий безопасности СУБД как это указано в п.п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%BC">2.3</a>:</p>
+<p>ja_seceventlog.log = &#x27;ALL&#x27;</p>
+<p>Создать фильтр для логирования всех событий безопасности:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, NULL, NULL, NULL, NULL, &#x27;фильтр для всех событий&#x27;);</p>
+<p>В случае задания данного фильтра, задание других фильтров не требуется.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image7.png" style="width:0.24025in;height:0.24022in" class="img_ev3q">Указанные выше настройки позволяют регистрировать в журнал аудита все события информационной безопасности, как в версии расширения 2.0.</p>
+<p>Если параметр ja_seceventlog.log (см. п.п.<a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%BC">2.3</a>) в версии 2.0 был установлен в &#x27;NONE&#x27;, то после обновления до версии 3.x дополнительных действий по созданию фильтров не требуется.</p>
+<p>Если параметр ja_seceventlog.log в версии 2.0 был установлен в &#x27;ALL&#x27;, то достаточно установить фильтр:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, NULL, NULL, NULL, NULL, &#x27;фильтр для всех событий&#x27;);</p>
+<p>Если в параметре ja_seceventlog.log в версии 2.0 были перечислены конкретные значения, то необходимо создать фильтры, подобные следующим:</p>
+<p>− READ:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, &#x27;для событий READ&#x27;);</p>
+<p>− WRITE:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 106148100, NULL, NULL, NULL, &#x27;для событий WRITE&#x27;);</p>
+<p>− FUNCTION:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, &#x27;для событий вызова функций&#x27;);</p>
+<p>− ROLE:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 105133100, NULL, NULL, NULL, &#x27;для событий изменений прав доступа&#x27;);</p>
+<p>− DDL:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 106145100, NULL, NULL, NULL, &#x27;для событий создания ресурса&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 106146100, NULL, NULL, NULL, &#x27;для событий изменения ресурса&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 106147100, NULL, NULL, NULL, &#x27;для событий удаления ресурса&#x27;);</p>
+<p>− MISC:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 106148100, NULL, NULL, NULL, &#x27;для событий DISCARD&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, &#x27;для событий FETCH, VACUUM, CHECKPOINT&#x27;);</p>
+<p>− MISC_SET:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 108152100, NULL, NULL, NULL, &#x27;для событий SET&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, 100105100, NULL, NULL, NULL, &#x27;для событий SET ROLE&#x27;);</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventlogmax_filters">Параметр ja_seceventlog.max_filters<a href="#параметр-ja_seceventlogmax_filters" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.max_filters" title="Direct link to Параметр ja_seceventlog.max_filters">​</a></h2>
+<blockquote>
+<p>Параметр ja_seceventlog.max_filters определяет максимальное количество создаваемых и применяемых фильтров.</p>
+<p>Допустимый диапазон значений параметра ja_seceventlog.max_filters от 6 до 1024.</p>
+<p>ja_seceventlog.max_filters = 128</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">В случае превышения числа «ja_seceventlog.max_filters» пользователю отображается предупреждение при создании фильтра, а также при запуске/перезагрузке СУБД.</p>
+<p>Если количество созданных фильтров больше, чем указано в</p>
+<p>«ja_seceventlog.max_filters», компонент обработает только максимально допустимое количество (равное «ja_seceventlog.max_filters»).</p>
+<p>Перед созданием нового фильтра рекомендуется выполнить следующий запрос:</p>
+<p>SELECT COUNT(*) &lt;=</p>
+<p>current_setting(&#x27;ja_seceventlog.max_filters&#x27;)::integer FROM ja_seceventlog.filter;</p>
+<p>В случае если результатом выполнения запроса будет значение FALSE, новый фильтр не поместится в активную память компонента и может потребоваться увеличение значения параметра «ja_seceventlog.max_filters»</p>
+<p>Значение параметра ja_seceventlog.max_filters по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – 128;</p>
+</li>
+<li>
+<p>в версии 2.0 - параметр отсутствует.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_connections">Параметр ja_seceventlog.log_connections<a href="#параметр-ja_seceventloglog_connections" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_connections" title="Direct link to Параметр ja_seceventlog.log_connections">​</a></h2>
+<blockquote>
+<p>Параметр ja_seceventlog.log_connections активирует регистрацию событий попыток подключения к серверу СУБД.</p>
+<p>В версии 3.x параметр удален ja_seceventlog.log_connections, а управление регистрации попыток подключения возложено на параметр log_connections СУБД «Jatoba».</p>
+<p>Значение параметра ja_seceventlog.log_connections по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – параметр отсутствует;</p>
+</li>
+<li>
+<p>в версии 2.0 - off.</p>
+</li>
+</ul>
+<blockquote>
+<p>Если в файле postgresql.conf значение log_connections = on, то события подключений к СУБД будут регистрироваться при наличии следующих фильтров:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, &#x27;100105100&#x27;, NULL, NULL, NULL, &#x27;успешное подключение&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, &#x27;100107100&#x27;, NULL, NULL, NULL, &#x27;получение соединения&#x27;);</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_disconnections">Параметр ja_seceventlog.log_disconnections<a href="#параметр-ja_seceventloglog_disconnections" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_disconnections" title="Direct link to Параметр ja_seceventlog.log_disconnections">​</a></h2>
+<blockquote>
+<p>Параметр включает ja_seceventlog.log_disconnections регистрацию событий завершения сеанса.</p>
+<p>Значение параметра ja_seceventlog.log_disconnections по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – параметр отсутствует;</p>
+</li>
+<li>
+<p>в версии 2.0 - off.</p>
+</li>
+</ul>
+<blockquote>
+<p>Если в файле postgresql.conf значение log_disconnections = on, то события завершения работу с СУБД будут регистрироваться при наличии следующего фильтра:</p>
+<p>SELECT ja_seceventlog.create_filter(NULL, &#x27;100106100&#x27;, NULL, NULL, NULL, &#x27;завершение сеанса&#x27;);</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_catalog">Параметр ja_seceventlog.log_catalog<a href="#параметр-ja_seceventloglog_catalog" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_catalog" title="Direct link to Параметр ja_seceventlog.log_catalog">​</a></h2>
+<blockquote>
+<p>В версии компонента 3.x, параметр «ja_seceventlog.log_catalog» исключен.</p>
+<p>Если данный параметр был включен в версии 2.0, то происходила регистрация обращений к таблицам системного каталога.</p>
+<p>ja_seceventlog.log_catalog = true</p>
+<p>Значение параметра ja_seceventlog.log_catalog по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – параметр отсутствует;</p>
+</li>
+<li>
+<p>в версии 2.0 – true.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_relation">Параметр ja_seceventlog.log_relation<a href="#параметр-ja_seceventloglog_relation" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_relation" title="Direct link to Параметр ja_seceventlog.log_relation">​</a></h2>
+<blockquote>
+<p>Позволяет ja_seceventlog.log_relation включать/отключать отдельную запись журнала для каждого отношения (TABLE, VIEW, и т.д.), на которое ссылается оператор SELECT или DML.</p>
+<p>Значение параметра ja_seceventlog.log_relation по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – off;</p>
+</li>
+<li>
+<p>в версии 2.0 – off.</p>
+</li>
+</ul>
+<blockquote>
+<p>После обновления до версии 3.x при значении ja_seceventlog.log_relation = on необходимо добавить фильтры для объектов, например:</p>
+<p>SELECT ja_seceventlog.create_filter(&#x27;db1&#x27;, NULL, &#x27;TABLE&#x27;, &#x27;public.table1&#x27;, NULL, &#x27;все события для table1&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(&#x27;db1&#x27;, NULL, &#x27;TABLE&#x27;, &#x27;public.table2&#x27;, NULL, &#x27;все события для table2&#x27;);</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventlogrole">Параметр ja_seceventlog.role<a href="#параметр-ja_seceventlogrole" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.role" title="Direct link to Параметр ja_seceventlog.role">​</a></h2>
+<blockquote>
+<p>Данный параметр используется для аудита объектов БД.</p>
+<p>В версии компонента 3.x, параметр «ja_seceventlog.role» исключен.</p>
+<p>Команды SELECT, INSERT, UPDATE и DELETE для конкретного объекта будут регистрироваться в журнале событий безопасности, если они грантованы аудитору (той роли пользователей, для которой указано значение параметра role = &#x27;auditor&#x27;).</p>
+<p>Значение параметра ja_seceventlog.role по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – исключен;</p>
+</li>
+<li>
+<p>в версии 2.0 – &#x27;&#x27; (пустое).</p>
+</li>
+</ul>
+<blockquote>
+<p>Параметр ja_seceventlog.role при обновлении компонента до версии 3.X можно заменить фильтрами или использовать совместно с имеющимися фильтрами.</p>
+<p>К примеру, в версии компонента 2.0 был назначен аудит объекта:</p>
+<p>SET ja_seceventlog.role = &#x27;auditor&#x27;;</p>
+<p>GRANT SELECT ON &#x27;public.table1&#x27; TO auditor; GRANT INSERT ON &#x27;public.table2&#x27; TO auditor;</p>
+<p>В журнале событий безопасности регистрировались все запросы с SELECT для &#x27;public.table1&#x27; и все запросы INSERT для &#x27;public.table2&#x27;.</p>
+<p>Тогда в версии компонента 3.x необходимо использовать один из вариантов:</p>
+</blockquote>
+<ol>
+<li>Воспользоваться фильтрами следующего вида:</li>
+</ol>
+<blockquote>
+<p>SELECT ja_seceventlog.create_filter(&#x27;db1&#x27;, &#x27;106139100&#x27;, &#x27;TABLE&#x27;, &#x27;public.table1&#x27;, NULL, &#x27;SELECT&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(&#x27;db1&#x27;, &#x27;106148100&#x27;, &#x27;TABLE&#x27;, &#x27;public.table2&#x27;, NULL, &#x27;INSERT, UPDATE и DELETE&#x27;);</p>
+<p>Для использования данных фильтров необходимо установить параметр ja_seceventlog.log_relation = on (см. п.п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-ja_seceventlog.log_relation">4.3.6</a>).</p>
+<p>В фильтре название объекта БД, для которого необходимо регистрировать события, указывается совместно с именем схемы.</p>
+<p>После настройки всех необходимых фильтров параметр role можно убрать из конфигурационного файла СУБД. Также можно отозвать выданные ранее полномочия выделенной роли аудитора из версии 2.0.</p>
+</blockquote>
+<ol start="2">
+<li>Параметр ja_seceventlog.role можно использовать совместно с фильтрами следующего вида:</li>
+</ol>
+<blockquote>
+<p>SELECT ja_seceventlog.create_filter(&#x27;db1&#x27;, NULL, &#x27;TABLE&#x27;, &#x27;public.table1&#x27;, NULL, &#x27;все события для table1&#x27;);</p>
+<p>SELECT ja_seceventlog.create_filter(&#x27;db1&#x27;, NULL, &#x27;TABLE&#x27;, &#x27;public.table2&#x27;, NULL, &#x27;все события для table2&#x27;);</p>
+<p>Для каждого объекта, для которого ведется аудит объекта необходимо создать соответствующий фильтр, аналогичный указанным выше.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_parameter">Параметр ja_seceventlog.log_parameter<a href="#параметр-ja_seceventloglog_parameter" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_parameter" title="Direct link to Параметр ja_seceventlog.log_parameter">​</a></h2>
+<blockquote>
+<p>В версии 3.x параметр ja_seceventlog.log_parameter исключен из списка настраиваемых параметров. По умолчанию установлено значение = true означает: теперь ja_seceventlog-3.3 в описание события безопасности всегда вносит информацию о параметрах SQL-запроса, если таковые были использованы и заданы в запросе. Это касается атрибута события &quot;Parameter&quot;. В него будут записываться имена и значения параметров. Длина значения параметра контролируется параметров ja_seceventlog.log_parameter_max_size.</p>
+<p>При обновлении компонента ja_seceventlog до версии 3.x данный параметр должен быть исключен и конфигурационного файла postgresql.conf.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_statement">!Параметр ja_seceventlog.log_statement<a href="#параметр-ja_seceventloglog_statement" class="hash-link" aria-label="Direct link to !Параметр ja_seceventlog.log_statement" title="Direct link to !Параметр ja_seceventlog.log_statement">​</a></h2>
+<blockquote>
+<p>В версии компонента 3.x, параметр «ja_seceventlog.log_statement» исключен. Значение параметра ja_seceventlog.log_statement по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – исключен;</p>
+</li>
+<li>
+<p>в версии 2.0 – пустое.</p>
+</li>
+</ul>
+<blockquote>
+<p>Параметр указывает, будет ли протоколирование включать текст инструкции и параметры (если включено). В зависимости от требований журнал аудита может не требовать этого, и журналы становятся менее подробными.</p>
+<p>ja_seceventlog.log_statement = on</p>
+<p>При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_statement_once">Параметр ja_seceventlog.log_statement_once<a href="#параметр-ja_seceventloglog_statement_once" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_statement_once" title="Direct link to Параметр ja_seceventlog.log_statement_once">​</a></h2>
+<blockquote>
+<p>В версии компонента 3.x, параметр «ja_seceventlog.log_statement_once» исключен.</p>
+<p>Параметр ja_seceventlog.log_statement_once предназначен для включения/выключения записи текста запроса (или его части) в событие журнала безопасности только один раз при обработке сложных запросов для подвыражений.</p>
+<p>Значение параметра ja_seceventlog.log_statement_once по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – исключен;</p>
+</li>
+<li>
+<p>в версии 2.0 – off.</p>
+</li>
+</ul>
+<blockquote>
+<p>При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_client">Параметр ja_seceventlog.log_client<a href="#параметр-ja_seceventloglog_client" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_client" title="Direct link to Параметр ja_seceventlog.log_client">​</a></h2>
+<blockquote>
+<p>Параметр «ja_seceventlog.log_client» предназначался для определения, будут ли сообщения журнала событий безопасности отображаться для клиентского процесса, например такого как psql.</p>
+<p>В версии 3.Х параметр удален.</p>
+<p>По умолчанию параметр был отключен.</p>
+<p>При обновлении компонента ja_seceventlog до версии 3.x, если параметр использовался, то следует его удалить.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_level">Параметр ja_seceventlog.log_level<a href="#параметр-ja_seceventloglog_level" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_level" title="Direct link to Параметр ja_seceventlog.log_level">​</a></h2>
+<blockquote>
+<p>Параметр ja_seceventlog.log_level предназначался для указания уровня важности сообщений событий безопасности, которые передаются клиенту.</p>
+<p>В версии 3.Х параметр удален.</p>
+<p>При обновлении компонента ja_seceventlog до версии 3.Х, если параметр использовался, то следует его удалить.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_parameter_max_size">Параметр ja_seceventlog.log_parameter_max_size<a href="#параметр-ja_seceventloglog_parameter_max_size" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_parameter_max_size" title="Direct link to Параметр ja_seceventlog.log_parameter_max_size">​</a></h2>
+<blockquote>
+<p>Параметр ja_seceventlog.log_parameter_max_size определяет максимальный размер (в байтах) параметров, которые могут быть записаны в журнал. Параметры, превышающие указанный размер, заменяются на &lt;long param suppressed&gt;. При значении 0 ограничение отключается, и регистрируются все параметры без обрезки. Данная настройка ограничивает длину записываемых значений для ja_seceventlog.log_parameter.</p>
+<p>Значение параметра ja_seceventlog.log_level по умолчанию:</p>
+</blockquote>
+<ul>
+<li>
+<p>в версии 3.x – 0;</p>
+</li>
+<li>
+<p>в версии 2.0 – 0.</p>
+</li>
+</ul>
+<blockquote>
+<p>При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметр-ja_seceventloglog_rows">Параметр ja_seceventlog.log_rows<a href="#параметр-ja_seceventloglog_rows" class="hash-link" aria-label="Direct link to Параметр ja_seceventlog.log_rows" title="Direct link to Параметр ja_seceventlog.log_rows">​</a></h2>
+<blockquote>
+<p>В версии компонента 3.x параметр ja_seceventlog.log_rows включен по умолчанию.</p>
+<p>Атрибут с текстом выполняемого SQL-запроса будет всегда включаться в событие безопасности.</p>
+<p>При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.</p>
+</blockquote>
+<h1>УДАЛЕНИЕ КОМПОНЕНТА</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="удаление-расширения">Удаление расширения<a href="#удаление-расширения" class="hash-link" aria-label="Direct link to Удаление расширения" title="Direct link to Удаление расширения">​</a></h2>
+<blockquote>
+<p>Расширение удаляется SQL-командой:</p>
+<p>DROP EXTENSION ja_seceventlog;</p>
+<p>В разделе «Shared Library Preloading» конфигурационного файла «postgresql.conf» целесообразно закомментировать строку или удалить имя загружаемой библиотеки</p>
+<p>«ja_seceventlog» из общего перечня загружаемых библиотек:</p>
+<p>#shared_preload_libraries = &#x27;ja_seceventlog&#x27;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="удаление-пакета">Удаление пакета<a href="#удаление-пакета" class="hash-link" aria-label="Direct link to Удаление пакета" title="Direct link to Удаление пакета">​</a></h2>
+<blockquote>
+<p>Компонент удаляется, для DEB систем, при помощи штатных средств ОС управления пакетами:</p>
+<p>apt-get remove jatoba*-ja-seceventlog</p>
+<p>Компонент удаляется. для RPM систем, при помощи штатных средств ОС управления пакетами:</p>
+<p>yum remove jatoba*-ja_seceventlog*</p>
+</blockquote>
+<h1>ПРИЛОЖЕНИЕ 1</h1>
+<p>(справочное)</p>
+<blockquote>
+<p>Список типов объектов «object_type» компонента «ja_SecEventLog»:</p>
+</blockquote>
+<ul>
+<li>
+<p>ACCESS METHOD;</p>
+</li>
+<li>
+<p>AGGREGATE;</p>
+</li>
+<li>
+<p>CAST;</p>
+</li>
+<li>
+<p>COLLATION;</p>
+</li>
+<li>
+<p>CONVERSION;</p>
+</li>
+<li>
+<p>DATABASE;</p>
+</li>
+<li>
+<p>DOMAIN;</p>
+</li>
+<li>
+<p>EVENT TRIGGER;</p>
+</li>
+<li>
+<p>EXTENSION;</p>
+</li>
+<li>
+<p>FOREIGN DATA WRAPPER;</p>
+</li>
+<li>
+<p>FOREIGN TABLE;</p>
+</li>
+<li>
+<p>FUNCTION;</p>
+</li>
+<li>
+<p>GROUP;</p>
+</li>
+<li>
+<p>INDEX;</p>
+</li>
+<li>
+<p>LANGUAGE;</p>
+</li>
+<li>
+<p>MATERIALIZED VIEW;</p>
+</li>
+<li>
+<p>OPERATOR;</p>
+</li>
+<li>
+<p>OPERATOR CLASS;</p>
+</li>
+<li>
+<p>OPERATOR FAMILY;</p>
+</li>
+<li>
+<p>POLICY;</p>
+</li>
+<li>
+<p>PROCEDURE;</p>
+</li>
+<li>
+<p>PUBLICATION;</p>
+</li>
+<li>
+<p>ROLE;</p>
+</li>
+<li>
+<p>RULE;</p>
+</li>
+<li>
+<p>SCHEMA;</p>
+</li>
+<li>
+<p>SEQUENCE;</p>
+</li>
+<li>
+<p>SERVER;</p>
+</li>
+<li>
+<p>STATISTICS;</p>
+</li>
+<li>
+<p>SUBSCRIPTION;</p>
+</li>
+<li>
+<p>TABLE;</p>
+</li>
+<li>
+<p>TABLE AS;</p>
+</li>
+<li>
+<p>TABLESPACE;</p>
+</li>
+<li>
+<p>TEXT SEARCH CONFIGURATION;</p>
+</li>
+<li>
+<p>TEXT SEARCH DICTIONARY;</p>
+</li>
+<li>
+<p>TEXT SEARCH PARSER;</p>
+</li>
+<li>
+<p>TEXT SEARCH TEMPLATE;</p>
+</li>
+<li>
+<p>TRANSFORM;</p>
+</li>
+<li>
+<p>TRIGGER;</p>
+</li>
+<li>
+<p>TYPE;</p>
+</li>
+<li>
+<p>USER;</p>
+</li>
+<li>
+<p>USER MAPPING;</p>
+</li>
+<li>
+<p>VIEW</p>
+</li>
+</ul>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:16%">
+<col style="width:12%">
+<col style="width:71%">
+</colgroup><thead><tr><th><blockquote>
+<p>SQL</p>
+</blockquote></th><th><blockquote>
+<p>–</p>
+</blockquote></th><th><blockquote>
+<p>Structured Query Language</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Всего листов (страниц) в документе</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Номер документа</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входящий номер сопроводите льного документа и</p>
+<p>дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подпись</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>измене нных</p>
+</blockquote></td><td><blockquote>
+<p>замене нных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td><blockquote>
+<p>аннулир ованных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/Коммерческая версия 18.3.1/ja_plan_manager"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">ja_plan_manager</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/Коммерческая версия 18.3.1/ja_similar"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Компонент «ja_Similar». Полнотекстовый поиск.</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#ограничения" class="table-of-contents__link toc-highlight">Ограничения</a></li><li><a href="#установка-в-ос-gnu-linux" class="table-of-contents__link toc-highlight">Установка в ОС GNU Linux</a></li><li><a href="#настройка-конфигурационного-файла-postgresqlconf-для-компонента" class="table-of-contents__link toc-highlight">Настройка конфигурационного файла «postgresql.conf» для компонента</a></li><li><a href="#параметры-регистрации-событий-безопасности-компонентом" class="table-of-contents__link toc-highlight">Параметры регистрации событий безопасности компонентом</a></li><li><a href="#ja_seceventloglog" class="table-of-contents__link toc-highlight">ja_seceventlog.log</a></li><li><a href="#ja_seceventloglog_destination" class="table-of-contents__link toc-highlight">ja_seceventlog.log_destination</a></li><li><a href="#ja_seceventloglog_relation" class="table-of-contents__link toc-highlight">ja_seceventlog.log_relation</a></li><li><a href="#ja_seceventloglog_directory" class="table-of-contents__link toc-highlight">ja_seceventlog.log_directory</a></li><li><a href="#ja_seceventloglog_filename" class="table-of-contents__link toc-highlight">ja_seceventlog.log_filename</a></li><li><a href="#ja_seceventloglog_rotation_size" class="table-of-contents__link toc-highlight">ja_seceventlog.log_rotation_size</a></li><li><a href="#ja_seceventloglog_rotation_age" class="table-of-contents__link toc-highlight">ja_seceventlog.log_rotation_age</a></li><li><a href="#ja_seceventlogcode_desc_cache_limit" class="table-of-contents__link toc-highlight">ja_seceventlog.code_desc_cache_limit</a></li><li><a href="#ja_seceventlogsource_desc_cache_limit" class="table-of-contents__link toc-highlight">ja_seceventlog.source_desc_cache_limit</a></li><li><a href="#ja_seceventloglog_parameter_max_size" class="table-of-contents__link toc-highlight">ja_seceventlog.log_parameter_max_size</a></li><li><a href="#ja_seceventloglog_destination_table" class="table-of-contents__link toc-highlight">ja_seceventlog.log_destination_table</a></li><li><a href="#ja_seceventlogdb_name" class="table-of-contents__link toc-highlight">ja_seceventlog.db_name</a></li><li><a href="#ja_seceventlogjasel_syslog_facility" class="table-of-contents__link toc-highlight">ja_seceventlog.jasel_syslog_facility</a></li><li><a href="#ja_seceventlogjasel_syslog_ident" class="table-of-contents__link toc-highlight">ja_seceventlog.jasel_syslog_ident</a></li><li><a href="#ja_seceventlogjasel_syslog_sequence_numbers" class="table-of-contents__link toc-highlight">ja_seceventlog.jasel_syslog_sequence_numbers</a></li><li><a href="#ja_seceventlogjasel_syslog_split_messages" class="table-of-contents__link toc-highlight">ja_seceventlog.jasel_syslog_split_messages</a></li><li><a href="#ja_seceventlogmaxage" class="table-of-contents__link toc-highlight">ja_seceventlog.maxage</a></li><li><a href="#ja_seceventlogmaxsize" class="table-of-contents__link toc-highlight">ja_seceventlog.maxsize</a></li><li><a href="#ja_seceventloglog_size_soft_limit" class="table-of-contents__link toc-highlight">ja_seceventlog.log_size_soft_limit</a></li><li><a href="#ja_seceventloglog_size_hard_limit" class="table-of-contents__link toc-highlight">ja_seceventlog.log_size_hard_limit</a></li><li><a href="#ja_seceventlogmax_queue_size" class="table-of-contents__link toc-highlight">ja_seceventlog.max_queue_size</a></li><li><a href="#ja_seceventloglog_autoclose_minutes" class="table-of-contents__link toc-highlight">ja_seceventlog.log_autoclose_minutes</a></li><li><a href="#log_hostname" class="table-of-contents__link toc-highlight">log_hostname</a></li><li><a href="#log_connections" class="table-of-contents__link toc-highlight">log_connections</a></li><li><a href="#log_disconnections-boolean" class="table-of-contents__link toc-highlight">log_disconnections (boolean)</a></li><li><a href="#ja_seceventlogmax_filters" class="table-of-contents__link toc-highlight">ja_seceventlog.max_filters</a></li><li><a href="#установка-расширения-ja_seceventlog" class="table-of-contents__link toc-highlight">Установка расширения «ja_seceventlog»</a></li><li><a href="#директория-хранения-журнала-событий-безопасности-компонента" class="table-of-contents__link toc-highlight">Директория хранения журнала событий безопасности компонента</a></li><li><a href="#фильтрация-событий-информационной-безопасности" class="table-of-contents__link toc-highlight">Фильтрация событий информационной безопасности</a></li><li><a href="#функция-создания-фильтра-create_filter" class="table-of-contents__link toc-highlight">Функция создания фильтра (create_filter)</a></li><li><a href="#примеры" class="table-of-contents__link toc-highlight">Примеры:</a></li><li><a href="#функция-отображения-фильтров-show_filters" class="table-of-contents__link toc-highlight">Функция отображения фильтров (show_filters)</a></li><li><a href="#функция-удаления-фильтра-drop_filter" class="table-of-contents__link toc-highlight">Функция удаления фильтра (drop_filter)</a></li><li><a href="#функция-удаления-фильтра-drop_filter_id" class="table-of-contents__link toc-highlight">Функция удаления фильтра (drop_filter_id)</a></li><li><a href="#функция-удаления-всех-фильтров-reset_filters" class="table-of-contents__link toc-highlight">Функция удаления всех фильтров (reset_filters)</a></li><li><a href="#запись-событий-иб-в-таблицу-бд" class="table-of-contents__link toc-highlight">Запись событий ИБ в таблицу БД</a></li><li><a href="#обновление-пакета-компонента-из-репозитория" class="table-of-contents__link toc-highlight">Обновление пакета компонента из репозитория</a></li><li><a href="#обновление-расширения-с-использованием-пакета-установки" class="table-of-contents__link toc-highlight">Обновление расширения с использованием пакета установки</a></li><li><a href="#настройка-расширения-ja_seceventlog-после-обновления-с-версии-20-до-3x" class="table-of-contents__link toc-highlight">Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.x</a></li><li><a href="#параметр-ja_seceventloglog" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log</a></li><li><a href="#параметр-ja_seceventlogmax_filters" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.max_filters</a></li><li><a href="#параметр-ja_seceventloglog_connections" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_connections</a></li><li><a href="#параметр-ja_seceventloglog_disconnections" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_disconnections</a></li><li><a href="#параметр-ja_seceventloglog_catalog" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_catalog</a></li><li><a href="#параметр-ja_seceventloglog_relation" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_relation</a></li><li><a href="#параметр-ja_seceventlogrole" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.role</a></li><li><a href="#параметр-ja_seceventloglog_parameter" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_parameter</a></li><li><a href="#параметр-ja_seceventloglog_statement" class="table-of-contents__link toc-highlight">!Параметр ja_seceventlog.log_statement</a></li><li><a href="#параметр-ja_seceventloglog_statement_once" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_statement_once</a></li><li><a href="#параметр-ja_seceventloglog_client" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_client</a></li><li><a href="#параметр-ja_seceventloglog_level" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_level</a></li><li><a href="#параметр-ja_seceventloglog_parameter_max_size" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_parameter_max_size</a></li><li><a href="#параметр-ja_seceventloglog_rows" class="table-of-contents__link toc-highlight">Параметр ja_seceventlog.log_rows</a></li><li><a href="#удаление-расширения" class="table-of-contents__link toc-highlight">Удаление расширения</a></li><li><a href="#удаление-пакета" class="table-of-contents__link toc-highlight">Удаление пакета</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

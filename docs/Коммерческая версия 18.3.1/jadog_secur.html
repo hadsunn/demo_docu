@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-Коммерческая версия 18.3.1/jadog_secur" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">jadog_secur | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/jadog_secur"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="jadog_secur | Postgres"><meta data-rh="true" name="description" content="Подп. и дата"><meta data-rh="true" property="og:description" content="Подп. и дата"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/jadog_secur"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/jadog_secur" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/jadog_secur" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"jadog_secur","item":"https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/jadog_secur"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.1732693c.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.76a35f44.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/Коммерческая версия 18.3.1/1c">Коммерческая версия 18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/1c">Поддержка платформы 1С</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/container">Инструкция по настройке и использованию контейнера</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/describe">СУБД Jatoba. Описание применения</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/firewall">Компонент «SQL_Firewall»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_anonymizer">Компонент «ja_Anonymizer». Маскирование данных.</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_seceventlog3.3">ja_seceventlog3.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_similar">Компонент «ja_Similar». Полнотекстовый поиск.</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_sync_ldap1.3">ja_sync_ldap1.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_1">jadog_4.2_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_2">jadog_4.2_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_3">jadog_4.2_3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_secur">jadog_secur</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jalog">jalog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/map">map</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/secur_func">secur_func</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/secur_guide">secur_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/timescale">timescale</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/user_guide">user_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/wal-g">Компонент «wal-g». Архивация и восстановление данных.</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Коммерческая версия 18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">jadog_secur</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:41%">
+<col style="width:58%">
+</colgroup><thead><tr><th><blockquote>
+<p>Подп. и дата</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td><blockquote>
+<p>Инв. № дубл.</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Взам. инв. №</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Подп. и дата</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Инв. № подл.</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 4.</strong></p>
+<p><strong>Инструкция по безопасной настройке кластера на основе компонента «jaDog»</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p><strong>643.72410666.00067-08 98 02-04</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>Листов 36</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>2026</p>
+</blockquote></td></tr><tr><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<header><h1>АННОТАЦИЯ</h1></header>
+<blockquote>
+<p>Настоящий документ является дополнением к существующему документу</p>
+<p>«Руководство по безопасности. Часть 27» и описывает рекомендации по безопасной настройке СУБД Jatoba.</p>
+<p>Настоящее руководство предназначено для администраторов СУБД, специалистов по информационной безопасности и носит рекомендательный характер.</p>
+<p>Степени важности примечаний, применяемые в документе:</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image1.png" style="width:0.25138in;height:0.25005in" class="img_ev3q"> <strong>Важная информация</strong> – указания, требующие особого внимания</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"> <strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"> Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра</p>
+<p>6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:</p>
+</blockquote>
+<ul>
+<li>
+<p>ОС Windows – «C:\Program Files\GIS\Jatoba\6\bin»;</p>
+</li>
+<li>
+<p>ОС Linux – «/usr/jatoba-6/bin».</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-важная-информация"><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image1.png" style="width:0.25138in;height:0.25138in" class="img_ev3q"> Важная информация<a href="#-важная-информация" class="hash-link" aria-label="Direct link to -важная-информация" title="Direct link to -важная-информация">​</a></h2>
+<blockquote>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
+</blockquote>
+<h1>СОДЕРЖАНИЕ</h1>
+<ol>
+<li>
+<p><a href="#%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9">Актуальность версий 4</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5">Подключение 6</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%D1%80%D0%BE%D0%BB%D0%B5%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%BC-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-%D0%B1%D0%B4">Минимизация количества пользователей/ролей, которым разрешено подключение к БД 6</a></p>
+</li>
+<li>
+<p><a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D1%83%D0%B7%D0%BB%D0%BE%D0%B2%D0%BF%D0%BE%D0%B4%D1%81%D0%B5%D1%82%D0%B5%D0%B9-%D1%81-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D1%85-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-%D0%B1%D0%B4">Минимизация количества узлов/подсетей, с которых разрешено подключение к БД 7</a></p>
+</li>
+<li>
+<p><a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D0%B1%D0%B4-%D0%BA-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%BC-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5">Минимизация количества БД, к которым разрешено подключение 7</a></p>
+</li>
+<li>
+<p><a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D1%83%D0%B7-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%BC-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%83-jadog">Минимизация количества УЗ, которым разрешено подключение к компоненту jaDog 8</a></p>
+</li>
+<li>
+<p><a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D1%83%D0%B7%D0%BB%D0%BE%D0%B2%D0%BF%D0%BE%D0%B4%D1%81%D0%B5%D1%82%D0%B5%D0%B9-%D1%81-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D1%85-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%83-jadog">Минимизация количества узлов/подсетей, с которых разрешено подключение к компоненту jaDog 9</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D0%B5-%D0%BD%D0%BE%D0%BC%D0%B5%D1%80-%D0%BF%D0%BE%D1%80%D1%82%D0%B0-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC%D1%8B%D0%B9-jatoba-%D0%BD%D0%B0-%D1%83%D0%B7%D0%BB%D0%B0%D1%85-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-%D0%BD%D0%B0-%D0%BD%D0%B5%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%B9">Измените номер порта, используемый Jatoba на узлах кластера, на нестандартный 10</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D0%B5-%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0-%D0%BF%D0%BE%D1%80%D1%82%D0%BE%D0%B2-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC%D1%8B%D0%B5-jadog-%D0%BD%D0%B0-%D0%BD%D0%B5%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%B5">Измените номера портов, используемые jaDog, на нестандартные 11</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-tlsssl">Применение TLS/SSL 13</a></p>
+<ol>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-ca-%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B9">Создание CA ключей 13</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0-%D0%B8-%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">Создание сертификатов сервера и администратора (пользователя) 13</a></p>
+<ol>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BD%D0%BE%D0%B3%D0%BE-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%B0">Создание серверного сертификата 13</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%B0">Создание пользовательского сертификата 14</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2-tls-%D0%BF%D1%80%D0%B8-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B5-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0-jadog">Проверка сертификатов TLS при запуске сервиса jaDog 14</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B5%D0%B4%D1%83%D0%BF%D1%80%D0%B5%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1-%D0%B8%D1%81%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B8-%D1%81%D1%80%D0%BE%D0%BA%D0%B0-%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%B0">Предупреждение об истечении срока действия сертификата 15</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#_bookmark17">Настройка проверки SSL-сертификатов при подключении к узлам кластера 16</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-ssl-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B8-%D0%BA-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%83">Настройка проверки SSL-сертификатов при подключении к компоненту jaDog 17</a></p>
+</li>
+<li>
+<p><a href="#_bookmark19">Настройка подключения jaDog к СУБД с помощью SSL-сертификатов 18</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA-rest-api-%D1%81-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E-ssl-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2">Настройка подключения к REST API с помощью SSL-сертификатов 19</a></p>
+</li>
+<li>
+<p><a href="#_bookmark21">Настройка минимальной версии протокола TLS не ниже рекомендованной 20</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%B0-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2-%D1%81-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC-ssl-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2">Настройка шаблона файла ответов с применением SSL-сертификатов 21</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F">Аутентификация 25</a></p>
+<ol>
+<li>
+<p><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B9%D1%82%D0%B5-%D0%BD%D0%B0%D0%B4%D1%91%D0%B6%D0%BD%D1%8B%D0%B9-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B8-%D0%BA-%D1%83%D0%B7%D0%BB%D0%B0%D0%BC-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Используйте надёжный метод аутентификации при подключении к узлам кластера 25</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B9%D1%82%D0%B5-%D0%BD%D0%B0%D0%B4%D1%91%D0%B6%D0%BD%D1%8B%D0%B9-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B8-%D0%BA-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%83-jadog">Используйте надёжный метод аутентификации при подключении к компоненту jaDog 25</a></p>
+</li>
+<li>
+<p><a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D0%B5-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D0%B8-%D0%B2%D1%81%D0%B5%D1%85-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%B8-%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85-%D1%83%D0%B7-%D0%BF%D1%80%D0%B8-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B2-%D1%8D%D0%BA%D1%81%D0%BF%D0%BB%D1%83%D0%B0%D1%82%D0%B0%D1%86%D0%B8%D1%8E">Измените пароли всех технических и административных УЗ при переводе системы в эксплуатацию 26</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Журналирование 27</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%82%D0%B5-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-jadog">Настройте параметры журналирования компонента jaDog 27</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%B8%D0%B1">Настройка журналирования событий ИБ 27</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%85%D0%B5%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8-%D0%BC%D0%B0%D1%81%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Хеширование и маскирование 29</a></p>
+<ol>
+<li><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%82%D0%B5-%D1%81%D1%82%D0%BE%D0%B9%D0%BA%D0%B8%D0%B9-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC-%D1%85%D0%B5%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D0%B5%D0%B9-%D0%B2-%D0%B1%D0%B4-%D0%BD%D0%B0-%D1%83%D0%B7%D0%BB%D0%B0%D1%85-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">Настройте стойкий алгоритм хеширования паролей в БД на узлах кластера 29</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C-%D1%86%D0%B5%D0%BB%D0%BE%D1%81%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Контроль целостности 31</a></p>
+<ol>
+<li><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-ja_csum-%D0%B8-%D0%BF%D0%BE%D0%B4%D1%81%D1%87%D0%B5%D1%82-%D1%8D%D1%82%D0%B0%D0%BB%D0%BE%D0%BD%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D1%81%D1%83%D0%BC%D0%BC">Установка расширения ja_csum и подсчет эталонных контрольных сумм 31</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D0%BE%D0%B5-%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Резервное копирование 32</a></p>
+<ol>
+<li><a href="#%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D0%B5-%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%83%D1%8E-%D0%BA%D0%BE%D0%BF%D0%B8%D1%8E-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%BE%D0%B2-%D1%81%D0%BE-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%BE%D0%B9-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-%D0%B2-%D1%83%D0%B4%D0%B0%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%BC-%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%BC-%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5">Храните резервную копию файла ответов со структурой кластера в удалённом сетевом хранилище 32</a></li>
+</ol>
+</li>
+</ol>
+<p><a href="#%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D1%8B-%D0%B8-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">Термины и определения 33</a></p>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 35</a></p>
+<h1>АКТУАЛЬНОСТЬ ВЕРСИЙ</h1>
+<blockquote>
+<p>Используйте актуальную версию ПО СУБД «Jatoba» и компонентов, регулярно проверяйте выпуск обновлений.</p>
+<p>Чем старше версия используемого программного обеспечения, тем больше времени было у злоумышленников на то, чтобы найти в ней уязвимости и «эксплойты» и, соответственно, тем уязвимее будет информационная система.</p>
+<p>Чтобы защитить системы от потенциальных угроз, необходимо своевременно устанавливать обновления безопасности, закрывающие известные уязвимости в программном обеспечении.</p>
+<p>Для проверки используемой версии СУБД «Jatoba» можно воспользоваться командой в терминале ОС:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команды">Пример команды<a href="#пример-команды" class="hash-link" aria-label="Direct link to Пример команды" title="Direct link to Пример команды">​</a></h2>
+<blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/bin/postgres --version</p>
+<p>Мажорные версии PostgreSQL и Jatoba соотносятся следующим образом:</p>
+</blockquote>
+<ul>
+<li>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">PostgreSQL 14 - Jatoba 4;</p>
+</li>
+<li>
+<p>PostgreSQL 15 - Jatoba 5;</p>
+</li>
+<li>
+<p>PostgreSQL 16 - Jatoba 6</p>
+</li>
+<li>
+<p>PostgreSQL 18 - Jatoba 18.</p>
+</li>
+</ul>
+<blockquote>
+<p>При подключении к СУБД, можно воспользоваться следующей функцией:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-функции">Пример функции<a href="#пример-функции" class="hash-link" aria-label="Direct link to Пример функции" title="Direct link to Пример функции">​</a></h2>
+<blockquote>
+<p>SELECT jatoba_version();</p>
+<p>Для получения версий установленных компонентов необходимо подключиться к БД, в которую они установлены, и выполнить запрос к системному каталогу:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-запроса">Пример запроса<a href="#пример-запроса" class="hash-link" aria-label="Direct link to Пример запроса" title="Direct link to Пример запроса">​</a></h2>
+<blockquote>
+<p>SELECT extname, extversion FROM pg_catalog.pg_extension;</p>
+<p>В терминале psql можно воспользоваться метакомандой:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-метакоманды">Пример метакоманды<a href="#пример-метакоманды" class="hash-link" aria-label="Direct link to Пример метакоманды" title="Direct link to Пример метакоманды">​</a></h2>
+<blockquote>
+<p>\dx</p>
+<p>Процедуры обновления СУБД «Jatoba» и компонентов приведены в документе &quot;Руководство по обновлению&quot; или руководствах на компоненты.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.2491in" class="img_ev3q">Из соображений требований ИБ начиная с мажорной версии 4 компонента jaDog его процессы в ОС выполняются не от имени УЗ root, а от имени технологической УЗ, от которой запущен сервер СУБД «Jatoba».</p>
+</blockquote>
+<h1>ПОДКЛЮЧЕНИЕ</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="минимизация-количества-пользователейролей-которым-разрешено-подключение-к-бд">Минимизация количества пользователей/ролей, которым разрешено подключение к БД<a href="#минимизация-количества-пользователейролей-которым-разрешено-подключение-к-бд" class="hash-link" aria-label="Direct link to Минимизация количества пользователей/ролей, которым разрешено подключение к БД" title="Direct link to Минимизация количества пользователей/ролей, которым разрешено подключение к БД">​</a></h2>
+<blockquote>
+<p>Ограничение количества учётных записей, имеющих возможность подключения к СУБД, снижает шансы злоумышленника получить доступ к СУБД.</p>
+<p>Возможность подключения к СУБД узла кластера настраивается в конфигурационном файле pg_hba.conf.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">Наиболее безопасным вариантом будет указание в файле pg_hba.conf возможности подключения только технической учётной записи для взаимодействия jaDog с СУБД (db_connection_settings:user) и минимально необходимого списка учётных записей администраторов и технических учётных записей приложений.</p>
+<p>В процессе развёртывания кластера создаётся (в случае развёртывания с помощью jadog0 и файла ответов - автоматически, в случае ручного развёртывания - при вызове функции grant_jadog_role_to_jadog_user(&#x27;&lt;username&gt;&#x27;)) групповая роль jadog_repl_acc, являющаяся членом (с параметрами SET и INHERIT) встроенной роли pg_read_all_stats и имеющая атрибуты INHERIT и REPLICATION. Техническая учётная запись для взаимодействия JaDog с СУБД (примерах ниже - jadog_user) включается в роль jadog_repl_acc.</p>
+<p>В приведённом ниже примере конфигурации настроена возможность подключения только для технической УЗ JaDog (jadog_user) и УЗ администратора инстанса СУБД (db_admin):</p>
+<p><strong>Пример конфигурационного файла pg_hba.conf</strong></p>
+</blockquote>
+<p># TYPE DATABASE USER</p>
+<p>ADDRESS</p>
+<p>METHOD</p>
+<p># &quot;local&quot; is for Unix domain socket connections only</p>
+<p>hostssl replication jadog_user</p>
+<p>127.0.0.1/32</p>
+<p>cert</p>
+<table><colgroup>
+<col style="width:12%">
+<col style="width:15%">
+<col style="width:21%">
+<col style="width:38%">
+<col style="width:11%">
+</colgroup><thead><tr><th><blockquote>
+<p>local</p>
+</blockquote></th><th style="text-align:center">[db_name]</th><th><blockquote>
+<p>db_admin</p>
+</blockquote></th><th></th><th style="text-align:right">peer</th></tr></thead><tbody><tr><td><blockquote>
+<p>hostssl</p>
+</blockquote></td><td style="text-align:center">[db_name]</td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td style="text-align:right">cert</td></tr><tr><td><blockquote>
+<p>hostssl</p>
+</blockquote></td><td style="text-align:center">[db_name]</td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.131/32</p>
+</blockquote></td><td style="text-align:right">cert</td></tr></tbody></table>
+<blockquote>
+<p>hostssl replication jadog_user 192.168.239.131/32 cert</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="минимизация-количества-узловподсетей-с-которых-разрешено-подключение-к-бд">Минимизация количества узлов/подсетей, с которых разрешено подключение к БД<a href="#минимизация-количества-узловподсетей-с-которых-разрешено-подключение-к-бд" class="hash-link" aria-label="Direct link to Минимизация количества узлов/подсетей, с которых разрешено подключение к БД" title="Direct link to Минимизация количества узлов/подсетей, с которых разрешено подключение к БД">​</a></h2>
+<blockquote>
+<p>В дополнение к предыдущему пункту, ограничение в конфигурационном файле pg_hba.conf количества адресов/подсетей, с которых возможно подключение к СУБД на каждом узле кластера, позволяет ещё сильнее уменьшить шансы злоумышленника на проникновение в СУБД. Даже в случае получения данных одной из учётных записей злоумышленнику придётся дополнительно получить контроль над хостом в определённой подсети, чтобы подключиться к СУБД.</p>
+<p>По возможности не используйте значение &#x27;all&#x27; в поле ADDRESS конфигурационного файла pg_hba.conf, такая настройка позволит злоумышленнику попытаться подключиться с любого хоста, над которым у него есть контроль. Вместо этого лучше использовать отдельные адреса узлов, с которых необходимо подключение к инстансу СУБД, либо ограниченные подсети.</p>
+<p>В приведённом ниже примере конфигурации настроена возможность подключения технической УЗ JaDog (jadog_user) только c localhost и с внешнего адреса самого узла.</p>
+<p><strong>Пример конфигурационного файла pg_hba.conf</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:13%">
+<col style="width:17%">
+<col style="width:20%">
+<col style="width:34%">
+<col style="width:14%">
+</colgroup><thead><tr><th><blockquote>
+<p># TYPE</p>
+</blockquote></th><th><blockquote>
+<p>DATABASE</p>
+</blockquote></th><th><blockquote>
+<p>USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>hostssl</p>
+</blockquote></td><td><blockquote>
+<p>[db_name]</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>cert</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>hostssl</p>
+</blockquote></td><td><blockquote>
+<p>[db_name]</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.131/32</p>
+</blockquote></td><td><blockquote>
+<p>cert</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>hostssl</p>
+</blockquote></td><td><blockquote>
+<p>replication</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>cert</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>hostssl</p>
+</blockquote></td><td><blockquote>
+<p>replication</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.131/32</p>
+</blockquote></td><td><blockquote>
+<p>cert</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="минимизация-количества-бд-к-которым-разрешено-подключение">Минимизация количества БД, к которым разрешено подключение<a href="#минимизация-количества-бд-к-которым-разрешено-подключение" class="hash-link" aria-label="Direct link to Минимизация количества БД, к которым разрешено подключение" title="Direct link to Минимизация количества БД, к которым разрешено подключение">​</a></h2>
+<blockquote>
+<p>В дополнение к предыдущим пунктам, ограничение в конфигурационном файле pg_hba.conf количества баз данных, к которым возможно подключение, дополнительно снижает шансы злоумышленника на проникновение в СУБД. Даже в случае получения данных одной из учётных записей и обретения контроля над одним из хостов в определённой подсети злоумышленнику придётся подобрать название базы для подключения.</p>
+<p>По возможности не используйте значение &#x27;all&#x27; в поле DATABASE конфигурационного файла pg_hba.conf, такая настройка позволит злоумышленнику попытаться подключиться данным именем УЗ к любой базе данных.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.24897in" class="img_ev3q">Данная рекомендация не относится к техническому пользователю для взаимодействия JaDog с СУБД (db_connection_settings:user), ему как раз нужна возможность подключения ко всем базам данных.</p>
+<p>В приведённом ниже примере конфигурации настроена возможность подключения технической УЗ приложения (appuser) только к БД этого приложения (appdb).</p>
+<p><strong>Пример конфигурационного файла pg_hba.conf</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:29%">
+<col style="width:17%">
+<col style="width:34%">
+<col style="width:19%">
+</colgroup><thead><tr><th><blockquote>
+<p># TYPE DATABASE</p>
+</blockquote></th><th><blockquote>
+<p>USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>hostssl appdb</p>
+</blockquote></td><td><blockquote>
+<p>appuser</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.101/32</p>
+</blockquote></td><td><blockquote>
+<p>cert</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="минимизация-количества-уз-которым-разрешено-подключение-к-компоненту-jadog">Минимизация количества УЗ, которым разрешено подключение к компоненту jaDog<a href="#минимизация-количества-уз-которым-разрешено-подключение-к-компоненту-jadog" class="hash-link" aria-label="Direct link to Минимизация количества УЗ, которым разрешено подключение к компоненту jaDog" title="Direct link to Минимизация количества УЗ, которым разрешено подключение к компоненту jaDog">​</a></h2>
+<blockquote>
+<p>Ограничение количества учётных записей, имеющих возможность подключения к компоненту jaDog, снижает шансы злоумышленника получить контроль над кластером. Возможность подключения к компоненту jaDog узла кластера настраивается в конфигурационном файле jadog_hba.cfg (см. документ «Руководство по настройке. Часть 1. Управление режимом работы узлов кластера. Компонент «jaDog»).</p>
+<p>В случае использования парольной аутентификации между узлами кластера наиболее безопасным вариантом будет указание в файле конфигурации jadog_hba.cfg возможности подключения только технической учётной записи для взаимодействия с другими jaDog-сервисами (main:interconnect_user) и минимально необходимого списка учётных записей администраторов.</p>
+<p>В приведённом ниже примере конфигурации настроена возможность подключения только УЗ для взаимодействия с другими JaDog-сервисами (admin) и УЗ администратора (administrator).</p>
+<p><strong>Пример конфигурационного файла jadog_hba.cfg</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:31%">
+<col style="width:45%">
+<col style="width:23%">
+</colgroup><thead><tr><th><blockquote>
+<p># USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>sha-256</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.0/24</p>
+</blockquote></td><td><blockquote>
+<p>sha-256</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>administrator</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.0/24</p>
+</blockquote></td><td><blockquote>
+<p>sha-256</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>В случае же использования аутентификации между узлами кластера с использованием SSL-сертификатов помимо озвученных выше УЗ в файле конфигурации jadog_hba.cfg на каждом узле кластера обязательно должна быть указана возможность подключения для пользователей, имя которых совпадает с полем CN серверных сертификатов остальных узлов кластера (т.к. в таком случае компонент JaDog одного узла кластера при подключении будет представляться другому узлу именем, указанным в поле CN серверного сертификата, и при отсутствии таких записей в jadog_hba.cfg межузловое взаимодействие будет невозможно).</p>
+<p>В приведённом ниже примере конфигурации настроена возможность подключения только УЗ для взаимодействия с другими JaDog-сервисами (admin) и CN серверных сертификатов других узлов кластера (jadog-node2 и jadog-node3).</p>
+<p><strong>Пример конфигурационного файла jadog_hba.cfg</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:50%">
+<col style="width:16%">
+</colgroup><thead><tr><th><blockquote>
+<p># USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.0/24</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog-node2</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.132/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog-node3</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.133/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>По возможности не используйте значение &#x27;all&#x27; в поле USER конфигурационного файла jadog_hba.cfg – такая настройка увеличивает для злоумышленника шанс подобрать имя учётной записи методом перебора.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="минимизация-количества-узловподсетей-с-которых-разрешено-подключение-к-компоненту-jadog">Минимизация количества узлов/подсетей, с которых разрешено подключение к компоненту jaDog<a href="#минимизация-количества-узловподсетей-с-которых-разрешено-подключение-к-компоненту-jadog" class="hash-link" aria-label="Direct link to Минимизация количества узлов/подсетей, с которых разрешено подключение к компоненту jaDog" title="Direct link to Минимизация количества узлов/подсетей, с которых разрешено подключение к компоненту jaDog">​</a></h2>
+<blockquote>
+<p>В дополнение к предыдущему пункту, ограничение в конфигурационном файле jadog_hba.cfg количества адресов/подсетей, с которых возможно подключение к компоненту</p>
+<p>jaDog на каждом узле кластера позволяет ещё сильнее уменьшить шансы злоумышленника на получение контроля над кластером. Даже в случае получения данных одной из учётных записей злоумышленнику придётся дополнительно получить контроль над хостом в определённой подсети, чтобы подключиться к кластеру (см. документ &quot;Руководство по настройке. Часть 1. Управление режимом работы узлов кластера. Компонент «jaDog»&quot; п. 4.2.1.).</p>
+<p>По возможности не используйте значение &#x27;all&#x27; в поле ADDRESS конфигурационного файла jadog_hba.cfg, такая настройка позволит злоумышленнику попытаться подключиться с любого хоста, над которым у него есть контроль. Вместо этого лучше использовать отдельные адреса узлов, с которых необходимо подключение к компоненту jaDog, либо ограниченные подсети.</p>
+<p>В приведённом ниже примере конфигурации настроена возможность подключения УЗ для взаимодействия с другими jaDog-сервисами (admin) только c localhost и подсети кластера, а CN серверных сертификатов других узлов кластера (jadog-node2 и jadog-node3)</p>
+<p>- только с адресов соответственных узлов.</p>
+<p><strong>Пример конфигурационного файла jadog_hba.cfg</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:32%">
+<col style="width:50%">
+<col style="width:17%">
+</colgroup><thead><tr><th><blockquote>
+<p># USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.0/24</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog-node2</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.132/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog-node3</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.133/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="измените-номер-порта-используемый-jatoba-на-узлах-кластера-на-нестандартный">Измените номер порта, используемый Jatoba на узлах кластера, на нестандартный<a href="#измените-номер-порта-используемый-jatoba-на-узлах-кластера-на-нестандартный" class="hash-link" aria-label="Direct link to Измените номер порта, используемый Jatoba на узлах кластера, на нестандартный" title="Direct link to Измените номер порта, используемый Jatoba на узлах кластера, на нестандартный">​</a></h2>
+<blockquote>
+<p>Изменение стандартного номера порта на случайный усложняет для злоумышленника проведение автоматизированных атак (с помощью ботов или автоматизированных скриптов).</p>
+<p>Для изменения номера порта откройте конфигурационный файл postgresql.conf и измените значение параметра port:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации">Пример конфигурации<a href="#пример-конфигурации" class="hash-link" aria-label="Direct link to Пример конфигурации" title="Direct link to Пример конфигурации">​</a></h2>
+<blockquote>
+<p>port = 5432</p>
+<p>Измените стандартное значение 5432 на любой другой номер порта, не задействованный на этом сервере.</p>
+<p>Значение параметра port также можно изменить при помощи команды ALTER SYSTEM:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-запроса-1">Пример запроса<a href="#пример-запроса-1" class="hash-link" aria-label="Direct link to Пример запроса" title="Direct link to Пример запроса">​</a></h2>
+<blockquote>
+<p>ALTER SYSTEM SET port = 5433;</p>
+<p>После изменения значения параметра port нужно перезагрузить экземпляр СУБД (т.к. параметр имеет контекст postmaster).</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.24999in" class="img_ev3q">Обратите внимание на то, что после изменения номера порта в конфигурации СУБД «Jatoba» нужно указать этот порт в параметрах подключения jaDog к СУБД «Jatoba».</p>
+<p>Для того, чтобы указать компоненту jaDog на каком порту работает экземпляр Jatoba, можно воспользоваться командой утилиты jadog_ctl:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команды-1">Пример команды<a href="#пример-команды-1" class="hash-link" aria-label="Direct link to Пример команды" title="Direct link to Пример команды">​</a></h2>
+<blockquote>
+<p>parameter set &#x27;db_connection_settings:port&#x27; = 5433</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="измените-номера-портов-используемые-jadog-на-нестандартные">Измените номера портов, используемые jaDog, на нестандартные<a href="#измените-номера-портов-используемые-jadog-на-нестандартные" class="hash-link" aria-label="Direct link to Измените номера портов, используемые jaDog, на нестандартные" title="Direct link to Измените номера портов, используемые jaDog, на нестандартные">​</a></h2>
+<blockquote>
+<p>Аналогично предыдущему пункту, стандартные порты, используемые компонентом jaDog для своей работы, могут быть использованы злоумышленником в автоматизированной атаке, поэтому их также следует изменить на любые не задействованные на данном сервере.</p>
+<p>Для изменения портов, используемых jaDog, а также адреса, который прослушивает REST API, можно воспользоваться командами утилиты jadog_ctl:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команд">Пример команд<a href="#пример-команд" class="hash-link" aria-label="Direct link to Пример команд" title="Direct link to Пример команд">​</a></h2>
+<blockquote>
+<p>parameter set &#x27;main:port&#x27; = 12345</p>
+<p>parameter set &#x27;main:user_interface_port&#x27; = 54321 parameter set &#x27;rest_api:listen_port&#x27; = 54443 parameter set &#x27;rest_api:listen_address&#x27; = 127.0.0.1</p>
+<p>Также можно ознакомится с параметрами, указанными в секциях main и rest_api в файле конфигурации jadog.yml.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации-1">Пример конфигурации<a href="#пример-конфигурации-1" class="hash-link" aria-label="Direct link to Пример конфигурации" title="Direct link to Пример конфигурации">​</a></h2>
+<blockquote>
+<p>main:</p>
+<p>port: 12345</p>
+<p>user_interface_port: 54321 rest_api:</p>
+<p>listen_port: 54443</p>
+<p>listen_address: 127.0.0.1</p>
+</blockquote>
+<h1>ПРИМЕНЕНИЕ TLS/SSL</h1>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image1.png" style="width:0.25138in;height:0.25083in" class="img_ev3q">Использование самоподписанных сертификатов TLS (SSL) допустимо только при проектировании и отладке кластера. В целях обеспечения информационной безопасности в промышленной эксплуатации допускается использование только сертификатов, выданных удостоверяющим центром (CA).</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.24912in" class="img_ev3q">В конфигурациях компонентов СУБД «Jatoba» рекомендуется применение сертификатов TLS (SSL) версии 3.</p>
+<p>Применение сертификатов TLS (SSL) для компонента «jaDog» приводится в документе «Руководство по безопасности СУБД Jatoba» 643.72410666.00067-08 97 01-27.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-ca-ключей">Создание CA ключей<a href="#создание-ca-ключей" class="hash-link" aria-label="Direct link to Создание CA ключей" title="Direct link to Создание CA ключей">​</a></h2>
+<blockquote>
+<p>openssl req -x509 -days 365 -newkey rsa:4096 -sha256 -nodes - keyout ca-key.crt -out ca-cert.crt -subj &quot;/C=RU/ST=SPB/L=Saint-Petersburg /CN=Self-signed CA&quot;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-сертификатов-сервера-и-администратора-пользователя">Создание сертификатов сервера и администратора (пользователя)<a href="#создание-сертификатов-сервера-и-администратора-пользователя" class="hash-link" aria-label="Direct link to Создание сертификатов сервера и администратора (пользователя)" title="Direct link to Создание сертификатов сервера и администратора (пользователя)">​</a></h2>
+<blockquote>
+<p>При подготовке сертификатов в качестве значений «CN=» может указываться название сервера (hostname) или имя (логин) администратора, в зависимости от назначения сертификата. В таком случае сертификаты подразделяются на серверные и клиентские.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-серверного-сертификата">Создание серверного сертификата<a href="#создание-серверного-сертификата" class="hash-link" aria-label="Direct link to Создание серверного сертификата" title="Direct link to Создание серверного сертификата">​</a></h2>
+<blockquote>
+<p>Серверный сертификат SSL создается следующим образом:</p>
+<p>openssl req -newkey rsa:4096 -nodes -keyout server1-key.crt - out server1-req.crt -subj &quot;/extendedKeyUsage=serverAuth</p>
+<p>/subjectAltName=DNS:jatoba-10,DNS:jatoba-11,DNS:localhost,IP:127.0.0.1,IP:192.168.72.10,IP:192.168.72.11</p>
+<p>/CN=jatoba-11&quot;</p>
+<p>Аналогично сертификаты создаются локально на всех остальных узлах кластера:</p>
+<p>openssl req -newkey rsa:4096 -nodes -keyout server3-key.crt - out server3-req.crt -subj &quot;/extendedKeyUsage=serverAuth</p>
+<p>/subjectAltName=DNS:jatoba-10,DNS:<em>DNS_name_server</em>,DNS:localhost,IP:127.0.0.1, IP:public_address,IP:<em>IP_address_server</em> <strong>/CN=server_name_N</strong>&quot;</p>
+<p>Подписание выпущенного сертификата для узла кластера:</p>
+<p>openssl x509 -req -in server1-req.crt -days 365 -CA root.crt - CAkey ca-key.crt -CAcreateserial -extfile openssl.cnf - extensions v3_req -out <strong>server1</strong>-cert.crt</p>
+<p>Аналогично сертификаты подписываются для всех остальных узлов кластера:</p>
+<p>openssl x509 -req -in server3-req.crt -days 365 -CA root.crt - CAkey ca-key.crt -CAcreateserial -extfile openssl.cnf - extensions v3_req -out <strong>serverN</strong>-cert.crt</p>
+<p>Проверка корректности выпущенного сертификата узла кластера:</p>
+<p>openssl x509 -in <strong>server1</strong>-cert.crt -noout -text</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-пользовательского-сертификата">Создание пользовательского сертификата<a href="#создание-пользовательского-сертификата" class="hash-link" aria-label="Direct link to Создание пользовательского сертификата" title="Direct link to Создание пользовательского сертификата">​</a></h2>
+<blockquote>
+<p>Создание сертификата для администратора (пользователя) кластера:</p>
+<p>openssl req -newkey rsa:4096 -nodes -keyout user_name-key.crt - out user_name-req.crt -subj &quot;/extendedKeyUsage=clientAuth</p>
+<p><strong>/CN=user_name</strong>&quot;</p>
+<p>Подписание выпущенного сертификата для администратора (пользователя) кластера:</p>
+<p>openssl x509 -req -in user-req.crt -days 365 -CA ca-cert.crt - CAkey ca-key.crt -CAcreateserial -extfile openssl.cnf - extensions v3_req -out <strong>user_name</strong>-cert.crt</p>
+<p>Значение user_name может быть персонифицированной УЗ администратора кластера, либо технологической УЗ (interconnect_user, jadog_user).</p>
+<p>Проверка корректности выпущенного сертификата администратора (пользователя) кластера:</p>
+<p>openssl x509 -in <strong>user_name</strong>-cert.crt -noout -text</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="проверка-сертификатов-tls-при-запуске-сервиса-jadog">Проверка сертификатов TLS при запуске сервиса jaDog<a href="#проверка-сертификатов-tls-при-запуске-сервиса-jadog" class="hash-link" aria-label="Direct link to Проверка сертификатов TLS при запуске сервиса jaDog" title="Direct link to Проверка сертификатов TLS при запуске сервиса jaDog">​</a></h2>
+<blockquote>
+<p>При запуске сервис jaDog проверяет серверный TLS-сертификат. Для успешного запуска необходимо, чтобы имя хоста, с которого запускается сервис, совпадало с одним из допустимых имён в сертификате.</p>
+<p>Источники проверки имён в сертификате:</p>
+</blockquote>
+<ul>
+<li>
+<p>Common Name (CN) — основное имя хоста;</p>
+</li>
+<li>
+<p>Subject Alternative Name (SAN) — список альтернативных имён.</p>
+</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Сервис последовательно проверяет оба поля (сначала SAN, затем CN). Таким образом, в случае если хотя бы одно из полей заполнено не корректно служба компонента «jaDog» не будет запущена.</p>
+<p>Формат допустимых имён в сертификате:</p>
+</blockquote>
+<ul>
+<li>
+<p>имя должно быть полным и явным (FQDN или IP-адрес);</p>
+</li>
+<li>
+<p>использование шаблонов с подстановочными знаками (wildcards, например</p>
+</li>
+</ul>
+<blockquote>
+<p>*.example.com) не поддерживается и приведёт к отказу в запуске службы компонента</p>
+<p>«jaDog».</p>
+<p>Сценарии, приводящие к отказу в запуске службы компонента «jaDog»:</p>
+</blockquote>
+<ul>
+<li>
+<p>недействительный или просроченный серверный сертификат;</p>
+</li>
+<li>
+<p>имя хоста сервера отсутствует как в поле CN, так и в списке SAN сертификата;</p>
+</li>
+<li>
+<p>параметр запуска -h содержит название узла или IP-адрес, которых нет в CN или списке SAN сертификата;</p>
+</li>
+<li>
+<p>в списке имён (CN или SAN) сертификата обнаружен шаблон с wildcard (*).</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="предупреждение-об-истечении-срока-действия-сертификата">Предупреждение об истечении срока действия сертификата<a href="#предупреждение-об-истечении-срока-действия-сертификата" class="hash-link" aria-label="Direct link to Предупреждение об истечении срока действия сертификата" title="Direct link to Предупреждение об истечении срока действия сертификата">​</a></h2>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">Компонент «jaDog» предоставляет администратору СУБД функционал вывода оповещения в случае, если для сертификата SSL (TLS) истек срок годности.</p>
+<p>В случаи, если у сертификатов SSL (TLS) истек срок годности, то соединение с компонентом «jaDog» будет активно только до следующей переустановки соединения.</p>
+<p>Оповещение выводится при подключении к консольной утилите jadog_ctl в виде сообщений «jaDog certificate has expired. Certificate (путь к сертификату SSL) expires in (количество дней до истечения срока)» в блоке «Health Events» (см. рисунок <a href="#_bookmark16">3.1</a>).</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image3.png" style="width:7.10375in;height:1.58135in" class="img_ev3q">
+<p><span id="_bookmark16" class="anchor"></span>Рисунок 3.1 – Сообщения об истечении срока годности сертификатов SSL (TLS) в</p>
+<p>утилите jadog_ctl</p>
+<p>В функциональный журнал вносится сообщение с текстом «User certificate is expiring»</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image4.jpeg" style="width:7.12773in;height:0.73104in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.2 – Сообщения об истечении срока годности сертификатов SSL (TLS) в</p>
+<p>функциональном журнале</p>
+<p>В журнал информационной безопасности каждые 4 часа вносится сообщение с кодом 104123103 «Истек срок действия сертификата».</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image5.jpeg" style="width:7.03425in;height:0.69958in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 3.3 – Сообщения об истечении срока годности сертификатов SSL (TLS) в журнале информационной безопасности</p>
+</blockquote>
+<ol>
+<li><span id="_bookmark17" class="anchor"></span><strong>Настройка проверки SSL-сертификатов при подключении к узлам кластера</strong> Наиболее безопасным методом аутентификации при подключении к узлам кластера является метод с использованием сертификатов SSL, предполагающий проверку подлинности как клиента сервером, так и сервера клиентом, а также задействующий шифрование данных, передаваемых между клиентом и сервером. Применение этого метода</li>
+</ol>
+<blockquote>
+<p>аутентификации позволяет защититься от атак типа MITM (Man-in-the-Middle).</p>
+<p>Таблица 3.1 – Названия сертификатов и места их хранения</p>
+</blockquote>
+<table><colgroup>
+<col style="width:22%">
+<col style="width:77%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Файл</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Путь/настройка конфигурации</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td></td><td><blockquote>
+<p><strong>jadog.yml – конфигурационный файл</strong></p>
+</blockquote></td></tr><tr><td></td><td><blockquote>
+<p>/var/lib/jatoba/ssl_jadog/ - каталог хранения сертификатов</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>root.crt</p>
+</blockquote></td><td><blockquote>
+<p>db_connection_settings:ssl_ca_file: /var/lib/jatoba/ssl_jatoba/root.crt</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:22%">
+<col style="width:77%">
+</colgroup><thead><tr><th><blockquote>
+<p><strong>Файл</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Путь/настройка конфигурации</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>jadog_service.crt</p>
+</blockquote></td><td><blockquote>
+<p>db_connection_settings:ssl_cert_file: /var/lib/jatoba/ssl_jadog/jadog_service.crt</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog_service.key</p>
+</blockquote></td><td><blockquote>
+<p>db_connection_settings:ssl_key_file: /var/lib/jatoba/ssl_jadog/jadog_service.key</p>
+</blockquote></td></tr><tr><td></td><td></td></tr><tr><td><blockquote>
+<p>root.crt</p>
+</blockquote></td><td><blockquote>
+<p>tls:ca_file: /var/lib/jatoba/ssl_jatoba/root.crt</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>interconnect.crt</p>
+</blockquote></td><td><blockquote>
+<p>tls:cert_file: /var/lib/jatoba/ssl_jadog/interconnect.crt</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>interconnect.key</p>
+</blockquote></td><td><blockquote>
+<p>tls:key_file: /var/lib/jatoba/ssl_jadog/interconnect.key</p>
+</blockquote></td></tr><tr><td></td><td></td></tr><tr><td><blockquote>
+<p>root.crt</p>
+</blockquote></td><td><blockquote>
+<p>rest_api:ca_file: /var/lib/jatoba/ssl_jatoba/root.crt</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>rest_api_server.crt</p>
+</blockquote></td><td><blockquote>
+<p>rest_api:cert_file: /var/lib/jatoba/ssl_jadog/server.crt</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>rest_api_server.key</p>
+</blockquote></td><td><blockquote>
+<p>rest_api: key_file: /var/lib/jatoba/ssl_jadog/server.key</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Для примера настройки см. документ &quot;Руководство по безопасности. Часть 27.&quot; п. 7.1. При добавлении записей в конфигурационный файл pg_hba.conf на узлах кластера руководствуйтесь принципами, описанными в п. <a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B9%D1%82%D0%B5-%D0%BD%D0%B0%D0%B4%D1%91%D0%B6%D0%BD%D1%8B%D0%B9-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8-%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B8-%D0%BA-%D1%83%D0%B7%D0%BB%D0%B0%D0%BC-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0">4.1</a> - <a href="#%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D0%B5-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D0%B8-%D0%B2%D1%81%D0%B5%D1%85-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%B8-%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85-%D1%83%D0%B7-%D0%BF%D1%80%D0%B8-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B2-%D1%8D%D0%BA%D1%81%D0%BF%D0%BB%D1%83%D0%B0%D1%82%D0%B0%D1%86%D0%B8%D1%8E">4.3</a> настоящего руководства.</p>
+<p>Пример указания сертификатов в конфигурационном файле postgresql.conf.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурационного-файла-postgresqlconf">Пример конфигурационного файла postgresql.conf<a href="#пример-конфигурационного-файла-postgresqlconf" class="hash-link" aria-label="Direct link to Пример конфигурационного файла postgresql.conf" title="Direct link to Пример конфигурационного файла postgresql.conf">​</a></h2>
+<blockquote>
+<p>ssl = on</p>
+<p>ssl_ca_file = &#x27;/var/lib/jatoba/ssl_jatoba/root.crt&#x27; ssl_cert_file = &#x27;/var/lib/jatoba/ssl_jatoba/server.crt&#x27; ssl_key_file = &#x27;/var/lib/jatoba/ssl_jatoba/server.key&#x27;</p>
+<p>Пример настройки проверки сертификатов при подключении технической УЗ (jadog_user) в конфигурационном файле pg_hba.conf.</p>
+<p><strong>Пример конфигурационного файла pg_hba.conf</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:15%">
+<col style="width:15%">
+<col style="width:25%">
+<col style="width:32%">
+</colgroup><thead><tr><th><blockquote>
+<p># TYPE</p>
+</blockquote></th><th><blockquote>
+<p>DATABASE</p>
+</blockquote></th><th><blockquote>
+<p>USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>hostssl</p>
+</blockquote></td><td><blockquote>
+<p>replication</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>cert clientcert=verify-</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>full</p>
+</blockquote></td><td></td><td></td><td></td><td></td></tr><tr><td><blockquote>
+<p>hostssl</p>
+</blockquote></td><td><blockquote>
+<p>replication</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.131/32</p>
+</blockquote></td><td><blockquote>
+<p>cert clientcert=verify-</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>full</p>
+</blockquote></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-проверки-ssl-сертификатов-при-подключении-к-компоненту">Настройка проверки SSL-сертификатов при подключении к компоненту<a href="#настройка-проверки-ssl-сертификатов-при-подключении-к-компоненту" class="hash-link" aria-label="Direct link to Настройка проверки SSL-сертификатов при подключении к компоненту" title="Direct link to Настройка проверки SSL-сертификатов при подключении к компоненту">​</a></h2>
+<blockquote>
+<p><strong>jaDog</strong></p>
+<p>Для примера настройки см. документ «Руководство по безопасности. Часть 27.» п. 7.1.</p>
+<p>При добавлении записей в конфигурационный файл jadog_hba.cfg на узлах кластера руководствуйтесь принципами, описанными в п. <a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%D1%80%D0%BE%D0%BB%D0%B5%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%BC-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-%D0%B1%D0%B4">2.1</a> - <a href="#%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D1%83%D0%B7%D0%BB%D0%BE%D0%B2%D0%BF%D0%BE%D0%B4%D1%81%D0%B5%D1%82%D0%B5%D0%B9-%D1%81-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D1%85-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%BE-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%83-jadog">2.5</a> данного документа.</p>
+<p>Для указания сертификатов, используемых jaDog для соединения между узлами, можно воспользоваться командами утилиты jadog_ctl.</p>
+<p>parameter set &#x27;tls:tls&#x27; = true parameter set &#x27;tls:ca_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jatoba/root.crt</p>
+<p>parameter set &#x27;tls:cert_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jadog/interconnect.crt</p>
+<p>parameter set &#x27;tls:key_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jadog/interconnect.key</p>
+<p>Также можно ознакомится с параметрами, указанными в секции tls в файле конфигурации jadog.yml</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации-2">Пример конфигурации<a href="#пример-конфигурации-2" class="hash-link" aria-label="Direct link to Пример конфигурации" title="Direct link to Пример конфигурации">​</a></h2>
+<blockquote>
+<p>tls:</p>
+<p>tls: true</p>
+<p>ca_file: /var/lib/jatoba/ssl_jatoba/root.crt cert_file: /var/lib/jatoba/ssl_jadog/interconnect.crt key_file: /var/lib/jatoba/ssl_jadog/interconnect.key</p>
+<p>Пример настройки проверки сертификатов при подключении УЗ для взаимодействия с другими jadog-сервисами (admin) и CN серверных сертификатов других узлов кластера (jadog-node2 и jadog-node3) в конфигурационном файле jadog_hba.cfg.</p>
+<p><strong>Пример конфигурационного файла jadog_hba.cfg</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:32%">
+<col style="width:50%">
+<col style="width:17%">
+</colgroup><thead><tr><th><blockquote>
+<p># USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.0/24</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog-node2</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.132/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>jadog-node3</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.133/32</p>
+</blockquote></td><td><blockquote>
+<p>ssl</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-подключения-jadog-к-субд-с-помощью-ssl-сертификатов">Настройка подключения jaDog к СУБД с помощью SSL-сертификатов<a href="#настройка-подключения-jadog-к-субд-с-помощью-ssl-сертификатов" class="hash-link" aria-label="Direct link to Настройка подключения jaDog к СУБД с помощью SSL-сертификатов" title="Direct link to Настройка подключения jaDog к СУБД с помощью SSL-сертификатов">​</a></h2>
+<blockquote>
+<p>Для примера настройки см. документ &quot;Руководство по безопасности. Часть 27.&quot; п. 7.2.</p>
+<p>Для указания сертификатов, используемых jaDog для подключения к СУБД можно воспользоваться командами утилиты jadog_ctl.</p>
+<p>parameter set &#x27;db_connection:auth_method&#x27; = ssl</p>
+<p>parameter set &#x27;db_connection_settings:ssl_mode&#x27; = verify-full parameter set &#x27;db_connection_settings:ssl_ca_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jatoba/root.crt</p>
+<p>parameter set &#x27;db_connection_settings:ssl_cert_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jadog/jadog_service.crt</p>
+<p>parameter set &#x27;db_connection_settings.ssl_key_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jadog/jadog_service.key</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации-3">Пример конфигурации<a href="#пример-конфигурации-3" class="hash-link" aria-label="Direct link to Пример конфигурации" title="Direct link to Пример конфигурации">​</a></h2>
+<blockquote>
+<p>db_connection: auth_method: ssl</p>
+<p>А также изменить пути до сертификатов, указанные в строке подключения в секции</p>
+<p>db_connection_settings: → ssl_mode db_connection_settings: → ssl_ca_file db_connection_settings: → ssl_cert_file db_connection_settings: → ssl_key_file.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-подключения-к-rest-api-с-помощью-ssl-сертификатов">Настройка подключения к REST API с помощью SSL-сертификатов<a href="#настройка-подключения-к-rest-api-с-помощью-ssl-сертификатов" class="hash-link" aria-label="Direct link to Настройка подключения к REST API с помощью SSL-сертификатов" title="Direct link to Настройка подключения к REST API с помощью SSL-сертификатов">​</a></h2>
+<blockquote>
+<p>Для примера настройки см. документ «Руководство по безопасности. Часть 27.» п.</p>
+<p>7.3.1.</p>
+<p>Для указания сертификатов, используемых jaDog при подключении к REST API</p>
+<p>можно воспользоваться командами утилиты jadog_ctl.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команд-1">Пример команд<a href="#пример-команд-1" class="hash-link" aria-label="Direct link to Пример команд" title="Direct link to Пример команд">​</a></h2>
+<blockquote>
+<p>parameter set &#x27;rest_api:ca_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jadog/root.crt</p>
+<p>parameter set &#x27;rest_api:cert_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jadog/jadog_user.crt</p>
+<p>parameter set &#x27;rest_api:key_file&#x27; =</p>
+<p>/var/lib/jatoba/ssl_jadog/jadog_user.key</p>
+<p>Также можно ознакомится с параметрами, указанными в секции rest_api в файле конфигурации jadog.yml.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации-4">Пример конфигурации<a href="#пример-конфигурации-4" class="hash-link" aria-label="Direct link to Пример конфигурации" title="Direct link to Пример конфигурации">​</a></h2>
+<blockquote>
+<p>rest_api:</p>
+<p>ca_file: /var/lib/jatoba/ssl_jadog/root.crt cert_file: /var/lib/jatoba/ssl_jadog/server.crt key_file: /var/lib/jatoba/ssl_jadog/server.key</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-минимальной-версии-протокола-tls-не-ниже-рекомендованной">Настройка минимальной версии протокола TLS не ниже рекомендованной<a href="#настройка-минимальной-версии-протокола-tls-не-ниже-рекомендованной" class="hash-link" aria-label="Direct link to Настройка минимальной версии протокола TLS не ниже рекомендованной" title="Direct link to Настройка минимальной версии протокола TLS не ниже рекомендованной">​</a></h2>
+<blockquote>
+<p>Версии протокола TLS ниже чем TLSv1.2 имеют известные уязвимости, считаются устаревшими и не рекомендуются к использованию без крайней на то необходимости.</p>
+<p>Для ограничения минимальной версии протокола TLS откройте конфигурационный файл postgresql.conf и измените значение параметра ssl_min_protocol_version.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации-5">Пример конфигурации<a href="#пример-конфигурации-5" class="hash-link" aria-label="Direct link to Пример конфигурации" title="Direct link to Пример конфигурации">​</a></h2>
+<blockquote>
+<p>ssl_min_protocol_version = &#x27;TLSv1.2&#x27;</p>
+<p>Значение параметра ssl_min_protocol_version также можно изменить при помощи команды ALTER SYSTEM.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-запроса-2">Пример запроса<a href="#пример-запроса-2" class="hash-link" aria-label="Direct link to Пример запроса" title="Direct link to Пример запроса">​</a></h2>
+<blockquote>
+<p>ALTER SYSTEM SET ssl_min_protocol_version = &#x27;TLSv1.2&#x27;;</p>
+<p>После изменения значения параметра необходимо перечитать конфигурацию инстанса СУБД.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-функции-1">Пример функции<a href="#пример-функции-1" class="hash-link" aria-label="Direct link to Пример функции" title="Direct link to Пример функции">​</a></h2>
+<blockquote>
+<p>SELECT pg_reload_conf();</p>
+<p>Также можно перечитать конфигурацию с использованием команды утилиты jadog_ctl.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команды-2">Пример команды<a href="#пример-команды-2" class="hash-link" aria-label="Direct link to Пример команды" title="Direct link to Пример команды">​</a></h2>
+<blockquote>
+<p>reload dbs node &#x27;node_name&#x27;</p>
+<p>Есть возможность перечитать конфигурацию инстанса СУБД сразу на всех узлах кластера с использованием команды утилиты jadog_ctl.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команды-3">Пример команды<a href="#пример-команды-3" class="hash-link" aria-label="Direct link to Пример команды" title="Direct link to Пример команды">​</a></h2>
+<blockquote>
+<p>reload dbs cluster</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-шаблона-файла-ответов-с-применением-ssl-сертификатов">Настройка шаблона файла ответов с применением SSL-сертификатов<a href="#настройка-шаблона-файла-ответов-с-применением-ssl-сертификатов" class="hash-link" aria-label="Direct link to Настройка шаблона файла ответов с применением SSL-сертификатов" title="Direct link to Настройка шаблона файла ответов с применением SSL-сертификатов">​</a></h2>
+<blockquote>
+<p>При использовании автоматизированного развертывания кластера c применением SSL-сертификатов необходимые параметры указываются непосредственно в шаблоне файла ответов.</p>
+<p>Подготовка самоподписанных SSL-сертификатов для проектирования, отладки и непромышленной эксплуатации кластера описана в третьей части документа «Краткое руководство по настройке. Компонент «jaDog» 643.72410666.00067-08 98 02-03.</p>
+<p>Шаблоны файлов ответов для автоматизированного развертывания кластера располагаются в директории /usr/jatoba-&lt;ver&gt;/share/doc/jadog/clusters_kits, где &lt;ver&gt; - номер версии СУБД «Jatoba». Шаблоны с применением SSL-сертификатов содержат в названии суффикс «ssl».</p>
+<p>Применение SSL-сертификатов в компоненте «jaDog» подразумевает подготовку трех типов SSL-сертификатов:</p>
+</blockquote>
+<ul>
+<li>
+<p>для подключения при инициализации БД (здесь и далее называются postgres), расположение в директории /var/lib/jatoba/ssl_jatoba;</p>
+</li>
+<li>
+<p>для подключения к БД (здесь и далее имеют префикс jadog_server), расположение в директории /var/lib/jatoba/ssl_jatoba;</p>
+</li>
+<li>
+<p>для межузлового взаимодействия (здесь и далее имеют префикс jadog_user), расположение в директории /var/lib/jatoba/ssl_jadog.</p>
+</li>
+</ul>
+<blockquote>
+<p>Для межузлового взаимодействия в компоненте «jaDog» применяется специализированный пользователь с типом «interconnect user». По тексту инструкции для</p>
+<p>примера таким пользователем определен jadog_user. Описание процедур создания пользователя jadog_user приводится в первой части документа «Управление режимом работы узлов кластера. Компонент «jaDog» 643.72410666.00067-08 98 02-01.</p>
+<p>В секции default_cluster_params:db_init_conn_string параметров первоначальной инициализации СУБД определяются пути к директориям, которые содержат необходимые SSL-сертификаты.</p>
+<p>default_cluster_params:</p>
+<p>db_init_conn_string: host=127.0.0.1 port=5432 dbname=postgres user=postgres sslmode=verify-full sslrootcert=/var/lib/jatoba/ssl_jatoba/root.crt sslcert=/var/lib/jatoba/ssl_jatoba/postgres.crt sslkey=/var/lib/jatoba/ssl_jatoba/postgres.key</p>
+<p>initdb:</p>
+<p>initdb_options: &quot;--locale=ru_RU.utf8 --encoding=UTF-8 --set ssl=&#x27;on&#x27;</p>
+<p>--set ssl_ca_file=&#x27;/var/lib/jatoba/ssl_jatoba/root.crt&#x27; --set ssl_cert_file=&#x27;/var/lib/jatoba/ssl_jatoba/jatoba_server.crt&#x27; --set ssl_key_file=&#x27;/var/lib/jatoba/ssl_jatoba/jatoba_server.key&#x27;&quot;</p>
+<p>В секции pg_hba.conf шаблона необходимо указать параметры подключения</p>
+<p>«interconnect user» к базам данных:</p>
+</blockquote>
+<p>pg_hba.conf: # Параметры будут установлены при формировании кластера в файл pg_hba.conf</p>
+<blockquote>
+<p>- local all</p>
+</blockquote>
+<p>- hostssl all</p>
+<p>postgres</p>
+<p>all</p>
+<p>127.0.0.1/32</p>
+<p>trust</p>
+<p>cert</p>
+<p>clientcert=verify-full</p>
+<ul>
+<li>
+<p>hostssl all all 192.168.72.0/24 cert clientcert=verify-full</p>
+</li>
+<li>
+<p>hostssl replication jadog_user 127.0.0.1/32 cert clientcert=verify-full</p>
+</li>
+</ul>
+<p>- hostssl</p>
+<p>replication jadog_user</p>
+<p>192.168.72.0/24</p>
+<p>cert</p>
+<p>clientcert=verify-full</p>
+<blockquote>
+<p>В секции cluster_settings:jadog_users для каждого из пользователей необходимо указать метод аутентификации, в данном случае ssl. Например:</p>
+</blockquote>
+<table><colgroup>
+<col style="width:1%">
+<col style="width:32%">
+<col style="width:32%">
+<col style="width:33%">
+</colgroup><thead><tr><th colspan="4"><blockquote>
+<p>jadog_users:</p>
+<p>- name: admin address: all</p>
+</blockquote></th></tr></thead><tbody><tr><td></td><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>method: ssl</p>
+<p>- name: jadog_user address: all method: ssl</p>
+<p>В секции cluster_settings:default_node_params:main в параметре interconnect_user необходимо указать название учетной записи, используемой для межузлового взаимодействия, в данном примере это jadog_user. В данной секции также перечисляются пути к директориям, которые содержат SSL-сертификаты для межузлового взаимодействия. Например:</p>
+<p>default_node_params: main:</p>
+<p>interconnect_user: name: jadog_user</p>
+<p>ca_file: /var/lib/jatoba/ssl_jadog/root.crt cert_file: /var/lib/jatoba/ssl_jadog/jadog_user.crt key_file: /var/lib/jatoba/ssl_jadog/jadog_user.key</p>
+<p>В секции cluster_settings:default_node_params:tls необходимо указать пути к директориям, в которых находятся сертификаты SSL:</p>
+<p>tls:</p>
+<p>tls: true</p>
+<p>ca_file: /var/lib/jatoba/ssl_jadog/root.crt</p>
+<p>cert_file: /var/lib/jatoba/ssl_jadog/jadog_service.crt key_file: /var/lib/jatoba/ssl_jadog/jadog_service.key</p>
+<p>В секции cluster_settings:default_node_params:db_connection в параметре auth_method необходимо указать метод аутентификации в БД, в данном случае ssl:</p>
+<p>db_connection:</p>
+<p>auth_method: ssl</p>
+<p>В секции cluster_settings:default_node_params:db_connection_settings необходимо указать пути к директориям, в которых находятся сертификаты SSL:</p>
+<p>db_connection_settings: user: jadog_user</p>
+<p>ssl_ca_file: /var/lib/jatoba/ssl_jatoba/root.crt ssl_cert_file: /var/lib/jatoba/ssl_jatoba/jadog_user.crt ssl_key_file: /var/lib/jatoba/ssl_jatoba/jadog_user.key ssl_mode: verify-full</p>
+</blockquote>
+<h1>АУТЕНТИФИКАЦИЯ</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="используйте-надёжный-метод-аутентификации-при-подключении-к-узлам-кластера">Используйте надёжный метод аутентификации при подключении к узлам кластера<a href="#используйте-надёжный-метод-аутентификации-при-подключении-к-узлам-кластера" class="hash-link" aria-label="Direct link to Используйте надёжный метод аутентификации при подключении к узлам кластера" title="Direct link to Используйте надёжный метод аутентификации при подключении к узлам кластера">​</a></h2>
+<blockquote>
+<p>Рекомендованным методом аутентификации при подключении к СУБД на узлах кластера является аутентификация с проверкой SSL-сертификатов - cert (см. раздел <a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-tlsssl">3</a> данного документа). Тем не менее, в случае, если информационная система не поддерживает аутентификацию по сертификату, следует настроить надёжный метод аутентификации в конфигурационном файле pg_hba.conf узлов кластера.</p>
+<p>Методы аутентификации trust, password, ident, peer и md5 не являются надёжными и не рекомендуются к использованию в промышленной среде. Вместо них рекомендуется использовать один из следующих методов, поддерживаемых СУБД «Jatoba»: scram-sha-256, gss, sspi, ldap, radius, pam.</p>
+<p>В приведённом ниже примере конфигурации настроена возможность подключения технической УЗ (jadog_user) с применением метода аутентификации scram-sha-256.</p>
+<p><strong>Пример конфигурационного файла pg_hba.conf</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:18%">
+<col style="width:17%">
+<col style="width:29%">
+<col style="width:22%">
+</colgroup><thead><tr><th><blockquote>
+<p># TYPE</p>
+</blockquote></th><th><blockquote>
+<p>DATABASE</p>
+</blockquote></th><th><blockquote>
+<p>USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th><blockquote>
+<p>METHOD</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>host</p>
+</blockquote></td><td><blockquote>
+<p>[db_name]</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>scram-sha-256</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>host</p>
+</blockquote></td><td><blockquote>
+<p>[db_name]</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.131/32</p>
+</blockquote></td><td><blockquote>
+<p>scram-sha-256</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>host</p>
+</blockquote></td><td><blockquote>
+<p>replication</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td><blockquote>
+<p>scram-sha-256</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>host</p>
+</blockquote></td><td><blockquote>
+<p>replication</p>
+</blockquote></td><td><blockquote>
+<p>jadog_user</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.131/32</p>
+</blockquote></td><td><blockquote>
+<p>scram-sha-256</p>
+</blockquote></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="используйте-надёжный-метод-аутентификации-при-подключении-к-компоненту-jadog">Используйте надёжный метод аутентификации при подключении к компоненту jaDog<a href="#используйте-надёжный-метод-аутентификации-при-подключении-к-компоненту-jadog" class="hash-link" aria-label="Direct link to Используйте надёжный метод аутентификации при подключении к компоненту jaDog" title="Direct link to Используйте надёжный метод аутентификации при подключении к компоненту jaDog">​</a></h2>
+<blockquote>
+<p>Рекомендованным методом аутентификации при подключении к компоненту jaDog является аутентификация с проверкой SSL-сертификатов - ssl (см. п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-ssl-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B8-%D0%BA-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%83">3.4</a> данного документа). В случае, если информационная система не поддерживает аутентификацию по сертификату, следует настроить аутентификацию с помощью метода scram-sha-256.</p>
+<p>В приведённом ниже примере конфигурации настроена аутентификация УЗ для взаимодействия с другими jaDog-сервисами (admin) и УЗ администратора (administrator) с применением метода scram-sha-256.</p>
+<p><strong>Пример конфигурационного файла jadog_hba.cfg</strong></p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:45%">
+<col style="width:20%">
+</colgroup><thead><tr><th><blockquote>
+<p># USER</p>
+</blockquote></th><th><blockquote>
+<p>ADDRESS</p>
+</blockquote></th><th style="text-align:right">METHOD</th></tr></thead><tbody><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>127.0.0.1/32</p>
+</blockquote></td><td style="text-align:right">sha-256</td></tr><tr><td><blockquote>
+<p>admin</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.0/24</p>
+</blockquote></td><td style="text-align:right">sha-256</td></tr><tr><td><blockquote>
+<p>administrator</p>
+</blockquote></td><td><blockquote>
+<p>192.168.239.0/24</p>
+</blockquote></td><td style="text-align:right">sha-256</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="измените-пароли-всех-технических-и-административных-уз-при-переводе-системы-в-эксплуатацию">Измените пароли всех технических и административных УЗ при переводе системы в эксплуатацию<a href="#измените-пароли-всех-технических-и-административных-уз-при-переводе-системы-в-эксплуатацию" class="hash-link" aria-label="Direct link to Измените пароли всех технических и административных УЗ при переводе системы в эксплуатацию" title="Direct link to Измените пароли всех технических и административных УЗ при переводе системы в эксплуатацию">​</a></h2>
+<blockquote>
+<p>В случае использования парольной аутентификации вместо SSL в процессе настройки компонента jaDog и развёртывания кластера (вручную или с помощью jadog0) в интерфейсе jaDog и файлах ответов указываются пароли технических и административных учетных записей. Эти пароли могут быть скомпрометированы в процессе настройки, поэтому при переводе системы в промышленную эксплуатацию они должны быть изменены.</p>
+</blockquote>
+<h1>ЖУРНАЛИРОВАНИЕ</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройте-параметры-журналирования-компонента-jadog">Настройте параметры журналирования компонента jaDog<a href="#настройте-параметры-журналирования-компонента-jadog" class="hash-link" aria-label="Direct link to Настройте параметры журналирования компонента jaDog" title="Direct link to Настройте параметры журналирования компонента jaDog">​</a></h2>
+<blockquote>
+<p>Помимо журналирования событий инстанса СУБД также нужно настроить журналирование событий компонента jaDog.</p>
+<p>Для установки параметров журналирования jaDog можно воспользоваться командами утилиты jadog_ctl.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команд-2">Пример команд<a href="#пример-команд-2" class="hash-link" aria-label="Direct link to Пример команд" title="Direct link to Пример команд">​</a></h2>
+<blockquote>
+<p>parameter set &#x27;log:path&#x27; = /usr/jatoba-&lt;ver&gt;/var/log/jadog parameter set &#x27;log:file&#x27; = true</p>
+<p>parameter set &#x27;log:mode&#x27; = 0600</p>
+<p>parameter set &#x27;log:file_name&#x27; = jadog-%Y-%m-%d_%H%M%S parameter set &#x27;log:type&#x27; = json</p>
+<p>parameter set &#x27;log:level&#x27; = info</p>
+<p>Также можно ознакомится с параметрами, указанными в секции log в файле конфигурации jadog.yml.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации-6">Пример конфигурации<a href="#пример-конфигурации-6" class="hash-link" aria-label="Direct link to Пример конфигурации" title="Direct link to Пример конфигурации">​</a></h2>
+<blockquote>
+<p>log:</p>
+<p>path: /usr/jatoba-&lt;ver&gt;/var/log/jadog file: true</p>
+<p>mode: 0600 file_name: jadog-%a level: info</p>
+<p>type: json</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-журналирования-событий-иб">Настройка журналирования событий ИБ<a href="#настройка-журналирования-событий-иб" class="hash-link" aria-label="Direct link to Настройка журналирования событий ИБ" title="Direct link to Настройка журналирования событий ИБ">​</a></h2>
+<blockquote>
+<p>Не менее важно настроить журналирование событий ИБ компонента jaDog.</p>
+<p>Для установки параметров журналирования событий ИБ jaDog можно воспользоваться командами утилиты jadog_ctl:</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команд-3">Пример команд:<a href="#пример-команд-3" class="hash-link" aria-label="Direct link to Пример команд:" title="Direct link to Пример команд:">​</a></h2>
+<blockquote>
+<p>parameter set &#x27;security_log:type&#x27; = json parameter set &#x27;security_log:path&#x27; = /usr/jatoba-</p>
+<p>&lt;ver&gt;/var/log/jadog</p>
+<p>parameter set &#x27;security_log:file_mode&#x27; = 0600</p>
+<p>parameter set &#x27;security_log:file_name&#x27; = security_jadog-%Y-%m-</p>
+<p>%d_%H%M%S</p>
+<p>Также можно ознакомится с параметрами, указанными в секции security_log в файле конфигурации jadog.yml.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации-7">Пример конфигурации:<a href="#пример-конфигурации-7" class="hash-link" aria-label="Direct link to Пример конфигурации:" title="Direct link to Пример конфигурации:">​</a></h2>
+<blockquote>
+<p>security_log:</p>
+<p>path: /usr/jatoba-&lt;ver&gt;/var/log/jadog file_mode: 0600</p>
+<p>file_name: security_jadog-%Y-%m-%d_%H%M%S type: json</p>
+</blockquote>
+<h1>ХЕШИРОВАНИЕ И МАСКИРОВАНИЕ</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройте-стойкий-алгоритм-хеширования-паролей-в-бд-на-узлах-кластера">Настройте стойкий алгоритм хеширования паролей в БД на узлах кластера<a href="#настройте-стойкий-алгоритм-хеширования-паролей-в-бд-на-узлах-кластера" class="hash-link" aria-label="Direct link to Настройте стойкий алгоритм хеширования паролей в БД на узлах кластера" title="Direct link to Настройте стойкий алгоритм хеширования паролей в БД на узлах кластера">​</a></h2>
+<blockquote>
+<p>В случае использования парольной аутентификации пароль технической УЗ (jadog_user) должен храниться в СУБД в захешированном стойким алгоритмом (с использованием случайной соли) виде. Тогда даже в случае получения злоумышленником хеша пароля использование им радужных таблиц для определения исходного пароля не принесёт результата.</p>
+<p>СУБД «Jatoba» поддерживает два алгоритма хеширования: md5 (менее стойкий) и scram-sha-256 (более стойкий).</p>
+</blockquote>
+<table><colgroup>
+<col style="width:57%">
+<col style="width:29%">
+<col style="width:12%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p>Для установки стойкого алгоритма</p>
+</blockquote></th><th style="text-align:center">хеширования паролей</th><th style="text-align:right">откройте</th></tr></thead><tbody><tr><td><blockquote>
+<p>конфигурационный файл postgresql.conf и</p>
+</blockquote></td><td style="text-align:center">измените значение</td><td style="text-align:right">параметра</td></tr><tr><td><blockquote>
+<p>password_encryption.</p>
+</blockquote></td><td style="text-align:center"></td><td style="text-align:right"></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-конфигурации-8">Пример конфигурации<a href="#пример-конфигурации-8" class="hash-link" aria-label="Direct link to Пример конфигурации" title="Direct link to Пример конфигурации">​</a></h2>
+<blockquote>
+<p>password_encryption = scram-sha-256</p>
+<p>Значение параметра password_encryption также можно изменить при помощи команды ALTER SYSTEM.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-запроса-3">Пример запроса<a href="#пример-запроса-3" class="hash-link" aria-label="Direct link to Пример запроса" title="Direct link to Пример запроса">​</a></h2>
+<blockquote>
+<p>ALTER SYSTEM SET password_encryption = &#x27;scram-sha-256&#x27;;</p>
+<p>После изменения значения параметра необходимо перечитать конфигурацию инстанса СУБД.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-функции-2">Пример функции<a href="#пример-функции-2" class="hash-link" aria-label="Direct link to Пример функции" title="Direct link to Пример функции">​</a></h2>
+<blockquote>
+<p>SELECT pg_reload_conf();</p>
+<p>Также можно перечитать конфигурацию с использованием команды утилиты jadog_ctl.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команды-4">Пример команды<a href="#пример-команды-4" class="hash-link" aria-label="Direct link to Пример команды" title="Direct link to Пример команды">​</a></h2>
+<table><colgroup>
+<col style="width:1%">
+<col style="width:32%">
+<col style="width:32%">
+<col style="width:33%">
+</colgroup><thead><tr><th colspan="4"><blockquote>
+<p>reload dbs node &#x27;node_name&#x27;</p>
+</blockquote></th></tr></thead><tbody><tr><td></td><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Есть возможность перечитать конфигурацию инстанса СУБД сразу на всех узлах кластера с использованием команды утилиты jadog_ctl.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="пример-команды-5">Пример команды<a href="#пример-команды-5" class="hash-link" aria-label="Direct link to Пример команды" title="Direct link to Пример команды">​</a></h2>
+<blockquote>
+<p>reload dbs cluster</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q">Обратите внимание на то, что после изменения значения параметра и перечитывания конфигурации следует изменить пароль технической УЗ (jadog_user) для того, чтобы он перехешировался указанным алгоритмом.</p>
+</blockquote>
+<h1><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25208in;height:0.25208in" class="img_ev3q">КОНТРОЛЬ ЦЕЛОСТНОСТИ</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-расширения-ja_csum-и-подсчет-эталонных-контрольных-сумм">Установка расширения ja_csum и подсчет эталонных контрольных сумм<a href="#установка-расширения-ja_csum-и-подсчет-эталонных-контрольных-сумм" class="hash-link" aria-label="Direct link to Установка расширения ja_csum и подсчет эталонных контрольных сумм" title="Direct link to Установка расширения ja_csum и подсчет эталонных контрольных сумм">​</a></h2>
+<blockquote>
+<p>Для предотвращения несанкционированного изменения шаблонных баз данных, библиотек, бинарных файлов и файлов конфигурации рекомендуется зафиксировать их контрольные суммы и постоянно наблюдать за фактом их изменения. Для реализации этой функции требуется установить расширение ja_csum.</p>
+<p>Для примера установки и применения расширения ja_csum см. документ</p>
+<p>«Руководство по настройке. Часть 14. Контроль целостности. Компонент «ja_CSum».</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image1.png" style="width:0.25138in;height:0.25076in" class="img_ev3q">В случае ручной фиксации эталонных контрольных сумм файлов компонента jaDog неизменными в процессе работы компонента файлами считаются:</p>
+</blockquote>
+<ul>
+<li>
+<p>библиотеки;</p>
+</li>
+<li>
+<p>бинарные файлы;</p>
+</li>
+<li>
+<p>файл конфигурации jadog.yml;</p>
+</li>
+<li>
+<p>файл конфигурации jadog_hba.cfg;</p>
+</li>
+<li>
+<p>файл конфигурации users.yml.</p>
+</li>
+</ul>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25209in;height:0.25208in" class="img_ev3q">Фиксация контрольных сумм других файлов расширения может привести к непредвиденным блокировкам УЗ в продуктовой среде!</p>
+</blockquote>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th style="text-align:left"><blockquote>
+<p>Обратите внимание на то, что пакет компонента ja_csum должен быть установлен на всех хостах до конфигурирования кластера. В случае, если на одном узле кластера расширение будет установлено, а на другом - нет, на узле с отсутствующим пакетом расширения демон Jatoba в определённый момент</p>
+<p>зафиксирует ошибку и будет остановлен.</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>Обратите внимание на то, что для функционирования на всех узлах кластера</p>
+<p>файлы эталонных контрольных сумм должны быть скопированы на все узлы кластера.</p>
+</blockquote></td></tr></tbody></table>
+<h1>РЕЗЕРВНОЕ КОПИРОВАНИЕ</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="храните-резервную-копию-файла-ответов-со-структурой-кластера-в-удалённом-сетевом-хранилище">Храните резервную копию файла ответов со структурой кластера в удалённом сетевом хранилище<a href="#храните-резервную-копию-файла-ответов-со-структурой-кластера-в-удалённом-сетевом-хранилище" class="hash-link" aria-label="Direct link to Храните резервную копию файла ответов со структурой кластера в удалённом сетевом хранилище" title="Direct link to Храните резервную копию файла ответов со структурой кластера в удалённом сетевом хранилище">​</a></h2>
+<blockquote>
+<p>Компонент «jaDog» имеет встроенную возможность выгрузки структуры кластера в файл, который впоследствии может быть использован как файл ответа для восстановления состояния кластера в случае вывода злоумышленником из строя одного или нескольких узлов кластера (см. документ &quot;Руководство по настройке. Часть 1. Управление режимом работы узлов кластера. Компонент «jaDog»&quot; п. 3.7.).</p>
+<p>При планировании политики создания и хранения резервных копий рекомендуется использовать для сохранения резервных файлов ответов не локальную директорию сервера СУБД, а удалённое сетевое хранилище, физически расположенное в другом ЦОД. Тогда в случае вывода злоумышленником из строя сегмента серверной инфраструктуры файлы ответов останутся доступны для восстановления.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/jadog_secur/media/image2.png" style="width:0.25in;height:0.24977in" class="img_ev3q">Обратите внимание на то, что для функционирования на всех узлах кластера директория, находящаяся на удалённом файловом сервере, должна быть подключена на всех узлах кластера.</p>
+</blockquote>
+<h1>ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</h1>
+<blockquote>
+<p><strong>Аутентификационная информация</strong> — информация, используемая при аутентификации субъекта доступа или объекта доступа.</p>
+<p>Аутентификация – действия по проверке подлинности субъекта доступа и/или объекта доступа, а также по проверке принадлежности субъекту доступа и/или объекту доступа предъявленного идентификатора доступа и аутентификационной информации (ГОСТ Р 58833-2020).</p>
+<p><strong>Администратор СУБД</strong> – субъект доступа, выполняющий административные функции в СУБД и наделенный правами:</p>
+</blockquote>
+<ul>
+<li>
+<p>создавать учетные записи пользователей системы управления базами данных;</p>
+</li>
+<li>
+<p>модифицировать, блокировать и удалять учетные записи пользователей системы управления базами данных;</p>
+</li>
+<li>
+<p>назначать права доступа пользователям системы управления базами данных к объектам доступа системы управления базами данных;</p>
+</li>
+<li>
+<p>управлять конфигурацией системы управления базами данных;</p>
+</li>
+<li>
+<p>создавать, подключать базы данных.</p>
+</li>
+</ul>
+<blockquote>
+<p>Администратор СУБД имеет атрибут SUPERUSER и/или обладает системной учетной записью «postgres».</p>
+<p><strong>Администратор БД</strong> – субъект доступа, выполняющий административные функции в БД и наделенный правами:</p>
+</blockquote>
+<ul>
+<li>
+<p>создавать учетные записи пользователей базы данных;</p>
+</li>
+<li>
+<p>модифицировать, блокировать и удалять учетные записи пользователей базы данных;</p>
+</li>
+<li>
+<p>управлять конфигурацией базы данных;</p>
+</li>
+<li>
+<p>назначать права доступа пользователям базы данных (пользователей информационной системы) к объектам доступа базы данных;</p>
+</li>
+<li>
+<p>создавать резервные копии базы данных и восстанавливать базу данных из резервной копии;</p>
+</li>
+<li>
+<p>создавать, модифицировать и удалять процедуры (программный код), хранимые в базе данных.</p>
+</li>
+</ul>
+<blockquote>
+<p>Администратор БД имеет атрибут CREATEROLE, и возможные атрибуты BYPASSRLS, REPLICATION, а также прочие системные привилегии относительно БД, кроме атрибута CREATEDB.</p>
+<p><strong>Безусловная блокировка пользователя</strong> – это ограничение пользователя в возможности устанавливать новую сессию с СУБД. Безусловная блокировка имеет приоритет над ограничениями, накладываемыми парольными политикам (блокировка вследствие истечения срока действия пароля, временные блокировки при исчерпании попыток ввода пароля и т.п.), применяется независимо от них и не зависит от применяемого метода аутентификации пользователей. Снятие безусловной блокировки не снимает блокировок по парольным политикам и наоборот.</p>
+<p><strong>Завершение сессии пользователя</strong> – принудительное завершение открытой сессии пользователя с БД/СУБД в заданном режиме.</p>
+<p><strong>Пользователь БД</strong> - субъект доступа, имеющий доступ к ограниченному перечню БД и объектов БД. Имеющий следующий набор привилегий:</p>
+</blockquote>
+<ul>
+<li>
+<p>создавать и манипулировать объектами доступа БД (таблица, запись или столбец, поле, представление и иные объекты доступа);</p>
+</li>
+<li>
+<p>выполнять процедуры (программный код), хранимые в БД. Пользователь БД имеет обязательный атрибут LOGIN.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Пользователь СУБД</strong> – см. «Пользователь БД». Для СУБД эти понятия идентичны. СУБД не разграничивает пользователей по отдельным БД. Все пользователи общие, доступ к отдельным БД определяется настройками доступа.</p>
+<p><strong>Роль</strong> – субъект доступа в БД/СУБД, наделенный определенным набором привилегий (чаще всего употребляется как обобщение группы пользователей для выполнения определенного набора действий в БД/СУБД).</p>
+</blockquote>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:12%">
+<col style="width:7%">
+<col style="width:80%">
+</colgroup><thead><tr><th><blockquote>
+<p>SQL</p>
+</blockquote></th><th><blockquote>
+<p>–</p>
+</blockquote></th><th><blockquote>
+<p>Structured Query Language</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>КС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Контрольные суммы</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>КЦ</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Контроль целостности</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ФСТЭК</p>
+<p>России</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Федеральная служба по техническому и экспортному контролю России</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Всего листов (страниц) в документе</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Номер документа</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входящий номер сопроводите льного документа и</p>
+<p>дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подпись</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>измене нных</p>
+</blockquote></td><td><blockquote>
+<p>замене нных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td><blockquote>
+<p>аннулир ованных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_3"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">jadog_4.2_3</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/Коммерческая версия 18.3.1/jalog"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">jalog</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-важная-информация" class="table-of-contents__link toc-highlight"><img src="../docs/assets/images/com18.3.1/jadog_secur/media/image1.png" style="width:0.25138in;height:0.25138in"> Важная информация</a></li><li><a href="#пример-команды" class="table-of-contents__link toc-highlight">Пример команды</a></li><li><a href="#пример-функции" class="table-of-contents__link toc-highlight">Пример функции</a></li><li><a href="#пример-запроса" class="table-of-contents__link toc-highlight">Пример запроса</a></li><li><a href="#пример-метакоманды" class="table-of-contents__link toc-highlight">Пример метакоманды</a></li><li><a href="#минимизация-количества-пользователейролей-которым-разрешено-подключение-к-бд" class="table-of-contents__link toc-highlight">Минимизация количества пользователей/ролей, которым разрешено подключение к БД</a></li><li><a href="#минимизация-количества-узловподсетей-с-которых-разрешено-подключение-к-бд" class="table-of-contents__link toc-highlight">Минимизация количества узлов/подсетей, с которых разрешено подключение к БД</a></li><li><a href="#минимизация-количества-бд-к-которым-разрешено-подключение" class="table-of-contents__link toc-highlight">Минимизация количества БД, к которым разрешено подключение</a></li><li><a href="#минимизация-количества-уз-которым-разрешено-подключение-к-компоненту-jadog" class="table-of-contents__link toc-highlight">Минимизация количества УЗ, которым разрешено подключение к компоненту jaDog</a></li><li><a href="#минимизация-количества-узловподсетей-с-которых-разрешено-подключение-к-компоненту-jadog" class="table-of-contents__link toc-highlight">Минимизация количества узлов/подсетей, с которых разрешено подключение к компоненту jaDog</a></li><li><a href="#измените-номер-порта-используемый-jatoba-на-узлах-кластера-на-нестандартный" class="table-of-contents__link toc-highlight">Измените номер порта, используемый Jatoba на узлах кластера, на нестандартный</a></li><li><a href="#пример-конфигурации" class="table-of-contents__link toc-highlight">Пример конфигурации</a></li><li><a href="#пример-запроса-1" class="table-of-contents__link toc-highlight">Пример запроса</a></li><li><a href="#пример-команды-1" class="table-of-contents__link toc-highlight">Пример команды</a></li><li><a href="#измените-номера-портов-используемые-jadog-на-нестандартные" class="table-of-contents__link toc-highlight">Измените номера портов, используемые jaDog, на нестандартные</a></li><li><a href="#пример-команд" class="table-of-contents__link toc-highlight">Пример команд</a></li><li><a href="#пример-конфигурации-1" class="table-of-contents__link toc-highlight">Пример конфигурации</a></li><li><a href="#создание-ca-ключей" class="table-of-contents__link toc-highlight">Создание CA ключей</a></li><li><a href="#создание-сертификатов-сервера-и-администратора-пользователя" class="table-of-contents__link toc-highlight">Создание сертификатов сервера и администратора (пользователя)</a></li><li><a href="#создание-серверного-сертификата" class="table-of-contents__link toc-highlight">Создание серверного сертификата</a></li><li><a href="#создание-пользовательского-сертификата" class="table-of-contents__link toc-highlight">Создание пользовательского сертификата</a></li><li><a href="#проверка-сертификатов-tls-при-запуске-сервиса-jadog" class="table-of-contents__link toc-highlight">Проверка сертификатов TLS при запуске сервиса jaDog</a></li><li><a href="#предупреждение-об-истечении-срока-действия-сертификата" class="table-of-contents__link toc-highlight">Предупреждение об истечении срока действия сертификата</a></li><li><a href="#пример-конфигурационного-файла-postgresqlconf" class="table-of-contents__link toc-highlight">Пример конфигурационного файла postgresql.conf</a></li><li><a href="#настройка-проверки-ssl-сертификатов-при-подключении-к-компоненту" class="table-of-contents__link toc-highlight">Настройка проверки SSL-сертификатов при подключении к компоненту</a></li><li><a href="#пример-конфигурации-2" class="table-of-contents__link toc-highlight">Пример конфигурации</a></li><li><a href="#настройка-подключения-jadog-к-субд-с-помощью-ssl-сертификатов" class="table-of-contents__link toc-highlight">Настройка подключения jaDog к СУБД с помощью SSL-сертификатов</a></li><li><a href="#пример-конфигурации-3" class="table-of-contents__link toc-highlight">Пример конфигурации</a></li><li><a href="#настройка-подключения-к-rest-api-с-помощью-ssl-сертификатов" class="table-of-contents__link toc-highlight">Настройка подключения к REST API с помощью SSL-сертификатов</a></li><li><a href="#пример-команд-1" class="table-of-contents__link toc-highlight">Пример команд</a></li><li><a href="#пример-конфигурации-4" class="table-of-contents__link toc-highlight">Пример конфигурации</a></li><li><a href="#настройка-минимальной-версии-протокола-tls-не-ниже-рекомендованной" class="table-of-contents__link toc-highlight">Настройка минимальной версии протокола TLS не ниже рекомендованной</a></li><li><a href="#пример-конфигурации-5" class="table-of-contents__link toc-highlight">Пример конфигурации</a></li><li><a href="#пример-запроса-2" class="table-of-contents__link toc-highlight">Пример запроса</a></li><li><a href="#пример-функции-1" class="table-of-contents__link toc-highlight">Пример функции</a></li><li><a href="#пример-команды-2" class="table-of-contents__link toc-highlight">Пример команды</a></li><li><a href="#пример-команды-3" class="table-of-contents__link toc-highlight">Пример команды</a></li><li><a href="#настройка-шаблона-файла-ответов-с-применением-ssl-сертификатов" class="table-of-contents__link toc-highlight">Настройка шаблона файла ответов с применением SSL-сертификатов</a></li><li><a href="#используйте-надёжный-метод-аутентификации-при-подключении-к-узлам-кластера" class="table-of-contents__link toc-highlight">Используйте надёжный метод аутентификации при подключении к узлам кластера</a></li><li><a href="#используйте-надёжный-метод-аутентификации-при-подключении-к-компоненту-jadog" class="table-of-contents__link toc-highlight">Используйте надёжный метод аутентификации при подключении к компоненту jaDog</a></li><li><a href="#измените-пароли-всех-технических-и-административных-уз-при-переводе-системы-в-эксплуатацию" class="table-of-contents__link toc-highlight">Измените пароли всех технических и административных УЗ при переводе системы в эксплуатацию</a></li><li><a href="#настройте-параметры-журналирования-компонента-jadog" class="table-of-contents__link toc-highlight">Настройте параметры журналирования компонента jaDog</a></li><li><a href="#пример-команд-2" class="table-of-contents__link toc-highlight">Пример команд</a></li><li><a href="#пример-конфигурации-6" class="table-of-contents__link toc-highlight">Пример конфигурации</a></li><li><a href="#настройка-журналирования-событий-иб" class="table-of-contents__link toc-highlight">Настройка журналирования событий ИБ</a></li><li><a href="#пример-команд-3" class="table-of-contents__link toc-highlight">Пример команд:</a></li><li><a href="#пример-конфигурации-7" class="table-of-contents__link toc-highlight">Пример конфигурации:</a></li><li><a href="#настройте-стойкий-алгоритм-хеширования-паролей-в-бд-на-узлах-кластера" class="table-of-contents__link toc-highlight">Настройте стойкий алгоритм хеширования паролей в БД на узлах кластера</a></li><li><a href="#пример-конфигурации-8" class="table-of-contents__link toc-highlight">Пример конфигурации</a></li><li><a href="#пример-запроса-3" class="table-of-contents__link toc-highlight">Пример запроса</a></li><li><a href="#пример-функции-2" class="table-of-contents__link toc-highlight">Пример функции</a></li><li><a href="#пример-команды-4" class="table-of-contents__link toc-highlight">Пример команды</a></li><li><a href="#пример-команды-5" class="table-of-contents__link toc-highlight">Пример команды</a></li><li><a href="#установка-расширения-ja_csum-и-подсчет-эталонных-контрольных-сумм" class="table-of-contents__link toc-highlight">Установка расширения ja_csum и подсчет эталонных контрольных сумм</a></li><li><a href="#храните-резервную-копию-файла-ответов-со-структурой-кластера-в-удалённом-сетевом-хранилище" class="table-of-contents__link toc-highlight">Храните резервную копию файла ответов со структурой кластера в удалённом сетевом хранилище</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

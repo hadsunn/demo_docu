@@ -1,0 +1,2346 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-Коммерческая версия 18.3.1/monitoring" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">monitoring | Postgres</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/monitoring"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="monitoring | Postgres"><meta data-rh="true" name="description" content="Подп. и дата"><meta data-rh="true" property="og:description" content="Подп. и дата"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/monitoring"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/monitoring" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/monitoring" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"monitoring","item":"https://hadsunn.github.io/demo_docu/Коммерческая версия 18.3.1/monitoring"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.f420c6a8.css">
+<script src="/demo_docu/assets/js/runtime~main.1732693c.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.76a35f44.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/">Documentation As Code Test</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/pg_task">Компонент pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/install">Руководство по установке</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page">Jatoba Data Safe (MDX пример)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jds211">Компонент «Jatoba data safe» 2.11</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog">Компонент «ja_Log»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test copy">Images test md</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/Images test">Images test mdx</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/JDS one page.g">JDS g.md</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe">Jatoba Data Safe</a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/Translate samples/json_algoritm">Translate samples</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4">Сертифицированные версии 6.8.4,5.12.4,4.17.4</a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/jalog3">jalog3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/mdx_figure">mdx_figure</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/monitoring">Поддержка мониторинга</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/Коммерческая версия 18.3.1/1c">Коммерческая версия 18.3.1</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/1c">Поддержка платформы 1С</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/admin">admin</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/container">Инструкция по настройке и использованию контейнера</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/describe">СУБД Jatoba. Описание применения</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/explain">explain</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/firewall">Компонент «SQL_Firewall»</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/install">install</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_anonymizer">Компонент «ja_Anonymizer». Маскирование данных.</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_compression">ja_compression</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_csum">ja_csum</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_hipe_cluster">ja_hipe_cluster</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_hipe_cluster_migration">ja_hipe_cluster_migration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_inventory">ja_inventory</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_plan_manager">ja_plan_manager</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_seceventlog3.3">ja_seceventlog3.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_similar">Компонент «ja_Similar». Полнотекстовый поиск.</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/ja_sync_ldap1.3">ja_sync_ldap1.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_1">jadog_4.2_1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_2">jadog_4.2_2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_4.2_3">jadog_4.2_3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jadog_secur">jadog_secur</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jalog">jalog</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/japooler">japooler</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jcs">jcs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/jdv">jdv</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/map">map</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/monitoring">monitoring</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/oracle">oracle</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_hint_plan">pg_hint_plan</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_profile">pg_profile</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_repack">pg_repack</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_store_plans">pg_store_plans</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_task">pg_task</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pg_ulid">pg_ulid</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pgbadger">pgbadger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/pgsql-http">pgsql-http</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/plspgsql">plspgsql</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/postgis">postgis</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/secur_func">secur_func</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/secur_guide">secur_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/tds_fdw">tds_fdw</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/timescale">timescale</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/update">update</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/user_guide">user_guide</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/Коммерческая версия 18.3.1/wal-g">Компонент «wal-g». Архивация и восстановление данных.</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Коммерческая версия 18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">monitoring</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:41%">
+<col style="width:58%">
+</colgroup><thead><tr><th><blockquote>
+<p>Подп. и дата</p>
+</blockquote></th><th></th></tr></thead><tbody><tr><td><blockquote>
+<p>Инв. № дубл.</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Взам. инв. №</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Подп. и дата</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>Инв. № подл.</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th><blockquote>
+<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 28.</strong></p>
+<p><strong>Поддержка мониторинга СУБД</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p><strong>643.72410666.00067-08 98 01-28</strong></p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>Листов 82</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>2026</p>
+</blockquote></td></tr><tr><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<header><h1>АННОТАЦИЯ</h1></header>
+<blockquote>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонентов, предназначенных для мониторинга СУБД:</p>
+</blockquote>
+<ul>
+<li>
+<p>Компонент «node_exporter». Версия компонента – 1.8.0;</p>
+</li>
+<li>
+<p>Компонент «postgres_exporter». Версия компонента – 0.18.1;</p>
+</li>
+<li>
+<p>Компонент «sql_exporter». Версия компонента – 0.18.6.</p>
+</li>
+<li>
+<p>Система «Prometheus». Версия системы – 3.5.0.</p>
+</li>
+<li>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25208in;height:0.25208in" class="img_ev3q">Утилита «Alertmanager». Версия компонента – 0.27.0. Настоящее руководство предназначено для администраторов СУБД.</p>
+</li>
+</ul>
+<table><colgroup>
+<col style="width:100%">
+</colgroup><thead><tr><th style="text-align:left"><blockquote>
+<p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 5.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию ОС Linux – «/usr/jatoba-6/bin».</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p><strong>Важная информация</strong></p>
+<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image2.png" style="width:0.25341in;height:0.25208in" class="img_ev3q">Степени важности примечаний, применяемые в документе:</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image2.png" style="width:0.25138in;height:0.25056in" class="img_ev3q"> <strong>Важная информация</strong> – указания, требующие особого внимания</p>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q"> <strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
+</blockquote>
+<h1>СОДЕРЖАНИЕ</h1>
+<h1></h1>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">Назначение компонентов 5</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Условия применения 5</a></p>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE-%D1%8D%D0%BA%D1%81%D0%BF%D0%BB%D1%83%D0%B0%D1%82%D0%B0%D1%86%D0%B8%D0%B8">Ограничения по эксплуатации 5</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">Архитектура системы мониторинга 6</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">Установка и настройка целевых СУБД 8</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%81%D1%83%D0%B1%D0%B4">Установка СУБД 8</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2">Настройка конфигурационных файлов 8</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-pg_stat_statements">Установка расширения «pg_stat_statements» 8</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_node_exporter">Установка экспортера «jatoba*_node_exporter» 11</a></p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_postgres_exporter">Установка экспортера «jatoba*_postgres_exporter» 15</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-%D0%B8-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B-jatoba_postgres_exporter">Установка утилиты и службы «jatoba*_postgres_exporter» 15</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D1%81%D1%83%D0%B1%D0%B4-postgres_exporter">Создание пользователя СУБД «postgres_exporter» 16</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">Настройка переменных окружения 16</a></p>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-postgres_exporter">Запуск утилиты «postgres_exporter» 18</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_sql_exporter">Установка экспортера «jatoba*_sql_exporter» 21</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-%D0%B8-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B-sql_exporter">Установка утилиты и службы «sql_exporter» 21</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-1">Настройка переменных окружения 22</a></p>
+</li>
+<li>
+<p><a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D1%81%D1%83%D0%B1%D0%B4-sql_exporter">Создание пользователя СУБД «sql_exporter» 23</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA-%D0%B1%D0%B4-%D0%B2-%D1%84%D0%B0%D0%B9%D0%BB%D0%B5">Настройка параметров экспортера и подключения к БД в файле «sql_exporter.yml» 23</a></p>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-jatoba_sql_exporter">Запуск утилиты «jatoba*_sql_exporter» 25</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-prometheus">Система «Prometheus» 28</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-prometheus">Установка системы «Prometheus» 28</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-prometheus">Конфигурация системы «Prometheus» 29</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0-postgres-exporter">Примеры блока «postgres-exporter» 30</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0-sql-exporter">Примеры блока «sql-exporter» 31</a></p>
+</li>
+<li>
+<p><a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0-node-exporter">Примеры блока «node-exporter» 33</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-prometheus">Запуск системы «Prometheus» 34</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0-alertmanager">Утилита «Alertmanager» 39</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-%D0%B8-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D1%8B-alertmanager">Установка утилиты и службы «alertmanager» 39</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B">Настройка параметров утилиты 40</a></p>
+<ol>
+<li>
+<p><a href="#smtp">SMTP 41</a></p>
+</li>
+<li>
+<p><a href="#telegram">Telegram 42</a></p>
+</li>
+<li>
+<p><a href="#zulip">Zulip 45</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-alertmanager">Запуск утилиты «alertmanager» 50</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-jds">Подключение к JDS 52</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-ssh-%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">Настройка SSH-соединения 53</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-jds-%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">Конфигурирование JDS 54</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%81%D0%B2%D1%8F%D0%B7%D0%BA%D0%B8-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-prometheus-%D0%B8-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-alertmanager">Настройка связки системы «Prometheus» и утилиты «Alertmanager» 56</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Настройка экспортеров для компонента ja_Hipe_Cluster 58</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%81%D1%82%D0%B5%D0%BD%D0%B4%D0%B0">Параметры стенда 58</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-prometheus-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">Конфигурирование системы «Prometheus» для компонента «ja_Hipe_Cluster» 61</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-jadog">Настройка экспортеров для компонента jaDog 64</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D1%81%D1%82%D0%B5%D0%BD%D0%B4%D0%B0-1">Параметры стенда 64</a></p>
+</li>
+<li>
+<p><a href="#%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-prometheus-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-jadog">Конфигурирование системы «Prometheus» для компонента «jaDog» 66</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%BE%D0%B2">Обновление компонентов экспортеров 69</a></p>
+<ol>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_exporter">Обновление компонента «sql_exporter» 69</a></p>
+<ol>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-sql_exporter">Установка новой версии компонента «sql_exporter» 69</a></p>
+</li>
+<li>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0-%D0%BA%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0-ja_hipe_cluster-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">Настройка мониторинга кластера «ja_Hipe_Cluster» после обновления 70</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-node_exporter-postgres_exporter-%D0%B8-alertmanager">Обновление компонентов node_exporter, postgres_exporter и alertmanager 75</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-prometeus">Обновление системы «Prometeus» 77</a></p>
+</li>
+</ol>
+<p><a href="#%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D1%8B-%D0%B8-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">Термины и определения 80</a></p>
+<p><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B9">Перечень сокращений 81</a></p>
+<h1>НАЗНАЧЕНИЕ КОМПОНЕНТОВ</h1>
+<blockquote>
+<p>Компонент «node_exporter» – программный инструмент, предназначенный для мониторинга и сбора метрик с различных компонентов в Linux-подобных ОС.</p>
+<p>Компонент собирает и экспортирует различные метрики, такие как загрузка процессора, использование памяти, статистика сети, системные вызовы и т.д. Собранные данные могут быть отправлены на сервер «Prometheus» для визуализации и анализа.</p>
+<p>Компонент «postgres_exporter» – инструмент для сбора и экспорта метрик PostgreSQL, таких как статистика по базе данных, нагрузка на сервер, количество запросов и т.д. Он разработан для работы с PostgreSQL и предоставляет данные в формате, удобном для системы «Prometheus». С помощью «postgres_exporter» можно отслеживать производительность PostgreSQL, выявлять проблемы и оптимизировать настройки базы данных.</p>
+<p>Компонент «sql_exporter» – инструмент для экспорта данных из SQL-запросов в формат, удобный для анализа и визуализации. Он позволяет получать информацию о структуре таблиц, данных, индексах, статистике и других параметрах базы данных. Полезен для анализа производительности системы, выявления проблем и оптимизации запросов.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения">​</a></h2>
+<blockquote>
+<p>Компоненты могут использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционных систем GNU/Linux.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ограничения-по-эксплуатации">Ограничения по эксплуатации<a href="#ограничения-по-эксплуатации" class="hash-link" aria-label="Direct link to Ограничения по эксплуатации" title="Direct link to Ограничения по эксплуатации">​</a></h2>
+<blockquote>
+<p>Для подключения целевой СУБД к компоненту «Jatoba data safe» требуется указывать IP–адрес в строке подключения утилит к СУБД и не использовать параметр «localhost».</p>
+<p>Символы «коммерческое эт» «@», «амперсанд» «&amp;», «равно» «=», «вопросительный знак» «?» и «двоеточие» «:», не рекомендуется использовать в именах пользователей и в паролях, для исключения ошибки в строке подключения.</p>
+<p>Эти символы используются для разделения параметров строки подключения. Ограничений по совместимости с другими компонентами нет.</p>
+</blockquote>
+<h1>АРХИТЕКТУРА СИСТЕМЫ МОНИТОРИНГА</h1>
+<blockquote>
+<p>Архитектура системы мониторинга основана на том, что:</p>
+</blockquote>
+<ul>
+<li>
+<p>на серверах целевых СУБД устанавливается экспортера «node_exporter» (см. р. <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_node_exporter">4</a>);</p>
+</li>
+<li>
+<p>на целевых СУБД с предустановленным расширением «pg_stat_statements» устанавливаются утилиты сбора метрик, такие как:</p>
+<ul>
+<li>
+<p>экспортер «postgres_exporter» (см. р. <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_postgres_exporter">5</a>);</p>
+</li>
+<li>
+<p>экспортер «sql_exporter» (см. р. <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_sql_exporter">6</a>);</p>
+</li>
+</ul>
+</li>
+<li>
+<p>система «Prometheus» собирает их в своём хранилище (см. р. <a href="#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-prometheus">7</a>);</p>
+</li>
+<li>
+<p>компонент «Jatoba data safe» использует данные хранилища «Prometheus» для отображения их в разделе «Мониторинг»;</p>
+</li>
+<li>
+<p>утилита «Alertmanager» обеспечивает контроль над пороговыми значениями и рассылку уведомлений (см. р. <a href="#%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0-alertmanager">8</a>).</p>
+</li>
+</ul>
+<blockquote>
+<p>В зависимости от количества СУБД, подключенных к мониторингу и общей нагрузки, система «Prometheus» может быть установлена на отдельном сервере. В этом случае «JDS» будет получать данные по сети, что увеличит нагрузку на неё.</p>
+<p>Целесообразнее компонент JDS и систему «Prometheus» устанавливать на одном сервере. Такая конфигурация сделает данный сервер полноценным сервером мониторинга и безопасности.</p>
+<p>Для каждой наблюдаемой СУБД должны быть настроены все экспортёры.</p>
+<p>В рассматриваемом примере на ОС Ubuntu 22.04 используются параметры сети и программного обеспечения, приведенные в таблице <a href="#_bookmark4">2.1</a>.</p>
+<p><span id="_bookmark4" class="anchor"></span>Таблица 2.1 – Конфигурация стенда</p>
+</blockquote>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:18%">
+<col style="width:19%">
+<col style="width:20%">
+<col style="width:11%">
+<col style="width:25%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>№</strong></p>
+</blockquote></th><th style="text-align:right"><strong>Имя сервера</strong></th><th style="text-align:center"><blockquote>
+<p><strong>IP-адрес</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>ПО</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Port</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Роль</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>1</p>
+</blockquote></td><td style="text-align:right">u602doc-jds01</td><td style="text-align:center"><blockquote>
+<p>10.116.102.41/24</p>
+</blockquote></td><td></td><td></td><td><blockquote>
+<p>Сервер мониторинга</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>1.1</p>
+</blockquote></td><td style="text-align:right"></td><td style="text-align:center"></td><td><blockquote>
+<p>JDS</p>
+</blockquote></td><td></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>1.2</p>
+</blockquote></td><td style="text-align:right"></td><td style="text-align:center"></td><td><blockquote>
+<p>Prometheus</p>
+</blockquote></td><td><blockquote>
+<p>9090</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"></td><td style="text-align:right"></td><td style="text-align:center"></td><td><blockquote>
+<p>Alert manager</p>
+</blockquote></td><td><blockquote>
+<p>9093</p>
+<p>22</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>2</p>
+</blockquote></td><td style="text-align:right">u602doc-pgp01</td><td style="text-align:center"><blockquote>
+<p>10.116.102.45/24</p>
+</blockquote></td><td></td><td></td><td><blockquote>
+<p>Целевая СУБД</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>2.1</p>
+</blockquote></td><td style="text-align:right"></td><td style="text-align:center"></td><td><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></td><td></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>2.2</p>
+</blockquote></td><td style="text-align:right"></td><td style="text-align:center"></td><td><blockquote>
+<p>node_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9100</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>2.3</p>
+</blockquote></td><td style="text-align:right"></td><td style="text-align:center"></td><td><blockquote>
+<p>postgres_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9187</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>2.4</p>
+</blockquote></td><td style="text-align:right"></td><td style="text-align:center"></td><td><blockquote>
+<p>sql_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9399</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:18%">
+<col style="width:19%">
+<col style="width:20%">
+<col style="width:11%">
+<col style="width:25%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>№</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Имя сервера</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>IP-адрес</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>ПО</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Port</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Роль</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>3</p>
+</blockquote></td><td style="text-align:center">u602doc-ldap01</td><td style="text-align:center"><blockquote>
+<p>10.116.102.47/24</p>
+</blockquote></td><td></td><td></td><td><blockquote>
+<p>Целевая СУБД</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>3.1</p>
+</blockquote></td><td style="text-align:center"></td><td style="text-align:center"></td><td><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></td><td></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>3.2</p>
+</blockquote></td><td style="text-align:center"></td><td style="text-align:center"></td><td><blockquote>
+<p>node_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9100</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>3.3</p>
+</blockquote></td><td style="text-align:center"></td><td style="text-align:center"></td><td><blockquote>
+<p>postgres_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9187</p>
+</blockquote></td><td></td></tr><tr><td style="text-align:center"><blockquote>
+<p>3.4</p>
+</blockquote></td><td style="text-align:center"></td><td style="text-align:center"></td><td><blockquote>
+<p>sql_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9399</p>
+</blockquote></td><td></td></tr></tbody></table>
+<blockquote>
+<p>Схема стенда представлена на рисунке <a href="#_bookmark5">2.1</a>.</p>
+</blockquote>
+<p>Служ ебная СУБД</p>
+<p>Prom et heus</p>
+<p>JDS</p>
+<p>Alert Manag er</p>
+<p>IP 10 .116.10 2.41</p>
+<p>Целевая СУБД</p>
+<p>«p g _st at _statem ents»</p>
+<p>Целевая СУБД</p>
+<p>«p g _st at _statem ents»</p>
+<p>«n ode_export er»</p>
+<p>«n ode_export er»</p>
+<p>«post gres_export er»</p>
+<p>«post gres_export er»</p>
+<p>IP 10 .116.10 2.45 IP 10 .116.10 2.47</p>
+<p>«sq l_export er»</p>
+<p>«sq l_export er»</p>
+<blockquote>
+<p><span id="_bookmark5" class="anchor"></span>Рисунок 2.1 – Схема стенда</p>
+</blockquote>
+<h1>УСТАНОВКА И НАСТРОЙКА ЦЕЛЕВЫХ СУБД</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-субд">Установка СУБД<a href="#установка-субд" class="hash-link" aria-label="Direct link to Установка СУБД" title="Direct link to Установка СУБД">​</a></h2>
+<blockquote>
+<p>Установка СУБД «Jatoba» выполняется от имени пользователя, обладающего административными привилегиями в системе, в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по установке».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-конфигурационных-файлов">Настройка конфигурационных файлов<a href="#настройка-конфигурационных-файлов" class="hash-link" aria-label="Direct link to Настройка конфигурационных файлов" title="Direct link to Настройка конфигурационных файлов">​</a></h2>
+<blockquote>
+<p>Целевые СУБД должны быть настроены на приём подключений</p>
+<p>В конфигурационном файле «postgresql.conf», в разделе «CONNECTIONS AND AUTHENTICATION» раскомментирован и установлен параметр:</p>
+<p>listen_addresses = &#x27;*&#x27;</p>
+<p>Рисунок 3.1 - Конфигурационный файл «postgresql.conf»</p>
+<p>В конфигурационном файле «pg_hba.conf» разрешены подключения к СУБД в параметре:</p>
+<p>host all all all md5</p>
+<p>Рисунок 3.2 – Конфигурационный файл «pg_hba.conf»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-расширения-pg_stat_statements">Установка расширения «pg_stat_statements»<a href="#установка-расширения-pg_stat_statements" class="hash-link" aria-label="Direct link to Установка расширения «pg_stat_statements»" title="Direct link to Установка расширения «pg_stat_statements»">​</a></h2>
+<blockquote>
+<p>На каждой целевой СУБД должно быть установлено расширение «pg_stat_statements».</p>
+<p>Для установки расширения «pg_stat_statements» потребуется:</p>
+<p>– В конфигурационном файле «postgresql.conf», в разделе «Shared Library Preloading» для последующей загрузки расширения установить параметр:</p>
+<p>shared_preload_libraries = &#x27;pg_stat_statements&#x27;</p>
+<p>Рисунок 3.3 – Строка загрузки расширения в конфигурационном файле СУБД</p>
+<p>«postgresql.conf»</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">В случае, если утилитой sql_exporter опрашиваются метрики компонента SQL Firewall, в параметре shared_preload_libraries перед значением sql_firewall должно быть в обязательном порядке через запятую установлено значение pg_stat_statements:</p>
+<p>shared_preload_libraries = &#x27;pg_stat_statements, sql_firewall&#x27;</p>
+<p>– В разделе «STATISTICS» – «Monitoring» раскомментировать строку и добавить параметры:</p>
+<p>compute_query_id = on</p>
+<p>Рисунок 3.4 – Строка параметра «compute_query_id» в конфигурационном файле СУБД</p>
+<p>«postgresql.conf»</p>
+<p>– В разделе «CUSTOMIZED OPTIONS» добавить параметры:</p>
+<p>pg_stat_statements.max = 10000 pg_stat_statements.track = all</p>
+<p>Рисунок 3.5 – Параметры статистики в конфигурационном файле СУБД «postgresql.conf» Сохранить конфигурационный файл «postgresql.conf» и перезагрузить СУБД.</p>
+<p>Расширение «pg_stat_statements» устанавливается при помощи SQL-команды:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image104.png" style="width:7.12312in;height:1.91667in" class="img_ev3q">
+<blockquote>
+<p>CREATE EXTENSION pg_stat_statements;</p>
+<p>Рисунок 3.6 – Создание расширения</p>
+</blockquote>
+<h1>УСТАНОВКА ЭКСПОРТЕРА «JATOBA*_NODE_EXPORTER»</h1>
+<blockquote>
+<p>Экспортер «jatoba*_node_exporter» должен быть установлен на всех целевых СУБД.</p>
+<p>Экспортер позволяет снимать различные метрики с Linux-подобных операционных систем. Это агент, который передает серверу «Prometheus» аппаратные и программные показатели работы GNU/Linux.</p>
+<p>Установка пакета выполняется в соответствии с Руководством по установке, из локального репозитория командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image105.png" style="width:6.68009in;height:1.17812in" class="img_ev3q">
+<blockquote>
+<p># apt-get install jatoba&lt;ver&gt;-node-exporter</p>
+<p>Рисунок 4.1 – Установка пакета «jatoba*_node_exporter»</p>
+<p>В результате установки пакета будет создан пользователь ОС «node_exporter_usr», от которого будет производиться запуск утилиты.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image106.png" style="width:6.74906in;height:1.36083in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 4.2 -пользователя «node_exporter_usr» У данного пользователя нет интерактивной оболочки для входа.</p>
+<p>Автоматически будет создан файл конфигурации сервиса по адресу:</p>
+<p>/usr/lib/systemd/system/jatoba&lt;ver&gt;_node_exporter.service</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image107.png" style="width:6.69541in;height:2.27792in" class="img_ev3q">
+<p>Рисунок 4.3 – Содержание конфигурационного файла</p>
+<p>Далее требуется запустить службу экспортера, включить ее в автозапуск и проверить статус работы:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image108.png" style="width:6.6856in;height:1.305in" class="img_ev3q">
+<blockquote>
+<p># systemctl enable jatoba&lt;ver&gt;_node_exporter # systemctl start jatoba&lt;ver&gt;_node_exporter # systemctl status jatoba&lt;ver&gt;_node_exporter</p>
+<p>Рисунок 4.4 - Проверка сервиса «jatoba*_node_exporter»</p>
+<p>Чтобы проверить статус работы экспортера нужно в браузере открыть веб-интерфейс экспортера:</p>
+<p># localhost:9100</p>
+<p># <a href="http://0.0.0.0:9100/" target="_blank" rel="noopener noreferrer">http://0.0.0.0:9100</a></p>
+<p>Рисунок 4.5 – Веб-интерфейс утилиты «node_exporter» В рассматриваемом примере на целевой СУБД:</p>
+</blockquote>
+<ul>
+<li>u602doc-pgp01 IP - 10.116.102.45 веб-интерфейс утилиты «node_exporter» проверяется по URL:</li>
+</ul>
+<blockquote>
+<p># <a href="http://10.116.102.45:9100/" target="_blank" rel="noopener noreferrer">http://10.116.102.45:9100</a></p>
+<p>Рисунок 4.6 – Веб-интерфейс утилиты «node_exporter» на целевой СУБД u602doc-pgp01 IP</p>
+<p>- 10.116.102.45</p>
+</blockquote>
+<ul>
+<li>u602doc-ldap01 IP-10.116.102.47 веб-интерфейс утилиты «node_exporter» проверяется по URL:</li>
+</ul>
+<blockquote>
+<p># <a href="http://10.116.102.47:9100/" target="_blank" rel="noopener noreferrer">http://10.116.102.47:9100</a></p>
+<p>Рисунок 4.7 – Веб-интерфейс утилиты «node_exporter» на целевой СУБД u602doc-ldap01 IP-10.116.102.47</p>
+<p>По умолчанию экспортер использует все доступные коллекторы метрик. Состав снимаемых метрик отображается на странице:</p>
+<p>localhost:9100/metrics</p>
+<p>При необходимости может быть изменен состав используемых коллекторов с помощью опций командной строки:</p>
+<p>./jatoba&lt;ver&gt;_node_exporter --[no-]collector.netdev --[no-</p>
+<p>]collector.netstat</p>
+<p>Если необходимо изменить значения адреса веб-интерфейса (:9100), node_exporter запускается с опцией --web.listen-address:</p>
+<p>./jatoba&lt;ver&gt;_node_exporter --web.listen-address=:9101</p>
+<p>Изменение состава метрик либо адреса веб-интерфейса целесообразнее сохранить в файле сервиса «node_exporter.service». Иначе при перезагрузке ОС настройки компонента вернутся к изначальным, хранящимся в файле сервиса</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Ручной запуск утилиты производится командой:</p>
+<p>./jatoba&lt;ver&gt;_node_exporter</p>
+<p>Никакой конфигурации экспортера не требуется.</p>
+</blockquote>
+<h1>УСТАНОВКА ЭКСПОРТЕРА «JATOBA*_POSTGRES_EXPORTER»</h1>
+<blockquote>
+<p>Экспортер «jatoba*postgres_exporter» должен быть установлен на всех целевых СУБД, и в той же БД, в которой установлено расширение «pg_stat_statements».</p>
+<p>С помощью данного экспортера снимаются метрики с сервера PostgreSQL (Jatoba). Это агент, написанный на языке Golang, подключающийся к заданному источнику данных (БД) и по запросу сервера «Prometheus» возвращающий ему значения метрик. Состав метрик заранее предопределен и их значения вычисляются с помощью фиксированных SQL-запросов.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-утилиты-и-службы-jatoba_postgres_exporter">Установка утилиты и службы «jatoba*_postgres_exporter»<a href="#установка-утилиты-и-службы-jatoba_postgres_exporter" class="hash-link" aria-label="Direct link to Установка утилиты и службы «jatoba*_postgres_exporter»" title="Direct link to Установка утилиты и службы «jatoba*_postgres_exporter»">​</a></h2>
+<blockquote>
+<p>Установка пакета выполняется в соответствии с Руководством по установке, из локального репозитория командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image112.png" style="width:6.62066in;height:1.43333in" class="img_ev3q">
+<blockquote>
+<p># apt-get install jatoba&lt;ver&gt;-postgres-exporter</p>
+<p>Рисунок 5.1 – Установка пакета jatoba*-postgres-exporter В результате установки пакета будет создан:</p>
+</blockquote>
+<ul>
+<li>файл запуска по адресу:</li>
+</ul>
+<blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/bin/postgres_exporter</p>
+<p>– конфигурационный файл по адресу:</p>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/postgres_exporter</p>
+<p>– пользователь ОС «postgres_exporter_usr», от которого будет производиться запуск сервиса.</p>
+<p>У данного пользователя нет интерактивной оболочки для входа.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-пользователя-субд-postgres_exporter">Создание пользователя СУБД «postgres_exporter»<a href="#создание-пользователя-субд-postgres_exporter" class="hash-link" aria-label="Direct link to Создание пользователя СУБД «postgres_exporter»" title="Direct link to Создание пользователя СУБД «postgres_exporter»">​</a></h2>
+<blockquote>
+<p>Для соединения утилиты с СУБД создать пользователя СУБД «postgres_exporter» SQL-командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image113.png" style="width:6.99223in;height:2.0475in" class="img_ev3q">
+<blockquote>
+<p>CREATE ROLE postgres_exporter SUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN NOREPLICATION NOBYPASSRLS PASSWORD &#x27;Password&#x27;;</p>
+<p>Рисунок 5.2 – Создание роли «postgres_exporter»</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image2.png" style="width:0.25139in;height:0.25139in" class="img_ev3q">В рассматриваемом примере пользователь СУБД «postgres_exporter» является привилегированным пользователем</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-переменных-окружения">Настройка переменных окружения<a href="#настройка-переменных-окружения" class="hash-link" aria-label="Direct link to Настройка переменных окружения" title="Direct link to Настройка переменных окружения">​</a></h2>
+<blockquote>
+<p>Дальнейшая настройка утилиты требует внесения параметров подключения в файле переменных окружения «postgres_exporter», командой:</p>
+<p># gedit /usr/jatoba-&lt;ver&gt;/monitoring/default/postgres_exporter</p>
+<p>Необходимо настроить имя пользователя, пароль и параметры SSL-подключения в файле переменных окружения «postgres_exporter».</p>
+<p>Строка подключения выполнена в формате схемы URL. Основная форма URI подключения имеет синтаксис:</p>
+</blockquote>
+<table><colgroup>
+<col style="width:33%">
+<col style="width:32%">
+<col style="width:33%">
+</colgroup><thead><tr><th colspan="3"><blockquote>
+<p>postgresql://[пользователь@][сервер][/база_данных][?указание_па раметра]</p>
+<p>где пользователь: имя_пользователя[:пароль] и сервер: [узел][:порт][,...]</p>
+<p>и указание_параметра:</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>имя=значение[&amp;...]</p>
+<p>В качестве обозначения схемы URI может использоваться postgresql:// или postgres://. Остальные части URI являются необязательными. В следующих примерах показан допустимый синтаксис URI:</p>
+<p>postgresql:// postgresql://localhost postgresql://localhost:5433 postgresql://localhost/mydb postgresql://user@localhost postgresql://user:secret@localhost</p>
+<p>postgresql://other@localhost/otherdb?connect_timeout=10&amp;applica tion_name=myapp postgresql://host1:123,host2:456/somedb?target_session_attrs=an y&amp;application_name=myapp</p>
+<p>В рассматриваемом примере на целевой СУБД:</p>
+</blockquote>
+<ul>
+<li><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">u602doc-pgp01 IP - 10.116.102.45 строка подключения утилиты к СУБД имеет следующий вид:</li>
+</ul>
+<blockquote>
+<p>DATA_SOURCE_NAME=&quot;postgresql://postgres_exporter:<a href="mailto:Password@10.11" target="_blank" rel="noopener noreferrer">Password@10.11</a> 6.102.45:5432/postgres?sslmode=disable&quot;</p>
+<p>Обратите внимание, что необходимо прописывать общий, а не локальный адрес сетевого интерфейса</p>
+<p>Рисунок 5.3 – Содержание файла «postgres_exporter.default» на целевой СУБД u602doc-pgp01 IP - 10.116.102.45</p>
+</blockquote>
+<ul>
+<li>u602doc-ldap01 IP-10.116.102.47 строка подключения утилиты к СУБД имеет следующий вид:</li>
+</ul>
+<blockquote>
+<p>DATA_SOURCE_NAME=&quot;postgresql://postgres_exporter:<a href="mailto:Password@10.11" target="_blank" rel="noopener noreferrer">Password@10.11</a> 6.102.47:5432/postgres?sslmode=disable&quot;</p>
+<p>Рисунок 5.4– Содержание файла «postgres_exporter.default» на целевой СУБД u602doc-ldap01 IP-10.116.102.47</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-утилиты-postgres_exporter">Запуск утилиты «postgres_exporter»<a href="#запуск-утилиты-postgres_exporter" class="hash-link" aria-label="Direct link to Запуск утилиты «postgres_exporter»" title="Direct link to Запуск утилиты «postgres_exporter»">​</a></h2>
+<blockquote>
+<p>Обновить конфигурацию system командой:</p>
+<p># systemctl daemon-reload</p>
+<p>Запустить службу экспортера, включить ее автозапуск и проверить статус работы:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image116.png" style="width:7.13013in;height:2.2425in" class="img_ev3q">
+<blockquote>
+<p># systemctl start jatoba&lt;ver&gt;_postgres_exporter # systemctl enable jatoba&lt;ver&gt;_postgres_exporter # systemctl status jatoba&lt;ver&gt;_postgres_exporter</p>
+<p>Рисунок 5.5 – Запуск и вывод статуса службы «postgres_exporter»</p>
+<p>Чтобы проверить статус работы экспортера нужно в браузере открыть веб-интерфейс экспортера:</p>
+<p>localhost:9187 <a href="http://0.0.0.0:9187/" target="_blank" rel="noopener noreferrer">http://0.0.0.0:9187</a></p>
+<p>Рисунок 5.6 – Веб-интерфейс «postgres_exporter» В рассматриваемом примере на целевой СУБД:</p>
+</blockquote>
+<ul>
+<li>u602doc-pgp01 IP - 10.116.102.45 веб-интерфейс утилиты «node_exporter» проверяется по URL:</li>
+</ul>
+<blockquote>
+<p><a href="http://10.116.102.45:9187/" target="_blank" rel="noopener noreferrer">http://10.116.102.45:9187</a></p>
+<p>Рисунок 5.7 – Веб-интерфейс «postgres_exporter» на целевой СУБД u602doc-pgp01 IP - 10.116.102.45</p>
+</blockquote>
+<ul>
+<li>u602doc-ldap01 IP-10.116.102.47 веб-интерфейс утилиты «node_exporter» проверяется по URL:</li>
+</ul>
+<blockquote>
+<p><a href="http://10.116.102.47:9187/" target="_blank" rel="noopener noreferrer">http://10.116.102.47:9187</a></p>
+<p>Рисунок 5.8 – Веб-интерфейс «postgres_exporter» на целевой СУБД u602doc-ldap01 IP-10.116.102.47</p>
+<p>При успешном подключении к БД на странице localhost:9187/metrics будет показан список значений метрик с префиксом «pg_» в имени.</p>
+<p>Если необходимо изменить значение адреса веб-интерфейса (по умолчанию</p>
+<p>:9187), postgres_exporter запускается с опцией --web.listen-address, например:</p>
+<p>export DATA_SOURCE_NAME=postgresql://postgres:<a href="mailto:secret@127.0.0.1" target="_blank" rel="noopener noreferrer">secret@127.0.0.1</a></p>
+<p>./jatoba*_postgres_exporter --web.listen-address=:9188</p>
+<p>Изменение адреса веб-интерфейса целесообразнее сохранить в файле сервиса</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">«postgres_exporter». Иначе при перезагрузке ОС настройки компонента вернуться к изначальным, хранящимся в файле сервиса.</p>
+<p>Полный список опций командной строки postgres_exporter можно вывести, если запустить его с опцией --help.</p>
+</blockquote>
+<h1>УСТАНОВКА ЭКСПОРТЕРА «JATOBA*_SQL_EXPORTER»</h1>
+<blockquote>
+<p>Экспортер «jatoba*_SQL_exporter» должен быть установлен на всех целевых СУБД и в той же БД, в которой установлено расширение «pg_stat_statements».</p>
+<p>Данный экспортер можно использовать для расширения состава метрик, снимаемых с сервера PostgreSQL стандартным экспортером «jatoba*_postgres_exporter» (см. п. <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_postgres_exporter">5</a>), а также для метрик компонента «SQL_Firewall».</p>
+<p>Это агент, также написанный на языке Golang, который подключается к заданному источнику данных (БД) и забирает с него метрики по pull-запросу сервера «Prometheus».</p>
+<p>Состав собираемых метрик и SQL-запросов, которые их возвращают, полностью конфигурируемы пользователем. Используемые SQL-запросы группируются в так называемые коллекторы, состав которых легко может быть расширен. Также в коллекторе для каждого возвращаемого запросом поля задается указатель на соответствующую метрику.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-утилиты-и-службы-sql_exporter">Установка утилиты и службы «sql_exporter»<a href="#установка-утилиты-и-службы-sql_exporter" class="hash-link" aria-label="Direct link to Установка утилиты и службы «sql_exporter»" title="Direct link to Установка утилиты и службы «sql_exporter»">​</a></h2>
+<blockquote>
+<p>Установка пакета выполняется в соответствии с Руководством по установке, из локального репозитория командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image120.png" style="width:6.65585in;height:1.47917in" class="img_ev3q">
+<blockquote>
+<p># apt-get install jatoba&lt;ver&gt;-sql-exporter</p>
+<p>Рисунок 6.1 – Установка пакета «jatoba*-sql-exporter» В результате установки пакета будет создан:</p>
+</blockquote>
+<ul>
+<li>файл запуска по адресу:</li>
+</ul>
+<blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/bin/sql_exporter</p>
+</blockquote>
+<ul>
+<li>конфигурационный файл по адресу:</li>
+</ul>
+<blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter.yml</p>
+</blockquote>
+<ul>
+<li>конфигурационный файл переменных окружения по адресу</li>
+</ul>
+<blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter</p>
+</blockquote>
+<ul>
+<li>конфигурационный файл для сбора данных узлов кластера Citus по адресу:</li>
+</ul>
+<blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/citus.collector.yml</p>
+</blockquote>
+<ul>
+<li>конфигурационный файл для сбора данных компонента SQL_Firewall по адресу:</li>
+</ul>
+<blockquote>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/sqlfw.collector.yml</p>
+</blockquote>
+<ul>
+<li>пользователь ОС «sql_exporter_usr», от которого будет производиться запуск сервиса.</li>
+</ul>
+<blockquote>
+<p>У данного пользователя нет интерактивной оболочки для входа.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-переменных-окружения-1">Настройка переменных окружения<a href="#настройка-переменных-окружения-1" class="hash-link" aria-label="Direct link to Настройка переменных окружения" title="Direct link to Настройка переменных окружения">​</a></h2>
+<blockquote>
+<p>Проверить параметры экспортера в файле переменных окружения «sql_exporter», выполнив команду редактирования:</p>
+<p># gedit /usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter</p>
+<p>Основным из параметров является путь к конфигурационному файлу</p>
+<p>«sql_exporter.yml» в строке параметра CONF_FILE.</p>
+<p>CONF_FILE=/etc/sql_exporter/sql_exporter.yml</p>
+<p>Настройка и расположение файла «sql_exporter.yml» приведены в п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-%D0%B8-%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA-%D0%B1%D0%B4-%D0%B2-%D1%84%D0%B0%D0%B9%D0%BB%D0%B5">6.4</a> настоящего документа.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image121.png" style="width:6.74409in;height:1.75281in" class="img_ev3q">
+<p>Рисунок 6.2 – Содержание файла переменных окружения «sql_exporter»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-пользователя-субд-sql_exporter">Создание пользователя СУБД «sql_exporter»<a href="#создание-пользователя-субд-sql_exporter" class="hash-link" aria-label="Direct link to Создание пользователя СУБД «sql_exporter»" title="Direct link to Создание пользователя СУБД «sql_exporter»">​</a></h2>
+<blockquote>
+<p>Для соединения утилиты с СУБД необходимо создать пользователя СУБД</p>
+<p>«sql_exporter» SQL-командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image122.png" style="width:7.13897in;height:2.16031in" class="img_ev3q">
+<blockquote>
+<p>CREATE ROLE sql_exporter SUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN NOREPLICATION NOBYPASSRLS PASSWORD &#x27;Password&#x27;;</p>
+<p>Рисунок 6.3 – Создание роли «sql_exporter»</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image2.png" style="width:0.25138in;height:0.25116in" class="img_ev3q">В рассматриваемом примере пользователь СУБД «sql_exporter» является привилегированным пользователем</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметров-экспортера-и-подключения-к-бд-в-файле">Настройка параметров экспортера и подключения к БД в файле<a href="#настройка-параметров-экспортера-и-подключения-к-бд-в-файле" class="hash-link" aria-label="Direct link to Настройка параметров экспортера и подключения к БД в файле" title="Direct link to Настройка параметров экспортера и подключения к БД в файле">​</a></h2>
+<blockquote>
+<p><strong>«sql_exporter.yml»</strong></p>
+<p>Основным параметром для настройки параметров экспортера и подключения к БД в файле «sql_exporter.yml» является параметр «data_source_name».</p>
+<p>Требуется открыть файл для редактирования командами:</p>
+<p># gedit /usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter.yml</p>
+<p>Строка подключения выполнена в формате схемы URL. Синтаксис строки описан в п.</p>
+<p><a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">5.3</a> настоящего документа.</p>
+<p>В рассматриваемом примере на целевой СУБД:</p>
+</blockquote>
+<ul>
+<li><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">u602doc-pgp01 IP - 10.116.102.45 строка подключения утилиты к СУБД имеет следующий вид:</li>
+</ul>
+<blockquote>
+<p>data_source_name:</p>
+<p>&#x27;postgresql://sql_exporter:Password@10.116.102.45:5432/postgres</p>
+<p>?sslmode=disable&#x27;</p>
+<p>Обратите внимание, что необходимо прописывать общий, а не локальный адрес сетевого интерфейса.</p>
+<p>Рисунок 6.4 – Содержание файла «sql_exporter.yml», строка «data_source_name» на целевой СУБД u602doc-pgp01 IP - 10.116.102.45</p>
+</blockquote>
+<ul>
+<li>u602doc-ldap01 IP-10.116.102.47 строка подключения утилиты к СУБД имеет следующий вид:</li>
+</ul>
+<blockquote>
+<p>data_source_name: &#x27;postgresql://sql_exporter:Password@10.116.102.47:5432/postgres</p>
+<p>?sslmode=disable&#x27;</p>
+<p>Рисунок 6.5 – Содержание файла «sql_exporter.yml», строка «data_source_name» на целевой СУБД u602doc-ldap01 IP-10.116.102.47</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">В случае необходимости мониторинга компонента SQL Firewall в конфигурационном файле sql_exporter.yml в поле «collectors» через запятую необходимо добавить значение sql_firewall (см. рисунок <a href="#_bookmark21">6.6</a>).</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image125.jpeg" style="width:6.11664in;height:4.00833in" class="img_ev3q">
+<blockquote>
+<p><span id="_bookmark21" class="anchor"></span>Рисунок 6.6 – Добавление мониторинга компонента SQL Firewall в конфигурационном файле sql_exporter.yml</p>
+<p>Сохранить внесенные изменения.</p>
+<p>В дистрибутиве содержится файл с подготовленными метриками для мониторинга СУБД «Jatoba» «postgres.collector.yml», который по умолчанию использует</p>
+<p>«jatoba*_SQL_exporter».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-утилиты-jatoba_sql_exporter">Запуск утилиты «jatoba*_sql_exporter»<a href="#запуск-утилиты-jatoba_sql_exporter" class="hash-link" aria-label="Direct link to Запуск утилиты «jatoba*_sql_exporter»" title="Direct link to Запуск утилиты «jatoba*_sql_exporter»">​</a></h2>
+<blockquote>
+<p>Обновить конфигурацию systemd:</p>
+<p># systemctl daemon-reload</p>
+<p>Запустить службу экспортера, включить ее в автозапуск и проверить статус работы:</p>
+<p># systemctl start jatoba&lt;ver&gt;_sql_exporter # systemctl enable jatoba&lt;ver&gt;_sql_exporter # systemctl status jatoba&lt;ver&gt;_sql_exporter</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image126.png" style="width:6.70007in;height:1.97562in" class="img_ev3q">
+<p>Рисунок 6.7 – Установка и запуск службы «sql_exporter»</p>
+<p>Чтобы проверить статус работы экспортера, нужно в браузере открыть веб-интерфейс экспортера:</p>
+<p>localhost:9399 <a href="http://0.0.0.0:9399/" target="_blank" rel="noopener noreferrer">http://0.0.0.0:9399</a></p>
+<p>Рисунок 6.8 – Веб-интерфейс «sql_exporter» В рассматриваемом примере на целевой СУБД:</p>
+</blockquote>
+<ul>
+<li>u602doc-pgp01 IP - 10.116.102.45 веб-интерфейс утилиты «sql_exporter» проверяется по URL:</li>
+</ul>
+<blockquote>
+<p><a href="http://10.116.102.45:9399/" target="_blank" rel="noopener noreferrer">http://10.116.102.45:9399</a></p>
+<p>Рисунок 6.9 – Веб-интерфейс «sql_exporter» на целевой СУБД u602doc-pgp01 IP - 10.116.102.45</p>
+</blockquote>
+<ul>
+<li>u602doc-ldap01 IP-10.116.102.47 веб-интерфейс утилиты «node_exporter» проверяется по URL:</li>
+</ul>
+<blockquote>
+<p><a href="http://10.116.102.47:9399/" target="_blank" rel="noopener noreferrer">http://10.116.102.47:9399</a></p>
+<p>Рисунок 6.10 – Веб-интерфейс «sql_exporter» на целевой СУБД u602doc-ldap01 IP-10.116.102.47</p>
+<p>При успешном подключении к БД и отсутствии ошибок в конфигурации на странице localhost:9399/metrics будет показан список значений снятых метрик.</p>
+<p>Если необходимо изменить значения адреса веб-интерфейса (:9399), jatoba*_sql_exporter запускается с опцией -web.listen-address, например:</p>
+<p>./jatoba&lt;ver&gt;_sql_exporter -web.listen-address :9398</p>
+<p>Изменение адреса веб-интерфейса целесообразнее сохранить в файле сервиса</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">«sql_exporter». Иначе при перезагрузке ОС настройки компонента вернуться к изначальным, хранящимся в файле сервиса.</p>
+<p>Полный список опций командной строки sql_exporter можно вывести, если запустить его с опцией -help.</p>
+</blockquote>
+<h1>СИСТЕМА «PROMETHEUS»</h1>
+<blockquote>
+<p>«Prometheus» – система мониторинга различных программных систем и сервисов.</p>
+<p>«Prometheus» собирает и сохраняет метрики в виде временных рядов данных. Информация о каждой метрике хранится вместе с отметкой времени, когда она была записана, и опционным набором меток (labels), представляющих пары «ключ: значение». Сами метрики являются числовыми измерениями, которые по типу могут быть монотонно возрастающими значениями счетчиков (counter) или произвольно изменяющимися значениями датчиков (gauge).</p>
+<p>Основными компонентами системы «Prometheus» являются:</p>
+</blockquote>
+<ul>
+<li>
+<p>Сервер «Prometheus», который собирает и сохраняет метрики в своей встроенной базе данных TSDB;</p>
+</li>
+<li>
+<p>Экспортеры данных, которые по запросу сервера снимают метрики с заданных сервисов (targets) и возвращают их серверу;</p>
+</li>
+<li>
+<p>Web UI, с помощью которого можно исследовать собранные метрики с помощью языка запросов promQL.</p>
+</li>
+</ul>
+<blockquote>
+<p>Документация по использованию системы находится на официальном сайте разработчика по адресу: <a href="https://prometheus.io/" target="_blank" rel="noopener noreferrer"><u>https://prometheus.io</u>.</a></p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-системы-prometheus">Установка системы «Prometheus»<a href="#установка-системы-prometheus" class="hash-link" aria-label="Direct link to Установка системы «Prometheus»" title="Direct link to Установка системы «Prometheus»">​</a></h2>
+<blockquote>
+<p>Документация по использованию системы находится на официальном сайте разработчика по адресу: <a href="https://prometheus.io/" target="_blank" rel="noopener noreferrer"><u>https://prometheus.io</u>.</a></p>
+<p>Установка пакета выполняется в соответствии с Руководством по установке, из локального репозитория командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image130.png" style="width:6.65096in;height:1.11083in" class="img_ev3q">
+<blockquote>
+<p># apt-get install jatoba&lt;ver&gt;-prometheus</p>
+<p>Рисунок 7.1 – Установка пакета «jatoba&lt;ver&gt;-prometheus» В результате установки пакета будет создан:</p>
+<p>– файл переменных окружения сервиса по адресу:</p>
+<p>usr/jatoba-&lt;ver&gt;/monitoring/default/prometheus</p>
+<p>– файл сервиса по адресу</p>
+<p>usr/lib/system/system/jatoba&lt;ver&gt;_prometheus.service</p>
+<p>– файл конфигурации, адаптированный под использование с СУБД «Jatoba» по адресу:</p>
+<p>usr/jatoba-&lt;ver&gt;/monitoring/default/prometheus.yml</p>
+<p>– база данных по адресу:</p>
+<p>/opt/prometheus</p>
+<p>– служебные директории веб-консоли по адресу:</p>
+<p>usr/jatoba-&lt;ver&gt;/monitoring/prometheus</p>
+<p>– пользователь ОС «prometheus», от которого будет производиться запуск сервиса.</p>
+<p>У данного пользователя нет интерактивной оболочки для входа и нет домашней директории.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="конфигурация-системы-prometheus">Конфигурация системы «Prometheus»<a href="#конфигурация-системы-prometheus" class="hash-link" aria-label="Direct link to Конфигурация системы «Prometheus»" title="Direct link to Конфигурация системы «Prometheus»">​</a></h2>
+<blockquote>
+<p>Необходимо задать конфигурацию сервера в формате YAML выполнив команду редактирования:</p>
+<p># gedit /usr/jatoba-&lt;ver&gt;/monitoring/default/prometheus.yml</p>
+<p>В конфигурации важными параметрами являются:</p>
+</blockquote>
+<ul>
+<li>
+<p>частота опроса метрик (scrape_interval);</p>
+</li>
+<li>
+<p>время ожидания ответа (scrape_timeout);</p>
+</li>
+<li>
+<p>HTTP, IP адреса (targets).</p>
+</li>
+</ul>
+<blockquote>
+<p>Для параметра «targets» возможно указать одну или несколько целей, для получения метрик с экспортера, при этом параметр будет иметь синтаксис, с одной целью:</p>
+<p>- targets: [&#x27;X.X.X.X:port&#x27;]</p>
+<p>и с несколькими целями</p>
+<p>- targets: [&#x27;X.X.X.X:port&#x27;, &#x27;X.X.X.X:port&#x27;]</p>
+<p>В рассматриваемом примере, в конфигурационном файле prometheus.yml устанавливаются IP-адреса серверов, находящихся под наблюдением.</p>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Обратите внимание, что необходимо прописывать общий, а не локальный адрес сетевого интерфейса</p>
+<p>Ниже приведены примеры таких «job-name».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="примеры-блока-postgres-exporter">Примеры блока «postgres-exporter»<a href="#примеры-блока-postgres-exporter" class="hash-link" aria-label="Direct link to Примеры блока «postgres-exporter»" title="Direct link to Примеры блока «postgres-exporter»">​</a></h2>
+<blockquote>
+<p>Пример стандартного «postgres-exporter» экспортера с двумя целями:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image131.png" style="width:6.91959in;height:1.8in" class="img_ev3q">
+<blockquote>
+<p># стандартный экспортер данных для PostgreSQL</p>
+<p>- job_name: &quot;postgres-exporter&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</p>
+<p>- targets: [&#x27;10.116.102.45:9187&#x27;,&#x27;10.116.102.47:9187&#x27;]</p>
+<p>labels:</p>
+<p>alias: postgres</p>
+<p>Рисунок 7.2 - Стандартный экспортер данных для PostgreSQL</p>
+<p>Пример стандартного «postgres-exporter» экспортера для двух «job-name» с одной и двумя целями:</p>
+<p># Экспортер данных для PostgreSQL сервера srv1</p>
+<p>- job_name: &quot;srv1-postgres-exporter&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</p>
+<p>- targets: [&#x27;10.116.103.45:9187&#x27;]</p>
+<p>labels: alias: postgres</p>
+<p># Экспортер данных для PostgreSQL сервера srv2 и srv3</p>
+<p>- job_name: &quot;srv2-srv3-postgres-exporter&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</p>
+<p>- targets: [&#x27;10.116.103.46:9187&#x27;, &#x27;10.116.103.47:9187&#x27;]</p>
+<p>labels:</p>
+<p>alias: postgres</p>
+<p>Рисунок 7.3 - «postgres-exporter» экспортера для двух «job-name» с одной и двумя целями</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="примеры-блока-sql-exporter">Примеры блока «sql-exporter»<a href="#примеры-блока-sql-exporter" class="hash-link" aria-label="Direct link to Примеры блока «sql-exporter»" title="Direct link to Примеры блока «sql-exporter»">​</a></h2>
+<blockquote>
+<p>Пример экспортера данных для SQL с двумя целями:</p>
+<p># экспортер данных для SQL</p>
+<p>- job_name: &quot;sql-exporter&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</p>
+<p>- targets: [&#x27;10.116.102.45:9399&#x27;,&#x27;10.116.102.47:9399&#x27;]</p>
+<p>labels:</p>
+<p>alias: postgres</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image133.png" style="width:6.91347in;height:1.7925in" class="img_ev3q">
+<p>Рисунок 7.4 - «sql-exporter» с двумя целями</p>
+</blockquote>
+<p>Пример экспортера SQL для двух «job-name» с одной и двумя целями:</p>
+<blockquote>
+<p># Экспортер данных для SQL сервера srv1</p>
+</blockquote>
+<ul>
+<li>job_name: &quot;srv1-sql-exporter&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</li>
+</ul>
+<blockquote>
+<p>- targets: [&#x27;10.116.103.45:9399&#x27;]</p>
+<p>labels:</p>
+<p>alias: postgres</p>
+<p># Экспортер данных для SQL сервера srv2 и srv3</p>
+</blockquote>
+<ul>
+<li>job_name: &quot;srv2-srv3-sql-exporter&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</li>
+</ul>
+<blockquote>
+<p>- targets: [&#x27;10.116.103.46:9399&#x27;,&#x27;10.116.103.47:9399&#x27;]</p>
+<p>labels:</p>
+<p>alias: postgres</p>
+<p>Рисунок 7.5 – «sql-exporter» для двух «job-name» с одной и двумя целями</p>
+<p>При использовании виджета «jaDog» необходимо добавить параметр labels:cluster_jadog и указать в нем название кластера, которое соответствует названию в цели кластера (см. п. <a href="#%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-prometheus-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-jadog">11.2</a> данного руководства), например:</p>
+<p># экспортер данных для SQL</p>
+<p>- job_name: &quot;node_sql&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</p>
+<p>- targets: [&#x27;10.116.102.45:9399&#x27;,&#x27;10.116.102.47:9399&#x27;]</p>
+<p>labels:</p>
+<p>alias: postgres</p>
+<p><strong>cluster_jadog: &#x27;jadog&#x27;</strong></p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="примеры-блока-node-exporter">Примеры блока «node-exporter»<a href="#примеры-блока-node-exporter" class="hash-link" aria-label="Direct link to Примеры блока «node-exporter»" title="Direct link to Примеры блока «node-exporter»">​</a></h2>
+<blockquote>
+<p>Пример экспортера данных «node-exporter» для GNU/ Linux с двумя целями:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image135.png" style="width:7.1289in;height:2.07in" class="img_ev3q">
+<blockquote>
+<p># экспортер данных для Linux</p>
+<p>- job_name: &quot;node-exporter&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</p>
+<p>- targets: [&#x27;10.116.102.45:9100&#x27;,&#x27;10.116.102.47:9100&#x27;]</p>
+<p>labels: alias: os</p>
+<p>Рисунок 7.6 – «node-exporter» для GNU/ Linux с двумя целями</p>
+<p>Пример экспортера данных «node-exporter» для GNU/Linux для двух «job-name» с одной и двумя целями:</p>
+<p># Экспортер данных для Linux сервера srv1</p>
+</blockquote>
+<ul>
+<li>job_name: &quot;srv1-node-exporter&quot; metrics_path: &#x27;/metrics&#x27; static_configs:</li>
+</ul>
+<blockquote>
+<p>- targets: [&#x27;10.116.103.46:9100&#x27;]</p>
+<p>labels:</p>
+<p>alias: os</p>
+<p># Экспортер данных для Linux сервера srv2 и srv3</p>
+</blockquote>
+<ul>
+<li>job_name: &quot;srv2-srv3-node-exporter&quot;</li>
+</ul>
+<blockquote>
+<p>metrics_path: &#x27;/metrics&#x27; static_configs:</p>
+<p>- targets: [&#x27;10.116.103.46:9100&#x27;,&#x27;10.116.103.47:9100&#x27;]</p>
+<p>labels: alias: os</p>
+<p>Рисунок 7.7 – «node-exporter» для GNU/Linux для двух «job-name» с одной и двумя</p>
+<p>целями</p>
+<p>В конфигурационном файле prometheus.yml, в строке «targets», допустимо указывать любое количество адресов экспортеров, относящихся к одной или разным СУБД.</p>
+<p>Обработка критических событий и вычисление rules не заданы, хотя соответствующие блоки присутствуют в конфигурации.</p>
+<p>Полное описание параметров конфигурации сервера приведено в документации <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/" target="_blank" rel="noopener noreferrer"><u>https://prometheus.io/docs/prometheus/latest/configuration/configuration/</u></a></p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-системы-prometheus">Запуск системы «Prometheus»<a href="#запуск-системы-prometheus" class="hash-link" aria-label="Direct link to Запуск системы «Prometheus»" title="Direct link to Запуск системы «Prometheus»">​</a></h2>
+<blockquote>
+<p>Перед запуском сервиса требуется удостоверится в корректности содержания файла сервиса.</p>
+<p>Просмотр файла осуществляется командой в терминале ОС:</p>
+<p># gedit usr/lib/systemd/system/jatoba&lt;ver&gt;_prometheus.service # gedit usr/lib/systemd/system/jatoba&lt;ver&gt;_prometheus.service</p>
+<p>Рисунок 7.8 – Содержание файла сервиса «jatoba-5_prometheus.service»</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image138.png" style="width:7.04155in;height:3.29854in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 7.9 – Содержание файла сервиса «jatoba18_prometheus.service» Обновить конфигурацию systemd:</p>
+<p># systemctl daemon-reload</p>
+<p>Запустить службу система, включить ее в автозапуск и проверить статус работы:</p>
+<p># systemctl start jatoba&lt;ver&gt;_prometheus # systemctl enable jatoba&lt;ver&gt;_prometheus # systemctl status jatoba&lt;ver&gt;_prometheus</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image139.png" style="width:6.70597in;height:2.11156in" class="img_ev3q">
+<p>Рисунок 7.10 Установка и запуск службы системы «Prometheus»</p>
+<p>Статус запущенного сервера «Prometheus» можно проверить с помощью web UI, открыв в браузере страницу с адресом <a href="http://localhost:9090/" target="_blank" rel="noopener noreferrer">http://localhost:9090.</a></p>
+<p>Рисунок 7.11 – Веб интерфейс системы «Prometheus»</p>
+<p>На вкладке «Status» можно посмотреть текущую конфигурацию и опции запуска сервера, статус встроенной базы данных tsdb и заданные цели (targets).</p>
+<p>В окне «Expression» можно ввести название метрики или выражение на языке promQL и, нажатием на кнопку «Execute», отобразить результаты в виде таблицы или графика.</p>
+<p>Руководство по языку запросов promQL располагается по адресу: <a href="https://prometheus.io/docs/prometheus/latest/querying/basics/" target="_blank" rel="noopener noreferrer">https://prometheus.io/docs/prometheus/latest/querying/basics/</a></p>
+<p>Полный список собираемых метрик можно открыть при нажатии на кнопку «Open Metrics Explorer» слева от кнопки «Execute» или отобразить в окне «Expressions» при вводе первых символов наименования метрики, если включена опция автодополнения.</p>
+<p>Список значений собираемых метрик для каждой цели можно отобразить на странице веб-интерфейса соответствующего экспортера данных, например, localhost:9090/metrics.</p>
+<p>адрес:</p>
+<p>Рисунок 7.12 – Список значений собираемых метрик</p>
+</blockquote>
+<p>В рассматриваемом примере подключение к системе «Prometheus» используется</p>
+<blockquote>
+<p><a href="http://10.116.102.41:9090/" target="_blank" rel="noopener noreferrer">http://10.116.102.41:9090/</a></p>
+<p>Перейдя в меню «Target» отразятся статистические данные наблюдаемых СУБД.</p>
+<p>Рисунок 7.13 – Страница целей системы «Prometheus»</p>
+</blockquote>
+<h1>УТИЛИТА «ALERTMANAGER»</h1>
+<blockquote>
+<p>Alertmanager — это инструмент для управления и обработки оповещений в системе мониторинга Prometheus. Он выполняет следующие функции:</p>
+</blockquote>
+<ul>
+<li>
+<p>группировка оповещений: группирует похожие оповещения для снижения шума и предотвращения дублирования.</p>
+</li>
+<li>
+<p>удаление дубликатов: гарантирует отправку уникальных оповещений без повторений.</p>
+</li>
+<li>
+<p>маршрутизация и приглушение оповещений: позволяет определять правила и конфигурации для маршрутизации оповещений нужным получателям на основе их важности или других критериев. Также можно временно приглушить оповещения во время обслуживания или определённых периодов.</p>
+</li>
+<li>
+<p>уведомление о тревоге: интегрируется с различными каналами связи, такими как электронная почта, Slack, PagerDuty и другие, позволяя отправлять уведомления о тревогах нужным людям или командам.</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-утилиты-и-службы-alertmanager">Установка утилиты и службы «alertmanager»<a href="#установка-утилиты-и-службы-alertmanager" class="hash-link" aria-label="Direct link to Установка утилиты и службы «alertmanager»" title="Direct link to Установка утилиты и службы «alertmanager»">​</a></h2>
+<blockquote>
+<p>Установка пакета выполняется в соответствии с Руководством по установке, из локального репозитория командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image143.png" style="width:6.66185in;height:1.24in" class="img_ev3q">
+<blockquote>
+<p># apt-get install jatoba&lt;ver&gt;-alertmanager</p>
+<p>Рисунок 8.1 – Установка пакета «jatoba*-alertmanager» В результате установки пакета будет создан:</p>
+<p>– файл запуска по адресу:</p>
+<p>/usr/jatoba-&lt;ver&gt;/bin/alertmanager</p>
+<p>– конфигурационный файл по адресу:</p>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/alertmanager.yml</p>
+<p>– служба по адресу:</p>
+<p>/usr/lib/systemd/jatoba&lt;ver&gt;_alertmanager.service</p>
+<p>– пользователь ОС «alertmanager», от которого будет производиться запуск сервиса.</p>
+<p>У данного пользователя нет интерактивной оболочки для входа и нет домашней директории.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-параметров-утилиты">Настройка параметров утилиты<a href="#настройка-параметров-утилиты" class="hash-link" aria-label="Direct link to Настройка параметров утилиты" title="Direct link to Настройка параметров утилиты">​</a></h2>
+<blockquote>
+<p>Утилита «AlertManager» отправляет уведомления через каналы:</p>
+</blockquote>
+<ul>
+<li>
+<p>SMTP;</p>
+</li>
+<li>
+<p>Telegram;</p>
+</li>
+<li>
+<p>Zulip.</p>
+</li>
+</ul>
+<blockquote>
+<p>Настройка каждого из каналов выполняется файле в конфигурационном файле</p>
+<p>«alertmanager.yml». После установки пакета в конфигурационном файле будет установлены параметры по умолчанию.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image144.png" style="width:7.03683in;height:3.40948in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 8.2 – Параметры по умолчанию</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="smtp">SMTP<a href="#smtp" class="hash-link" aria-label="Direct link to SMTP" title="Direct link to SMTP">​</a></h2>
+<blockquote>
+<p>В узле «global» необходимо указать данные для подключения к почтовому серверу. Целесообразно использовать специальную, неперсонифицированную, техническую учетную запись почты, от имени которой будет рассылаться предупреждения.</p>
+<p>Редактирование конфигурационного файла выполняется командой:</p>
+<p># gedit /usr/jatoba-&lt;ver&gt;/monitoring/default/alertmanager.yml</p>
+</blockquote>
+<p>В узле «route» указываются настройки агрегирования предупреждений.</p>
+<blockquote>
+<p>В узле «receivers» в узле «email_general» указываются настройки получателя. Используется общий узел для всех получателей, email получателя подставляется из метки</p>
+<p>«emailto» с помощью шаблона.</p>
+<p>global:</p>
+<p>smtp_smarthost: mail.domain.ru:587 smtp_from: <a href="mailto:domain_name@domain.ru" target="_blank" rel="noopener noreferrer">domain_name@domain.ru</a> smtp_auth_user_name: <a href="mailto:user_name@domain.ru" target="_blank" rel="noopener noreferrer">user_name@domain.ru</a> smtp_auth_password: password smtp_require_tls: true</p>
+<p>route:</p>
+<p>receiver: email_general group_by: [emailto] group_wait: 30s group_interval: 5m repeat_interval: 3h</p>
+<p>receivers:</p>
+<p>- name: email_general email_configs:</p>
+<p>- send_resolved: true</p>
+<p>to: &#x27;{{ .CommonLabels.emailto }}&#x27;</p>
+<p>Рисунок 8.3 - Конфигурационный файл «alertmanager.yml»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="telegram">Telegram<a href="#telegram" class="hash-link" aria-label="Direct link to Telegram" title="Direct link to Telegram">​</a></h2>
+<blockquote>
+<p>Настройка получения уведомлений (предупреждений) от утилиты «AlertManager» в Telegram состоит из нескольких этапов:</p>
+</blockquote>
+<ul>
+<li>
+<p>Создать в Telegram бота;</p>
+</li>
+<li>
+<p>Создание канала в Telegram;</p>
+</li>
+<li>
+<p>открытие канала передачи предупреждений в утилите «AlertManager».</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="создание-в-telegram-бота">Создание в Telegram бота<a href="#создание-в-telegram-бота" class="hash-link" aria-label="Direct link to Создание в Telegram бота" title="Direct link to Создание в Telegram бота">​</a></h2>
+<blockquote>
+<p>Бот должен создаваться через @BotFather официальный сервис Telegram для создания, настройки и управления чат-ботами.</p>
+<p>Сервис находится через оно поиска в Telegram.</p>
+<p>Рисунок 8.4 – Поиск сервиса @BotFather Нажать кнопку «Старт».</p>
+<p>Рисунок 8.5 – Создание бота</p>
+<p>Выполните команду создания бота и следуем инструкциям, задаем имя JDS alerts, а username – jds_alertmanager_bot.</p>
+<p>Выполнить команду создания бота:</p>
+<p>/newbot - create a new bot</p>
+<p>Задайте уникальное имя бота:</p>
+<p>jds_alertmanager_bot</p>
+<p>my_jds_alertmanager_bot</p>
+<p>При создании бота выдается его токен. Далее он потребуется в настройках.</p>
+<p>Рисунок 8.6 – Вывод информации о боте</p>
+<p>Далее необходимо выяснить идентификатор чата (канала), в который будут отправляться предупреждения. Это можно сделать, например, с помощью веб-запроса.</p>
+<p>Пишем в чат произвольное сообщение, тэгируя бота:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image149.jpeg" style="width:4.31869in;height:1.47812in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 8.7 – Сообщение с тэгированием бота</p>
+<p>Добавьте новый маршрут, нового получателя и указываем местонахождение шаблонов уведомлений в конфигурационный файл alertmanager.yml.</p>
+<p>По указанному пути к файлам шаблонов создайте преднастроенный шаблон - файл telegram.jds.tmpl следующего содержания:</p>
+<p>{{ define &quot;telegram.jds&quot; }}</p>
+<p>{{ range .Alerts }}</p>
+<p>{{ if eq .Status &quot;firing&quot;}}&lt;b&gt;{{ .Status | toUpper }}&lt;/b&gt;&amp;#x1F525{{ else }}&lt;b&gt;{{ .Status | toUpper }}&lt;/b&gt;&amp;#x2705{{ end }}</p>
+<p>{{- if .Annotations.summary }}</p>
+<p>{{ .Annotations.summary }}</p>
+<p>{{- end }}</p>
+<p>{{- if .Labels.dbms }}</p>
+<p>&lt;b&gt;Database:&lt;/b&gt; {{ .Labels.dbms }}</p>
+<p>{{- end }}</p>
+<p>{{- if .Annotations.object }}</p>
+<p>&lt;b&gt;Object:&lt;/b&gt; {{ .Annotations.object }}</p>
+<p>{{- end }}</p>
+<p>{{- if .Labels.emailto }}</p>
+<p>&lt;b&gt;EmailTo:&lt;/b&gt; {{ .Labels.emailto }}</p>
+<p>{{- end }}</p>
+<p>{{- if .Labels.alertid }}</p>
+<p>alert_id: &lt;code&gt;{{ .Labels.alertid }}&lt;/code&gt;</p>
+<p>{{- end }}</p>
+<p>{{ end }}</p>
+<p>{{ end }}</p>
+<p>Перезапустите «Alertmanager» командой:</p>
+<p># systemctl restart alertmanager</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="zulip">Zulip<a href="#zulip" class="hash-link" aria-label="Direct link to Zulip" title="Direct link to Zulip">​</a></h2>
+<blockquote>
+<p>Конфигурирование утилиты «AlertManager» и приложения «Zulip» состоит из нескольких этапов. Создание канала и бота в приложении «Zulip» и открытие канала передачи предупреждений в утилите «AlertManager».</p>
+<p>Создание канал и бота в приложении «Zulip» требует следующих действий:</p>
+</blockquote>
+<ul>
+<li>Открыть приложение Zulip и перейти в меню «Каналы»;</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.8 – Создание канала</p>
+</blockquote>
+<ul>
+<li>
+<p>Создать канал;</p>
+</li>
+<li>
+<p>Установить настройки нового канала;</p>
+</li>
+<li>
+<p>Задать название канала и описание;</p>
+</li>
+</ul>
+<blockquote>
+<p>Рисунок 8.9 – Настройки канала</p>
+</blockquote>
+<ul>
+<li>Нажать кнопку «Добавить еще подписчиков»</li>
+</ul>
+<blockquote>
+<p>В качестве первого подписчика автоматически будет выбран создатель канала.</p>
+</blockquote>
+<ul>
+<li>
+<p>Нажать кнопку «Создать»;</p>
+</li>
+<li>
+<p>Создать бота;</p>
+</li>
+</ul>
+<blockquote>
+<p>Через пиктограмму личного профиля, расположенную в правом верхнем углу приложения Zulip перейти в «Настройки». Выбрать меню «Боты» и нажать кнопку</p>
+<p>«Добавить нового бота».</p>
+<p>В открывшимся окне «Добавить нового бота»:</p>
+</blockquote>
+<ul>
+<li>
+<p>Выбрать тип бота – Входящий вебхук;</p>
+</li>
+<li>
+<p>Имя (бота) – уникальное имя (в рассматриваемом примере используется имя</p>
+</li>
+</ul>
+<blockquote>
+<p>«alert»);</p>
+</blockquote>
+<ul>
+<li>
+<p>Адрес электронной почты бота – допустимо использовать имя бота. Домен почты подключится автоматически;</p>
+</li>
+<li>
+<p>Аватар – не обязательно.</p>
+</li>
+</ul>
+<blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image152.jpeg" style="width:6.14156in;height:3.5in" class="img_ev3q">
+<p>Рисунок 8.10 – Создание бота в Zilip</p>
+<p>После установки параметров нажать кнопку «Добавить». Созданный бот отразится в списке «Активные боты».</p>
+</blockquote>
+<ul>
+<li>Создать «URL для интеграции»</li>
+</ul>
+<blockquote>
+<p>Для интеграции утилиты «AlertManager» и приложения «Zulip» требуется «URL интеграции».</p>
+<p>URL создается через пиктограмму в виде цепи, расположенную в блоке бота.</p>
+<p>Рисунок 8.11 – Пиктограмма «Создать URL для интеграции»</p>
+<p>Нажатие на пиктограмму вызовет окне «Создать URL для интеграции», в котором устанавливаются параметры:</p>
+</blockquote>
+<ul>
+<li>
+<p>Интеграция – Prometheus Alertmanager;</p>
+</li>
+<li>
+<p>Куда отправлять оповещения – выбрать созданный канал (alert).</p>
+</li>
+</ul>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image154.jpeg" style="width:6.11139in;height:3.44792in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 8.12 - Копирование URL для интеграции</p>
+<p>Нажатие кнопки «Копировать URL» скопирует созданную ссылку в буфер обмена, после чего далее окно можно закрыть.</p>
+</blockquote>
+<ul>
+<li>Сконфигурировать «AlertManager»;</li>
+</ul>
+<blockquote>
+<p>Создав бота в Zulip и сгенерировав «URL интеграции» сконфигурируйте</p>
+<p>«AlertManager» через конфигурационный файл «alertmanager.yml».</p>
+<p>Редактирование конфигурационного файла выполняется командой:</p>
+<p># gedit /usr/jatoba-&lt;ver&gt;/monitoring/default/alertmanager.yml</p>
+<p>Раскомментируйте строки:</p>
+</blockquote>
+<ul>
+<li>
+<p>receiver: zulip_chat;</p>
+</li>
+<li>
+<p>continue: true.</p>
+</li>
+</ul>
+<blockquote>
+<p>Тем самым создаётся «маршрут» для отправки сообщений по каналу Zulip.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image155.png" style="width:6.84165in;height:3.32812in" class="img_ev3q">
+<p>Рисунок 8.13 – Параметры «маршрута» для отправки предупреждений по каналу Zulip Расскомментируйте строки:</p>
+</blockquote>
+<ul>
+<li>
+<p>url;</p>
+</li>
+<li>
+<p>send_resolved.</p>
+</li>
+</ul>
+<blockquote>
+<p>В строку «URL» вставьте «URL для интеграции» скопированный из созданного бота в Zulip и в конце строки добавить значение:</p>
+<p>&amp;desc=summary</p>
+<p>Данное значение служит для кастомизации сообщений.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image156.png" style="width:6.82254in;height:2.52937in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 8.14 – URL для отправки предупреждений в Zulip</p>
+<p>На данном конфигурирование утилиты «AlertManager» для отправки сообщений по каналу Zulip закончено и модно переходить к запуску утилиты описанному в п.п. <a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B-alertmanager">8.3</a>.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="запуск-утилиты-alertmanager">Запуск утилиты «alertmanager»<a href="#запуск-утилиты-alertmanager" class="hash-link" aria-label="Direct link to Запуск утилиты «alertmanager»" title="Direct link to Запуск утилиты «alertmanager»">​</a></h2>
+<blockquote>
+<p>Обновить конфигурацию system командой:</p>
+<p># systemctl daemon-reload</p>
+<p>Запустить службу утилиты, включить ее автозапуск и проверить статус работы:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image157.png" style="width:6.69763in;height:1.96656in" class="img_ev3q">
+<blockquote>
+<p># systemctl start jatoba&lt;ver&gt;_alertmanager # systemctl enable jatoba&lt;ver&gt;_alertmanager # systemctl status jatoba&lt;ver&gt;_alertmanager</p>
+<p>Рисунок 8.15 - Запуск и вывод статуса службы «jatoba*_alertmanager»</p>
+<p>Чтобы проверить статус работы утилиты, нужно в браузере открыть веб-интерфейс утилиты «Alertmanager»:</p>
+<p>localhost:9093 <a href="http://0.0.0.0:9093/" target="_blank" rel="noopener noreferrer"><u>http://0.0.0.0:9093</u></a> http://&lt;ip&gt;:9093</p>
+<p>Рисунок 8.16 – Веб-интерфейс утилиты «alertmanager»</p>
+<p>На данном шаге конфигурирование утилиты не закончено. Проверена, только работоспособность. Интеграция с другими компонентами описана в разделе <a href="#%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-jds">9</a></p>
+<p>«<a href="#%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA-jds">Подключение к JDS</a>».</p>
+</blockquote>
+<h1>ПОДКЛЮЧЕНИЕ К JDS</h1>
+<blockquote>
+<p>Подключение хранилища системы «Prometheus» к компоненту «Jatoba data safe» для отображения в разделе «Мониторинг» описано в документе «Руководство по настройке. Часть 7. Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe», в пункте «Источники данных».</p>
+<p>Для настройки «Уведомлений» о контролируемых значениях СУБД требуется сконфигурировать 3 компонента, такие как система «Prometheus», утилита «Alertmanager» и компоненты пользовательского веб-интерфейса для администраторов «Jatoba data safe» (JDS).</p>
+<p>Последовательность действий будет следующая.</p>
+<p>Настраивается SSH-соединение на хосте и/или с хостом с установленной системой</p>
+<p>«Prometheus» (см. п. <a href="#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-ssh-%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F">9.1</a>).</p>
+<p>В разделе «Настройки» компонента JDS, во вкладке «Источник данных» созданное подключение к системе «Prometheus» дополняется параметрами «Настройки конфигурации предупреждений» (уведомлений).</p>
+<p>В этой настройке указывается, IP адрес системы «Prometheus», порт подключения, пользователь и путь к файлу с правилами уведомлений. В последствии это имя файла будет использовано в конфигурировании системы «Prometheus».</p>
+<p>Файл с правилами уведомлений предварительно не создаётся и появляется по вышеуказанному пути. Поэтому для его создания требуется создать уведомление в разделе</p>
+<p>«Мониторинг» в любом из дашбордов.</p>
+<p>На хосте с системой «Prometheus» в конфигурационном файле</p>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/prometheus.yml</p>
+<p>связать систему «Prometheus» и утилиту «Alertmanager».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-ssh-соединения">Настройка SSH-соединения<a href="#настройка-ssh-соединения" class="hash-link" aria-label="Direct link to Настройка SSH-соединения" title="Direct link to Настройка SSH-соединения">​</a></h2>
+<blockquote>
+<p>Настройка SSH-соединения производится в обязательном порядке для любой архитектуры компонентов. В том числе, если утилита «Alertmanager», система «Prometheus» и JDS установлены на одном хосте.</p>
+<p>Необходимо настроить SSH-соединение с хоста компонента JDS на сервер с развернутой системой «Prometheus». Соединение будет использоваться компонентом JDS для копирования конфигурационного файла с правилами предупреждений.</p>
+<p>В настройках SSH-сервера должны быть разрешены локальные подключения и подключения от имени и с правами пользователя «root».</p>
+<p>Следует выполнить следующие действия:</p>
+<p>‒ создать папку пользователя, под которым работает JDS:</p>
+<p>sudo -s</p>
+<p># mkdir /home/jds</p>
+<p># chown jds /home/jds # exit</p>
+<p>‒ сгенерировать ключи под пользователем JDS, скопировать на хост с системой</p>
+<p>«Prometheus»:</p>
+<p>sudo -u jds /usr/bin/bash # ssh-keygen</p>
+<p>(задать пустой пароль) # ssh-copy-id root@IP (yes)</p>
+</blockquote>
+<p>‒ проверить соединение (должно соединиться без запроса пароля):</p>
+<blockquote>
+<p># ssh root@IP # exit</p>
+<p>exit</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="конфигурирование-jds-вкладка-источник-данных">Конфигурирование JDS Вкладка «Источник данных»<a href="#конфигурирование-jds-вкладка-источник-данных" class="hash-link" aria-label="Direct link to Конфигурирование JDS Вкладка «Источник данных»" title="Direct link to Конфигурирование JDS Вкладка «Источник данных»">​</a></h2>
+<blockquote>
+<p>На хосте с установленным компонентом JDS перейти в раздел «Настройки». Созданной подключение к системе «Prometheus» изменить, дополнив параметрами</p>
+<p>«Настройки конфигурации предупреждений» (уведомлений).</p>
+<p>В этой настройке указывается:</p>
+<p>‒ IP адрес системы «Prometheus»;</p>
+<p>‒ порт подключения – 22, соответствующий SSH-подключению;</p>
+<p>‒ пользователь – root;</p>
+<p>‒ путь к файлу с правилами уведомлений:</p>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/alertrules.yml</p>
+<p>В последствии это имя файла будет использовано в конфигурировании системы</p>
+<p>«Prometheus».</p>
+<p>Рисунок 9.1 - «Настройки конфигурации предупреждений»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="раздел-мониторинг">Раздел «Мониторинг»<a href="#раздел-мониторинг" class="hash-link" aria-label="Direct link to Раздел «Мониторинг»" title="Direct link to Раздел «Мониторинг»">​</a></h2>
+<blockquote>
+<p>В разделе «Мониторинг» создав уведомление в любом из дашбордов с динамическими данными будет сформирован файл с правилами уведомлений по пути указанному в настройках «Источника данных» в сформированном подключении к системе</p>
+<p>«Prometheus»:</p>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/alertrules.yml</p>
+<p>Рисунок 9.2 – Создание уведомления в компоненте JDS</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-связки-системы-prometheus-и-утилиты-alertmanager">Настройка связки системы «Prometheus» и утилиты «Alertmanager»<a href="#настройка-связки-системы-prometheus-и-утилиты-alertmanager" class="hash-link" aria-label="Direct link to Настройка связки системы «Prometheus» и утилиты «Alertmanager»" title="Direct link to Настройка связки системы «Prometheus» и утилиты «Alertmanager»">​</a></h2>
+<blockquote>
+<p>Имея данные конфигурации и конфигурационный файл уведомлений можно приступить к связке системы «Prometheus» и утилиты «Alertmanager», для чего надо выполнить команду редактирования конфигурационного файла системы «Prometheus»:</p>
+<p># gedit usr/jatoba-&lt;ver&gt;/monitoring/default/prometheus.yml</p>
+<p>Соответствующий раздел «Alertmanager configuration» находится в начале файла и параметры надо внести именно в него. Вставка параметров в конец файла может привести к ошибке.</p>
+<p>В узле «targets» указывается хост или хосты с установленной утилитой</p>
+<p>«Alertmanager»</p>
+<p>В узле rule_files необходимо указать имя конфигурационного файла уведомлений</p>
+<p>alerting: alertmanagers:</p>
+<p>- static_configs:</p>
+<p>- targets:</p>
+<p>- IP**.***.***.**:9093 rule_files:</p>
+<p>- &quot;alertrules.yml&quot;</p>
+<p>Рисунок 9.3 - Раздел «Alertmanager configuration» Проверить корректность введенных параметров возможно командами:</p>
+<p># cd /usr/jatoba-&lt;ver&gt;/bin#</p>
+<p># ./promtool check config /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/prometheus.yml</p>
+<p>Если параметры верны, перезапустить службу:</p>
+<p># systemctl restart jatoba&lt;ver&gt;_prometheus</p>
+<p>На данном шаге конфигурирование раздела «Мониторинг» компонента JDS закончено.</p>
+</blockquote>
+<h1>НАСТРОЙКА ЭКСПОРТЕРОВ ДЛЯ КОМПОНЕНТА</h1>
+<blockquote>
+<p><strong>JA_HIPE_CLUSTER</strong></p>
+<p>Настройка системы мониторинга подразумевает конфигурирование целевых СУБД и кластера на основе компонента «ja_Hipe_Cluster» в экосистеме СУБД «Jatoba». Используется выделенный сервер мониторинга «Jatoba Data Safe» собирающий данные для виджетов с сервера «Prometheus». Сервера «Prometheus» аккумулирует данные о СУБД и ОС с кластера и СУБД.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметры-стенда">Параметры стенда<a href="#параметры-стенда" class="hash-link" aria-label="Direct link to Параметры стенда" title="Direct link to Параметры стенда">​</a></h2>
+<blockquote>
+<p>Параметры стенда, приведенные в таблице <a href="#_bookmark43">10.1</a>. <span id="_bookmark43" class="anchor"></span>Таблица 10.1 – Конфигурация стенда</p>
+</blockquote>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:17%">
+<col style="width:10%">
+<col style="width:8%">
+<col style="width:20%">
+<col style="width:5%">
+<col style="width:6%">
+<col style="width:24%">
+<col style="width:2%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>№</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Имя сервера</strong></p>
+</blockquote></th><th colspan="2"><blockquote>
+<p><strong>IP-адрес</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>ПО</strong></p>
+</blockquote></th><th colspan="2"><blockquote>
+<p><strong>Port</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Роль</strong></p>
+</blockquote></th><th rowspan="32"></th></tr><tr><th style="text-align:center"><blockquote>
+<p>1</p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p>u602doc-jds01</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>10.116.102.41/24</p>
+</blockquote></th><th><blockquote>
+<p>JDS</p>
+</blockquote></th><th colspan="2"></th><th><blockquote>
+<p>Сервер мониторинга</p>
+</blockquote></th></tr><tr><th style="text-align:center"><blockquote>
+<p>2</p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p>u602doc-pgp01</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>10.116.102.45/24</p>
+</blockquote></th><th></th><th colspan="2"></th><th rowspan="7"><blockquote>
+<p>Сервер Prometheus</p>
+</blockquote></th></tr><tr><th colspan="4" rowspan="6"></th><th><blockquote>
+<p>Prometheus</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9090</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>Alert manager</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9093, 22</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></th><th colspan="2"></th></tr><tr><th><blockquote>
+<p>node_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9100</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>postgres_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9187</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>sql_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9399</p>
+</blockquote></th></tr><tr><th style="text-align:center"><blockquote>
+<p>3</p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p>u602doc-hipe01</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>10.116.102.61/24</p>
+</blockquote></th><th></th><th colspan="2"></th><th rowspan="6"><blockquote>
+<p>Coordinator</p>
+</blockquote></th></tr><tr><th colspan="4" rowspan="5"></th><th><blockquote>
+<p>citus</p>
+</blockquote></th><th colspan="2"></th></tr><tr><th><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></th><th colspan="2"></th></tr><tr><th><blockquote>
+<p>node_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9100</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>postgres_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9187</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>sql_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9399</p>
+</blockquote></th></tr><tr><th style="text-align:center"><blockquote>
+<p>4</p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p>u602doc-hipe02</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>10.116.102.62/24</p>
+</blockquote></th><th></th><th colspan="2"></th><th rowspan="6"><blockquote>
+<p>Worker (Node1)</p>
+</blockquote></th></tr><tr><th colspan="4" rowspan="5"></th><th><blockquote>
+<p>citus</p>
+</blockquote></th><th colspan="2"></th></tr><tr><th><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></th><th colspan="2"></th></tr><tr><th><blockquote>
+<p>node_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9100</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>postgres_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9187</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>sql_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9399</p>
+</blockquote></th></tr><tr><th style="text-align:center"><blockquote>
+<p>5</p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p>u602doc-hipe03</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>10.116.102.63/24</p>
+</blockquote></th><th></th><th colspan="2"></th><th rowspan="6"><blockquote>
+<p>Worker (Node2)</p>
+</blockquote></th></tr><tr><th colspan="4" rowspan="5"></th><th><blockquote>
+<p>citus</p>
+</blockquote></th><th colspan="2"></th></tr><tr><th><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></th><th colspan="2"></th></tr><tr><th><blockquote>
+<p>node_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9100</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>postgres_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9187</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>sql_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9399</p>
+</blockquote></th></tr><tr><th style="text-align:center"><blockquote>
+<p>6</p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p>u602doc-ldap01</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>10.116.102.47/24</p>
+</blockquote></th><th></th><th colspan="2"></th><th rowspan="5"><blockquote>
+<p>Целевая СУБД</p>
+</blockquote></th></tr><tr><th colspan="4" rowspan="4"></th><th><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></th><th colspan="2"></th></tr><tr><th><blockquote>
+<p>node_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9100</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>postgres_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9187</p>
+</blockquote></th></tr><tr><th><blockquote>
+<p>sql_exporter</p>
+</blockquote></th><th colspan="2"><blockquote>
+<p>9399</p>
+</blockquote></th></tr></thead><tbody><tr><td colspan="3"><blockquote>
+<p>№ изменения:</p>
+</blockquote></td><td colspan="3"><blockquote>
+<p>Подпись отв. лица:</p>
+</blockquote></td><td colspan="3"><blockquote>
+<p>Дата внесения изм:</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Схема стенда представлена на рисунке <a href="#_bookmark44">10.1</a>.</p>
+</blockquote>
+<p><strong>Сервер мониторинга Jatoba D ata Safe</strong></p>
+<p><strong>ja_Hipe_Clust er</strong></p>
+<p>pg _st at _statem ents cit us</p>
+<p>nod e_export er</p>
+<p>JDS</p>
+<p>post g res_export er</p>
+<p>IP 10 .116.10 2.41</p>
+<p><strong>W orker (Node1)</strong></p>
+<blockquote>
+<p>IP -10 .116.10 2.62</p>
+</blockquote>
+<p>sql_export er</p>
+<p><strong>Сервер Prom etheus</strong></p>
+<p>pg _st at _statem ents</p>
+<p><strong>ja_Hipe_Clust er</strong></p>
+<p>pg _st at _statem ents</p>
+<p>nod e_export er</p>
+<p>cit us</p>
+<p>Prom et heus</p>
+<p>post g res_export er</p>
+<p>nod e_export er</p>
+<p>sql_export er</p>
+<p>post g res_export er</p>
+<p>Alert Manag er</p>
+<p>IP 10 .116.10 2.45</p>
+<blockquote>
+<p><strong>Coorditator</strong></p>
+</blockquote>
+<p>IP -10 .116.10 2.61</p>
+<p>sql_export er</p>
+<p><strong>Целевая СУ БД</strong></p>
+<p><strong>ja_Hipe_Clust er</strong></p>
+<p>pg _st at _statem ents</p>
+<p>pg _st at _statem ents</p>
+<p>cit us</p>
+<p>nod e_export er</p>
+<p>nod e_export er</p>
+<p>post g res_export er</p>
+<p>post g res_export er</p>
+<p>sql_export er</p>
+<p>IP 10 .116.10 2.47</p>
+<p><strong>W orker (Node2)</strong></p>
+<blockquote>
+<p>IP -10 .116.10 2.63</p>
+</blockquote>
+<p>sql_export er</p>
+<blockquote>
+<p>Рисунок 10.1 – Схема стенда мониторинга с кластером «ja_Hipe_Cluster»</p>
+<p>Настройка экспортёров на целевой СУБД описан выше в настоящем документе и их параметры остаются неизменными в конфигурационном фале /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/prometheus.yml.</p>
+<p>Конфигурация экспортёров кластера добавляется отдельно.</p>
+<p>Настройка экспортёров ja_Hipe_Cluster для принципиально не отличается от вышеописанного процесса, но имеет ряд особенностей.</p>
+<p>Настройка СУБД в кластере для мониторинга выполняется согласно разделу <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">3</a></p>
+<p>«<a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">Установка и настройка целевых СУБД</a>».</p>
+<p>В результате:</p>
+</blockquote>
+<ul>
+<li>
+<p>должна быть настроена аутентификация;</p>
+</li>
+<li>
+<p>в конфигурационный файл «postgresql.conf» добавлены параметры:</p>
+</li>
+</ul>
+<blockquote>
+<p>shared_preload_libraries = &#x27;citus, pg_stat_statements&#x27; pg_stat_statements&#x27;compute_query_id = on pg_stat_statements.max = 10000 pg_stat_statements.track = all</p>
+</blockquote>
+<ul>
+<li>должны быть установлены, как минимум, расширения pg_stat_statements, citus и citus_columnar.</li>
+</ul>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image507.png" style="width:7.05942in;height:1.70625in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 10.2 – Вывод установленных расширений</p>
+<p>БД установки расширения «pg_stat_statements» не имеет принципиального значения. Установка экспортёров выполняется согласно разделам настоящего документа:</p>
+</blockquote>
+<ul>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_node_exporter">4</a> «<a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_node_exporter">Установка экспортера «jatoba*_node_exporter»</a>;</p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_postgres_exporter">5</a> «<a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_postgres_exporter">Установка экспортера «jatoba*_postgres_exporter»</a>;</p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_sql_exporter">6</a> «<a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_sql_exporter">Установка экспортера «jatoba*_sql_exporter»</a>.</p>
+</li>
+</ul>
+<blockquote>
+<p>В конфигурационных файлах «jatoba*_postgres_exporter» и «jatoba*_sql_exporter» в строке «DATA_SOURCE_NAME» должен быть указан IP-адрес узла.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="конфигурирование-системы-prometheus-для-компонента">Конфигурирование системы «Prometheus» для компонента<a href="#конфигурирование-системы-prometheus-для-компонента" class="hash-link" aria-label="Direct link to Конфигурирование системы «Prometheus» для компонента" title="Direct link to Конфигурирование системы «Prometheus» для компонента">​</a></h2>
+<blockquote>
+<p><strong>«ja_Hipe_Cluster»</strong></p>
+<p>На сервере «Prometheus» (u602doc-pgp01, IP-10.116.102.45/24) в конфигурационный файл /usr/jatoba-&lt;ver&gt;/monitoring/default/prometheus.yml добавляется раздел с экспортёрами, установленными на узлах кластера.</p>
+<p>###############################################################</p>
+<p># экспортеры координатора (Citus)</p>
+<p>- job_name: &quot;coordinator&quot; static_configs:</p>
+<p>- targets: [&#x27;10.116.102.61:9100&#x27;, &#x27;10.116.102.61:9187&#x27;,</p>
+<p>&#x27;10.116.102.61:9399&#x27;, &#x27;10.116.102.61:9398&#x27;]</p>
+<p>labels:</p>
+<p>cluster: &#x27;ja_hipe_cluster&#x27;</p>
+<p># экспортеры worker1 (Node1)</p>
+<p>- job_name: &quot;worker1&quot; static_configs:</p>
+<p>- targets: [&#x27;10.116.102.62:9100&#x27;, &#x27;10.116.102.62:9187&#x27;,</p>
+<p>&#x27;10.116.102.62:9399&#x27;]</p>
+<p>labels:</p>
+<p>cluster: &#x27;ja_hipe_cluster&#x27;</p>
+<p># экспортеры worker2 (Node2)</p>
+<p>- job_name: worker2 static_configs:</p>
+<p>- targets: [&#x27;10.116.102.63:9100&#x27;, &#x27;10.116.102.63:9187&#x27;,</p>
+<p>&#x27;10.116.102.63:9399&#x27;]</p>
+<p>labels:</p>
+<p>cluster: &#x27;ja_hipe_cluster&#x27; ###############################################################</p>
+<p>В строке «job_name» целесообразнее указать роль узла в кластере.</p>
+<p>В строке «targets» перечисляются IP-адрес и порт каждого из установленных экспортёров, установленных на узле.</p>
+<p>Строка «labels: cluster:» является меткой для формирования выпадающего списка</p>
+<p>«Кластеры» по которой формируется кластерная панель виджетов.</p>
+<p>Строка является текстовой. Допускается указание IP-адреса узла, как показано на рисунке <a href="#_bookmark46">10.3</a>.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image508.png" style="width:6.85214in;height:4.2375in" class="img_ev3q">
+<p><span id="_bookmark46" class="anchor"></span>Рисунок 10.3 – Использование IP-адреса узла в строке Строка «labels: cluster:»</p>
+<p>Целесообразнее указывать идентификационный признак подключенного к мониторингу кластера, как показано на рисунке <a href="#_bookmark47">10.4</a>.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image509.png" style="width:7.0376in;height:4.40792in" class="img_ev3q">
+<p><span id="_bookmark47" class="anchor"></span>Рисунок 10.4 - Использование имени кластера в строке Строка «labels: cluster:»</p>
+<p>В результате на панели виджетов для кластера, в выпадающем списке отразится имя кластера.</p>
+<p>Рисунок 10.5 – Имя кластера на панели виджетов На виджетах отразятся графы каждого узла кластера.</p>
+</blockquote>
+<h1>НАСТРОЙКА ЭКСПОРТЕРОВ ДЛЯ КОМПОНЕНТА JADOG</h1>
+<blockquote>
+<p>Настройка системы мониторинга кластеров на основе компонента «jaDog» требует:</p>
+</blockquote>
+<ul>
+<li>
+<p>конфигурирования узлов кластера;</p>
+</li>
+<li>
+<p>выделенный сервер мониторинга «Jatoba Data Safe» собирающий данные для виджетов с сервера «Prometheus».</p>
+</li>
+</ul>
+<blockquote>
+<p>Настройка СУБД в кластере «jaDog» для мониторинга выполняется согласно разделу <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">3</a> «<a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D1%8B%D1%85-%D1%81%D1%83%D0%B1%D0%B4">Установка и настройка целевых СУБД</a>».</p>
+<p>Настройка экспортёров на целевых СУБД кластера описана выше в настоящем документе и их параметры остаются неизменными в конфигурационном фале /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/prometheus.yml.</p>
+<p>Установка экспортеров выполняется согласно разделам настоящего документа:</p>
+</blockquote>
+<ul>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_node_exporter">4</a> «<a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_node_exporter">Установка экспортера «jatoba*_node_exporter»</a>;</p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_postgres_exporter">5</a> «<a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_postgres_exporter">Установка экспортера «jatoba*_postgres_exporter»</a>;</p>
+</li>
+<li>
+<p><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_sql_exporter">6</a> «<a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%8D%D0%BA%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80%D0%B0-jatoba_sql_exporter">Установка экспортера «jatoba*_sql_exporter»</a>.</p>
+</li>
+</ul>
+<blockquote>
+<p>В конфигурационных файлах «jatoba*_postgres_exporter» и «jatoba*_sql_exporter» в строке «DATA_SOURCE_NAME» должен быть указан IP-адрес узла.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="параметры-стенда-1">Параметры стенда<a href="#параметры-стенда-1" class="hash-link" aria-label="Direct link to Параметры стенда" title="Direct link to Параметры стенда">​</a></h2>
+<blockquote>
+<p>Параметры стенда, приведенные в таблице Таблица 11.1 – Конфигурация стенда</p>
+</blockquote>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:18%">
+<col style="width:19%">
+<col style="width:20%">
+<col style="width:11%">
+<col style="width:25%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>№</strong></p>
+</blockquote></th><th style="text-align:right"><strong>Имя сервера</strong></th><th style="text-align:center"><blockquote>
+<p><strong>IP-адрес</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>ПО</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Port</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Роль</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:center"><blockquote>
+<p>1</p>
+</blockquote></td><td style="text-align:right">u602doc-jds01</td><td style="text-align:center"><blockquote>
+<p>10.116.102.41/24</p>
+</blockquote></td><td><blockquote>
+<p>JDS</p>
+</blockquote></td><td></td><td><blockquote>
+<p>Сервер мониторинга</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>2</p>
+</blockquote></td><td style="text-align:right">u602doc-pgp01</td><td style="text-align:center"><blockquote>
+<p>10.116.102.45/24</p>
+</blockquote></td><td></td><td></td><td rowspan="7"><blockquote>
+<p>Сервер Prometheus</p>
+</blockquote></td></tr><tr><td colspan="3" rowspan="6" style="text-align:center"></td><td><blockquote>
+<p>Prometheus</p>
+</blockquote></td><td><blockquote>
+<p>9090</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>Alert manager</p>
+</blockquote></td><td><blockquote>
+<p>9093, 22</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>node_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9100</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>postgres_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9187</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>sql_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9399</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>3</p>
+</blockquote></td><td style="text-align:right"><blockquote>
+<p>u602doc-</p>
+<p>jadog01</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>10.116.102.54/24</p>
+</blockquote></td><td></td><td></td><td rowspan="3"><blockquote>
+<p>Главный узел</p>
+<p>(Master)</p>
+</blockquote></td></tr><tr><td colspan="3" rowspan="2" style="text-align:center"></td><td><blockquote>
+<p>jadog</p>
+</blockquote></td><td><blockquote>
+<p>5432</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></td><td></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:18%">
+<col style="width:19%">
+<col style="width:20%">
+<col style="width:11%">
+<col style="width:25%">
+</colgroup><thead><tr><th style="text-align:center"><blockquote>
+<p><strong>№</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Имя сервера</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>IP-адрес</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>ПО</strong></p>
+</blockquote></th><th><blockquote>
+<p><strong>Port</strong></p>
+</blockquote></th><th style="text-align:center"><blockquote>
+<p><strong>Роль</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td colspan="3" rowspan="3"></td><td><blockquote>
+<p>node_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9100</p>
+</blockquote></td><td rowspan="3"></td></tr><tr><td><blockquote>
+<p>postgres_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9187</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>sql_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9399</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>4</p>
+</blockquote></td><td><blockquote>
+<p>u602doc-</p>
+<p>jadog02</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>10.116.102.55/24</p>
+</blockquote></td><td></td><td></td><td rowspan="6"><blockquote>
+<p>Резервный узел</p>
+<p>(Slave)</p>
+</blockquote></td></tr><tr><td colspan="3" rowspan="5"></td><td><blockquote>
+<p>jadog</p>
+</blockquote></td><td><blockquote>
+<p>5432</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>node_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9100</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>postgres_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9187</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>sql_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9399</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>5</p>
+</blockquote></td><td><blockquote>
+<p>u602doc-</p>
+<p>jadog03</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>10.116.102.56/24</p>
+</blockquote></td><td></td><td></td><td rowspan="6"><blockquote>
+<p>Узел-арбитр (Referee)</p>
+</blockquote></td></tr><tr><td colspan="3" rowspan="5"></td><td><blockquote>
+<p>jadog</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>node_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9100</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>postgres_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9187</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>sql_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9399</p>
+</blockquote></td></tr><tr><td style="text-align:center"><blockquote>
+<p>6</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>u602doc-ldap01</p>
+</blockquote></td><td style="text-align:center"><blockquote>
+<p>10.116.102.47/24</p>
+</blockquote></td><td></td><td></td><td rowspan="5"><blockquote>
+<p>Целевая СУБД</p>
+</blockquote></td></tr><tr><td colspan="3" rowspan="4"></td><td><blockquote>
+<p>pg_stat_statements</p>
+</blockquote></td><td></td></tr><tr><td><blockquote>
+<p>node_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9100</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>postgres_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9187</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>sql_exporter</p>
+</blockquote></td><td><blockquote>
+<p>9399</p>
+</blockquote></td></tr></tbody></table>
+<blockquote>
+<p>Схема стенда представлена на рисунке <a href="#_bookmark50">11.1</a>.</p>
+</blockquote>
+<p><strong>Сервер мониторинга Jatoba Data</strong></p>
+<p><strong>Safe</strong></p>
+<p><strong>jaDog</strong></p>
+<p>pg_stat_statements</p>
+<p>jadog node_exporter</p>
+<p>JDS</p>
+<p>postgres_exporter</p>
+<p>IP 10.116.102.41</p>
+<p><strong>Slave</strong></p>
+<p>IP -10.116.102.55</p>
+<p>sql_exporter</p>
+<p><strong>Сервер</strong></p>
+<p><strong>Prometheus</strong></p>
+<p><strong>jaDog</strong></p>
+<p>pg_stat_statements</p>
+<p>pg_stat_statements</p>
+<p>jadog</p>
+<p>node_exporter</p>
+<p>Prometheus</p>
+<p>node_exporter</p>
+<p>postgres_exporter</p>
+<p>postgres_exporter</p>
+<p>sql_exporter</p>
+<p>Alert Manager</p>
+<p>IP 10.116.102.45</p>
+<p><strong>Master</strong></p>
+<p>IP -10.116.102.54</p>
+<p>sql_exporter</p>
+<p><strong>Целевая СУБД</strong></p>
+<p><strong>jaDog</strong></p>
+<p>pg_stat_statements</p>
+<p>pg_stat_statements</p>
+<p>jadog</p>
+<p>node_exporter</p>
+<p>node_exporter</p>
+<p>postgres_exporter</p>
+<p>postgres_exporter</p>
+<p>sql_exporter</p>
+<p>IP 10.116.102.47</p>
+<blockquote>
+<p><strong>Referee</strong></p>
+</blockquote>
+<p>IP -10.116.102.56</p>
+<p>sql_exporter</p>
+<blockquote>
+<p><span id="_bookmark50" class="anchor"></span>Рисунок 11.1 – Схема стенда мониторинга с кластером «jaDog»</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="конфигурирование-системы-prometheus-для-компонента-jadog">Конфигурирование системы «Prometheus» для компонента «jaDog»<a href="#конфигурирование-системы-prometheus-для-компонента-jadog" class="hash-link" aria-label="Direct link to Конфигурирование системы «Prometheus» для компонента «jaDog»" title="Direct link to Конфигурирование системы «Prometheus» для компонента «jaDog»">​</a></h2>
+<blockquote>
+<p>На сервере «Prometheus» (u602doc-pgp01, IP-10.116.102.45/24) в конфигурационный файл /usr/jatoba-&lt;ver&gt;/monitoring/default/prometheus.yml добавляется раздел с целями по количеству узлов отказоустойчивого кластера.</p>
+<p>###############################################################</p>
+<p># экспортер данных для jaDog</p>
+<p>- job_name: node1 scheme: https tls_config:</p>
+<p>#ca_file: /opt/prometheus/rootca.crt cert_file: /opt/prometheus/rest_user.crt key_file: /opt/prometheus/rest_user.key insecure_skip_verify: true</p>
+<p>static_configs:</p>
+<p>- targets: [&#x27;10.116.102.54:54443&#x27;]</p>
+<p>labels:</p>
+<p>cluster_jadog: &#x27;jadog&#x27; node: &#x27;10.116.102.54:5432&#x27;</p>
+<p>- job_name: node2 scheme: https tls_config:</p>
+<p>#ca_file: /opt/prometheus/rootca.crt cert_file: /opt/prometheus/rest_user.crt key_file: /opt/prometheus/rest_user.key insecure_skip_verify: true</p>
+<p>static_configs:</p>
+<p>- targets: [&#x27;10.116.102.55:54443&#x27;]</p>
+<p>labels:</p>
+<p>cluster_jadog: &#x27;jadog&#x27; node: &#x27;10.116.102.55:5432&#x27;</p>
+<p>- job_name: node_referee scheme: https tls_config:</p>
+<p>#ca_file: /opt/prometheus/rootca.crt cert_file: /opt/prometheus/rest_user.crt key_file: /opt/prometheus/rest_user.key insecure_skip_verify: true</p>
+<p>static_configs:</p>
+<p>- targets: [&#x27;10.116.102.56:54443&#x27;]</p>
+<p>labels:</p>
+<p>cluster_jadog: &#x27;jadog&#x27; node: &#x27;10.116.102.56&#x27;</p>
+<p>###############################################################</p>
+</blockquote>
+<p>В строке «targets» указать адрес и сетевой порт REST API узла «jaDog».</p>
+<blockquote>
+<p><img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image1.png" style="width:0.25in;height:0.25in" class="img_ev3q">Для подключения к интерфейсу REST API компонента «jaDog» применяются сертификаты SSL. При этом к каталогу /var/lib/jatoba/ssl_jadog/, в котором располагаются сертификаты SSL пользователя компонента «jaDog», должен быть обеспечен доступ для системного пользователя prometheus. Для этого необходимо его добавить в системную группу postgres.</p>
+<p>Другим вариантом является копирование сертификатов SSL пользователя компонента «jaDog», например, в каталог /opt/prometheus/.</p>
+<p>В строке «cluster_jadog» задать произвольное название кластера (одинаковое для всех узлов).</p>
+<p>В строке «node» задать адрес СУБД управляемой экземпляром «jaDog» (для узла-арбитра сетевой порт не указывается).</p>
+<p>После внесенных изменений конфигурационный файл /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/prometheus.yml требуется сохранить, обновить конфигурацию systemd и перезапустить службу Prometheus:</p>
+<p># systemctl daemon-reload</p>
+<p># systemctl restart jatoba18_prometheus.service</p>
+<p>На данном шаге конфигурирование системы «Prometheus» для мониторинга кластера на основе компонента «jaDog» закончено.</p>
+<p>Добавление виджетов описано в документе «Руководство по настройке. Часть 20.</p>
+<p>Пользовательский веб-интерфейс для администраторов. Компонент «Jatoba data safe».</p>
+</blockquote>
+<h1>ОБНОВЛЕНИЕ КОМПОНЕНТОВ ЭКСПОРТЕРОВ</h1>
+<blockquote>
+<p>Предварительные условия: необходимо в каталоге /localrepo заменить файлы на ту версию дистрибутива, с которой в дальнейшем будет выполняться обновление компонентов. Если это не сделано, необходимо обратиться в раздел «1.2 Обновление СУБД с промежуточных версий» документа «Руководство по обновлению СУБД «Jatoba» 643.72410666.00067-08 93 01.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="обновление-компонента-sql_exporter">Обновление компонента «sql_exporter»<a href="#обновление-компонента-sql_exporter" class="hash-link" aria-label="Direct link to Обновление компонента «sql_exporter»" title="Direct link to Обновление компонента «sql_exporter»">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="установка-новой-версии-компонента-sql_exporter">Установка новой версии компонента «sql_exporter»<a href="#установка-новой-версии-компонента-sql_exporter" class="hash-link" aria-label="Direct link to Установка новой версии компонента «sql_exporter»" title="Direct link to Установка новой версии компонента «sql_exporter»">​</a></h2>
+<blockquote>
+<p>Обновление версии компонента «sql_exporter» требует сохранения конфигурационных файлов и выполняется на узлах в следующем порядке:</p>
+</blockquote>
+<ol>
+<li>
+<p>Скопировать новый пакет компонента «sql_exporter» в отдельную директорию. Например, в директорию /home/admin/Downloads.</p>
+</li>
+<li>
+<p>Загрузить и установить новый пакет jatoba&lt;ver&gt;_sql_exporter от имени и с правами привилегированного пользователя ОС:</p>
+<ul>
+<li>Находясь в каталоге с пакетом:</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p># apt install ./jatoba&lt;ver&gt;-sql-exporter_* –y</p>
+</blockquote>
+<ul>
+<li>Из корневого каталога командой:</li>
+</ul>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image836.jpeg" style="width:7.04403in;height:1.2075in" class="img_ev3q">
+<blockquote>
+<p># apt install /home/admin/Downloads/jatoba&lt;ver&gt;-sql-exporter_* –y</p>
+<p>Рисунок 12.1 – Установка нового пакета</p>
+<p>При установке новой версии конфигурационные файлы предыдущей версии будут сохранены в каталоге /usr/jatoba-&lt;ver&gt;/monitoring/default с расширением backup.</p>
+<p>После установки новой версии jatoba&lt;ver&gt;_sql_exporter в каталоге /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default будет создан дополнительный файл конфигурации citus.collector.yml, а также обновлен postgres.collector.yml.</p>
+</blockquote>
+<ol start="3">
+<li>Восстановить резервные копии конфигураций в каталог /usr/jatoba-</li>
+</ol>
+<blockquote>
+<p>&lt;ver&gt;/monitoring/default.</p>
+<p>На данном шаге обновление компонента sql_exporter завершено.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="настройка-мониторинга-кластера-ja_hipe_cluster-после-обновления">Настройка мониторинга кластера «ja_Hipe_Cluster» после обновления<a href="#настройка-мониторинга-кластера-ja_hipe_cluster-после-обновления" class="hash-link" aria-label="Direct link to Настройка мониторинга кластера «ja_Hipe_Cluster» после обновления" title="Direct link to Настройка мониторинга кластера «ja_Hipe_Cluster» после обновления">​</a></h2>
+<blockquote>
+<p>Следующие шаги выполняются только на узле-координаторе кластера</p>
+<p>«ja_Hipe_Cluster».</p>
+</blockquote>
+<ol>
+<li>Начиная с версии jatoba6-sql-exporter_0.14.3-440 для поддержки мониторинга ja_Hipe Citus на узле-координаторе необходимо дополнительно создать второй экземпляр службы - jatoba&lt;ver&gt;_sql_exporter.сitus.service. Для этого потребуется скопировать файл сервиса командой в консоли ОС:</li>
+</ol>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image837.png" style="width:7.00222in;height:1.17562in" class="img_ev3q">
+<blockquote>
+<p># cp /lib/systemd/system/jatoba&lt;ver&gt;_sql_exporter.service</p>
+<p>/lib/systemd/system/jatoba&lt;ver&gt;_sql_exporter.citus.service</p>
+<p>Рисунок 12.2 – Создание второго экземпляра службы</p>
+</blockquote>
+<ol start="2">
+<li>Настроить второй экземпляр jatoba&lt;ver&gt;_sql_exporter.citus.service. Для этого необходимо открыть файл</li>
+</ol>
+<blockquote>
+<p># nano</p>
+<p>/lib/systemd/system/jatoba&lt;ver&gt;_sql_exporter.citus.service</p>
+<p>И внести следующие изменения:</p>
+<p>[Service] EnvironmentFile=/usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/sql_exporter.citus</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image838.jpeg" style="width:7.0168in;height:3.51667in" class="img_ev3q">
+<p>Рисунок 12.3 – Изменение настроек второго экземпляра</p>
+</blockquote>
+<ol start="3">
+<li>Скопировать файл командой в консоли ОС:</li>
+</ol>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image839.png" style="width:7.07019in;height:0.92812in" class="img_ev3q">
+<blockquote>
+<p># cp /usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter.yml</p>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter.citus.yml</p>
+<p>Рисунок 12.4 – Копирование файла настроек sql_exporter.citus.yml</p>
+</blockquote>
+<ol start="4">
+<li>Открыть файл sql_exporter.citus.yml</li>
+</ol>
+<blockquote>
+<p># nano /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/sql_exporter.citus.yml</p>
+<p>И внести следующие изменения:</p>
+<p>data_source_name: &#x27;postgresql://sql_exporter:[password]@10.116.102.61:5432/[citus</p>
+<p>_db]?sslmode=disable&#x27; collectors: [citus]</p>
+<p>Где password – пароль пользователя СУБД, citus_db – название БД, в которой установлено расширение «citus».</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image840.jpeg" style="width:7.02625in;height:2.89177in" class="img_ev3q">
+<p>Рисунок 12.5 – Изменение настроек второго экземпляра</p>
+</blockquote>
+<ol start="5">
+<li>Скопировать файл командой в консоли ОС:</li>
+</ol>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image841.png" style="width:6.97822in;height:1.07802in" class="img_ev3q">
+<blockquote>
+<p># cp /usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter</p>
+<p>/usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter.citus</p>
+<p>Рисунок 12.6 – Копирование файла настроек sql_exporter.yml</p>
+</blockquote>
+<ol start="6">
+<li>Открыть файл sql_exporter.citus:</li>
+</ol>
+<blockquote>
+<p># nano /usr/jatoba-&lt;ver&gt;/monitoring/default/sql_exporter.citus</p>
+<p>И внести следующие изменения:</p>
+<p>CONF_FILE=/usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/sql_exporter.citus.yml LISTEN_ADDRESS=0.0.0.0:9366</p>
+<p>Здесь для доступа к метрикам компонента «ja_Hipe_Cluster» будет использован сетевой порт 9366.</p>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image842.jpeg" style="width:7.08335in;height:1.83333in" class="img_ev3q">
+<p>Рисунок 12.7 – Изменение настроек второго экземпляра</p>
+</blockquote>
+<ol start="7">
+<li>Обновить конфигурацию systemd:</li>
+</ol>
+<blockquote>
+<p># systemctl daemon-reload</p>
+</blockquote>
+<ol start="8">
+<li>Запустить второй экземпляр службы jatoba&lt;ver&gt;_sql_exporter.citus, включить ее в автозапуск и проверить статус работы:</li>
+</ol>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image843.png" style="width:7.03652in;height:1.87396in" class="img_ev3q">
+<blockquote>
+<p># systemctl start jatoba&lt;ver&gt;_sql_exporter.citus # systemctl enable jatoba&lt;ver&gt;_sql_exporter.citus # systemctl status jatoba&lt;ver&gt;_sql_exporter.citus</p>
+<p>Рисунок 12.8 – Проверка статуса службы второго экземпляра</p>
+</blockquote>
+<ol start="9">
+<li>Запустить и проверить статус работы первого экземпляра:</li>
+</ol>
+<blockquote>
+<p># systemctl start jatoba&lt;ver&gt;_sql_exporter # systemctl status jatoba&lt;ver&gt;_sql_exporter</p>
+</blockquote>
+<ol start="10">
+<li>Открыть в браузере веб-интерфейс sql_exporter и проверить наличие метрик компонента Citus для второго экземпляра службы:</li>
+</ol>
+<blockquote>
+<p><a href="http://localhost:9366/metrics" target="_blank" rel="noopener noreferrer">http://localhost:9366/metrics</a></p>
+<p>Рисунок 12.9 – Проверка метрик компонента sql_exporter</p>
+</blockquote>
+<ol start="11">
+<li>Переключиться на узел с запущенной системой «Prometheus» и открыть на редактирование файл:</li>
+</ol>
+<blockquote>
+<p># nano /usr/jatoba-&lt;ver&gt;/monitoring/default/prometheus.yml</p>
+<p>В секции «# экспортеры координатора (Citus)» внести (добавить) следующие изменения:</p>
+<p># экспортеры координатора (Citus)</p>
+<p>- job_name: &quot;coordinator&quot; static_configs:</p>
+<p>- targets: [..., <strong>&#x27;IP-address:9366&#x27;</strong>]</p>
+<p>Где IP-address – сетевой адрес узла-координатора.</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image845.jpeg" style="width:6.91186in;height:2.49219in" class="img_ev3q">
+<blockquote>
+<p>Рисунок 12.10 – Параметры в конфигурационном файле prometheus.yml</p>
+</blockquote>
+<ol start="12">
+<li>Перезагрузить службу «Prometheus»</li>
+</ol>
+<blockquote>
+<p># systemctl stop jatoba&lt;ver&gt;_prometheus</p>
+<p># systemctl start jatoba&lt;ver&gt;_prometheus</p>
+</blockquote>
+<ol start="13">
+<li>Открыть веб-интерфейс системы «Prometheus» по адресу http://&lt;IP-адрес&gt;:9090/targets и проверить наличие соединения с компонентом sql_exporter.</li>
+</ol>
+<blockquote>
+<p>Рисунок 12.11 – Страница «Targets» в системе «Prometheus»</p>
+<p>Открыть веб-интерфейс администратора Jatoba Data Safe (JDS) и проверить наличие метрик кластера «ja_Hipe_Cluster».</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="обновление-компонентов-node_exporter-postgres_exporter-и-alertmanager">Обновление компонентов node_exporter, postgres_exporter и alertmanager<a href="#обновление-компонентов-node_exporter-postgres_exporter-и-alertmanager" class="hash-link" aria-label="Direct link to Обновление компонентов node_exporter, postgres_exporter и alertmanager" title="Direct link to Обновление компонентов node_exporter, postgres_exporter и alertmanager">​</a></h2>
+<blockquote>
+<p>Обновление версии компонентов мониторинга СУБД node_exporter, postgres_exporter и alertmanager выполняется на узлах в следующем порядке:</p>
+</blockquote>
+<ol>
+<li>Остановка и отключение служб обновляемых компонентов мониторинга СУБД:</li>
+</ol>
+<blockquote>
+<p># systemctl stop jatoba&lt;ver&gt;_node_exporter jatoba&lt;ver&gt;_postgres_exporter jatoba&lt;ver&gt;_alertmanager # systemctl disable jatoba&lt;ver&gt;_node_exporter jatoba&lt;ver&gt;_postgres_exporter jatoba&lt;ver&gt;_alertmanager</p>
+</blockquote>
+<ol start="2">
+<li>Обновление версии компонентов мониторинга СУБД из локального репозитория:</li>
+</ol>
+<blockquote>
+<p># apt-get install jatoba&lt;ver&gt;-node-exporter jatoba&lt;ver&gt;-postgres-exporter jatoba&lt;ver&gt;-alertmanager</p>
+</blockquote>
+<ol start="3">
+<li>После обновления открыть файлы конфигурации компонентов мониторинга СУБД и ознакомиться с новыми параметрами:</li>
+</ol>
+<blockquote>
+<p># nano /usr/jatoba-&lt;ver&gt;/monitoring/default/postgres_exporter # nano /usr/jatoba-&lt;ver&gt;/monitoring/default/alertmanager.yml</p>
+</blockquote>
+<ol start="4">
+<li>Отредактировать пользовательские файлы конфигурации компонентов мониторинга СУБД (с расширением .backup), созданные на этапе обновления с внесением в них параметров из новой версии:</li>
+</ol>
+<blockquote>
+<p># nano /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/postgres_exporter.backup # nano /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/alertmanager.yml.backup</p>
+<p>и переименовать обратно:</p>
+<p># cp /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/postgres_exporter.backup /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/postgres_exporter # cp /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/alertmanager.yml.backup /usr/jatoba-</p>
+<p>&lt;ver&gt;/monitoring/default/alertmanager.yml</p>
+</blockquote>
+<ol start="5">
+<li>Активация, запуск и проверка статуса компонентов мониторинга СУБД после обновления:</li>
+</ol>
+<blockquote>
+<p># systemctl enable jatoba&lt;ver&gt;_node_exporter jatoba&lt;ver&gt;_postgres_exporter jatoba&lt;ver&gt;_alertmanager # systemctl start jatoba&lt;ver&gt;_node_exporter jatoba&lt;ver&gt;_postgres_exporter jatoba&lt;ver&gt;_alertmanager # systemctl status jatoba&lt;ver&gt;_node_exporter</p>
+<p># systemctl status jatoba&lt;ver&gt;_postgres_exporter # systemctl status jatoba&lt;ver&gt;_alertmanager</p>
+</blockquote>
+<ol start="6">
+<li>
+<p>Запустить веб-интерфейс и убедиться, что служба компонента работает:</p>
+<ul>
+<li>
+<p><a href="http://localhost:9100/" target="_blank" rel="noopener noreferrer">http://localhost:9100/</a> - node_exporter;</p>
+</li>
+<li>
+<p><a href="http://localhost:9187/" target="_blank" rel="noopener noreferrer">http://localhost:9187/</a> - postgres_exporter;</p>
+</li>
+<li>
+<p><a href="http://localhost:9093/" target="_blank" rel="noopener noreferrer">http://localhost:9093/</a> - alertmanager.</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>На данном шаге обновление компонентов мониторинга СУБД завершено.</p>
+</blockquote>
+<h1>ОБНОВЛЕНИЕ СИСТЕМЫ «PROMETEUS»</h1>
+<blockquote>
+<p>Обновление версии системы «Prometheus» требует сохранения конфигурационных файлов системы и выполняется в следующем порядке:</p>
+</blockquote>
+<ol>
+<li>Сохранить резервную копию каталога конфигураций /usr/jatoba-</li>
+</ol>
+<blockquote>
+<p>&lt;ver&gt;/monitoring/default</p>
+</blockquote>
+<ol start="2">
+<li>Скопировать новый пакет в отдельную директорию. Например, в директорию</li>
+</ol>
+<blockquote>
+<p>/home/admin/Downloads.</p>
+</blockquote>
+<ol start="3">
+<li>Удалить существующий пакет</li>
+</ol>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image847.png" style="width:7.07354in;height:1.36083in" class="img_ev3q">
+<blockquote>
+<p># apt remove jatoba&lt;ver&gt;-prometheus –y</p>
+<p>ОС:</p>
+<p>Рисунок 13.1 – Удаление существующего пакета</p>
+</blockquote>
+<ol start="4">
+<li>Установить новый пакет от имени и с правами привилегированного пользователя</li>
+</ol>
+<blockquote>
+<p>– Находясь в каталоге с пакетом:</p>
+<p># apt install ./jatoba&lt;ver&gt;-prometheus_* –y</p>
+<p>– Из корневого каталога командой:</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/com18.3.1/monitoring/media/image848.png" style="width:7.17165in;height:1.33687in" class="img_ev3q">
+<blockquote>
+<p># apt install /home/admin/Downloads/jatoba&lt;ver&gt;-prometheus* –y</p>
+<p>Рисунок 13.2 – Установка нового пакета</p>
+</blockquote>
+<ol start="5">
+<li>Восстановить резервные копии конфигураций в каталог /usr/jatoba-</li>
+</ol>
+<blockquote>
+<p>&lt;ver&gt;/monitoring/default</p>
+</blockquote>
+<ol start="6">
+<li>Проверить владельца и права на каталог приложения командой:</li>
+</ol>
+<blockquote>
+<p>ls -la /opt/prometheus/</p>
+</blockquote>
+<ol start="7">
+<li>В случае отклонения настроек назначить корректные права командой:</li>
+</ol>
+<blockquote>
+<p>chown prometheus:prometheus -R /opt/prometheus/</p>
+</blockquote>
+<ol start="8">
+<li>Обновить конфигурацию systemd:</li>
+</ol>
+<blockquote>
+<p># systemctl daemon-reload</p>
+</blockquote>
+<ol start="9">
+<li>Запустить службу системы, включить ее в автозапуск и проверить статус работы:</li>
+</ol>
+<blockquote>
+<p># systemctl start jatoba&lt;ver&gt;_prometheus # systemctl enable jatoba&lt;ver&gt;_prometheus # systemctl status jatoba&lt;ver&gt;_prometheus</p>
+<p>На данном шаге обновление системы «Prometheus» закончено.</p>
+<p>В момент обновления компонента данные с экспортёров будут потеряны, т.к. экспортёры не хранят данные, а передают их постоянно.</p>
+<p>Рисунок 13.3 – Промежуток в данных собранных с экспортёров</p>
+</blockquote>
+<h1>ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</h1>
+<blockquote>
+<p>@ - ГОСТ 34.302.2-91 (ИСО 8859/2-87) «Наборы 8 битных однобайтовых кодированных графических символов. латинский алфавит № 2» определяет символ как,</p>
+<p>«коммерческое эт» (англ. «commercial ат»).</p>
+<p>&amp; - ГОСТ 34.302.2-91 (ИСО 8859/2-87) «Наборы 8 битных однобайтовых кодированных графических символов. латинский алфавит № 2» определяет символ как,</p>
+<p>«коммерческое и» (амперсанд) (англ. ampersand)</p>
+<p>= - ГОСТ 34.302.2-91 (ИСО 8859/2-87) «Наборы 8 битных однобайтовых кодированных графических символов. латинский алфавит № 2» определяет символ как,</p>
+<p>«равно» (англ. equals SIGH).</p>
+<p>? - ГОСТ 34.302.2-91 (ИСО 8859/2-87) «Наборы 8 битных однобайтовых кодированных графических символов. латинский алфавит № 2» определяет символ как,</p>
+<p>«вопросительный знак» (англ. question mark).</p>
+<p>: - ГОСТ 34.302.2-91 (ИСО 8859/2-87) «Наборы 8 битных однобайтовых кодированных графических символов. латинский алфавит № 2» определяет символ как,</p>
+<p>«двоеточие» (англ. colon).</p>
+</blockquote>
+<h1>ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</h1>
+<table><colgroup>
+<col style="width:16%">
+<col style="width:12%">
+<col style="width:71%">
+</colgroup><thead><tr><th><blockquote>
+<p>SQL</p>
+</blockquote></th><th><blockquote>
+<p>–</p>
+</blockquote></th><th><blockquote>
+<p>Structured Query Language</p>
+</blockquote></th></tr></thead><tbody><tr><td><blockquote>
+<p>БД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>База данных</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>ОС</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Операционная система</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>СУБД</p>
+</blockquote></td><td><blockquote>
+<p>–</p>
+</blockquote></td><td><blockquote>
+<p>Система управления базами данных</p>
+</blockquote></td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center"><blockquote>
+<p>Лист регистрации изменений</p>
+</blockquote></th></tr></thead><tbody><tr><td rowspan="2"><blockquote>
+<p>Изм.</p>
+</blockquote></td><td colspan="4"><blockquote>
+<p>Номера листов (страниц)</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Всего листов (страниц) в документе</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Номер документа</p>
+</blockquote></td><td rowspan="2" style="text-align:center"><blockquote>
+<p>Входящий номер сопроводите льного документа и</p>
+<p>дата</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Подпись</p>
+</blockquote></td><td rowspan="2"><blockquote>
+<p>Дата</p>
+</blockquote></td></tr><tr><td><blockquote>
+<p>измене нных</p>
+</blockquote></td><td><blockquote>
+<p>замене нных</p>
+</blockquote></td><td><blockquote>
+<p>новых</p>
+</blockquote></td><td><blockquote>
+<p>аннулир ованных</p>
+</blockquote></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td style="text-align:center"></td><td></td><td style="text-align:center"></td><td></td><td></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/Коммерческая версия 18.3.1/map"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">map</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/Коммерческая версия 18.3.1/oracle"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">oracle</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#ограничения-по-эксплуатации" class="table-of-contents__link toc-highlight">Ограничения по эксплуатации</a></li><li><a href="#установка-субд" class="table-of-contents__link toc-highlight">Установка СУБД</a></li><li><a href="#настройка-конфигурационных-файлов" class="table-of-contents__link toc-highlight">Настройка конфигурационных файлов</a></li><li><a href="#установка-расширения-pg_stat_statements" class="table-of-contents__link toc-highlight">Установка расширения «pg_stat_statements»</a></li><li><a href="#установка-утилиты-и-службы-jatoba_postgres_exporter" class="table-of-contents__link toc-highlight">Установка утилиты и службы «jatoba*_postgres_exporter»</a></li><li><a href="#создание-пользователя-субд-postgres_exporter" class="table-of-contents__link toc-highlight">Создание пользователя СУБД «postgres_exporter»</a></li><li><a href="#настройка-переменных-окружения" class="table-of-contents__link toc-highlight">Настройка переменных окружения</a></li><li><a href="#запуск-утилиты-postgres_exporter" class="table-of-contents__link toc-highlight">Запуск утилиты «postgres_exporter»</a></li><li><a href="#установка-утилиты-и-службы-sql_exporter" class="table-of-contents__link toc-highlight">Установка утилиты и службы «sql_exporter»</a></li><li><a href="#настройка-переменных-окружения-1" class="table-of-contents__link toc-highlight">Настройка переменных окружения</a></li><li><a href="#создание-пользователя-субд-sql_exporter" class="table-of-contents__link toc-highlight">Создание пользователя СУБД «sql_exporter»</a></li><li><a href="#настройка-параметров-экспортера-и-подключения-к-бд-в-файле" class="table-of-contents__link toc-highlight">Настройка параметров экспортера и подключения к БД в файле</a></li><li><a href="#запуск-утилиты-jatoba_sql_exporter" class="table-of-contents__link toc-highlight">Запуск утилиты «jatoba*_sql_exporter»</a></li><li><a href="#установка-системы-prometheus" class="table-of-contents__link toc-highlight">Установка системы «Prometheus»</a></li><li><a href="#конфигурация-системы-prometheus" class="table-of-contents__link toc-highlight">Конфигурация системы «Prometheus»</a></li><li><a href="#примеры-блока-postgres-exporter" class="table-of-contents__link toc-highlight">Примеры блока «postgres-exporter»</a></li><li><a href="#примеры-блока-sql-exporter" class="table-of-contents__link toc-highlight">Примеры блока «sql-exporter»</a></li><li><a href="#примеры-блока-node-exporter" class="table-of-contents__link toc-highlight">Примеры блока «node-exporter»</a></li><li><a href="#запуск-системы-prometheus" class="table-of-contents__link toc-highlight">Запуск системы «Prometheus»</a></li><li><a href="#установка-утилиты-и-службы-alertmanager" class="table-of-contents__link toc-highlight">Установка утилиты и службы «alertmanager»</a></li><li><a href="#настройка-параметров-утилиты" class="table-of-contents__link toc-highlight">Настройка параметров утилиты</a></li><li><a href="#smtp" class="table-of-contents__link toc-highlight">SMTP</a></li><li><a href="#telegram" class="table-of-contents__link toc-highlight">Telegram</a></li><li><a href="#создание-в-telegram-бота" class="table-of-contents__link toc-highlight">Создание в Telegram бота</a></li><li><a href="#zulip" class="table-of-contents__link toc-highlight">Zulip</a></li><li><a href="#запуск-утилиты-alertmanager" class="table-of-contents__link toc-highlight">Запуск утилиты «alertmanager»</a></li><li><a href="#настройка-ssh-соединения" class="table-of-contents__link toc-highlight">Настройка SSH-соединения</a></li><li><a href="#конфигурирование-jds-вкладка-источник-данных" class="table-of-contents__link toc-highlight">Конфигурирование JDS Вкладка «Источник данных»</a></li><li><a href="#раздел-мониторинг" class="table-of-contents__link toc-highlight">Раздел «Мониторинг»</a></li><li><a href="#настройка-связки-системы-prometheus-и-утилиты-alertmanager" class="table-of-contents__link toc-highlight">Настройка связки системы «Prometheus» и утилиты «Alertmanager»</a></li><li><a href="#параметры-стенда" class="table-of-contents__link toc-highlight">Параметры стенда</a></li><li><a href="#конфигурирование-системы-prometheus-для-компонента" class="table-of-contents__link toc-highlight">Конфигурирование системы «Prometheus» для компонента</a></li><li><a href="#параметры-стенда-1" class="table-of-contents__link toc-highlight">Параметры стенда</a></li><li><a href="#конфигурирование-системы-prometheus-для-компонента-jadog" class="table-of-contents__link toc-highlight">Конфигурирование системы «Prometheus» для компонента «jaDog»</a></li><li><a href="#обновление-компонента-sql_exporter" class="table-of-contents__link toc-highlight">Обновление компонента «sql_exporter»</a></li><li><a href="#установка-новой-версии-компонента-sql_exporter" class="table-of-contents__link toc-highlight">Установка новой версии компонента «sql_exporter»</a></li><li><a href="#настройка-мониторинга-кластера-ja_hipe_cluster-после-обновления" class="table-of-contents__link toc-highlight">Настройка мониторинга кластера «ja_Hipe_Cluster» после обновления</a></li><li><a href="#обновление-компонентов-node_exporter-postgres_exporter-и-alertmanager" class="table-of-contents__link toc-highlight">Обновление компонентов node_exporter, postgres_exporter и alertmanager</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
