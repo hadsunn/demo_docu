@@ -1,301 +1,32 @@
-<table>
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 58%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>Подп. и дата</p>
-</blockquote></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>Инв. № дубл.</p>
-</blockquote></td>
-<td></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>Взам. инв. №</p>
-</blockquote></td>
-<td></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>Подп. и дата</p>
-</blockquote></td>
-<td></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>Инв. № подл.</p>
-</blockquote></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+---
+title: Руководство по установке
+sidebar_position: 20
+---
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>УТВЕРЖДЕН 643.72410666.00067-08 97 01-ЛУ</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
-<p><strong>Руководство по установке</strong></p>
-</blockquote></td>
-</tr>
-<tr>
-<td style="text-align: center;"><blockquote>
-<p><strong>643.72410666.00067-08 97 01</strong></p>
-</blockquote></td>
-</tr>
-<tr>
-<td style="text-align: center;"><blockquote>
-<p>Листов 216</p>
-</blockquote></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>2026</p>
-</blockquote></td>
-</tr>
-<tr>
-<td style="text-align: right;">Литера О<sub>1</sub></td>
-</tr>
-</tbody>
-</table>
+**Аннотация**
 
-# <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25366in;height:0.25208in" />АННОТАЦИЯ
+Данный документ представляет собой руководство по установке защищенной системы управления базами данных «Jatoba» (далее по тексту – СУБД, СУБД «Jatoba»).
 
-> Данный документ представляет собой руководство по установке защищенной системы управления базами данных «Jatoba» (далее по тексту – СУБД, СУБД «Jatoba»).
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24958in" />Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра
->
-> 4.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.
->
-> Например, СУБД «Jatoba» версии 5.x по умолчанию устанавливается в директорию:
+:::info Дополнительная информация
+Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра
+4.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.
 
-- ОС Windows – «C:\Program Files\GIS\Jatoba\5\bin»;
+Например, СУБД «Jatoba» версии 5.x по умолчанию устанавливается в директорию:
+–	ОС Windows – «C:\Program Files\GIS\Jatoba\5\bin»;
+–	ОС Linux – «/usr/jatoba-5/bin».
+:::
 
-- ОС Linux – «/usr/jatoba-5/bin».
+:::warning Важная информация
+Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!
+:::
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25305in;height:0.25208in" /><img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25208in;height:0.25208in" />Степени важности примечаний, применяемые в документе:
+## ОБЩИЕ СВЕДЕНИЯ О СУБД «JATOBA»
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p><strong>Важная информация</strong> – указания, требующие особого внимания</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p><strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p>
-</blockquote></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+### Назначение СУБД «Jatoba»
 
-# СОДЕРЖАНИЕ
+СУБД «Jatoba» является программным средством, предназначенным для создания и управления реляционными базами данных на базе ЭВМ под управлением операционных систем (ОС), представленных в таблице [1.1](#_bookmark2).
 
-# 
-
-1.  [Общие сведения о СУБД «Jatoba» 6](#общие-сведения-о-субд-jatoba)
-
-    1.  [Назначение СУБД «Jatoba» 6](#назначение-субд-jatoba)
-
-    2.  [Функции СУБД «Jatoba» 6](#функции-субд-jatoba)
-
-    3.  [Требования к среде функционирования СУБД «Jatoba» 8](#требования-к-среде-функционирования-субд-jatoba)
-
-    <!-- -->
-
-    1.  [Требования по совместимости с антивирусным программным обеспечением 10](#_bookmark6)
-
-2.  [Состав СУБД «Jatoba» 12](#состав-субд-jatoba)
-
-3.  [Установка СУБД «Jatoba» на ОС семейства GNU/Linux 16](#установка-субд-jatoba-на-ос-семейства-gnulinux)
-
-    1.  [Инсталлятор СУБД «Jatoba» для ОС семейства GNU/Linux 18](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux)
-
-        1.  [Подготовительные действия для запуска инсталлятора 19](#подготовительные-действия-для-запуска-инсталлятора)
-
-        2.  [Установка СУБД инсталлятором 20](#установка-субд-инсталлятором)
-
-        3.  [Установка СУБД с поддержкой платформы 1C 23](#установка-субд-с-поддержкой-платформы-1c)
-
-    2.  [Установка СУБД «Jatoba» с генератором конфигурационного файла ja_tune 24](#_bookmark16)
-
-        1.  [Запуск утилиты из консоли ОС 25](#запуск-утилиты-из-консоли-ос)
-
-        2.  [Запуск утилиты при инициализации каталога данных СУБД (jatoba-setup) 30](#setup)
-
-    3.  [Пакеты установки СУБД «Jatoba» 33](#пакеты-установки-субд-jatoba)
-
-        1.  [Базовая установка 33](#базовая-установка)
-
-        2.  [Установка клиентской части СУБД «Jatoba» на ОС семейства GNU/Linux 34](#установка-клиентской-части-субд-jatoba-на-ос-семейства-gnulinux)
-
-        3.  [Установка пакетов, расширяющих возможности СУБД 35](#установка-пакетов-расширяющих-возможности-субд)
-
-    4.  [Порядок установки СУБД «Jatoba» на ОС GNU/Linux, основанной на Debian из локального](#порядок-установки-субд-jatoba-на-ос-gnulinux-основанной-на-debian-из-локального-репозитория) [репозитория 65](#порядок-установки-субд-jatoba-на-ос-gnulinux-основанной-на-debian-из-локального-репозитория)
-
-    5.  [Порядок установки СУБД «Jatoba» на ОС семейства GNU/Linux, основанной на RPM из локального](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) [репозитория 69](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория)
-
-    6.  [Добавление в автозапуск службы Jatoba в ОС GNU/Linux 74](#добавление-в-автозапуск-службы-jatoba-в-ос-gnulinux)
-
-    7.  [Порядок установки СУБД «Jatoba» из DEB/RPM-файлов 75](#порядок-установки-субд-jatoba-из-debrpm-файлов)
-
-        1.  [Установка СУБД «Jatoba» из DEB-файлов 75](#установка-субд-jatoba-из-deb-файлов)
-
-        2.  [Установка СУБД «Jatoba» из RPM-файлов 78](#установка-субд-jatoba-из-rpm-файлов)
-
-4.  [Установка СУБД «Jatoba» на ОС семейства Microsoft Windows 80](#установка-субд-jatoba-на-ос-семейства-microsoft-windows)
-
-    1.  [Порядок установки СУБД «Jatoba» на ОС Windows Server 2016 80](#порядок-установки-субд-jatoba-на-ос-windows-server-2016)
-
-        1.  [Возможная ошибка при установке СУБД «Jatoba» на ОС Windows 86](#возможная-ошибка-при-установке-субд-jatoba-на-ос-windows)
-
-    2.  [Установка клиентской части СУБД «Jatoba» на ОС Windows Server 2016 88](#_bookmark75)
-
-        1.  [Порядок установки СУБД «Jatoba» на ОС Windows 88](#порядок-установки-субд-jatoba-на-ос-windows)
-
-5.  [Установка обновлений СУБД «Jatoba» 91](#установка-обновлений-субд-jatoba)
-
-6.  [Установка компонента «Jatoba data safe» 92](#установка-компонента-jatoba-data-safe)
-
-    1.  [Установка компонента JDS под ОС GNU/Linux с помощью инсталлятора 92](#установка-компонента-jds-под-ос-gnulinux-с-помощью-инсталлятора)
-
-        1.  [Запуск компонента JDS. Установка/смена пароля администратора 99](#запуск-компонента-jds.-установкасмена-пароля-администратора)
-
-    2.  [Способы публикации WEB-приложения JDS в инфраструктуре 101](#способы-публикации-web-приложения-jds-в-инфраструктуре)
-
-        1.  [Установка веб-сервера nginx 106](#установка-веб-сервера-nginx)
-
-        2.  [Удаление веб-сервера nginx 107](#удаление-веб-сервера-nginx)
-
-    3.  [Удаление компонента JDS 108](#удаление-компонента-jds)
-
-    4.  [Обновление компонента JDS в ручном режиме 109](#обновление-компонента-jds-в-ручном-режиме)
-
-    5.  [Установка компонента JDS на ОС Windows с помощью инсталлятора 112](#установка-компонента-jds-на-ос-windows-с-помощью-инсталлятора)
-
-        1.  [Настройка сервера ОС Windows Server 2016 113](#настройка-сервера-ос-windows-server-2016)
-
-        2.  [Установка роли веб-сервера (IIS) 113](#установка-роли-веб-сервера-iis)
-
-        3.  [Проверка установленного веб-сервера (IIS) 121](#проверка-установленного-веб-сервера-iis)
-
-        4.  [Установка дополнительных компонент 122](#установка-дополнительных-компонент)
-
-        5.  [Запуск инсталлятора JDS 123](#запуск-инсталлятора-jds)
-
-        6.  [Главная страница 133](#главная-страница)
-
-        7.  [Удаление и восстановление компонента JDS 134](#удаление-и-восстановление-компонента-jds)
-
-    6.  [Установка компонента JDS на ОС Windows вручную из архива 135](#установка-компонента-jds-на-ос-windows-вручную-из-архива)
-
-        1.  [Начальная настройка служебной СУБД «Jatoba» 135](#начальная-настройка-служебной-субд-jatoba)
-
-        2.  [Настройка IIS 136](#настройка-iis)
-
-        3.  [Создание каталогов 139](#создание-каталогов)
-
-        4.  [Копирование компонента JDS 139](#копирование-компонента-jds)
-
-        5.  [Создание сайта 140](#создание-сайта)
-
-        6.  [Дополнительные параметры сайта 143](#дополнительные-параметры-сайта)
-
-        7.  [Создание служебной БД «jdsdb» 144](#создание-служебной-бд-jdsdb)
-
-        8.  [Установка службы «JDS Doctor» 144](#установка-службы-jds-doctor)
-
-7.  [Сообщения об ошибках 145](#сообщения-об-ошибках)
-
-    1.  [Ошибка установки открытого ключа репозитория 145](#ошибка-установки-открытого-ключа-репозитория)
-
-    2.  [Ошибка настройки учетной записи системного пользователя ОС «postgres» 145](#ошибка-настройки-учетной-записи-системного-пользователя-ос-postgres)
-
-    3.  [Ошибка настройки учетной записи пользователя СУБД «postgres» 146](#ошибка-настройки-учетной-записи-пользователя-субд-postgres)
-
-    4.  [Ошибка повторной установки компонента «securityprofile» 146](#ошибка-повторной-установки-компонента-securityprofile)
-
-    5.  [Ошибка в имени локального репозитория 146](#ошибка-в-имени-локального-репозитория)
-
-[Приложение 1 148](#приложение-1)
-
-[Приложение 2 150](#приложение-2)
-
-[Установка СУБД «Jatoba» из локального репозитория в ОС Ubuntu 150](#установка-субд-jatoba-из-локального-репозитория-в-ос-ubuntu)
-
-[Удаление СУБД «Jatoba» из локального репозитория в ОС Ubuntu 156](#_bookmark154)
-
-[Приложение 3 162](#приложение-3)
-
-[Установка СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром 162](#установка-субд-jatoba-из-локального-репозитория-в-ред-ос-7.3-муром)
-
-[Удаление СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром 167](#удаление-субд-jatoba-из-локального-репозитория-в-ред-ос-7.3-муром)
-
-[Приложение 4 173](#приложение-4)
-
-[Установка СУБД «Jatoba» из локального репозитория в Альт 9 Server 173](#_bookmark161)
-
-[Удаление СУБД «Jatoba» из локального репозитория в Альт 9 Server 180](#удаление-субд-jatoba-из-локального-репозитория-в-альт-9-server)
-
-[Приложение 5 189](#приложение-5)
-
-[Установка ОС Astra Linux 1.7 Special Edition Смоленск (x86-64) 189](#установка-ос-astra-linux-1.7-special-edition-смоленск-x86-64)
-
-[Установка СУБД «Jatoba» из локального репозитория в ОС Astra Linux 1.7 Special Edition Смоленск (x86-64) 190](#установка-субд-jatoba-из-локального-репозитория-в-ос-astra-linux-1.7-special-edition-смоленск-x86-64)
-
-[Удаление СУБД «Jatoba» из локального репозитория в ОС 200](#удаление-субд-jatoba-из-локального-репозитория-в-ос)
-
-[Приложение 6 201](#приложение-6)
-
-[Установка СУБД «Jatoba» из локального репозитория в ОС ОСНОВА 2.0 201](#установка-субд-jatoba-из-локального-репозитория-в-ос-основа-2.0)
-
-[Приложение 7 209](#приложение-7)
-
-[Пример установки веб-сервера (IIS) на ОС Windows 10 209](#пример-установки-веб-сервера-iis-на-ос-windows-10)
-
-[Приложение 8 213](#приложение-8)
-
-[Установка службы JDS.PasDoctor 213](#установка-службы-jds.pasdoctor)
-
-[Перечень сокращений 215](#перечень-сокращений)
-
-# ОБЩИЕ СВЕДЕНИЯ О СУБД «JATOBA»
-
-## Назначение СУБД «Jatoba»
-
-> СУБД «Jatoba» является программным средством, предназначенным для создания и управления реляционными базами данных на базе ЭВМ под управлением операционных систем (ОС), представленных в таблице [1.1](#_bookmark2).
->
-> <span id="_bookmark2" class="anchor"></span>Таблица 1.1 – Перечень поддерживаемых ОС
+<span id="_bookmark2" class="anchor"></span>Таблица 1.1 – Перечень поддерживаемых ОС
 
 <table>
 <colgroup>
@@ -309,483 +40,483 @@
 </colgroup>
 <thead>
 <tr>
-<th rowspan="2" style="text-align: center;"><blockquote>
+<th rowspan="2" style="text-align: center;">
 <p><strong>№</strong></p>
-</blockquote></th>
-<th rowspan="2"><blockquote>
+</th>
+<th rowspan="2">
 <p><strong>Наименование ОС</strong></p>
-</blockquote></th>
-<th rowspan="2" style="text-align: center;"><blockquote>
+</th>
+<th rowspan="2" style="text-align: center;">
 <p><strong>Серверная часть</strong></p>
-</blockquote></th>
-<th rowspan="2" style="text-align: center;"><blockquote>
+</th>
+<th rowspan="2" style="text-align: center;">
 <p><strong>Клиентская часть</strong></p>
-</blockquote></th>
-<th rowspan="2" style="text-align: center;"><blockquote>
+</th>
+<th rowspan="2" style="text-align: center;">
 <p><strong>Docker (ver.)</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>Сертификат ФСТЭК</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>№ серт.</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Дата</strong></p>
 <p><strong>выдачи</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>1</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Windows 10</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>2</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Windows 11</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>3</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Windows Server 2016</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>4</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Windows Server 2019</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>5</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Windows Server 2022</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>6</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Astra Linux 1.7 Special Edition Смоленск (x86-64)</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>25.0.5</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>2557</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>30.01.2012</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>7</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Astra Linux 1.8 (x86-64)</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>25.0.5</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>8</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Debian 11</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>24.0.2</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>9</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Debian 12</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>24.0.2</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>10</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Альт 8 СП</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>27.1.1</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>3866</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>10.08.2018</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>11</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Альт 10 СП</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>27.1.1</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>3866</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>10.08.2018</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>12</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Альт 9.1 Server</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>13</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Альт 10 Server</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>23.0.1</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>14</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Ubuntu 20.04</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>24.0.2</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>15</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Ubuntu 22.04</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>24.0.2</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>16</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Ubuntu 24.04</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>24.0.2</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>17</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ОСНОВА2</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>20.10.5</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>4381</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>31.03.2021</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>18</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>РЕД ОС 7.3 Муром</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>25.0.7</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>4060</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>12.01.2019</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>19</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>РЕД ОС 8</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>20</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>РОСА «Хром» 12.4</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>21</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Oracle Linux 8.4</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;">Х</td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 </tbody>
 </table>
 
-## Функции СУБД «Jatoba»
+### Функции СУБД «Jatoba»
 
-> СУБД «Jatoba» реализует следующие функциональные возможности:
+СУБД «Jatoba» реализует следующие функциональные возможности:
 
 - управление данными во внешней памяти;
 
@@ -797,7 +528,7 @@
 
 - журнализация изменений, резервное копирование и восстановление базы данных после сбоев, репликация.
 
-> СУБД «Jatoba» в дополнение к стандартным возможностям управления базами данных, реализует следующие функции:
+СУБД «Jatoba» в дополнение к стандартным возможностям управления базами данных, реализует следующие функции:
 
 - хранение пространственных, географических и геометрических данных, поддержка запросов к ним и управление ими;
 
@@ -815,11 +546,11 @@
 
 - единый пользовательский интерфейс для управления конфигурациями компонентов и просмотра их состояния СУБД.
 
-## Требования к среде функционирования СУБД «Jatoba»
+### Требования к среде функционирования СУБД «Jatoba»
 
-> СУБД «Jatoba» устанавливается на ЭВМ с процессорами, имеющими архитектуру x86, x86-64 и AMD64, удовлетворяющие следующим аппаратным требованиям, указанным в таблице [1.2](#_bookmark5).
->
-> <span id="_bookmark5" class="anchor"></span>Таблица 1.2 – Программные и аппаратные требования к ЭВМ, на которых функционируют клиентская и серверная часть СУБД
+СУБД «Jatoba» устанавливается на ЭВМ с процессорами, имеющими архитектуру x86, x86-64 и AMD64, удовлетворяющие следующим аппаратным требованиям, указанным в таблице [1.2](#_bookmark5).
+
+<span id="_bookmark5" class="anchor"></span>Таблица 1.2 – Программные и аппаратные требования к ЭВМ, на которых функционируют клиентская и серверная часть СУБД
 
 <table style="width:100%;">
 <colgroup>
@@ -829,161 +560,161 @@
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>Параметр</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Характеристика</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Сертифицированная ОС</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td colspan="3" style="text-align: center;"><blockquote>
+<td colspan="3" style="text-align: center;">
 <p><strong>Требования к аппаратному обеспечению сервера СУБД</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>ОЗУ</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>Не менее 2 Гб</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Свободный объем жесткого диска</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>Минимальный объем от 40 Гб Рекомендуемый объем от 100 Гб</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Устройства видео вывода</p>
-</blockquote></td>
-<td style="text-align: left;"><blockquote>
+</td>
+<td style="text-align: left;">
 <p>Монитор и видеоадаптер с поддержкой VGA и разрешением 800x600 или выше</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Тип процессора и минимальная тактовая частота процессора</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>64-разрядный процессор Intel или AMD 3 ГГц или больше</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Минимальное количество ядер</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>4</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Максимальное количество ядер</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>256</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Устройства ввода-вывода</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>Стандартные 105-клавишная</p>
 <p>клавиатура и манипулятор «мышь» с USB, либо PS/2-интерфейсами</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Адаптер Ethernet</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>100 Мбит/с</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="3" style="text-align: center;"><blockquote>
+<td colspan="3" style="text-align: center;">
 <p><strong>Требования к аппаратному обеспечению АРМ управления</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>ОЗУ</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>Не менее 4 Гб</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Свободный объем жесткого диска</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>От 3 Гб</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Устройства видео вывода</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>Монитор и видеоадаптер с</p>
 <p>поддержкой VGA и разрешением 800x600 или выше</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Тип процессора и минимальная тактовая частота процессора</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>64-разрядный процессор Intel или AMD</p>
 <p>Рекомендуемая частота: 2.4 ГГц или больше</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Устройства ввода-вывода</p>
-</blockquote></td>
-<td style="text-align: left;"><blockquote>
+</td>
+<td style="text-align: left;">
 <p>Стандартные 105-клавишная клавиатура и манипулятор «мышь» с USB-интерфейсами, либо PS/2 интерфейсами</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>Адаптер Ethernet</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p>100 Мбит/с</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="3" style="text-align: center;"><blockquote>
+<td colspan="3" style="text-align: center;">
 <p><strong>Требования к программному обеспечению сервера</strong></p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -996,119 +727,119 @@
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>Параметр</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Характеристика</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Сертифицированная ОС</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>Операционная система</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Требования приведены в таблице</p>
 <p><a href="#_bookmark2">1.1</a></p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="3" style="text-align: center;"><blockquote>
+<td colspan="3" style="text-align: center;">
 <p><strong>Требования к программному обеспечению АРМ управления</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Операционная система</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Требования приведены в таблице <a href="#_bookmark2">1.1</a></p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="3" style="text-align: center;"><blockquote>
+<td colspan="3" style="text-align: center;">
 <p><strong>Требования к аппаратному обеспечению сервера Jatoba data safe</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>ОЗУ</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Не менее 2 Гб</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Свободный объем жесткого диска</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Минимальный объем от 40 Гб Рекомендуемый объем от 100 Гб</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Устройства видео вывода</p>
-</blockquote></td>
-<td style="text-align: left;"><blockquote>
+</td>
+<td style="text-align: left;">
 <p>Монитор и видеоадаптер с поддержкой VGA и разрешением 800x600 или выше</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Тип процессора и минимальная тактовая частота процессора</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>64-разрядный процессор Intel или AMD 3 ГГц или больше</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Минимальное количество ядер</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>4</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Устройства ввода-вывода</p>
-</blockquote></td>
-<td style="text-align: left;"><blockquote>
+</td>
+<td style="text-align: left;">
 <p>Стандартные 105-клавишная клавиатура и манипулятор «мышь» с USB, либо PS/2 интерфейсами</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Адаптер Ethernet</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>100 Мбит/с</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="3" style="text-align: center;"><blockquote>
+<td colspan="3" style="text-align: center;">
 <p><strong>Требования к программному обеспечению сервера Jatoba data safe</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="3"><blockquote>
+<td rowspan="3">
 <p>Поддерживаемые платформы</p>
-</blockquote></td>
+</td>
 <td><ul>
 <li><p>win-x86;</p></li>
 </ul></td>
@@ -1127,106 +858,106 @@
 <td style="text-align: right;">Х</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>СУБД</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Защищенная система управления</p>
 <p>базами данных «Jatoba»</p>
-</blockquote></td>
+</td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>Веб-сервер</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>IIS 10</p>
-</blockquote></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td>
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Nginx</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td>
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компоненты</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ASP.NET Core 6.0 Runtime (v6.0.1) – Windows Hosting Bundle Installer</p>
-</blockquote></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td>
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td rowspan="6"><blockquote>
+<td rowspan="6">
 <p>Internet браузер</p>
-</blockquote></td>
+</td>
 <td><ul>
 <li><p>Яндекс.Браузер</p></li>
 </ul></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td>
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td><ul>
 <li><p>Chromium</p></li>
 </ul></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td>
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td><ul>
 <li><p>Mozilla Firefox</p></li>
 </ul></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td>
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td><ul>
 <li><p>Opera</p></li>
 </ul></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
+<td>
+<p>-</p>
+</td>
 </tr>
 <tr>
 <td><ul>
 <li><p>Microsoft Edge</p></li>
 </ul></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
+<td>
+<p>-</p>
+</td>
 </tr>
 <tr>
 <td><ul>
 <li><p>Google Chrome</p></li>
 </ul></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
+<td>
+<p>-</p>
+</td>
 </tr>
 </tbody>
 </table>
 
 1.  <span id="_bookmark6" class="anchor"></span>**Требования по совместимости с антивирусным программным обеспечением** При выполнении установки и в ходе дальнейшей эксплуатации СУБД «Jatoba», и ее отдельных компонентов, в случае применения антивирусного программного обеспечения
 
-> необходимо обеспечить добавление исключений.
->
-> Приведенные исключения для антивирусного программного обеспечения делятся на обязательные и рекомендуемые. Список рекомендаций содержится в таблице
->
-> Таблица 1.3 – Рекомендации по включению каталогов и файлов СУБД «Jatoba», а также отдельных компонентов в исключения антивирусного программного обеспечения
+необходимо обеспечить добавление исключений.
+
+Приведенные исключения для антивирусного программного обеспечения делятся на обязательные и рекомендуемые. Список рекомендаций содержится в таблице
+
+Таблица 1.3 – Рекомендации по включению каталогов и файлов СУБД «Jatoba», а также отдельных компонентов в исключения антивирусного программного обеспечения
 
 <table>
 <colgroup>
@@ -1238,261 +969,261 @@
 </colgroup>
 <thead>
 <tr>
-<th colspan="2" rowspan="2" style="text-align: center;"><blockquote>
+<th colspan="2" rowspan="2" style="text-align: center;">
 <p><strong>Путь к каталогу</strong></p>
-</blockquote></th>
-<th colspan="3" style="text-align: center;"><blockquote>
+</th>
+<th colspan="3" style="text-align: center;">
 <p><strong>Примечание</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th colspan="2" style="text-align: center;"><blockquote>
+<th colspan="2" style="text-align: center;">
 <p><strong>Обяз.</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Рекоменд.</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td colspan="5" style="text-align: center;"><blockquote>
+<td colspan="5" style="text-align: center;">
 <p><strong>Каталоги СУБД Jatoba</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/usr/jatoba-&lt;ver&gt;</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/var/lib/jatoba</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/opt/prometheus</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/etc/sysconfig/jatoba</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="5" style="text-align: center;"><blockquote>
+<td colspan="5" style="text-align: center;">
 <p><strong>Компонент JDS</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/opt/jds</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/opt/jds-doctor</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/opt/prometheus</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/opt/jds-scripts</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/usr/local/lib/pg-explain</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/usr/local/lib/pg-monitor</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/var/log/jds</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/var/log/pg-explain</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/var/log/pg-explain-db</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/var/log/pg-monitor</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/etc/sysconfig/pg-explain</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>/etc/sysconfig/pg-monitor</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="5" style="text-align: center;"><blockquote>
+<td colspan="5" style="text-align: center;">
 <p><strong>Каталоги с архивом WAL-файлов</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>Параметр archive_command в файле postgresql.conf</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="5" style="text-align: center;"><blockquote>
+<td colspan="5" style="text-align: center;">
 <p><strong>Каталоги с резервными копиями</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: left;"><blockquote>
+<td colspan="2" style="text-align: left;">
 <p>Параметр в команде создания резервной копии или в конфигурационном файле утилиты резервного копирования</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="5" style="text-align: center;"><blockquote>
+<td colspan="5" style="text-align: center;">
 <p><strong>Каталоги табличных пространств</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>Каталог табличного пространства (ТП) указывается непосредственно в команде при его создании</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td colspan="5" style="text-align: center;"><blockquote>
+<td colspan="5" style="text-align: center;">
 <p><strong>Файлы служб</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>jatoba&lt;ver&gt;-service</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>jadog.service</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center;"><blockquote>
+<td colspan="2" style="text-align: center;">
 <p>pgbouncer.service</p>
-</blockquote></td>
+</td>
 <td colspan="2" style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>№ изменения:</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>Подпись отв. лица:</p>
-</blockquote></td>
-<td colspan="2" style="text-align: center;"><blockquote>
+</td>
+<td colspan="2" style="text-align: center;">
 <p>Дата внесения изм:</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1505,157 +1236,157 @@
 </colgroup>
 <thead>
 <tr>
-<th rowspan="2" style="text-align: center;"><blockquote>
+<th rowspan="2" style="text-align: center;">
 <p><strong>Путь к каталогу</strong></p>
-</blockquote></th>
-<th colspan="2"><blockquote>
+</th>
+<th colspan="2">
 <p><strong>Примечание</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>Обяз.</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Рекоменд.</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>jatoba&lt;ver&gt;_sql_exporter.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jatoba&lt;ver&gt;_node_exporter.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jatoba&lt;ver&gt;_postgres_exporter.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jatoba&lt;ver&gt;_prometheus.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jatoba{version}_sql_exporter.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jatoba{version}_node_exporter.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jatoba{version}_postgres_exporter.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jatoba{version}_prometheus.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jds.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>jds-doctor.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>pg-explain.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>pg-monitor.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>pg-monitor-collector.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>pg-monitor-dispatcher.service</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p>•</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
-> Критерием для обязательного и рекомендованного исключения для каталогов, служит их назначение. Если в них содержатся данные (файлы и каталоги) баз данных (каталоги с данными, резервными копиями, архивами и т.д.) и исполняемые файлы, то такие каталоги и файлы необходимо обязательно добавлять в исключения. Конфигурационные файлы, скрипты, файлы служб, каталоги с логами – рекомендуется добавлять в исключения.
+Критерием для обязательного и рекомендованного исключения для каталогов, служит их назначение. Если в них содержатся данные (файлы и каталоги) баз данных (каталоги с данными, резервными копиями, архивами и т.д.) и исполняемые файлы, то такие каталоги и файлы необходимо обязательно добавлять в исключения. Конфигурационные файлы, скрипты, файлы служб, каталоги с логами – рекомендуется добавлять в исключения.
 
-# СОСТАВ СУБД «JATOBA»
+## СОСТАВ СУБД «JATOBA»
 
-> В состав СУБД «Jatoba» входят компоненты, указанные в таблице [2.1](#_bookmark8). <span id="_bookmark8" class="anchor"></span>Таблица 2.1 – Состав компонент СУБД «Jatoba»
+В состав СУБД «Jatoba» входят компоненты, указанные в таблице [2.1](#_bookmark8). <span id="_bookmark8" class="anchor"></span>Таблица 2.1 – Состав компонент СУБД «Jatoba»
 
 <table style="width:100%;">
 <colgroup>
@@ -1673,768 +1404,768 @@
 </colgroup>
 <thead>
 <tr>
-<th colspan="2" rowspan="3"><blockquote>
+<th colspan="2" rowspan="3">
 <p><strong>Полное название компонента</strong></p>
-</blockquote></th>
-<th rowspan="3"><blockquote>
+</th>
+<th rowspan="3">
 <p><strong>Наименование англоязычное</strong></p>
-</blockquote></th>
-<th colspan="8" style="text-align: center;"><blockquote>
+</th>
+<th colspan="8" style="text-align: center;">
 <p><strong>Версия компонента</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th colspan="2" style="text-align: center;"><blockquote>
+<th colspan="2" style="text-align: center;">
 <p><strong>J4</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J5</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J6</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J18</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>Базовый инсталляционный пакет</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Jatoba</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Генератор паролей. pwgen</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pwgen</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Маскирование паролей</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_pwmasking</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Поиск ближайших соседей. KNN</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>KNN</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Компонент xid64</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>xid64</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Сжатие данных на уровне страниц.</p>
 <p>Компонент "ja_Compression"</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_Compression</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Восстановление поврежденных WAL</p>
 <p>записей. WAL Recovery</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>WAL Recovery</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Автоматическое создание директорий</p>
 <p>табличных пространств</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_TableSpace</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Генератор конфигурационного файла</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_tune</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>Механизм автономных транзакций</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_ATX</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
 <td></td>
-<td><blockquote>
+<td>
 <p>DataWiping: очистка файлов данных</p>
 <p>объектов доступа</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_WIpe_Files</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>Управление режимом работы узлов кластера. Компонент «jaDog»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jaDog</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>Контроль субъектов доступа. Компонент «Jatoba data vault»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Jatoba data vault</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>Формирование отчетов по журналам СУБД. Компонент «pgBadger»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pgBadger</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>Расширенное резервное копирование. Компонент «pg_ProBackup»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pg_ProBackup</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>Планирование заданий СУБД. Компонент «pg_Task»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pg_Task</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>Формирование отчетов производительности СУБД. Компонент «pg_Profile»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pg_Profile</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>Пользовательский веб-интерфейс для администраторов.</p>
 <p>Компонент «Jatoba data safe»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Jatoba data safe</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td colspan="2" rowspan="4"><blockquote>
+<td colspan="2" rowspan="4">
 <p>Компонент мониторинга запросов СУБД</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pg-explain</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>pg-explain-db</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>pg-monitor</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>pg-monitor-</p>
 <p>collector</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2454,690 +2185,690 @@
 </colgroup>
 <thead>
 <tr>
-<th rowspan="4"><blockquote>
+<th rowspan="4">
 <p><strong>Полное название компонента</strong></p>
-</blockquote></th>
-<th rowspan="3"><blockquote>
+</th>
+<th rowspan="3">
 <p><strong>Наименование англоязычное</strong></p>
-</blockquote></th>
-<th colspan="8"><blockquote>
+</th>
+<th colspan="8">
 <p><strong>Версия компонента</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th colspan="2" style="text-align: center;"><blockquote>
+<th colspan="2" style="text-align: center;">
 <p><strong>J4</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J5</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J6</strong></p>
-</blockquote></th>
-<th colspan="2"><blockquote>
+</th>
+<th colspan="2">
 <p><strong>J18</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
+</th>
 <th style="text-align: center;"><strong>Д</strong></th>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th><blockquote>
+<th>
 <p>pg-monitor-</p>
 <p>dispatcher</p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></th>
+</th>
+<th style="text-align: center;">
+<p>-</p>
+</th>
+<th style="text-align: center;">
+<p>-</p>
+</th>
+<th style="text-align: center;">
+<p>+</p>
+</th>
+<th style="text-align: center;">
+<p>-</p>
+</th>
+<th style="text-align: center;">
+<p>+</p>
+</th>
+<th style="text-align: center;">
+<p>-</p>
+</th>
+<th style="text-align: center;">
+<p>+</p>
+</th>
 <th style="text-align: center;"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>Синхронизация учетных записей с MS Active Directory / LDAP.</p>
 <p>Компонент «ja_Sync_LDAP»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_Sync_LDAP</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Обфускация кода PL/spgSQL. Компонент «PLspgSQL»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>PLspgSQL</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Высокопроизводительный кластер. Компонент «ja_Hipe_Cluster»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_Hipe_Cluster</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Централизованный сбор записей событий СУБД. Компонент «ja_Log»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_Log</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Поддержка платформы 1С</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>1C_support</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент совместимости с 1С.</p>
 <p>«fasttrun»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>fasttrun</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент совместимости с 1С.</p>
 <p>«fulleq»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>fulleq</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент совместимости с 1С.</p>
 <p>«mchar»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>mchar</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент совместимости с 1С.</p>
 <p>«online_analyze»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>online_analyze</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент совместимости с 1С.</p>
 <p>«plantuner»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>plantuner</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Контроль целостности. Компонент «ja_CSum»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_CSum</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Балансировка подключений пользователей к СУБД.</p>
 <p>Компонент «jaPooler»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jaPooler</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>+</p>
+</td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="3"><blockquote>
+<td rowspan="3">
 <p>Обеспечение работы с СУБД Oracle</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Oracle_FDW</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>OraFCE</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>pg_Variables</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Выявление и предотвращение исполнения нетипичных SQL-запросов.</p>
 <p>Компонент «SQL_Firewall»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>SQL_Firewall</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Библиотека для взаимодействия с моделями машинного обучения.</p>
 <p>Компонент "ONNX Runtime"</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>onnxruntime</p>
-</blockquote></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
-<td><blockquote>
-<p></p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Сокрытие информации в файлах данных СУБД. Компонент «Jatoba crypto access storage»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Jatoba crypto access storage</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Формирование HTTP/HTTPS запросов из СУБД. Компонент «pgSQL-HTTP»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pgSQL-HTTP</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>+</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -3157,701 +2888,701 @@
 </colgroup>
 <thead>
 <tr>
-<th rowspan="3"><blockquote>
+<th rowspan="3">
 <p><strong>Полное название компонента</strong></p>
-</blockquote></th>
-<th rowspan="3"><blockquote>
+</th>
+<th rowspan="3">
 <p><strong>Наименование англоязычное</strong></p>
-</blockquote></th>
-<th colspan="8" style="text-align: center;"><blockquote>
+</th>
+<th colspan="8" style="text-align: center;">
 <p><strong>Версия компонента</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th colspan="2" style="text-align: center;"><blockquote>
+<th colspan="2" style="text-align: center;">
 <p><strong>J4</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J5</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J6</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J18</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
+</th>
 <th style="text-align: center;"><strong>Д</strong></th>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>Обеспечение работы с СУБД MS SQL Server. Компонент «TDS_FDW»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>TDS_FDW</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Pасширенное журналирование событий СУБД. Компонент «pgAudit»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pgAudit</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент «pgauditlogtofile»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pgauditlogtofile</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Работа с географическими данными. Компонент «PostGIS»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>PostGIS</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Расширенное резервное копирование. Компонент «PTrack»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>PTrack</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Управление парольными политиками пользователей СУБД.</p>
 <p>Компонент «SecurityProfile»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>SecurityProfile</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Управление планами запросов. Компонент «ja_Plan_Manager»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_Plan_Manager</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Контроль выполненных планов запросов Компонент «pg_store_plans»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pg_store_plans</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Настройка планов выполнения. Компонент</p>
 <p>«pg_hint_plan»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pg_hint_plan</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>«Jatoba» в контейнере</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_Container</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент сбора аппаратных и программных показателей работы GNU/Linux.</p>
 <p>node_exporter.</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>node_exporter</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент сбора метрик СУБД.</p>
 <p>postgres_exporter</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>postgres_exporter</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>SQL экспортёр. Компонент сбора расширенных</p>
 <p>метрик СУБД</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>sql_exporter</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент мониторинга различных программных систем и сервисов.</p>
 <p>Prometheus</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>prometheus</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент управления и обработки оповещений</p>
 <p>в системе мониторинга Prometheus. Alertmanager</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Alertmanager</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Работа СУБД «Jatoba» в режиме ЗПС в ОС Astra Linux</p>
-</blockquote></td>
+</td>
 <td></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>gis-cryptoplatform</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>gis-cryptoplatform</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Поддержка лексографического идентификатора. Компонент «pg-ulid»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pg-ulid</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Запись событий информационной безопасности. Компонент «ja_seceventlog»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_seceventlog</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Обратный индекс с хранением позиционной информации, полнотекстовый поиск.</p>
 <p>Компонент «rum»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>rum</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Реорганизация таблицы с минимальными блокировками. Компонент «pg_repack»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>pg_repack</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -3871,289 +3602,289 @@
 </colgroup>
 <thead>
 <tr>
-<th rowspan="3"><blockquote>
+<th rowspan="3">
 <p><strong>Полное название компонента</strong></p>
-</blockquote></th>
-<th rowspan="3"><blockquote>
+</th>
+<th rowspan="3">
 <p><strong>Наименование англоязычное</strong></p>
-</blockquote></th>
-<th colspan="8" style="text-align: center;"><blockquote>
+</th>
+<th colspan="8" style="text-align: center;">
 <p><strong>Версия компонента</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th colspan="2" style="text-align: center;"><blockquote>
+<th colspan="2" style="text-align: center;">
 <p><strong>J4</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J5</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J6</strong></p>
-</blockquote></th>
-<th colspan="2" style="text-align: center;"><blockquote>
+</th>
+<th colspan="2" style="text-align: center;">
 <p><strong>J18</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Д</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
+</th>
 <th style="text-align: center;"><strong>Д</strong></th>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>ОК</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>Работа СУБД Jatoba в режиме ЗПС в ОС ОСНОВА</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>osnova-digsig-key</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Расширенный тип данных tsvector. Компонент "tsvector2"</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>tsvector2</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Полнотекстовый поиск и определение похожих текстов. Компонент "ja_Similar"</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_Similar</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Инвентаризация СУБД</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_Inventory</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Cвободная библиотека для проверки орфографии и морфологического анализа. Компонент</p>
 <p>«hunspell»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>hunspell</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Маскирование данных. Компонент «ja_anonymizer»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ja_anonymizer</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Архивация и восстановление данных. Компонент «wal-g»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>wal-g</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
-<p>Х</p>
-</blockquote></td>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>-</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
+<td style="text-align: center;">
+<p>+</p>
+</td>
 </tr>
 </tbody>
 </table>
 
-> Примечание:
+Примечание:
 
 - Д - Дистрибутив
 
 - ОК - Образ контейнера.
 
-# УСТАНОВКА СУБД «JATOBA» НА ОС СЕМЕЙСТВА GNU/LINUX
+## УСТАНОВКА СУБД «JATOBA» НА ОС СЕМЕЙСТВА GNU/LINUX
 
-> Установку СУБД «Jatoba» возможно провести тремя способами:
+Установку СУБД «Jatoba» возможно провести тремя способами:
 
 1)  Установка из локального репозитория инсталлятором (см. п. [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux)).
 
@@ -4161,9 +3892,9 @@
 
 3)  Установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя (п.п. [3.4](#порядок-установки-субд-jatoba-на-ос-gnulinux-основанной-на-debian-из-локального-репозитория), [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Пользователь может найти весь необходимый набор deb/rpm-файлов на компакт-диске.
->
-> Установка СУБД «Jatoba» на ОС GNU/Linux происходит в несколько этапов:
+![](@site/docs/assets/images/com18.3.1/install/media/image2.png)
+
+Установка СУБД «Jatoba» на ОС GNU/Linux происходит в несколько этапов:
 
 - настройка репозитория СУБД;
 
@@ -4175,7 +3906,7 @@
 
 - запуск сервиса СУБД.
 
-> Пример установки и удаления СУБД «Jatoba» из локального репозитория для:
+Пример установки и удаления СУБД «Jatoba» из локального репозитория для:
 
 - ОС Ubuntu 18.04 приведен в Приложении [2](#приложение-2);
 
@@ -4183,180 +3914,104 @@
 
 - Альт 9 Server приведен в Приложении [4](#приложение-4).
 
-> Пример установки СУБД «Jatoba» из локального репозитория в Astra Linux 1.6 Special Edition Смоленск в замкнутой программной среде приведен в Приложении [5](#приложение-5) настоящего документа.
->
-> Концептуальная схема последовательности действий представлена на рисунке [3.1](#_bookmark10).
->
-> Более подробное описание установки приведено ниже.
+Пример установки СУБД «Jatoba» из локального репозитория в Astra Linux 1.6 Special Edition Смоленск в замкнутой программной среде приведен в Приложении [5](#приложение-5) настоящего документа.
 
-Начало у стан овк и
+Концептуальная схема последовательности действий представлена на рисунке [3.1](#_bookmark10).
 
-Подг о товк а ОС к ус тан о вк е СУБД
+Более подробное описание установки приведено ниже.
 
-Завер ш е н и е у стан овк и
+![](@site/docs/assets/images/com18.3.1/install/media/Рисунок31.png)
 
-> Зап уск (автозап у ск ) и п р овер к а р аботы СУБД
->
-> Д оп о лн и тельн ое
+<span id="_bookmark10" class="anchor"></span>Рисунок 3.1 – Последовательность действий при установке СУБД на ОС GNU/Linux
 
-к он фи г ури рован и е СУБД
+:::warning Важная информация
+Только для ОС Astra Linux 1.6 Смоленск
 
-> Ин и ц и али зац и я к аталог а данны х
->
-> Ус тан о вк а о сн овн ы х п ак е тов
+Для  корректного  обновления  системы  и  последующей  установки СУБД «Jatoba» рекомендуется подключить и примонтировать все ISO-файлы установки и обновления ОС одновременно, прописав репозитории в виде локальных директорий точек монтирования. При использовании источников установки «cdrom» возможны ошибки нахождения зависимых пакетов на разных ISO-образах.
+:::
 
-Л ок альн ы й репо зи тори й
+:::warning Важная информация
+Перед началом установки СУБД «Jatoba» в ОС необходимо поставить все последние обновления.
+:::
 
-> (CDROM)
->
-> DEB/ RPM -фай лы (оп ци он альн о)
->
-> Ус тан о вк а р еп ози то р и я СУБД
->
-> <span id="_bookmark10" class="anchor"></span>Рисунок 3.1 – Последовательность действий при установке СУБД на ОС GNU/Linux
+:::warning Важная информация
+Только для ОС CentOS Linux 8.2 и выше
+Ввиду прекращения производителем поддержки ОС CentOS Linux 8-й версии необходимо в качестве источника для установки пакетов и обновлений системы
+использовать архивный репозиторий https://vault.centos.org
+:::
 
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 93%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25208in;height:0.25208in" /></p>
-</blockquote></th>
-<th style="text-align: left;"><blockquote>
-<p><strong>Только для ОС Astra Linux 1.6 Смоленск</strong></p>
-<p>Для корректного обновления системы и последующей установки СУБД «Jatoba» рекомендуется подключить и примонтировать все ISO-файлы установки и обновления ОС одновременно, прописав репозитории в виде локальных директорий точек монтирования. При использовании источников установки «cdrom» возможны ошибки нахождения зависимых пакетов на</p>
-<p>разных ISO-образах.</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25208in;height:0.25208in" /></p>
-</blockquote></td>
-<td><blockquote>
-<p>Перед началом установки СУБД «Jatoba» в ОС необходимо поставить все последние обновления.</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+:::warning Важная информация
+Установка и запуск СУБД в ОС производится от имени пользователя «root» (суперпользователь). Порядок получения root-привилегий в различных ОС GNU/Linux может отличаться. Обычно для этого используется связка команд sudo su.
 
-<table>
-<colgroup>
-<col style="width: 6%" />
-<col style="width: 93%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25208in;height:0.25208in" /></p>
-</blockquote></th>
-<th style="text-align: left;"><blockquote>
-<p><strong>Только для ОС CentOS Linux 8.2 и выше</strong></p>
-<p>Ввиду прекращения производителем поддержки ОС CentOS Linux 8-й версии необходимо в качестве источника для установки пакетов и обновлений системы</p>
-<p>использовать архивный репозиторий <a href="https://vault.centos.org/"><u>https://vault.centos.org</u></a></p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25319in;height:0.25208in" /></p>
-</blockquote></td>
-<td style="text-align: left;"><blockquote>
-<p>Установка и запуск СУБД в ОС производится от имени пользователя «root» (суперпользователь). Порядок получения root-привилегий в различных ОС GNU/Linux может отличаться. Обычно для этого используется связка команд sudo su.</p>
-<p>В случае если используется для получения root-привилегий команда su отдельно от sudo, то su следует обязательно использовать с параметром –l.</p>
-<p>В случае отсутствия пакета sudo в системе, его необходимо установить. Для</p>
-<p>получения соответствующих пакетов пользователю необходимо обратиться к соответствующему руководству администратора операционной системы.</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+В случае если используется для получения root-привилегий команда su отдельно от sudo, то su следует обязательно использовать с параметром –l.
 
-## Инсталлятор СУБД «Jatoba» для ОС семейства GNU/Linux
+В случае отсутствия пакета sudo в системе, его необходимо установить. Для получения соответствующих пакетов пользователю необходимо обратиться к соответствующему руководству администратора операционной системы.
+:::
 
-> Инсталлятор выполняет базовую установку СУБД «Jatoba», инсталлируя пакеты:
+### Инсталлятор СУБД «Jatoba» для ОС семейства GNU/Linux
 
-- jatoba\<ver\>-client – клиентская часть СУБД;
+Инсталлятор выполняет базовую установку СУБД «Jatoba», инсталлируя пакеты:
 
-- jatoba\<ver\>-contrib – вспомогательный набор модулей (расширений) СУБД;
+- jatoba<ver>-client – клиентская часть СУБД;
 
-- jatoba\<ver\>-libs – основные библиотеки для клиентской и серверной части СУБД;
+- jatoba<ver>-contrib – вспомогательный набор модулей (расширений) СУБД;
 
-- jatoba\<ver\>-server – серверная часть СУБД.
+- jatoba<ver>-libs – основные библиотеки для клиентской и серверной части СУБД;
 
-> Установка пакетов, расширяющих возможности СУБД, выполняется отдельно в соответствии с пунктом [3.3.3](#установка-пакетов-расширяющих-возможности-субд) настоящего документа.
->
-> Работу инсталлятора возможно условно разделить на следующие этапы:
+- jatoba<ver>-server – серверная часть СУБД.
+
+Установка пакетов, расширяющих возможности СУБД, выполняется отдельно в соответствии с пунктом [3.3.3](#установка-пакетов-расширяющих-возможности-субд) настоящего документа.
+
+Работу инсталлятора возможно условно разделить на следующие этапы:
 
 - подготовительные действия;
 
 - начало установки.
 
-## <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25138in;height:0.25073in" />Подготовительные действия для запуска инсталлятора
+:::warning Важная информация
+Для корректного отображения сообщений инсталлятора (установочного скрипта) консоль ОС должна обеспечивать отображение кириллических символов.
+Для  установки  корректного  набора  шрифтов  необходимо  открыть  файл /etc/vconsole.conf (в зависимости от дистрибутива ОС может располагаться в другом каталоге) и установить параметр:
 
-> Для корректного отображения сообщений инсталлятора (установочного скрипта) консоль ОС должна обеспечивать отображение кириллических символов.
->
-> Для установки корректного набора шрифтов необходимо открыть файл
->
-> /etc/vconsole.conf (в зависимости от дистрибутива ОС может располагаться в другом каталоге) и установить параметр:
+```
+FONT="UniCyr_8x16"
+```
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>FONT="UniCyr_8x16"</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+Сохранить файл и выполнить обновление настроек:
 
-> Сохранить файл и выполнить обновление настроек:
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>setfont UniCyr_8x16</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
+setfont UniCyr_8x16
+```
+:::
 
 На этапе подготовительных действий выполняются следующие шаги:
 
 1)  В терминале войти в режим суперпользователя, выполнив команду:
 
-> sudo su
+```
+sudo su
+```
 
 2)  Выполнить обновление системы:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image26.png" style="width:7.10798in;height:2.64469in" />
+```
+apt-get update -y && apt-get upgrade -y && apt dist-upgrade -y
+```
 
-> apt-get update -y && apt-get upgrade -y && apt dist-upgrade -y
->
-> Рисунок 3.2 – Обновление системы
+![](@site/docs/assets/images/com18.3.1/install/media/image26.png)
+
+
+
+Рисунок 3.2 – Обновление системы
 
 3)  Создать папку localrepo в корневом каталоге:
 
-> mkdir /localrepo
+```
+mkdir /localrepo
+```
 
 4)  В созданную папку скопировать:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image27.png" style="width:3.45101in;height:1.07333in" />
+
 
 - каталог \<pool\>
 
@@ -4364,139 +4019,160 @@
 
 - файл \<DEB-GPG-KEY-Jatoba\>
 
-> Рисунок 3.3 – Структура каталога «localrepo»
+![](@site/docs/assets/images/com18.3.1/install/media/image27.png)
 
-5)  Расположить установочный скрипт jatoba.sh в корневой директории текущего пользователя:
+Рисунок 3.3 – Структура каталога «localrepo»
 
-<img src="../docs/assets/images/com18.3.1/install/media/image28.png" style="width:3.46872in;height:0.93969in" />
+1)  Расположить установочный скрипт jatoba.sh в корневой директории текущего пользователя:
 
-> Рисунок 3.4 – Расположение установочного скрипта jatoba.sh
+![](@site/docs/assets/images/com18.3.1/install/media/image28.png)
+
+Рисунок 3.4 – Расположение установочного скрипта jatoba.sh
 
 6)  Дать разрешение на запуск:
+7)  
+```
+# cd /home
+# chmod +x jatoba.sh
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image29.png" style="width:7.1038in;height:1.12375in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image29.png)
 
-> \# cd /home
->
-> \# chmod +x jatoba.sh
->
-> Рисунок 3.5 – Команда установки прав на запуск скрипта
 
-## Установка СУБД инсталлятором
 
-> Этап начала установки включает в себя следующие шаги:
+Рисунок 3.5 – Команда установки прав на запуск скрипта
+
+### Установка СУБД инсталлятором
+
+Этап начала установки включает в себя следующие шаги:
 
 1)  Запустить скрипт:
 
-> ./jatoba.sh install
+```
+./jatoba.sh install
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image30.png" style="width:7.104in;height:0.79437in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image30.png)
 
-> Рисунок 3.6 – Команда запуска установочного скрипта
+Рисунок 3.6 – Команда запуска установочного скрипта
 
 2)  Указать версию устанавливаемой СУБД и подтвердить выбор для установки:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image31.png" style="width:7.02193in;height:1.4124in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image31.png)
 
-> Рисунок 3.7 – Выбор версии СУБД
->
-> После чего начнется процесс установки и построится дерево зависимостей. Автоматически добавится описание локального репозитория.
->
-> Запустится процедура инициализации БД.
+Рисунок 3.7 – Выбор версии СУБД
 
-<img src="../docs/assets/images/com18.3.1/install/media/image32.png" style="width:7.10404in;height:0.76531in" />
+После чего начнется процесс установки и построится дерево зависимостей. Автоматически добавится описание локального репозитория.
 
-> Рисунок 3.8 – Инициализация БД
->
-> После процедуры инициализации БД в автоматическом режиме:
+Запустится процедура инициализации БД.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image32.png)
+
+Рисунок 3.8 – Инициализация БД
+
+После процедуры инициализации БД в автоматическом режиме:
 
 - внесутся изменения в конфигурационный файл «postgresql.conf»;
 
 - добавится сервис в список автозапуска.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image33.png" style="width:7.01066in;height:2.24656in" />
->
-> Рисунок 3.9 – Добавление службы в автозагрузку
+![](@site/docs/assets/images/com18.3.1/install/media/image33.png)
+
+Рисунок 3.9 – Добавление службы в автозагрузку
 
 3)  Ввести пароль пользователя СУБД postgres и подтвердить его.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image34.png" style="width:6.99864in;height:4.01167in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image34.png)
 
-> Рисунок 3.10 – Ввод и подтверждение пароля для пользователя «postgres»
+Рисунок 3.10 – Ввод и подтверждение пароля для пользователя «postgres»
 
 4)  Окончание установки (рис. [3.11](#_bookmark14)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image35.png" style="width:6.99543in;height:1.38in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image35.png)
 
-> <span id="_bookmark14" class="anchor"></span>Рисунок 3.11 – Окно окончания установки
+<span id="_bookmark14" class="anchor"></span>Рисунок 3.11 – Окно окончания установки
 
 5)  Установить пароль для системного пользователя ОС «postgres»:
+6)  
+```
+sudo passwd postgres
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image36.png" style="width:7.06626in;height:1.40469in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image36.png)
 
-> sudo passwd postgres
->
-> Рисунок 3.12 - Установка пароля для системного пользователя ОС «postgres»
+
+
+Рисунок 3.12 - Установка пароля для системного пользователя ОС «postgres»
 
 6)  Авторизоваться в psql, для этого нажать сочетание клавиш:
 
-> CTRL + D
->
-> Затем войти в psql:
->
-> su postgres psql
+CTRL + D
+
+Затем войти в psql:
+
+```
+su postgres psql
+```
 
 7)  Установить пароль для пользователя СУБД «postgres»:
+8)  
+```
+\password
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image37.png" style="width:7.00934in;height:2.415in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image37.png)
 
-> \password
->
-> Рисунок 3.13 – Установка пароля для пользователя СУБД На данном шаге установка СУБД закончена.
 
-## Установка СУБД с поддержкой платформы 1C
 
-> Для автоматической настройки экземпляра СУБД под работу с платформой 1С предусмотрена специальная опция «install_1c» инсталлятора:
->
-> \# ./jatoba.sh install_1c \[-y\]
->
-> Подробное описание действий, выполняемых инсталлятором с поддержкой платформы 1С, приведены в документе «Поддержка платформы 1С» 643.72410666.00067-08 98 01-13.
+Рисунок 3.13 – Установка пароля для пользователя СУБД На данном шаге установка СУБД закончена.
+
+### Установка СУБД с поддержкой платформы 1C
+
+Для автоматической настройки экземпляра СУБД под работу с платформой 1С предусмотрена специальная опция «install_1c» инсталлятора:
+
+```
+# ./jatoba.sh install_1c [-y]
+```
+
+Подробное описание действий, выполняемых инсталлятором с поддержкой платформы 1С, приведены в документе «Поддержка платформы 1С» 643.72410666.00067-08 98 01-13.
 
 1.  <span id="_bookmark16" class="anchor"></span>**Установка СУБД «Jatoba» с генератором конфигурационного файла ja_tune** Компонент «ja_tune» предназначен для Администратора СУБД и является генератором рекомендуемого конфигурационного файла «postgresql.conf» на основе данных об аппаратной платформе, на которой предполагается запускать экземпляр СУБД, данных операционной системы, предполагаемом профиле нагрузки СУБД и некоторых
 
-> дополнительных параметрах.
->
-> Компонент «ja_tune» представляет собой самостоятельный исполняемый файл, запуск которого не зависит от запуска СУБД. В процессе функционирования компонент не требует наличия запущенного экземпляра СУБД и не требует подключения к какому-либо экземпляру СУБД.
->
-> Компонент выполнен в форме консольного приложения и может запускаться Администратором СУБД в двух режимах:
+дополнительных параметрах.
+
+Компонент «ja_tune» представляет собой самостоятельный исполняемый файл, запуск которого не зависит от запуска СУБД. В процессе функционирования компонент не требует наличия запущенного экземпляра СУБД и не требует подключения к какому-либо экземпляру СУБД.
+
+Компонент выполнен в форме консольного приложения и может запускаться Администратором СУБД в двух режимах:
 
 1)  из консоли операционной системы (п. [3.2.1](#запуск-утилиты-из-консоли-ос));
 
 2)  при запуске утилиты «jatoba-setup» при инициализации каталога данный СУБД (п. [3.2.2](#setup)).
 
-> Для работы консольного приложения «ja_tune» требуются привилегии Администратора операционной системы для получения необходимой информации об аппаратных и системных характеристиках сервера СУБД.
->
-> Консольное приложение ja_tune не интегрировано в инсталлятор СУБД. Использование утилиты генерации рекомендуемого конфигурационного файла СУБД доступно при выполнении ручной установки СУБД, в соответствии с положениями разделов в п.п. [3.4](#порядок-установки-субд-jatoba-на-ос-gnulinux-основанной-на-debian-из-локального-репозитория), [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) настоящего документа.
->
-> Консольное приложение «ja_tune» устанавливается в составе пакета jatoba\<ver\>-server – серверная часть СУБД.
->
-> Приложение располагается в директории:
->
-> /usr/jatoba-\<ver\>/bin
->
-> Версия компонента ja_tune – 1.3.0.
+Для работы консольного приложения «ja_tune» требуются привилегии Администратора операционной системы для получения необходимой информации об аппаратных и системных характеристиках сервера СУБД.
 
-## Запуск утилиты из консоли ОС
+Консольное приложение ja_tune не интегрировано в инсталлятор СУБД. Использование утилиты генерации рекомендуемого конфигурационного файла СУБД доступно при выполнении ручной установки СУБД, в соответствии с положениями разделов в п.п. [3.4](#порядок-установки-субд-jatoba-на-ос-gnulinux-основанной-на-debian-из-локального-репозитория), [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) настоящего документа.
 
-> Консольный запуск утилиты целесообразен для:
+Консольное приложение «ja_tune» устанавливается в составе пакета jatoba<ver>-server – серверная часть СУБД.
+
+Приложение располагается в директории:
+
+> /usr/jatoba-<ver>/bin
+
+Версия компонента ja_tune – 1.3.0.
+
+### Запуск утилиты из консоли ОС
+
+Консольный запуск утилиты целесообразен для:
 
 - определения рекомендованных параметров для установленной СУБД и последующей корректировкой таковых;
 
 - определения рекомендованных параметров перед установкой СУБД.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24935in" />Параметры командной строки ja_tune можно вводить как верхнем, так и в нижнем регистре (например, SSD и ssd – равнозначные). При ошибке в значении параметра выводится информационное сообщение.
->
-> Таблица 3.1 - Параметры командной строки ja_tune
+:::info Дополнительная информация
+Параметры командной строки ja_tune можно вводить как верхнем, так и в нижнем регистре (например, SSD и ssd – равнозначные). При ошибке в значении параметра выводится информационное сообщение.
+:::
+
+Таблица 3.1 - Параметры командной строки ja_tune
 
 <table>
 <colgroup>
@@ -4506,127 +4182,127 @@
 </colgroup>
 <thead>
 <tr>
-<th colspan="2" style="text-align: center;"><blockquote>
+<th colspan="2" style="text-align: center;">
 <p><strong>Параметр</strong></p>
-</blockquote></th>
-<th rowspan="2"><blockquote>
+</th>
+<th rowspan="2">
 <p><strong>Описание</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>long option</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>short option/ full option</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-v</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--ver</p>
 <p>--version</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>output version information, then exit</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Вывод информации о версии ja_tune.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-o,</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--os</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>operating system {windows|linux|unix|darwin}</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Название семейства операционной системы, для которой составляется конфигурационный файл.</p>
 <p>Допустимый набор значений:</p>
-</blockquote>
+
 <ul>
 <li><p>linux – ОС GNU/Linux (debian, redhat и т.п.);</p></li>
 <li><p>unix – ОС семейства UNIX (freebsd, solaris и т.п.);</p></li>
 <li><p>windows – ОС семейства Windows;</p></li>
 <li><p>darwin – ОС macOS от Apple. Значение по умолчанию: linux</p></li>
 </ul>
-<blockquote>
+
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-a</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--arch</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>processor architecture {amd64|x86-64|arm64}</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Название архитектуры сервера, для которого составляется конфигурационный файл.</p>
 <p>Допустимый набор значений:</p>
-</blockquote>
+
 <ul>
 <li><p>x86-64 – 64-битные системы от Intel и AMD;</p></li>
 <li><p>amd64 – синоним x86-64;</p></li>
 <li><p>arm64 – 64-битные системы на базе процессоров ARM. Значение по умолчанию: x86-64</p></li>
 </ul>
-<blockquote>
+
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-s</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--stype</p>
 <p>--strgtype</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>drive type {ssd|san|hdd}</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Тип подсистемы хранения, которая используется на целевом сервере. Допустимый набор значений:</p>
-</blockquote>
+
 <ul>
 <li><p>hdd – используются накопители на жёстких магнитных дисках;</p></li>
 <li><p>ssd – используются твердотельные накопители;</p></li>
 <li><p>san – используются сетевые системы хранения данных, построенные на высокоскоростных и сверхвысокоскоростных каналах связи.</p></li>
 </ul>
-<blockquote>
+
 <p>Значение по умолчанию: SSD</p>
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>-p</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>--app</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>application profile deprecated, use --application {web|oltp|dwh|mixed|desktop|1c}</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4639,32 +4315,32 @@
 </colgroup>
 <thead>
 <tr>
-<th colspan="2" style="text-align: center;"><blockquote>
+<th colspan="2" style="text-align: center;">
 <p><strong>Параметр</strong></p>
-</blockquote></th>
-<th rowspan="2"><blockquote>
+</th>
+<th rowspan="2">
 <p><strong>Описание</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>long option</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>short option/ full option</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td rowspan="2"></td>
-<td><blockquote>
+<td>
 <p>--application</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Тип нагрузки (профиль), под который планируется эксплуатация СУБД.</p>
 <p>Допустимый набор значений:</p>
-</blockquote>
+
 <ul>
 <li><p>web – СУБД планируется эксплуатировать в среде Web-сервисов;</p></li>
 <li><p>oltp – СУБД планируется эксплуатировать в системах с высокой транзакционной нагрузкой;</p></li>
@@ -4673,120 +4349,120 @@
 <li><p>desktop – СУБД планируется эксплуатировать в настольных системах (в том числе для персонального использования);</p></li>
 <li><p>1c – СУБД планируется эксплуатировать в системах 1С:Платформа. Значение по умолчанию: mixed</p></li>
 </ul>
-<blockquote>
+
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>--workload</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>--workload не рекомендуется использовать, как устаревший. Полноценным аналогом является параметр --application</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-c</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--cpu</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>number of CPUs</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Количество ядер (не гиперпоточность) на сервере, где планируется эксплуатация СУБД.</p>
 <p>Допустимый набор значений: целое число; в пределах 1≤ CPU ≤ 256 Значение по умолчанию: 32</p>
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-m</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--ram</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>total amount of memory in GB</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Объем оперативной памяти, установленной на сервере. Допустимый набор значений: цело число; в пределах 1 ≤ ram ≤ 1536 Значение по умолчанию: 128</p>
 <p>Значение задается в гигабайтах (множитель 1024 [гигобайты]). Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-N</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--conn</p>
 <p>--maxconn</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>maximum allowed number of connections</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Максимальное количество одновременных соединений пользователей, которое планируется обрабатывать сервером СУБД.</p>
 <p>Допустимый набор значений: целое число; в пределах 20 ≤ maxconn ≤ 262143 Значение по умолчанию: 100</p>
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-V</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--dbver</p>
 <p>--dbversion</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>PostgreSQL/Jatoba version {PG10, ..., PG16, J4, ..., J6}</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Версия СУБД Jatoba/PostgreSQL</p>
 <p>Значение, которое начинается с «PG», обозначает СУБД PostgreSQL и ее версию. Значение, которое начинается с «J», обозначает СУБД Jatoba и ее версию.</p>
 <p>Допустимый набор значений: PG10-PG16, J4-J6.</p>
 <p>Значение по умолчанию: J6</p>
 <p>Значения автоматически <strong>не определяются</strong>.</p>
 <p>Пример. Если СУБД Jatoba имеет версию 6.4.1, значит параметр --dbversion должен иметь значение «J6».</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>-R</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
+</td>
+<td rowspan="2">
 <p>--repl</p>
 <p>--replication</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>replication mode{true|false|1|0|on|off|yes|no}</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Будет ли использоваться физическая / логическая репликация в процессе эксплуатации СУБД.</p>
 <p>Допустимые значения:</p>
-</blockquote>
+
 <ul>
 <li><p>yes / no;</p></li>
 <li><p>on / off;</p></li>
 <li><p>1 / 0;</p></li>
 <li><p>true / false. Значение по умолчанию: off</p></li>
 </ul>
-<blockquote>
+
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4799,130 +4475,134 @@
 </colgroup>
 <thead>
 <tr>
-<th colspan="3"><blockquote>
+<th colspan="3">
 <p><strong>Параметр</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p><strong>long option</strong></p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p><strong>short option/ full option</strong></p>
-</blockquote></td>
-<td style="text-align: center;"><blockquote>
+</td>
+<td style="text-align: center;">
 <p><strong>Описание</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>--help</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p>Вывод краткой справочной информации о всех параметрах.</p>
 <p>Если параметр указан в командной строке (даже если указаны и другие параметры), то ja_tune выводит краткую справочную информацию об использовании ja_tune и</p>
 <p>выходит с кодом возврата 0.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
 <td style="text-align: right;">Встро</td>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>енная справка к утилите ja_tune вызывается при помощи команды:</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
 <td style="text-align: right;">./ja_tun</td>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>e --help</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="3"><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image38.png" style="width:7.06541in;height:2.52521in" /></p>
-</blockquote></td>
+<td colspan="3">
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image38.png)
+</td>
 </tr>
 </tbody>
 </table>
 
-> Рисунок 3.14 – Встроенная справка к утилите ja_tune
->
-> При установленной в ОС локали «ru_RU» вывод справочной информации для утилиты ja_tune будет русифицирован, как представлено на рисунке [3.15](#_bookmark18).
+Рисунок 3.14 – Встроенная справка к утилите ja_tune
 
-<img src="../docs/assets/images/com18.3.1/install/media/image39.jpeg" style="width:7.06857in;height:2.69021in" />
+При установленной в ОС локали «ru_RU» вывод справочной информации для утилиты ja_tune будет русифицирован, как представлено на рисунке [3.15](#_bookmark18).
 
-> <span id="_bookmark18" class="anchor"></span>Рисунок 3.15 – Вывод русифицированной справки
->
-> **Пример №1**
->
-> Установим параметры расчета конфигурации СУБД с выводом результатов в терминал:
->
-> -o linux – ОС Linux;
->
-> -a amd64 – тип процессора amd64;
->
-> -s ssd – тип носителя ssd;
->
-> -p web – тип нагрузки web;
->
-> Команда в терминале ОС будет иметь следующий вид:
->
-> ./ja_tune -o linux -a amd64 -s ssd -p web
->
-> В результате утилита ja_tune выведет расчетные параметры СУБД в терминале ОС.
+![](@site/docs/assets/images/com18.3.1/install/media/image39.jpeg)
 
-<img src="../docs/assets/images/com18.3.1/install/media/image40.png" style="width:4.89761in;height:2.84667in" />
+<span id="_bookmark18" class="anchor"></span>Рисунок 3.15 – Вывод русифицированной справки
 
-> Рисунок 3.16 – Вывод результатов расчёта в терминал ОС
->
-> При установленной в ОС локали «ru_RU», вывод значений расчетных параметров утилитой, будет русифицирован, как представлено на рисунке [3.17](#_bookmark19).
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image41.png" style="width:4.75297in;height:3.24417in" />
->
-> <span id="_bookmark19" class="anchor"></span>Рисунок 3.17 – Вывод русифицированных результатов расчёта в терминал ОС
->
-> **Пример №2**
->
-> Установим те же параметры с выводом результатов в файл. Для вывода результата расчета в файл используются параметры:
+**Пример №1**
 
-- \> имя файла - перенаправление в файл с перезаписью содержимого файла;
+Установим параметры расчета конфигурации СУБД с выводом результатов в терминал:
 
-- \>\> имя файла - добавление в конец файла (возможно уже существующего). Команда в терминале ОС будет иметь следующий вид:
+-o linux – ОС Linux;
 
-> ./ja_tune -o linux -a amd64 -s ssd -p web \> test.cfg
->
-> В результате выполнения команды будет создан конфигурационный файл test.cfg, расположенный в директории:
->
-> /usr/jatoba-\<ver\>/bin
->
-> В содержании конфигурационного файла указываются вводные параметры расчета и далее полученные расчетные значения параметров СУБД.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image42.png" style="width:5.22954in;height:3.2851in" />
+-a amd64 – тип процессора amd64;
 
-## setup)
+-s ssd – тип носителя ssd;
 
-> Рисунок 3.18 – Вывод результатов расчетов по заданным параметрам в файл
+-p web – тип нагрузки web;
 
-## Запуск утилиты при инициализации каталога данных СУБД (jatoba-
+Команда в терминале ОС будет иметь следующий вид:
+
+./ja_tune -o linux -a amd64 -s ssd -p web
+
+В результате утилита ja_tune выведет расчетные параметры СУБД в терминале ОС.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image40.png)
+
+Рисунок 3.16 – Вывод результатов расчёта в терминал ОС
+
+При установленной в ОС локали «ru_RU», вывод значений расчетных параметров утилитой, будет русифицирован, как представлено на рисунке [3.17](#_bookmark19).
+
+![](@site/docs/assets/images/com18.3.1/install/media/image41.png)
+
+<span id="_bookmark19" class="anchor"></span>Рисунок 3.17 – Вывод русифицированных результатов расчёта в терминал ОС
+
+**Пример №2**
+
+Установим те же параметры с выводом результатов в файл. Для вывода результата расчета в файл используются параметры:
+
+- > имя файла - перенаправление в файл с перезаписью содержимого файла;
+
+- >> имя файла - добавление в конец файла (возможно уже существующего). Команда в терминале ОС будет иметь следующий вид:
+
+```
+./ja_tune -o linux -a amd64 -s ssd -p web > test.cfg
+```
+
+В результате выполнения команды будет создан конфигурационный файл test.cfg, расположенный в директории:
+
+> /usr/jatoba-<ver>/bin
+
+В содержании конфигурационного файла указываются вводные параметры расчета и далее полученные расчетные значения параметров СУБД.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image42.png)
+
+
+
+Рисунок 3.18 – Вывод результатов расчетов по заданным параметрам в файл
+
+### Запуск утилиты при инициализации каталога данных СУБД (jatoba-setup)
 
 Утилиту ja_tune возможно использовать при инициализации каталога данных СУБД
 
-> в утилите jatoba-setup, с параметрами, приведенными в таблице [3.2](#_bookmark21).
->
-> В этом случае будет:
+в утилите jatoba-setup, с параметрами, приведенными в таблице [3.2](#_bookmark21).
+
+В этом случае будет:
 
 - Произведена инициализация СУБД;
 
 - Сформирован конфигурационный файл расчетных параметров «ja_tune.conf» в директории:
 
-> /var/lib/jatoba/\<ver\>/data
+> /var/lib/jatoba/<ver>/data
 
 - Сформирован конфигурационный файл «postgresql.conf», в котором будет ссылка (инклуд) на конфигурационный файл «ja_tune.conf»:
 
-> include 'ja_tune.conf'
->
-> <span id="_bookmark21" class="anchor"></span>Таблица 3.2 – Параметры командной строки jatoba-setup при использовании утилиты ja_tune
+```
+include 'ja_tune.conf'
+```
+
+<span id="_bookmark21" class="anchor"></span>Таблица 3.2 – Параметры командной строки jatoba-setup при использовании утилиты ja_tune
 
 <table>
 <colgroup>
@@ -4934,66 +4614,66 @@
 </colgroup>
 <thead>
 <tr>
-<th colspan="3" style="text-align: center;"><blockquote>
+<th colspan="3" style="text-align: center;">
 <p><strong>Параметр</strong></p>
-</blockquote></th>
-<th colspan="2" rowspan="2" style="text-align: left;"><blockquote>
+</th>
+<th colspan="2" rowspan="2" style="text-align: left;">
 <p><strong>Описание</strong></p>
-</blockquote></th>
+</th>
 </tr>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>long option</strong></p>
-</blockquote></th>
-<th colspan="2"><blockquote>
+</th>
+<th colspan="2">
 <p><strong>short option/</strong></p>
 <p><strong>full option</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>--tune</p>
-</blockquote></td>
+</td>
 <td colspan="2"></td>
-<td colspan="2" style="text-align: left;"><blockquote>
+<td colspan="2" style="text-align: left;">
 <p>Параметр, при помощи которого запускается утилита ja_tune при инициализации каталога данных с помощью jatoba-setup.</p>
 <p>Параметр --tune имеет опциональный аргумент – абсолютное или относительное имя файла, куда будет записана рекомендуемая конфигурация. Если задано относительное имя, то файл сохраняется относительно директории PGDATA, заданной в jatoba-setup. Если аргумент не задан, т.е. пользователь явно не указал имя файла, то используется имя по умолчанию «ja_tune.conf».</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>--tune-stype</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p>--tune-strgtype</p>
-</blockquote></td>
-<td colspan="2" style="text-align: left;"><blockquote>
+</td>
+<td colspan="2" style="text-align: left;">
 <p>Параметр аналогичный --strgtype</p>
 <p>Тип подсистемы хранения, которая используется на целевом сервере. Допустимый набор значений параметра --tune-strgtype:</p>
-</blockquote>
+
 <ul>
 <li><p>hdd – используются накопители на жёстких магнитных дисках;</p></li>
 <li><p>ssd – используются твердотельные накопители;</p></li>
 <li><p>san – используются сетевые системы хранения данных, построенные на высокоскоростных и сверхвысокоскоростных каналах связи.</p></li>
 </ul>
-<blockquote>
+
 <p>Значение по умолчанию: SSD</p>
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td rowspan="2"><blockquote>
+<td rowspan="2">
 <p>--tune-app</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p>-tune-application</p>
-</blockquote></td>
-<td colspan="2" style="text-align: left;"><blockquote>
+</td>
+<td colspan="2" style="text-align: left;">
 <p>Параметр аналогичный --workload</p>
 <p>Тип нагрузки (профиль), под который планируется эксплуатация СУБД. Допустимый набор значений параметра --tune-workload:</p>
-</blockquote>
+
 <ul>
 <li><p>web – СУБД планируется эксплуатировать в среде Web-сервисов;</p></li>
 <li><p>oltp – СУБД планируется эксплуатировать в системах с высокой транзакционной нагрузкой;</p></li>
@@ -5002,165 +4682,165 @@
 <li><p>desktop – СУБД планируется эксплуатировать в настольных системах (в том числе для персонального использования);</p></li>
 <li><p>1c – СУБД планируется эксплуатировать в системах 1С:Платформа.</p></li>
 </ul>
-<blockquote>
+
 <p>Значение по умолчанию: Mixed</p>
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>--tune-workload</p>
-</blockquote></td>
-<td colspan="2" style="text-align: left;"><blockquote>
+</td>
+<td colspan="2" style="text-align: left;">
 <p>--workload не рекомендуется использовать, как устаревший. Полноценным аналогом является параметр --application</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>--tune-conn</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p>--tune-maxconn</p>
-</blockquote></td>
-<td colspan="2" style="text-align: left;"><blockquote>
+</td>
+<td colspan="2" style="text-align: left;">
 <p>Параметр аналогичный --maxconn</p>
 <p>Максимальное количество одновременных соединений пользователей, которое планируется обрабатывать сервером СУБД.</p>
 <p>Допустимый набор значений параметра --tune-maxconn: целое число; в пределах 20 ≤ maxconn ≤ 262143</p>
 <p>Значение по умолчанию: 100</p>
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>--tune-repl</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p>--tune-replication</p>
-</blockquote></td>
-<td colspan="2" style="text-align: left;"><blockquote>
+</td>
+<td colspan="2" style="text-align: left;">
 <p>Параметр аналогичный --replication</p>
 <p>Будет ли использоваться физическая / логическая репликация в процессе эксплуатации СУБД.</p>
 <p>Допустимые значения параметра --tune-replication:</p>
-</blockquote>
+
 <ul>
 <li><p>yes / no;</p></li>
 <li><p>on / off;</p></li>
 <li><p>1 / 0;</p></li>
 <li><p>true / false. Значение по умолчанию: off</p></li>
 </ul>
-<blockquote>
+
 <p>Значения автоматически <strong>не определяются</strong>.</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td colspan="2"><blockquote>
+<td colspan="2">
 <p>№ изменения:</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p>Подпись отв. лица:</p>
-</blockquote></td>
-<td style="text-align: left;"><blockquote>
+</td>
+<td style="text-align: left;">
 <p>Дата внесения изм:</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
-> Встроенная справка в jatoba-setup к параметрам утилиты ja_tune вызывается при помощи команды:
->
-> ./jatoba-setup --help
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image43.jpeg" style="width:6.11168in;height:3.90762in" />Рисунок 3.19 – Встроенная справка в jatoba-setup к параметрам утилиты ja_tune <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" /> Параметры командной строки jatoba-setup при использовании утилиты ja_tune
->
-> можно вводить как верхнем, так и в нижнем регистре (например, SSD и ssd – равнозначные). При ошибке в значении параметра выводится информационное сообщение.
->
-> **Пример №3**
->
-> Установим параметры расчета и установки конфигурации СУБД:
->
-> --tune – запуск утилиты;
->
-> --tune-stype=ssd – тип носителя ssd;
->
-> --tune-app=1C – тип профиля нагрузки, 1С;
->
-> --tune-repl=yes – использование репликации;
->
-> Команда в терминале ОС будет иметь следующий вид:
->
-> ./jatoba-setup initdb jatoba-6 --tune --tune-stype=ssd --tune-app=1C --tune-repl=yes
->
-> В итоге СУБД будет проинициализирована и сконфигурирована под заданные параметры. В конфигурационном файле «postgresql.conf», будет ссылка (include) на конфигурационный файл «ja_tune.conf», который будет расположен в каталоге
->
-> /var/lib/jatoba/6/data.
+Встроенная справка в jatoba-setup к параметрам утилиты ja_tune вызывается при помощи команды:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image44.png" style="width:7.07482in;height:3.38281in" />
+./jatoba-setup --help
 
-> Рисунок 3.20 - Ссылка (инклуд) на конфигурационный файл «ja_tune.conf» в конфигурационном файле «postgresql.conf»
->
-> В содержании конфигурационного файла «ja_tune.conf» указываются вводные параметры расчета и далее полученные расчетные значения параметров СУБД.
+![](@site/docs/assets/images/com18.3.1/install/media/image43.jpeg)
 
-## Пакеты установки СУБД «Jatoba»
+можно вводить как верхнем, так и в нижнем регистре (например, SSD и ssd – равнозначные). При ошибке в значении параметра выводится информационное сообщение.
 
-## Базовая установка
+**Пример №3**
 
-> Пакеты jatoba\<ver\>-client, jatoba\<ver\>-contrib, jatoba\<ver\>-libs, jatoba\<ver\>-server являются обязательными для установки СУБД:
+Установим параметры расчета и установки конфигурации СУБД:
 
-- jatoba\<ver\>-client – клиентская часть СУБД;
+--tune – запуск утилиты;
 
-- jatoba\<ver\>-contrib – вспомогательный набор модулей (расширений СУБД);
+--tune-stype=ssd – тип носителя ssd;
 
-- jatoba\<ver\>-libs – основные библиотеки для клиентской и серверной части СУБД;
+--tune-app=1C – тип профиля нагрузки, 1С;
 
-- jatoba\<ver\>-server – серверная часть СУБД.
+--tune-repl=yes – использование репликации;
 
-> Установка данных пакетов разными способами (зависит от вида полученного дистрибутива и/или файлов дистрибутива) подробно описана в подразделах [3.1,](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux) [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) и [3.7](#порядок-установки-субд-jatoba-из-debrpm-файлов).
->
-> В пункте [3.3.3](#установка-пакетов-расширяющих-возможности-субд) описана установка дополнительных пакетов, расширяющих возможности СУБД.
+Команда в терминале ОС будет иметь следующий вид:
 
-## Установка клиентской части СУБД «Jatoba» на ОС семейства GNU/Linux
+./jatoba-setup initdb jatoba-6 --tune --tune-stype=ssd --tune-app=1C --tune-repl=yes
 
-> Пакеты jatoba\<ver\>-client, jatoba\<ver\>-libs являются обязательными для установки клиентской части СУБД:
+В итоге СУБД будет проинициализирована и сконфигурирована под заданные параметры. В конфигурационном файле «postgresql.conf», будет ссылка (include) на конфигурационный файл «ja_tune.conf», который будет расположен в каталоге
 
-- jatoba\<ver\>-client – клиентская часть СУБД;
+/var/lib/jatoba/6/data.
 
-- jatoba\<ver\>-libs – основные библиотеки для клиентской и серверной части СУБД.
+![](@site/docs/assets/images/com18.3.1/install/media/image44.png)
 
-> Установка данных пакетов разными способами (зависит от вида полученного дистрибутива и/или файлов дистрибутива) подробно описана в подразделах [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux), [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) и [3.7](#порядок-установки-субд-jatoba-из-debrpm-файлов).
->
-> Например, установка через пакетный менеджер для Debian систем «dpkg». Синтаксис команды будет следующим:
->
-> dpkg -i jatoba\<ver\>-client_X.X.X-X_amd64.deb jatoba\<ver\>-libs_X.X.X-X_amd64.deb
->
-> Использование пакетного менеджера «dpkg» требует ввода полного имени устанавливаемых пакетов, как представлено ниже:
+Рисунок 3.20 - Ссылка (инклуд) на конфигурационный файл «ja_tune.conf» в конфигурационном файле «postgresql.conf»
 
-<img src="../docs/assets/images/com18.3.1/install/media/image45.png" style="width:7.11057in;height:1.24in" />
+В содержании конфигурационного файла «ja_tune.conf» указываются вводные параметры расчета и далее полученные расчетные значения параметров СУБД.
 
-> dpkg -i jatoba4-client_4.5.3-1061_amd64.deb jatoba4-libs_4.5.3-1061_amd64.deb
->
-> Рисунок 3.21 – Установка клиентской части СУБД через пакетный менеджер «dpkg»
->
-> В том числе возможна установка клиентской части СУБД через инструмент командной строки APT (Advanced Package Tool).
->
-> Команда будет следующей:
+### Пакеты установки СУБД «Jatoba»
 
-<img src="../docs/assets/images/com18.3.1/install/media/image46.png" style="width:7.11061in;height:1.24969in" />
+### Базовая установка
 
-> apt-get install jatoba\<ver\>-client jatoba\<ver\>-libs
->
-> Рисунок 3.22 – Установка клиентской части СУБД через APT После чего в каталоге:
->
-> /usr/jatoba-\<ver\>/bin
->
-> будут установлены исполняемые файлы в том числе и «psql», который требуется для подключения пользователя к СУБД.
->
-> Приведенная установка клиентской части СУБД не требует формирования локального репозитория.
+Пакеты jatoba<ver>-client, jatoba<ver>-contrib, jatoba<ver>-libs, jatoba<ver>-server являются обязательными для установки СУБД:
 
-## Установка пакетов, расширяющих возможности СУБД
+- jatoba<ver>-client – клиентская часть СУБД;
 
-> Установка расширений СУБД предполагает установку определенных дополнительных пакетов, входящих в состав дистрибутива СУБД «Jatoba». Отдельные пакеты из состава СУБД «Jatoba» требуют установки либо вспомогательных пакетов из состава ОС, либо вспомогательных пакетов, разработанных третьими лицами (сторонними компаниями).
->
-> Описание установки расширений и дополнений из состава СУБД, приведенное в п.п. [3.3.3.1](#набор-разработчика) – [3.3.3.21](#_bookmark27), дается в следующем порядке:
+- jatoba<ver>-contrib – вспомогательный набор модулей (расширений СУБД);
+
+- jatoba<ver>-libs – основные библиотеки для клиентской и серверной части СУБД;
+
+- jatoba<ver>-server – серверная часть СУБД.
+
+Установка данных пакетов разными способами (зависит от вида полученного дистрибутива и/или файлов дистрибутива) подробно описана в подразделах [3.1,](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux) [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) и [3.7](#порядок-установки-субд-jatoba-из-debrpm-файлов).
+
+В пункте [3.3.3](#установка-пакетов-расширяющих-возможности-субд) описана установка дополнительных пакетов, расширяющих возможности СУБД.
+
+### Установка клиентской части СУБД «Jatoba» на ОС семейства GNU/Linux
+
+Пакеты jatoba<ver>-client, jatoba<ver>-libs являются обязательными для установки клиентской части СУБД:
+
+- jatoba<ver>-client – клиентская часть СУБД;
+
+- jatoba<ver>-libs – основные библиотеки для клиентской и серверной части СУБД.
+
+Установка данных пакетов разными способами (зависит от вида полученного дистрибутива и/или файлов дистрибутива) подробно описана в подразделах [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux), [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) и [3.7](#порядок-установки-субд-jatoba-из-debrpm-файлов).
+
+Например, установка через пакетный менеджер для Debian систем «dpkg». Синтаксис команды будет следующим:
+
+dpkg -i jatoba<ver>-client_X.X.X-X_amd64.deb jatoba<ver>-libs_X.X.X-X_amd64.deb
+
+Использование пакетного менеджера «dpkg» требует ввода полного имени устанавливаемых пакетов, как представлено ниже:
+
+![](@site/docs/assets/images/com18.3.1/install/media/image45.png)
+
+dpkg -i jatoba4-client_4.5.3-1061_amd64.deb jatoba4-libs_4.5.3-1061_amd64.deb
+
+Рисунок 3.21 – Установка клиентской части СУБД через пакетный менеджер «dpkg»
+
+В том числе возможна установка клиентской части СУБД через инструмент командной строки APT (Advanced Package Tool).
+
+Команда будет следующей:
+
+![](@site/docs/assets/images/com18.3.1/install/media/image46.png)
+
+apt-get install jatoba<ver>-client jatoba<ver>-libs
+
+Рисунок 3.22 – Установка клиентской части СУБД через APT После чего в каталоге:
+
+/usr/jatoba-<ver>/bin
+
+будут установлены исполняемые файлы в том числе и «psql», который требуется для подключения пользователя к СУБД.
+
+Приведенная установка клиентской части СУБД не требует формирования локального репозитория.
+
+### Установка пакетов, расширяющих возможности СУБД
+
+Установка расширений СУБД предполагает установку определенных дополнительных пакетов, входящих в состав дистрибутива СУБД «Jatoba». Отдельные пакеты из состава СУБД «Jatoba» требуют установки либо вспомогательных пакетов из состава ОС, либо вспомогательных пакетов, разработанных третьими лицами (сторонними компаниями).
+
+Описание установки расширений и дополнений из состава СУБД, приведенное в п.п. [3.3.3.1](#набор-разработчика) – [3.3.3.21](#_bookmark27), дается в следующем порядке:
 
 - указывается список пакетов из состава дистрибутива СУБД «Jatoba», которые включают это расширение, и список сторонних зависимостей, необходимых для этого расширения;
 
@@ -5168,1585 +4848,1738 @@
 
 - описывается команда установки пакетов расширения.
 
-> Команда установки пакетов в разных дистрибутивах Linux может отличаться, также могут отличаться некоторые шаги установки, связанные с отдельными особенностями дистрибутивов Linux и способами распространения продуктов третьих лиц. Описание команды установки дано в виде группы команд для четырех отличительных видов дистрибутивов Linux:
+Команда установки пакетов в разных дистрибутивах Linux может отличаться, также могут отличаться некоторые шаги установки, связанные с отдельными особенностями дистрибутивов Linux и способами распространения продуктов третьих лиц. Описание команды установки дано в виде группы команд для четырех отличительных видов дистрибутивов Linux:
 
 1)  классический Debian Linux и все дистрибутивы от него производные:
 
-> apt-get install \<список имен пакетов\>
+```
+apt-get install <список имен пакетов>
+```
 
 2)  классический Red Hat и все дистрибутивы от него производные:
 
-> yum install \<список имен пакетов\>
+```
+yum install <список имен пакетов>
+```
 
 3)  ALTLinux – дистрибутив, построенный на базе RPM-пакетов, но использующий APT в качестве высокоуровневого менеджера пактов (команда установки выглядит аналогично Debian):
 
-> apt-get install \<список имен пакетов\>
->
-> Все необходимые отличия, связанные с установкой в разных видах дистрибутивов Linux, также даны с пометкой соответствующей ОС.
->
-> Ряд компонентов для корректной установки требуют зависимые пакеты, часть из которых отсутствует в системных репозиториях операционных систем (CentOS 7, RHEL 7, Oracle 8, RHEL 8), поэтому перед установкой пакетов, расширяющих базовые функциональные возможности СУБД, рекомендуется добавить в систему EPEL репозитории.
->
-> Порядок установки EPEL репозиториев:
+```
+apt-get install <список имен пакетов>
+```
+
+Все необходимые отличия, связанные с установкой в разных видах дистрибутивов Linux, также даны с пометкой соответствующей ОС.
+
+Ряд компонентов для корректной установки требуют зависимые пакеты, часть из которых отсутствует в системных репозиториях операционных систем (CentOS 7, RHEL 7, Oracle 8, RHEL 8), поэтому перед установкой пакетов, расширяющих базовые функциональные возможности СУБД, рекомендуется добавить в систему EPEL репозитории.
+
+Порядок установки EPEL репозиториев:
 
 - Для CentOS 7/RHEL 7/Oracle 8:
 
   1)  Выполнить установку репозиториев:
 
-> yum install epel-release
+```
+yum install epel-release
+```
 
 2)  Обновить состояние репозиториев:
 
-> yum makecache
+```
+yum makecache
+```
 
 3)  Выполнить обновление:
 
-> yum update -y
+```
+yum update -y
+```
 
 - Для RHEL 8:
 
   1)  В subscription-manager включить вспомогательный репозиторий:
 
-> subscription-manager repos --enable codeready-builder-for-rhel-8-\$(arch)-rpms
+```
+subscription-manager repos --enable codeready-builder-for-rhel-8-$(arch)-rpms
+```
 
 2)  Выполнить установку репозитория:
 
-> dnf install <https://dl.fedoraproject.org/pub/epel/epel->release-latest-8.noarch.rpm
+```
+dnf install <https://dl.fedoraproject.org/pub/epel/epel->release-latest-8.noarch.rpm
+```
 
 3)  Обновить состояние репозиториев:
 
-> yum makecache
+```
+yum makecache
+```
 
 4)  Выполнить обновление:
 
-> yum update -y
+```
+yum update -y
+```
 
-## Набор разработчика
+### Набор разработчика
 
-> Список пакетов:
+Список пакетов:
 
-- jatoba\<ver\>-dev – библиотеки и заголовочные файлы для создания собственных расширений для Jatoba/PostgreSQL;
+- jatoba<ver>-dev – библиотеки и заголовочные файлы для создания собственных расширений для Jatoba/PostgreSQL;
 
-- jatoba\<ver\>-docs – англоязычная документация для администраторов, пользователей и разработчиков;
+- jatoba<ver>-docs – англоязычная документация для администраторов, пользователей и разработчиков;
 
-- jatoba\<ver\>-test – набор утилит и библиотек для проведения функционального тестирования СУБД и ее расширений.
+- jatoba<ver>-test – набор утилит и библиотек для проведения функционального тестирования СУБД и ее расширений.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка пакетов:
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-- ОС GNU/Linux Debian и производные от нее:
-
-> apt-get install jatoba\<ver\>-dev jatoba\<ver\>-docs jatoba\<ver\>-test
-
-- ОС GNU/Linux Red Hat и производные от нее:
-
-> yum install jatoba\<ver\>-devel jatoba\<ver\>-docs jatoba\<ver\>-test
-
-- ОС ALTLinux:
-
-> apt-get install jatoba\<ver\>-devel jatoba\<ver\>-docs jatoba\<ver\>-test
-
-- ОС openSUSE:
-
-<img src="../docs/assets/images/com18.3.1/install/media/image47.png" style="width:7.11638in;height:4.7275in" />
-
-> zypper install jatoba\<ver\>-devel jatoba\<ver\>-docs jatoba\<ver\>-test
->
-> Рисунок 3.23 – Установка набора разработчика на примере ОС GNU/Linux Debian
-
-## Пакет поддержки 1C
-
-> Список пакета:
-
-- <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />jatoba\<ver\>-1csupport – в составе пять специальных модулей (расширений), необходимые для работы 1C.
-
-> Внешние зависимости: не требует
->
-> Установка пакетов:
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-1csupport
+```
+apt-get install jatoba<ver>-dev jatoba<ver>-docs jatoba<ver>-test
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-1csupport
+```
+yum install jatoba<ver>-devel jatoba<ver>-docs jatoba<ver>-test
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-1csupport
+```
+apt-get install jatoba<ver>-devel jatoba<ver>-docs jatoba<ver>-test
+```
+
+- ОС openSUSE:
+- 
+```
+zypper install jatoba<ver>-devel jatoba<ver>-docs jatoba<ver>-test
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image47.png)
+
+
+
+Рисунок 3.23 – Установка набора разработчика на примере ОС GNU/Linux Debian
+
+### Пакет поддержки 1C
+
+Список пакета:
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка пакетов:
+
+- ОС GNU/Linux Debian и производные от нее:
+
+```
+apt-get install jatoba<ver>-1csupport
+```
+
+- ОС GNU/Linux Red Hat и производные от нее:
+
+```
+yum install jatoba<ver>-1csupport
+```
+
+- ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-1csupport
+```
 
 - ОС openSUSE:
 
-> zypper install jatoba\<ver\>-1csupport
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image48.png" style="width:7.11458in;height:4.02031in" />
->
-> Рисунок 3.24 – Установка поддержки 1С на примере ОС GNU/Linux Debian
+```
+zypper install jatoba<ver>-1csupport
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image48.png)
+
+Рисунок 3.24 – Установка поддержки 1С на примере ОС GNU/Linux Debian
 
 1.  **Поддержка миграции из Oracle Database®**
 
-> Список пакетов:
+Список пакетов:
 
-- jatoba\<ver\>-oracle-fdw – расширение, которое предоставляет обертку доступа к внешним данным, находящимся в СУБД Oracle Database®;
+- jatoba<ver>-oracle-fdw – расширение, которое предоставляет обертку доступа к внешним данным, находящимся в СУБД Oracle Database®;
 
-- jatoba\<ver\>-orafce – расширение, которое предоставляет набор функций и операторов, совместимых с СУБД Oracle Database®.
+- jatoba<ver>-orafce – расширение, которое предоставляет набор функций и операторов, совместимых с СУБД Oracle Database®.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.2488in" />Внешние зависимости: требуется установка клиентских библиотек СУБД Oracle Database® (пакеты Oracle Instance Client версии 12.2, поставляет Oracle Inc.; заинтересованный пользователь должен скачать и установить их самостоятельно с сайта [<u>oracle.com</u>](https://www.oracle.com/ru/index.html) до установки компонент «Oracle_FDW»)
->
-> Установка сторонних пакетов:
->
-> Детально описана в документации компании разработчика, доступной по ссылке: [<u>Installing Oracle Instant Client Packages</u>](https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/instant-client-install-linux.html#GUID-CD3C72C6-110E-453A-8B69-2961D37EB70B) (рекомендуем обратить внимание на версию устанавливаемой библиотеки).
+:::info Дополнительная информация
+Внешние зависимости: требуется установка клиентских библиотек СУБД Oracle Database® (пакеты Oracle Instance Client версии 12.2, поставляет Oracle Inc.; заинтересованный пользователь должен скачать и установить их самостоятельно с сайта oracle.com до установки компонент «Oracle_FDW»)
+:::
 
-<img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25209in;height:0.25208in" />
+Установка сторонних пакетов:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><blockquote>
-<p><strong>Только для ОС Astra Linux версий 1.7, 1.8; ОС Основа</strong></p>
-<p>Установка внешних зависимостей, в виде клиентских библиотек СУБД Oracle Database® (пакеты Oracle Instance Client версии 12.2), в режиме «Замкнутая программная среда (ЗПС)» невозможна, так как данные клиентские библиотеки не подписаны ЭЦП, соответственно, не являются доверительными в режиме ЗПС.</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>Пакеты jatoba4-oracle-fdw и jatoba4-orafce можно устанавливать и использовать отдельно друг от друга</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+Детально описана в документации компании разработчика, доступной по ссылке: [<u>Installing Oracle Instant Client Packages</u>](https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/instant-client-install-linux.html#GUID-CD3C72C6-110E-453A-8B69-2961D37EB70B) (рекомендуем обратить внимание на версию устанавливаемой библиотеки).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25215in;height:0.25208in" />Установка пакетов:
+:::warning Важная информация
+Установка внешних зависимостей, в виде клиентских библиотек СУБД Oracle Database® (пакеты Oracle Instance Client версии 12.2), в режиме «Замкнутая программная среда (ЗПС)» невозможна, так как данные клиентские библиотеки не подписаны ЭЦП, соответственно, не являются доверительными в режиме ЗПС.
+:::
+
+:::info Дополнительная информация
+Пакеты jatoba4-oracle-fdw и jatoba4-orafce можно устанавливать и использовать отдельно друг от друга
+:::
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-oracle-fdw jatoba\<ver\>-orafce
+```
+apt-get install jatoba<ver>-oracle-fdw jatoba<ver>-orafce
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-oracle_fdw jatoba\<ver\>-orafce
+```
+yum install jatoba<ver>-oracle_fdw jatoba<ver>-orafce
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-oracle_fdw jatoba\<ver\>-orafce
+```
+apt-get install jatoba<ver>-oracle_fdw jatoba<ver>-orafce
+```
 
 - ОС openSUSE:
 
-> zypper install jatoba\<ver\>-oracle_fdw jatoba\<ver\>-orafce
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image49.png" style="width:7.11393in;height:3.98156in" />
->
-> Рисунок 3.25 – Установка компонент миграции на примере ОС GNU/Linux Debian
+```
+zypper install jatoba<ver>-oracle_fdw jatoba<ver>-orafce
+```
 
-## «jaDog» – управление режимом работы узлов кластера
+![](@site/docs/assets/images/com18.3.1/install/media/image49.png)
 
-> Компонент «jaDog» входит в состав СУБД «Jatoba», предназначен для контроля состояния серверов (далее – узлов) кластера СУБД и обеспечивает выполнение функций обработки отказа и восстановления узлов кластера в автоматическом режиме.
->
-> Список пакетов:
->
-> jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> т.е. устанавливается при [<u>базовой установке СУБД</u>](#базовая-установка) (пункт [3.3.1](#базовая-установка)).
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24964in" />Внешние зависимости: не требует
->
-> Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-01 «Руководство по настройке. Часть 1. Управление режимом работы узлов кластера. Компонент «jaDog». Пример установки приведен в Приложении 3 документа.
+Рисунок 3.25 – Установка компонент миграции на примере ОС GNU/Linux Debian
 
-## «jаPooler» – балансировка подключений пользователей к СУБД
+### «jaDog» – управление режимом работы узлов кластера
 
-> Компонент «jaPooler» предназначен для управления соединениями, позволяет подключиться к СУБД большому числу клиентов без существенного снижения производительности.
->
-> Список пакетов:
->
-> jatoba\<ver\>-japooler jatoba\<ver\>-server jatoba\<ver\>-client jatoba\<ver\>-libs
->
-> Внешние зависимости: не требует
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24999in" />Установка компонента под ОС GNU/Linux приведена в документе 643.72410666.00067-08 98 01-15 «Руководство по настройке. Часть 15. Балансировка подключений пользователей к СУБД. Компонент «jaPooler».
+Компонент «jaDog» входит в состав СУБД «Jatoba», предназначен для контроля состояния серверов (далее – узлов) кластера СУБД и обеспечивает выполнение функций обработки отказа и восстановления узлов кластера в автоматическом режиме.
 
-1.  **«ja_CSum» – контроль целостности**
+Список пакетов:
 
-> Компонент «ja_CSum» предназначен для выполнения периодических фоновых проверок файлов, расположенных в ключевых директориях СУБД.
->
-> Список пакетов:
->
-> jatoba\<ver\>-ja_csum
->
-> Внешние зависимости: не требует
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24897in" />Установка компонента под ОС семейства Windows и GNU/Linux описана в документе 643.72410666.00067-08 98 01-14 «Руководство по настройке. Часть 14. Контроль целостности. Компонент «ja_CSum».
+- jatoba<ver>-client 
+- jatoba<ver>-contrib 
+- jatoba<ver>-libs 
+- jatoba<ver>-server
 
-2.  **«ja_Log» – централизованный сбор записей событий СУБД**
+т.е. устанавливается при [<u>базовой установке СУБД</u>](#базовая-установка) (пункт [3.3.1](#базовая-установка)).
 
-> Компонент «ja_Log» предназначен для сбора событий безопасности с целевых СУБД «Jatoba» в служебную СУБД «Jatoba data safe».
->
-> Список пакетов:
->
-> jatoba\<ver\>-ja-log
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-12 «Руководство по настройке. Часть 12. Централизованный сбор записей событий в СУБД. Компонент «ja_Log». Пример установки приведен в Приложении документа.
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-## «JCS (Jatoba crypto access storage)» – сокрытие информации в файлах данных СУБД
+Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-01 «Руководство по настройке. Часть 1. Управление режимом работы узлов кластера. Компонент «jaDog». Пример установки приведен в Приложении 3 документа.
 
-> Компонент «JCS» предназначен для выполнения сокрытия данных в объектах СУБД и предотвращает возможность ознакомления с преобразованными данными при их утрате.
->
-> Список пакетов:
->
-> jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server jatoba\<ver\>-jcs
->
-> Внешние зависимости: не требует
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24921in" />Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-18 «Руководство по настройке. Часть 18. Сокрытие информации в файлах данных СУБД. Компонент «Jatoba crypto access storage». Пример установки приведен в Приложении 1 документа.
+### «jаPooler» – балансировка подключений пользователей к СУБД
 
-3.  **«SQL_Firewall» – выявление и предотвращение исполнения нетипичных SQL-запросов**
+Компонент «jaPooler» предназначен для управления соединениями, позволяет подключиться к СУБД большому числу клиентов без существенного снижения производительности.
 
-> Компонент «SQL_Firewall» предназначен для защиты базы данных от SQL-инъекций или неожиданных запросов.
->
-> Список пакетов:
+Список пакетов:
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 32%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="3"><blockquote>
-<p>jatoba&lt;ver&gt;-client jatoba&lt;ver&gt;-contrib jatoba&lt;ver&gt;-libs</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>№ изменения:</p>
-</blockquote></td>
-<td><blockquote>
-<p>Подпись отв. лица:</p>
-</blockquote></td>
-<td><blockquote>
-<p>Дата внесения изм:</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+> jatoba<ver>-japooler  jatoba<ver>-server jatoba<ver>-client jatoba<ver>-libs
 
-> jatoba\<ver\>-server jatoba\<ver\>-sql-firewall
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-17 «Руководство по настройке. Часть 17. Выявление и предотвращение исполнения нетипичных SQL-запросов. Компонент «SQL_Firewall».
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+### «ja_CSum» – контроль целостности
+
+Компонент «ja_CSum» предназначен для выполнения периодических фоновых проверок файлов, расположенных в ключевых директориях СУБД.
+
+Список пакетов:
+
+> jatoba<ver>-ja_csum
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+
+### «ja_Log» – централизованный сбор записей событий СУБД
+
+Компонент «ja_Log» предназначен для сбора событий безопасности с целевых СУБД «Jatoba» в служебную СУБД «Jatoba data safe».
+
+Список пакетов:
+
+> jatoba<ver>-ja-log
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-12 «Руководство по настройке. Часть 12. Централизованный сбор записей событий в СУБД. Компонент «ja_Log». Пример установки приведен в Приложении документа.
+
+### «JCS (Jatoba crypto access storage)» – сокрытие информации в файлах данных СУБД
+
+Компонент «JCS» предназначен для выполнения сокрытия данных в объектах СУБД и предотвращает возможность ознакомления с преобразованными данными при их утрате.
+
+Список пакетов:
+
+> jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server jatoba<ver>-jcs
+
+Внешние зависимости: не требует
+
+### «SQL_Firewall» – выявление и предотвращение исполнения нетипичных SQL-запросов
+
+Компонент «SQL_Firewall» предназначен для защиты базы данных от SQL-инъекций или неожиданных запросов.
+
+Список пакетов:
+
+> jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server jatoba<ver>-sql-firewall
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-17 «Руководство по настройке. Часть 17. Выявление и предотвращение исполнения нетипичных SQL-запросов. Компонент «SQL_Firewall».
 
 4.  **«pg_Cryogen» – компрессия данных СУБД**
 
-> Компонент «pg_Cryogen» предназначен для компрессии данных в СУБД. Список пакетов:
->
-> jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> jatoba\<ver\>-pg-cryogen
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24982in" />Внешние зависимости: не требует
->
-> Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-10 «Руководство по настройке. Часть 10. Компрессия данных СУБД. Компонент «pg_Cryogen». Пример установки приведен в Приложении 1 документа.
+Компонент «pg_Cryogen» предназначен для компрессии данных в СУБД. Список пакетов:
 
-## «JDV (Jatoba data vault)» – контроль субъектов доступа
+> jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server jatoba<ver>-pg-cryogen
 
-> Компонент «JDV» предназначен для ограничения доступа пользователей СУБД к защищаемым объектам БД.
->
-> Список пакетов:
->
-> jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server jatoba\<ver\>-jdv
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-02 Руководство по настройке. Часть 2. Контроль субъектов доступа. Компонент «Jatoba data vault».
+![](@site/docs/assets/images/com18.3.1/install/media/image2.png)
+
+Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-10 «Руководство по настройке. Часть 10. Компрессия данных СУБД. Компонент «pg_Cryogen». Пример установки приведен в Приложении 1 документа.
+
+### «JDV (Jatoba data vault)» – контроль субъектов доступа
+
+Компонент «JDV» предназначен для ограничения доступа пользователей СУБД к защищаемым объектам БД.
+
+Список пакетов:
+
+> jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server jatoba<ver>-jdv
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-02 Руководство по настройке. Часть 2. Контроль субъектов доступа. Компонент «Jatoba data vault».
 
 5.  **«ja_Sync_LDAP» – компонент синхронизации учетных записей с MS Active Directory**
 
-> Компонент обеспечивает администратора инструментом на уровне СУБД, выполняющим синхронизацию списка пользователей между внешней службой аутентификации (службы каталогов LDAP/Active Directory) и СУБД.
->
-> Список пакетов:
->
-> jatoba\<ver\>-ja-sync-ldap
->
-> Внешние зависимости: не требует
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24999in" />Установка компонента под ОС семейства Windows и GNU/Linux приведена в документе 643.72410666.00067-08 98 01-08 «Руководство по настройке. Часть 8. Синхронизация учетных записей служб каталогов и СУБД. Компонент «ja_Sync_LDAP».
+Компонент обеспечивает администратора инструментом на уровне СУБД, выполняющим синхронизацию списка пользователей между внешней службой аутентификации (службы каталогов LDAP/Active Directory) и СУБД.
 
-## «pgAudit» – аудит действий пользователя
+Список пакетов:
 
-> Список пакетов:
+> jatoba<ver>-ja-sync-ldap
 
-- jatoba\<ver\>-pgaudit – расширение к СУБД, встраиваемое в конвейер обработки запросов и регистрирующее доступ пользователей к объектам СУБД (в основном к таблицам и функциям).
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24999in" />Внешние зависимости: не требует
->
-> Установка пакетов:
+### «pgAudit» – аудит действий пользователя
 
-- ОС GNU/Linux Debian и производные от нее:
+Список пакетов:
 
-> apt-get install jatoba\<ver\>-pgaudit
+- jatoba<ver>-pgaudit – расширение к СУБД, встраиваемое в конвейер обработки запросов и регистрирующее доступ пользователей к объектам СУБД (в основном к таблицам и функциям).
 
-- ОС GNU/Linux Red Hat и производные от нее:
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-> yum install jatoba\<ver\>-pgaudit
-
-- ОС ALTLinux:
-
-> apt-get install jatoba\<ver\>-pgaudit
-
-- ОС openSUSE:
-
-<img src="../docs/assets/images/com18.3.1/install/media/image50.png" style="width:7.04434in;height:3.9675in" />
-
-> zypper install jatoba\<ver\>-pgaudit
->
-> Рисунок 3.26 – Установка расширения аудита на примере ОС GNU/Linux Debian
-
-## «pgauditlogtofile» – дополнительный компонент к компоненту pgAudit
-
-> Список пакетов:
-
-- jatoba\<ver\>-pgauditlogtofile – расширение к СУБД, дополняющее функциональные возможности расширения «pgAudit», перенаправляя строки журнала аудита СУБД в независимый файл.
-
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24964in" />Внешние зависимости: не требует
->
-> Установка пакетов:
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-pgauditlogtofile
+```
+apt-get install jatoba<ver>-pgaudit
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-pgauditlogtofile
+```
+yum install jatoba<ver>-pgaudit
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-pgauditlogtofile
+```
+apt-get install jatoba<ver>-pgaudit
+```
 
 - ОС openSUSE:
+- 
+```
+zypper install jatoba<ver>-pgaudit
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image51.png" style="width:7.01277in;height:3.97708in" alt="C:\Users\KUZNET~1\AppData\Local\Temp\vmware-kuznetsov-a\VMwareDnD\ad9af89c\Screenshot from 2024-04-17 00-41-15.png " />
+![](@site/docs/assets/images/com18.3.1/install/media/image50.png)
 
-> zypper install jatoba\<ver\>-pgauditlogtofile
->
-> Рисунок 3.27 – Установка расширения аудита на примере ОС GNU/Linux Debian
 
-## «pgBadger» – анализатор журналов событий
 
-> Список пакетов:
+Рисунок 3.26 – Установка расширения аудита на примере ОС GNU/Linux Debian
+
+### «pgauditlogtofile» – дополнительный компонент к компоненту pgAudit
+
+Список пакетов:
+
+- jatoba<ver>-pgauditlogtofile – расширение к СУБД, дополняющее функциональные возможности расширения «pgAudit», перенаправляя строки журнала аудита СУБД в независимый файл.
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка пакетов:
+
+- ОС GNU/Linux Debian и производные от нее:
+
+```
+apt-get install jatoba<ver>-pgauditlogtofile
+```
+
+- ОС GNU/Linux Red Hat и производные от нее:
+
+```
+yum install jatoba<ver>-pgauditlogtofile
+```
+
+- ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-pgauditlogtofile
+```
+
+- ОС openSUSE:
+- 
+```
+zypper install jatoba<ver>-pgauditlogtofile
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image51.png)
+
+
+
+Рисунок 3.27 – Установка расширения аудита на примере ОС GNU/Linux Debian
+
+### «pgBadger» – анализатор журналов событий
+
+Список пакетов:
 
 - jatoba4-pgbadger – отдельный исполняемый файл на языке Perl, который работает отдельно от СУБД, но требует доступа к файлам событий СУБД.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости:
+:::info Дополнительная информация
+Внешние зависимости:
 
 1)  perl и несколько perl-модулей для генерации файлов в формате CSV и JSON;
 
 2)  опционально может использовать SSH для удаленного доступа.
+:::
 
-> Установка данного расширения приведена в документе 643.72410666.00067-08 98 01-03 «Руководство по настройке. Часть 3. Настройка модуля для анализа файлов регистрации событий СУБД. Модуль «pgBadger».
+
+Установка данного расширения приведена в документе 643.72410666.00067-08 98 01-03 «Руководство по настройке. Часть 3. Настройка модуля для анализа файлов регистрации событий СУБД. Модуль «pgBadger».
 
 1.  **«pg_ProBackup» – расширенное средство резервного копирования**
 
-> Список пакетов:
+Список пакетов:
 
-- jatoba\<ver\>-pg_probackup – отдельный исполняемый файл, который работает отдельно от СУБД, но требует доступа к СУБД для выполнения функций резервирования / контроля / восстановления данных;
+- jatoba<ver>-pg_probackup – отдельный исполняемый файл, который работает отдельно от СУБД, но требует доступа к СУБД для выполнения функций резервирования / контроля / восстановления данных;
 
-- jatoba\<ver\>-ptrack – расширение к СУБД, которым может пользоваться
+- jatoba<ver>-ptrack – расширение к СУБД, которым может пользоваться
 
-> «pg_ProBackup» для выполнения инкрементального резервного копирования (один из режимов работы «pg_ProBackup»).
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24942in" />Внешние зависимости: опционально может использовать SSH для удаленного доступа к серверу для выполнения резервирования / восстановления
+«pg_ProBackup» для выполнения инкрементального резервного копирования (один из режимов работы «pg_ProBackup»).
 
-Установка данного компонента приведена в документе 643.72410666.00067-08 98 01-
+:::info Дополнительная информация
+Внешние зависимости: опционально может использовать SSH для удаленного доступа к серверу для выполнения резервирования / восстановления
+:::
 
-04\. «Руководство по настройке. Часть 4. Расширенное резервное копирование. Компонент
+### «pg_Profile» – анализ производительности СУБД
 
-> «pg_ProBackup».
+Список пакетов:
 
-2.  **«pg_Profile» – анализ производительности СУБД**
+- jatoba<ver>-pg_profile – расширение к СУБД, позволяющее собирать и просматривать параметры и метрики функционирования различных баз данных (БД) в различное время, а также строить отчеты по этим данным и сравнивать их между собой для выявления проблемных мест.
 
-> Список пакетов:
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-- jatoba\<ver\>-pg_profile – расширение к СУБД, позволяющее собирать и просматривать параметры и метрики функционирования различных баз данных (БД) в различное время, а также строить отчеты по этим данным и сравнивать их между собой для выявления проблемных мест.
+Установка данного расширения приведена в документе 643.72410666.00067-08 98 01-06 «Руководство по настройке. Часть 6. Настройка модуля для анализа производительности СУБД. Модуль «pg_Profile».
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24879in" />Внешние зависимости: не требует
->
-> Установка данного расширения приведена в документе 643.72410666.00067-08 98 01-06 «Руководство по настройке. Часть 6. Настройка модуля для анализа производительности СУБД. Модуль «pg_Profile».
+### «pgSQL-HTTP» – доступ к сайтам по HTTP/S протоколу из СУБД
 
-## «pgSQL-HTTP» – доступ к сайтам по HTTP/S протоколу из СУБД
+Список пакетов:
 
-> Список пакетов:
+- jatoba<ver>-pgsql-http – расширение к СУБД, позволяющее выполнять запросы к внешним веб-серверам (http/https-запросы).
 
-- jatoba\<ver\>-pgsql-http – расширение к СУБД, позволяющее выполнять запросы к внешним веб-серверам (http/https-запросы).
+:::info Дополнительная информация
+Внешние зависимости: требует библиотеку curl. Библиотека curl обычно входит в стандартную установку большинства Linux-дистрибутивов. Если по каким-то причинам она не установлена, то далее приведены команды, с помощью которых ее можно установить на различных видах дистрибутивов
+:::
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24999in" />Внешние зависимости: требует библиотеку curl. Библиотека curl обычно входит в стандартную установку большинства Linux-дистрибутивов. Если по каким-то причинам она не установлена, то далее приведены команды, с помощью которых ее можно установить на различных видах дистрибутивов
->
-> Установка зависимостей:
+Установка зависимостей:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install libcurl-gnutls
+```
+apt-get install libcurl-gnutls
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install libcurl
+```
+yum install libcurl
+```
 
 - ОС ALTLinux:
 
-> apt-get install libcurl
+```
+apt-get install libcurl
+```
 
 - ОС openSUSE:
 
-> zypper install libcurl
->
-> Установка пакетов:
+```
+zypper install libcurl
+```
+
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-pgsql-http
+```
+apt-get install jatoba<ver>-pgsql-http
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-pgsql-http
+```
+yum install jatoba<ver>-pgsql-http
+```
 
 - ОС ALT Linux:
 
-> apt-get install jatoba\<ver\>-pgsql-http
+```
+apt-get install jatoba<ver>-pgsql-http
+```
 
 - ОС openSUSE:
+- 
+```
+zypper install jatoba<ver>-pgsql-http
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image52.png" style="width:7.11526in;height:4.08812in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image52.png)
 
-> zypper install jatoba\<ver\>-pgsql-http
->
-> Рисунок 3.28 – Установка расширения на примере ОС GNU/Linux Debian
 
-1.  **«pg_Variables» – создание переменных в сессии пользователя**
 
-> Список пакетов:
+Рисунок 3.28 – Установка расширения на примере ОС GNU/Linux Debian
 
-- <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24919in" /> jatoba\<ver\>-pg-variables – расширение к СУБД. Внешние зависимости: не требует
+### «pg_Variables» – создание переменных в сессии пользователя
 
-> Установка пакетов:
+Список пакетов:
+
+- jatoba<ver>-pg-variables – расширение к СУБД. 
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 32%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="3"><blockquote>
-<p>apt-get install jatoba&lt;ver&gt;-pg-variables</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>№ изменения:</p>
-</blockquote></td>
-<td><blockquote>
-<p>Подпись отв. лица:</p>
-</blockquote></td>
-<td><blockquote>
-<p>Дата внесения изм:</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+```
+apt-get install jatoba<ver>-pg-variables
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-pg_variables
+```
+yum install jatoba<ver>-pg_variables
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-pg_variables
+```
+apt-get install jatoba<ver>-pg_variables
+```
 
 - ОС openSUSE:
+- 
+```
+zypper install jatoba<ver>-pg_variables
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image53.png" style="width:7.11449in;height:4.03969in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image53.png)
 
-> zypper install jatoba\<ver\>-pg_variables
->
-> Рисунок 3.29 – Установка расширения на примере ОС GNU/Linux Debian
 
-## Дополнительные языки хранимых процедур
 
-> Список пакетов:
+Рисунок 3.29 – Установка расширения на примере ОС GNU/Linux Debian
 
-- jatoba\<ver\>-plperl – добавление в СУБД поддержки написания хранимых процедур на языке perl;
+### Дополнительные языки хранимых процедур
 
-- jatoba\<ver\>-plpython – добавление в СУБД поддержки написания хранимых процедур на языке python версии 2;
+Список пакетов:
 
-- <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />jatoba\<ver\>-plpython3 – добавление в СУБД поддержки написания хранимых процедур на языке python версии 3.
+- jatoba<ver>-plperl – добавление в СУБД поддержки написания хранимых процедур на языке perl;
 
-> Внешние зависимости: требуется в системе наличие библиотек для языков perl, python2 и python3. Эти языки обычно входят в стандартный комплект поставки большинства Linux-дистрибутивов и устанавливаются автоматически
->
-> Перечисленные пакеты не зависят друг от друга и могут быть поставлены по отдельности в любом порядке. Команды установки показаны на примере пакета jatoba4-plpython3.
->
-> Установка пакетов:
+- jatoba<ver>-plpython – добавление в СУБД поддержки написания хранимых процедур на языке python версии 2;
+
+:::info Дополнительная информация
+Внешние зависимости: требуется в системе наличие библиотек для языков perl, python2 и python3. Эти языки обычно входят в стандартный комплект поставки большинства Linux-дистрибутивов и устанавливаются автоматически
+:::
+
+
+
+Перечисленные пакеты не зависят друг от друга и могут быть поставлены по отдельности в любом порядке. Команды установки показаны на примере пакета jatoba4-plpython3.
+
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-plpython3
+```
+apt-get install jatoba<ver>-plpython3
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-plpython3
+```
+yum install jatoba<ver>-plpython3
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-plpython3
+```
+apt-get install jatoba<ver>-plpython3
+```
 
 - ОС openSUSE:
 
-> zypper install jatoba\<ver\>-plpython3
+```
+zypper install jatoba<ver>-plpython3
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25209in;height:0.25208in" />
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image54.png" style="width:7.1145in;height:4.03969in" />
->
-> Рисунок 3.30 – Установка расширения на примере ОС GNU/Linux Debian
+![](@site/docs/assets/images/com18.3.1/install/media/image54.png)
 
-## «PlsPgSQL» – обфускация исходных текстов хранимых процедур
+Рисунок 3.30 – Установка расширения на примере ОС GNU/Linux Debian
 
-> Список пакетов:
+### «PlsPgSQL» – обфускация исходных текстов хранимых процедур
 
-- <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25242in;height:0.25208in" />jatoba\<ver\>-plspgsql – расширение к СУБД, а также утилита закрытия исходных текстов хранимых процедур.
+Список пакетов:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>Внешние зависимости: требуется установка следующих внешних продуктов:</p>
-</blockquote>
-<ol type="1">
-<li><p>lsb-cprocsp – криптопровайдер «КриптоПро CSP» для различных операционных систем разработанный ООО «КРИПТО-ПРО» (не входит в состав дистрибутива);</p></li>
-<li><p>gis-cryptoplatform17 – библиотека «КриптоПлатформа» для централизованной работы с криптоправайдерами в ОС, продукт поставляет ООО «Газинформсервис».</p></li>
-</ol></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p><strong>Только для ОС Astra Linux версий 1.7, 1.8; ОС Основа</strong></p>
-<p>Установка внешней зависимостей, в виде криптопровайдера «КриптоПро CSP», в режиме «Замкнутая программная среда (ЗПС)» невозможна, так как данные</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+- jatoba<ver>-plspgsql – расширение к СУБД, а также утилита закрытия исходных текстов хранимых процедур.
 
-> клиентские библиотеки не подписаны ЭЦП, соответственно, не являются доверительными в режиме ЗПС.
->
-> Список сторонних пакетов:
+:::info Дополнительная информация
+Внешние зависимости: требуется установка следующих внешних продуктов:
+1)	lsb-cprocsp – криптопровайдер «КриптоПро CSP» для различных операционных систем разработанный ООО «КРИПТО-ПРО» (не входит в состав дистрибутива);
+2)	gis-cryptoplatform17 – библиотека «КриптоПлатформа» для централизованной работы с криптоправайдерами в ОС, продукт поставляет ООО «Газинформсервис».
+:::
+
+:::warning Важная информация
+Только для ОС Astra Linux версий 1.7, 1.8; ОС Основа
+Установка внешней зависимостей, в виде криптопровайдера «КриптоПро CSP», в режиме «Замкнутая программная среда (ЗПС)» невозможна, так как данные клиентские библиотеки не подписаны ЭЦП, соответственно, не являются доверительными в режиме ЗПС.
+
+:::
+
+Список сторонних пакетов:
 
 1)  lsb-cprocsp – криптопровайдер «КриптоПро CSP» версии 5.0. Данный пакет распространяется в виде самостоятельного DEB/RPM дистрибутива. Для установки необходимо обратиться к документации на официальном сайте разработчика КриптоПро – для доступа требуется зарегистрированный пользователь по правилам сайта [<u>https://cryptopro.ru/user</u>)](https://cryptopro.ru/user);
 
-2)  gis-cryptoplatform17 – библиотека «КриптоПлатформа» версия 1.7.3-4. Данный пакет распространяется в составе дистрибутива СУБД «Jatoba» и устанавливается автоматически по зависимостям при установке пакета jatoba\<ver\>-plspgsql.
+2)  gis-cryptoplatform17 – библиотека «КриптоПлатформа» версия 1.7.3-4. Данный пакет распространяется в составе дистрибутива СУБД «Jatoba» и устанавливается автоматически по зависимостям при установке пакета jatoba<ver>-plspgsql.
 
-> Установка пакетов:
-
-- ОС GNU/Linux Debian и производные от нее:
-
-> apt-get install jatoba\<ver\>-plspgsql
-
-- ОС GNU/Linux Red Hat и производные от нее:
-
-> yum install jatoba\<ver\>-plspgsql
-
-- ОС ALTLinux:
-
-> apt-get install jatoba\<ver\>-plspgsql
-
-- ОС openSUSE:
-
-> zypper install jatoba\<ver\>-plspgsql
-
-## «PostGIS» – организация работы с геоданными
-
-> Список пакетов:
-
-- jatoba\<ver\>-postgis – расширение к СУБД, а также утилита получения и преобразования данных, определяемой формат между СУБД и внешними приложениями картографии.
-
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: GDAL, PROJ, GEOS – специализированные библиотеки обработки данных, применяемые в области геоинформатики и картографии. Указанные пакеты поставляются в составе некоторых дистрибутивов Linux и будут установлены автоматически по зависимостям
->
-> Установка пакетов:
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-postgis
+```
+apt-get install jatoba<ver>-plspgsql
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-postgis
+```
+yum install jatoba<ver>-plspgsql
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-postgis
+```
+apt-get install jatoba<ver>-plspgsql
+```
 
 - ОС openSUSE:
 
-> zypper install jatoba\<ver\>-postgis
+```
+zypper install jatoba<ver>-plspgsql
+```
 
-## «SecurityProfile» – парольные политики
+### «PostGIS» – организация работы с геоданными
 
-> Список пакетов:
+Список пакетов:
 
-- <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />jatoba\<ver\>-securityprofile – расширение к СУБД, позволяющее формировать парольные политики.
+- jatoba<ver>-postgis – расширение к СУБД, а также утилита получения и преобразования данных, определяемой формат между СУБД и внешними приложениями картографии.
 
-> Внешние зависимости: не требует
->
-> Установка пакета:
+:::info Дополнительная информация
+Внешние зависимости: GDAL, PROJ, GEOS – специализированные библиотеки обработки данных, применяемые в области геоинформатики и картографии. Указанные пакеты поставляются в составе некоторых дистрибутивов Linux и будут установлены автоматически по зависимостям
+:::
+
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-securityprofile
+```
+apt-get install jatoba<ver>-postgis
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-securityprofile
+```
+yum install jatoba<ver>-postgis
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-securityprofile
+```
+apt-get install jatoba<ver>-postgis
+```
 
 - ОС openSUSE:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image55.png" style="width:7.11556in;height:3.1in" />
+```
+zypper install jatoba<ver>-postgis
+```
 
-> zypper install jatoba\<ver\>-securityprofile
->
-> Рисунок 3.31 – Установка расширения на примере ОС GNU/Linux Debian
+### «SecurityProfile» – парольные политики
+
+Список пакетов:
+
+- jatoba<ver>-securityprofile – расширение к СУБД, позволяющее формировать парольные политики.
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Внешние зависимости: не требует
+
+Установка пакета:
+
+- ОС GNU/Linux Debian и производные от нее:
+
+```
+apt-get install jatoba<ver>-securityprofile
+```
+
+- ОС GNU/Linux Red Hat и производные от нее:
+
+```
+yum install jatoba<ver>-securityprofile
+```
+
+- ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-securityprofile
+```
+
+- ОС openSUSE:
+- 
+```
+zypper install jatoba<ver>-securityprofile
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image55.png)
+
+
+
+Рисунок 3.31 – Установка расширения на примере ОС GNU/Linux Debian
 
 1.  <span id="_bookmark27" class="anchor"></span>**«pg_Task» – планировщик асинхронных задач**
 
-> Список пакетов:
+Список пакетов:
 
-- jatoba\<ver\>-pg_task – расширение к СУБД, позволяющее задавать задачи на языке SQL для их выполнения в заданное время в заданной базе данных от заданного пользователя.
+- jatoba<ver>-pg_task – расширение к СУБД, позволяющее задавать задачи на языке SQL для их выполнения в заданное время в заданной базе данных от заданного пользователя.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка данного расширения приведена в документе 643.72410666.00067-08 98 01-05 «Руководство по настройке. Часть 5. Планирование заданий СУБД. Компонент
->
-> «pg_Task».
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-1.  **«ja_Plan_Manager» – компонент создания планов запросов в БД**
+Установка данного расширения приведена в документе 643.72410666.00067-08 98 01-05 «Руководство по настройке. Часть 5. Планирование заданий СУБД. Компонент «pg_Task».
 
-> Список пакетов:
+### «ja_Plan_Manager» – компонент создания планов запросов в БД
 
-- jatoba\<ver\>-ja-plan-manager – расширение к СУБД, предназначенное для создания, оптимизации, экспорта/импорта и подмены планов запросов в БД.
+Список пакетов:
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
+- jatoba<ver>-ja-plan-manager – расширение к СУБД, предназначенное для создания, оптимизации, экспорта/импорта и подмены планов запросов в БД.
 
-Установка данного расширения приведена в документе 643.72410666.00067-08 98 01-
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-21 «Руководство по настройке. Часть 21. Управление планами запросов. Компонент
+Установка данного расширения приведена в документе 643.72410666.00067-08 98 01-21 «Руководство по настройке. Часть 21. Управление планами запросов. Компонент «ja_Plan_Manager».
 
-> «ja_Plan_Manager».
+### «pg_hint_plan» – компонент корректировки запросов
 
-2.  **«pg_hint_plan» – компонент корректировки запросов**
+Список пакетов:
 
-> Список пакетов:
+- jatoba<ver>-pg-hint-plan – расширение к СУБД, предназначенное для корректировки планов выполнения, применяя так называемые «указания», записываемые в виде простых описаний в SQL-комментариях особого вида.
 
-- jatoba\<ver\>-pg-hint-plan – расширение к СУБД, предназначенное для корректировки планов выполнения, применяя так называемые «указания», записываемые в виде простых описаний в SQL-комментариях особого вида.
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24999in" />Внешние зависимости: не требует
->
-> Установка пакетов:
-
-- ОС GNU/Linux Debian и производные от нее:
-
-> apt-get install jatoba\<ver\>-pg-hint-plan
-
-- ОС GNU/Linux Red Hat и производные от нее:
-
-> yum install jatoba\<ver\>-pg-hint-plan
-
-- ОС ALTLinux:
-
-> apt-get install jatoba\<ver\>-pg-hint-plan
-
-- ОС openSUSE:
-
-> zypper install jatoba\<ver\>-pg-hint-plan
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image56.png" style="width:7.02634in;height:3.92437in" />
->
-> Рисунок 3.32 – Установка пакета jatoba\<ver\>-pg-hint-plan в OC Ubuntu
-
-3.  **«pg_store_plans» – компонент контроля выполненных планов запросов**
-
-> Список пакетов:
-
-- jatoba\<ver\>-pg-store-plans – расширение к СУБД, предназначенное для контроля выполненных планов запросов.
-
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка пакетов:
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-pg-store-plans
+```
+apt-get install jatoba<ver>-pg-hint-plan
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-pg-store-plans
+```
+yum install jatoba<ver>-pg-hint-plan
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-pg-store-plans
+```
+apt-get install jatoba<ver>-pg-hint-plan
+```
 
 - ОС openSUSE:
 
-> zypper install jatoba\<ver\>-pg-store-plans
+```
+zypper install jatoba<ver>-pg-hint-plan
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image57.png" style="width:7.08249in;height:3.98667in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image56.png)
 
-> Рисунок 3.33 – Установка пакета jatoba\<ver\>-pg-store-plans в OC Ubuntu
+Рисунок 3.32 – Установка пакета jatoba<ver>-pg-hint-plan в OC Ubuntu
 
-4.  **«pg_ulid» – компонент поддержки лексографического идентификатора**
+### «pg_store_plans» – компонент контроля выполненных планов запросов
 
-> Список пакетов:
+Список пакетов:
 
-- jatoba\<ver\>-pg-ulid – расширение к СУБД, предназначенное для поддержки типа данных ULID.
+- jatoba<ver>-pg-store-plans – расширение к СУБД, предназначенное для контроля выполненных планов запросов.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка пакетов:
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка пакетов:
 
 - ОС GNU/Linux Debian и производные от нее:
 
-> apt-get install jatoba\<ver\>-pg-ulid
+```
+apt-get install jatoba<ver>-pg-store-plans
+```
 
 - ОС GNU/Linux Red Hat и производные от нее:
 
-> yum install jatoba\<ver\>-pg_ulid
+```
+yum install jatoba<ver>-pg-store-plans
+```
 
 - ОС ALTLinux:
 
-> apt-get install jatoba\<ver\>-pg_ulid
+```
+apt-get install jatoba<ver>-pg-store-plans
+```
 
 - ОС openSUSE:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image58.png" style="width:7.02262in;height:3.08073in" />
+```
+zypper install jatoba<ver>-pg-store-plans
+```
 
-> zypper install jatoba\<ver\>-pg_ulid
->
-> Рисунок 3.34 – Установка пакета jatoba\<ver\>-pg-ulid в OC Ubuntu
+![](@site/docs/assets/images/com18.3.1/install/media/image57.png)
 
-5.  **«ja_seceventlog» – компонент записи событий информационной безопасности**
+Рисунок 3.33 – Установка пакета jatoba<ver>-pg-store-plans в OC Ubuntu
 
-> Список пакетов:
+### «pg_ulid» – компонент поддержки лексографического идентификатора
 
-- jatoba\<ver\>-ja_seceventlog – расширение к СУБД, предназначенное для записи событий информационной безопасности СУБД.
+Список пакетов:
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка пакетов:
->
-> − ОС GNU/Linux Debian и производные от нее:
->
-> apt-get install jatoba\<ver\>-ja-seceventlog
->
-> − ОС GNU/Linux Red Hat и производные от нее:
->
-> yum install jatoba\<ver\>-ja_seceventlog
->
-> apt-get install jatoba\<ver\>-ja_seceventlog
->
-> − ОС openSUSE:
->
-> zypper install jatoba\<ver\>-ja_seceventlog
+- jatoba<ver>-pg-ulid – расширение к СУБД, предназначенное для поддержки типа данных ULID.
 
-## «rum» – компонент поддержки индекса RUM
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-> Список пакетов:
+Установка пакетов:
 
-- jatoba\<ver\>-rum – расширение к СУБД, предназначенное для доступа к индексу RUM СУБД.
+- ОС GNU/Linux Debian и производные от нее:
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка пакетов:
->
-> − ОС GNU/Linux Debian и производные от нее:
->
-> apt-get install jatoba\<ver\>-rum
->
-> − ОС GNU/Linux Red Hat и производные от нее:
->
-> yum install jatoba\<ver\>-rum
->
-> − ОС ALTLinux:
->
-> apt-get install jatoba\<ver\>-rum
->
-> − ОС openSUSE:
->
-> zypper install jatoba\<ver\>-rum
+```
+apt-get install jatoba<ver>-pg-ulid
+```
+
+- ОС GNU/Linux Red Hat и производные от нее:
+
+```
+yum install jatoba<ver>-pg_ulid
+```
+
+- ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-pg_ulid
+```
+
+- ОС openSUSE:
+
+```
+zypper install jatoba<ver>-pg_ulid
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image58.png)
+
+
+
+Рисунок 3.34 – Установка пакета jatoba<ver>-pg-ulid в OC Ubuntu
+
+### «ja_seceventlog» – компонент записи событий информационной безопасности
+
+Список пакетов:
+
+- jatoba<ver>-ja_seceventlog – расширение к СУБД, предназначенное для записи событий информационной безопасности СУБД.
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка пакетов:
+
+− ОС GNU/Linux Debian и производные от нее:
+
+```
+apt-get install jatoba<ver>-ja-seceventlog
+```
+
+− ОС GNU/Linux Red Hat и производные от нее:
+
+```
+yum install jatoba<ver>-ja_seceventlog
+```
+
+- ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-ja_seceventlog
+```
+
+− ОС openSUSE:
+
+```
+zypper install jatoba<ver>-ja_seceventlog
+```
+
+### «rum» – компонент поддержки индекса RUM
+
+Список пакетов:
+
+- jatoba<ver>-rum – расширение к СУБД, предназначенное для доступа к индексу RUM СУБД.
+
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+Установка пакетов:
+
+− ОС GNU/Linux Debian и производные от нее:
+
+```
+apt-get install jatoba<ver>-rum
+```
+
+− ОС GNU/Linux Red Hat и производные от нее:
+
+```
+yum install jatoba<ver>-rum
+```
+
+− ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-rum
+```
+
+− ОС openSUSE:
+
+```
+zypper install jatoba<ver>-rum
+```
 
 6.  **«ja_Similar» – компонент полнотекстового поиска**
 
-> Список пакетов:
+Список пакетов:
 
-- jatoba\<ver\>-ja-similar – расширение к СУБД, предназначенное для полнотекстового поиска и определения похожих текстов.
+- jatoba<ver>-ja-similar – расширение к СУБД, предназначенное для полнотекстового поиска и определения похожих текстов.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Внешние зависимости: не требует
->
-> Установка пакетов:
->
-> − ОС GNU/Linux Debian и производные от нее:
->
-> apt-get install jatoba\<ver\>-ja-similar
->
-> − ОС GNU/Linux Red Hat и производные от нее:
->
-> yum install jatoba\<ver\>-ja-similar
->
-> − ОС ALTLinux:
->
-> apt-get install jatoba\<ver\>-ja-similar
->
-> − ОС openSUSE:
->
-> zypper install jatoba\<ver\>-ja-similar
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
+
+
+Установка пакетов:
+
+− ОС GNU/Linux Debian и производные от нее:
+
+```
+apt-get install jatoba<ver>-ja-similar
+```
+
+− ОС GNU/Linux Red Hat и производные от нее:
+
+```
+yum install jatoba<ver>-ja-similar
+```
+
+− ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-ja-similar
+```
+
+− ОС openSUSE:
+
+```
+zypper install jatoba<ver>-ja-similar
+```
 
 7.  **«ja_Inventory» – компонент инвентаризации СУБД**
 
-> Список пакетов:
+Список пакетов:
 
-- <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24999in" /> jatoba\<ver\>-ja-inventory – утилита предназначенная для инвентаризации СУБД. Внешние зависимости: не требует
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-> Установка пакетов:
->
-> − ОС GNU/Linux Debian и производные от нее:
->
-> apt-get install jatoba\<ver\>-ja-inventory
->
-> − ОС GNU/Linux Red Hat и производные от нее:
->
-> yum install jatoba\<ver\>-ja-inventory
->
-> − ОС ALTLinux:
->
-> apt-get install jatoba\<ver\>-ja-inventory
->
-> − ОС openSUSE:
->
-> zypper install jatoba\<ver\>-ja-inventory
+Установка пакетов:
+
+− ОС GNU/Linux Debian и производные от нее:
+
+```
+apt-get install jatoba<ver>-ja-inventory
+```
+
+− ОС GNU/Linux Red Hat и производные от нее:
+
+```
+yum install jatoba<ver>-ja-inventory
+```
+
+− ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-ja-inventory
+```
+
+− ОС openSUSE:
+
+```
+zypper install jatoba<ver>-ja-inventory
+```
 
 8.  **«pg_repack» – компонент реорганизации таблиц**
 
-> Установка компонента описана в документе 643.72410666.00067-08 98 01-24
->
-> «Руководство по настройке. Часть 24. Реорганизация таблиц. Компонент «pg_repack».
+Установка компонента описана в документе 643.72410666.00067-08 98 01-24 «Руководство по настройке. Часть 24. Реорганизация таблиц. Компонент «pg_repack».
 
-## tsvector2 – компонент расширенного типа данных tsvector
+### tsvector2 – компонент расширенного типа данных tsvector
 
-> Список пакетов:
+Список пакетов:
 
-- <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" /> jatoba\<ver\>-tsvector2 – утилита предназначенная для инвентаризации СУБД. Внешние зависимости: не требует
+- jatoba<ver>-tsvector2 – утилита предназначенная для инвентаризации СУБД. 
 
-> Установка пакетов:
->
-> − ОС GNU/Linux Debian и производные от нее:
->
-> apt-get install jatoba\<ver\>-tsvector2
->
-> − ОС GNU/Linux Red Hat и производные от нее:
->
-> yum install jatoba\<ver\>-tsvector2
->
-> − ОС ALTLinux:
->
-> apt-get install jatoba\<ver\>-tsvector2
->
-> − ОС openSUSE:
->
-> zypper install jatoba\<ver\>-tsvector2
+:::info Дополнительная информация
+Внешние зависимости: не требует
+:::
 
-## Компоненты поддержки мониторинга СУБД
+Установка пакетов:
 
-> Установка компонентов:
+− ОС GNU/Linux Debian и производные от нее:
 
-- jatoba\*\_node_exporter;
+```
+apt-get install jatoba<ver>-tsvector2
+```
 
-- jatoba\*\_postgres_exporter;
+− ОС GNU/Linux Red Hat и производные от нее:
 
-- jatoba\*\_sql_exporter;
+```
+yum install jatoba<ver>-tsvector2
+```
+
+− ОС ALTLinux:
+
+```
+apt-get install jatoba<ver>-tsvector2
+```
+
+− ОС openSUSE:
+
+```
+zypper install jatoba<ver>-tsvector2
+```
+
+### Компоненты поддержки мониторинга СУБД
+
+Установка компонентов:
+
+- jatoba*_node_exporter;
+
+- jatoba*_postgres_exporter;
+
+- jatoba*_sql_exporter;
 
 - системы «Prometheus»;
 
 - утилита «alertmanager»;
 
-> описана в документе 643.72410666.00067-08 98 01-28 «Руководство по настройке.
->
-> Часть 28. Поддержка мониторинга СУБД.
+описана в документе 643.72410666.00067-08 98 01-28 «Руководство по настройке. Часть 28. Поддержка мониторинга СУБД.
 
-## Порядок установки СУБД «Jatoba» на ОС GNU/Linux, основанной на Debian из локального репозитория
+### Порядок установки СУБД «Jatoba» на ОС GNU/Linux, основанной на Debian из локального репозитория
 
-> Для установки СУБД «Jatoba» необходимо выполнить следующую последовательность действий:
+Для установки СУБД «Jatoba» необходимо выполнить следующую последовательность действий:
 
 1)  Создать каталог /localrepo, выполнив команду:
 
-> mkdir /localrepo
+```
+mkdir /localrepo
+```
 
 2)  В каталог /localrepo скопировать необходимые файлы для установки СУБД «Jatoba».
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25138in;height:0.25013in" />Требуется скопировать полную структуру файлов и каталогов из дистрибутива. Также допускается установка с CD/DVD носителя напрямую. В этом случае, пользователю не требуется копировать файлы, а вместо /localrepo во всех шагах далее указывать соответствующий путь до носителя и директорию репозитория СУБД на носителе для соответствующей ОС.
->
-> Структура каталога дистрибутива для всех поддерживаемых ОС GNU/Linux, основанных на Debian, описана в таблице [П 1](#_bookmark150) Приложения [1](#приложение-1).
+:::warning Важная информация
+Требуется скопировать полную структуру файлов и каталогов из дистрибутива. Также допускается установка с CD/DVD носителя напрямую. В этом случае, пользователю не требуется копировать файлы, а вместо /localrepo во всех шагах далее указывать соответствующий путь до носителя и директорию репозитория СУБД на носителе для соответствующей ОС.
+
+Структура каталога дистрибутива для всех поддерживаемых ОС GNU/Linux, основанных на Debian, описана в таблице П 1 Приложения 1.
+
+:::
 
 3)  Проверить результат копирования всех файлов, перейдя в каталог /localrepo и выполнив команду (см. рис. [3.35](#_bookmark29)):
 
-<img src="../docs/assets/images/com18.3.1/install/media/image59.png" style="width:7.10645in;height:1.6275in" />
+```
+ls -l
+```
 
-> ls -l
->
-> <span id="_bookmark29" class="anchor"></span>Рисунок 3.35 – Просмотр каталога /localrepo
+![](@site/docs/assets/images/com18.3.1/install/media/image59.png)
+
+
+
+<span id="_bookmark29" class="anchor"></span>Рисунок 3.35 – Просмотр каталога /localrepo
 
 4)  Установить открытый ключ репозитория при помощи команды (см. рис. [3.36](#_bookmark30)):
 
-> apt-key add /localrepo/DEB-GPG-KEY-Jatoba
+```
+apt-key add /localrepo/DEB-GPG-KEY-Jatoba
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image60.png" style="width:7.10651in;height:1.07531in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image60.png)
 
-> <span id="_bookmark30" class="anchor"></span>Рисунок 3.36 – Установка открытого ключа
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25138in;height:0.25134in" />Для более новых версий ОС GNU/Linux, основанных на Debian (Astra Linux 1.8, Debian 12, Ubuntu 24.04 и других), рекомендуется добавлять ключ репозитория следующим образом.
->
-> Скопировать ключ репозитория:
+<span id="_bookmark30" class="anchor"></span>Рисунок 3.36 – Установка открытого ключа
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>cp /localrepo/DEB-GPG-KEY-Jatoba /etc/apt/keyrings/</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+Для более новых версий ОС GNU/Linux, основанных на Debian (Astra Linux 1.8, Debian 12, Ubuntu 24.04 и других), рекомендуется добавлять ключ репозитория следующим образом.
+Скопировать ключ репозитория:
 
-> Добавить описание нового репозитория в список:
+```
+cp /localrepo/DEB-GPG-KEY-Jatoba /etc/apt/keyrings/
+```
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>echo "deb [signed-by=/etc/apt/keyrings/DEB-GPG-KEY-Jatoba] file:///localrepo stable non-free" &gt;</p>
-<p>/etc/apt/sources.list.d/jatoba-&lt;ver&gt;.list</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+Добавить описание нового репозитория в список:
 
-> Здесь jatoba-\<ver\> - версия устанавливаемой СУБД «Jatoba». Затем выполнить [6)](#_bookmark31) из данного подраздела.
+```
+echo "deb [signed-by=/etc/apt/keyrings/DEB-GPG-KEY-Jatoba] file:///localrepo stable non-free" > /etc/apt/sources.list.d/jatoba-<ver>.list
+```
+
+Здесь jatoba-<ver> - версия устанавливаемой СУБД «Jatoba».
+
+Затем выполнить 6) из данного подраздела.
+:::
 
 5)  Создать файл с описанием локального репозитория в системе, имя файла репозитория и его содержимое для соответствующей ОС указано в таблице [П 2](#_bookmark151) Приложения [1](#приложение-1):
 
-<img src="../docs/assets/images/com18.3.1/install/media/image61.png" style="width:7.10707in;height:1.1625in" />
+```
+nano /etc/apt/sources.list.d/jatoba-4.list
+```
 
-> nano /etc/apt/sources.list.d/jatoba-4.list
->
-> Рисунок 3.37 – Описание локального репозитория
+![](@site/docs/assets/images/com18.3.1/install/media/image61.png)
+
+
+
+Рисунок 3.37 – Описание локального репозитория
 
 6)  <span id="_bookmark31" class="anchor"></span>Обновить описания пакетов при помощи команды (см. рис. [3.38](#_bookmark32)):
 
-> apt-get update
+```
+apt-get update
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image62.png" style="width:7.10645in;height:2.45094in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image62.png)
 
-> <span id="_bookmark32" class="anchor"></span>[3.39](#_bookmark33)):
->
-> Рисунок 3.38 – Обновление описания пакетов
+<span id="_bookmark32" class="anchor"></span>[3.39](#_bookmark33)):Рисунок 3.38 – Обновление описания пакетов
 
 7)  Установить основные пакеты СУБД «Jatoba» при помощи команды (см. рис.
 
-> apt-get install jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Пакеты jatoba\<ver\>-client, jatoba\<ver\>-contrib, jatoba\<ver\>-libs, jatoba\<ver\>-server являются обязательными для установки СУБД.
->
-> При необходимости установки дополнительных пакетов см. раздел [3.3.3](#установка-пакетов-расширяющих-возможности-субд)
+```
+apt-get install jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image63.png" style="width:7.03004in;height:3.5075in" />
+:::warning Важная информация
+Пакеты jatoba<ver>-client, jatoba<ver>-contrib, jatoba<ver>-libs, jatoba<ver>-server являются обязательными для установки СУБД.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.24717in;height:0.24635in" /><img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.24729in;height:0.24635in" /><img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25208in;height:0.25208in" /><span id="_bookmark33" class="anchor"></span>Рисунок 3.39 – Установка основных пакетов
+При необходимости установки дополнительных пакетов см. раздел 3.3.3
+:::
 
 8)  <span id="_bookmark34" class="anchor"></span>Перейти в директорию расположения исполняемых файлов СУБД «Jatoba», выполнив команду (см. рис. [3.40](#_bookmark35)):
 
-<img src="../docs/assets/images/com18.3.1/install/media/image64.png" style="width:7.11893in;height:0.93969in" />
+```
+cd /usr/jatoba-<ver>/bin/
+```
 
-> cd /usr/jatoba-\<ver\>/bin/
->
-> <span id="_bookmark35" class="anchor"></span>Рисунок 3.40 – Переход в директорию установки
+![](@site/docs/assets/images/com18.3.1/install/media/image64.png)
+
+
+
+<span id="_bookmark35" class="anchor"></span>Рисунок 3.40 – Переход в директорию установки
 
 9)  Инициализировать каталог данных СУБД «Jatoba» при помощи команды (см. рис. [3.41](#_bookmark36)):
 
-<img src="../docs/assets/images/com18.3.1/install/media/image65.png" style="width:7.1064in;height:1.28844in" />
+```
+./jatoba-setup initdb jatoba-<ver>
+```
 
-> ./jatoba-setup initdb jatoba-\<ver\>
->
-> <span id="_bookmark36" class="anchor"></span>Рисунок 3.41 – Инициализация каталога СУБД
+![](@site/docs/assets/images/com18.3.1/install/media/image65.png)
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><blockquote>
-<p>При инициализации каталога данных можно явно указать язык и кодировку, для этого следует добавить переменную окружения:</p>
-<p>PGSETUP_INITDB_OPTIONS="--locale=ru_RU.utf8</p>
-<p>--encoding=UTF-8" ./jatoba-setup initdb jatoba-&lt;ver&gt;</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><blockquote>
-<p>При ошибках «Data directory is not empty!» или «Initializing database… mkdir: невозможно создать каталог «var/lib/jatoba/&lt;ver&gt;/data/log»: Файл существует failed, see /var/lib/jatoba/&lt;ver&gt;/initdb.log» нужно ввести команду принудительного удаления каталога и его содержимого.</p>
-</blockquote></td>
-</tr>
-<tr>
-<td style="text-align: left;"><blockquote>
-<p>Перед удалением необходимо убедиться, что все нужные данные сохранены.</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>rm -rf /var/lib/jatoba/&lt;ver&gt;/data/*</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<span id="_bookmark36" class="anchor"></span>Рисунок 3.41 – Инициализация каталога СУБД
+
+:::info Дополнительная информация
+При инициализации каталога данных можно явно указать язык и кодировку, для этого следует добавить переменную окружения:
+
+```
+PGSETUP_INITDB_OPTIONS="--locale=ru_RU.utf8
+--encoding=UTF-8" ./jatoba-setup initdb jatoba-<ver>
+```
+:::
+
+:::info Дополнительная информация
+При ошибках «Data directory is not empty!» или «Initializing database… mkdir: невозможно создать каталог «var/lib/jatoba/<ver>/data/log»: Файл существует failed, see /var/lib/jatoba/<ver>/initdb.log» нужно ввести команду принудительного удаления каталога и его содержимого.
+:::
+
+:::warning Важная информация
+Перед удалением необходимо убедиться, что все нужные данные сохранены.
+
+```
+rm -rf /var/lib/jatoba/<ver>/data/*
+```
+:::
 
 10) Администратору СУБД рекомендуется изменить другие параметры в конфигурационном файле postgresql.conf, в зависимости от условий эксплуатации СУБД (дополнительная информация описана в документе «Защищенная система управления базами данных «Jatoba». Руководство администратора»).
 
 11) При необходимости добавить службу Jatoba в автозапуск в соответствии с пунктом [3.6](#добавление-в-автозапуск-службы-jatoba-в-ос-gnulinux).
 
-> Установка СУБД «Jatoba» завершена.
+Установка СУБД «Jatoba» завершена.
 
-## Порядок установки СУБД «Jatoba» на ОС семейства GNU/Linux, основанной на RPM из локального репозитория
+### Порядок установки СУБД «Jatoba» на ОС семейства GNU/Linux, основанной на RPM из локального репозитория
 
-> Для установки СУБД «Jatoba» необходимо выполнить следующую последовательность действий:
+Для установки СУБД «Jatoba» необходимо выполнить следующую последовательность действий:
 
 1)  Создать каталог /localrepo, выполнив команду:
+```
+mkdir /localrepo
+```
+![](@site/docs/assets/images/com18.3.1/install/media/image66.png)
 
-<img src="../docs/assets/images/com18.3.1/install/media/image66.png" style="width:7.0777in;height:0.97698in" />
 
-> mkdir /localrepo
->
-> Рисунок 3.42 – Создание каталога localrepo
 
-2)  В каталог /localrepo скопировать необходимые файлы для установки СУБД
+Рисунок 3.42 – Создание каталога localrepo
 
-> «Jatoba».
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25138in;height:0.25118in" />Требуется скопировать полную структуру файлов и каталогов из дистрибутива. Также допускается установка с CD/DVD носителя напрямую. В этому случае, пользователю не требуется копировать файлы, а вместо /localrepo во всех шагах далее указывать соответствующий путь до носителя и директорию репозитория СУБД на носителе для соответствующей ОС.
->
-> Структура каталога дистрибутива для всех поддерживаемых ОС GNU/Linux, основанных на RPM, описана в таблице [П1](#_bookmark150) Приложения [1](#приложение-1).
+
+
+2)  В каталог /localrepo скопировать необходимые файлы для установки СУБД «Jatoba».
+
+:::warning Важная информация
+Требуется скопировать полную структуру файлов и каталогов из дистрибутива. Также допускается установка с CD/DVD носителя напрямую. В этому случае, пользователю не требуется копировать файлы, а вместо /localrepo во всех шагах далее указывать соответствующий путь до носителя и директорию репозитория СУБД на носителе для соответствующей ОС.
+
+Структура каталога дистрибутива для всех поддерживаемых ОС GNU/Linux, основанных на RPM, описана в таблице П1 Приложения 1.
+:::
 
 3)  Проверить результат копирования всех файлов, перейдя в каталог /localrepo и выполнив команду (см. рис. [3.43](#_bookmark38)):
+4)  
+```
+ls -l
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image67.png" style="width:7.07434in;height:1.88479in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image67.png)
 
-> ls -l
->
-> <span id="_bookmark38" class="anchor"></span>Рисунок 3.43 – Просмотр каталога /localrepo
+
+
+<span id="_bookmark38" class="anchor"></span>Рисунок 3.43 – Просмотр каталога /localrepo
 
 4)  Установить открытый ключ репозитория при помощи команды (см. рис. [3.44](#_bookmark39)):
 
-## <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24856in" />Только для ОС Альт
+```
+rpm --import /localrepo/RPM-GPG-KEY-Jatoba
+```
 
-> В указанной ОС данный шаг пропускается. Проверка целостности и достоверности устанавливаемых пакетов осуществляется с использованием контрольных сумм, указанных в формуляре.
+:::info Дополнительная информация
+**Только для ОС Альт**
+В указанной ОС данный шаг пропускается. Проверка целостности и достоверности устанавливаемых пакетов осуществляется с использованием контрольных сумм, указанных в формуляре.
+:::
 
-<img src="../docs/assets/images/com18.3.1/install/media/image68.png" style="width:7.07519in;height:0.99427in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image68.png)
 
-> rpm --import /localrepo/RPM-GPG-KEY-Jatoba
->
-> <span id="_bookmark39" class="anchor"></span>Рисунок 3.44 – Установка открытого ключа
+<span id="_bookmark39" class="anchor"></span>Рисунок 3.44 – Установка открытого ключа
 
 5)  Создать файл с описанием локального репозитория в системе, имя файла репозитория и его содержимое для соответствующей ОС указано в таблице [П2](#_bookmark151) Приложения [1](#приложение-1):
 
-> nano /etc/yum.repos.d/jatoba-\<ver\>.repo
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image69.png" style="width:7.07297in;height:0.78677in" />
->
-> Рисунок 3.45 – Создание файла с описанием репозитория
->
-> Например, для РЕД ОС 7.2 Муром, при установке СУБД «Jatoba» с версией ядра 4, необходимо добавить следующее описание репозитория в файл /etc/yum.repos.d/jatoba-
->
-> 4.repo:
->
-> \[jatoba-4\]
->
-> name=Jatoba 4 Official Repository baseurl=file:///localrepo enabled=1
->
-> gpgcheck=1
->
-> gpgkey=file:///localerepo/RPM-GPG-KEY-Jatoba
+```
+nano /etc/yum.repos.d/jatoba-<ver>.repo
+```
 
-## <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Только для ОС Alt Linux (Альт 8 СП и т.п.)
+![](@site/docs/assets/images/com18.3.1/install/media/image69.png)
 
-> Описание репозитория необходимо добавлять в файл
->
-> /etc/apt/sources.list.d/jatoba-\<ver\>.list, аналогично тому, как это делается в системах, основанных на Debian:
+Рисунок 3.45 – Создание файла с описанием репозитория
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>rpm file:///localrepo x86_64 classic</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+Например, для РЕД ОС 7.2 Муром, при установке СУБД «Jatoba» с версией ядра 4, необходимо добавить следующее описание репозитория в файл /etc/yum.repos.d/jatoba-4.repo:
+
+```
+[jatoba-4]
+name=Jatoba 4 Official Repository
+baseurl=file:///localrepo
+enabled=1
+gpgcheck=1
+gpgkey=file:///localerepo/RPM-GPG-KEY-Jatoba
+```
+
+:::info Дополнительная информация
+Только для ОС Alt Linux (Альт 8 СП и т.п.)
+Описание	репозитория	необходимо	добавлять в файл /etc/apt/sources.list.d/jatoba-<ver>.list, аналогично тому, как это делается в системах, основанных на Debian:
+
+```
+rpm file:///localrepo x86_64 classic
+```
+:::
 
 6)  Обновить описания пакетов при помощи команды (см. рис. [3.46](#_bookmark40)):
 
-<img src="../docs/assets/images/com18.3.1/install/media/image70.png" style="width:7.07429in;height:1.72052in" />
+```
+yum makecache
+```
 
-> yum makecache
->
-> Рисунок 3.46 – Обновление описания пакетов
+![](@site/docs/assets/images/com18.3.1/install/media/image70.png)
 
-## <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Только для ОС Alt Linux (Альт 8 СП и т.п.)
+Рисунок 3.46 – Обновление описания пакетов
 
-> Обновить описание пакетов при помощи команды (см. рис. [3.47](#_bookmark41)):
+:::info Дополнительная информация
+**Только для ОС Alt Linux (Альт 8 СП и т.п.)**
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>apt-get update</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+Обновить описание пакетов при помощи команды (см. рис. 3.47):
 
-<img src="../docs/assets/images/com18.3.1/install/media/image71.jpeg" style="width:5.04562in;height:1.99875in" />
+```
+apt-get update
+```
 
-> <span id="_bookmark41" class="anchor"></span>Рисунок 3.47 – Обновление описания пакетов
+![](@site/docs/assets/images/com18.3.1/install/media/image71.jpeg)
+
+Рисунок 3.47 – Обновление описания пакетов
+:::
 
 7)  Установить основные пакеты СУБД «Jatoba» при помощи команды (см. рис. [3.48](#_bookmark42)):
 
-> yum install jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> Пакеты jatoba\<ver\>-client, jatoba\<ver\>-contrib, jatoba\<ver\>-libs и jatoba\<ver\>-server являются обязательными для установки СУБД.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />При необходимости установки дополнительных пакетов см. пункт 4.5.2
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image72.png" style="width:6.64667in;height:4.67187in" />
->
-> <span id="_bookmark42" class="anchor"></span>Рисунок 3.48 – Установка основных пакетов
+```
+yum install jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server
+```
 
-## <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Только для ОС Alt Linux (Альт 8 СП и т.п.)
+:::warning Важная информация
+Пакеты jatoba<ver>-client, jatoba<ver>-contrib, jatoba<ver>-libs и jatoba<ver>-server являются обязательными для установки СУБД.
 
-> Установить основные пакеты СУБД «Jatoba» при помощи команды:
+При необходимости установки дополнительных пакетов см. пункт 4.5.2
+:::
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>apt-get install jatoba&lt;ver&gt;-client jatoba&lt;ver&gt;-contrib jatoba&lt;ver&gt;-libs jatoba&lt;ver&gt;-server</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+
+![](@site/docs/assets/images/com18.3.1/install/media/image72.png)
+
+<span id="_bookmark42" class="anchor"></span>Рисунок 3.48 – Установка основных пакетов
+
+:::info Дополнительная информация
+**Только для ОС Alt Linux (Альт 8 СП и т.п.)**
+
+Установить основные пакеты СУБД «Jatoba» при помощи команды:
+
+```
+apt-get install jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server
+```
+:::
 
 8)  Перейти в директорию расположения исполняемых файлов СУБД «Jatoba», выполнив команду (см. рис. [3.49](#_bookmark43)):
+9)  
+```
+cd /usr/jatoba-<ver>/bin/
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image73.png" style="width:6.99601in;height:1.01646in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image73.png)
 
-> cd /usr/jatoba-\<ver\>/bin/
->
-> <span id="_bookmark43" class="anchor"></span>Рисунок 3.49 – Переход в директорию установки
+
+
+<span id="_bookmark43" class="anchor"></span>Рисунок 3.49 – Переход в директорию установки
 
 9)  Инициализировать каталог данных СУБД «Jatoba» при помощи команды (см. рис. [3.50](#_bookmark44)):
 
-<img src="../docs/assets/images/com18.3.1/install/media/image74.png" style="width:7.07462in;height:1.55625in" />
+```
+./jatoba-setup initdb jatoba-<ver>
+```
 
-> ./jatoba-setup initdb jatoba-\<ver\>
->
-> <span id="_bookmark44" class="anchor"></span>Рисунок 3.50 – Инициализация каталога СУБД
+![](@site/docs/assets/images/com18.3.1/install/media/image74.png)
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;"><blockquote>
-<p>При ошибках «Data directory is not empty!» или «Initalizing database… mkdir: невозможно создать каталог «var/lib/jatoba/&lt;ver&gt;/data//log»: Файл существует failed, see /var/lib/jatoba/&lt;ver&gt;/initdb.log» нужно ввести команду принудительного удаления каталога и его содержимого.</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>Перед удалением необходимо убедиться, что все нужные данные сохранены.</p>
-<p>rm –rf /var/lib/jatoba/&lt;ver&gt;/data/*</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
 
-10) <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.24769in;height:0.24635in" /><img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25208in;height:0.25208in" />Администратору СУБД рекомендуется изменить другие параметры в конфигурационном файле postgresql.conf, в зависимости от условий эксплуатации СУБД (дополнительная информация описана в документе 643.72410666.00067-08 95 01
 
-> «Защищенная система управления базами данных «Jatoba». Руководство администратора»).
+<span id="_bookmark44" class="anchor"></span>Рисунок 3.50 – Инициализация каталога СУБД
+
+:::info Дополнительная информация
+При ошибках «Data directory is not empty!» или «Initalizing database… mkdir: невозможно создать каталог «var/lib/jatoba/<ver>/data//log»: Файл существует failed, see /var/lib/jatoba/<ver>/initdb.log» нужно ввести команду принудительного удаления каталога и его содержимого.
+:::
+
+:::warning Важная информация
+Перед удалением необходимо убедиться, что все нужные данные сохранены.
+
+```
+rm –rf /var/lib/jatoba/<ver>/data/*
+```
+:::
+
+«Защищенная система управления базами данных «Jatoba». Руководство администратора»).
+
+10) Администратору СУБД рекомендуется изменить другие параметры в конфигурационном файле postgresql.conf, в зависимости от условий эксплуатации СУБД (дополнительная  информация  описана  в  документе  643.72410666.00067-08  95  01 «Защищенная система управления базами данных «Jatoba». Руководство администратора»).
 
 11) При необходимости добавить службу Jatoba в автозапуск в соответствии с пунктом [3.6](#добавление-в-автозапуск-службы-jatoba-в-ос-gnulinux).
 
-> Установка СУБД «Jatoba» завершена.
+Установка СУБД «Jatoba» завершена.
 
-## Добавление в автозапуск службы Jatoba в ОС GNU/Linux
+### Добавление в автозапуск службы Jatoba в ОС GNU/Linux
 
-> Для загрузки СУБД «Jatoba» вместе с ОС необходимо выполнить следующие действия:
+Для загрузки СУБД «Jatoba» вместе с ОС необходимо выполнить следующие действия:
 
 1)  Запустить сервис.
 
 2)  Добавить его в список автозапуска при старте ОС, выполнив команды (см. рис. [3.51](#_bookmark46)):
+3)  
+```
+systemctl start jatoba-<ver> systemctl enable jatoba-<ver>
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image75.png" style="width:7.07939in;height:1.51302in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image75.png)
 
-> systemctl start jatoba-\<ver\> systemctl enable jatoba-\<ver\>
->
-> <span id="_bookmark46" class="anchor"></span>Рисунок 3.51 – Запуск сервиса и добавление в автозагрузку
+<span id="_bookmark46" class="anchor"></span>Рисунок 3.51 – Запуск сервиса и добавление в автозагрузку
 
-## Порядок установки СУБД «Jatoba» из DEB/RPM-файлов
+### Порядок установки СУБД «Jatoba» из DEB/RPM-файлов
 
-> Установка из файлов является опциональным способом и требует больше ручной работы от пользователя по установке зависимых пакетов. Пользователям рекомендуется производить установку методами, описанными в подразделах [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux) и/или [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) в зависимости от ОС.
+Установка из файлов является опциональным способом и требует больше ручной работы от пользователя по установке зависимых пакетов. Пользователям рекомендуется производить установку методами, описанными в подразделах [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux) и/или [3.5](#порядок-установки-субд-jatoba-на-ос-семейства-gnulinux-основанной-на-rpm-из-локального-репозитория) в зависимости от ОС.
 
-## Установка СУБД «Jatoba» из DEB-файлов
+### Установка СУБД «Jatoba» из DEB-файлов
 
-> Установка из файлов предполагает, что у пользователя имеется основной набор DEB-файлов, которые он может скачать с официального компакт-диска:
+Установка из файлов предполагает, что у пользователя имеется основной набор DEB-файлов, которые он может скачать с официального компакт-диска:
 
-- jatoba\<ver\>-client;
+- jatoba<ver>-client;
 
-- jatoba\<ver\>-contrib;
+- jatoba<ver>-contrib;
 
-- jatoba\<ver\>-libs;
+- jatoba<ver>-libs;
 
-- jatoba\<ver\>-server.
+- jatoba<ver>-server.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Пакеты jatoba\<ver\>-client, jatoba\<ver\>-contrib, jatoba\<ver\>-libs, jatoba\<ver\>-server являются обязательными для установки СУБД.
->
-> При необходимости установки дополнительных пакетов см. пункт [3.3.3](#установка-пакетов-расширяющих-возможности-субд)
->
-> Для установки СУБД «Jatoba» из DEB-файлов необходимо выполнить следующую последовательность действий:
+:::warning Важная информация
+Пакеты jatoba<ver>-client, jatoba<ver>-contrib, jatoba<ver>-libs, jatoba<ver>-server являются обязательными для установки СУБД.
+
+При необходимости установки дополнительных пакетов см. пункт 3.3.3
+:::
+
+Для установки СУБД «Jatoba» из DEB-файлов необходимо выполнить следующую последовательность действий:
 
 1)  Перейти в директорию дистрибутива, где расположены установочные DEB-файлы:
 
-> cd \<путь до директории\>
+```
+cd <путь до директории>
+```
 
 2)  Выполнить команду установки основных пакетов (см. рис. [3.52](#_bookmark49)):
+3)  
+```
+dpkg -i jatoba<ver>-client_X.X.X-X_amd64.deb jatoba<ver>-contrib_X.X.X-X_amd64.deb jatoba<ver>-libs_X.X.X-X_amd64.deb jatoba<ver>-server_X.X.X-X[1](#_bookmark50)_amd64.deb
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image76.png" style="width:7.04687in;height:1.13083in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image76.png)
 
-> dpkg -i jatoba\<ver\>-client_X.X.X-X_amd64.deb jatoba\<ver\>-contrib_X.X.X-X_amd64.deb jatoba\<ver\>-libs_X.X.X-X_amd64.deb jatoba\<ver\>-server_X.X.X-X[1](#_bookmark50)\_amd64.deb
->
-> <span id="_bookmark49" class="anchor"></span>Рисунок 3.52 – Команда установки основных пакетов
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24994in" /> Для установки базовых пакетов требуется установка множества зависимостей. Неразрешенные зависимости приводят к появлению ошибок на стадии установки (см. рис. [3.53](#_bookmark51)):
->
-> <span id="_bookmark50" class="anchor"></span><sup>1</sup> Номер версии уточняется при поставке изделия
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image77.png" style="width:6.35067in;height:4.21917in" />
->
-> <span id="_bookmark51" class="anchor"></span>Рисунок 3.53 – Ошибки неразрешенных зависимостей
+
+
+<span id="_bookmark49" class="anchor"></span>Рисунок 3.52 – Команда установки основных пакетов
+
+:::info Дополнительная информация
+Для установки базовых пакетов требуется установка множества зависимостей. Неразрешенные зависимости приводят к появлению ошибок на стадии установки (см. рис. 3.53):
+:::
+
+![](@site/docs/assets/images/com18.3.1/install/media/image77.png)
+
+<span id="_bookmark51" class="anchor"></span>Рисунок 3.53 – Ошибки неразрешенных зависимостей
 
 3)  Установить все оставшиеся зависимости в автоматическом режиме (см. рис. [3.54](#_bookmark52)):
+4)  
+```
+apt-get install –f
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image78.png" style="width:6.35064in;height:3.44104in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image78.png)
 
-> apt-get install –f
->
-> <span id="_bookmark52" class="anchor"></span>Рисунок 3.54 – Установка оставшихся зависимостей
->
-> Дальнейшая установка СУБД «Jatoba» аналогична порядку, описанному в подразделе [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux), с шага перехода в директорию расположения исполняемых файлов.
 
-## Установка СУБД «Jatoba» из RPM-файлов
 
-> Установка из файлов предполагает, что у пользователя имеется основной набор RPM-файлов, которые он может скачать с официального компакт-диска:
+<span id="_bookmark52" class="anchor"></span>Рисунок 3.54 – Установка оставшихся зависимостей
 
-- jatoba\<ver\>-client;
+Дальнейшая установка СУБД «Jatoba» аналогична порядку, описанному в подразделе [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux), с шага перехода в директорию расположения исполняемых файлов.
 
-- jatoba\<ver\>-contrib;
+### Установка СУБД «Jatoba» из RPM-файлов
 
-- jatoba\<ver\>-libs;
+Установка из файлов предполагает, что у пользователя имеется основной набор RPM-файлов, которые он может скачать с официального компакт-диска:
 
-- jatoba\<ver\>-server.
+- jatoba<ver>-client;
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25138in;height:0.25068in" />Пакеты jatoba\<ver\>-client*,* jatoba\<ver\>-contrib*,* jatoba\<ver\>-libs*,* jatoba\<ver\>-server являются обязательными для установки СУБД.
->
-> При необходимости установки дополнительных пакетов см. пункт [3.3.3](#установка-пакетов-расширяющих-возможности-субд).
->
-> Для установки СУБД «Jatoba» из RPM-файлов необходимо выполнить следующую последовательность действий:
+- jatoba<ver>-contrib;
+
+- jatoba<ver>-libs;
+
+- jatoba<ver>-server.
+
+:::warning Важная информация
+Пакеты jatoba<ver>-client, jatoba<ver>-contrib, jatoba<ver>-libs, jatoba<ver>-server являются обязательными для установки СУБД.
+
+При необходимости установки дополнительных пакетов см. пункт 3.3.3.
+:::
+
+Для установки СУБД «Jatoba» из RPM-файлов необходимо выполнить следующую последовательность действий:
 
 1)  Перейти в директорию дистрибутива, где расположены установочные RPM-файлы:
 
-> cd \<путь до директории\>
+```
+cd <путь до директории>
+```
 
 2)  Выполнить команду установки основных пакетов (см. рис. [3.55](#_bookmark55)):
 
-> rpm -i jatoba\<ver\>-client_X.X.X-X_amd64.rpm jatoba\<ver\>-contrib_X.X.X-X_amd64.rpm jatoba\<ver\>-libs_X.X.X-X_amd64.rpm jatoba\<ver\>-server_X.X.X-X[2](#_bookmark54)\_amd64.rpm
->
-> <span id="_bookmark54" class="anchor"></span><sup>2</sup> Номер версии уточняется при поставке изделия
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image79.png" style="width:7.04789in;height:1.17583in" />
->
-> <span id="_bookmark55" class="anchor"></span>Рисунок 3.55 – Команда установки основных пакетов
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24889in" />Для установки базовых пакетов требуется установка множества зависимостей. Неразрешенные зависимости приводят к появлению ошибок на стадии установки.
+```
+rpm -i jatoba<ver>-client_X.X.X-X_amd64.rpm jatoba<ver>-contrib_X.X.X-X_amd64.rpm jatoba<ver>-libs_X.X.X-X_amd64.rpm jatoba<ver>-server_X.X.X-X[2](#_bookmark54)_amd64.rpm
+```
 
-3)  Выполнить установку зависимых пакетов с помощью одной из следующих команд:
+![](@site/docs/assets/images/com18.3.1/install/media/image79.png)
 
-> yum install \<имя пакета\> rpm -i \<имя пакета\>
+<span id="_bookmark55" class="anchor"></span>Рисунок 3.55 – Команда установки основных пакетов
 
-## <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.2493in" />Только для ОС Альт
+:::info Дополнительная информация
+Для установки базовых пакетов требуется установка множества зависимостей. Неразрешенные зависимости приводят к появлению ошибок на стадии установки.
+:::
 
-> Установка зависимых пакетов происходит при помощи следующей команды (см. рис. [3.56](#_bookmark56)):
+1)  Выполнить установку зависимых пакетов с помощью одной из следующих команд:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>apt-get install &lt;имя пакета&gt;</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
+yum install <имя пакета>
+rpm -i <имя пакета>
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image80.png" style="width:5.81802in;height:2.13469in" alt="CentOS 8 " />
+:::info Дополнительная информация
+**Только для ОС Альт**
 
-> <span id="_bookmark56" class="anchor"></span>Рисунок 3.56 – Установка зависимого пакета «glibc»
->
-> Дальнейшая установка СУБД «Jatoba» аналогична, описанному в подразделе [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux), с шага [8)](#_bookmark34) переход в директорию расположения исполняемых файлов.
+Установка зависимых пакетов происходит при помощи следующей команды (см. рис. [3.56](#_bookmark56)):
 
-# УСТАНОВКА СУБД «JATOBA» НА ОС СЕМЕЙСТВА MICROSOFT WINDOWS
+```
+apt-get install <имя пакета>
+```
 
-> Установка СУБД «Jatoba» должна выполняться доверенным администратором в соответствии с данным документом.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Порядок установки дистрибутива аналогичен на всех ОС семейства Microsoft Windows
->
-> В процессе установки СУБД не следует использовать:
+![](@site/docs/assets/images/com18.3.1/install/media/image80.png)
+
+<span id="_bookmark56" class="anchor"></span>Рисунок 3.56 – Установка зависимого пакета «glibc»
+:::
+
+
+Дальнейшая установка СУБД «Jatoba» аналогична, описанному в подразделе [3.1](#инсталлятор-субд-jatoba-для-ос-семейства-gnulinux), с шага [8)](#_bookmark34) переход в директорию расположения исполняемых файлов.
+
+## УСТАНОВКА СУБД «JATOBA» НА ОС СЕМЕЙСТВА MICROSOFT WINDOWS
+
+Установка СУБД «Jatoba» должна выполняться доверенным администратором в соответствии с данным документом.
+
+:::info Дополнительная информация
+Порядок установки дистрибутива аналогичен на всех ОС семейства Microsoft Windows
+:::
+
+В процессе установки СУБД не следует использовать:
 
 - доменные имена (domain_name\user_name);
 
 - имена с пробелами.
 
-## Порядок установки СУБД «Jatoba» на ОС Windows Server 2016
+### Порядок установки СУБД «Jatoba» на ОС Windows Server 2016
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Перед установкой СУБД «Jatoba» на ОС Windows необходимо убедиться, что установлен Visual C++ 2017 Redistributable 14.23.27820. В случае его отсутствия – провести установку
->
-> Для установки СУБД «Jatoba» на ОС Windows необходимо выполнить следующую последовательность действий:
+:::warning Важная информация
+Перед установкой СУБД «Jatoba» на ОС Windows необходимо убедиться, что установлен Visual C++ 2017 Redistributable 14.23.27820. В случае его отсутствия – провести установку
+:::
+
+Для установки СУБД «Jatoba» на ОС Windows необходимо выполнить следующую последовательность действий:
 
 1)  В ОС Windows запустить файл «JatobaInstaller-Х.Х.Х-Х[<sup>3</sup>](#_bookmark59).msi».
 
 2)  В открывшемся окне приветствия нажать кнопку «Далее» (см. рис. [4.1](#_bookmark60)).
 
-> <span id="_bookmark59" class="anchor"></span><sup>3</sup> Номер версии уточняется при поставке изделия
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image81.png" style="width:3.91877in;height:3.06375in" />
->
-> <span id="_bookmark60" class="anchor"></span>Рисунок 4.1 – Запуск мастера установки
+![](@site/docs/assets/images/com18.3.1/install/media/image81.png)
+
+<span id="_bookmark60" class="anchor"></span>Рисунок 4.1 – Запуск мастера установки
 
 3)  В диалоговом окне «Лицензионное соглашение» прочесть условия лицензионного соглашения, затем установить флажок напротив «Я принимаю условия лицензионного соглашения» и нажать кнопку «Далее» (см. рис. [4.2](#_bookmark61)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image82.png" style="width:3.86719in;height:3.02344in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image82.png)
 
-> <span id="_bookmark61" class="anchor"></span>Рисунок 4.2 – Окно «Лицензионное соглашение»
+<span id="_bookmark61" class="anchor"></span>Рисунок 4.2 – Окно «Лицензионное соглашение»
 
 4)  В открывшемся окне «Определение директории установки» указать путь к каталогу хранения файлов данных СУБД «Jatoba» или оставить путь по умолчанию, затем нажать кнопку «Далее» (см. рис. [4.3](#_bookmark62)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image83.png" style="width:3.81563in;height:2.98312in" />
->
-> <span id="_bookmark62" class="anchor"></span>Рисунок 4.3 – Окно «Определение директории установки»
+![](@site/docs/assets/images/com18.3.1/install/media/image83.png)
+
+<span id="_bookmark62" class="anchor"></span>Рисунок 4.3 – Окно «Определение директории установки»
 
 5)  Указать тип установки (см. рис. [4.4](#_bookmark63)):
 
-> − «Обычная» или «Полная» – будет последовательно предложено задать директорию расположения данных, задать пароль системного пользователя, указать начальные настройки СУБД (пароля администратора СУБД, язык и кодировку хранения данных в СУБД). Обычная установка не включает дополнительные расширения СУБД по работе с различными видами данных и интеграции с другими СУБД;
->
-> − «Выборочная» – сначала будет предложено отметить к установке нужные компоненты. Затем, если будет выбрана установка «Jatoba для Сервера», будет последовательно предложено задать все необходимые параметры аналогично «полной» или
->
-> «обычной» установке.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image84.png" style="width:3.91874in;height:3.06375in" />
->
-> <span id="_bookmark63" class="anchor"></span>Рисунок 4.4 – Окно «Выбор типа установки»
+− «Обычная» или «Полная» – будет последовательно предложено задать директорию расположения данных, задать пароль системного пользователя, указать начальные настройки СУБД (пароля администратора СУБД, язык и кодировку хранения данных в СУБД). Обычная установка не включает дополнительные расширения СУБД по работе с различными видами данных и интеграции с другими СУБД;
+
+− «Выборочная» – сначала будет предложено отметить к установке нужные компоненты. Затем, если будет выбрана установка «Jatoba для Сервера», будет последовательно предложено задать все необходимые параметры аналогично «полной» или
+
+«обычной» установке.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image84.png)
+
+<span id="_bookmark63" class="anchor"></span>Рисунок 4.4 – Окно «Выбор типа установки»
 
 6)  В открывшемся окне «Определение директории данных» указать путь к каталогу хранения файлов данных СУБД «Jatoba» или оставить выбранный по умолчанию, и нажать кнопку «Далее» (см. рис. [4.5](#_bookmark64)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image85.png" style="width:3.81572in;height:2.98312in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image85.png)
 
-> <span id="_bookmark64" class="anchor"></span>Рисунок 4.5 – Окно «Определение директории данных»
+<span id="_bookmark64" class="anchor"></span>Рисунок 4.5 – Окно «Определение директории данных»
 
 7)  В открывшемся окне «Настройка учетной записи системного пользователя» указать системного пользователя (либо оставить пользователя, предложенного по умолчанию) и указать пароль, от имени которого будет работать СУБД «Jatoba», и нажать кнопку «Далее» (см. рис. [4.6](#_bookmark65)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Имя пользователя, от которого происходит установка, не должно содержать пробелов.
+:::warning Важная информация
+Имя пользователя, от которого происходит установка, не должно содержать пробелов.
+:::
 
-<img src="../docs/assets/images/com18.3.1/install/media/image86.png" style="width:3.91876in;height:3.06375in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image86.png)
 
-> <span id="_bookmark65" class="anchor"></span>Рисунок 4.6 – Окно «Настройки учетной записи системного пользователя»
+<span id="_bookmark65" class="anchor"></span>Рисунок 4.6 – Окно «Настройки учетной записи системного пользователя»
 
 8)  В открывшемся окне «Настройка СУБД» требуется указать порт для подключения, имя администратора СУБД, его пароль, кодировку данных из выпадающего списка, а также регион и язык (см. рис. [4.7](#_bookmark66)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image87.png" style="width:3.86719in;height:3.02344in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image87.png)
 
-> <span id="_bookmark66" class="anchor"></span>Рисунок 4.7 – Окно «Настройки СУБД»
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25138in;height:0.25124in" />Для последующей корректной работы СУБД рекомендуется установить кодировку данных UTF8.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Для обеспечения целостности данных рекомендуется поставить флажок напротив поля «Проверка контрольных сумм».
+<span id="_bookmark66" class="anchor"></span>Рисунок 4.7 – Окно «Настройки СУБД»
+
+:::warning Важная информация
+Для	последующей	корректной	работы	СУБД	рекомендуется	установить кодировку данных UTF8.
+:::
+
+:::info Дополнительная информация
+Для	обеспечения целостности данных рекомендуется	поставить флажок напротив поля «Проверка контрольных сумм».
+:::
 
 9)  В открывшемся окне «Все готово к установке Jatoba» запустить процесс установки, нажав кнопку «Установить» (см. рис. [4.8](#_bookmark67)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image88.png" style="width:3.91875in;height:3.06375in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image88.png)
 
-> <span id="_bookmark67" class="anchor"></span>Рисунок 4.8 – Окно «Все готово к установке Jatoba» Процесс установки СУБД «Jatoba» занимает несколько минут.
+<span id="_bookmark67" class="anchor"></span>Рисунок 4.8 – Окно «Все готово к установке Jatoba» Процесс установки СУБД «Jatoba» занимает несколько минут.
 
 10) По завершению установки в окне «Установка Jatoba завершена» необходимо нажать кнопку «Готово» (см. рис. [4.9](#_bookmark68)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image89.png" style="width:4.02387in;height:3.14437in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image89.png)
 
-> <span id="_bookmark68" class="anchor"></span>Рисунок 4.9 – Окно «Установка Jatoba завершена»
+<span id="_bookmark68" class="anchor"></span>Рисунок 4.9 – Окно «Установка Jatoba завершена»
 
-## Возможная ошибка при установке СУБД «Jatoba» на ОС Windows
+### Возможная ошибка при установке СУБД «Jatoba» на ОС Windows
 
-> При неудачной установке СУБД «Jatoba» программа выдаст информационное сообщение (см. рис. [4.10](#_bookmark70)).
+При неудачной установке СУБД «Jatoba» программа выдаст информационное сообщение (см. рис. [4.10](#_bookmark70)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image90.png" style="width:4.31866in;height:2.17687in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image90.png)
 
-> <span id="_bookmark70" class="anchor"></span>Рисунок 4.10 – Информационное сообщение о неудачной установке СУБД «Jatoba»
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />В СУБД «Jatoba» версии ядра 5 в имени сервиса присутствует номер версии JatobaServer-\<версия\>
->
-> Для устранения ошибки и повторной установки СУБД «Jatoba» необходимо деинсталлировать программу вручную. Для этого необходимо выполнить следующие шаги:
+<span id="_bookmark70" class="anchor"></span>Рисунок 4.10 – Информационное сообщение о неудачной установке СУБД «Jatoba»
+
+:::info Дополнительная информация
+В СУБД «Jatoba» версии ядра 5 в имени сервиса присутствует номер версии JatobaServer-<версия>
+:::
+
+Для устранения ошибки и повторной установки СУБД «Jatoba» необходимо деинсталлировать программу вручную. Для этого необходимо выполнить следующие шаги:
 
 1)  Удалить установленную СУБД «Jatoba».
 
-> Пуск → Параметры Windows → Приложения → Приложения и возможности → Jatoba
->
-> → Удалить (см. рис. [4.11](#_bookmark71)).
->
-> <span id="_bookmark71" class="anchor"></span>Рисунок 4.11 – Удаление СУБД «Jatoba»
+Пуск → Параметры Windows → Приложения → Приложения и возможности → Jatoba
+
+→ Удалить (см. рис. [4.11](#_bookmark71)).
+
+<span id="_bookmark71" class="anchor"></span>Рисунок 4.11 – Удаление СУБД «Jatoba»
 
 2)  Удалить пользователя, который был создан в ходе установки.
 
-> Пуск → Средства администрирования Windows → Управление компьютером → Локальные пользователи и группы → Пользователи → postgres → Удалить (см. рис. [4.12](#_bookmark72)).
->
-> <span id="_bookmark72" class="anchor"></span>Рисунок 4.12 – Удаление пользователя
+Пуск → Средства администрирования Windows → Управление компьютером → Локальные пользователи и группы → Пользователи → postgres → Удалить (см. рис. [4.12](#_bookmark72)).
+
+<span id="_bookmark72" class="anchor"></span>Рисунок 4.12 – Удаление пользователя
 
 3)  Удалить локальную службу системы.
 
-> Пуск → Средства администрирования Windows → Службы → JatobaServer → Остановить службу (см. рис. [4.13](#_bookmark73)).
->
-> <span id="_bookmark73" class="anchor"></span>Рисунок 4.13 – Остановка локальной службы/системы
+Пуск → Средства администрирования Windows → Службы → JatobaServer → Остановить службу (см. рис. [4.13](#_bookmark73)).
+
+<span id="_bookmark73" class="anchor"></span>Рисунок 4.13 – Остановка локальной службы/системы
 
 4)  Удалить системную папку. Системная папка располагается по адресу:
 
-> С:\Program Files\GIS\Jatoba\\ver\>\data
->
-> При удалении данной папки необходимо нажать правой кнопкой мыши на папку → Свойства → Безопасность → Дополнительно → Изменить владельца → В поле «Введите имена выбираемых объектов» ввести «Администратор» → ОК → Установить флажок напротив «Заменить все записи разрешений дочернего объекта наследуемыми от этого объекта» → ОК (см. рис. [4.14](#_bookmark74)).
->
-> <span id="_bookmark74" class="anchor"></span>Рисунок 4.14 – Удаление папки правами администратора
+```
+С:\Program Files\GIS\Jatoba\<ver>\data
+```
 
-1.  <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" /><span id="_bookmark75" class="anchor"></span>**Установка клиентской части СУБД «Jatoba» на ОС Windows Server 2016** Перед установкой клиентской части СУБД «Jatoba» на ОС Windows необходимо убедиться, что установлен Visual C++ 2017 Redistributable 14.23.27820. В случае его отсутствия – провести установку
+При удалении данной папки необходимо нажать правой кнопкой мыши на папку → Свойства → Безопасность → Дополнительно → Изменить владельца → В поле «Введите имена выбираемых объектов» ввести «Администратор» → ОК → Установить флажок напротив «Заменить все записи разрешений дочернего объекта наследуемыми от этого объекта» → ОК (см. рис. [4.14](#_bookmark74)).
 
-## Порядок установки СУБД «Jatoba» на ОС Windows
+<span id="_bookmark74" class="anchor"></span>Рисунок 4.14 – Удаление папки правами администратора
 
-> Процесс установки клиентской части СУБД «Jatoba» аналогичен, описанному в разделе [4.1](#порядок-установки-субд-jatoba-на-ос-windows-server-2016), до шага выбора типа установки:
+## Установка клиентской части СУБД «Jatoba» на ОС Windows Server 2016 
+
+:::warning Важная информация
+Перед установкой клиентской части СУБД «Jatoba» на ОС Windows необходимо убедиться, что установлен Visual C++ 2017 Redistributable 14.23.27820. В случае его отсутствия – провести установку
+:::
+
+### Порядок установки СУБД «Jatoba» на ОС Windows
+
+Процесс установки клиентской части СУБД «Jatoba» аналогичен, описанному в разделе [4.1](#порядок-установки-субд-jatoba-на-ос-windows-server-2016), до шага выбора типа установки:
 
 1)  В окне «Выбор типа установки» следует выбрать тип установки «Выборочная» (см. рис. [4.15](#_bookmark77)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image95.png" style="width:3.76015in;height:2.94281in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image95.png)
 
-> <span id="_bookmark77" class="anchor"></span>Рисунок 4.15 – Окно выбора типа установки
+<span id="_bookmark77" class="anchor"></span>Рисунок 4.15 – Окно выбора типа установки
 
 2)  в окне «Выборочная установка», отключить параметр «Jatoba для Сервера». При этом установится только клиентская часть СУБД «Jatoba» (см. рис. [4.16](#_bookmark78)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image96.png" style="width:3.86054in;height:3.02344in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image96.png)
 
-> <span id="_bookmark78" class="anchor"></span>Рисунок 4.16 – Выбор устанавливаемых компонент
+<span id="_bookmark78" class="anchor"></span>Рисунок 4.16 – Выбор устанавливаемых компонент
 
 3)  В открывшемся окне «Все готово к установке Jatoba» запустить процесс установки, нажав кнопку «Установить» (см. рис. [4.17](#_bookmark79)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image97.png" style="width:4.06212in;height:3.16875in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image97.png)
 
-> <span id="_bookmark79" class="anchor"></span>Рисунок 4.17 – Окно «Все готово к установке Jatoba»
->
-> Откроется окно процесса установки. Процесс установки клиентской части СУБД
->
-> «Jatoba» занимает несколько минут.
+<span id="_bookmark79" class="anchor"></span>Рисунок 4.17 – Окно «Все готово к установке Jatoba»
+
+Откроется окно процесса установки. Процесс установки клиентской части СУБД
+
+«Jatoba» занимает несколько минут.
 
 4)  По завершению установки в окне «Установка Jatoba завершена» необходимо нажать кнопку «Готово» (см. рис. [4.18](#_bookmark80)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image98.png" style="width:4.04908in;height:3.17625in" />
->
-> <span id="_bookmark80" class="anchor"></span>Рисунок 4.18 – Окно «Установка Jatoba завершена»
+![](@site/docs/assets/images/com18.3.1/install/media/image98.png)
 
-# УСТАНОВКА ОБНОВЛЕНИЙ СУБД «JATOBA»
+<span id="_bookmark80" class="anchor"></span>Рисунок 4.18 – Окно «Установка Jatoba завершена»
 
-> При выявлении информации об уязвимости изделия, среды его функционирования и отсутствии информации в БДУ ФСТЭК России [(<u>https://bdu.fstec.ru/</u>)](https://bdu.fstec.ru/) ООО «Газинформсервис» информирует потребителей о недостатках средства, а также о компенсирующих мерах по защите информации или ограничениях по применению путем отправки сообщений на электронные адреса потребителей.
->
-> Дополнительно разработчик размещает на официальном сайте компании <http://www.gaz-is.ru/>:
+## УСТАНОВКА ОБНОВЛЕНИЙ СУБД «JATOBA»
+
+При выявлении информации об уязвимости изделия, среды его функционирования и отсутствии информации в БДУ ФСТЭК России [(<u>https://bdu.fstec.ru/</u>)](https://bdu.fstec.ru/) ООО «Газинформсервис» информирует потребителей о недостатках средства, а также о компенсирующих мерах по защите информации или ограничениях по применению путем отправки сообщений на электронные адреса потребителей.
+
+Дополнительно разработчик размещает на официальном сайте компании <http://www.gaz-is.ru/>:
 
 - информационное сообщение, содержащее описание уязвимости и информирует потребителей о необходимости обновления средства защиты информации;
 
@@ -6754,55 +6587,61 @@
 
 - новые контрольные суммы ПО изделия (включая контрольные суммы файла с обновлением и контрольные суммы ПО после применения обновления).
 
-> Перед применением обновления требуется выполнить расчет контрольных суммы полученного файла с обновлением и сверить их с контрольными суммами, указанными на официальном сайте разработчика.
->
-> В случае совпадения контрольных сумм осуществляется установка обновления. При несовпадении контрольных сумм обновление не осуществляется и незамедлительно сообщается об этом разработчику (производителю) изделия.
->
-> После установки обновления делается соответствующая отметка в разделе 12 документа 643.72410666.00067-08 30 01 «Защищенная система управления базами данных СУБД «Jatoba». Формуляр».
->
-> Установка обновлений проводится в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по обновлению».
->
-> Перед установкой обновлений рекомендуется сделать резервную копию БД и конфигурационных файлов.
+Перед применением обновления требуется выполнить расчет контрольных суммы полученного файла с обновлением и сверить их с контрольными суммами, указанными на официальном сайте разработчика.
 
-# УСТАНОВКА КОМПОНЕНТА «JATOBA DATA SAFE»
+В случае совпадения контрольных сумм осуществляется установка обновления. При несовпадении контрольных сумм обновление не осуществляется и незамедлительно сообщается об этом разработчику (производителю) изделия.
 
-> Установка компонента происходит в два этапа:
+После установки обновления делается соответствующая отметка в разделе 12 документа 643.72410666.00067-08 30 01 «Защищенная система управления базами данных СУБД «Jatoba». Формуляр».
+
+Установка обновлений проводится в соответствии с документом «Защищенная система управления базами данных «Jatoba». Руководство по обновлению».
+
+Перед установкой обновлений рекомендуется сделать резервную копию БД и конфигурационных файлов.
+
+## УСТАНОВКА КОМПОНЕНТА «JATOBA DATA SAFE»
+
+Установка компонента происходит в два этапа:
 
 1)  Создание служебной БД на базе СУБД (БД) «Jatoba».
 
 2)  Установка компонента JDS.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />СУБД «Jatoba» должна быть установлена в первую очередь.
->
-> Для служебной БД JDS обязательно должен быть установлен параметр:
->
-> standard_conforming_strings=on
->
-> Параметр устанавливается автоматически при установке.
->
-> Служебная БД будет хранить список целей (target), учетные записи пользователей, технические учетные записи и обеспечивать меры безопасности.
+:::warning Важная информация
+СУБД «Jatoba» должна быть установлена в первую очередь.
 
-Настройка служебной СУБД описана в документе 643.72410666.00067-08 97 01
+Для служебной БД JDS обязательно должен быть установлен параметр:
 
-«Защищенная система управления базами данных «Jatoba». Руководство администратора».
+```
+standard_conforming_strings=on	
+```
 
-> В качестве метода аутентификации должен использоваться метод «password».
+Параметр устанавливается автоматически при установке.
+:::
 
-## Установка компонента JDS под ОС GNU/Linux с помощью инсталлятора
+Служебная БД будет хранить список целей (target), учетные записи пользователей, технические учетные записи и обеспечивать меры безопасности.
 
-> Перед началом установки необходимо убедиться, что служба (демон) «jatoba-(ver)» запущена и установлен метод аутентификации по паролю в конфигурационном файле pg_hba.conf.
->
-> Скопировать папку с дистрибутивом на сервер установки в папку локального пользователя.
->
-> Для примера создадим каталог /usr/share/jds командой:
+Настройка служебной СУБД описана в документе 643.72410666.00067-08 97 01 «Защищенная система управления базами данных «Jatoba». Руководство администратора».
 
-<img src="../docs/assets/images/com18.3.1/install/media/image99.png" style="width:7.11984in;height:0.92031in" />
+В качестве метода аутентификации должен использоваться метод «password».
 
-> sudo mkdir /usr/share/jds
->
-> Рисунок 6.1 – Команда создания каталога
->
-> С дистрибутивного диска скопировать файлы и каталог пакета установки в созданный каталог:
+### Установка компонента JDS под ОС GNU/Linux с помощью инсталлятора
+
+Перед началом установки необходимо убедиться, что служба (демон) «jatoba-(ver)» запущена и установлен метод аутентификации по паролю в конфигурационном файле pg_hba.conf.
+
+Скопировать папку с дистрибутивом на сервер установки в папку локального пользователя.
+
+Для примера создадим каталог /usr/share/jds командой:
+
+```
+sudo mkdir /usr/share/jds
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image99.png)
+
+
+
+Рисунок 6.1 – Команда создания каталога
+
+С дистрибутивного диска скопировать файлы и каталог пакета установки в созданный каталог:
 
 - каталог – packages, содержащий пакеты установки;
 
@@ -6810,113 +6649,108 @@
 
 - скрипт – jds.sh.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image100.png" style="width:3.47549in;height:1.15281in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image100.png)
 
-> Рисунок 6.2 – Структура каталогов Запустить инсталлятор компонента командой:
+Рисунок 6.2 – Структура каталогов Запустить инсталлятор компонента командой:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image101.png" style="width:7.07729in;height:1.11625in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image101.png)
 
-> \# cd /usr/share/jds/
->
-> \# sudo bash jds.sh install
->
-> Рисунок 6.3 – Команда запуск инсталлятора JDS Команда инсталляции является универсальной для всех ОС GNU/Linux.
->
-> Инсталлятор проверит установлен ли пакет jatoba\<version\>-client. Если пакет не установлен, то инсталлятор выведет ошибку и потребуется доустановить его из дистрибутива СУБД.
->
-> Инсталлятор выведет запрос на согласие установки компонента.
->
+```
+# cd /usr/share/jds/
+# sudo bash jds.sh install
+```
+
+Рисунок 6.3 – Команда запуск инсталлятора JDS Команда инсталляции является универсальной для всех ОС GNU/Linux.
+
+Инсталлятор проверит установлен ли пакет jatoba<version>-client. Если пакет не установлен, то инсталлятор выведет ошибку и потребуется доустановить его из дистрибутива СУБД.
+
+Инсталлятор выведет запрос на согласие установки компонента.
+
 > Do you wish to install jds?
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image102.png" style="width:7.11747in;height:1.83094in" />
->
-> Рисунок 6.4 – Вывод запроса об установке компонента
->
-> Выбрав положительный ответ, инсталлятор установит дополнительные пакеты и файлы необходимые для запуска службы «jds.service».
->
-> Следующим этапом инсталлятор выведет сообщения о выборе конфигурации по умолчанию:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image103.png" style="width:7.10659in;height:1.55969in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image102.png)
+
+Рисунок 6.4 – Вывод запроса об установке компонента
+
+Выбрав положительный ответ, инсталлятор установит дополнительные пакеты и файлы необходимые для запуска службы «jds.service».
+
+Следующим этапом инсталлятор выведет сообщения о выборе конфигурации по умолчанию:
+
+![](@site/docs/assets/images/com18.3.1/install/media/image103.png)
 
 > Do you want to change default configuration settings?
->
-> Рисунок 6.5 – Вывод сообщения о выборе конфигурации
->
-> Инсталлятор предложит параметры СУБД по умолчанию, если значение не отличается от значения по умолчанию, то вводить параметры не требуется, достаточно нажать клавишу «Enter» и значение подставится автоматически:
+
+Рисунок 6.5 – Вывод сообщения о выборе конфигурации
+
+Инсталлятор предложит параметры СУБД по умолчанию, если значение не отличается от значения по умолчанию, то вводить параметры не требуется, достаточно нажать клавишу «Enter» и значение подставится автоматически:
 
 - Enter JATOBA_SERVER (default localhost)? –
 
-> Введите адрес установки СУБД «Jatoba»:
+Введите адрес установки СУБД «Jatoba»:
 
 - Enter JATOBA_PORT (default 5432)?
 
-> Введите порт подключения к СУБД «Jatoba»:
+Введите порт подключения к СУБД «Jatoba»:
 
 - Enter JATOBA_USER_ID (default jds)?
 
-> Введите имя пользователя компонента JDS для СУБД, по умолчанию пользователь
->
-> «jds»:
+Введите имя пользователя компонента JDS для СУБД, по умолчанию пользователь «jds»:
 
 - Enter JATOBA_USER_PSWD (default sql)?
 
-> Введите пароль для пользователя «jds»:
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Ввод параметра отражается отдельно и не присутствует в общем списке
+Введите пароль для пользователя «jds»:
+
+:::info Дополнительная информация
+Ввод параметра отражается отдельно и не присутствует в общем списке
+:::
 
 - Enter JATOBA_DATABASE (default jdsdb)?
 
-> Введите имя БД, которую будет использовать компонент JDS, по умолчанию имя БД
->
-> «jdsdb»:
+Введите имя БД, которую будет использовать компонент JDS, по умолчанию имя БД «jdsdb»:
 
 - Enter JDS_PUBLISH_PORT (default 5000)?
 
-> Введите публичный порт СУБД, по умолчанию будет использоваться порт 5000:
+Введите публичный порт СУБД, по умолчанию будет использоваться порт 5000:
 
 - Enter SUPERUSER name (default postgres)?
 
-> Введите пароль суперпользователя, по умолчанию используется пользователь
->
-> «postgres».
->
-> Инсталлятор предложит установить предложенный пароль по умолчанию:
->
-> Enter JATOBA_USER_PSWD (default sql)?
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image104.png" style="width:7.06338in;height:3.64167in" />
->
-> Рисунок 6.6 – Предложение изменения пароля по умолчанию
->
-> Далее инсталлятор запросит ввод пароля привилегированного пользователя СУБД
->
-> «postgres» для:
+Введите пароль суперпользователя, по умолчанию используется пользователь «postgres».
+
+Инсталлятор предложит установить предложенный пароль по умолчанию:
+
+Enter JATOBA_USER_PSWD (default sql)?
+
+![](@site/docs/assets/images/com18.3.1/install/media/image104.png)
+
+Рисунок 6.6 – Предложение изменения пароля по умолчанию
+
+Далее инсталлятор запросит ввод пароля привилегированного пользователя СУБД «postgres» для:
 
 - создания роли «jds» в СУБД:
-
-<img src="../docs/assets/images/com18.3.1/install/media/image105.png" style="width:7.19732in;height:1.42406in" />
-
+- 
 > Creating role: jds
->
-> Рисунок 6.7 – Запрос пароля пользователя «postgres» для создания роли «jds»
+> 
+![](@site/docs/assets/images/com18.3.1/install/media/image105.png)
+
+Рисунок 6.7 – Запрос пароля пользователя «postgres» для создания роли «jds»
 
 - создания служебной БД «jdsdb», владельцем которой будет созданный пользователь «jds»:
 
 > Creating db: jdsdb OWNER jds
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image106.png" style="width:7.07213in;height:5.0025in" />
->
-> Рисунок 6.8 - Создание служебной БД «jdsdb»
+
+![](@site/docs/assets/images/com18.3.1/install/media/image106.png)
+
+Рисунок 6.8 - Создание служебной БД «jdsdb»
 
 - установки расширений СУБД и конфигурации БД «jdsdb»:
 
 > Creating extension: dblink and change configuration standard_conforming_strings in jdsdb
->
-> В служебной БД будут созданы служебные функции для подраздела «Проблемы и решения» (Problems & Solutions).
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image107.png" style="width:6.98638in;height:4.93865in" />
->
-> Рисунок 6.9 – Установка расширений и стандартной конфигурации БД Будут созданы в каталоге /opt подкаталоги:
+
+В служебной БД будут созданы служебные функции для подраздела «Проблемы и решения» (Problems & Solutions).
+
+![](@site/docs/assets/images/com18.3.1/install/media/image107.png)
+
+Рисунок 6.9 – Установка расширений и стандартной конфигурации БД Будут созданы в каталоге /opt подкаталоги:
 
 - jds-script – подкаталог для запуска службы «jds.service»;
 
@@ -6924,79 +6758,86 @@
 
 - jds-doctor – подкаталог для запуска службы «jds-doctor.service».
 
-<img src="../docs/assets/images/com18.3.1/install/media/image108.jpeg" style="width:3.10383in;height:1.19792in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image108.jpeg)
 
-> Рисунок 6.10 – Структура каталога opt
->
-> Инсталлятор автоматически создаст и запустит службы «jds.service» и «jds-doctor.service».
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image109.png" style="width:6.69293in;height:5.04781in" />
->
-> Рисунок 6.11 – Установка служб компонента JDS На данном этапе установка компонента JDS закончена.
+Рисунок 6.10 – Структура каталога opt
 
-## Запуск компонента JDS. Установка/смена пароля администратора
+Инсталлятор автоматически создаст и запустит службы «jds.service» и «jds-doctor.service».
 
-> Перед запуском компонента потребуется установить пароль для администратора компонента.
->
-> Установка пароля выполняется от имени и с правами привилегированного пользователя ОС «root» в терминале командой:
->
-> ./JDS.WebApi --setadmin username password
->
-> Командная строка для установки и сброса пароля имеет параметры:
+![](@site/docs/assets/images/com18.3.1/install/media/image109.png)
+
+Рисунок 6.11 – Установка служб компонента JDS На данном этапе установка компонента JDS закончена.
+
+### Запуск компонента JDS. Установка/смена пароля администратора
+
+Перед запуском компонента потребуется установить пароль для администратора компонента.
+
+Установка пароля выполняется от имени и с правами привилегированного пользователя ОС «root» в терминале командой:
+
+```
+./JDS.WebApi --setadmin username password
+```
+
+Командная строка для установки и сброса пароля имеет параметры:
 
 - --setadmin - параметр, указывающий на необходимость установки или смены
 
-> пароля;
+пароля;
 
 - username - имя пользователя;
 
 - password – пароль.
 
-> Например
+Например
 
-<img src="../docs/assets/images/com18.3.1/install/media/image110.png" style="width:7.09917in;height:1.44708in" />
+```
+cd /opt/jds
+./JDS.WebApi --setadmin admin Gazprom09!
+systemctl restart jds
+```
 
-> cd /opt/jds
->
-> ./JDS.WebApi --setadmin admin Gazprom09! systemctl restart jds
->
-> Рисунок 6.12 Установка/сброс пароля администратора Устанавливаемый пароль должен отвечать параметрам сложности.
+![](@site/docs/assets/images/com18.3.1/install/media/image110.png)
 
-## Запуск сертифицированной версии компонента JDS 2.7.5
 
-> В сертифицированной версии компонента JDS 2.7.5 запуск /opt/jds/JDS.WebApi стал возможен только при явном указании пути к .NET через переменную окружения DOTNET_ROOT. Это делает вызов JDS.WebApi --setadmin
->
-> Для запуска используется скрипт «reset_admin_paswd.sh», расположеный по пути:
->
+
+Рисунок 6.12 Установка/сброс пароля администратора Устанавливаемый пароль должен отвечать параметрам сложности.
+
+### Запуск сертифицированной версии компонента JDS 2.7.5
+
+В сертифицированной версии компонента JDS 2.7.5 запуск /opt/jds/JDS.WebApi стал возможен только при явном указании пути к .NET через переменную окружения DOTNET_ROOT. Это делает вызов JDS.WebApi --setadmin
+
+Для запуска используется скрипт «reset_admin_paswd.sh», расположеный по пути:
+
 > /opt/jds-scripts
->
-> Используются параметры запуска:
->
-> \# reset_admin_paswd.sh без параметров или с параметром --help отображает справку
->
-> \# reset_admin_paswd.sh \<user\> \<password\> устанавливает пароль "password" для администратора "user"
 
-## Альтернативный вариант запуска сертифицированной версии компонента JDS
+Используются параметры запуска:
 
-> **2.7.5**
->
-> Альтернативный запуск компонента выполняется в терминале ОС командой:
->
-> DOTNET_ROOT=/opt/jds ./JDS.WebApi --setadmin \<user\> \<password\>
->
-> Проверить работоспособность установки компонента можно веб-браузером ОС, набрав в адресной строке адрес: [<u>http://localhost:5000/</u>](http://localhost:5000/)
->
-> Рисунок 6.13 – Стартовая страница JDS в GNU/Linux
+- reset_admin_paswd.sh без параметров или с параметром --help отображает справку
 
-## Способы публикации WEB-приложения JDS в инфраструктуре
+- reset_admin_paswd.sh <user> <password> устанавливает пароль "password" для администратора "user"
 
-> Публикация — это порядок предоставления доступа к приложению JDS в инфраструктуре.
->
-> Установка приложения JDS - доставка бинарников и конфигурирование доступа к служебной БД - сама по себе не является публикацией, так как по умолчанию приложение принимает входящие подключения по HTTP-протоколу на порту 5000 только на адресе
->
-> 127.0.0.1 и не доступно извне.
->
-> Общие требования к публикации:
+
+### Альтернативный вариант запуска сертифицированной версии компонента JDS 2.7.5
+
+Альтернативный запуск компонента выполняется в терминале ОС командой:
+
+```
+DOTNET_ROOT=/opt/jds ./JDS.WebApi --setadmin <user> <password>
+```
+
+Проверить работоспособность установки компонента можно веб-браузером ОС, набрав в адресной строке адрес: [<u>http://localhost:5000/</u>](http://localhost:5000/)
+
+![](@site/docs/assets/images/com18.3.1/install/media/image613.png)
+
+Рисунок 6.13 – Стартовая страница JDS в GNU/Linux
+
+### Способы публикации WEB-приложения JDS в инфраструктуре
+
+Публикация — это порядок предоставления доступа к приложению JDS в инфраструктуре.
+
+Установка приложения JDS - доставка бинарников и конфигурирование доступа к служебной БД - сама по себе не является публикацией, так как по умолчанию приложение принимает входящие подключения по HTTP-протоколу на порту 5000 только на адресе 127.0.0.1 и не доступно извне.
+
+Общие требования к публикации:
 
 - приложение должно быть доступно пользователю по протоколу HTTPS;
 
@@ -7004,125 +6845,111 @@
 
 - если развёртывание JDS производится в защищённой сертифицированной инфраструктуре, использование не сертифицированных сервисов не допускается; предполагается, что JDS, сам по себе, сертифицирован.
 
-## Типовые способы публикации WEB-приложения
+### Типовые способы публикации WEB-приложения
 
-> JDS как WEB-приложение, написанное на .NET, взаимодействует с внешним миром через собственный HTTP(s) сервер Kestrel, входящий в состав .NET SDK.
->
-> Публикация .NET WEB-приложений, обычно, производится с помощью дополнительного сервиса Reverse proxy, часто реализуемого с применением NGINX.
+JDS как WEB-приложение, написанное на .NET, взаимодействует с внешним миром через собственный HTTP(s) сервер Kestrel, входящий в состав .NET SDK.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image112.png" style="width:6.99616in;height:0.9425in" alt="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel/_static/kestrel-to-internet.png?view=aspnetcore-8.0 " />
+Публикация .NET WEB-приложений, обычно, производится с помощью дополнительного сервиса Reverse proxy, часто реализуемого с применением NGINX.
 
-> Рисунок 6.14 – Публикация с помощью дополнительного сервиса Reverse proxy Кроме того, .NET WEB-приложение может использовать для публикации Kestrel
->
-> самостоятельно.
+![](@site/docs/assets/images/com18.3.1/install/media/image112.png)
 
-<img src="../docs/assets/images/com18.3.1/install/media/image113.png" style="width:4.93311in;height:1in" alt="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel/_static/kestrel-to-internet2.png?view=aspnetcore-8.0 " />
+Рисунок 6.14 – Публикация с помощью дополнительного сервиса Reverse proxy Кроме того, .NET WEB-приложение может использовать для публикации Kestrel самостоятельно.
 
-> Рисунок 6.15 - Публикации с помощью Kestrel
+![](@site/docs/assets/images/com18.3.1/install/media/image113.png)
 
-## Примеры настройки публикации WEB-приложения JDS Вариант 1.
+Рисунок 6.15 - Публикации с помощью Kestrel
 
-> Публикация с использованием встроенного сервера Kestrel по протоколу HTTPS
->
-> В файл настройки приложения jds/appsettings.json требуется указать значения параметров Kestrel \\ Endpoints \\ Default и Kestrel \\ Certificates \\ Default:
->
-> "Kestrel": {
->
-> "Endpoints": {
->
-> "Default": {
->
-> "Url": "https://\*:443"
->
-> }
->
-> },
->
-> "Certificates": {
->
-> "Default": {
->
-> "Path": "/path/to/certificate.pfx", "Password": ""
->
-> }
->
-> }
->
-> }
->
-> В примере выше JDS публикуется на всех IP-адресах хоста, на порту 443, с использованием протокола HTTPS.
->
-> Сертификат, используемый Kestrel для защиты канала, должен быть валидным (выпущен центром сертификации, корневые сертификаты которого настроены на всех хостах инфраструктуры как доверенные).
->
-> Сертификат должен быть в формате PFX, собирается следующим образом:
->
-> openssl pkcs12 -export -out certificate.pfx -inkey private.key
->
-> -in certificate.crt
->
-> В этом примере PFX-файл собирается из файла сертификата и закрытого ключа; предполагается, что пароль к закрытому ключу не установлен. В ином случае (пароль установлен) требуется указать пароль при сборке PFX-файла, также, указать пароль в поле
->
-> «Password» файла настройки. Файл сертификата должен быть доступен на чтение для пользователя, под которым запускается JDS.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25138in;height:0.25055in" />Правила безопасности ОС Linux могут запрещать привязку непривилегированных (пользовательских) приложений к портам ниже 1024.
+### Примеры настройки публикации WEB-приложения JDS Вариант 1.
+
+Публикация с использованием встроенного сервера Kestrel по протоколу HTTPS
+
+В файл настройки приложения jds/appsettings.json требуется указать значения параметров Kestrel \\ Endpoints \\ Default и Kestrel \\ Certificates \\ Default:
+
+```
+"Kestrel": {
+    "Endpoints": {
+        "Default": {
+            "Url": "https://\*:443"
+        }
+    },
+    "Certificates": {
+        "Default": {
+            "Path": "/path/to/certificate.pfx",
+            "Password": ""
+        }
+    }
+}
+```
+
+В примере выше JDS публикуется на всех IP-адресах хоста, на порту 443, с использованием протокола HTTPS.
+
+Сертификат, используемый Kestrel для защиты канала, должен быть валидным (выпущен центром сертификации, корневые сертификаты которого настроены на всех хостах инфраструктуры как доверенные).
+
+Сертификат должен быть в формате PFX, собирается следующим образом:
+
+```
+openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt
+```
+
+В этом примере PFX-файл собирается из файла сертификата и закрытого ключа; предполагается, что пароль к закрытому ключу не установлен. В ином случае (пароль установлен) требуется указать пароль при сборке PFX-файла, также, указать пароль в поле «Password» файла настройки. Файл сертификата должен быть доступен на чтение для пользователя, под которым запускается JDS.
+
+:::warning Важная информация
+Правила безопасности ОС Linux могут запрещать привязку непривилегированных (пользовательских) приложений к портам ниже 1024.
+:::
 
 Нужно присвоить соответствующие права исполняемому файлу JDS:
 
-> sudo setcap 'cap_net_bind_service=+ep' /opt/jds/JDS.WebApi
+```
+sudo setcap 'cap_net_bind_service=+ep' /opt/jds/JDS.WebApi
+```
 
-## Вариант 2
+### Вариант 2
 
-> Публикация с использованием внешнего WEB-сервера NGINX (не входит в комплект поставки JDS)
->
-> В данном примере WEB-приложение привязывается к порту 5000 на localhost, а NGINX настраивается на проксирование внешних HTTPS-запросов на localhost:5000.
->
-> В файл настройки приложения jds/appsettings.json требуется указать значение только параметра Kestrel \\ Endpoints \\ Default:
->
-> "Kestrel": {
->
-> "Endpoints": {
->
-> "Default": {
->
-> "Url": "[http://localhost:5000](http://localhost:5000/)"
->
-> },
->
-> }
->
-> },
->
-> Параметр Kestrel \\ Certificates \\ Default требуется удалить из файла конфигурации.
->
-> Файл настройки сайта для WEB-сервера NGINX должен выглядеть следующим образом:
->
-> server {
->
-> listen 443 ssl default_server; listen \[::\]:443 ssl default_server;
->
-> ssl_certificate /var/www/\_pki/certificate.crt; ssl_certificate_key /var/www/\_pki/private.key; ssl_protocols TLSv1.2 TLSv1.3;
->
-> ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POL Y1305_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384';
->
-> root /var/www/html;
->
-> index index.html index.htm index.nginx-debian.html; server_name jds.local.net;
->
-> location / {
->
-> proxy_set_header Host \$host; proxy_set_header Upgrade \$http_upgrade; proxy_set_header Connection 'upgrade'; proxy_set_header X-Forwarded-For
->
-> \$proxy_add_x_forwarded_for;
->
-> proxy_set_header X-Forwarder-Proto \$scheme; proxy_pass [http://localhost:5000](http://localhost:5000/); proxy_http_version 1.1;
->
-> }
->
-> }
->
-> В примере выше нужно изменить "по месту" значения следующих параметров, приведённых в таблице [6.1](#_bookmark86):
->
-> <span id="_bookmark86" class="anchor"></span>Таблица 6.1 – Применяемые параметры
+Публикация с использованием внешнего WEB-сервера NGINX (не входит в комплект поставки JDS)
+
+В данном примере WEB-приложение привязывается к порту 5000 на localhost, а NGINX настраивается на проксирование внешних HTTPS-запросов на localhost:5000.
+
+В файл настройки приложения jds/appsettings.json требуется указать значение только параметра Kestrel \\ Endpoints \\ Default:
+
+```
+"Kestrel": {
+    "Endpoints": {
+        "Default": {
+            "Url": "[http://localhost:5000](http://localhost:5000/)"
+        },
+    }
+},
+```
+
+Параметр Kestrel \\ Certificates \\ Default требуется удалить из файла конфигурации.
+
+Файл настройки сайта для WEB-сервера NGINX должен выглядеть следующим образом:
+
+```
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+    ssl_certificate		/var/www/_pki/certificate.crt;
+    ssl_certificate_key	/var/www/_pki/private.key;
+    ssl_protocols	TLSv1.2 TLSv1.3;
+    ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POL Y1305_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384';
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html; server_name jds.local.net;
+    location / {
+        proxy_set_header Host $host; 
+        proxy_set_header Upgrade $http_upgrade; 
+        proxy_set_header Connection 'upgrade'; 
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarder-Proto $scheme; 
+        proxy_pass http://localhost:5000; 
+        proxy_http_version 1.1;
+    }
+}
+```
+
+В примере выше нужно изменить "по месту" значения следующих параметров, приведённых в таблице [6.1](#_bookmark86):
+
+<span id="_bookmark86" class="anchor"></span>Таблица 6.1 – Применяемые параметры
 
 <table>
 <colgroup>
@@ -7131,126 +6958,135 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>Параметр</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Значение</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>ssl_certificate</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Путь к файлу сертификата, сформированного для для сайта "jds.local.net"</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>ssl_certificate_key</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Путь к файлу закрытого ключа сертификата, сформированного для для сайта "jds.local.net"</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>ssl_password_file</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Текст пароля закрытого ключа сертификата, сформированного для для сайта "jds.local.net", если он установлен</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>server_name</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Имя сайта, на котором работает JDS. В данном примере это "jds.local.net"</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>proxy_pass</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Адрес и порт, на который перенаправляются HTTPS-запросы для сайта "jds.local.net".</p>
 <p>Это значение должно совпадать с значением настройки Kestrel \ Endpoints \ Default файла jds/appsettings.json.</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
-## Установка веб-сервера nginx
+### Установка веб-сервера nginx
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Скрипт применяется в коммерческой версии СУБД «Jatoba»
->
-> В случае, когда требуется установить веб-сервер в ОС GNU/Linux в каталоге, хранится скрипт установки веб-сервера nginx:
->
+:::info Дополнительная информация
+Скрипт применяется в коммерческой версии СУБД «Jatoba»
+:::
+
+В случае, когда требуется установить веб-сервер в ОС GNU/Linux в каталоге, хранится скрипт установки веб-сервера nginx:
+
 > /usr/share/jds/utils
->
-> Устанавливается пакет из удаленного репозитория командой:
->
-> cd ./utils/
->
-> sudo bash nginx.sh install -y
->
-> Для ОС Astra Linux применяется команда:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image114.png" style="width:7.11068in;height:4.60156in" />
+Устанавливается пакет из удаленного репозитория командой:
 
-> bash [nginx.sh](http://nginx.sh/) install --default
->
-> Рисунок 6.16 – Установка веб-сервера nginx
->
-> При первом запуске веб-страницы JDS по адресу [<u>https://localhost/</u>](https://localhost/) веб-браузер может сообщить, что обнаружил потенциальную угрозу безопасности и прекратил работу с localhost.
->
-> Для устранения проблемы, необходимо нажать «Advanced».
->
-> В открывшимся окне появится дополнительное сообщение, что нет доверия к сертификату.
->
-> Подтвердить, что доверяете сертификату, нажав на «Accept the Risk and Continue».
->
-> Рисунок 6.17 – Вывод сообщений веб-браузером
->
-> После чего веб-страница JDS станет доступной по адресу [<u>https://localhost</u>,](https://localhost/) в котором используется SSL-соединение.
+```
+cd ./utils/
+sudo bash nginx.sh install -y
+```
 
-## Удаление веб-сервера nginx
+Для ОС Astra Linux применяется команда:
 
-> В случае, когда требуется удалить веб-сервер в ОС GNU/Linux, в каталоге хранится скрипт «nginx.sh»:
->
+```
+bash nginx.sh install --default
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image114.png)
+
+
+Рисунок 6.16 – Установка веб-сервера nginx
+
+При первом запуске веб-страницы JDS по адресу [<u>https://localhost/</u>](https://localhost/) веб-браузер может сообщить, что обнаружил потенциальную угрозу безопасности и прекратил работу с localhost.
+
+Для устранения проблемы, необходимо нажать «Advanced».
+
+В открывшимся окне появится дополнительное сообщение, что нет доверия к сертификату.
+
+Подтвердить, что доверяете сертификату, нажав на «Accept the Risk and Continue».
+
+Рисунок 6.17 – Вывод сообщений веб-браузером
+
+После чего веб-страница JDS станет доступной по адресу [<u>https://localhost</u>,](https://localhost/) в котором используется SSL-соединение.
+
+### Удаление веб-сервера nginx
+
+В случае, когда требуется удалить веб-сервер в ОС GNU/Linux, в каталоге хранится скрипт «nginx.sh»:
+
 > /usr/share/jds/utils
->
-> Удаление проводится в автоматическом режиме командой:
->
-> cd ./utils/
->
-> sudo bash nginx.sh uninstall -y
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image116.png" style="width:7.10301in;height:4.90187in" />
->
-> Рисунок 6.18 – Удаление веб-сервера nginx
 
-## Удаление компонента JDS
+Удаление проводится в автоматическом режиме командой:
 
-> Скрипт удаления компонента JDS находится в каталоге локального пользователя, а в рассматриваемом примере в каталоге:
->
+```
+cd ./utils/
+sudo bash nginx.sh uninstall -y
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image116.png)
+
+Рисунок 6.18 – Удаление веб-сервера nginx
+
+### Удаление компонента JDS
+
+Скрипт удаления компонента JDS находится в каталоге локального пользователя, а в рассматриваемом примере в каталоге:
+
 > /usr/share/jds
->
-> Скрипт выполняется от имени и с правами привилегированного пользователя с ключом «uninstall»:
->
-> sudo bash jds.sh uninstall
+
+Скрипт выполняется от имени и с правами привилегированного пользователя с ключом «uninstall»:
+
+```
+sudo bash jds.sh uninstall
+```
 
 После запуска скрипта будет выведен запрос о подтверждении удаления:
 
 > Do you wish to uninstall jds
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image117.png" style="width:7.11065in;height:1.43375in" />
->
-> Рисунок 6.19 – Вывод запроса о продолжении удаления При подтверждении будут выполнены следующие действия:
+
+![](@site/docs/assets/images/com18.3.1/install/media/image117.png)
+
+Рисунок 6.19 – Вывод запроса о продолжении удаления При подтверждении будут выполнены следующие действия:
 
 - остановлена и удалена служба «jds.service»;
 
@@ -7260,15 +7096,15 @@
 
 - удалена служебная БД «jdsdb» при подтверждении удаления.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image118.png" style="width:7.11272in;height:3.18719in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image118.png)
 
-> Рисунок 6.20 – Удаление компонента JDS
+Рисунок 6.20 – Удаление компонента JDS
 
-## Обновление компонента JDS в ручном режиме
+### Обновление компонента JDS в ручном режиме
 
-> При обновлении существующего развёртывания JDS требуется обеспечить не только доставку на хост новых исполняемых файлов, но в обязательном порядке сохранить все данные компонента, ранее созданные/сохранённые пользователем (далее - данные приложения).
->
-> Как минимум требуется сохранить:
+При обновлении существующего развёртывания JDS требуется обеспечить не только доставку на хост новых исполняемых файлов, но в обязательном порядке сохранить все данные компонента, ранее созданные/сохранённые пользователем (далее - данные приложения).
+
+Как минимум требуется сохранить:
 
 - файл конфигурации - appsettings.json;
 
@@ -7280,13 +7116,15 @@
 
 1)  Остановить службы jds и jds-doctor
 
-> \# systemctl stop jds
->
-> \# systemctl status jds
->
-> \# systemctl stop jds-doctor
->
-> \# systemctl status jds-doctor
+```
+# systemctl stop jds
+# systemctl status jds
+```
+
+```
+# systemctl stop jds-doctor
+# systemctl status jds-doctor
+```
 
 2)  Сделать резервную копию файлов:
 
@@ -7302,13 +7140,13 @@
 
     - /opt/jds-scripts;
 
-4)  Распаковать архив jds-\*\*\*-\*-\*\*\*- release.tar.gz в папку /opt
+4)  Распаковать архив jds-***-*-***- release.tar.gz в папку /opt
 
 5)  Переименовать папки (если требуется)
 
-    - /opt/jds.doctor -\> /opt/jds-doctor;
+    - /opt/jds.doctor -> /opt/jds-doctor;
 
-    - /opt/jds.scripts -\> /opt/jds-scripts.
+    - /opt/jds.scripts -> /opt/jds-scripts.
 
 6)  Восстановить следующие файлы из резервной копии:
 
@@ -7318,85 +7156,95 @@
 
 7)  Проверить и при необходимости дополнить содержание конфигурационного файла /opt/jds/appsettings.json компонента JDS
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Конфигурационный файл /opt/jds/appsettings.json компонента JDS версии 2.9 имеет дополнительные секцию параметров журналирования.
->
-> Без этой секции параметров компонент не запустится.
->
-> Конфигурационный файл /opt/jds/appsettings.json восстановленный из резервной копии, необходимо дополнить секцией параметров:
+:::warning Важная информация
+Конфигурационный файл /opt/jds/appsettings.json компонента JDS версии 2.9 имеет дополнительные секцию параметров журналирования.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image119.png" style="width:7.04455in;height:3.06187in" />
+Без этой секции параметров компонент не запустится.
+:::
 
-> {
->
-> "AppLogging": {
->
-> "Level": "Information", "SensitiveDataLogging": false, "FileCount": 90, "RotateInterval": "Day"
->
-> },
->
-> Рисунок 6.21 – Секция параметров журналирования для JDS
+Конфигурационный файл /opt/jds/appsettings.json восстановленный из резервной копии, необходимо дополнить секцией параметров:
+
+```
+{
+"AppLogging": {
+    "Level": "Information",
+    "SensitiveDataLogging": false,
+    "FileCount": 90,
+    "RotateInterval": "Day"
+    },
+}
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image119.png)
+
+
+
+Рисунок 6.21 – Секция параметров журналирования для JDS
 
 8)  Проверить и при необходимости дополнить содержание конфигурационного файла /opt/jds-doctor/appsetting.json службы jds-doctor
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Конфигурационный файл /opt/jds-doctor/appsetting.json службы jds-doctor версии 2.9 имеет дополнительные секцию параметров журналирования.
->
-> Без этой секции параметров служба не запустится.
->
-> Конфигурационный файл /opt/jds-doctor/appsetting.json восстановленный из резервной копии, необходимо дополнить секцией параметров:
->
-> {
->
-> "AppLogging": {
->
-> "Level": "Information",
->
-> "SensitiveDataLogging": false,
->
-> "FileCount": 90,
->
-> "RotateInterval": "Day"
->
-> },
+:::warning Важная информация
+Конфигурационный файл /opt/jds-doctor/appsetting.json службы jds-doctor версии 2.9 имеет дополнительные секцию параметров журналирования.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image120.png" style="width:7.13256in;height:2.955in" />
+Без этой секции параметров служба не запустится.
+:::
 
-> Рисунок 6.22– Секция параметров журналирования для службы jds-doctor
+Конфигурационный файл /opt/jds-doctor/appsetting.json восстановленный из резервной копии, необходимо дополнить секцией параметров:
+
+```
+{
+"AppLogging": {
+    "Level": "Information",
+    "SensitiveDataLogging": false,
+    "FileCount": 90,
+    "RotateInterval": "Day"
+    },
+}
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image120.png)
+
+Рисунок 6.22– Секция параметров журналирования для службы jds-doctor
 
 9)  В папке /opt установить атрибуты доступа командами:
 
-> chown -R root: ./jds/\*.\*
->
-> chown -R root: ./jds-doctor/\*.\* chown -R root: ./jds-scripts/\*.\*
->
-> find /opt/jds -type d -exec chmod 0755 {} \\ find /opt/jds -type f -exec chmod 0664 {} \\
->
-> find /opt/jds-doctor -type d -exec chmod 0755 {} \\ find /opt/jds-doctor -type f -exec chmod 0664 {} \\ chmod +x ./jds/JDS.WebApi
->
-> chmod +x ./jds-doctor/JDS.PasDoctor
->
-> Для операционной системы ОСНОВА2 (OSnova 2.10) до запуска служб требуется выполнить команды:
->
-> \$ sudo setfattr -n user.pax.flags -v m
->
-> /opt/jds/JDS.WebApi
->
-> \$ sudo setfattr -n user.pax.flags -v m /opt/jds-doctor/JDS.PasDoctor
+```
+chown -R root: ./jds/*.*
+chown -R root: ./jds-doctor/*.* chown -R root: ./jds-scripts/*.*
+find /opt/jds -type d -exec chmod 0755 {} \;
+find /opt/jds -type f -exec chmod 0664 {} \;
+find /opt/jds-doctor -type d -exec chmod 0755 {} \;
+find /opt/jds-doctor -type f -exec chmod 0664 {} \;
+chmod +x ./jds/JDS.WebApi
+chmod +x ./jds-doctor/JDS.PasDoctor
+```
+
+:::info Дополнительная информация
+Для операционной системы ОСНОВА2 (OSnova 2.10) до запуска служб требуется выполнить команды:
+
+```
+$ sudo setfattr -n user.pax.flags -v m/opt/jds/JDS.WebApi
+$ sudo setfattr -n user.pax.flags -v m /opt/jds-doctor/JDS.PasDoctor
+```
+:::
 
 10) Запустить службы jds и jds-doctor
 
-## <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Установка компонента JDS на ОС Windows с помощью инсталлятора
+### Установка компонента JDS на ОС Windows с помощью инсталлятора
 
-> Пример установки компонента JDS на серверных ОС приведен далее по тексту документа.
->
-> Пример установки веб-сервера (IIS) на ОС Windows 10 приведен в Приложении [7](#приложение-7). Дальнейшие действия по установке и конфигурированию компонента будут аналогичны, приведенным ниже.
+Пример установки компонента JDS на серверных ОС приведен далее по тексту документа.
 
-## Настройка сервера ОС Windows Server 2016
+Пример установки веб-сервера (IIS) на ОС Windows 10 приведен в Приложении [7](#приложение-7). Дальнейшие действия по установке и конфигурированию компонента будут аналогичны, приведенным ниже.
 
-> Для предварительной настройки сервера ОС Windows необходимо:
+### Настройка сервера ОС Windows Server 2016
+
+Для предварительной настройки сервера ОС Windows необходимо:
 
 - задать корректное имя сервера;
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Имя сервера не должно включать символ нижнего подчеркивания «\_», в противном случае ОС выдаст ошибку.
+:::info Дополнительная информация
+Имя сервера не должно включать символ нижнего подчеркивания «_», в противном случае ОС выдаст ошибку.
+:::
 
 - настроить сетевое окружение;
 
@@ -7404,73 +7252,77 @@
 
 - в панели диспетчера серверов отключить «Конфигурацию усиленной безопасности Internet Explorer».
 
-## Установка роли веб-сервера (IIS)
+### Установка роли веб-сервера (IIS)
 
-> Для установки роли веб-сервера (далее – IIS) необходимо проделать следующие шаги:
+Для установки роли веб-сервера (далее – IIS) необходимо проделать следующие шаги:
 
 1)  Перейти в панель «Диспетчер серверов» → «Панель мониторинга» →
 
-> «Добавить роли и компоненты» (рисунок [6.23](#_bookmark94)).
->
-> <span id="_bookmark94" class="anchor"></span>Рисунок 6.23 – Окно «Диспетчер серверов»
+«Добавить роли и компоненты» (рисунок [6.23](#_bookmark94)).
+
+<span id="_bookmark94" class="anchor"></span>Рисунок 6.23 – Окно «Диспетчер серверов»
 
 2)  В открывшемся окне «Мастер добавления ролей и компонентов» ознакомиться с разделом «Перед началом работы», затем нажать кнопку «Далее» (рисунок [6.24](#_bookmark95)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image122.jpeg" style="width:5.40355in;height:3.85in" />
->
-> <span id="_bookmark95" class="anchor"></span>Рисунок 6.24 – Окно с разделом «Перед началом работы»
+![](@site/docs/assets/images/com18.3.1/install/media/image122.jpeg)
+
+<span id="_bookmark95" class="anchor"></span>Рисунок 6.24 – Окно с разделом «Перед началом работы»
 
 3)  В разделе «Выбор типа установки» установить флажок напротив поля
 
-> «Установка ролей или компонентов» и нажать «Далее» (рисунок [6.25](#_bookmark96)).
+«Установка ролей или компонентов» и нажать «Далее» (рисунок [6.25](#_bookmark96)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image123.jpeg" style="width:5.32169in;height:3.79167in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image123.jpeg)
 
-> <span id="_bookmark96" class="anchor"></span>Рисунок 6.25 – Окно с разделом «Выбор типа установки»
+<span id="_bookmark96" class="anchor"></span>Рисунок 6.25 – Окно с разделом «Выбор типа установки»
 
 4)  В разделе «Выбор целевого сервера» установить флажок напротив поля
 
-> «Выберите сервер из пула серверов» и нажать «Далее» (рисунок [6.26](#_bookmark97)).
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />На данном шаге будет выбран текущий сервер.
+«Выберите сервер из пула серверов» и нажать «Далее» (рисунок [6.26](#_bookmark97)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image124.jpeg" style="width:5.23981in;height:3.73333in" />
+:::info Дополнительная информация
+На данном шаге будет выбран текущий сервер.
+:::
 
-> <span id="_bookmark97" class="anchor"></span>Рисунок 6.26 – Окно с разделом «Выбор целевого сервера»
+![](@site/docs/assets/images/com18.3.1/install/media/image124.jpeg)
 
-5)  <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24944in" />В разделе «Выбор ролей сервера» установить флажок напротив поля «Веб-сервер (IIS)» (рисунок [6.27](#_bookmark98)), после этого откроется окно «Мастер добавления ролей и компонентов», в котором необходимо нажать «Добавить компоненты» (рисунок [6.28](#_bookmark99)). Вернуться в окно с разделом «Выбор ролей сервера» и нажать «Далее» (рисунок [6.29](#_bookmark100)).
+<span id="_bookmark97" class="anchor"></span>Рисунок 6.26 – Окно с разделом «Выбор целевого сервера»
 
-> По умолчанию флажок установлен напротив поля «Файловые службы и службы хранилища», который необходимо оставить.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image125.jpeg" style="width:5.56731in;height:3.96667in" />
->
-> <span id="_bookmark98" class="anchor"></span>Рисунок 6.27 – Окно с разделом «Выбор ролей сервера»
->
-> <span id="_bookmark99" class="anchor"></span>Рисунок 6.28 – Вспомогательное окно «Мастер добавления ролей и компонентов»
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image127.jpeg" style="width:5.56731in;height:3.96667in" />
->
-> <span id="_bookmark100" class="anchor"></span>Рисунок 6.29 – Окно с разделом «Выбор ролей сервера»
+5)  В разделе «Выбор ролей сервера» установить флажок напротив поля «Веб-сервер (IIS)» (рисунок 6.27), после этого откроется окно «Мастер добавления ролей и компонентов», в котором необходимо нажать «Добавить компоненты» (рисунок 6.28). Вернуться в окно с разделом «Выбор ролей сервера» и нажать «Далее» (рисунок 6.29).
+
+:::info Дополнительная информация
+По умолчанию флажок установлен напротив поля «Файловые службы и службы хранилища», который необходимо оставить.
+:::
+
+![](@site/docs/assets/images/com18.3.1/install/media/image125.jpeg)
+
+<span id="_bookmark98" class="anchor"></span>Рисунок 6.27 – Окно с разделом «Выбор ролей сервера»
+
+![](@site/docs/assets/images/com18.3.1/install/media/image628.png)
+
+<span id="_bookmark99" class="anchor"></span>Рисунок 6.28 – Вспомогательное окно «Мастер добавления ролей и компонентов»
+
+![](@site/docs/assets/images/com18.3.1/install/media/image127.jpeg)
+
+<span id="_bookmark100" class="anchor"></span>Рисунок 6.29 – Окно с разделом «Выбор ролей сервера»
 
 6)  В разделе «Выбор компонентов» оставить выбранные компоненты по умолчанию и нажать «Далее» (рисунок [6.30](#_bookmark101)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image128.jpeg" style="width:5.56843in;height:3.96667in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image128.jpeg)
 
-> <span id="_bookmark101" class="anchor"></span>Рисунок 6.30 – Окно с разделом «Выбор компонентов»
+<span id="_bookmark101" class="anchor"></span>Рисунок 6.30 – Окно с разделом «Выбор компонентов»
 
-7)  В разделе «Роль веб-сервера (IIS)» описана информация о веб-сервере IIS,
+7)  В разделе «Роль веб-сервера (IIS)» описана информация о веб-сервере IIS, после ознакомления нажать «Далее» (рисунок [6.31](#_bookmark102)).
 
-> после ознакомления нажать «Далее» (рисунок [6.31](#_bookmark102)).
+![](@site/docs/assets/images/com18.3.1/install/media/image129.jpeg)
 
-<img src="../docs/assets/images/com18.3.1/install/media/image129.jpeg" style="width:5.48544in;height:3.90833in" />
-
-> <span id="_bookmark102" class="anchor"></span>Рисунок 6.31 – Окно с разделом «Роль веб-сервера (IIS)»
+<span id="_bookmark102" class="anchor"></span>Рисунок 6.31 – Окно с разделом «Роль веб-сервера (IIS)»
 
 8)  В разделе «Выбор служб ролей» оставить выбранные параметры по умолчанию и нажать «Далее» (рисунок [6.32](#_bookmark104)).
 
-> Параметры, установленные по умолчанию в разделе «Выбор служб ролей», приведены в таблице [6.2](#_bookmark103).
->
-> <span id="_bookmark103" class="anchor"></span>Таблица 6.2 – Требуемые параметры в шаге «Службы ролей»
+Параметры, установленные по умолчанию в разделе «Выбор служб ролей», приведены в таблице [6.2](#_bookmark103).
+
+<span id="_bookmark103" class="anchor"></span>Таблица 6.2 – Требуемые параметры в шаге «Службы ролей»
 
 <table>
 <colgroup>
@@ -7480,120 +7332,120 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>№</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Основной параметр</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Связанный параметр</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>1</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Безопасность</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>1.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Фильтрация запросов</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>2</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Исправность и диагностика</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>2.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Ведение журнала HTTP</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Общие функции HTTP</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Документ по умолчанию</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.2</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Обзор каталога</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.3</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Ошибки HTTP</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.4</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Статическое содержимое</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>4</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Производительность</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>4.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Сжатие статического содержимого</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>5</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Разработка приложений</strong></p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -7606,104 +7458,108 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>№</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Основной параметр</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Связанный параметр</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>5.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Инициализация приложений</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>6</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Средства управления</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Консоль управления службами IIS</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
-<img src="../docs/assets/images/com18.3.1/install/media/image130.jpeg" style="width:5.48543in;height:3.90833in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image130.jpeg)
 
-> <span id="_bookmark104" class="anchor"></span>Рисунок 6.32 – Окно с разделом «Выбор служб ролей»
+<span id="_bookmark104" class="anchor"></span>Рисунок 6.32 – Окно с разделом «Выбор служб ролей»
 
-<img src="../docs/assets/images/com18.3.1/install/media/image131.jpeg" style="width:5.48667in;height:3.90833in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image131.jpeg)
 
-> Рисунок 6.33 – Окно с разделом «Службы ролей» (Инициализация приложений)
+Рисунок 6.33 – Окно с разделом «Службы ролей» (Инициализация приложений)
 
 9)  В разделе «Подтверждение установки компонентов» проверить настроенные параметры и начать установку веб-сервера, нажав «Установить» (рисунок [6.34](#_bookmark105)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image132.jpeg" style="width:5.48544in;height:3.90833in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image132.jpeg)
 
-> <span id="_bookmark105" class="anchor"></span>Рисунок 6.34 – Окно с разделом «Подтверждение установки компонентов»
+<span id="_bookmark105" class="anchor"></span>Рисунок 6.34 – Окно с разделом «Подтверждение установки компонентов»
 
 10) В разделе «Ход установки» показан результат установки компонента. После успешной установки нажать «Закрыть» (рисунок [6.35](#_bookmark106)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image133.jpeg" style="width:5.40356in;height:3.85in" />
->
-> <span id="_bookmark106" class="anchor"></span>Рисунок 6.35 – Окно с разделом «Ход установки»
+![](@site/docs/assets/images/com18.3.1/install/media/image133.jpeg)
 
-## Проверка установленного веб-сервера (IIS)
+<span id="_bookmark106" class="anchor"></span>Рисунок 6.35 – Окно с разделом «Ход установки»
 
-> Для проверки установки веб-сервера (IIS) необходимо в веб-браузере перейти по ссылке [<u>http://localhost</u>.](http://localhost/)
->
-> На рисунке [6.36](#_bookmark108) показана страница с корректной установкой веб-сервера.
+### Проверка установленного веб-сервера (IIS)
 
-<img src="../docs/assets/images/com18.3.1/install/media/image134.jpeg" style="width:5.43695in;height:2.92875in" />
+Для проверки установки веб-сервера (IIS) необходимо в веб-браузере перейти по ссылке [<u>http://localhost</u>.](http://localhost/)
 
-> <span id="_bookmark108" class="anchor"></span>Рисунок 6.36 – Тестовая страница веб-сервера (IIS)
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Функционирование компонента JDS под стандартным веб-браузером Internet Explorer не поддерживается.
+На рисунке [6.36](#_bookmark108) показана страница с корректной установкой веб-сервера.
 
-## Установка дополнительных компонент
+![](@site/docs/assets/images/com18.3.1/install/media/image134.jpeg)
 
-> Для корректной работы компонента JDS требуется установить дополнительную утилиту ASP.NET Core 6.0 Runtime (v6.0.1) – Windows Hosting Bundle Installer.
->
-> Утилита загружается с официального сайта производителя.
->
-> На странице загрузки перейти в раздел ASP.NET Core 6.0 Runtime 6.0.1.
->
-> <span id="_bookmark110" class="anchor"></span>Рисунок 6.37 – Вид страницы загрузки и гиперссылки
->
-> Затем необходимо скачать по гиперссылке дистрибутив с именем dotnet-hosting-6.0.1-win как показано на рисунке [6.37](#_bookmark110).
->
-> Так же должен быть установлен framework 4.8.
->
-> Установив дистрибутив, перезагрузить веб-сервер IIS, кликнув пиктограмму
->
-> «Перезапустить», как представлено на рисунке [6.38](#_bookmark111).
->
-> <span id="_bookmark111" class="anchor"></span>Рисунок 6.38 – Пиктограмма перезапуска IIS
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Версии утилиты ASP.NET Core 6.0 Runtime выше указанной, компонентом JDS не поддерживается.
+<span id="_bookmark108" class="anchor"></span>Рисунок 6.36 – Тестовая страница веб-сервера (IIS)
 
-## Запуск инсталлятора JDS
+:::warning Важная информация
+Функционирование компонента JDS под стандартным веб-браузером Internet Explorer не поддерживается.
+:::
 
-> Функциональные возможности инсталлятора JDS позволяют автоматизировать процесс конфигурирования веб-сервера (IIS), создания сайта и служебной БД.
->
-> По введенным параметрам инсталлятор автоматически:
+### Установка дополнительных компонент
+
+Для корректной работы компонента JDS требуется установить дополнительную утилиту ASP.NET Core 6.0 Runtime (v6.0.1) – Windows Hosting Bundle Installer.
+
+Утилита загружается с официального сайта производителя.
+
+На странице загрузки перейти в раздел ASP.NET Core 6.0 Runtime 6.0.1.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image637.png)
+
+<span id="_bookmark110" class="anchor"></span>Рисунок 6.37 – Вид страницы загрузки и гиперссылки
+
+Затем необходимо скачать по гиперссылке дистрибутив с именем dotnet-hosting-6.0.1-win как показано на рисунке [6.37](#_bookmark110).
+
+Так же должен быть установлен framework 4.8.
+
+Установив дистрибутив, перезагрузить веб-сервер IIS, кликнув пиктограмму «Перезапустить», как представлено на рисунке [6.38](#_bookmark111).
+
+<span id="_bookmark111" class="anchor"></span>Рисунок 6.38 – Пиктограмма перезапуска IIS
+
+:::warning Важная информация
+Версии утилиты ASP.NET Core 6.0 Runtime выше указанной, компонентом JDS не поддерживается.
+:::
+
+### Запуск инсталлятора JDS
+
+Функциональные возможности инсталлятора JDS позволяют автоматизировать процесс конфигурирования веб-сервера (IIS), создания сайта и служебной БД.
+
+По введенным параметрам инсталлятор автоматически:
 
 - сконфигурирует веб-сервер (IIS);
 
@@ -7711,33 +7567,37 @@
 
 - создаст служебную БД «jdsdb» и пользователя «jds».
 
-> Для начала установки необходимо запустить инсталлятор jds-\*.\*.\*\*-win-x64-release.msi.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Наименование пакета может отличаться в зависимости от поставляемой версии компонента.
->
-> Откроется приветственное окно, в котором для продолжения установки нажать
->
-> «Далее».
+Для начала установки необходимо запустить инсталлятор jds-\*.\*.\*\*-win-x64-release.msi.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image137.jpeg" style="width:3.91913in;height:3.06375in" />
+:::info Дополнительная информация
+Наименование пакета может отличаться в зависимости от поставляемой версии компонента.
+:::
 
-> Рисунок 6.39 – Приветственное окно инсталлятора
->
-> В следующем окне необходимо ознакомиться с лицензионным соглашением и, в случае согласия, выбрать вариант «Я принимаю условия лицензионного соглашения» и нажать «Далее» для продолжения установки.
->
-> Рисунок 6.40 – Окно «Лицензионное соглашение»
->
-> В следующем окне проверить по предлагаемому списку выполнение подготовительных действий. Убедившись, установить флажок в поле «Все необходимые компоненты предустановлены и настроены» и продолжить установку.
->
-> Рисунок 6.41 – Окно «Требование к установке»
->
-> В окне «Настройки подключения» инсталлятор выведет в полях значения по умолчанию. Выводятся параметры по двум типам:
+Откроется приветственное окно, в котором для продолжения установки нажать «Далее».
+
+![](@site/docs/assets/images/com18.3.1/install/media/image137.jpeg)
+
+Рисунок 6.39 – Приветственное окно инсталлятора
+
+В следующем окне необходимо ознакомиться с лицензионным соглашением и, в случае согласия, выбрать вариант «Я принимаю условия лицензионного соглашения» и нажать «Далее» для продолжения установки.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image640.png)
+
+Рисунок 6.40 – Окно «Лицензионное соглашение»
+
+В следующем окне проверить по предлагаемому списку выполнение подготовительных действий. Убедившись, установить флажок в поле «Все необходимые компоненты предустановлены и настроены» и продолжить установку.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image641.png)
+
+Рисунок 6.41 – Окно «Требование к установке»
+
+В окне «Настройки подключения» инсталлятор выведет в полях значения по умолчанию. Выводятся параметры по двум типам:
 
 - настройки для подключения к СУБД;
 
 - настройки JDS.
 
-> В настройках для подключения к СУБД подразумевается, что компонент JDS устанавливается на ЭВМ, на которой установлена СУБД «Jatoba». Если СУБД установлена отдельно, то в поле «Сервер» указывается адрес удаленного сервера:
+В настройках для подключения к СУБД подразумевается, что компонент JDS устанавливается на ЭВМ, на которой установлена СУБД «Jatoba». Если СУБД установлена отдельно, то в поле «Сервер» указывается адрес удаленного сервера:
 
 - порт подключения установлен по умолчанию – 5432;
 
@@ -7745,9 +7605,11 @@
 
 - в поле «Пароль» указать действующий пароль суперпользователя.
 
-> Таким образом формируется область настройки подключения.
->
-> Рисунок 6.42 – Окно «Настройки подключения» В настройках JDS указываются:
+Таким образом формируется область настройки подключения.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image642.png)
+
+Рисунок 6.42 – Окно «Настройки подключения» В настройках JDS указываются:
 
 - база данных – по умолчанию установлено имя «jdsdb»;
 
@@ -7755,7 +7617,7 @@
 
 - пароль пользователя «jds».
 
-> В следующем окне «Настройка сайта» инсталлятор выведет в полях значения:
+В следующем окне «Настройка сайта» инсталлятор выведет в полях значения:
 
 - имя пула приложений – по умолчанию установлено значение «JDSAppPool»;
 
@@ -7773,131 +7635,146 @@
 
 - SSL-сертификат.
 
-> Поля «Имя пула приложений» и «Имя сайта» редактируемые и можно указать желаемые значения.
->
-> Рисунок 6.43 – Окно «Настройки сайта»
->
-> Данные значения пропишутся в основных настройках сайта веб-сервера (IIS).
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image142.jpeg" style="width:7.04154in;height:3.81781in" />
->
-> <span id="_bookmark113" class="anchor"></span>Рисунок 6.44 – Основные настройки веб-сайта
->
-> Поле «Протокол» выполнено в виде выпадающего списка, в котором можно выбрать одно из двух значений:
+Поля «Имя пула приложений» и «Имя сайта» редактируемые и можно указать желаемые значения.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image643.png)
+
+Рисунок 6.43 – Окно «Настройки сайта»
+
+Данные значения пропишутся в основных настройках сайта веб-сервера (IIS).
+
+![](@site/docs/assets/images/com18.3.1/install/media/image142.jpeg)
+
+<span id="_bookmark113" class="anchor"></span>Рисунок 6.44 – Основные настройки веб-сайта
+
+Поле «Протокол» выполнено в виде выпадающего списка, в котором можно выбрать одно из двух значений:
 
 - http;
 
 - https.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image143.png" style="width:3.97043in;height:3.10406in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image143.png)
 
-> Рисунок 6.45 – Выпадающий список поля «Протокол»
->
-> При выборе протокола «https» доступен выпадающий список поля SSL-сертификат.
->
-> Поле «IP-адрес» выполнено в виде выпадающего списка, в котором можно выбрать одно из двух значений:
+Рисунок 6.45 – Выпадающий список поля «Протокол»
+
+При выборе протокола «https» доступен выпадающий список поля SSL-сертификат.
+
+Поле «IP-адрес» выполнено в виде выпадающего списка, в котором можно выбрать одно из двух значений:
 
 - 127.0.0.1;
 
 - «Все неназначенные».
 
-> Меню «IP-адрес» позволяет выбрать сетевой интерфейс, который сервер будет прослушивать на предмет запросов.
->
-> При выборе параметра «Все неназначенные» веб-сервер будет прослушивать все интерфейсы за исключением тех, где другой сайт должен обслуживаться через этот же порт TCP.
+Меню «IP-адрес» позволяет выбрать сетевой интерфейс, который сервер будет прослушивать на предмет запросов.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image144.png" style="width:3.91876in;height:3.06375in" />
+При выборе параметра «Все неназначенные» веб-сервер будет прослушивать все интерфейсы за исключением тех, где другой сайт должен обслуживаться через этот же порт TCP.
 
-> Рисунок 6.46 – Выпадающий список поля «IP-адрес»
->
-> В поле «Порт» установлено значение – 8443, которое можно изменить на требуемое значение.
->
-> В поле «Порт» можно указать порт TCP, на котором веб-сервер будет прослушивать запросы клиентов. В общем случае каждый сайт должен обслуживаться через уникальный порт, поэтому во избежание конфликтов с подключенным к порту 80 веб-сайтом по умолчанию, указан порт 8443.
->
-> Поле «SSL-сертификат» выполнено в виде выпадающего списка, в котором возможно выбрать одно из двух значений:
+![](@site/docs/assets/images/com18.3.1/install/media/image144.png)
+
+Рисунок 6.46 – Выпадающий список поля «IP-адрес»
+
+В поле «Порт» установлено значение – 8443, которое можно изменить на требуемое значение.
+
+В поле «Порт» можно указать порт TCP, на котором веб-сервер будет прослушивать запросы клиентов. В общем случае каждый сайт должен обслуживаться через уникальный порт, поэтому во избежание конфликтов с подключенным к порту 80 веб-сайтом по умолчанию, указан порт 8443.
+
+Поле «SSL-сертификат» выполнено в виде выпадающего списка, в котором возможно выбрать одно из двух значений:
 
 - без сертификата (будет добавлен вручную в настройках сайта);
 
 - сгенерировать и привязать самозаверенный сертификат.
 
-> Вручную добавляется сертификат в привязке сайта веб-сервера, как показано на рисунке [6.49](#_bookmark114).
->
-> При выборе пункта «Сгенерировать и привязать самозаверенный сертификат» инсталлятор самостоятельно сгенерирует сертификат, установит доверительные отношения и поместит его в хранилище «локальный компьютер».
+Вручную добавляется сертификат в привязке сайта веб-сервера, как показано на рисунке [6.49](#_bookmark114).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image145.png" style="width:3.97088in;height:3.10406in" />
+При выборе пункта «Сгенерировать и привязать самозаверенный сертификат» инсталлятор самостоятельно сгенерирует сертификат, установит доверительные отношения и поместит его в хранилище «локальный компьютер».
 
-> Рисунок 6.47 – Выпадающий список поля «SSL-сертификат» Проверить установленный сертификат можно через консоль MMC.
->
-> Рисунок 6.48 – Консоль MMC Сформированный сертификат будет действителен до 01.01.2040 г.
->
-> Установленные параметры в окне «Настройки сайта» пропишутся в привязке сайта веб-сервера.
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image147.jpeg" style="width:7.04741in;height:3.82375in" />
->
-> <span id="_bookmark114" class="anchor"></span>Рисунок 6.49 – Параметры в привязке сайта веб-сервера (IIS)
->
-> Следующим откроется окно настройки «Конечная папка». В поле указывается директория для установки как показано на рисунке [6.44.](#_bookmark113) По умолчанию установлен каталог:
->
+![](@site/docs/assets/images/com18.3.1/install/media/image145.png)
+
+Рисунок 6.47 – Выпадающий список поля «SSL-сертификат»
+
+Проверить установленный сертификат можно через консоль MMC.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image648.png)
+
+Рисунок 6.48 – Консоль MMC Сформированный сертификат будет действителен до 01.01.2040 г.
+
+Установленные параметры в окне «Настройки сайта» пропишутся в привязке сайта веб-сервера.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image147.jpeg)
+
+<span id="_bookmark114" class="anchor"></span>Рисунок 6.49 – Параметры в привязке сайта веб-сервера (IIS)
+
+Следующим откроется окно настройки «Конечная папка». В поле указывается директория для установки как показано на рисунке [6.44.](#_bookmark113) По умолчанию установлен каталог:
+
 > C:\Program Files\GIS\JDS
->
-> При необходимости, значение по умолчанию можно изменить.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image148.png" style="width:3.92051in;height:3.06375in" />
+При необходимости, значение по умолчанию можно изменить.
 
-> Рисунок 6.50 – Окно «Конечная папка»
->
-> В окне «Установка JDS Doctor» указывается директория для установки одноименной службы, как показано на рисунке [6.51](#_bookmark115). По умолчанию установлен каталог:
->
-> C:\Program Files\GIS\JDS.Doctor\\
->
-> При необходимости, значение по умолчанию можно изменить.
+![](@site/docs/assets/images/com18.3.1/install/media/image148.png)
 
-<img src="../docs/assets/images/com18.3.1/install/media/image149.png" style="width:3.91889in;height:3.06375in" />
+Рисунок 6.50 – Окно «Конечная папка»
 
-> <span id="_bookmark115" class="anchor"></span>Рисунок 6.51 – Окно «Установка JDS Doctor»
->
-> Служба требуется для работы подраздела JDS «Проблемы и решения» (Problems & Solutions).
->
-> В результате инсталлятор установит службу в ОС.
->
-> Рисунок 6.52 – Установленная служба «JDS Doctor» в списке служб ОС В окне «Все готово к установке Jatoba Data Safe» выбрать «Установить».
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image151.png" style="width:3.97032in;height:3.10406in" />
->
-> Рисунок 6.53 – Окно «Все готово к установке Jatoba Data Safe»
->
-> По завершению установки будет выведено диалоговое окно завершения установки.
+В окне «Установка JDS Doctor» указывается директория для установки одноименной службы, как показано на рисунке [6.51](#_bookmark115). По умолчанию установлен каталог:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image152.jpeg" style="width:3.97032in;height:3.10406in" />
+> C:\Program Files\GIS\JDS.Doctor\
 
-> Рисунок 6.54 – Окно завершения установки
->
-> Инсталлятор добавит компонент в меню «Пуск» и на рабочем столе будет создан ярлык.
+При необходимости, значение по умолчанию можно изменить.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image153.png" style="width:0.85418in;height:0.95833in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image149.png)
 
-> Рисунок 6.55 – Ярлык JDS на рабочем столе
+<span id="_bookmark115" class="anchor"></span>Рисунок 6.51 – Окно «Установка JDS Doctor»
 
-## Главная страница
+Служба требуется для работы подраздела JDS «Проблемы и решения» (Problems & Solutions).
 
-> После успешной инсталляции по адресу: [<u>http://localhost:8483/</u>,](http://localhost:8483/) станет доступной станица веб-сайта JDS (рисунок [6.56](#_bookmark117)).
->
-> <span id="_bookmark117" class="anchor"></span>Рисунок 6.56 – Главная страница На главной странице (рисунке [6.57](#_bookmark118)) требуется:
+В результате инсталлятор установит службу в ОС.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image652.png)
+
+Рисунок 6.52 – Установленная служба «JDS Doctor» в списке служб ОС
+
+В окне «Все готово к установке Jatoba Data Safe» выбрать «Установить».
+
+![](@site/docs/assets/images/com18.3.1/install/media/image151.png)
+
+Рисунок 6.53 – Окно «Все готово к установке Jatoba Data Safe»
+
+По завершению установки будет выведено диалоговое окно завершения установки.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image152.jpeg)
+
+Рисунок 6.54 – Окно завершения установки
+
+Инсталлятор добавит компонент в меню «Пуск» и на рабочем столе будет создан ярлык.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image153.png)
+
+Рисунок 6.55 – Ярлык JDS на рабочем столе
+
+### Главная страница
+
+После успешной инсталляции по адресу: [<u>http://localhost:8483/</u>,](http://localhost:8483/) станет доступной станица веб-сайта JDS (рисунок [6.56](#_bookmark117)).
+
+<span id="_bookmark117" class="anchor"></span>Рисунок 6.56 – Главная страница На главной странице (рисунке [6.57](#_bookmark118)) требуется:
 
 - указать имя пользователя;
 
 - указать пароль пользователя.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />По умолчанию, для доступа к JDS используется техническая учетная запись с именем admin.
->
-> Пароль устанавливается командой в терминале ОС:
->
-> "c:\Program Files\GIS\JDS\JDS.WebApi.exe" --setadmin username password
+:::warning Важная информация
+По умолчанию, для доступа к JDS используется техническая учетная запись с именем admin.
+Пароль устанавливается командой в терминале ОС:
+
+```
+"c:\Program Files\GIS\JDS\JDS.WebApi.exe" --setadmin username password
+```
 
 Далее следует перезапустить IIS в консоли IIS или командой:
 
-> iisreset /restart
->
-> На главной странице имеется функциональная возможность выбора языка интерфейса. Доступны три языка:
+```
+iisreset /restart
+```
+:::
+
+На главной странице имеется функциональная возможность выбора языка интерфейса. Доступны три языка:
 
 - русский;
 
@@ -7905,43 +7782,33 @@
 
 - китайский.
 
-> Выбрать язык интерфейса можно в выпадающем меню, как обозначено под № 3 на рисунке [6.57](#_bookmark118).
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image155.png" style="width:2.54272in;height:5.17818in" />Имя пользователя
->
-> 1
->
-> Пароль пользователя
->
-> 2
->
-> Выбор языка интерфейса
->
-> 3
->
-> <span id="_bookmark118" class="anchor"></span>Рисунок 6.57 – Структура стартового окна
+Выбрать язык интерфейса можно в выпадающем меню, как обозначено под № 3 на рисунке [6.57](#_bookmark118).
 
-## Удаление и восстановление компонента JDS
+![](@site/docs/assets/images/com18.3.1/install/media/image155.png)
 
-> Удаление компонента возможно через:
+<span id="_bookmark118" class="anchor"></span>Рисунок 6.57 – Структура стартового окна
+
+### Удаление и восстановление компонента JDS
+
+Удаление компонента возможно через:
 
 - раздел «Панель управления» средством «Программы и компоненты» операционной системы;
 
 - запуск инсталлятора.
 
-> Запустив инсталлятор будут доступны пиктограммы «Восстановить» и «Удалить».
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image157.png" style="width:3.91876in;height:3.06375in" />
->
-> Рисунок 6.58 – Окно инсталлятора в режиме восстановления/удаления
->
-> В режиме восстановления инсталлятор вернет значения страницы компонента JDS веб-сервера (IIS), которые были установлены при первоначальной установке из сохраненных конфигурационных файлов.
+Запустив инсталлятор будут доступны пиктограммы «Восстановить» и «Удалить».
 
-## Установка компонента JDS на ОС Windows вручную из архива
+![](@site/docs/assets/images/com18.3.1/install/media/image157.png)
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Раздел актуален для несертифицированной (коммерческой) версии СУБД «Jatoba»
->
-> Установка компонента вручную из архива требует аналогичных действий, описанных в пунктах документа:
+Рисунок 6.58 – Окно инсталлятора в режиме восстановления/удаления
+
+В режиме восстановления инсталлятор вернет значения страницы компонента JDS веб-сервера (IIS), которые были установлены при первоначальной установке из сохраненных конфигурационных файлов.
+
+### Установка компонента JDS на ОС Windows вручную из архива
+
+![](@site/docs/assets/images/com18.3.1/install/media/image2.png)
+
+Установка компонента вручную из архива требует аналогичных действий, описанных в пунктах документа:
 
 - [6.5.1](#настройка-сервера-ос-windows-server-2016) «[Настройка сервера ОС Windows Server 2016](#настройка-сервера-ос-windows-server-2016)»;
 
@@ -7951,51 +7818,53 @@
 
 - [6.5.4](#установка-дополнительных-компонент) «[Установка дополнительных компонент](#установка-дополнительных-компонент)».
 
-## Начальная настройка служебной СУБД «Jatoba»
+### Начальная настройка служебной СУБД «Jatoba»
 
-> Компоненту JDS требуется хранить различного рода информацию в своей служебной СУБД или БД. Для обеспечения безопасности такого архитектурного решения используется СУБД «Jatoba».
+Компоненту JDS требуется хранить различного рода информацию в своей служебной СУБД или БД. Для обеспечения безопасности такого архитектурного решения используется СУБД «Jatoba».
 
 Первым шагом создается роль «jds» командой в служебной СУБД JDS:
 
-> CREATE ROLE jds NOSUPERUSER CREATEDB NOCREATEROLE NOINHERIT LOGIN PASSWORD 'sql';
->
-> При создании роли не рекомендуется использовать символы верхнего регистра. Это техническая учетная запись, которой требуются два атрибута:
+```
+CREATE ROLE jds NOSUPERUSER CREATEDB NOCREATEROLE NOINHERIT LOGIN PASSWORD 'sql';
+```
+
+При создании роли не рекомендуется использовать символы верхнего регистра. Это техническая учетная запись, которой требуются два атрибута:
 
 - CREATEDB – право создания БД;
 
 - LOGIN – право входа.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image158.png" style="width:7.03911in;height:1.30812in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image158.png)
 
-> Рисунок 6.59 – Назначение атрибутов роли «jds»
+Рисунок 6.59 – Назначение атрибутов роли «jds»
 
-## Настройка IIS
+### Настройка IIS
 
-> Следующим этапом необходимо настроить веб-сервер (IIS). Для этого нужно проделать следующие шаги:
+Следующим этапом необходимо настроить веб-сервер (IIS). Для этого нужно проделать следующие шаги:
 
-1)  Перейти по пути «Панель управления» → «Администрирование» →
+1)  Перейти по пути «Панель управления» → «Администрирование» → «Диспетчер служб IIS» (рисунок 6.60).
 
-> «Диспетчер служб IIS» (рисунок [6.60](#_bookmark123)).
->
-> <span id="_bookmark123" class="anchor"></span>Рисунок 6.60 – Путь к диспетчеру служб IIS
+![](@site/docs/assets/images/com18.3.1/install/media/image660.png)
 
-2)  Открыть начальную страницу «Диспетчера служб IIS» (рисунок [6.61](#_bookmark124)).
+Рисунок 6.60 – Путь к диспетчеру служб IIS
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image160.jpeg" style="width:6.73407in;height:3.58312in" />
->
-> <span id="_bookmark124" class="anchor"></span>[6.62](#_bookmark125)).
->
-> Рисунок 6.61 – Начальная страница IIS
+1)  Открыть начальную страницу «Диспетчера служб IIS» (рисунок 6.61).
 
-3)  Выбрать текущий сервер, в данном случае – LAN-COMPUTER-NA (рисунок
+![](@site/docs/assets/images/com18.3.1/install/media/image160.jpeg)
 
-> <span id="_bookmark125" class="anchor"></span>Рисунок 6.62 – Выбор текущего сервера
+Рисунок 6.61 – Начальная страница IIS
+
+3)  Выбрать текущий сервер, в данном случае – LAN-COMPUTER-NA
+
+![](@site/docs/assets/images/com18.3.1/install/media/image662.png)
+
+<span id="_bookmark125" class="anchor"></span>Рисунок 6.62 – Выбор текущего сервера
 
 4)  Выбрать вкладку «Пулы приложений» и через контекстное меню выполнить команду «Добавить пул приложений» (рисунок [6.63](#_bookmark126)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image162.png" style="width:6.48826in;height:3.46125in" />
->
-> <span id="_bookmark126" class="anchor"></span>Рисунок 6.63 – Команда «Добавить пул приложений»
+![](@site/docs/assets/images/com18.3.1/install/media/image162.png)
+
+<span id="_bookmark126" class="anchor"></span>Рисунок 6.63 – Команда «Добавить пул приложений»
 
 5)  В открывшимся окне ввести значения (рисунок [6.64](#_bookmark127)) и нажать «ОК»:
 
@@ -8005,65 +7874,76 @@
 
     - параметр «Режим управляемого конвейера» – «Встроенный».
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.2494in" />Флажок напротив поля «Немедленный запуск пула приложений» оставить без изменений.
+:::info Дополнительная информация
+Флажок напротив поля «Немедленный запуск пула приложений» оставить без изменений.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image163.png" style="width:3.14811in;height:2.9375in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image163.png)
 
-> <span id="_bookmark127" class="anchor"></span>Рисунок 6.64 – Параметры пула
+<span id="_bookmark127" class="anchor"></span>Рисунок 6.64 – Параметры пула
+:::
+
 
 6)  В окне «Пулы приложений» появится созданный пул (рисунок [6.65](#_bookmark128)).
 
-> <span id="_bookmark128" class="anchor"></span>Рисунок 6.65 – Добавленный пул приложений
+![](@site/docs/assets/images/com18.3.1/install/media/image665.png)
 
-## Создание каталогов
+<span id="_bookmark128" class="anchor"></span>Рисунок 6.65 – Добавленный пул приложений
 
-> Для дальнейшей установки компонента JDS требуется размещение файлов с дистрибутивного диска в целевой каталог, для этого следует:
+### Создание каталогов
 
-1)  <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.24964in" /> Используя средства ОС, создать папку С:\WebSites\DataSafeSite; Размещение каталога на диске «С» не обязательно.
+Для дальнейшей установки компонента JDS требуется размещение файлов с дистрибутивного диска в целевой каталог, для этого следует:
 
-2)  В некоторых конфигурациях потребуется предоставить к папке полный доступ для группы ОС «IIS_Users» (IIS-IUSRS).
+1) Используя средства ОС, создать папку С:\WebSites\DataSafeSite; 
 
-## Копирование компонента JDS
+:::info Дополнительная информация
+Размещение каталога на диске «С» не обязательно.
+:::
 
-> На дистрибутивном диске находится архив DataSafeSite-ХХХХ-ХХ-ХХ.7z в формате
->
-> «7z».
->
-> Имя архива может меняться в зависимости от версии компонента. Первые 4 цифры
->
-> означают год, вторые две цифры – месяц и последние две цифры означают день сборки компонента.
->
-> Содержимое архива следует распаковать и скопировать в целевой каталог С:\WebSites\DataSafeSite.
+2) В некоторых конфигурациях потребуется предоставить к папке полный доступ для группы ОС «IIS_Users» (IIS-IUSRS).
 
-## Создание сайта
+### Копирование компонента JDS
 
-> Поскольку путь расположения сайта на компьютере создан и содержимое сайта хранится в специальном каталоге, можно создать сайт JDS.
->
-> Для создания сайта JDS требуется проделать следующие действия:
+На дистрибутивном диске находится архив DataSafeSite-ХХХХ-ХХ-ХХ.7z в формате «7z».
+
+Имя архива может меняться в зависимости от версии компонента. Первые 4 цифры означают год, вторые две цифры – месяц и последние две цифры означают день сборки компонента.
+
+Содержимое архива следует распаковать и скопировать в целевой каталог С:\WebSites\DataSafeSite.
+
+### Создание сайта
+
+Поскольку путь расположения сайта на компьютере создан и содержимое сайта хранится в специальном каталоге, можно создать сайт JDS.
+
+Для создания сайта JDS требуется проделать следующие действия:
 
 1)  Открыть «Диспетчер служб IIS» (как описано в п. [6.6.2](#настройка-iis)), перейти на вкладку
 
-> «Сайты» и через контекстное меню выполнить команду «Добавить веб-сайт» (рисунок [6.66](#_bookmark132)).
->
-> <span id="_bookmark132" class="anchor"></span>Рисунок 6.66 – Команда «Добавить веб-сайт»
+«Сайты» и через контекстное меню выполнить команду «Добавить веб-сайт» (рисунок [6.66](#_bookmark132)).
+
+![](@site/docs/assets/images/com18.3.1/install/media/image666.png)
+
+<span id="_bookmark132" class="anchor"></span>Рисунок 6.66 – Команда «Добавить веб-сайт»
 
 2)  В открывшимся окне «Добавить веб-сайт» заполнить обязательные параметры и нажать «ОК» (рисунок [6.68](#_bookmark135)):
 
-    - <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" /> имя сайта – в данном случае «Data Safe Web Site»; Допускается писать имя сайта с пробелами.
+- имя сайта – в данном случае «Data Safe Web Site»; 
 
-    - пул приложений – нажать на кнопку «Выбрать», в открывшемся окне «Выбор пула приложений» из выпадающего списка выбрать пул, созданный в разделе [6.6.2](#настройка-iis) –
+:::info Дополнительная информация
+Допускается писать имя сайта с пробелами.
+:::
 
-> «DataSafeUpPull» (рисунок [6.67](#_bookmark133));
->
-> <span id="_bookmark133" class="anchor"></span>Рисунок 6.67 – Окно «Выбор пула приложений»
+- пул приложений – нажать на кнопку «Выбрать», в открывшемся окне «Выбор пула приложений» из выпадающего списка выбрать пул, созданный в разделе [6.6.2](#настройка-iis) – «DataSafeUpPull» (рисунок [6.67](#_bookmark133));
+
+![](@site/docs/assets/images/com18.3.1/install/media/image667.png)
+
+<span id="_bookmark133" class="anchor"></span>Рисунок 6.67 – Окно «Выбор пула приложений»
 
 - физический путь – каталог, в котором находится содержимое сайта JDS. Копирование содержимого сайта описано в разделе [6.6.4](#копирование-компонента-jds);
 
 - раздел «Привязка».
 
-> Параметры раздела «Привязка» допустимо указать в соответствии с таблицей [6.3](#_bookmark134).
->
-> <span id="_bookmark134" class="anchor"></span>Таблица 6.3 – Значения параметров в разделе «Привязка»
+Параметры раздела «Привязка» допустимо указать в соответствии с таблицей [6.3](#_bookmark134).
+
+<span id="_bookmark134" class="anchor"></span>Таблица 6.3 – Значения параметров в разделе «Привязка»
 
 <table>
 <colgroup>
@@ -8073,160 +7953,168 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>№</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Параметр</strong></p>
-</blockquote></th>
+</th>
 <th style="text-align: center;"><strong>Значение параметра</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>1</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Тип</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>http</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>2</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>IP-адрес</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Все неназначенные</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Порт</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>8080</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>4</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Имя узла</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Допустимо не задавать имя узла</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
-> <span id="_bookmark135" class="anchor"></span>Рисунок 6.68 – Окно «Добавить веб-сайт» Создание сайта «Data Safe Web Site» завершено (рисунок [6.69](#_bookmark136)).
->
-> <span id="_bookmark136" class="anchor"></span>Рисунок 6.69 – Сайт «Data Safe Web Site»
+![](@site/docs/assets/images/com18.3.1/install/media/image668.png)
 
-## Дополнительные параметры сайта
+Рисунок 6.68 – Окно «Добавить веб-сайт»
 
-> После создания и сохранения сайта необходимо запустить настройку его дополнительных параметров. Для этого нужно проделать следующие шаги:
+Создание сайта «Data Safe Web Site» завершено (рисунок 6.69).
 
-1)  Перейти по пути «Панель управления» → «Администрирование» →
+![](@site/docs/assets/images/com18.3.1/install/media/image669.png)
 
-> «Диспетчер служб IIS».
+<span id="_bookmark136" class="anchor"></span>Рисунок 6.69 – Сайт «Data Safe Web Site»
 
-2)  В правом нижнем углу окна выбрать «Дополнительные параметры» (рисунок
+### Дополнительные параметры сайта
 
-> [6.70](#_bookmark138)).
->
-> <span id="_bookmark138" class="anchor"></span>Рисунок 6.70 – Диспетчер служб IIS
+После создания и сохранения сайта необходимо запустить настройку его дополнительных параметров. Для этого нужно проделать следующие шаги:
+
+1)  Перейти по пути «Панель управления» → «Администрирование» → «Диспетчер служб IIS».
+
+2)  В правом нижнем углу окна выбрать «Дополнительные параметры» (рисунок [6.70](#_bookmark138)).
+
+![](@site/docs/assets/images/com18.3.1/install/media/image670.png)
+
+<span id="_bookmark138" class="anchor"></span>Рисунок 6.70 – Диспетчер служб IIS
 
 3)  В окне «Дополнительные параметры» в строке «Предварительная установка включена» (Preload Enabled) из выпадающего списка установить параметр: «True» (рисунок [6.71](#_bookmark139)).
 
-> <span id="_bookmark139" class="anchor"></span>Рисунок 6.71 – Окно «Дополнительные параметры»
+![](@site/docs/assets/images/com18.3.1/install/media/image671.png)
 
-## Создание служебной БД «jdsdb»
+<span id="_bookmark139" class="anchor"></span>Рисунок 6.71 – Окно «Дополнительные параметры»
 
-> После успешного запуска сайта компонента JDS автоматически создается база данных «jdsdb».
->
-> Дополнительных действий по установке БД не требуется.
+### Создание служебной БД «jdsdb»
 
-## Установка службы «JDS Doctor»
+После успешного запуска сайта компонента JDS автоматически создается база данных «jdsdb».
 
-> Установка службы «JDS Doctor» для ОС Windows описана в Приложении [8,](#приложение-8) настоящего документа.
+Дополнительных действий по установке БД не требуется.
 
-# СООБЩЕНИЯ ОБ ОШИБКАХ
+### Установка службы «JDS Doctor»
 
-## Ошибка установки открытого ключа репозитория
+Установка службы «JDS Doctor» для ОС Windows описана в Приложении [8,](#приложение-8) настоящего документа.
 
-> Ошибка установки открытого ключа репозитория может возникнуть на ОС Debian 11.
+## СООБЩЕНИЯ ОБ ОШИБКАХ
 
-<img src="../docs/assets/images/com18.3.1/install/media/image171.png" style="width:7.07864in;height:0.60365in" />
+### Ошибка установки открытого ключа репозитория
 
-> gnug,gnupg2 and gnupg1 do not seem to be installed, but one of them is required for this operation
->
-> Рисунок 7.1 – Ошибка установки открытого ключа на Debian 11
->
-> Для устранения возникшей ошибки, следует установить пакет «gnupg» при помощи команды:
->
-> apt-get install gnupg
->
-> После чего продолжить установку СУБД.
+Ошибка установки открытого ключа репозитория может возникнуть на ОС Debian 11.
 
-## Ошибка настройки учетной записи системного пользователя ОС «postgres»
+```
+gnug,gnupg2 and gnupg1 do not seem to be installed, but one of them is required for this operation
+```
 
-> Ошибка возникает на этапе создания пользователя ОС «postgres» при инсталляции СУБД «Jatoba» на ОС семейства Microsoft Windows.
+![](@site/docs/assets/images/com18.3.1/install/media/image171.png)
 
-<img src="../docs/assets/images/com18.3.1/install/media/image172.png" style="width:3.96696in;height:3.10333in" />
+Рисунок 7.1 – Ошибка установки открытого ключа на Debian 11
 
-> Рисунок 7.2 – Ошибка настройки учетной записи системного пользователя
->
-> Для устранения возникшей ошибки требуется назначить пароль, соответствующий требованиям.
+Для устранения возникшей ошибки, следует установить пакет «gnupg» при помощи команды:
 
-## Ошибка настройки учетной записи пользователя СУБД «postgres»
+```
+apt-get install gnupg
+```
 
-> Ошибка возникает на этапе создания пользователя СУБД «postgres» при инсталляции СУБД «Jatoba» на ОС семейства Microsoft Windows.
+После чего продолжить установку СУБД.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image173.png" style="width:4.01184in;height:3.15219in" />
+### Ошибка настройки учетной записи системного пользователя ОС «postgres»
 
-> Рисунок 7.3 – Ошибка настройки учетной записи пользователя СУБД «postgres»
->
-> Для устранения возникшей ошибки требуется назначить пароль, соответствующий требованиям.
+Ошибка возникает на этапе создания пользователя ОС «postgres» при инсталляции СУБД «Jatoba» на ОС семейства Microsoft Windows.
 
-## Ошибка повторной установки компонента «securityprofile»
+![](@site/docs/assets/images/com18.3.1/install/media/image172.png)
 
-> После удаления компонента «securityprofile» удаляются все данные и зависимые объекты компонента.
->
-> При попытке повторной установки может возникнуть ошибка.
->
-> Избежать её возможно перезагрузкой СУБД и повторной установкой расширения
->
-> «securityprofile».
+Рисунок 7.2 – Ошибка настройки учетной записи системного пользователя
 
-## Ошибка в имени локального репозитория
+Для устранения возникшей ошибки требуется назначить пароль, соответствующий требованиям.
 
-> В случае, когда установка СУБД выполняется в GNU/Linux установочным скриптом
->
-> «jatoba.sh» и данный скрипт не нашел директорию localrepo – будет выведено сообщение формата как показано на рис. [7.4](#_bookmark148).
->
-> <span id="_bookmark148" class="anchor"></span>Рисунок 7.4 – Сообщение скрипта
->
-> Если переменной окружения задать корректный путь до директории локального репозитория – установка будет успешно выполнена.
->
-> Однако рекомендуется устанавливать СУБД «Jatoba» способами, описанными в настоящем документе.
+### Ошибка настройки учетной записи пользователя СУБД «postgres»
 
-# ПРИЛОЖЕНИЕ 1
+Ошибка возникает на этапе создания пользователя СУБД «postgres» при инсталляции СУБД «Jatoba» на ОС семейства Microsoft Windows.
 
-> Структура каталога дистрибутива для всех поддерживаемых ОС GNU/Linux приведена в таблице [П1](#_bookmark150).
->
-> <span id="_bookmark150" class="anchor"></span>Таблица П1 – Структура каталога дистрибутива для ОС GNU/Linux
+![](@site/docs/assets/images/com18.3.1/install/media/image173.png)
+
+Рисунок 7.3 – Ошибка настройки учетной записи пользователя СУБД «postgres»
+
+Для устранения возникшей ошибки требуется назначить пароль, соответствующий требованиям.
+
+### Ошибка повторной установки компонента «securityprofile»
+
+После удаления компонента «securityprofile» удаляются все данные и зависимые объекты компонента.
+
+При попытке повторной установки может возникнуть ошибка.
+
+Избежать её возможно перезагрузкой СУБД и повторной установкой расширения «securityprofile».
+
+### Ошибка в имени локального репозитория
+
+В случае, когда установка СУБД выполняется в GNU/Linux установочным скриптом «jatoba.sh» и данный скрипт не нашел директорию localrepo – будет выведено сообщение формата как показано на рис. [7.4](#_bookmark148).
+
+![](@site/docs/assets/images/com18.3.1/install/media/image74_.png)
+
+<span id="_bookmark148" class="anchor"></span>Рисунок 7.4 – Сообщение скрипта
+
+Если переменной окружения задать корректный путь до директории локального репозитория – установка будет успешно выполнена.
+
+Однако рекомендуется устанавливать СУБД «Jatoba» способами, описанными в настоящем документе.
+
+## ПРИЛОЖЕНИЕ 1
+
+Структура каталога дистрибутива для всех поддерживаемых ОС GNU/Linux приведена в таблице [П1](#_bookmark150).
+
+<span id="_bookmark150" class="anchor"></span>Таблица П1 – Структура каталога дистрибутива для ОС GNU/Linux
 
 <table>
 <colgroup>
@@ -8236,14 +8124,14 @@
 <thead>
 <tr>
 <th style="text-align: center;"><strong>ОС</strong></th>
-<th><blockquote>
+<th>
 <p><strong>Состав файлов и директорий репозитория</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>Astra Linux 1.7 Special Edition Смоленск Astra Linux 1.8</p>
 <p>Debian 11</p>
 <p>Debian 12</p>
@@ -8251,7 +8139,7 @@
 <p>Ubuntu 22.04</p>
 <p>Ubuntu 24.04</p>
 <p>ОСнова 2.0</p>
-</blockquote></td>
+</td>
 <td><ul>
 <li><p>каталог &lt;pool&gt;;</p></li>
 <li><p>каталог &lt;dists&gt;;</p></li>
@@ -8259,9 +8147,9 @@
 </ul></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>РЕД ОС 7.3 Муром Oracle Linux 8.4</p>
-</blockquote></td>
+</td>
 <td><ul>
 <li><p>каталог &lt;packages&gt;;</p></li>
 <li><p>каталог &lt;repodata&gt;;</p></li>
@@ -8269,11 +8157,11 @@
 </ul></td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Альт 8 СП</p>
 <p>Альт 9 Server</p>
 <p>Альт 10 Server</p>
-</blockquote></td>
+</td>
 <td><ul>
 <li><p>каталог &lt;x86_64&gt;;</p></li>
 <li><p>файл &lt;RPM-GPG-KEY-Jatoba&gt;</p></li>
@@ -8282,9 +8170,9 @@
 </tbody>
 </table>
 
-> Описание локального репозитория для каждой ОС различны. В таблице [П2](#_bookmark151) приведены соответствия между ОС и локальными репозиториями.
->
-> <span id="_bookmark151" class="anchor"></span>Таблица П2 – Соответствия ОС и репозитория
+Описание локального репозитория для каждой ОС различны. В таблице [П2](#_bookmark151) приведены соответствия между ОС и локальными репозиториями.
+
+<span id="_bookmark151" class="anchor"></span>Таблица П2 – Соответствия ОС и репозитория
 
 <table>
 <colgroup>
@@ -8292,27 +8180,27 @@
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>Alt Linux</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p><u>Файл репозитория:</u></p>
 <p>/etc/apt/sources.list.d/jatoba-&lt;ver&gt;.list</p>
 <p><u>Описание локального репозитория:</u></p>
 <p>rpm file:///localrepo x86_64 classic</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p><strong>РЕД ОС 7.3 Муром, Oracle Linux 8.4</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p><u>Файл репозитория:</u></p>
 <p>/etc/yum.repos.d/jatoba-&lt;ver&gt;.repo</p>
 <p><u>Описание локального репозитория:</u></p>
@@ -8320,246 +8208,257 @@
 <p>name=Jatoba 4 Official Repository baseurl=file:///localrepo enabled=1</p>
 <p>gpgcheck=1</p>
 <p>gpgkey=file:///localerepo/RPM-GPG-KEY-Jatoba</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td style="text-align: center;"><blockquote>
+<td style="text-align: center;">
 <p><strong>Astra Linux 1.7 Special Edition Смоленск, Debian 11, Ubuntu 20.04, Ubuntu22.04, ОСнова 2.0</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p><u>Файл репозитория:</u></p>
 <p>/etc/apt/sources.list.d/jatoba-&lt;ver&gt;.list</p>
 <p><u>Описание локального репозитория:</u></p>
 <p>deb file:///localrepo stable non-free</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
-# ПРИЛОЖЕНИЕ 2
+## ПРИЛОЖЕНИЕ 2
 
-> **Пример установки и удаления СУБД «Jatoba» из локального репозитория для ОС Ubuntu 20.04**
+**Пример установки и удаления СУБД «Jatoba» из локального репозитория для ОС Ubuntu 20.04**
 
-## Установка СУБД «Jatoba» из локального репозитория в ОС Ubuntu
+### Установка СУБД «Jatoba» из локального репозитория в ОС Ubuntu
 
-> Установка СУБД «Jatoba» из локального репозитория для ОС Ubuntu проводится в следующем порядке:
+Установка СУБД «Jatoba» из локального репозитория для ОС Ubuntu проводится в следующем порядке:
 
 1)  В терминале войти в режим суперпользователя, выполнив команду:
 
-> sudo su
+```
+sudo su
+```
 
 2)  Если команды sudo не существует – установить:
 
-> su -l
->
-> apt-get install sudo -y
+```
+su -l
+apt-get install sudo -y
+```
 
 3)  Выполнить обновление системы:
+4)  
+```
+sudo apt update && sudo apt upgrade –y sudo apt -s dist-upgrade
+sudo apt dist-upgrade
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image175.png" style="width:7.11573in;height:2.98375in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image175.png)
 
-> sudo apt update && sudo apt upgrade –y sudo apt -s dist-upgrade
->
-> sudo apt dist-upgrade
->
-> Рисунок 2.1 – Обновление системы
+
+
+Рисунок 2.1 – Обновление системы
 
 4)  Создать папку localrepo в корневом каталоге:
 
-> mkdir /localrepo
+```
+mkdir /localrepo
+```
 
 5)  В созданную папку скопировать:
-
-<img src="../docs/assets/images/com18.3.1/install/media/image176.png" style="width:3.47683in;height:1.085in" />
-
+6)  
 - каталог \<pool\>
 
-- каталог \<dist\>
+- каталог \<dist>\
 
 - файл \<DEB-GPG-KEY-Jatoba\>
+- 
+![](@site/docs/assets/images/com18.3.1/install/media/image176.png)
 
-> Рисунок 2.2 – Структура каталога «localrepo»
+
+
+Рисунок 2.2 – Структура каталога «localrepo»
 
 6)  Установить открытый ключ репозитория:
+7)  
+```
+apt-key add /localrepo/DEB-GPG-KEY-Jatoba
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image177.png" style="width:7.11751in;height:1.085in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image177.png)
 
-> apt-key add /localrepo/DEB-GPG-KEY-Jatoba
->
-> Рисунок 2.3 – Установка открытого ключа репозитория
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Для более новых версий ОС GNU/Linux, основанных на Debian (Astra Linux 1.8, Debian 12, Ubuntu 24.04 и других), рекомендуется добавлять ключ репозитория следующим образом.
->
-> Скопировать ключ репозитория:
+Рисунок 2.3 – Установка открытого ключа репозитория
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>cp /localrepo/DEB-GPG-KEY-Jatoba /etc/apt/keyrings/</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+Для более новых версий ОС GNU/Linux, основанных на Debian (Astra Linux 1.8, Debian 12, Ubuntu 24.04 и других), рекомендуется добавлять ключ репозитория следующим образом.
 
-> Добавить описание нового репозитория в список:
+Скопировать ключ репозитория:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>echo "deb [signed-by=/etc/apt/keyrings/DEB-GPG-KEY-Jatoba] file:///localrepo stable non-free" &gt;</p>
-<p>/etc/apt/sources.list.d/jatoba-&lt;ver&gt;.list</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
+cp /localrepo/DEB-GPG-KEY-Jatoba /etc/apt/keyrings/
+```
 
-> Здесь jatoba-\<ver\> - версия устанавливаемой СУБД «Jatoba». Затем выполнить пункт 9) из данного подраздела.
+Добавить описание нового репозитория в список:
+
+```
+echo "deb [signed-by=/etc/apt/keyrings/DEB-GPG-KEY-Jatoba] file:///localrepo stable non-free" >
+/etc/apt/sources.list.d/jatoba-<ver>.list
+```
+
+Здесь jatoba-<ver> - версия устанавливаемой СУБД «Jatoba».
+
+Затем выполнить пункт 9) из данного подраздела.
+:::
 
 7)  Добавить описание локального репозитория в систему:
 
-> nano /etc/apt/sources.list.d/jatoba-\<ver\>.list
+```
+nano /etc/apt/sources.list.d/jatoba-<ver>.list
+```
 
 8)  Вставить в файл следующее содержимое и сохранить:
+9)  
+```
+deb file:///localrepo stable non-free
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image178.png" style="width:7.11726in;height:1.13344in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image178.png)
 
-> deb file:///localrepo stable non-free
->
-> Рисунок 2.4 – Содержание файла «jatoba-4.list»
+
+
+Рисунок 2.4 – Содержание файла «jatoba-4.list»
 
 9)  Проиндексировать обновленное состояние репозитория:
+10) 
+```
+apt-get update
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image179.png" style="width:7.1174in;height:2.635in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image179.png)
 
-> apt-get update
->
-> Рисунок 2.5 – Индексация репозитория 10)Установить СУБД «Jatoba» при помощи команды:
->
-> apt-get install jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image180.png" style="width:6.719in;height:4.41344in" />
->
-> Рисунок 2.6 – Установка пакетов
+
+
+Рисунок 2.5 – Индексация репозитория 10)Установить СУБД «Jatoba» при помощи команды:
+
+```
+apt-get install jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image180.png)
+
+Рисунок 2.6 – Установка пакетов
 
 11) Убедиться, что отсутствуют ошибки зависимостей:
 
-> for f in \$(LANG=C find /usr/jatoba-\<версия\> -type f -exec file
->
-> {} \\ \| grep "ELF 64-bit LSB" \| awk 'BEGIN {FS=":"} { print
->
-> \$1}' \| sort); do echo \$f; ldd \$f \| grep "not found"; done
+```
+for f in $(LANG=C find /usr/jatoba-<версия> -type f -exec file {} \; | grep "ELF 64-bit LSB" | awk 'BEGIN {FS=":"} { print $1}' | sort); do echo $f; ldd $f | grep "not found"; done
+```
 
 12) Перейти в директорию исполняемых файлов СУБД:
+13) 
+```
+cd /usr/jatoba-<ver>/bin
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image181.png" style="width:6.70992in;height:0.87906in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image181.png)
 
-> cd /usr/jatoba-\<ver\>/bin
->
-> Рисунок 2.7 – Переход в каталог
+
+Рисунок 2.7 – Переход в каталог
 
 13) Инициализировать каталог данных СУБД при помощи команды:
 
-> ./jatoba-setup initdb jatoba-\<ver\>
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image182.png" style="width:7.17069in;height:1.26906in" />
->
-> Рисунок 2.8 – Инициализация СУБД
+```
+./jatoba-setup initdb jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image182.png)
+
+Рисунок 2.8 – Инициализация СУБД
 
 14) Добавить сервис в список автозапуска:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image183.png" style="width:7.00913in;height:1.24177in" />
+```
+systemctl enable jatoba-<ver>
+```
 
-> systemctl enable jatoba-\<ver\>
->
-> Рисунок 2.9 – Добавление сервиса jatoba-4 в автозагрузку ОС 15)Запустить службу:
+![](@site/docs/assets/images/com18.3.1/install/media/image183.png)
 
-<img src="../docs/assets/images/com18.3.1/install/media/image184.png" style="width:7.0384in;height:0.8626in" />
+Рисунок 2.9 – Добавление сервиса jatoba-4 в автозагрузку ОС
 
-> systemctl start jatoba-\<ver\>
->
-> Рисунок 2.10 – Запуск службы jatoba-4 16)Проверить статус службы:
->
-> systemctl status jatoba-\<ver\>
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image185.png" style="width:6.73343in;height:3.76094in" />
->
-> Рисунок 2.11 – Проверка статуса службы «jatoba-4» 17)Установить пароль для системного пользователя ОС «postgres»:
+15) Запустить службу:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image186.png" style="width:7.06565in;height:1.4124in" />
+```
+systemctl start jatoba-<ver>
+```
 
-> sudo passwd postgres
->
-> Рисунок 2.12 – Установка пароля для пользователя СУБД 18)Авторизоваться в psql, для этого нажать сочетание клавиш:
->
+![](@site/docs/assets/images/com18.3.1/install/media/image184.png)
+
+
+
+Рисунок 2.10 – Запуск службы jatoba-4
+
+16) Проверить статус службы:
+
+```
+systemctl status jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image185.png)
+
+Рисунок 2.11 – Проверка статуса службы «jatoba-4»
+
+17) Установить пароль для системного пользователя ОС «postgres»:
+18) 
+```
+sudo passwd postgres
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image186.png)
+
+
+
+Рисунок 2.12 – Установка пароля для пользователя СУБД 18)Авторизоваться в psql, для этого нажать сочетание клавиш:
+
 > CTRL + D
->
-> затем войти в psql:
->
-> su postgres psql
->
-> 19)Установить пароль для пользователя СУБД «postgres»:
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 32%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="3"><blockquote>
-<p>\password</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>№ изменения:</p>
-</blockquote></td>
-<td><blockquote>
-<p>Подпись отв. лица:</p>
-</blockquote></td>
-<td><blockquote>
-<p>Дата внесения изм:</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
+затем войти в psql:
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image187.png" style="width:6.99808in;height:2.41719in" />
->
-> Рисунок 2.13 – Установка пароля для пользователя ОС На этом этапе установка СУБД окончена.
+```
+su postgres psql
+```
 
-## Удаление СУБД «Jatoba» из локального репозитория в ОС Ubuntu
+19) Установить пароль для пользователя СУБД «postgres»:
 
-> Удаление СУБД «Jatoba» из локального репозитория в ОС Ubuntu 20.04 проводится в следующем порядке:
+```
+\password
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image187.png)
+
+Рисунок 2.13 – Установка пароля для пользователя ОС На этом этапе установка СУБД окончена.
+
+### Удаление СУБД «Jatoba» из локального репозитория в ОС Ubuntu
+
+Удаление СУБД «Jatoba» из локального репозитория в ОС Ubuntu 20.04 проводится в следующем порядке:
 
 1)  Вывести список служб СУБД «Jatoba»:
+2)  
+```
+systemctl list-unit-files 'ja*'
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image188.png" style="width:7.10489in;height:1.64687in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image188.png)
 
-> systemctl list-unit-files 'ja\*'
->
-> Рисунок 2.14 – Список служб
->
-> Команда сформирована по маске из первых букв названий служб. Из полученного списка очевидно, что установлена только СУБД.
->
-> Перечень служб, используемых при эксплуатации СУБД, приведен в таблице [П 2.1](#_bookmark155). Таблица П 2.1 – Перечень служб используемых СУБД
+
+
+Рисунок 2.14 – Список служб
+
+Команда сформирована по маске из первых букв названий служб. Из полученного списка очевидно, что установлена только СУБД.
+
+Перечень служб, используемых при эксплуатации СУБД, приведен в таблице [П 2.1](#_bookmark155).
+
+Таблица П 2.1 – Перечень служб используемых СУБД
 
 <table>
 <colgroup>
@@ -8568,31 +8467,31 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>Наименование компонента</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Наименование службы</strong></p>
 <p><strong>(демона)</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>СУБД «Jatoba»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jatoba-&lt;ver&gt;</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Централизованный сбор записей событий в СУБД.</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jalog_server</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -8604,115 +8503,147 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>Наименование компонента</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Наименование службы</strong></p>
 <p><strong>(демона)</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>Компонент «ja_Log»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jalog_agent</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Управление режимом работы узлов кластера</p>
 <p>Компонент «jaDog»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jadog</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
 2)  Удалить службу из автозагрузки ОС:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image189.png" style="width:7.10477in;height:1.09469in" />
+```
+systemctl disable jatoba-<ver>
+```
 
-> systemctl disable jatoba-\<ver\>
->
-> Рисунок 2.15 – Удаление службы «jatoba-4» из автозагрузки
->
-> Если были установлены компоненты СУБД, приведенные в таблице [П 2.1](#_bookmark155), то службы компонентов удаляются командой:
->
-> systemctl disable \<имя службы\>
+![](@site/docs/assets/images/com18.3.1/install/media/image189.png)
+
+
+
+Рисунок 2.15 – Удаление службы «jatoba-4» из автозагрузки
+
+Если были установлены компоненты СУБД, приведенные в таблице [П 2.1](#_bookmark155), то службы компонентов удаляются командой:
+
+```
+systemctl disable <имя службы>
+```
 
 3)  Проверить статус отключенной из автозагрузки службы:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image190.png" style="width:7.10489in;height:2.14094in" />
+```
+systemctl status jatoba-<ver>
+```
 
-> systemctl status jatoba-\<ver\>
->
-> Рисунок 2.16 – Проверка статуса службы Служба должна иметь статус «disabled».
+![](@site/docs/assets/images/com18.3.1/install/media/image190.png)
+
+
+
+Рисунок 2.16 – Проверка статуса службы Служба должна иметь статус «disabled».
 
 4)  Удалить все ненужные пакеты, первоначально установленные по зависимостям:
 
-> sudo apt autoremove jatoba\<ver\>-\*
+```
+sudo apt autoremove jatoba<ver>-*
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image191.png" style="width:7.1049in;height:1.6275in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image191.png)
 
-> Рисунок 2.17 – Удаление пакетов по зависимостям
->
-> Подтвердить проведение операции и в результате будет выведен список удаленных пакетов.
->
-> При удалении пакетов будут удалены все связанные с ними службы.
+Рисунок 2.17 – Удаление пакетов по зависимостям
+
+Подтвердить проведение операции и в результате будет выведен список удаленных пакетов.
+
+При удалении пакетов будут удалены все связанные с ними службы.
 
 5)  Вывести список служб СУБД «Jatoba»:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image192.png" style="width:7.10489in;height:1.28844in" />
+```
+systemctl list-unit-files 'ja*'
+```
 
-> systemctl list-unit-files 'ja\*'
->
-> Рисунок 2.18 – Список служб по маске «ja\*» Список служб должен быть пуст.
+![](@site/docs/assets/images/com18.3.1/install/media/image192.png)
+
+
+
+Рисунок 2.18 – Список служб по маске «ja*» Список служб должен быть пуст.
 
 6)  Просмотреть список пользователей командой:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image193.png" style="width:7.10492in;height:1.24969in" />
+```
+cat /etc/passwd
+```
 
-> cat /etc/passwd
->
-> Рисунок 2.19 – Список пользователей
+![](@site/docs/assets/images/com18.3.1/install/media/image193.png)
+
+
+
+Рисунок 2.19 – Список пользователей
 
 7)  Удалить пользователя «postgres» командой:
 
-> userdel postgres
+```
+userdel postgres
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image194.png" style="width:7.10475in;height:0.93in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image194.png)
 
-> Рисунок 2.20 – Удаление пользователя «postgres»
+Рисунок 2.20 – Удаление пользователя «postgres»
 
 8)  Удалить каталоги СУБД командами:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image195.png" style="width:7.10497in;height:1.11406in" />
+```
+rm -rf /usr/jatoba-<ver> rm -rf /var/lib/jatoba
+```
 
-> rm -rf /usr/jatoba-\<ver\> rm -rf /var/lib/jatoba
->
-> Рисунок 2.21 – Удаление каталогов СУБД
+![](@site/docs/assets/images/com18.3.1/install/media/image195.png)
+
+
+
+Рисунок 2.21 – Удаление каталогов СУБД
 
 9)  Удалить каталог репозитория:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image196.png" style="width:7.10477in;height:0.92031in" />
+```
+rm -rf /localrepo
+```
 
-> rm -rf /localrepo
->
-> Рисунок 2.22 – Удаление каталога репозитория
+![](@site/docs/assets/images/com18.3.1/install/media/image196.png)
+
+
+
+Рисунок 2.22 – Удаление каталога репозитория
 
 10) Просмотреть список репозиториев ОС:
 
-> sudo grep -rhE ^deb /etc/apt/sources.list\*
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image197.png" style="width:7.11059in;height:3.00312in" />
->
-> Рисунок 2.23 – Просмотр списка репозиториев ОС
+```
+sudo grep -rhE ^deb /etc/apt/sources.list*
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image197.png)
+
+Рисунок 2.23 – Просмотр списка репозиториев ОС
 
 В списке репозиториев будет присутствовать запись:
 
@@ -8720,69 +8651,89 @@
 
 11) Удалить описание локального репозитория:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image198.png" style="width:7.11078in;height:0.93969in" />
+```
+rm /etc/apt/sources.list.d/jatoba-<ver>.list
+```
 
-> rm /etc/apt/sources.list.d/jatoba-\<ver\>.list
->
-> Рисунок 2.24 – Удаление репозитория
+![](@site/docs/assets/images/com18.3.1/install/media/image198.png)
+
+
+
+Рисунок 2.24 – Удаление репозитория
 
 12) Проиндексировать обновленное состояние репозитория:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image199.png" style="width:7.11057in;height:1.56937in" />
+```
+apt-get update
+```
 
-> apt-get update
->
-> Рисунок 2.25 – Обновление репозитория
+![](@site/docs/assets/images/com18.3.1/install/media/image199.png)
+
+
+
+Рисунок 2.25 – Обновление репозитория
 
 13) Просмотреть список репозиториев ОС:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image200.png" style="width:7.11055in;height:2.84812in" />
+```
+sudo grep -rhE ^deb /etc/apt/sources.list*
+```
 
-> sudo grep -rhE ^deb /etc/apt/sources.list\*
->
-> Рисунок 2.26 – Просмотр списка репозиториев ОС после обновления В списке репозиториев будет отсутствовать запись:
->
+![](@site/docs/assets/images/com18.3.1/install/media/image200.png)
+
+
+
+Рисунок 2.26 – Просмотр списка репозиториев ОС после обновления В списке репозиториев будет отсутствовать запись:
+
 > deb file:///localrepo stable non-free
->
-> На этом шаге удаление СУБД закончено.
 
-# ПРИЛОЖЕНИЕ 3
+На этом шаге удаление СУБД закончено.
 
-> **Пример установки и удаления СУБД «Jatoba» из локального репозитория для РЕД ОС 7.3 Муром**
+## ПРИЛОЖЕНИЕ 3
 
-## Установка СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром
+**Пример установки и удаления СУБД «Jatoba» из локального репозитория для РЕД ОС 7.3 Муром**
 
-> Установка СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром проводится в следующем порядке:
+### Установка СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром
+
+Установка СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром проводится в следующем порядке:
 
 1)  В терминале войти в режим суперпользователя, выполнив команду:
 
-> sudo su
->
-> Рисунок 3.1 – Вход в режим суперпользователя
+```
+sudo su
+```
+
+Рисунок 3.1 – Вход в режим суперпользователя
 
 2)  Если команды sudo не существует, то установить командой:
 
-> yum install sudo -y
+```
+yum install sudo -y
+```
 
 3)  Выполнить обновление системы; Допустимо использовать команду:
 
-> dnf update –y
->
-> Рисунок 3.2 – Обновление системы командой «dnf» Или команду:
->
-> yum update –y
->
-> Рисунок 3.3 – Обновление системы командой «yum»
+```
+dnf update –y
+```
+
+Рисунок 3.2 – Обновление системы командой «dnf» Или команду:
+
+```
+yum update –y
+```
+
+Рисунок 3.3 – Обновление системы командой «yum»
 
 4)  Создать папку localrepo в корневом каталоге:
 
-> mkdir /localrepo
->
-> Рисунок 3.4 – Создание каталога «localrepo»
+```
+mkdir /localrepo
+```
+
+Рисунок 3.4 – Создание каталога «localrepo»
 
 5)  В созданную папку скопировать:
-
-<img src="../docs/assets/images/com18.3.1/install/media/image205.png" style="width:3.38919in;height:1.175in" />
 
 - каталог \<packages\>;
 
@@ -8790,89 +8741,132 @@
 
 - файл ключа \<RPM-GPG-KEY-Jatoba\>
 
-> Рисунок 3.5 – Структура каталога «localrepo»
->
-> Если директория с файлами находится в корневой директории пользователя, необходимо выполнить команду:
->
-> cp -R /home/\<username\>/X.XX.X-XXXX/repo/. /localrepo/
+![](@site/docs/assets/images/com18.3.1/install/media/image205.png)
+
+Рисунок 3.5 – Структура каталога «localrepo»
+
+Если директория с файлами находится в корневой директории пользователя, необходимо выполнить команду:
+
+```
+cp -R /home/<username>/X.XX.X-XXXX/repo/. /localrepo/
+```
 
 6)  Установить открытый ключ репозитория:
 
-> rpm --import /localrepo/RPM-GPG-KEY-Jatoba
->
-> Рисунок 3.6 – Установка открытого ключа репозитория
+```
+rpm --import /localrepo/RPM-GPG-KEY-Jatoba
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image36_.png)
+
+Рисунок 3.6 – Установка открытого ключа репозитория
 
 7)  Добавить описание локального репозитория в систему:
 
-> nano /etc/yum.repos.d/jatoba-\<ver\>.repo
->
-> Рисунок 3.7 – Добавление локального репозитория в ОС
+```
+nano /etc/yum.repos.d/jatoba-<ver>.repo
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image37_.png)
+
+Рисунок 3.7 – Добавление локального репозитория в ОС
 
 8)  Вставить в файл следующее содержимое и сохранить:
 
-> \[jatoba-4\]
->
-> name=Jatoba 4 Official Repository baseurl=file:///localrepo enabled=1
->
-> gpgcheck=1
->
-> gpgkey=file:///localerepo/RPM-GPG-KEY-Jatoba
+```
+[jatoba-4]
+name=Jatoba 4 Official Repository
+baseurl=file:///localrepo
+enabled=1
+gpgcheck=1
+gpgkey=file:///localerepo/RPM-GPG-KEY-Jatoba
+```
 
 9)  Проиндексировать обновленное состояние репозитория:
 
-> yum makecache
->
-> Рисунок 3.8 – Индексация репозитория
+```
+yum makecache
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image38_.png)
+
+Рисунок 3.8 – Индексация репозитория
 
 10) Установить СУБД «Jatoba» при помощи команды:
 
-> yum install jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> Рисунок 3.9 – Установка пакетов Необходимо подтвердить продолжение установки.
+```
+yum install jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image39_.png)
+
+Рисунок 3.9 – Установка пакетов Необходимо подтвердить продолжение установки.
 
 11) Убедиться, что отсутствуют ошибки зависимостей:
 
-> for f in \$(LANG=C find /usr/jatoba-\<ver\> -type f -exec file {}
->
-> \\ \| grep "ELF 64-bit LSB" \| awk 'BEGIN {FS=":"} { print \$1}' \| sort); do echo \$f; ldd \$f \| grep "not found"; done
+```
+for f in $(LANG=C find /usr/jatoba-<ver> -type f -exec file {} \; | grep "ELF 64-bit LSB" | awk 'BEGIN {FS=":"} { print $1}' | sort); do echo $f; ldd $f | grep "not found"; done
+```
 
 12) Перейти в директорию исполняемых файлов СУБД:
 
-> cd /usr/jatoba-\<ver\>/bin
->
-> Рисунок 3.10 – Команда перехода в каталог
+```
+cd /usr/jatoba-<ver>/bin
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image310.png)
+
+Рисунок 3.10 – Команда перехода в каталог
 
 13) Инициализировать каталог данных СУБД при помощи команды:
 
-> ./jatoba-setup initdb jatoba-\<ver\>
->
-> Рисунок 3.11 – Инициализация СУБД
+```
+./jatoba-setup initdb jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image311.png)
+
+Рисунок 3.11 – Инициализация СУБД
 
 14) Добавить сервис в список автозапуска:
 
-> systemctl enable jatoba-\<ver\>
->
-> Рисунок 3.12 – Добавление сервиса jatoba-4 а автозагрузку ОС
+```
+systemctl enable jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image312_.png)
+
+Рисунок 3.12 – Добавление сервиса jatoba-4 а автозагрузку ОС
 
 15) Запустить службу:
 
-> systemctl start jatoba-\<ver\>
->
-> Рисунок 3.13 – Запуск службы jatoba-4
+```
+systemctl start jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image313_.png)
+
+Рисунок 3.13 – Запуск службы jatoba-4
 
 16) Проверить статус службы:
 
-> systemctl status jatoba-\<ver\>
->
-> Рисунок 3.14 – Проверка статуса службы
+```
+systemctl status jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image314_.png)
+
+Рисунок 3.14 – Проверка статуса службы
 
 17) Авторизоваться в «psql» от имени и с правами пользователя «postgres» и установить для него пароль в СУБД:
 
-> sudo su – postgres
->
-> cd /usr/jatoba-\<ver\>/bin/ psql
->
-> \password
+```
+sudo su – postgres
+cd /usr/jatoba-<ver>/bin/ psql
+\password
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image315_.png)
 
 Рисунок 3.15 – Установка пароля для пользователя СУБД «postgres»
 
@@ -8882,25 +8876,33 @@
 
 19) Установить пароль для системного пользователя ОС «postgres»:
 
-> sudo passwd postgres
->
-> Рисунок 3.16 – Установка пароля для пользователя ОС На этом этапе установка СУБД окончена.
+```
+sudo passwd postgres
+```
 
-## Удаление СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром
+![](@site/docs/assets/images/com18.3.1/install/media/image316_.png)
 
-> Удаление СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром проводится в следующем порядке:
+Рисунок 3.16 – Установка пароля для пользователя ОС На этом этапе установка СУБД окончена.
+
+### Удаление СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром
+
+Удаление СУБД «Jatoba» из локального репозитория в РЕД ОС 7.3 Муром проводится в следующем порядке:
 
 1)  Вывести список служб СУБД «Jatoba»:
 
-> systemctl list-unit-files 'ja\*'
->
-> Рисунок 3.17 – Список служб
->
-> Команда сформирована по маске из первых букв названий служб. Из полученного списка очевидно, что установлена только СУБД.
->
-> Перечень служб используемых при эксплуатации СУБД приведен в таблице [П 3.1](#_bookmark159)
->
-> <span id="_bookmark159" class="anchor"></span>Таблица П 3.1 – Перечень служб используемых СУБД
+```
+systemctl list-unit-files 'ja\*'
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image317_.png)
+
+Рисунок 3.17 – Список служб
+
+Команда сформирована по маске из первых букв названий служб. Из полученного списка очевидно, что установлена только СУБД.
+
+Перечень служб используемых при эксплуатации СУБД приведен в таблице [П 3.1](#_bookmark159)
+
+<span id="_bookmark159" class="anchor"></span>Таблица П 3.1 – Перечень служб используемых СУБД
 
 <table>
 <colgroup>
@@ -8909,302 +8911,390 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>Наименование компонента</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Наименование службы</strong></p>
 <p><strong>(демона)</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>СУБД «Jatoba»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jatoba-&lt;ver&gt;</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Централизованный сбор записей событий в СУБД.</p>
 <p>Компонент «ja_Log»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jalog_server</p>
 <p>jalog_agent</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Управление режимом работы узлов кластера</p>
 <p>Компонент «jaDog»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jadog</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
 2)  Удалить службу из автозагрузки ОС:
 
-> systemctl disable jatoba-\<ver\>
->
-> Рисунок 3.18 – Удаление службы «jatoba-4» из автозагрузки
->
-> Если были установлены компоненты СУБД приведенные в таблице [П 3.1](#_bookmark159), то службы компонентов удаляются командой:
->
-> systemctl disable \<имя службы\>
+```
+systemctl disable jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image318_.png)
+
+Рисунок 3.18 – Удаление службы «jatoba-4» из автозагрузки
+
+Если были установлены компоненты СУБД приведенные в таблице [П 3.1](#_bookmark159), то службы компонентов удаляются командой:
+
+```
+systemctl disable <имя службы>
+```
 
 3)  Проверить статус отключенной из автозагрузки службы:
 
-> systemctl status jatoba-\<ver\>
->
-> Рисунок 3.19 – Проверка статуса службы
+```
+systemctl status jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image319_.png)
+
+Рисунок 3.19 – Проверка статуса службы
 
 Служба должна иметь статус «disabled».
 
 4)  Удалить все ненужные пакеты, первоначально установленные по зависимостям:
 
-> yum autoremove jatoba\<ver\>-\*
->
-> Подтвердить проведение операции и в результате будет выведен список удаленных пакетов.
->
-> При удалении пакетов будут удалены все связанные с ними службы.
+```
+yum autoremove jatoba<ver>-\*
+```
+
+Подтвердить проведение операции и в результате будет выведен список удаленных пакетов.
+
+При удалении пакетов будут удалены все связанные с ними службы.
 
 5)  Вывести список служб СУБД «Jatoba»:
 
-> systemctl list-unit-files 'ja\*'
->
-> Рисунок 3.20 – Список служб по маске «ja\*» Список служб должен быть пуст.
+```
+systemctl list-unit-files 'ja*'
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image320_.png)
+
+Рисунок 3.20 – Список служб по маске «ja*» Список служб должен быть пуст.
 
 6)  Просмотреть список пользователей:
 
-> В терминале ОС список пользователей выводится командой:
->
-> cat /etc/passwd
->
-> Рисунок 3.21 – Список пользователей
->
-> В ОС список пользователей выводится с помощью утилиты «Менеджер пользователей», отключив параметр «Скрыть системных пользователей и группы».
->
-> Рисунок 3.22 – Вывод списка пользователей в утилите «Менеджер пользователей»
+В терминале ОС список пользователей выводится командой:
+
+```
+cat /etc/passwd
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image321_.png)
+
+Рисунок 3.21 – Список пользователей
+
+В ОС список пользователей выводится с помощью утилиты «Менеджер пользователей», отключив параметр «Скрыть системных пользователей и группы».
+
+![](@site/docs/assets/images/com18.3.1/install/media/image322_.png)
+
+Рисунок 3.22 – Вывод списка пользователей в утилите «Менеджер пользователей»
 
 7)  Удалить пользователя «postgres» командой:
 
-> userdel postgres
->
-> Рисунок 3.23 – Удаление пользователя «postgres»
->
-> В ОС удалить пользователя «postgres» возможно через утилиту «Менеджер пользователей», используя пиктограмму «Удалить».
+```
+userdel postgres
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image323_.png)
+
+Рисунок 3.23 – Удаление пользователя «postgres»
+
+В ОС удалить пользователя «postgres» возможно через утилиту «Менеджер пользователей», используя пиктограмму «Удалить».
 
 8)  Удалить каталоги СУБД командами:
 
-> rm -rf /usr/jatoba-\<ver\>
->
-> rm -rf /var/lib/jatoba
->
-> Рисунок 3.24 – Удаление каталогов СУБД
+```
+rm -rf /usr/jatoba-<ver>
+rm -rf /var/lib/jatoba
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image324_.png)
+
+Рисунок 3.24 – Удаление каталогов СУБД
 
 9)  Удалить каталог репозитория:
 
-> rm -rf /localrepo
->
-> Рисунок 3.25 – Удаление каталога репозитория
+```
+rm -rf /localrepo
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image325_.png)
+
+Рисунок 3.25 – Удаление каталога репозитория
 
 10) Просмотреть список репозиториев ОС:
 
-> yum repolist
->
-> Рисунок 3.26 – Список репозиториев
+```
+yum repolist
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image326_.png)
+
+Рисунок 3.26 – Список репозиториев
 
 В выведенном списке будет присутствовать репозиторий «jatoba-4».
 
 11) Просмотреть описание локального репозитория «jatoba-4» в ОС:
 
-> cat /etc/yum.repos.d/jatoba-\<ver\>.repo
->
-> Рисунок 3.27 – Вывод описания локального репозитория «jatoba-4»
+```
+cat /etc/yum.repos.d/jatoba-<ver>.repo
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image327_.png)
+
+Рисунок 3.27 – Вывод описания локального репозитория «jatoba-4»
 
 12) Удалить описание локального репозитория «jatoba-4» в ОС:
 
-> rm /etc/yum.repos.d/jatoba-\<ver\>.repo
->
-> Рисунок 3.28 – Удаление локального репозитория Подтвердить команду удаления.
+```
+rm /etc/yum.repos.d/jatoba-<ver>.repo
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image328_.png)
+
+Рисунок 3.28 – Удаление локального репозитория Подтвердить команду удаления.
 
 13) Просмотреть список репозиториев ОС:
 
-> yum repolist
->
-> В списке репозиториев ОС должен отсутствовать репозиторий «jatoba-\<ver\>». На этом шаге удаление СУБД закончено.
+```
+yum repolist
+```
 
-## ПРИЛОЖЕНИЕ 4
+![](@site/docs/assets/images/com18.3.1/install/media/image329_.png)
 
-> **Пример установки и удаления СУБД «Jatoba» из локального репозитория для Альт 9** <span id="_bookmark161" class="anchor"></span>**Server**
+В списке репозиториев ОС должен отсутствовать репозиторий «jatoba-<ver>». На этом шаге удаление СУБД закончено.
 
-## Установка СУБД «Jatoba» из локального репозитория в Альт 9 Server
+## ПРИЛОЖЕНИЕ 4 Пример установки и удаления СУБД «Jatoba» из локального репозитория для Альт 9 <span id="_bookmark161" class="anchor"></span> Server
 
-> Установка СУБД «Jatoba» из локального репозитория в Альт 9 Server проводится в следующем порядке:
+### Установка СУБД «Jatoba» из локального репозитория в Альт 9 Server
+
+Установка СУБД «Jatoba» из локального репозитория в Альт 9 Server проводится в следующем порядке:
 
 1)  В терминале MATE войти в режим суперпользователя, выполнив команду:
 
-> sudo su
->
-> Рисунок 4.1 – Вход в режим суперпользователя
+```
+sudo su
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image41_.png)
+
+Рисунок 4.1 – Вход в режим суперпользователя
 
 2)  Выполнить обновление системы, последовательно выполняя команды:
 
-> apt-get update
->
-> apt-get dist-upgrade update-kernel
->
-> apt-get clean reboot
->
-> После обновления ОС установится пакет «sudo», убедиться в его установке можно командой:
->
-> apt-get install sudo -y
->
-> Рисунок 4.2 – Проверка установки пакета «sudo»
+```
+apt-get update
+apt-get dist-upgrade update-kernel
+apt-get clean reboot
+```
+
+После обновления ОС установится пакет «sudo», убедиться в его установке можно командой:
+
+```
+apt-get install sudo -y
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image42_.png)
+
+Рисунок 4.2 – Проверка установки пакета «sudo»
 
 3)  Установить пакет «nano» командой:
 
-> apt-get install nano
->
-> Рисунок 4.3 – Установка пакета «nano»
+```
+apt-get install nano
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image43_.png)
+
+Рисунок 4.3 – Установка пакета «nano»
 
 4)  Создать папку localrepo в корневом каталоге:
 
-> mkdir /localrepo
->
-> Рисунок 4.4 – Создание каталога «localrepo»
+```
+mkdir /localrepo
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image44_.png)
+
+
+Рисунок 4.4 – Создание каталога «localrepo»
 
 5)  В созданную папку скопировать:
 
-- каталог \<x86_64\>
+- каталог <x86_64>
 
-- файл \<RPM-GPG-KEY-Jatoba\>
+- файл <RPM-GPG-KEY-Jatoba>
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image234.png" style="width:3.29803in;height:0.96979in" />
->
-> Рисунок 4.5 - Структура каталога «localrepo»
+![](@site/docs/assets/images/com18.3.1/install/media/image234.png)
+
+Рисунок 4.5 - Структура каталога «localrepo»
 
 6)  Установить открытый ключ репозитория:
 
-> rpm --import /localrepo/RPM-GPG-KEY-Jatoba
->
-> Рисунок 4.6 – Установка открытого ключа репозитория
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25138in;height:0.25075in" />Для более новых версий ОС GNU/Linux, основанных на Debian (Astra Linux 1.8, Debian 12, Ubuntu 24.04 и других), рекомендуется добавлять ключ репозитория следующим образом.
->
-> Скопировать ключ репозитория:
+```
+rpm --import /localrepo/RPM-GPG-KEY-Jatoba
+```
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>cp /localrepo/DEB-GPG-KEY-Jatoba /etc/apt/keyrings/</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+![](@site/docs/assets/images/com18.3.1/install/media/image46_.png)
 
-> Добавить описание нового репозитория в список:
+Рисунок 4.6 – Установка открытого ключа репозитория
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>echo "deb [signed-by=/etc/apt/keyrings/DEB-GPG-KEY-Jatoba] file:///localrepo stable non-free" &gt;</p>
-<p>/etc/apt/sources.list.d/jatoba-&lt;ver&gt;.list</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+Для более новых версий ОС GNU/Linux, основанных на Debian (Astra Linux 1.8, Debian 12, Ubuntu 24.04 и других), рекомендуется добавлять ключ репозитория следующим образом.
 
-> Здесь jatoba-\<ver\> - версия устанавливаемой СУБД «Jatoba». Затем выполнить 9) из данного подраздела.
+Скопировать ключ репозитория:
+
+```
+cp /localrepo/DEB-GPG-KEY-Jatoba /etc/apt/keyrings/
+```
+
+Добавить описание нового репозитория в список:
+
+```
+echo "deb [signed-by=/etc/apt/keyrings/DEB-GPG-KEY-Jatoba] file:///localrepo stable non-free" >
+/etc/apt/sources.list.d/jatoba-<ver>.list
+```
+
+Здесь jatoba-<ver> - версия устанавливаемой СУБД «Jatoba».
+
+Затем выполнить 9) из данного подраздела.
+:::
 
 7)  Добавить описание локального репозитория в систему:
 
-> nano /etc/apt/sources.list.d/jatoba-\<ver\>.list
->
-> Рисунок 4.7 – Добавление локального репозитория в ОС
+```
+nano /etc/apt/sources.list.d/jatoba-<ver>.list
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image47_.png)
+
+Рисунок 4.7 – Добавление локального репозитория в ОС
 
 8)  Вставить в файл следующее содержимое и сохранить:
 
-> rpm file:///localrepo x86_64 classic
+```
+rpm file:///localrepo x86_64 classic
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image48_.png)
 
 Рисунок 4.8 – Содержание файла «jatoba-4.list»
 
 9)  Проиндексировать обновленное состояние репозитория:
 
-> apt-get update
->
-> Рисунок 4.9 – Индексация репозитория
+```
+apt-get update
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image49_.png)
+
+Рисунок 4.9 – Индексация репозитория
 
 10) Установить СУБД «Jatoba» при помощи команды:
 
-> apt-get install jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> Рисунок 4.10 – Установка пакетов Подтвердите продолжение установки.
+```
+apt-get install jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image410_.png)
+
+Рисунок 4.10 – Установка пакетов Подтвердите продолжение установки.
 
 11) Убедиться, что отсутствуют ошибки зависимостей:
 
-> for f in \$(LANG=C find /usr/jatoba-\<ver\> -type f -exec file {}
->
-> \\ \| grep "ELF 64-bit LSB" \| awk 'BEGIN {FS=":"} { print \$1}' \| sort); do echo \$f; ldd \$f \| grep "not found"; done
->
-> Рисунок 4.11 – Команда проверки отсутствия ошибок зависимостей
+```
+for f in $(LANG=C find /usr/jatoba-<ver> -type f -exec file {} \; | grep "ELF 64-bit LSB" | awk 'BEGIN {FS=":"} { print $1}' | sort); do echo $f; ldd $f | grep "not found"; done
+```
+
+
+
+Рисунок 4.11 – Команда проверки отсутствия ошибок зависимостей
 
 12) Перейти в директорию исполняемых файлов СУБД:
 
-> cd /usr/jatoba-\<ver\>/bin
->
-> Рисунок 4.12 – Команда перехода в каталог
+cd /usr/jatoba-<ver>/bin
+
+![](@site/docs/assets/images/com18.3.1/install/media/image412_.png)
+
+Рисунок 4.12 – Команда перехода в каталог
 
 13) Инициализировать каталог данных СУБД при помощи команды:
 
-> ./jatoba-setup initdb jatoba-\<ver\>
->
-> Рисунок 4.13 – Инициализация СУБД
+```
+./jatoba-setup initdb jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image413_.png)
+
+Рисунок 4.13 – Инициализация СУБД
 
 14) Добавить сервис в список автозапуска:
 
-> systemctl enable jatoba-\<ver\>
->
-> Рисунок 4.14 – Добавление сервиса jatoba-4 а автозагрузку ОС
+```
+systemctl enable jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image414_.png)
+
+Рисунок 4.14 – Добавление сервиса jatoba-4 а автозагрузку ОС
 
 15) Запустить службу:
 
-> systemctl start jatoba-\<ver\>
->
-> Рисунок 4.15 – Запуск службы jatoba-4
+```
+systemctl start jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image415_.png)
+
+Рисунок 4.15 – Запуск службы jatoba-4
 
 16) Проверить статус службы:
 
-> systemctl status jatoba-\<ver\>
->
-> Рисунок 4.16 – Проверка статуса службы
+```
+systemctl status jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image416_.png)
+
+Рисунок 4.16 – Проверка статуса службы
 
 17) Авторизоваться в psql от имени и с правами пользователя «postgres» и установить для него пароль в СУБД:
 
-> su -l postgres
->
-> cd /usr/jatoba-\<ver\>/bin/ psql
->
-> \password
+```
+su -l postgres
+cd /usr/jatoba-<ver>/bin/ psql
+\password
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image417_.png)
 
 Рисунок 4.17 – Установка пароля для пользователя СУБД «postgres»
 
@@ -9214,27 +9304,33 @@
 
 19) Установить пароль для системного пользователя ОС «postgres»:
 
-> passwd postgres
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image247.jpeg" style="width:7.09538in;height:5.40375in" />
->
-> Рисунок 4.18 – Установка пароля для пользователя ОС На этом этапе установка СУБД окончена.
+```
+passwd postgres
+```
 
-## Удаление СУБД «Jatoba» из локального репозитория в Альт 9 Server
+![](@site/docs/assets/images/com18.3.1/install/media/image247.jpeg)
 
-> Удаление СУБД «Jatoba» из локального репозитория в Альт 9 Server проводится в следующем порядке:
+Рисунок 4.18 – Установка пароля для пользователя ОС На этом этапе установка СУБД окончена.
+
+### Удаление СУБД «Jatoba» из локального репозитория в Альт 9 Server
+
+Удаление СУБД «Jatoba» из локального репозитория в Альт 9 Server проводится в следующем порядке:
 
 1)  Вывести список служб СУБД «Jatoba»:
 
-> systemctl list-unit-files 'ja\*'
->
-> Рисунок 4.19 – Список служб
->
-> Команда сформирована по маске из первых букв названий служб. Из полученного списка очевидно, что установлена только СУБД.
->
-> Перечень служб, используемых при эксплуатации СУБД, приведен в таблице [П 4.1](#_bookmark163).
->
-> <span id="_bookmark163" class="anchor"></span>Таблица П 4.1 – Перечень служб используемых СУБД
+```
+systemctl list-unit-files 'ja*'
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image419_.png)
+
+Рисунок 4.19 – Список служб
+
+Команда сформирована по маске из первых букв названий служб. Из полученного списка очевидно, что установлена только СУБД.
+
+Перечень служб, используемых при эксплуатации СУБД, приведен в таблице [П 4.1](#_bookmark163).
+
+<span id="_bookmark163" class="anchor"></span>Таблица П 4.1 – Перечень служб используемых СУБД
 
 <table>
 <colgroup>
@@ -9243,107 +9339,103 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>Наименование компонента</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Наименование службы</strong></p>
 <p><strong>(демона)</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>СУБД «Jatoba»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jatoba-&lt;ver&gt;</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Централизованный сбор записей событий в СУБД.</p>
 <p>Компонент «ja_Log»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jalog_server</p>
 <p>jalog_agent</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>Управление режимом работы узлов кластера</p>
 <p>Компонент «jaDog»</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>jadog</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
 2)  Удалить службу из автозагрузки ОС:
 
-> systemctl disable jatoba-\<ver\>
->
-> Рисунок 4.20 – Удаление службы «jatoba-4» из автозагрузки
->
-> Если были установлены компоненты СУБД, приведенные в таблице [П 4.1](#_bookmark163), то службы компонентов удаляются командой:
->
-> systemctl disable \<имя службы\>
+```
+systemctl disable jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image420_.png)
+
+Рисунок 4.20 – Удаление службы «jatoba-4» из автозагрузки
+
+Если были установлены компоненты СУБД, приведенные в таблице [П 4.1](#_bookmark163), то службы компонентов удаляются командой:
+
+```
+systemctl disable <имя службы>
+```
 
 3)  Проверить статус отключенной из автозагрузки службы:
 
-> systemctl status jatoba-\<ver\>
->
-> Рисунок 4.21 – Проверка статуса службы Служба должна иметь статус «disabled».
+```
+systemctl status jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image421_.png)
+
+Рисунок 4.21 – Проверка статуса службы Служба должна иметь статус «disabled».
 
 4)  Удалить все ненужные пакеты.
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Удаление пакетов командами:
+:::warning Важная информация
+Удаление пакетов командами:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>apt-get remove jatoba&lt;ver&gt;-*</p>
-<p>apt-get autoremove jatoba&lt;ver&gt;-*</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
+apt-get remove jatoba<ver>-*
+apt-get autoremove jatoba<ver>-*
+```
 
-> может привести к ошибке и некорректному удалению пакетов.
->
-> Для корректного удаления пакетов рекомендуется использовать менеджер пакетов
->
-> «Synaptic».
->
-> Для запуска менеджера пакетов «Synaptic» необходимо выбрать в меню ОС
->
-> «Система» → «Параметры» → «Прочие» → «Менеджер пакетов». Перед своим запуском программа попросит ввести пароль суперпользователя:
+может привести к ошибке и некорректному удалению пакетов.
+:::
 
-<img src="../docs/assets/images/com18.3.1/install/media/image251.jpeg" style="width:6.01042in;height:1.84375in" />
+Для корректного удаления пакетов рекомендуется использовать менеджер пакетов «Synaptic».
 
-> Рисунок 4.22 – Ввод пароля «root»
->
-> Нажать кнопку «Происхождение» (см. рис. [4.23](#_bookmark164)) и выбрать в списке репозиторий
->
-> «Локальный/classic», который является локальным репозиторием СУБД «Jatoba».
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image252.jpeg" style="width:7in;height:5.5625in" />
->
-> <span id="_bookmark164" class="anchor"></span>Рисунок 4.23 – Локальный репозиторий СУБД «Jatoba» в менеджере пакетов «Synaptic» В списке пакетов отображаются пакеты, находящиеся в локальном репозитории
->
-> СУБД «Jatoba». Пакеты могут иметь статусы, представленные в таблице [П 4.2](#_bookmark165).
->
-> <span id="_bookmark165" class="anchor"></span>Таблица П 4.2 – Статусы пакетов в репозитории
+Для запуска менеджера пакетов «Synaptic» необходимо выбрать в меню ОС
+
+«Система» → «Параметры» → «Прочие» → «Менеджер пакетов». Перед своим запуском программа попросит ввести пароль суперпользователя:
+
+![](@site/docs/assets/images/com18.3.1/install/media/image251.jpeg)
+
+Рисунок 4.22 – Ввод пароля «root»
+
+Нажать кнопку «Происхождение» (см. рис. [4.23](#_bookmark164)) и выбрать в списке репозиторий
+«Локальный/classic», который является локальным репозиторием СУБД «Jatoba».
+
+![](@site/docs/assets/images/com18.3.1/install/media/image252.jpeg)
+
+<span id="_bookmark164" class="anchor"></span>Рисунок 4.23 – Локальный репозиторий СУБД «Jatoba» в менеджере пакетов «Synaptic» В списке пакетов отображаются пакеты, находящиеся в локальном репозитории СУБД «Jatoba». Пакеты могут иметь статусы, представленные в таблице [П 4.2](#_bookmark165).
+
+<span id="_bookmark165" class="anchor"></span>Таблица П 4.2 – Статусы пакетов в репозитории
 
 <table>
 <colgroup>
@@ -9353,551 +9445,736 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>Пиктограмма</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Статус пакета</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Вид пакета</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image253.png" style="width:0.24428in;height:0.22687in" /></p>
-</blockquote></td>
-<td><blockquote>
+<td>
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image253.png)
+</td>
+<td>
 <p>пакет, установленный в системе</p>
-</blockquote></td>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image254.png" style="width:1.66676in;height:0.23958in" /></p>
-</blockquote></td>
+</td>
+<td>
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image254.png)
+</td>
 </tr>
 <tr>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image255.png" style="width:0.21875in;height:0.21875in" /></p>
-</blockquote></td>
-<td><blockquote>
+<td>
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image255.png)
+</td>
+<td>
 <p>пакет, доступный для установки</p>
-</blockquote></td>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image256.png" style="width:1.86458in;height:0.22917in" /></p>
-</blockquote></td>
+</td>
+<td>
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image256.png)
+</td>
 </tr>
 <tr>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image257.png" style="width:0.22917in;height:0.22917in" /></p>
-</blockquote></td>
-<td><blockquote>
+<td>
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image257.png)
+</td>
+<td>
 <p>пакет назначен для установки</p>
-</blockquote></td>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image258.png" style="width:1.90625in;height:0.28125in" /></p>
-</blockquote></td>
+</td>
+<td>
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image258.png)
+</td>
 </tr>
 <tr>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image259.png" style="width:0.21875in;height:0.22917in" /></p>
-</blockquote></td>
-<td><blockquote>
+<td>
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image259.png)
+</td>
+<td>
 <p>пакет, отмеченный для удаления</p>
-</blockquote></td>
-<td><blockquote>
-<p><img src="../docs/assets/images/com18.3.1/install/media/image260.png" style="width:1.66667in;height:0.26042in" /></p>
-</blockquote></td>
+</td>
+<td>
+<p>![](@site/docs/assets/images/com18.3.1/install/media/image260.png)
+</td>
 </tr>
 </tbody>
 </table>
 
-> Пакеты со статусом «установленные в системе» должны быть помечены для удаления, через контекстное меню или клавишей «Delete».
+Пакеты со статусом «установленные в системе» должны быть помечены для удаления, через контекстное меню или клавишей «Delete».
 
-<img src="../docs/assets/images/com18.3.1/install/media/image261.jpeg" style="width:6.875in;height:5.41667in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image261.jpeg)
 
-> Рисунок 4.24 – Контекстное меню
->
-> После маркировки пакетов для удаления нажать кнопку «Применить». Менеджер пакетов «Synaptic» выведет окно подтверждения удаления пакетов, в котором необходимо подтвердить действие, нажав на кнопку «Применить».
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image262.jpeg" style="width:6.88542in;height:5.44792in" />
->
-> Рисунок 4.25 – Подтверждение удаления пактов
->
-> После удаления пакетов в репозитории «Локальный/classic» все пакеты сменят статус на «пакет доступный к установке». На данном шаге работа с менеджером пакетов «Synaptic» закончена.
+Рисунок 4.24 – Контекстное меню
+
+После маркировки пакетов для удаления нажать кнопку «Применить». Менеджер пакетов «Synaptic» выведет окно подтверждения удаления пакетов, в котором необходимо подтвердить действие, нажав на кнопку «Применить».
+
+![](@site/docs/assets/images/com18.3.1/install/media/image262.jpeg)
+
+Рисунок 4.25 – Подтверждение удаления пактов
+
+После удаления пакетов в репозитории «Локальный/classic» все пакеты сменят статус на «пакет доступный к установке». На данном шаге работа с менеджером пакетов «Synaptic» закончена.
 
 5)  Вывести список служб СУБД «Jatoba» командой в терминале MATE:
 
-> systemctl list-unit-files 'ja\*'
->
-> Список служб, выведенных по маске, должен быть пуст, т.к. процедура удаления пакетов удяляет и связанные с ними службы.
->
-> Рисунок 4.26 – Список служб по маске «ja\*»
+```
+systemctl list-unit-files 'ja*'
+```
+
+Список служб, выведенных по маске, должен быть пуст, т.к. процедура удаления пакетов удяляет и связанные с ними службы.
+
+![](@site/docs/assets/images/com18.3.1/install/media/image426_.png)
+
+Рисунок 4.26 – Список служб по маске «ja*»
 
 6)  Просмотреть список репозиториев:
 
-> apt-repo list
->
-> Рисунок 4.27 – Список локальных репозиториев В списке локальных репозиториев должна присутствать запись:
->
-> rpm file:///localrepo x86_64 classic
+```
+apt-repo list
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image427_.png)
+
+Рисунок 4.27 – Список локальных репозиториев
+
+В списке локальных репозиториев должна присутствать запись:
+
+```
+rpm file:///localrepo x86_64 classic
+```
 
 7)  Удалить описание локального репозитория:
 
-> rm /etc/apt/sources.list.d/jatoba-\<ver\>.list
->
-> Рисунок 4.28 – Удаление описания репозитория Подтвердите проведение операции.
+```
+rm /etc/apt/sources.list.d/jatoba-<ver>.list
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image428_.png)
+
+Рисунок 4.28 – Удаление описания репозитория Подтвердите проведение операции.
 
 8)  Просмотреть список репозиториев:
 
-> apt-repo list
->
-> Рисунок 4.29 – Список локальных репозиториев после удаления В списке локальных репозиториев должна отсутствовать запись:
->
-> rpm file:///localrepo x86_64 classic
->
-> Что означает корретное удаление описание локального репозитория СУБД «Jatoba».
+```
+apt-repo list
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image429_.png)
+
+Рисунок 4.29 – Список локальных репозиториев после удаления В списке локальных репозиториев должна отсутствовать запись:
+
+```
+rpm file:///localrepo x86_64 classic
+```
+
+Что означает корретное удаление описание локального репозитория СУБД «Jatoba».
 
 9)  Просмотреть список пользователей командой:
 
-> cat /etc/passwd
->
-> Рисунок 4.30 – Список пользователей Если в списке пользователей ОС присутствует строка:
->
-> postgres:x:46:46:PostgreSQL Server:/var/lib/jatoba:/bin/bash
->
-> следовательно, требуется удалить пользователя «postgres».
+```
+cat /etc/passwd
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image430_.png)
+
+Рисунок 4.30 – Список пользователей
+
+Если в списке пользователей ОС присутствует строка:
+
+```
+postgres:x:46:46:PostgreSQL Server:/var/lib/jatoba:/bin/bash
+```
+
+следовательно, требуется удалить пользователя «postgres».
 
 10) Удалить пользователя «postgres» командой:
 
-> userdel postgres
->
-> Рисунок 4.31 – Удаление пользователя «postgres»
->
-> При повторном просмотре списка пользователей ОС, строка о пользователе «postgres» должна отсутствовать.
+```
+userdel postgres
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image431_.png)
+
+Рисунок 4.31 – Удаление пользователя «postgres»
+
+При повторном просмотре списка пользователей ОС, строка о пользователе «postgres» должна отсутствовать.
 
 11) Удалить каталоги СУБД командами:
 
-> rm -rf /usr/jatoba-\<ver\> rm -rf /var/lib/jatoba
->
-> Рисунок 4.32 – Удаление каталогов СУБД
+```
+rm -rf /usr/jatoba-<ver>
+rm -rf /var/lib/jatoba
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image432_.png)
+
+Рисунок 4.32 – Удаление каталогов СУБД
 
 12) Удалить каталог репозитория:
 
-> rm -rf /localrepo
->
-> Рисунок 4.33 – Удаление каталога репозитория На этом шаге удаление СУБД закончено.
+```
+rm -rf /localrepo
+```
 
-# ПРИЛОЖЕНИЕ 5
+![](@site/docs/assets/images/com18.3.1/install/media/image433_.png)
 
-> **Пример установки и удаления СУБД «Jatoba» из локального репозитория для ОС Astra Linux 1.7 Special Edition Смоленск (x86-64) в ЗПС**
+Рисунок 4.33 – Удаление каталога репозитория На этом шаге удаление СУБД закончено.
 
-## Установка ОС Astra Linux 1.7 Special Edition Смоленск (x86-64)
+## ПРИЛОЖЕНИЕ 5 Пример установки и удаления СУБД «Jatoba» из локального репозитория для ОС Astra Linux 1.7 Special Edition Смоленск (x86-64) в ЗПС
 
-> При установке ОС на этапе «Выбор программного обеспечения» не выбирать установку СУБД входящей в состав дистрибутива.
->
-> Рисунок 5.1 – Этап «Выбор программного обеспечения»
->
-> На следующем этапе «Дополнительные настройки ОС», установить флаг для опции
->
-> «Включить режим замкнутой программной среды».
->
-> Рисунок 5.2 – Этап «Дополнительные настройки ОС»
+### Установка ОС Astra Linux 1.7 Special Edition Смоленск (x86-64)
 
-## Установка СУБД «Jatoba» из локального репозитория в ОС Astra Linux 1.7 Special Edition Смоленск (x86-64)
+При установке ОС на этапе «Выбор программного обеспечения» не выбирать установку СУБД входящей в состав дистрибутива.
 
-> Установка СУБД «Jatoba» из локального репозитория для ОС Astra Linux 1.6 Special Edition Смоленск (x86-64) проводится в следующем порядке:
+![](@site/docs/assets/images/com18.3.1/install/media/image51_.png)
+
+Рисунок 5.1 – Этап «Выбор программного обеспечения»
+
+На следующем этапе «Дополнительные настройки ОС», установить флаг для опции «Включить режим замкнутой программной среды».
+
+![](@site/docs/assets/images/com18.3.1/install/media/image52_.png)
+
+Рисунок 5.2 – Этап «Дополнительные настройки ОС»
+
+### Установка СУБД «Jatoba» из локального репозитория в ОС Astra Linux 1.7 Special Edition Смоленск (x86-64)
+
+Установка СУБД «Jatoba» из локального репозитория для ОС Astra Linux 1.6 Special Edition Смоленск (x86-64) проводится в следующем порядке:
 
 1)  В терминале войти в режим суперпользователя, выполнив команду:
 
-> sudo su
+```
+sudo su
+```
 
 2)  Если команды sudo не существует – установить:
 
-> su -l
->
-> apt-get install sudo -y
+```
+su -l
+apt-get install sudo -y
+```
 
 3)  Выполнить обновление системы:
 
-> sudo apt update && sudo apt upgrade –y
->
-> sudo apt -s dist-upgrade sudo apt dist-upgrade
+```
+sudo apt update && sudo apt upgrade –y
+sudo apt -s dist-upgrade sudo apt dist-upgrade
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image273.png" style="width:7.03947in;height:1.89062in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image273.png)
 
-> Рисунок 5.3 – Обновление системы
+Рисунок 5.3 – Обновление системы
 
 4)  Создать папку localrepo в корневом каталоге:
 
-> mkdir /localrepo
+```
+mkdir /localrepo
+```
 
 5)  В созданную папку скопировать:
-
-<img src="../docs/assets/images/com18.3.1/install/media/image274.png" style="width:3.3854in;height:0.92125in" />
 
 - каталог \<pool\>
 
 - каталог \<dist\>
 
 - файл \<DEB-GPG-KEY-Jatoba\>
+- 
+![](@site/docs/assets/images/com18.3.1/install/media/image274.png)
 
-> Рисунок 5.4 – Структура каталога «localrepo»
+
+
+Рисунок 5.4 – Структура каталога «localrepo»
 
 6)  Установить открытый ключ репозитория:
+7)  
+```
+apt-key add /localrepo/DEB-GPG-KEY-Jatoba
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image275.png" style="width:7.08485in;height:1.30167in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image275.png)
 
-> apt-key add /localrepo/DEB-GPG-KEY-Jatoba
->
-> Рисунок 5.5 – Установка открытого ключа репозитория
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />Для более новых версий ОС GNU/Linux, основанных на Debian (Astra Linux 1.8, Debian 12, Ubuntu 24.04 и других), рекомендуется добавлять ключ репозитория следующим образом.
->
-> Скопировать ключ репозитория:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>cp /localrepo/DEB-GPG-KEY-Jatoba /etc/apt/keyrings/</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 
-> Добавить описание нового репозитория в список:
+Рисунок 5.5 – Установка открытого ключа репозитория
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>echo "deb [signed-by=/etc/apt/keyrings/DEB-GPG-KEY-Jatoba] file:///localrepo stable non-free" &gt;</p>
-<p>/etc/apt/sources.list.d/jatoba-&lt;ver&gt;.list</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+:::warning Важная информация
+Для более новых версий ОС GNU/Linux, основанных на Debian (Astra Linux 1.8, Debian 12, Ubuntu 24.04 и других), рекомендуется добавлять ключ репозитория следующим образом.
 
-> Здесь jatoba-\<ver\> - версия устанавливаемой СУБД «Jatoba». Затем выполнить 9) из данного подраздела.
+Скопировать ключ репозитория:
+
+```
+cp /localrepo/DEB-GPG-KEY-Jatoba /etc/apt/keyrings/
+```
+
+Добавить описание нового репозитория в список:
+
+```
+echo "deb [signed-by=/etc/apt/keyrings/DEB-GPG-KEY-Jatoba] file:///localrepo stable non-free" > /etc/apt/sources.list.d/jatoba-<ver>.list
+```
+
+Здесь jatoba-<ver> - версия устанавливаемой СУБД «Jatoba».
+
+Затем выполнить 9) из данного подраздела.
+:::
 
 7)  Добавить описание локального репозитория в систему:
 
-> nano /etc/apt/sources.list.d/jatoba-\<ver\>.list
+```
+nano /etc/apt/sources.list.d/jatoba-<ver>.list
+```
 
 8)  Вставить в файл следующее содержимое и сохранить:
 
-> deb file:///localrepo stable non-free
+```
+deb file:///localrepo stable non-free
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image56_.png)
 
 Рисунок 5.6 – Содержание файла «jatoba-4.list»
 
 9)  Проиндексировать обновленное состояние репозитория:
 
-> apt-get update
->
-> Рисунок 5.7 – Индексация репозитория
+```
+apt-get update
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image57_.png)
+
+Рисунок 5.7 – Индексация репозитория
 
 10) Установить СУБД «Jatoba» при помощи команды и подтвердить выполнение:
 
-> apt-get install jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> Рисунок 5.8 – Установка пакетов
+```
+apt-get install jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image58_.png)
+
+Рисунок 5.8 – Установка пакетов
 
 11) Установить дополнительный пакет СУБД «Jatoba» для ОС Astra Linux Special Edition 1.7 Смоленск при помощи команды и подтвердить выполнение:
+12) 
+```
+apt-get install jatoba<ver>-astra-digsig-key
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image279.png" style="width:7.08482in;height:3.78667in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image279.png)
 
-> apt-get install jatoba\<ver\>-astra-digsig-key
->
-> Рисунок 5.9 – Установка дополнительного пакета
->
-> Установка дополнительного пакета сформирует файл «gazis_pub.key» в каталоге:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image280.png" style="width:3.34019in;height:2.43323in" />
 
-> /usr/jatoba-\<ver\>/share
->
-> Рисунок 5.10 – Расположение файла «gazis_pub.key»
+Рисунок 5.9 – Установка дополнительного пакета
+
+Установка дополнительного пакета сформирует файл «gazis_pub.key» в каталоге:
+
+```
+/usr/jatoba-<ver>/share
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image280.png)
+
+
+
+Рисунок 5.10 – Расположение файла «gazis_pub.key»
 
 12) Убедиться, что отсутствуют ошибки зависимостей:
 
-> for f in \$(LANG=C find /usr/jatoba-\<ver\> -type f -exec file {}
->
-> \\ \| grep "ELF 64-bit LSB" \| awk 'BEGIN {FS=":"} { print \$1}' \| sort); do echo \$f; ldd \$f \| grep "not found"; done
+```
+for f in $(LANG=C find /usr/jatoba-<ver> -type f -exec file {} \; | grep "ELF 64-bit LSB" | awk 'BEGIN {FS=":"} { print $1}' | sort); do echo $f; ldd $f | grep "not found"; done
+```
 
-13) Скопировать файл «gazis_pub.key»из каталога /usr/jatoba-4/share в каталог
 
-> /etc/digsig/keys.
+13) Скопировать файл «gazis_pub.key»из каталога /usr/jatoba-4/share в каталог /etc/digsig/keys.
 
-<img src="../docs/assets/images/com18.3.1/install/media/image281.png" style="width:1.71819in;height:0.96885in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image281.png)
 
-> Рисунок 5.11 – Содержание каталога /etc/digsig/keys
+Рисунок 5.11 – Содержание каталога /etc/digsig/keys
 
 14) Импортировать в систему открытый ключ «gazis_pub.key» командами:
 
-> cd /etc/digsig/keys/
->
-> gpg --import /etc/digsig/keys/gazis_pub.key
->
-> Рисунок 5.12 – Импорт открытого ключа
+```
+cd /etc/digsig/keys/
+gpg --import /etc/digsig/keys/gazis_pub.key
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image512_.png)
+
+Рисунок 5.12 – Импорт открытого ключа
 
 15) Выполнить переход в режим ЗПС с использованием терминала:
 
     - Настроить конфигурационный файл «digsig_initramfs.conf»:
 
-> sudo mcedit /etc/digsig/digsig_initramfs.conf
->
-> Рисунок 5.13 – Команда редактирования конфигурационного файла
->
-> В конфигурационном файле «digsig_initramfs.conf» должны быть установлены параметры:
->
-> DIGSIG_ELF_MODE=1 DIGSIG_XATTR_MODE=0 DIGSIG_IGNORE_XATTR_KEYS=0 DIGSIG_IGNORE_GOST2021=0
+```
+sudo mcedit /etc/digsig/digsig_initramfs.conf
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image513_.png)
+
+Рисунок 5.13 – Команда редактирования конфигурационного файла
+
+В конфигурационном файле «digsig_initramfs.conf» должны быть установлены параметры:
+
+```
+DIGSIG_ELF_MODE=1 
+DIGSIG_XATTR_MODE=0 
+DIGSIG_IGNORE_XATTR_KEYS=0 
+DIGSIG_IGNORE_GOST2021=0
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image514_.png)
 
 Рисунок 5.14 – Конфигурационный файл «digsig_initramfs.conf»
 
 - Применить текущие настройки «digsig_initramfs.conf» командой:
 
-> sudo update-initramfs -u -k all
->
-> Рисунок 5.15 – Применение текущих настроек «digsig_initramfs.conf»
+```
+sudo update-initramfs -u -k all
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image515_.png)
+
+Рисунок 5.15 – Применение текущих настроек «digsig_initramfs.conf»
 
 - Перезапустите ОС командой:
 
-> sudo reboot
->
-> Рисунок 5.16 – Перезагрузка ОС Таким образом будет включен режим ЗПС.
+```
+sudo reboot
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image516_.png)
+
+Рисунок 5.16 – Перезагрузка ОС 
+
+Таким образом будет включен режим ЗПС.
 
 - После перезапуска ОС проверьте, что ELF mode – включен, а XATTR mode – отключен, выполнив команды:
+- 
+```
+cat /sys/digsig/elf_mode
+cat /sys/digsig/xattr_mode
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image287.png" style="width:7.04834in;height:1.58271in" />
-
-> cat /sys/digsig/elf_mode cat /sys/digsig/xattr_mode
+![](@site/docs/assets/images/com18.3.1/install/media/image287.png)
 
 Рисунок 5.17 – Проверка параметров
 
 16) Перейти в директорию исполняемых файлов СУБД:
 
-> cd /usr/jatoba-\<ver\>/bin
->
-> Рисунок 5.18 – Переход в каталог
+```
+cd /usr/jatoba-<ver>/bin
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image518_.png)
+
+Рисунок 5.18 – Переход в каталог
 
 17) Инициализировать каталог данных СУБД при помощи команды:
 
-> ./jatoba-setup initdb jatoba-\<ver\>
->
-> Рисунок 5.19 – Инициализация СУБД
+```
+./jatoba-setup initdb jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image519_.png)
+
+Рисунок 5.19 – Инициализация СУБД
 
 18) Добавить сервис в список автозапуска:
 
-> systemctl enable jatoba-\<ver\>
->
-> Рисунок 5.20 – Добавление сервиса jatoba-4 в автозагрузку ОС
+```
+systemctl enable jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image520_.png)
+
+Рисунок 5.20 – Добавление сервиса jatoba-4 в автозагрузку ОС
 
 19) Запустить службу:
 
-> systemctl start jatoba-\<ver\>
->
-> Рисунок 5.21 – Запуск службы jatoba-4
+```
+systemctl start jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image521_.png)
+
+Рисунок 5.21 – Запуск службы jatoba-4
 
 20) Проверить статус службы:
 
-> systemctl status jatoba-\<ver\>
->
-> Рисунок 5.22 – Проверка статуса службы «jatoba-\<ver\>»
+```
+systemctl status jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image522_.png)
+
+Рисунок 5.22 – Проверка статуса службы «jatoba-<ver>»
 
 21) Установить пароль для системного пользователя ОС «postgres»:
+22) 
+```
+sudo passwd postgres
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image293.png" style="width:7.04817in;height:1.52354in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image293.png)
 
-> sudo passwd postgres
->
-> Рисунок 5.23 – Установка пароля для пользователя ОС
+
+
+Рисунок 5.23 – Установка пароля для пользователя ОС
 
 22) Авторизоваться в psql, для этого нажать сочетание клавиш:
 
 > CTRL + D
->
-> затем войти в psql:
->
-> su - postgres psql
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image294.png" style="width:7.04818in;height:1.87854in" />
->
-> Рисунок 5.24 – Вход в СУБД
+
+затем войти в psql:
+
+```
+su - postgres psql
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image294.png)
+
+Рисунок 5.24 – Вход в СУБД
 
 23) Установить пароль для пользователя СУБД «postgres»:
+24) 
+```
+\password
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image295.png" style="width:7.04832in;height:1.4126in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image295.png)
 
-> \password
->
-> Рисунок 5.25 – Установка пароля для пользователя СУБД На этом этапе установка СУБД окончена.
 
-## Удаление СУБД «Jatoba» из локального репозитория в ОС
 
-> Действия выполняемые для удаления СУБД «Jatoba» из локального репозитория аналогичны действиям, описанным в Приложении [2](#приложение-2) настоящего документа.
+Рисунок 5.25 – Установка пароля для пользователя СУБД На этом этапе установка СУБД окончена.
 
-# ПРИЛОЖЕНИЕ 6
+### Удаление СУБД «Jatoba» из локального репозитория в ОС
 
-## Установка СУБД «Jatoba» из локального репозитория в ОС ОСНОВА 2.0
+Действия выполняемые для удаления СУБД «Jatoba» из локального репозитория аналогичны действиям, описанным в Приложении [2](#приложение-2) настоящего документа.
 
-> Перед началом установки должен быть скопирован дистрибутив в каталог /localrepo.
->
-> При установке открытого ключа репозитория требуется отключить режим ЗПС либо обеспечить работу утилиты apt-key в условиях ЗПС.
->
-> Установка СУБД «Jatoba» из локального репозитория в ОС ОСНОВА 2.0 выполняется следующими шагами:
+## ПРИЛОЖЕНИЕ 6 Установка СУБД «Jatoba» из локального репозитория в ОС ОСНОВА 2.0
+
+Перед началом установки должен быть скопирован дистрибутив в каталог /localrepo.
+
+При установке открытого ключа репозитория требуется отключить режим ЗПС либо обеспечить работу утилиты apt-key в условиях ЗПС.
+
+Установка СУБД «Jatoba» из локального репозитория в ОС ОСНОВА 2.0 выполняется следующими шагами:
 
 1)  Проверить статус включенного режима ЗПС:
 
-> ls -al /etc/ima/policy
->
-> Рисунок 6.1 – Команда проверки статуса ЗПС Вывод имеет два значения:
+```
+ls -al /etc/ima/policy
+```
 
-- /etc/ima/policy -\> policy.d/empty – выключен (по умолчанию);
+![](@site/docs/assets/images/com18.3.1/install/media/image61_.png)
 
-- /etc/ima/policy -\> policy.d/appraise – включен.
+Рисунок 6.1 – Команда проверки статуса ЗПС Вывод имеет два значения:
+
+- /etc/ima/policy -> policy.d/empty – выключен (по умолчанию);
+
+- /etc/ima/policy -> policy.d/appraise – включен.
 
 2)  Выполнить обновление системы:
 
-> apt-get update -y & apt-get upgrade -y
->
-> Рисунок 6.2 – Команда обновления системы
+```
+apt-get update -y & apt-get upgrade -y
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image62_.png)
+
+Рисунок 6.2 – Команда обновления системы
 
 3)  Добавить репозиторий jatoba с отключенным режимом ЗПС:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image298.png" style="width:6.88549in;height:1.07292in" />
+```
+apt-key add /localrepo/DEB-GPG-KEY-Jatoba
+```
 
-> apt-key add /localrepo/DEB-GPG-KEY-Jatoba
->
-> Рисунок 6.3 – Команда добавления репозитория
+![](@site/docs/assets/images/com18.3.1/install/media/image298.png)
+
+Рисунок 6.3 – Команда добавления репозитория
 
 4)  Добавить описание локального репозитория в систему:
 
-> nano /etc/apt/sources.list.d/jatoba-\<ver\>.list
+```
+nano /etc/apt/sources.list.d/jatoba-<ver>.list
+```
 
 5)  Вставить в файл следующее содержимое и сохранить:
 
-> Рисунок 6.4 – Содержание файла jatoba-\<ver\>.list
+![](@site/docs/assets/images/com18.3.1/install/media/image64_.png)
+
+Рисунок 6.4 – Содержание файла jatoba-<ver>.list
 
 6)  Проиндексировать обновленное состояние репозитория:
 
-> apt-get update
->
-> Рисунок 6.5 – Команда индексирования репозитория
+```
+apt-get update
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image65_.png)
+
+Рисунок 6.5 – Команда индексирования репозитория
 
 7)  В ОС включить режим ЗПС командами:
 
-> sudo rm /etc/ima/policy
->
-> sudo ln -s /etc/ima/policy.d/appraise /etc/ima/policy
+```
+sudo rm /etc/ima/policy
+sudo ln -s /etc/ima/policy.d/appraise /etc/ima/policy
+```
 
 8)  Применить обновленные настройки и перезагрузить ОС:
 
-> sudo update-initramfs -u -k all sudo reboot
->
-> Рисунок 6.6 – Команды включения режима ЗПС
+```
+sudo update-initramfs -u -k all 
+sudo reboot
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image66_.png)
+
+Рисунок 6.6 – Команды включения режима ЗПС
 
 9)  Установить пакет osnova-digsig-key:
 
-> apt install jatoba5-osnova-digsig-key
->
-> Рисунок 6.7 – Команда установки пакета osnova-digsig-key
+```
+apt install jatoba5-osnova-digsig-key
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image67_.png)
+
+Рисунок 6.7 – Команда установки пакета osnova-digsig-key
 
 10) Применить обновленные настройки:
 
-> update-initramfs -u -k all
->
-> Рисунок 6.8 – Команда применения настроек
+```
+update-initramfs -u -k all
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image68_.png)
+
+Рисунок 6.8 – Команда применения настроек
 
 11) Перезагрузить систему:
 
-> reboot
+```
+reboot
+```
 
 12) После авторизации войти в режим суперпользователя, выполнив команду:
 
-> sudo su
+```
+sudo su
+```
 
 13) Проверить статус режима ЗПС:
 
-> ls -al /etc/ima/policy
->
-> В выводе команды режим ЗПС должен быть включен, т.е. иметь значение «appraise»:
->
-> /etc/ima/policy -\> policy.d/appraise
->
-> Рисунок 6.9 – Вывод статуса ЗПС
+```
+ls -al /etc/ima/policy
+```
+
+В выводе команды режим ЗПС должен быть включен, т.е. иметь значение «appraise»:
+
+```
+/etc/ima/policy -> policy.d/appraise
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image69_.png)
+
+Рисунок 6.9 – Вывод статуса ЗПС
 
 14) Установить пакет osnova-digsig-key:
 
-> apt install jatoba\<ver\>-osnova-digsig-key
->
-> Рисунок 6.10 – Команда установки пакета osnova-digsig-key
+```
+apt install jatoba<ver>-osnova-digsig-key
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image610_.png)
+
+Рисунок 6.10 – Команда установки пакета osnova-digsig-key
 
 15) Добавить публичный ключ:
+16) 
+```
+cp /usr/jatoba-<ver>/share/gaz-is.der /etc/ima/certs
+```
 
-<img src="../docs/assets/images/com18.3.1/install/media/image306.png" style="width:6.88562in;height:0.6875in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image306.png)
 
-> cp /usr/jatoba-\<ver\>/share/gaz-is.der /etc/ima/certs
->
-> Рисунок 6.11 – Команда копирования публичного ключа
+
+Рисунок 6.11 – Команда копирования публичного ключа
 
 16) Обновить данные:
 
-> update-initramfs -u -k all
->
-> Рисунок 6.12 – Команда применения настроек
+```
+update-initramfs -u -k all
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image612_.png)
+
+Рисунок 6.12 – Команда применения настроек
 
 17) Перезагрузить систему:
 
-> reboot
+```
+reboot
+```
 
 18) После авторизации войти в режим суперпользователя, выполнив команду:
 
-> sudo su
+```
+sudo su
+```
 
 19) Установить СУБД Jatoba при помощи команды:
 
-> apt-get install jatoba\<ver\>-client jatoba\<ver\>-contrib jatoba\<ver\>-libs jatoba\<ver\>-server
->
-> Рисунок 6.13 – Команда установки основных пакетов СУБД «Jatoba»
+```
+apt-get install jatoba<ver>-client jatoba<ver>-contrib jatoba<ver>-libs jatoba<ver>-server
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image613_.png)
+
+Рисунок 6.13 – Команда установки основных пакетов СУБД «Jatoba»
 
 20) Убедиться, что отсутствуют ошибки зависимостей:
 
-> for f in \$(LANG=C find /usr/jatoba-\<ver\> -type f -exec file {}
->
-> \\ \| grep "ELF 64-bit LSB" \| awk 'BEGIN {FS=":"} { print \$1}' \| sort); do echo \$f; ldd \$f \| grep "not found"; done
->
-> Рисунок 6.14 – Команда проверки зависимостей
+```
+for f in $(LANG=C find /usr/jatoba-<ver> -type f -exec file {} \; | grep "ELF 64-bit LSB" | awk 'BEGIN {FS=":"} { print $1}' | sort); do echo $f; ldd $f | grep "not found"; done
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image614_.png)
+
+Рисунок 6.14 – Команда проверки зависимостей
 
 21) Перейти в директорию исполняемых файлов СУБД:
 
-> cd /usr/jatoba-\<ver\>/bin
+```
+cd /usr/jatoba-<ver>/bin
+```
 
 22) Инициализировать каталог данных СУБД при помощи команды:
 
-> ./jatoba-setup initdb jatoba-\<версия\>
->
-> Рисунок 6.15 – Команда инициализации СУБД
+```
+./jatoba-setup initdb jatoba-<версия>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image615_.png)
+
+Рисунок 6.15 – Команда инициализации СУБД
 
 23) Вывести права на директорию данных:
 
-> stat /var/lib/jatoba/
->
-> stat /var/lib/jatoba/\<ver\>
->
-> stat /var/lib/jatoba/\<ver\>/data
->
-> Рисунок 6.16 – Команда вывода прав доступа В выводе команд должны отразится права на доступ:
+```
+stat /var/lib/jatoba/
+stat /var/lib/jatoba/<ver>
+stat /var/lib/jatoba/<ver>/data
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image616_.png)
+
+Рисунок 6.16 – Команда вывода прав доступа
+
+В выводе команд должны отразится права на доступ:
 
 - Uid: postgres;
 
@@ -9905,39 +10182,49 @@
 
 24) Добавить сервис в список автозапуска:
 
-> systemctl enable jatoba-\<ver\>
+```
+systemctl enable jatoba-<ver>
+```
 
 25) Запустить службу:
 
-> systemctl start jatoba-\<ver\>
+```
+systemctl start jatoba-<ver>
+```
 
 26) Проверить статус службы:
 
-> systemctl status jatoba-\<ver\>
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image312.png" style="width:6.88547in;height:1.69792in" />
->
-> Рисунок 6.17 – Запуск службы jatoba-\<ver\> и проверка ее статуса
+```
+systemctl status jatoba-<ver>
+```
+
+![](@site/docs/assets/images/com18.3.1/install/media/image312.png)
+
+Рисунок 6.17 – Запуск службы jatoba-<ver> и проверка ее статуса
 
 27) Проверить наличие подписи в исполняемых файлах:
 
-<img src="../docs/assets/images/com18.3.1/install/media/image313.png" style="width:6.88546in;height:2.29167in" />
+```
+evmctl show /usr/jatoba-<ver>/bin/initdb
+```
 
-> evmctl show /usr/jatoba-\<ver\>/bin/initdb
->
-> Рисунок 6.18 – Вывод подписи в исполняемых файлах
->
-> <img src="../docs/assets/images/com18.3.1/install/media/image1.png" style="width:0.25139in;height:0.25139in" />При установке стороннего ПО, например КриптоПро, которое требуется для работы некоторых компонент СУБД, администратору необходимо обеспечить работоспособность этого ПО в условиях ЗПС (должно быть подписано).
+![](@site/docs/assets/images/com18.3.1/install/media/image313.png)
 
-# ПРИЛОЖЕНИЕ 7
+Рисунок 6.18 – Вывод подписи в исполняемых файлах
 
-## Пример установки веб-сервера (IIS) на ОС Windows 10
+:::warning Важная информация
+При установке стороннего ПО, например КриптоПро, которое требуется для работы некоторых компонент СУБД, администратору необходимо обеспечить работоспособность этого ПО в условиях ЗПС (должно быть подписано).
+:::
 
-> Перед установкой веб-сервера (IIS) на ОС Windows 10 необходимо выполнить действия по предварительной настройке компьютера. Для чего необходимо:
+## ПРИЛОЖЕНИЕ 7 Пример установки веб-сервера (IIS) на ОС Windows 10
+
+Перед установкой веб-сервера (IIS) на ОС Windows 10 необходимо выполнить действия по предварительной настройке компьютера. Для чего необходимо:
 
 - задать корректное имя компьютера;
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image2.png" style="width:0.25in;height:0.25in" />Имя компьютера не должно включать символ нижнего подчеркивания «\_», в противном случае ОС выдаст ошибку.
+:::info Дополнительная информация
+Имя компьютера не должно включать символ нижнего подчеркивания «_», в противном случае ОС выдаст ошибку.
+:::
 
 - настроить сетевое окружение;
 
@@ -9947,31 +10234,33 @@
 
 1)  Перейти в «Панель управления» → «Программы» → «Программы и компоненты»
 
-> → «Включение или отключение компонентов Windows» ([Рисунок 7.1](#_bookmark174)).
->
-> <span id="_bookmark174" class="anchor"></span>Рисунок 7.1 – Включение или отключение компонентов Windows
+→ «Включение или отключение компонентов Windows» ([Рисунок 7.1](#_bookmark174)).
+
+![](@site/docs/assets/images/com18.3.1/install/media/image71_.png)
+
+<span id="_bookmark174" class="anchor"></span>Рисунок 7.1 – Включение или отключение компонентов Windows
 
 2)  В открывшемся окне «Компоненты Windows» выбрать раздел «Внедряемое веб-ядро служб IIS» (рисунок [7.2](#_bookmark175)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image315.png" style="width:3.93387in;height:3.48833in" />
->
-> <span id="_bookmark175" class="anchor"></span>Рисунок 7.2 – Раздел «Внедряемое веб-ядро служб IIS»
+![](@site/docs/assets/images/com18.3.1/install/media/image315.png)
+
+<span id="_bookmark175" class="anchor"></span>Рисунок 7.2 – Раздел «Внедряемое веб-ядро служб IIS»
 
 3)  В разделе «Windows PowerShell 2.0» оставить выбранные компоненты по умолчанию (рисунок [7.3](#_bookmark176)).
 
-<img src="../docs/assets/images/com18.3.1/install/media/image316.png" style="width:3.93386in;height:3.55469in" />
+![](@site/docs/assets/images/com18.3.1/install/media/image316.png)
 
-> <span id="_bookmark176" class="anchor"></span>Рисунок 7.3 – Раздел «Windows PowerShell 2.0
+<span id="_bookmark176" class="anchor"></span>Рисунок 7.3 – Раздел «Windows PowerShell 2.0
 
 4)  В окне «Компоненты Windows» выбрать раздел «Службы IIS» (рисунок [7.4](#_bookmark177)).
 
-> <img src="../docs/assets/images/com18.3.1/install/media/image317.png" style="width:3.93386in;height:3.55469in" />
->
-> <span id="_bookmark177" class="anchor"></span>Рисунок 7.4 – Раздел «Службы IIS»
->
-> Параметры, устанавливаемые разделе «Службы IIS», приведены в таблице П. [П.7.1](#_bookmark178).
->
-> <span id="_bookmark178" class="anchor"></span>Таблица П.7.1 – Требуемые параметры в разделе «Службы IIS»
+![](@site/docs/assets/images/com18.3.1/install/media/image317.png)
+
+<span id="_bookmark177" class="anchor"></span>Рисунок 7.4 – Раздел «Службы IIS»
+
+Параметры, устанавливаемые разделе «Службы IIS», приведены в таблице П. [П.7.1](#_bookmark178).
+
+<span id="_bookmark178" class="anchor"></span>Таблица П.7.1 – Требуемые параметры в разделе «Службы IIS»
 
 <table>
 <colgroup>
@@ -9981,156 +10270,156 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p><strong>№</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Основные параметры</strong></p>
 <p><strong>раздела «Службы IIS»</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Связанный параметр</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>1</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Безопасность</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>1.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Фильтрация запросов</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>2</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Компоненты разработки приложений</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>2.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Инициализация приложений</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Общие функции HTTP</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Документ по умолчанию</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.2</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Обзор каталога</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.3</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Просмотр каталога</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.4</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Ошибки HTTP</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>3.5</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Статическое содержимое</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>4</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Проверка работоспособности и диагностика</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>4.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Ведение журнала HTTP</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>5</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Функции повышения быстродействия</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>5.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Сжатие статического содержимого</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>6</p>
-</blockquote></td>
-<td colspan="2"><blockquote>
+</td>
+<td colspan="2">
 <p><strong>Средства управления веб-сайтом</strong></p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>6.1</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Консоль управления IIS</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -10139,31 +10428,31 @@
 
 6)  В окне «Компоненты Windows» показан результат установки компонента. После успешной установки нажать «Закрыть» (рисунок [7.5](#_bookmark179)).
 
-> <span id="_bookmark179" class="anchor"></span>Рисунок 7.5 – Окончание установки веб-сервера IIS
->
-> Для проверки установки веб-сервера (IIS) необходимо в веб-браузере перейти по ссылке [<u>http://localhost</u>.](http://localhost/)
->
-> На рисунке [7.6](#_bookmark180) показана страница с корректной установкой веб-сервера.
->
-> <span id="_bookmark180" class="anchor"></span>Рисунок 7.6 – Тестовая страница веб-сервера (IIS)
+![](@site/docs/assets/images/com18.3.1/install/media/image75_.png)
 
-# ПРИЛОЖЕНИЕ 8
+<span id="_bookmark179" class="anchor"></span>Рисунок 7.5 – Окончание установки веб-сервера IIS
 
-## Установка службы JDS.PasDoctor
+Для проверки установки веб-сервера (IIS) необходимо в веб-браузере перейти по ссылке [<u>http://localhost</u>.](http://localhost/)
 
-> **Строка подключения к служебной БД JDS**
->
-> Для корректной работы службы ей требуется подключение к служебной БД «JDS». Строка подключения находится в файле «appsettings.json» и определяется ключом
->
-> «ConnectionStrings:DefaultConnection».
+На рисунке [7.6](#_bookmark180) показана страница с корректной установкой веб-сервера.
 
-## Установка в ОС Windows
+![](@site/docs/assets/images/com18.3.1/install/media/image76_.png)
 
-> Для установки службы Windows рекомендуется использовать утилиту «sc.exe».
->
-> Следует запускать службу под учетной записью «NetworkService».
->
-> Пример вызова «sc.exe» для установки службы с параметрами:
+<span id="_bookmark180" class="anchor"></span>Рисунок 7.6 – Тестовая страница веб-сервера (IIS)
+
+## ПРИЛОЖЕНИЕ 8 Установка службы JDS.PasDoctor
+
+**Строка подключения к служебной БД JDS**
+
+Для корректной работы службы ей требуется подключение к служебной БД «JDS». Строка подключения находится в файле «appsettings.json» и определяется ключом «ConnectionStrings:DefaultConnection».
+
+### Установка в ОС Windows
+
+Для установки службы Windows рекомендуется использовать утилиту «sc.exe».
+
+Следует запускать службу под учетной записью «NetworkService».
+
+Пример вызова «sc.exe» для установки службы с параметрами:
 
 - имя службы «JDS.Doctor»;
 
@@ -10173,61 +10462,80 @@
 
 - отображаемое имя «JDS Doctor».
 
-> sc.exe create JDS.Doctor start= auto binpath= C:\Full\Path\To\J DS.PasDoctor.exe obj= "NT AUTHORITY\NetworkService" DisplayName
->
-> = "JDS Doctor"
->
-> Вторая команда устанавливает описание для службы.
->
-> sc.exe description JDS.Doctor "Служба для поиска и исправления проблем с производительностью и безопасностью СУБД. Для управле ния службой используйте раздел Jatoba Data Safe 'Производительн ость - Проблемы и решения'."
+```
+sc.exe create JDS.Doctor start= auto binpath= C:\Full\Path\To\J DS.PasDoctor.exe obj= "NT AUTHORITY\NetworkService" DisplayName = "JDS Doctor"
+```
 
-## Файлы журналов в ОС Windows
+Вторая команда устанавливает описание для службы.
 
-> По умолчанию служба сохраняет журналы в папке C:\ProgramData\JDS\logs. Никаких действий по созданию папки или назначению прав доступа не требуется.
+```
+sc.exe description JDS.Doctor "Служба для поиска и исправления проблем с производительностью и безопасностью СУБД. Для управле ния службой используйте раздел Jatoba Data Safe 'Производительность - Проблемы и решения'."
+```
 
-## Установка в ОС Linux
+#### Файлы журналов в ОС Windows
 
-> Для примера используется Ubuntu 23.04. В других дистрибутивах процедура установки может отличаться.
+По умолчанию служба сохраняет журналы в папке C:\ProgramData\JDS\logs. Никаких действий по созданию папки или назначению прав доступа не требуется.
+
+### Установка в ОС Linux
+
+Для примера используется Ubuntu 23.04. В других дистрибутивах процедура установки может отличаться.
 
 - создать пользователя, под которым будет работать служба:
 
-> sudo useradd –s /usr/sbin/nologin jds
+```
+sudo useradd –s /usr/sbin/nologin jds
+```
 
 - создать папку для журналов (логов), назначить ей владельца и права:
 
-> sudo mkdir /var/log/jds
->
-> sudo chown jds:jds /var/log/jds sudo chmod 744 /var/log/jds
->
-> В некоторых дистрибутивах при создании пользователя «jds» группа «jds» не создаётся.
->
-> Для просмотра группы по умолчанию служит команда «groups jds».
+```
+sudo mkdir /var/log/jds
+sudo chown jds:jds /var/log/jds
+sudo chmod 744 /var/log/jds
+```
+
+В некоторых дистрибутивах при создании пользователя «jds» группа «jds» не создаётся.
+
+Для просмотра группы по умолчанию служит команда «groups jds».
 
 - создать сервис-файл /etc/systemd/system/jds-doctor.service со следующим содержимым:
 
-> **\[Unit\]**
->
-> Description=JATOBA DATA SAFE Doctor
->
-> **\[Service\]**
->
-> WorkingDirectory=/opt/jds-doctor ExecStart=/opt/jds-doctor/JDS.PasDoctor Restart=always
->
-> RestartSec=10 SyslogIdentifier=jds-doctor User=jds
->
-> **\[Install\]**
->
-> WantedBy=multi-user.target
+```
+[Unit]
+Description=JATOBA DATA SAFE Doctor
+
+[Service]
+WorkingDirectory=/opt/jds-doctor ExecStart=/opt/jds-doctor/JDS.PasDoctor Restart=always
+RestartSec=10 SyslogIdentifier=jds-doctor User=jds
+
+[Install]
+WantedBy=multi-user.target
+```
 
 - разрешить и запустить сервис:
 
-> sudo systemctl daemon-reload sudo systemctl enable jds-doctor sudo systemctl start jds-doctor
+```
+sudo systemctl daemon-reload 
+sudo systemctl enable jds-doctor 
+sudo systemctl start jds-doctor
+```
 
-## Файлы журналов в Linux
+### Файлы журналов в Linux
 
-> По умолчанию служба сохраняет журналы (логи) в папке /var/log/jds/. Папка должна быть предварительно создана, должен быть изменен владелец и назначены права (см. секцию «Установка в Linux»).
+По умолчанию служба сохраняет журналы (логи) в папке /var/log/jds/. Папка должна быть предварительно создана, должен быть изменен владелец и назначены права (см. секцию «Установка в Linux»).
 
-# ПЕРЕЧЕНЬ СОКРАЩЕНИЙ
+## ПЕРЕЧЕНЬ СОКРАЩЕНИЙ
+
+| Сокращение | Расшифровка                                                                                                                                                                                                  |
+|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DDL        | Data Definition Language — язык описания данных                                                                                                                                                              |
+| DML        | Data Manipulation Language — язык манипулирования данными                                                                                                                                                    |
+| SQL        | Structured Query Language — язык структурированных запросов                                                                                                                                                  |
+| БД         | База данных                                                                                                                                                                                                  |
+| ОС         | Операционная система                                                                                                                                                                                         |
+| СУБД       | Система управления базами данных                                                                                                                                                                             |
+| ЭВМ        | Электронно-вычислительная машина                                                                                                                                                                             |
+| ЗПС        | Замкнутая программная среда в ОС Astra Linux Special Edition — это механизм авторизации на основании контроля целостности файлов с использованием проверки ЭЦП, реализованный в модуле ядра ОС disgsig_verif |
 
 <table>
 <colgroup>
@@ -10237,478 +10545,105 @@
 </colgroup>
 <thead>
 <tr>
-<th><blockquote>
+<th>
 <p>DDL</p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p>–</p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p>Data Definition Language — язык описания данных</p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><blockquote>
+<td>
 <p>DML</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>–</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Data Manipulation Language — язык манипулирования данными</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>SQL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>–</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Structured Query Language — язык структурированных запросов</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>БД</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>–</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>База данных</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>ОЗУ</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>–</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Оперативное запоминающее устройство</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>ОС</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>–</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Операционная система</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>СУБД</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>–</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Система управления базами данных</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>ЭВМ</p>
-</blockquote></td>
+</td>
 <td></td>
-<td><blockquote>
+<td>
 <p>Электронно-вычислительная машина</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
-<td><blockquote>
+<td>
 <p>ЗПС</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>–</p>
-</blockquote></td>
-<td style="text-align: left;"><blockquote>
+</td>
+<td style="text-align: left;">
 <p>Замкнутая программная среда в ОС Astra Linux Special Edition — это механизм авторизации на основании контроля целостности файлов с использованием проверки ЭЦП, реализованный в модуле ядра ОС</p>
 <p>disgsig_verif</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;"><blockquote>
-<p>Лист регистрации изменений</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2"><blockquote>
-<p>Изм.</p>
-</blockquote></td>
-<td colspan="4"><blockquote>
-<p>Номера листов (страниц)</p>
-</blockquote></td>
-<td rowspan="2" style="text-align: center;"><blockquote>
-<p>Всего листов (страниц) в документе</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
-<p>Номер документа</p>
-</blockquote></td>
-<td rowspan="2" style="text-align: center;"><blockquote>
-<p>Входящий номер сопроводите льного документа и</p>
-<p>дата</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
-<p>Подпись</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
-<p>Дата</p>
-</blockquote></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>измене нных</p>
-</blockquote></td>
-<td><blockquote>
-<p>замене нных</p>
-</blockquote></td>
-<td><blockquote>
-<p>новых</p>
-</blockquote></td>
-<td><blockquote>
-<p>аннулир ованных</p>
-</blockquote></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>

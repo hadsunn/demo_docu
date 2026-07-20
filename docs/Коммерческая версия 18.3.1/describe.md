@@ -1,5 +1,6 @@
 ---
 title: СУБД Jatoba. Описание применения
+sidebar_position: 10
 ---
 
 ## АННОТАЦИЯ
