@@ -56,10 +56,6 @@
     ],
     "autoSnippet.snippets": [
     {
-      "language": "mdx",
-      "snippet": "MDX auto title block"
-    },
-    {
       "language": "markdown",
       "snippet": "MD auto title block"
     }

@@ -1,13 +1,6 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
 import remarkFigureXref from './plugins/remark-figure-xref.js';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,14 +11,11 @@ const config = {
   markdown: {
     format: 'detect',
   },
-  plugins: [[require.resolve('docusaurus-lunr-search'), {
-      languages: ['en', 'ru'] // language codes
-    }]],
+  plugins: [],
   // plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
   // module.exports = {
   //   plugins: [require.resolve('docusaurus-lunr-search')],
 //  }
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
