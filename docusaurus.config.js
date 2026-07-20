@@ -4,18 +4,31 @@ import remarkFigureXref from './plugins/remark-figure-xref.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Postgres',
-  tagline: 'Postgresql',
+  title: 'DocsAsCode',
+  tagline: 'DaC',
   favicon: 'img/faviconV2.png',
 
   markdown: {
     format: 'detect',
   },
-  plugins: [],
+  plugins: [
+    [
+    require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        indexDocs: true,
+        indexPages: false,
+        docsRouteBasePath: 'docs',
+        language: ['en', 'ru'],
+        hashed: true, // хеширование индекса для кэширования
+        // searchResultLimits: 8, // макс. число результатов
+        // searchResultContextMaxLength: 50, // длина контекста
+      },
+    ]
+  ],
   // plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
   // module.exports = {
-  //   plugins: [require.resolve('docusaurus-lunr-search')],
-//  }
+    // plugins: [require.resolve('docusaurus-lunr-search')],
+    // },
   future: {
     //v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
