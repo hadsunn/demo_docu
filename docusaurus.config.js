@@ -17,7 +17,7 @@ const config = {
       {
         indexDocs: true,
         indexPages: false,
-        docsRouteBasePath: 'docs',
+        docsRouteBasePath: '/',
         language: ['en', 'ru'],
         hashed: true, // хеширование индекса для кэширования
         // searchResultLimits: 8, // макс. число результатов
