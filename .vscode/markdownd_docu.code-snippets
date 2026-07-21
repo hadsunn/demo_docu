@@ -58,10 +58,10 @@
     "scope": "md",
     "prefix": "wraptag",
     "body": [
-    "```sql",
+    "\n```sql",
     "$TM_SELECTED_TEXT",
     //"${TM_SELECTED_TEXT/^.{2}(.*)$/$1/}",
-    "```"
+    "```\n"
     ],
     "description": "Wrap selected text with a tag (asks for tag name) and leave an empty line"
   },
