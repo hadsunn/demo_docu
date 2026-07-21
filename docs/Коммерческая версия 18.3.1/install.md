@@ -80,7 +80,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -101,7 +101,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -122,7 +122,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -143,7 +143,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -164,7 +164,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -185,7 +185,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>25.0.5</p>
 </td>
@@ -206,7 +206,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>25.0.5</p>
 </td>
@@ -227,7 +227,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>24.0.2</p>
 </td>
@@ -248,7 +248,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>24.0.2</p>
 </td>
@@ -269,7 +269,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>27.1.1</p>
 </td>
@@ -290,7 +290,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>27.1.1</p>
 </td>
@@ -311,7 +311,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -332,7 +332,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>23.0.1</p>
 </td>
@@ -353,7 +353,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>24.0.2</p>
 </td>
@@ -374,7 +374,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>24.0.2</p>
 </td>
@@ -395,7 +395,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>24.0.2</p>
 </td>
@@ -416,7 +416,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>20.10.5</p>
 </td>
@@ -437,7 +437,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>25.0.7</p>
 </td>
@@ -458,7 +458,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -479,7 +479,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -500,7 +500,7 @@ sidebar_position: 20
 <td style="text-align: center;">
 <p>+</p>
 </td>
-<td style="text-align: center;">Х</td>
+<td style="text-align: center;">+</td>
 <td style="text-align: center;">
 <p>-</p>
 </td>
@@ -855,7 +855,7 @@ sidebar_position: 20
 <td><ul>
 <li><p>linux-x64</p></li>
 </ul></td>
-<td style="text-align: right;">Х</td>
+<td style="text-align: right;">+</td>
 </tr>
 <tr>
 <td>
