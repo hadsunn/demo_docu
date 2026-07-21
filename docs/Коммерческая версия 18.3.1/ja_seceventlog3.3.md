@@ -1,298 +1,90 @@
-<table>
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 58%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>Подп. и дата</p>
-</blockquote></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>Инв. № дубл.</p>
-</blockquote></td>
-<td></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>Взам. инв. №</p>
-</blockquote></td>
-<td></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>Подп. и дата</p>
-</blockquote></td>
-<td></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>Инв. № подл.</p>
-</blockquote></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>УТВЕРЖДЕН 643.72410666.00067-08 98 01-ЛУ</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ «JATOBA»</p>
-<p><strong>Руководство по настройке. Часть 30.</strong></p>
-<p><strong>Запись событий информационной безопасности.</strong></p>
-<p><strong>Компонент «ja_SecEventLog»</strong></p>
-</blockquote></td>
-</tr>
-<tr>
-<td style="text-align: center;"><blockquote>
-<p><strong>643.72410666.00067-08 98 01-30</strong></p>
-</blockquote></td>
-</tr>
-<tr>
-<td style="text-align: center;"><blockquote>
-<p>Листов 49</p>
-</blockquote></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>2026</p>
-</blockquote></td>
-</tr>
-<tr>
-<td style="text-align: right;">Литера О<sub>1</sub></td>
-</tr>
-</tbody>
-</table>
-
-# АННОТАЦИЯ
-
-> В документе приведены сведения, необходимые для установки и эксплуатации компонента «ja_SecEventLog» (далее по тексту – «компонент»), предназначенного для формирования событий безопасности СУБД в соответствии с ГОСТ-Р-59548-2022
->
-> «Национальный стандарт Российской Федерации. Защита информации. Регистрация событий безопасности. Требования к регистрируемой информации» и хранения их в отдельном каталоге.
->
-> Степени важности примечаний, применяемые в документе:
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image1.png" style="width:0.25138in;height:0.25138in" /> **Важная информация** – указания, требующие особого внимания
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.24862in" /> **Дополнительная информация** – указания, позволяющие упростить работу с изделием
->
-> Настоящее руководство предназначено для администраторов СУБД.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.24958in" /> Примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.
->
-> Для СУБД «Jatoba» версий ядра 5/6/18 используется версия компонента — 3.3.
+---
+title: Компонент «ja_SecEventLog»
+---
 
-# СОДЕРЖАНИЕ
+# Компонент «ja_SecEventLog». Запись событий информационной безопасности
 
-# 
+**АННОТАЦИЯ**
 
-1.  [Назначение компонента 5](#назначение-компонента)
+В документе приведены сведения, необходимые для установки и эксплуатации компонента «ja_SecEventLog» (далее по тексту – «компонент»), предназначенного для формирования событий безопасности СУБД в соответствии с ГОСТ-Р-59548-2022
 
-    1.  [Условия применения 5](#условия-применения)
+«Национальный стандарт Российской Федерации. Защита информации. Регистрация событий безопасности. Требования к регистрируемой информации» и хранения их в отдельном каталоге.
 
-    2.  [Ограничения 5](#ограничения)
+:::info Дополнительная информация
+Примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.
 
-2.  [Установка и настройка 6](#установка-и-настройка)
+Для СУБД «Jatoba» версий ядра 5/6/18 используется версия компонента — 3.3.
+:::
 
-    1.  [Установка в ОС GNU Linux 6](#установка-в-ос-gnu-linux)
+## НАЗНАЧЕНИЕ КОМПОНЕНТА
 
-    2.  [Настройка конфигурационного файла «postgresql.conf» для компонента «ja_SecEventLog» 7](#настройка-конфигурационного-файла-postgresql.conf-для-компонента)
+Компонент «ja_SecEventLog» предназначен для формирования событий безопасности СУБД в соответствии с ГОСТ-Р-59548-2022 «Национальный стандарт Российской Федерации. Защита информации. Регистрация событий безопасности. Требования к регистрируемой информации» и хранения их в отдельном каталоге.
 
-    3.  [Параметры регистрации событий безопасности компонентом «ja_SecEventLog» 10](#параметры-регистрации-событий-безопасности-компонентом)
+Компонент устанавливает собственные и независимые параметры регистрации событий и вырезает события безопасности из журнала аудита СУБД, складывая их в свой журнал.
 
-        1.  [ja_seceventlog.log 11](#ja_seceventlog.log)
+### Условия применения
 
-        2.  [ja_seceventlog.log_destination 12](#ja_seceventlog.log_destination)
+Компонент «ja_SecEventLog» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционной системы GNU/Linux.
 
-        3.  [ja_seceventlog.log_relation 12](#ja_seceventlog.log_relation)
+### Ограничения
 
-        4.  [ja_seceventlog.log_directory 13](#ja_seceventlog.log_directory)
+На данной стадии реализации отсутствует интеграция компонента «ja_SecEventLog» с разделом «Уведомления» компонента «Jatoba Data Safe».
 
-        5.  [ja_seceventlog.log_filename 13](#ja_seceventlog.log_filename)
+События журналов безопасности хранятся в формате JSON.
 
-        6.  [ja_seceventlog.log_rotation_size 14](#ja_seceventlog.log_rotation_size)
+При обновлении компонента «ja_SecEventLog» с версии 2.0 до 3.x необходимо создать фильтры формирования событий безопасности СУБД, так как это указано в разделе [4](#обновление-компонента).
 
-        7.  [ja_seceventlog.log_rotation_age 14](#ja_seceventlog.log_rotation_age)
+## УСТАНОВКА И НАСТРОЙКА
 
-        8.  [ja_seceventlog.code_desc_cache_limit 15](#ja_seceventlog.code_desc_cache_limit)
+Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в операционной системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).
 
-        9.  [ja_seceventlog.source_desc_cache_limit 15](#ja_seceventlog.source_desc_cache_limit)
+### Установка в ОС GNU Linux
 
-        10. [ja_seceventlog.log_parameter_max_size 16](#ja_seceventlog.log_parameter_max_size)
+Компонент возможно установить при первичной установке СУБД «Jatoba», либо доустановить.
 
-        11. [ja_seceventlog.log_destination_table 16](#ja_seceventlog.log_destination_table)
-
-        12. [ja_seceventlog.db_name 16](#ja_seceventlog.db_name)
-
-        13. [ja_seceventlog.jasel_syslog_facility 17](#ja_seceventlog.jasel_syslog_facility)
-
-        14. [ja_seceventlog.jasel_syslog_ident 18](#ja_seceventlog.jasel_syslog_ident)
-
-        15. [ja_seceventlog.jasel_syslog_sequence_numbers 18](#ja_seceventlog.jasel_syslog_sequence_numbers)
-
-        16. [ja_seceventlog.jasel_syslog_split_messages 18](#ja_seceventlog.jasel_syslog_split_messages)
-
-        17. [ja_seceventlog.maxage 19](#ja_seceventlog.maxage)
-
-        18. [ja_seceventlog.maxsize 20](#ja_seceventlog.maxsize)
-
-        19. [ja_seceventlog.log_size_soft_limit 20](#ja_seceventlog.log_size_soft_limit)
-
-        20. [ja_seceventlog.log_size_hard_limit 21](#ja_seceventlog.log_size_hard_limit)
-
-        21. [ja_seceventlog.max_queue_size 22](#ja_seceventlog.max_queue_size)
-
-        22. [ja_seceventlog.log_autoclose_minutes 23](#ja_seceventlog.log_autoclose_minutes)
-
-        23. [log_hostname 24](#log_hostname)
-
-        24. [log_connections 24](#log_connections)
-
-        25. [log_disconnections (boolean) 25](#log_disconnections-boolean)
-
-        26. [ja_seceventlog.max_filters 25](#ja_seceventlog.max_filters)
-
-    4.  [Установка расширения «ja_seceventlog» 25](#установка-расширения-ja_seceventlog)
-
-    5.  [Директория хранения журнала событий безопасности компонента «ja_SecEventLog» 28](#_bookmark37)
-
-3.  [Функциональные возможности компонента 30](#функциональные-возможности-компонента)
-
-    1.  [Фильтрация событий информационной безопасности 30](#фильтрация-событий-информационной-безопасности)
-
-        1.  [Функция создания фильтра (create_filter) 31](#функция-создания-фильтра-create_filter)
-
-        2.  [Функция отображения фильтров (show_filters) 32](#функция-отображения-фильтров-show_filters)
-
-        3.  [Функция удаления фильтра (drop_filter) 33](#функция-удаления-фильтра-drop_filter)
-
-        4.  [Функция удаления фильтра (drop_filter_id) 33](#функция-удаления-фильтра-drop_filter_id)
-
-        5.  [Функция удаления всех фильтров (reset_filters) 33](#функция-удаления-всех-фильтров-reset_filters)
-
-    2.  [Запись событий ИБ в таблицу БД 33](#запись-событий-иб-в-таблицу-бд)
-
-4.  [Обновление компонента 36](#обновление-компонента)
-
-    1.  [Обновление пакета компонента из репозитория 36](#обновление-пакета-компонента-из-репозитория)
-
-    2.  [Обновление расширения с использованием пакета установки 36](#обновление-расширения-с-использованием-пакета-установки)
-
-    3.  [Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.x 36](#настройка-расширения-ja_seceventlog-после-обновления-с-версии-2.0-до-3.x)
-
-        1.  [Параметр ja_seceventlog.log 37](#параметр-ja_seceventlog.log)
-
-        2.  [Параметр ja_seceventlog.max_filters 38](#параметр-ja_seceventlog.max_filters)
-
-        3.  [Параметр ja_seceventlog.log_connections 39](#параметр-ja_seceventlog.log_connections)
-
-        4.  [Параметр ja_seceventlog.log_disconnections 40](#параметр-ja_seceventlog.log_disconnections)
-
-        5.  [Параметр ja_seceventlog.log_catalog 40](#параметр-ja_seceventlog.log_catalog)
-
-        6.  [Параметр ja_seceventlog.log_relation 40](#параметр-ja_seceventlog.log_relation)
-
-        7.  [Параметр ja_seceventlog.role 41](#параметр-ja_seceventlog.role)
-
-        8.  [Параметр ja_seceventlog.log_parameter 42](#параметр-ja_seceventlog.log_parameter)
-
-        9.  [!Параметр ja_seceventlog.log_statement 43](#параметр-ja_seceventlog.log_statement)
-
-        10. [Параметр ja_seceventlog.log_statement_once 43](#параметр-ja_seceventlog.log_statement_once)
-
-        11. [Параметр ja_seceventlog.log_client 43](#параметр-ja_seceventlog.log_client)
-
-        12. [Параметр ja_seceventlog.log_level 44](#параметр-ja_seceventlog.log_level)
-
-        13. [Параметр ja_seceventlog.log_parameter_max_size 44](#параметр-ja_seceventlog.log_parameter_max_size)
-
-        14. [Параметр ja_seceventlog.log_rows 44](#параметр-ja_seceventlog.log_rows)
-
-5.  [Удаление компонента 45](#удаление-компонента)
-
-    1.  [Удаление расширения 45](#удаление-расширения)
-
-    2.  [Удаление пакета 45](#удаление-пакета)
-
-[Приложение 1 46](#приложение-1)
-
-[Перечень сокращений 48](#перечень-сокращений)
-
-# НАЗНАЧЕНИЕ КОМПОНЕНТА
-
-> Компонент «ja_SecEventLog» предназначен для формирования событий безопасности СУБД в соответствии с ГОСТ-Р-59548-2022 «Национальный стандарт Российской Федерации. Защита информации. Регистрация событий безопасности. Требования к регистрируемой информации» и хранения их в отдельном каталоге.
->
-> Компонент устанавливает собственные и независимые параметры регистрации событий и вырезает события безопасности из журнала аудита СУБД, складывая их в свой журнал.
-
-## Условия применения
-
-> Компонент «ja_SecEventLog» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционной системы GNU/Linux.
-
-## Ограничения
-
-> На данной стадии реализации отсутствует интеграция компонента «ja_SecEventLog» с разделом «Уведомления» компонента «Jatoba Data Safe».
->
-> События журналов безопасности хранятся в формате JSON.
->
-> При обновлении компонента «ja_SecEventLog» с версии 2.0 до 3.x необходимо создать фильтры формирования событий безопасности СУБД, так как это указано в разделе [4](#обновление-компонента).
-
-# УСТАНОВКА И НАСТРОЙКА
-
-> Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в операционной системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).
-
-## Установка в ОС GNU Linux
-
-> Компонент возможно установить при первичной установке СУБД «Jatoba», либо доустановить.
->
-> Установку компонента возможно провести двумя способами:
+Установку компонента возможно провести двумя способами:
 
 1)  установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;
 
 2)  установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.
 
-> Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:
+Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:
 
 - для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки, следующая:
 
-> apt-get install jatoba6-ja-seceventlog
+
+```
+apt-get install jatoba6-ja-seceventlog
+```
+
 
 - для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки, следующая:
 
-> yum install jatoba6-ja_seceventlog
->
-> Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.
+
+```
+yum install jatoba6-ja_seceventlog
+```
+
+
+Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.
 
 - ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:
 
-> apt-get install jatoba6-ja_seceventlog
->
-> Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba5-ja-seceventlog и т.п.
->
-> Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).
->
-> Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.
 
-## Настройка конфигурационного файла «postgresql.conf» для компонента
+```
+apt-get install jatoba6-ja_seceventlog
+```
 
-> **«ja_SecEventLog»**
->
-> Функциональные возможности компонента позволяют сохранять события безопасности:
+
+Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba5-ja-seceventlog и т.п.
+
+Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).
+
+Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.
+
+### Настройка конфигурационного файла «postgresql.conf» для компонента «ja_SecEventLog»
+
+Функциональные возможности компонента позволяют сохранять события безопасности:
 
 - в системный журнал операционной системы (SYSLOG);
 
@@ -302,123 +94,107 @@
 
 - параллельно в отдельный каталог и в таблицу БД.
 
-> Данные функциональные возможности выделяют ключевые, зависимые и дополнительные параметры компонента. Правильная установка которых напрямую влияет на работоспособность компонента.
->
-> Взаимосвязи ключевых и зависимых параметров компонента представлены на рисунке [2.1](#_bookmark6).
+Данные функциональные возможности выделяют ключевые, зависимые и дополнительные параметры компонента. Правильная установка которых напрямую влияет на работоспособность компонента.
 
-ja_secev en t log .log \_rot ation \_si ze
+Взаимосвязи ключевых и зависимых параметров компонента представлены на рисунке [2.1](#_bookmark6).
 
-> ja_secev en t log .log \_rot ation \_ag e
->
-> ja_secev en t log .m axag e
->
-> ja_secev en t log .jasel_syslo g_ident
->
-> ja_secev en t log .jasel_syslo g_sequence_num bers
->
-> ja_secev en t log .jasel_sp l it \_m essag es
->
-> Хр ан ен и е событи й И Б
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image21_.png)
 
-ja_secev en t log .m axsi ze
+<span id="_bookmark6" class="anchor"></span>Рисунок 2.1 – Схема зависимости параметров компонента
 
-ja_secev en t log .log \_d irec to ry
+Установка параметров компонента осуществляются или через конфигурационный файл «postgresql.conf», или после установки расширения SQL-командой, как описано в п.п. [2.3](#параметры-регистрации-событий-безопасности-компонентом).
 
-ja_secev en t log .db \_n am e
+Загрузка библиотеки компонента, для последующей установки расширения, выполняется в разделе «Shared Library Preloading» установкой параметра:
 
-t rue
 
-false
+```
+shared_preload_libraries = 'ja_seceventlog'
+```
 
-json log
 
-syslo g
+В случае конфигурирования компонента через конфигурационный файл СУБД, потребуется создать раздел «JATOBA LOGGING PARAMETERS \# ja_seceventlog» и установить параметры регистрации событий в СУБД компонента «ja_SecEventLog».
 
-off
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image22_.png)
 
-ja_secev en t log .log \_d est in at ion \_t ab le
+Рисунок 2.2 – Параметры регистрации событий безопасности компонентом «ja_SecEventLog»
 
-ja_secev en t log .log \_dest inat ion
+:::warning Важная информация
+Параметр	сохранения	событий	безопасности ja_seceventlog.log_directory рекомендуется закомментировать или не включать в конфигурационный файл при первоначальном конфигурировании для исключения ошибки. Поскольку расширение на данном этапе еще не установлено, каталог хранения может быть не создан и не установлены права на каталог. 
 
-В табли ц е БД
+```
+#ja_seceventlog.log_directory = 'audit_log'
+```
+:::
 
-Пар аллельн о
+Пример минимальных параметров компонента «ja_SecEventLog» в конфигурационном файле СУБД приведен в следующем листинге:
 
-В к аталог е (JSO N)
+```
+# JATOBA LOGGING PARAMETERS #ja_seceventlog #
+log_connections = on 
+log_disconnections = on 
+ja_seceventlog.log='ALL' 
+ja_seceventlog.db_name='test'
+ja_seceventlog.log_destination ='jsonlog' 
+ja_seceventlog.log_parameter_max_size=4096 
+ja_seceventlog.log_relation=on
+ja_seceventlog.log_destination_table = true
+```
 
-> ja_secev en t log .log \_si ze \_so ft \_lim it
->
-> ja_secev en t log .log \_si ze \_h ard \_lim it
->
-> <span id="_bookmark6" class="anchor"></span>Рисунок 2.1 – Схема зависимости параметров компонента
->
-> Установка параметров компонента осуществляются или через конфигурационный файл «postgresql.conf», или после установки расширения SQL-командой, как описано в п.п. [2.3](#параметры-регистрации-событий-безопасности-компонентом).
->
-> Загрузка библиотеки компонента, для последующей установки расширения, выполняется в разделе «Shared Library Preloading» установкой параметра:
->
-> shared_preload_libraries = 'ja_seceventlog'
->
-> В случае конфигурирования компонента через конфигурационный файл СУБД, потребуется создать раздел «JATOBA LOGGING PARAMETERS \# ja_seceventlog» и установить параметры регистрации событий в СУБД компонента «ja_SecEventLog».
->
-> Рисунок 2.2 – Параметры регистрации событий безопасности компонентом
->
-> «ja_SecEventLog»
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" />Параметр сохранения событий безопасности ja_seceventlog.log_directory рекомендуется закомментировать или не включать в конфигурационный файл при первоначальном конфигурировании для исключения ошибки. Поскольку расширение на данном этапе еще не установлено, каталог хранения может быть не создан и не установлены права на каталог. \#ja_seceventlog.log_directory = 'audit_log'
->
-> Пример минимальных параметров компонента «ja_SecEventLog» в
->
-> конфигурационном файле СУБД приведен в следующем листинге:
->
-> \#
->
-> \# JATOBA LOGGING PARAMETERS \#ja_seceventlog \#
->
-> log_connections = on log_disconnections = on ja_seceventlog.log='ALL' ja_seceventlog.db_name='test'
->
-> ja_seceventlog.log_destination ='jsonlog' ja_seceventlog.log_parameter_max_size=4096 ja_seceventlog.log_relation=on
->
-> ja_seceventlog.log_destination_table = true
->
-> Применение установленных параметров в конфигурационных файлах выполняется перезагрузкой службы СУБД:
->
-> systemctl restart jatoba-\<ver\> systemctl status jatoba-\<ver\>
+Применение установленных параметров в конфигурационных файлах выполняется перезагрузкой службы СУБД:
 
-## Параметры регистрации событий безопасности компонентом
 
-> **«ja_SecEventLog»**
->
-> После установки расширения компонента становится доступным вывод параметров
->
-> SQL-командой:
->
-> SELECT name,setting from pg_settings where name like '%seceventlog%';
->
-> Рисунок 2.3 – Вывод параметров компонента
->
-> Установить или изменить параметры компонента в СУБД возможно от имени и с правами привилегированного пользователя SQL-командой:
->
-> ALTER SYSTEM
->
-> Применяются параметры при перезагрузке СУБД.
+```
+systemctl restart jatoba-<ver> 
+systemctl status jatoba-<ver>
+```
 
-## ja_seceventlog.log
 
-> Параметр определяет какие классы операторов будут регистрироваться в журнале событий безопасности СУБД.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" />В зависимости от версии компонента имеются отличия в значениях параметров ja_seceventlog.log
->
-> Значения параметра для версии 3.x могут быть следующими:
+### Параметры регистрации событий безопасности компонентом «ja_SecEventLog»
+
+После установки расширения компонента становится доступным вывод параметров SQL-командой:
+
+
+```sql
+SELECT name,setting from pg_settings where name like '%seceventlog%';
+```
+
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image23_.png)
+
+Рисунок 2.3 – Вывод параметров компонента
+
+Установить или изменить параметры компонента в СУБД возможно от имени и с правами привилегированного пользователя SQL-командой:
+
+
+```
+ALTER SYSTEM
+```
+
+
+Применяются параметры при перезагрузке СУБД.
+
+#### ja_seceventlog.log
+
+Параметр определяет какие классы операторов будут регистрироваться в журнале событий безопасности СУБД.
+
+:::warning Важная информация
+В зависимости от версии компонента имеются отличия в значениях параметров ja_seceventlog.log
+:::
+
+Значения параметра для версии 3.x могут быть следующими:
 
 - NONE – события аудита не регистрируются в независимости от установленных фильтров (см. п.п. [3.1](#фильтрация-событий-информационной-безопасности));
 
 - ALL – регистрируются все события.
 
-> ja_seceventlog.log = 'ALL'
->
-> Тип параметра - string.
->
-> Значения параметра для версии 2.0 могут быть следующими:
+
+```
+ja_seceventlog.log = 'ALL'
+```
+
+
+Тип параметра - string.
+
+Значения параметра для версии 2.0 могут быть следующими:
 
 - READ – регистрируются SQL-команды SELECT, COPY в случае если источником является отношение или запрос;
 
@@ -434,13 +210,13 @@ ja_secev en t log .log \_dest inat ion
 
 - MISC_SET – регистрируются SQL-команды типа SET.
 
-> Создание фильтров событий в версии 3.x, соответствующих версии 2.0 приводится в п.п. [3.1.1](#функция-создания-фильтра-create_filter).
+Создание фильтров событий в версии 3.x, соответствующих версии 2.0 приводится в п.п. [3.1.1](#функция-создания-фильтра-create_filter).
 
-## ja_seceventlog.log_destination
+#### ja_seceventlog.log_destination
 
-> Параметр, определяет формат записи журнала событий безопасности СУБД.
->
-> Расширение ja_seceventlog поддерживает несколько методов для регистрации сообщений сервера, включая jsonlog (JSON). При настройке параметра необходимо выбрать один из следующих методов:
+Параметр, определяет формат записи журнала событий безопасности СУБД.
+
+Расширение ja_seceventlog поддерживает несколько методов для регистрации сообщений сервера, включая jsonlog (JSON). При настройке параметра необходимо выбрать один из следующих методов:
 
 - jsonlog – логирование в отдельный каталог в формате JSON;
 
@@ -448,71 +224,89 @@ ja_secev en t log .log \_dest inat ion
 
 - off – логирование в отдельный каталог (JSON) или в системный журнал операционной системы (SYSLOG) отключено.
 
-> ja_seceventlog.log_destination = 'jsonlog'
->
-> Тип параметра – string.
->
-> Значение по умолчанию – jsonlog. Параметр csvlog отключен.
->
-> Запись в журнальный файл или сервис SYSLOG будет производиться параллельно с записью в таблицу, если включен параметр [<u>ja_seceventlog.log_destination_table</u>](#ja_seceventlog.log_destination_table) (см. п.п [2.3.11](#ja_seceventlog.log_destination_table)).
 
-## ja_seceventlog.log_relation
+```
+ja_seceventlog.log_destination = 'jsonlog'
+```
 
-> Параметр указывает, должно ли ведение журнала аудита сессии создавать отдельную запись журнала для каждого отношения (TABLE, VIEW и т. д.), на которое ссылается оператор SELECT или DML.
->
-> ja_seceventlog.log_relation = on
->
-> Тип параметра – boolean. Значение по умолчанию – off.
 
-## ja_seceventlog.log_directory
+Тип параметра – string.
 
-> Параметр указывает на директорию хранения журнала событий безопасности, если установлен параметр [<u>ja_seceventlog.log_destination</u>](#ja_seceventlog.log_destination)='jsonlog' (см. п.п. [2.3.2](#ja_seceventlog.log_destination)).
->
-> ja_seceventlog.log_directory = '/audit_log'
->
-> Тип параметра – string.
->
-> Значение по умолчанию – LOG (/var/lib/jatoba/\<ver\>/data/log).
->
-> У служебного пользователя ОС, под которым запускается СУБД «Jatoba», должны быть все права на директорию.
+Значение по умолчанию – jsonlog. Параметр csvlog отключен.
 
-## ja_seceventlog.log_filename
+Запись в журнальный файл или сервис SYSLOG будет производиться параллельно с записью в таблицу, если включен параметр [<u>ja_seceventlog.log_destination_table</u>](#ja_seceventlog.log_destination_table) (см. п.п [2.3.11](#ja_seceventlog.log_destination_table)).
 
-> Параметр «ja_seceventlog.log_filename» определяет формат названия журнала событий безопасности, если установлен параметр [<u>ja_seceventlog.log_destination</u>](#ja_seceventlog.log_destination)='jsonlog' (см. п.п. [2.3.2](#ja_seceventlog.log_destination)).
->
-> В значении параметра допускается использовать только следующие спецификаторы:
->
-> − %Y;
->
-> − %m;
->
-> − %d;
->
-> − %H;
->
-> − %M;
->
-> − %S.
->
-> Порядок указания спецификаторов в параметре «ja_seceventlog.log_filename» не имеет значения.
->
-> ja_seceventlog.log_filename = 'audit-%Y-%m-%d\_%H%M%S'
->
-> Тип параметра – string.
->
-> Значение по умолчанию – audit-%Y-%m-%d\_%H%M%S.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.25in" />Если в значении параметра «ja_seceventlog.log_filename» пропущен один или несколько спецификаторов, то выдается сообщение о некорректном значении параметра в журнал СУБД:
->
-> The \*\*\* specifier is missing in the ja_seceventlog.log_filename parameter. The parameter must "
->
-> "contain the date and time specifiers %%Y, %%m, %%d,
->
-> %%H, %%M, %%S in any order.
+#### ja_seceventlog.log_relation
 
-## ja_seceventlog.log_rotation_size
+Параметр указывает, должно ли ведение журнала аудита сессии создавать отдельную запись журнала для каждого отношения (TABLE, VIEW и т. д.), на которое ссылается оператор SELECT или DML.
 
-> Параметр, определяющий ротацию журнала по достижению установленного размера:
+
+```
+ja_seceventlog.log_relation = on
+```
+
+
+Тип параметра – boolean. Значение по умолчанию – off.
+
+#### ja_seceventlog.log_directory
+
+Параметр указывает на директорию хранения журнала событий безопасности, если установлен параметр [<u>ja_seceventlog.log_destination</u>](#ja_seceventlog.log_destination)='jsonlog' (см. п.п. [2.3.2](#ja_seceventlog.log_destination)).
+
+
+```
+ja_seceventlog.log_directory = '/audit_log'
+```
+
+
+Тип параметра – string.
+
+Значение по умолчанию – LOG (/var/lib/jatoba/<ver>/data/log).
+
+У служебного пользователя ОС, под которым запускается СУБД «Jatoba», должны быть все права на директорию.
+
+#### ja_seceventlog.log_filename
+
+Параметр «ja_seceventlog.log_filename» определяет формат названия журнала событий безопасности, если установлен параметр [<u>ja_seceventlog.log_destination</u>](#ja_seceventlog.log_destination)='jsonlog' (см. п.п. [2.3.2](#ja_seceventlog.log_destination)).
+
+В значении параметра допускается использовать только следующие спецификаторы:
+
+− %Y;
+
+− %m;
+
+− %d;
+
+− %H;
+
+− %M;
+
+− %S.
+
+Порядок указания спецификаторов в параметре «ja_seceventlog.log_filename» не имеет значения.
+
+
+```
+ja_seceventlog.log_filename = 'audit-%Y-%m-%d_%H%M%S'
+```
+
+
+Тип параметра – string.
+
+Значение по умолчанию – audit-%Y-%m-%d_%H%M%S.
+
+:::info Дополнительная информация
+Если в значении параметра «ja_seceventlog.log_filename» пропущен один или несколько спецификаторов, то выдается сообщение о некорректном значении параметра в журнал СУБД:
+
+```
+The *** specifier is missing in the ja_seceventlog.log_filename parameter. The parameter must "
+"contain the date and time specifiers %%Y, %%m, %%d,
+%%H, %%M, %%S in any order.
+```
+:::
+
+#### ja_seceventlog.log_rotation_size
+
+Параметр, определяющий ротацию журнала по достижению установленного размера:
 
 - B – байт (bytes);
 
@@ -524,23 +318,29 @@ ja_secev en t log .log \_dest inat ion
 
 - TB – терабайт (terabytes).
 
-> ja_seceventlog.log_rotation_size = 0
->
-> Если это значение задаётся без единиц измерения, оно считается заданным в килобайтах.
->
-> При нулевом значении смена файлов по размеру не производится. Тип параметра - integer with unit.
->
-> Значение по умолчанию - 10MB.
->
-> Диапазон значений параметра от 0 до 9 216 TB.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image6.png" style="width:0.24025in;height:0.24022in" />Не рекомендуется ставить небольшие значения, ротация журналов в таком случае будет происходить не чаще чем 1 раз в секунду.
 
-## ja_seceventlog.log_rotation_age
+```
+ja_seceventlog.log_rotation_size = 0
+```
 
-> Параметр определяет максимальное время жизни отдельного журнального файла, по истечении которого создаётся новый файл.
->
-> Используются следующие единицы измерения:
+
+Если это значение задаётся без единиц измерения, оно считается заданным в килобайтах.
+
+При нулевом значении смена файлов по размеру не производится. Тип параметра - integer with unit.
+
+Значение по умолчанию - 10MB.
+
+Диапазон значений параметра от 0 до 9 216 TB.
+
+:::info Дополнительная информация
+Не рекомендуется ставить небольшие значения, ротация журналов в таком случае будет происходить не чаще чем 1 раз в секунду.
+:::
+
+#### ja_seceventlog.log_rotation_age
+
+Параметр определяет максимальное время жизни отдельного журнального файла, по истечении которого создаётся новый файл.
+
+Используются следующие единицы измерения:
 
 - min – минуты;
 
@@ -548,159 +348,192 @@ ja_secev en t log .log \_dest inat ion
 
 - d – дни.
 
-> Если это значение задаётся без единиц измерения, оно считается заданным в минутах.
->
-> ja_seceventlog.log_rotation_age = 0
->
-> Не рекомендуется ставить небольшие значения, ротация журналов в таком случае будет происходить не чаще чем 1 раз в секунду.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image7.png" style="width:0.24025in;height:0.24022in" />При нулевом значении смена файлов по времени не производится. Тип параметра - integer with unit.
->
-> Значение по умолчанию - 1440min.
+Если это значение задаётся без единиц измерения, оно считается заданным в минутах.
 
-## ja_seceventlog.code_desc_cache_limit
 
-> Служебный параметр, определяет максимальное количество значений описаний событий безопасности (из таблицы ja_seceventlog.secevent_code_desc), хранящихся в кеше.
->
-> ja_seceventlog.code_desc_cache_limit = 200
->
-> Тип параметра - integer Значение по умолчанию – 200.
->
-> Параметр ja_seceventlog.code_desc_cache_limit меняется только при изменении состава событий расширения. Не должен быть меньше количества записей в служебной таблице ja_seceventlog.secevent_code_desc.
+```
+ja_seceventlog.log_rotation_age = 0
+```
 
-## ja_seceventlog.source_desc_cache_limit
+:::info Дополнительная информация
+Не рекомендуется ставить небольшие значения, ротация журналов в таком случае будет происходить не чаще чем 1 раз в секунду.
+:::
 
-> Служебный параметр, определяет максимальное количество источников событий безопасности (из таблицы ja_seceventlog.secevent_source_desc), хранящихся в кеше.
->
-> ja_seceventlog.source_desc_cache_limit = 20
->
-> Тип параметра - integer. Значение по умолчанию – 20.
->
-> Параметр меняется только при изменении состава источников событий безопасности (компонент), регистрируемых расширением. Не должен быть меньше количества записей в служебной таблице ja_seceventlog.secevent_source_desc.
+При нулевом значении смена файлов по времени не производится.
 
-## ja_seceventlog.log_parameter_max_size
+Тип параметра - integer with unit
 
-> Параметр определяет максимальный размер параметров SQL-команды, которые будут записываться в атрибут "Parameter".
->
-> ja_seceventlog.log_parameter_max_size = 0
->
-> Тип параметра – integer. Значение по умолчанию – 4096.
->
-> Диапазон значений от 0 до 2^30-1.
->
-> Если значение равно 0 (по умолчанию), все параметры регистрируются независимо от длины.
->
-> Если длина значения параметра SQL-команды больше заданного значения
->
-> «ja_seceventlog.log_parameter_max_size», то вместо значения параметра, в атрибут "Parameter" будет записываться значение "long param suppressed".
+Значение по умолчанию - 1440min.
 
-## ja_seceventlog.log_destination_table
+#### ja_seceventlog.code_desc_cache_limit
 
-Параметр определяет запись событий информационной безопасности в таблицу
+Служебный параметр, определяет максимальное количество значений описаний событий безопасности (из таблицы ja_seceventlog.secevent_code_desc), хранящихся в кеше.
 
-ja_seceventlog.secevent_log и непосредственно связан с параметром
 
-> «ja_seceventlog.db_name».
->
-> ja_seceventlog.log_destination_table = true
->
-> Тип параметра – boolean. Значение по умолчанию – on.
+```
+ja_seceventlog.code_desc_cache_limit = 200
+```
 
-## ja_seceventlog.db_name
 
-> Параметр «ja_seceventlog.db_name» определяет БД, в которую должно быть установлено расширение.
->
-> ja_seceventlog.db_name = postgres
->
-> Тип параметра – string.
->
-> Значение по умолчанию – postgres.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image8.png" style="width:0.24159in;height:0.24155in" />Если значение этого параметра не будет совпадать с БД, в которую <u>устанавливается расширение</u>, при начальной установке, то расширение может работать некорректно. Это является ошибкой установки! Расширение ja_seceventlog должно быть установлено в ту же БД, что и значение параметра
->
-> «ja_seceventlog.db_name».
->
-> При включенном протоколировании в таблицу БД, то есть при установленном параметре [<u>ja_seceventlog.log_destination_table</u>](#ja_seceventlog.log_destination_table) = true, определяет имя базы данных, в которой содержится таблица.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" />Если изначально в конфигурационном файле postgresql.conf был установлен параметр записи событий безопасности в таблицу
->
-> «ja_seceventlog.log_destination_table» и не установлен параметр определяющий размещение таблицы в БД «ja_seceventlog.db_name», то по будет использована БД по умолчанию «postgres».
->
-> В последующем добавление либо изменение параметра
->
-> «ja_seceventlog.db_name» невозможно, так как это потребует переустановки расширения «ja_seceventlog».
+Тип параметра - integer Значение по умолчанию – 200.
 
-## ja_seceventlog.jasel_syslog_facility
+Параметр ja_seceventlog.code_desc_cache_limit меняется только при изменении состава событий расширения. Не должен быть меньше количества записей в служебной таблице ja_seceventlog.secevent_code_desc.
 
-> Параметр «ja_seceventlog.jasel_syslog_facility» является зависимым от параметра
->
-> «ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog».
->
-> Параметр используется для указания типа протоколируемой программы (facility). Используются допустимые значения LOCAL0, LOCAL1, LOCAL2, LOCAL3, LOCAL4, LOCAL5, LOCAL6, LOCAL7.
->
-> ja_seceventlog.jasel_syslog_facility = LOCAL0
->
-> Значение по умолчанию – LOCAL0.
+#### ja_seceventlog.source_desc_cache_limit
 
-## ja_seceventlog.jasel_syslog_ident
+Служебный параметр, определяет максимальное количество источников событий безопасности (из таблицы ja_seceventlog.secevent_source_desc), хранящихся в кеше.
 
-> Параметр «ja_seceventlog.jasel_syslog_ident» является зависимым от параметра
->
-> «[<u>ja_seceventlog.log_destination</u>](#ja_seceventlog.log_destination)» (см. п.п. 2.3.2), который определяет формат записи событий безопасности, если установлено значение «syslog».
->
-> Параметр «ja_seceventlog.jasel_syslog_ident» задаёт имя программы, которое будет использоваться для идентификации сообщений.
->
-> ja_seceventlog.jasel_syslog_ident = jatoba
->
-> Тип параметра – string.
->
-> Значение по умолчанию – jatoba.
 
-## ja_seceventlog.jasel_syslog_sequence_numbers
+```
+ja_seceventlog.source_desc_cache_limit = 20
+```
 
-> Параметр «ja_seceventlog.jasel_syslog_sequence_numbers» является зависимым от параметра «ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog». При данном значении параметр
->
-> «ja_seceventlog.jasel_syslog_sequence_numbers» включен по умолчанию.
->
-> Параметр «ja_seceventlog.jasel_syslog_sequence_numbers» при выводе событий безопасности в системный журнал операционной системы (SYSLOG) последовательно увеличивает номера сообщений
->
-> Тип параметра – boolean. Значение по умолчанию – false.
 
-## ja_seceventlog.jasel_syslog_split_messages
+Тип параметра - integer. Значение по умолчанию – 20.
 
-> Параметр «ja_seceventlog.jasel_syslog_split_messages» является зависимым от параметра «[<u>ja_seceventlog.log_destination</u>](#ja_seceventlog.log_destination)» (см. п.п. 2.3.2), который определяет формат записи событий безопасности, если установлено значение «syslog».
->
-> Когда параметр «ja_seceventlog.jasel_syslog_split_messages» имеет значение «syslog», т.е. активен вывод в системный журнал операционной системы (SYSLOG) событий
->
-> безопасности, этот параметр определяет, как будут доставляться сообщения.
->
-> Если он включён (по умолчанию), сообщения разделяются по строкам, а длинные строки разбиваются на строки не длиннее 1024 байт, что составляет типичное ограничение размера для традиционных реализаций syslog.
->
-> ja_seceventlog.jasel_syslog_split_messages = on
->
-> Тип параметра – boolean. Значение по умолчанию – true.
+Параметр меняется только при изменении состава источников событий безопасности (компонент), регистрируемых расширением. Не должен быть меньше количества записей в служебной таблице ja_seceventlog.secevent_source_desc.
 
-## ja_seceventlog.maxage
+#### ja_seceventlog.log_parameter_max_size
 
-> Параметр определяет количество дней, в течение которых будут храниться журналы событий безопасности СУБД в отдельном каталоге.
->
-> Если значение равно «0», то удаление файлов по этому параметру производиться не
->
-> будет.
->
-> ja_seceventlog.maxage = 30
->
-> Тип параметра – integer.
->
-> Значение по умолчанию – 30 дней.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image1.png" style="width:0.25139in;height:0.25139in" />Единицу измерения указывать нельзя.
+Параметр определяет максимальный размер параметров SQL-команды, которые будут записываться в атрибут "Parameter".
 
-## ja_seceventlog.maxsize
 
-> Параметр «ja_seceventlog.maxsize» определяет объем дисковой памяти, выделенной администратором для хранения журналов событий безопасности СУБД в отдельном каталоге.
->
-> Параметр устанавливается в следующих единицах измерения:
+```
+ja_seceventlog.log_parameter_max_size = 0
+```
+
+
+Тип параметра – integer. Значение по умолчанию – 4096.
+
+Диапазон значений от 0 до 2^30-1.
+
+Если значение равно 0 (по умолчанию), все параметры регистрируются независимо от длины.
+
+Если длина значения параметра SQL-команды больше заданного значения «ja_seceventlog.log_parameter_max_size», то вместо значения параметра, в атрибут "Parameter" будет записываться значение "long param suppressed".
+
+#### ja_seceventlog.log_destination_table
+
+Параметр определяет запись событий информационной безопасности в таблицу ja_seceventlog.secevent_log и непосредственно связан с параметром «ja_seceventlog.db_name».
+
+
+```
+ja_seceventlog.log_destination_table = true
+```
+
+
+Тип параметра – boolean. Значение по умолчанию – on.
+
+#### ja_seceventlog.db_name
+
+Параметр «ja_seceventlog.db_name» определяет БД, в которую должно быть установлено расширение.
+
+
+```
+ja_seceventlog.db_name = postgres
+```
+
+
+Тип параметра – string.
+
+Значение по умолчанию – postgres.
+
+:::warning Важная информация
+Если значение этого параметра не будет совпадать с БД, в которую устанавливается расширение, при начальной установке, то расширение может работать некорректно. Это является ошибкой установки! Расширение ja_seceventlog должно быть установлено в ту же БД, что и значение параметра
+«ja_seceventlog.db_name».
+:::
+
+При включенном протоколировании в таблицу БД, то есть при установленном параметре [<u>ja_seceventlog.log_destination_table</u>](#ja_seceventlog.log_destination_table) = true, определяет имя базы данных, в которой содержится таблица.
+
+:::warning Важная информация
+Если изначально в конфигурационном файле postgresql.conf был установлен параметр	записи	событий	безопасности	в	таблицу «ja_seceventlog.log_destination_table» и не установлен параметр определяющий размещение таблицы в БД «ja_seceventlog.db_name», то по будет использована БД по умолчанию «postgres».
+В    последующем    добавление    либо    изменение    параметра «ja_seceventlog.db_name» невозможно, так как это потребует переустановки расширения «ja_seceventlog».
+:::
+
+#### ja_seceventlog.jasel_syslog_facility
+
+Параметр «ja_seceventlog.jasel_syslog_facility» является зависимым от параметра
+
+«ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog».
+
+Параметр используется для указания типа протоколируемой программы (facility). Используются допустимые значения LOCAL0, LOCAL1, LOCAL2, LOCAL3, LOCAL4, LOCAL5, LOCAL6, LOCAL7.
+
+
+```
+ja_seceventlog.jasel_syslog_facility = LOCAL0
+```
+
+
+Значение по умолчанию – LOCAL0.
+
+#### ja_seceventlog.jasel_syslog_ident
+
+Параметр «ja_seceventlog.jasel_syslog_ident» является зависимым от параметра
+
+«[<u>ja_seceventlog.log_destination</u>](#ja_seceventlog.log_destination)» (см. п.п. 2.3.2), который определяет формат записи событий безопасности, если установлено значение «syslog».
+
+Параметр «ja_seceventlog.jasel_syslog_ident» задаёт имя программы, которое будет использоваться для идентификации сообщений.
+
+
+```
+ja_seceventlog.jasel_syslog_ident = jatoba
+```
+
+
+Тип параметра – string.
+
+Значение по умолчанию – jatoba.
+
+#### ja_seceventlog.jasel_syslog_sequence_numbers
+
+Параметр «ja_seceventlog.jasel_syslog_sequence_numbers» является зависимым от параметра «ja_seceventlog.log_destination», который определяет формат записи событий безопасности, если установлено значение «syslog». При данном значении параметр «ja_seceventlog.jasel_syslog_sequence_numbers» включен по умолчанию.
+
+Параметр «ja_seceventlog.jasel_syslog_sequence_numbers» при выводе событий безопасности в системный журнал операционной системы (SYSLOG) последовательно увеличивает номера сообщений
+
+Тип параметра – boolean. 
+
+Значение по умолчанию – false.
+
+#### ja_seceventlog.jasel_syslog_split_messages
+
+Параметр «ja_seceventlog.jasel_syslog_split_messages» является зависимым от параметра «[<u>ja_seceventlog.log_destination</u>](#ja_seceventlog.log_destination)» (см. п.п. 2.3.2), который определяет формат записи событий безопасности, если установлено значение «syslog».
+
+Когда параметр «ja_seceventlog.jasel_syslog_split_messages» имеет значение «syslog», т.е. активен вывод в системный журнал операционной системы (SYSLOG) событий безопасности, этот параметр определяет, как будут доставляться сообщения.
+
+Если он включён (по умолчанию), сообщения разделяются по строкам, а длинные строки разбиваются на строки не длиннее 1024 байт, что составляет типичное ограничение размера для традиционных реализаций syslog.
+
+
+```
+ja_seceventlog.jasel_syslog_split_messages = on
+```
+
+
+Тип параметра – boolean. Значение по умолчанию – true.
+
+#### ja_seceventlog.maxage
+
+Параметр определяет количество дней, в течение которых будут храниться журналы событий безопасности СУБД в отдельном каталоге.
+
+Если значение равно «0», то удаление файлов по этому параметру производиться не будет.
+
+
+```
+ja_seceventlog.maxage = 30
+```
+
+
+Тип параметра – integer.
+
+Значение по умолчанию – 30 дней.
+
+:::warning Важная информация
+Единицу измерения указывать нельзя.
+:::
+
+#### ja_seceventlog.maxsize
+
+Параметр «ja_seceventlog.maxsize» определяет объем дисковой памяти, выделенной администратором для хранения журналов событий безопасности СУБД в отдельном каталоге.
+
+Параметр устанавливается в следующих единицах измерения:
 
 - B – байт (bytes);
 
@@ -712,177 +545,234 @@ ja_seceventlog.secevent_log и непосредственно связан с п
 
 - TB – терабайт (terabytes).
 
-> ja_seceventlog.maxsize = 10MB
->
-> Тип параметра - integer with unit. Значение по умолчанию – 10MB.
->
-> Если значение равно «0», то не будут выполняться проверки на программные (soft) лимиты по параметру «[<u>ja_seceventlog.log_size_soft_limit</u>](#ja_seceventlog.log_size_soft_limit)» (см. п.п. [2.3.19](#ja_seceventlog.log_size_soft_limit)) и аппаратные (hard) лимиты по параметру «[<u>ja_seceventlog.log_size_hard_limit</u>](#ja_seceventlog.log_size_hard_limit)» (см. п.п. [2.3.20](#ja_seceventlog.log_size_hard_limit)).
->
-> Если значение не равно «0», то ротация по параметру «ja_seceventlog.maxsize» будет осуществляться по правилам, описанным в параметрах
+
+```
+ja_seceventlog.maxsize = 10MB
+```
+
+
+Тип параметра - integer with unit. Значение по умолчанию – 10MB.
+
+Если значение равно «0», то не будут выполняться проверки на программные (soft) лимиты по параметру «[<u>ja_seceventlog.log_size_soft_limit</u>](#ja_seceventlog.log_size_soft_limit)» (см. п.п. [2.3.19](#ja_seceventlog.log_size_soft_limit)) и аппаратные (hard) лимиты по параметру «[<u>ja_seceventlog.log_size_hard_limit</u>](#ja_seceventlog.log_size_hard_limit)» (см. п.п. [2.3.20](#ja_seceventlog.log_size_hard_limit)).
+
+Если значение не равно «0», то ротация по параметру «ja_seceventlog.maxsize» будет осуществляться по правилам, описанным в параметрах
 
 - «[ja_seceventlog.log_size_soft_limit](#ja_seceventlog.log_size_soft_limit)» (см. п.п. [2.3.19](#ja_seceventlog.log_size_soft_limit));
 
 - «[ja_seceventlog.log_size_hard_limit](#ja_seceventlog.log_size_hard_limit)» (см. п.п. [2.3.20](#ja_seceventlog.log_size_hard_limit)).
 
-## ja_seceventlog.log_size_soft_limit
+#### ja_seceventlog.log_size_soft_limit
 
-> Параметр «ja_seceventlog.log_size_soft_limit» является зависимым от параметра
->
-> «ja_seceventlog.maxsize» который устанавливает размер каталога для хранения журналов событий безопасности СУБД.
->
-> Параметр «ja_seceventlog.log_size_soft_limit» определяет процент заполнения журналами, от установленного размера каталога в параметре «ja_seceventlog.maxsize», при
->
-> достижении которого будет записано соответствующее сообщение в журнал событий безопасности СУБД в отдельном каталоге.
->
-> ja_seceventlog.log_size_soft_limit = 80
->
-> Тип параметра – integer. Значение по умолчанию – 0.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" />В значении параметра нельзя указывать символ %
->
-> Если значение равно «0», то проверка выполняться не будет.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image4.png" style="width:0.24159in;height:0.24155in" />Значение параметра должно быть не более 80%. Данное значение является оптимальным.
->
-> При большем значении присваивается значение 80%.
+Параметр «ja_seceventlog.log_size_soft_limit» является зависимым от параметра
 
-## ja_seceventlog.log_size_hard_limit
+«ja_seceventlog.maxsize» который устанавливает размер каталога для хранения журналов событий безопасности СУБД.
 
-> Параметр «ja_seceventlog.log_size_hard_limit» является зависимым параметром от параметра «[<u>ja_seceventlog.maxsize</u>](#ja_seceventlog.maxsize)» (см. п.п. [2.3.18](#ja_seceventlog.maxsize)), который определяет объем дисковой памяти, выделенной администратором для хранения журналов событий безопасности СУБД в отдельном каталоге.
->
-> Параметр «ja_seceventlog.log_size_hard_limit» определяет процент заполнения объема выделенного каталога и при достижении порогового значения удаляет старый файл журнала событий безопасности. О выполненной операции выполняется делается запись в актуальном файле журналов событий безопасности СУБД
->
-> ja_seceventlog.log_size_hard_limit = 0%
->
-> Тип параметра – integer. Значение по умолчанию – 0.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image9.png" style="width:0.24159in;height:0.24155in" />В значении параметра нельзя указывать символ %
->
-> Если значение равно «0», то не будут выполняться проверки на аппаратный (hard) лимит.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image8.png" style="width:0.24159in;height:0.24155in" />Значение параметра «log_size_hard_limit» должно быть больше значения параметра log_size_soft_limit минимум на 10%.
->
-> Максимальное значение параметра не должно превышать 90%
->
-> Если указано значение параметра больше 90%, то значению параметра будет присвоено значение 90%.
+Параметр «ja_seceventlog.log_size_soft_limit» определяет процент заполнения журналами, от установленного размера каталога в параметре «ja_seceventlog.maxsize», при
 
-## ja_seceventlog.max_queue_size
+достижении которого будет записано соответствующее сообщение в журнал событий безопасности СУБД в отдельном каталоге.
 
-> Параметр определяет, сколько блоков по 2048 байт выделяются в «Shared Memory» для очереди ожидания записи событий безопасности в служебную таблицу
->
-> «ja_seceventlog.secevent_log» в базу данных, заданную параметров [<u>ja_seceventlog.db_name</u>](#ja_seceventlog.db_name) (см. п.п. [2.3.12](#ja_seceventlog.db_name)).
->
-> Размер данной очереди событий регулируется параметром ja_seceventlog.max_queue_size.
->
-> Чем больше данный параметр, тем больше рабочих процессов может одновременно записать туда сообщения без значительного влияния на производительность этих рабочих процессов.
->
-> ja_seceventlog.max_queue_size = 100000
->
-> Тип параметра – integer.
->
-> Допустимые значения от 1000 до 10000000. Значение по умолчанию – 100000.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image1.png" style="width:0.25138in;height:0.25044in" />Максимальное устанавливаемое значение параметра 10000000, что грубо соответствует размеру очереди событий в ОЗУ 19Гб (количество элементов в очереди \* 2 Кб). В случае если комплекс технических средств не располагает доступным объемом ОЗУ выполняется остановка СУБД с выводом сообщения:
->
-> FATAL: could not map anonymous shared memory: Cannot allocate memory
->
-> LOG: database system is shut down
->
-> Ниже содержатся рекомендации по установке значения параметра max_queue_size в зависимости от нагрузки СУБД:
+
+```
+ja_seceventlog.log_size_soft_limit = 80
+```
+
+
+Тип параметра – integer. 
+
+Значение по умолчанию – 0.
+
+:::warning Важная информация
+В значении параметра нельзя указывать символ %
+:::
+
+Если значение равно «0», то проверка выполняться не будет.
+
+:::warning Важная информация
+Значение параметра должно быть не более 80%. Данное значение является оптимальным.
+
+При большем значении присваивается значение 80%.
+:::
+
+#### ja_seceventlog.log_size_hard_limit
+
+Параметр «ja_seceventlog.log_size_hard_limit» является зависимым параметром от параметра «[<u>ja_seceventlog.maxsize</u>](#ja_seceventlog.maxsize)» (см. п.п. [2.3.18](#ja_seceventlog.maxsize)), который определяет объем дисковой памяти, выделенной администратором для хранения журналов событий безопасности СУБД в отдельном каталоге.
+
+Параметр «ja_seceventlog.log_size_hard_limit» определяет процент заполнения объема выделенного каталога и при достижении порогового значения удаляет старый файл журнала событий безопасности. О выполненной операции выполняется делается запись в актуальном файле журналов событий безопасности СУБД
+
+
+```
+ja_seceventlog.log_size_hard_limit = 0%
+```
+
+
+Тип параметра – integer. Значение по умолчанию – 0.
+
+:::warning Важная информация
+В значении параметра нельзя указывать символ %
+:::
+
+Если значение равно «0», то не будут выполняться проверки на аппаратный (hard) лимит.
+
+:::warning Важная информация
+Значение параметра «log_size_hard_limit» должно быть больше значения параметра log_size_soft_limit минимум на 10%.
+
+Максимальное значение параметра не должно превышать 90%
+
+Если указано значение параметра больше 90%, то значению параметра будет присвоено значение 90%.
+:::
+
+#### ja_seceventlog.max_queue_size
+
+Параметр определяет, сколько блоков по 2048 байт выделяются в «Shared Memory» для очереди ожидания записи событий безопасности в служебную таблицу
+
+«ja_seceventlog.secevent_log» в базу данных, заданную параметров [<u>ja_seceventlog.db_name</u>](#ja_seceventlog.db_name) (см. п.п. [2.3.12](#ja_seceventlog.db_name)).
+
+Размер данной очереди событий регулируется параметром ja_seceventlog.max_queue_size.
+
+Чем больше данный параметр, тем больше рабочих процессов может одновременно записать туда сообщения без значительного влияния на производительность этих рабочих процессов.
+
+
+```
+ja_seceventlog.max_queue_size = 100000
+```
+
+
+Тип параметра – integer.
+
+Допустимые значения от 1000 до 10000000. 
+
+Значение по умолчанию – 100000.
+
+:::warning Важная информация
+Максимальное устанавливаемое значение параметра 10000000, что грубо соответствует размеру очереди событий в ОЗУ 19Гб (количество элементов в очереди * 2 Кб). В случае если комплекс технических средств не располагает доступным объемом ОЗУ выполняется остановка СУБД с выводом сообщения:
+
+```
+FATAL: could not map anonymous shared memory: Cannot allocate memory
+LOG: database system is shut down
+```
+:::
+
+Ниже содержатся рекомендации по установке значения параметра max_queue_size в зависимости от нагрузки СУБД:
 
 - нагрузка «чтение/запись»:
 
-  - при 100 одновременных подключений и суммарном количестве запросов порядка 3000 TPS рекомендуем значение параметра max_queue_size \> = 100000. Объем выделяемой буферизуемой оперативной памяти 200 МБ;
+  - при 100 одновременных подключений и суммарном количестве запросов порядка 3000 TPS рекомендуем значение параметра max_queue_size > = 100000. Объем выделяемой буферизуемой оперативной памяти 200 МБ;
 
-  - при 50 одновременных подключений и суммарном количестве запросов порядка 2500 TPS рекомендуем значение параметра max_queue_size \> = 50000. Объем выделяемой буферизуемой оперативной памяти 100 МБ;
+  - при 50 одновременных подключений и суммарном количестве запросов порядка 2500 TPS рекомендуем значение параметра max_queue_size > = 50000. Объем выделяемой буферизуемой оперативной памяти 100 МБ;
 
-  - при 10 одновременных подключений и суммарном количестве запросов порядка 2000 TPS рекомендуем значение параметра max_queue_size \> = 10000. Объем выделяемой буферизуемой оперативной памяти 20 МБ.
+  - при 10 одновременных подключений и суммарном количестве запросов порядка 2000 TPS рекомендуем значение параметра max_queue_size > = 10000. Объем выделяемой буферизуемой оперативной памяти 20 МБ.
 
 - нагрузка «чтение»:
 
-  - при 100 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size \> = 4000000. Объем выделяемой буферизуемой оперативной памяти 8 ГБ;
+  - при 100 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size > = 4000000. Объем выделяемой буферизуемой оперативной памяти 8 ГБ;
 
-  - при 50 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size \> = 3000000. Объем выделяемой буферизуемой оперативной памяти 6 ГБ;
+  - при 50 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size > = 3000000. Объем выделяемой буферизуемой оперативной памяти 6 ГБ;
 
-  - при 10 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size \> = 2000000. Объем выделяемой буферизуемой оперативной памяти 4 ГБ
+  - при 10 одновременных подключений и суммарном количестве запросов 20000 TPS рекомендуем значение параметра max_queue_size > = 2000000. Объем выделяемой буферизуемой оперативной памяти 4 ГБ
 
-## ja_seceventlog.log_autoclose_minutes
+#### ja_seceventlog.log_autoclose_minutes
 
-> Параметр «ja_seceventlog.log_autoclose_minutes» определяет количество минут бездействия сервера, по достижению которых произойдет автоматическое закрытие журнального файла.
->
-> ja_seceventlog.log_autoclose_minutes = 0
->
-> Значение по умолчанию – 0. Тип параметра – integer.
->
-> При установленном значении параметра «0» – автоматическое закрытие журнального файла не производится.
+Параметр «ja_seceventlog.log_autoclose_minutes» определяет количество минут бездействия сервера, по достижению которых произойдет автоматическое закрытие журнального файла.
 
-## log_hostname
 
-> Параметр «log_hostname» принадлежит СУБД «Jatoba» и включает протоколирование имени узла подключаемого пользователя в атрибуте "remote_host" записи события безопасности.
->
-> Параметр устанавливается в конфигурационном файле «postgresql.conf»:
->
-> log_hostname=on
->
-> Тип параметра - boolean. Значение по умолчанию – off.
->
-> Условием получение имени узла подключаемого пользователя является установка параметра и возможность получения имени узла через DNS.
->
-> В случае установки параметра log_hostname=off или невозможности получения имени узла через DNS, в атрибут "remote_host" будет записываться IP-адрес узла подключаемого пользователя.
->
-> Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».
+```
+ja_seceventlog.log_autoclose_minutes = 0
+```
 
-## log_connections
 
-> Параметр включает протоколирование всех попыток подключения к серверу, в том числе успешного завершения как аутентификации, так и авторизации клиентов.
->
-> Он параметр принадлежит СУБД «Jatoba», но расширение «ja_seceventlog» проверяет его значение для регистрации событий входа.
->
-> Устанавливается в конфигурационном файле «postgresql.conf»:
->
-> log_connections = on
->
-> Тип параметра - boolean. Значение по умолчанию – off.
->
-> Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».
+Значение по умолчанию – 0. Тип параметра – integer.
 
-## log_disconnections (boolean)
+При установленном значении параметра «0» – автоматическое закрытие журнального файла не производится.
 
-> Параметр включает протоколирование завершения сеанса.
->
-> Он параметр принадлежит СУБД «Jatoba», но расширение «ja_seceventlog» проверяет его значение для регистрации событий завершения сеанса.
->
-> Устанавливается в конфигурационном файле «postgresql.conf»:
->
-> log_disconnections = on
->
-> Тип параметра - boolean. Значение по умолчанию – off.
->
-> Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».
+#### log_hostname
 
-## ja_seceventlog.max_filters
+Параметр «log_hostname» принадлежит СУБД «Jatoba» и включает протоколирование имени узла подключаемого пользователя в атрибуте "remote_host" записи события безопасности.
 
-> Параметр определяет максимальное количество применяемых фильтров.
->
-> ja_seceventlog.max_filters = 128
->
-> Допустимые границы значения данного значения: от 6 до 1024. Тип параметра – integer.
->
-> Значение по умолчанию – 128.
->
-> Если в служебной таблице фильтров будет больше, чем значение этого параметра, то будут использоваться только первые max_filters фильтров по порядку возрастания их идентификаторов в таблице filters.
+Параметр устанавливается в конфигурационном файле «postgresql.conf»:
 
-## Установка расширения «ja_seceventlog»
 
-> Войти в СУБД от имени и с правами пользователя «SUPERUSER», выполнить SQL-команду:
->
-> CREATE EXTENSION ja_seceventlog;
+```
+log_hostname=on
+```
 
-<img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image10.png" style="width:7.03192in;height:1.05219in" />
 
-> Рисунок 2.4 – Установка расширения «ja_seceventlog»
->
-> В результате будет создана одноименная схема данных и служебные таблицы:
+Тип параметра - boolean. Значение по умолчанию – off.
+
+Условием получение имени узла подключаемого пользователя является установка параметра и возможность получения имени узла через DNS.
+
+В случае установки параметра log_hostname=off или невозможности получения имени узла через DNS, в атрибут "remote_host" будет записываться IP-адрес узла подключаемого пользователя.
+
+Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».
+
+#### log_connections
+
+Параметр включает протоколирование всех попыток подключения к серверу, в том числе успешного завершения как аутентификации, так и авторизации клиентов.
+
+Он параметр принадлежит СУБД «Jatoba», но расширение «ja_seceventlog» проверяет его значение для регистрации событий входа.
+
+Устанавливается в конфигурационном файле «postgresql.conf»:
+
+
+```
+log_connections = on
+```
+
+
+Тип параметра - boolean. Значение по умолчанию – off.
+
+Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».
+
+#### log_disconnections (boolean)
+
+Параметр включает протоколирование завершения сеанса.
+
+Он параметр принадлежит СУБД «Jatoba», но расширение «ja_seceventlog» проверяет его значение для регистрации событий завершения сеанса.
+
+Устанавливается в конфигурационном файле «postgresql.conf»:
+
+
+```
+log_disconnections = on
+```
+
+
+Тип параметра - boolean. Значение по умолчанию – off.
+
+Изменить его можно только перед запуском СУБД, от имени и с правами привилегированного пользователя или от имени и справами пользователя с соответствующим правом «SET».
+
+#### ja_seceventlog.max_filters
+
+Параметр определяет максимальное количество применяемых фильтров.
+
+
+```
+ja_seceventlog.max_filters = 128
+```
+
+
+Допустимые границы значения данного значения: от 6 до 1024. 
+
+Тип параметра – integer.
+
+Значение по умолчанию – 128.
+
+Если в служебной таблице фильтров будет больше, чем значение этого параметра, то будут использоваться только первые max_filters фильтров по порядку возрастания их идентификаторов в таблице filters.
+
+### Установка расширения «ja_seceventlog»
+
+Войти в СУБД от имени и с правами пользователя «SUPERUSER», выполнить SQL-команду:
+
+
+```sql
+CREATE EXTENSION ja_seceventlog;
+```
+
+
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image10.png)
+
+Рисунок 2.4 – Установка расширения «ja_seceventlog»
+
+В результате будет создана одноименная схема данных и служебные таблицы:
 
 - ja_seceventlog.secevent_code_desc, содержащую спецификацию событий безопасности СУБД (см. рисунок [2.5](#_bookmark35));
 
@@ -890,98 +780,78 @@ ja_seceventlog.secevent_log и непосредственно связан с п
 
 - secevent_log – таблица временного хранения событий безопасности.
 
-> 27
->
-> 643.72410666.00067-08 98 01-30
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image11.jpeg)
 
-<img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image11.jpeg" style="width:10.65476in;height:1.67062in" />
+<span id="_bookmark35" class="anchor"></span>Рисунок 2.5 – Таблица «ja_seceventlog.secevent_code_desc»
 
-> <span id="_bookmark35" class="anchor"></span>Рисунок 2.5 – Таблица «ja_seceventlog.secevent_code_desc»
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image12.jpeg)
 
-<img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image12.jpeg" style="width:10.66322in;height:1.65687in" />
+<span id="_bookmark36" class="anchor"></span>Рисунок 2.6 – Таблица «ja_seceventlog.secevent_source_desc»
 
-> <span id="_bookmark36" class="anchor"></span>Рисунок 2.6 – Таблица «ja_seceventlog.secevent_source_desc»
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>№ изменения:</p>
-</blockquote></th>
-<th><blockquote>
-<p>Подпись отв. лица:</p>
-</blockquote></th>
-<th><blockquote>
-<p>Дата внесения изм:</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### Директория хранения журнала событий безопасности компонента «ja_SecEventLog»
 
-## Директория хранения журнала событий безопасности компонента
+По умолчанию директория хранения журнала событий безопасности компонента «ja_seceventlog» /var/lib/jatoba/<ver>/data/log.
 
-> **«ja_SecEventLog»**
->
-> По умолчанию директория хранения журнала событий безопасности компонента
->
-> «ja_seceventlog» /var/lib/jatoba/\<ver\>/data/log.
->
-> Просмотреть текущую директорию хранения журнала событий безопасности компонента «ja_seceventlog» возможно SQL-командой:
+Просмотреть текущую директорию хранения журнала событий безопасности компонента «ja_seceventlog» возможно SQL-командой:
 
-<img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image13.png" style="width:7.01406in;height:1.80167in" />
+```sql
+SHOW ja_seceventlog.log_directory;
+```
 
-> SHOW ja_seceventlog.log_directory;
->
-> Рисунок 2.7 – Вывод хранения журнала событий безопасности компонента
->
-> «ja_SecEventLog»
->
-> Задание директории хранения журнала событий безопасности компонента
->
-> «ja_SecEventLog» возможно только через установку параметра в конфигурационном файле postgresql.conf:
->
-> ja_seceventlog.log_directory = 'audit_log'
->
-> Директория хранения может отличаться и в этом случае указывается полный путь к
->
-> ней.
->
-> В рассматриваемом примере директорией хранения журнала событий безопасности
->
-> компонента «ja_SecEventLog» является директория в корневом каталоге «audit_log».
->
-> Порядок действий для хранения журнала событий безопасности в отдельной директории будет следующий:
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image13.png)
+
+
+
+Рисунок 2.7 – Вывод хранения журнала событий безопасности компонента «ja_SecEventLog»
+
+Задание директории хранения журнала событий безопасности компонента «ja_SecEventLog» возможно только через установку параметра в конфигурационном файле postgresql.conf:
+
+
+```
+ja_seceventlog.log_directory = 'audit_log'
+```
+
+
+Директория хранения может отличаться и в этом случае указывается полный путь к ней.
+
+В рассматриваемом примере директорией хранения журнала событий безопасности компонента «ja_SecEventLog» является директория в корневом каталоге «audit_log».
+
+Порядок действий для хранения журнала событий безопасности в отдельной директории будет следующий:
 
 1)  Создать каталог audit_log:
 
-> mkdir audit_log
+
+```
+mkdir audit_log
+```
+
 
 2)  Задать права на созданный каталог:
 
-> \# chown postgres: audit_log \# chmod 700 audit_log
->
-> \# ls -ld audit_log
+```
+# chown postgres: audit_log 
+# chmod 700 audit_log
+# ls -ld audit_log
+```
 
 3)  Установить параметр в конфигурационном файле «postgresql.conf»:
 
-> ja_seceventlog.log_directory = 'audit_log'
+
+```
+ja_seceventlog.log_directory = 'audit_log'
+```
+
 
 4)  Перезагрузить службу СУБД «Jatoba».
 
-> Таким образом журнала событий безопасности будет храниться отдельно от журнала аудита СУБД.
+Таким образом журнала событий безопасности будет храниться отдельно от журнала аудита СУБД.
 
-# ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА
+## ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА
 
-## Фильтрация событий информационной безопасности
+### Фильтрация событий информационной безопасности
 
-> Во время установки расширения будет создана служебная таблица фильтров ja_seceventlog.filter. Таблица ja_seceventlog.filter предназначена для хранения фильтров имеет следующую структуру:
+Во время установки расширения будет создана служебная таблица фильтров ja_seceventlog.filter. Таблица ja_seceventlog.filter предназначена для хранения фильтров имеет следующую структуру:
 
 - db_name (тип данных text) – название БД фильтра;
 
@@ -995,9 +865,9 @@ ja_seceventlog.secevent_log и непосредственно связан с п
 
 - comment (тип данных text) – текст комментария к фильтру.
 
-> При первоначальной установке расширения в таблице создаются предустановленные фильтры событий безопасности (см. таблицу [3.1](#_bookmark40)).
->
-> <span id="_bookmark40" class="anchor"></span>Таблица 3.1 – Список предустановленных фильтров событий безопасности
+При первоначальной установке расширения в таблице создаются предустановленные фильтры событий безопасности (см. таблицу [3.1](#_bookmark40)).
+
+<span id="_bookmark40" class="anchor"></span>Таблица 3.1 – Список предустановленных фильтров событий безопасности
 
 <table>
 <colgroup>
@@ -1011,162 +881,164 @@ ja_seceventlog.secevent_log и непосредственно связан с п
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><blockquote>
+<th style="text-align: center;">
 <p><strong>id</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Название БД фильтра (db_name)</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Код события (seceventid)</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Тип объекта (object_type)</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Название объекта (object_name)</strong></p>
-</blockquote></th>
-<th style="text-align: center;"><blockquote>
+</th>
+<th style="text-align: center;">
 <p><strong>Название субъекта (role_name)</strong></p>
-</blockquote></th>
-<th><blockquote>
+</th>
+<th>
 <p><strong>Комментарий (comment)</strong></p>
-</blockquote></th>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;">1</td>
-<td><blockquote>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>111162100</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Запуск и останов СУБД</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
-<td><blockquote>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>119193101</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Журнал очищен</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
-<td><blockquote>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>119194101</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Журналирование отключено</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
-<td><blockquote>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>119203101</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Предупреждение о заполнении памяти</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
-<td><blockquote>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>119205101</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Журналирование включено</p>
-</blockquote></td>
+</td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
-<td><blockquote>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>119206101</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>ALL</p>
-</blockquote></td>
-<td><blockquote>
+</td>
+<td>
 <p>Перезапись событий</p>
-</blockquote></td>
+</td>
 </tr>
 </tbody>
 </table>
 
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.24968in" />Расшифровка кодов событий безопасности приведена в документе «Реализация функций безопасности» 643.72410666.00067-08 94 01 в таблице 4.2 – Структура справочной таблицы (ja_seceventlog.secevent_code_desc) с типами и уровнем важности событий безопасности
->
-> Расширение предоставляет возможность управления фильтрами при помощи специальных функций:
+:::info Дополнительная информация
+Расшифровка кодов событий безопасности приведена в документе «Реализация функций безопасности» 643.72410666.00067-08 94 01 в таблице 4.2 – Структура справочной таблицы (ja_seceventlog.secevent_code_desc) с типами и уровнем важности событий безопасности
+:::
+
+Расширение предоставляет возможность управления фильтрами при помощи специальных функций:
 
 - create_filter (см. п.п. [3.1.1](#функция-создания-фильтра-create_filter)).
 
@@ -1178,27 +1050,33 @@ ja_seceventlog.secevent_log и непосредственно связан с п
 
 - reset_filters (см. п.п. [3.1.5](#функция-удаления-всех-фильтров-reset_filters)).
 
-> Для просмотра установленных или созданных фильтров необходимо воспользоваться представлением ja_seceventlog.view_filters:
+Для просмотра установленных или созданных фильтров необходимо воспользоваться представлением ja_seceventlog.view_filters:
 
-<img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image14.png" style="width:7.11011in;height:1.9875in" />
+```sql
+SELECT * FROM ja_seceventlog.view_filters;
+```
 
-> SELECT \* FROM ja_seceventlog.view_filters;
->
-> Рисунок 3.1 – Просмотр установленных или созданных фильтров «ja_seceventlog» Предустановленные фильтры имеют значение идентификатора (id) от 1 до 999.
->
-> Пользовательские фильтры начинаются с идентификатора 1000 и более.
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image14.png)
 
-## Функция создания фильтра (create_filter)
 
-> Функция create_filter предназначена для создания нового правила регистрации событий (фильтра) компонента «ja_SecEventLog».
->
-> Созданные фильтры сохраняются в отдельную таблицу filter в схеме ja_seceventlog. Функция create_filter содержит следующие параметры:
+
+Рисунок 3.1 – Просмотр установленных или созданных фильтров «ja_seceventlog» 
+
+Предустановленные фильтры имеют значение идентификатора (id) от 1 до 999.
+
+Пользовательские фильтры начинаются с идентификатора 1000 и более.
+
+### Функция создания фильтра (create_filter)
+
+Функция create_filter предназначена для создания нового правила регистрации событий (фильтра) компонента «ja_SecEventLog».
+
+Созданные фильтры сохраняются в отдельную таблицу filter в схеме ja_seceventlog. Функция create_filter содержит следующие параметры:
 
 - db_name – символьный параметр. Название БД, для которой задаётся фильтр. Указание NULL или пустой строки означает, что регистрируются события для всех БД;
 
 - seceventid – символьный параметр. Идентификатор события безопасности, для которого задается фильтр. Указание NULL или пустой строки означает, что регистрируются события для всех идентификаторов событий безопасности. Список идентификаторов
 
-> событий безопасности содержится в документе «Реализация функций безопасности» 643.72410666.00067-08 94 01;
+событий безопасности содержится в документе «Реализация функций безопасности» 643.72410666.00067-08 94 01;
 
 - object_type – символьный параметр. Тип объекта, для которого задается фильтр. Указание NULL или пустой строки означает, что регистрируются события для всех типов объектов. Возможные значения: SCHEMA, TABLE, VIEW и так далее. Полный список типов объектов приведен в [Приложение 1](#приложение-1);
 
@@ -1208,423 +1086,566 @@ ja_seceventlog.secevent_log и непосредственно связан с п
 
 - comment – комментарий, описывающий созданный фильтр.
 
-> Синтаксис функции создания нового фильтра:
->
-> ja_seceventlog.create_filter(db_name text, seceventid text, object_type text, object_name text, role_name text, comment text)
+Синтаксис функции создания нового фильтра:
 
-## Примеры:
 
-> SELECT ja_seceventlog.create_filter('db1', NULL, NULL, NULL, NULL, 'все события для базы db1');
->
-> SELECT ja_seceventlog.create_filter('db1', NULL, NULL, NULL, 'user1', 'все события для пользователя user1 в базе db1');
+```sql
+ja_seceventlog.create_filter(db_name text, seceventid text, object_type text, object_name text, role_name text, comment text)
+```
 
-## Функция отображения фильтров (show_filters)
 
-> Функция show_filters выводит полный список текущих фильтров из таблицы фильтров filter. Пример отображения фильтров представлен выше (представление ja_seceventlog.view_filters, см. п.п. [3.1](#фильтрация-событий-информационной-безопасности)).
->
-> Функция show_filters выводит в каждой строке отдельное правило с указанием всех заполненных полей с номером идентификатора этого правила. Предустановленные фильтры имеют значение идентификатора (id) от 1 до 999. Пользовательские фильтры начинаются с идентификатора 1000 и более.
->
-> Любое NULL значение заменяется на ключевое слово “ALL”, означая, что допускается запись любого события по данному атрибуту фильтра.
+**Примеры:**
 
-## Функция удаления фильтра (drop_filter)
 
-> Функция drop_filter предназначена для удаления правила регистрации событий (фильтра).
->
-> При использовании функции drop_filter происходит удаление фильтра из таблицы фильтров filter в схеме ja_seceventlog.
+```sql
+SELECT ja_seceventlog.create_filter('db1', NULL, NULL, NULL, NULL, 'все события для базы db1');
+```
 
-## Функция удаления фильтра (drop_filter_id)
 
-> Функция drop_filter_id предназначена для удаления правила регистрации событий (фильтра) по идентификатору правила.
->
-> При использовании функции drop_filter_id происходит удаление фильтра из таблицы фильтров filter в схеме ja_seceventlog.
 
-## Функция удаления всех фильтров (reset_filters)
+```sql
+SELECT ja_seceventlog.create_filter('db1', NULL, NULL, NULL, 'user1', 'все события для пользователя user1 в базе db1');
+```
 
-> Функция reset_filters удаляет **все** фильтры из таблицы фильтров filter, кроме предустановленных.
 
-## Запись событий ИБ в таблицу БД
+### Функция отображения фильтров (show_filters)
 
-> Компонент обладает функциональной возможностью записи событий информационной безопасности в отдельную таблицу ja_seceventlog.secevent_log. Данная таблица создаётся при установке расширения.
->
-> Таблица ja_seceventlog.secevent_log может использоваться для интеграции с SIEM системой.
->
-> Параметр ja_seceventlog.log_destination_table имеет значение «true» по умолчанию:
->
-> ja_seceventlog.log_destination_table = true
->
-> Запись событий информационной безопасности в таблицу начинается автоматически.
->
-> Очистка таблицы выполняется каждый час.
->
-> Расположение таблицы в СУБД определяется параметром «ja_seceventlog.db_name».
->
-> По умолчанию используется значение:
->
-> ja_seceventlog.db_name = postgres
->
-> Изменение параметра не рекомендуется, т.к. это приведет к переустановке компонента (см. описание параметра «ja_seceventlog.db_name»).
->
-> Таблица имеет 2 поля:
+Функция show_filters выводит полный список текущих фильтров из таблицы фильтров filter. Пример отображения фильтров представлен выше (представление ja_seceventlog.view_filters, см. п.п. [3.1](#фильтрация-событий-информационной-безопасности)).
+
+Функция show_filters выводит в каждой строке отдельное правило с указанием всех заполненных полей с номером идентификатора этого правила. Предустановленные фильтры имеют значение идентификатора (id) от 1 до 999. Пользовательские фильтры начинаются с идентификатора 1000 и более.
+
+Любое NULL значение заменяется на ключевое слово “ALL”, означая, что допускается запись любого события по данному атрибуту фильтра.
+
+### Функция удаления фильтра (drop_filter)
+
+Функция drop_filter предназначена для удаления правила регистрации событий (фильтра).
+
+При использовании функции drop_filter происходит удаление фильтра из таблицы фильтров filter в схеме ja_seceventlog.
+
+### Функция удаления фильтра (drop_filter_id)
+
+Функция drop_filter_id предназначена для удаления правила регистрации событий (фильтра) по идентификатору правила.
+
+При использовании функции drop_filter_id происходит удаление фильтра из таблицы фильтров filter в схеме ja_seceventlog.
+
+### Функция удаления всех фильтров (reset_filters)
+
+Функция reset_filters удаляет **все** фильтры из таблицы фильтров filter, кроме предустановленных.
+
+### Запись событий ИБ в таблицу БД
+
+Компонент обладает функциональной возможностью записи событий информационной безопасности в отдельную таблицу ja_seceventlog.secevent_log. Данная таблица создаётся при установке расширения.
+
+Таблица ja_seceventlog.secevent_log может использоваться для интеграции с SIEM системой.
+
+Параметр ja_seceventlog.log_destination_table имеет значение «true» по умолчанию:
+
+
+```
+ja_seceventlog.log_destination_table = true
+```
+
+
+Запись событий информационной безопасности в таблицу начинается автоматически.
+
+Очистка таблицы выполняется каждый час.
+
+Расположение таблицы в СУБД определяется параметром «ja_seceventlog.db_name».
+
+По умолчанию используется значение:
+
+
+```
+ja_seceventlog.db_name = postgres
+```
+
+
+Изменение параметра не рекомендуется, т.к. это приведет к переустановке компонента (см. описание параметра «ja_seceventlog.db_name»).
+
+Таблица имеет 2 поля:
 
 - log_time – штамп времени (во временной зоне сервера, заданной в postgresql.conf параметром timezone). Время сохраняется с точностью до микросекунд;
 
 - log_data – содержание события в формате JSON.
 
-<img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image15.jpeg" style="width:7.10318in;height:2.20458in" />
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image15.jpeg)
 
-> Рисунок 3.2 – Содержание таблицы ja_seceventlog.secevent_log
->
-> Запись событий информационной безопасности выполняется параллельно и в таблицу, и в отдельный каталог если установлены параметры:
->
-> ja_seceventlog.log_destination = jsonlog ja_seceventlog.log_destination_table = true
->
-> В компоненте «ja_SecEventLog» доступно представление ja_seceventlog.secevent_log_last_hour. Данное представление выполняет сбор данных по таблицам хранения событий безопасности всех событий за последний час текущего времени сервера.
->
-> Представление ja_seceventlog.secevent_log_last_hour содержит следующие поля:
+Рисунок 3.2 – Содержание таблицы ja_seceventlog.secevent_log
+
+Запись событий информационной безопасности выполняется параллельно и в таблицу, и в отдельный каталог если установлены параметры:
+
+
+```
+ja_seceventlog.log_destination = jsonlog 
+ja_seceventlog.log_destination_table = true
+```
+
+
+В компоненте «ja_SecEventLog» доступно представление ja_seceventlog.secevent_log_last_hour. Данное представление выполняет сбор данных по таблицам хранения событий безопасности всех событий за последний час текущего времени сервера.
+
+Представление ja_seceventlog.secevent_log_last_hour содержит следующие поля:
 
 - log_time – штамп времени (во временной зоне сервера, заданной в postgresql.conf параметром timezone). Время сохраняется с точностью до микросекунд;
 
 - log_data – содержание события в формате JSON.
 
-> Выводимые в представлении ja_seceventlog.secevent_log_last_hour записи выбираются в соответствии с временной зоной сервера, в которой записываются события, а не настройках временной зоны, в которой работает пользователь.
->
-> Для получения данных из представления ja_seceventlog.secevent_log_last_hour можно воспользоваться следующей командой:
+Выводимые в представлении ja_seceventlog.secevent_log_last_hour записи выбираются в соответствии с временной зоной сервера, в которой записываются события, а не настройках временной зоны, в которой работает пользователь.
 
-<img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image16.jpeg" style="width:7.05829in;height:4.22333in" />
+Для получения данных из представления ja_seceventlog.secevent_log_last_hour можно воспользоваться следующей командой:
 
-> SELECT \* FROM ja_seceventlog.secevent_log_last_hour;
->
-> Рисунок 3.3 – Содержание представления ja_seceventlog.secevent_log_last_hour
+```sql
+SELECT * FROM ja_seceventlog.secevent_log_last_hour;
+```
 
-# ОБНОВЛЕНИЕ КОМПОНЕНТА
+![](@site/docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image16.jpeg)
 
-## Обновление пакета компонента из репозитория
 
-> Перед началом процесса обновления компонента с версии 2.0 до 3.x необходимо:
+
+Рисунок 3.3 – Содержание представления ja_seceventlog.secevent_log_last_hour
+
+## ОБНОВЛЕНИЕ КОМПОНЕНТА
+
+### Обновление пакета компонента из репозитория
+
+Перед началом процесса обновления компонента с версии 2.0 до 3.x необходимо:
 
 1)  Обновить локальный репозиторий согласно документу «Руководство по установке» 643.72410666.00067-08 97 01;
 
 2)  Выполнить обновление пакета компонента при помощи штатных средств ОС:
 
-> apt --only-upgrade install jatoba6-ja-seceventlog
+
+```
+apt --only-upgrade install jatoba6-ja-seceventlog
+```
+
 
 3)  Или всех установленных в ОС пакетов:
 
-> apt-get upgrade
 
-## Обновление расширения с использованием пакета установки
+```
+apt-get upgrade
+```
 
-> Другим вариантом обновления компонента является установка новой версии 3.x при помощи команды:
->
-> dpkg -i jatoba6-ja-seceventlog_3.3.0-XXX_amd64.deb
->
-> После завершения обновления пакетов компонента «ja_SecEventLog» необходимо выполнить перезагрузку службы СУБД «Jatoba» и проверить статус работы:
->
-> systemctl stop jatoba-6 systemctl start jatoba-6 systemctl status jatoba-6
->
-> Расширение «ja_seceventlog» для СУБД «Jatoba» обновляется при помощи SQL-команды:
->
-> ALTER EXTENSION ja_seceventlog UPDATE TO '3.3';
 
-## Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.x
+### Обновление расширения с использованием пакета установки
 
-> При обновлении версии расширения с версии 2.0 до 3.x в следующих параметрах произошли изменения.
+Другим вариантом обновления компонента является установка новой версии 3.x при помощи команды:
 
-## Параметр ja_seceventlog.log
 
-> После обновления расширения с версии 2.0 до 3.x необходимо установить значение параметров регистрации в журнале событий безопасности СУБД как это указано в п.п. [2.3](#параметры-регистрации-событий-безопасности-компонентом):
->
-> ja_seceventlog.log = 'ALL'
->
-> Создать фильтр для логирования всех событий безопасности:
->
-> SELECT ja_seceventlog.create_filter(NULL, NULL, NULL, NULL, NULL, 'фильтр для всех событий');
->
-> В случае задания данного фильтра, задание других фильтров не требуется.
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image7.png" style="width:0.24025in;height:0.24022in" />Указанные выше настройки позволяют регистрировать в журнал аудита все события информационной безопасности, как в версии расширения 2.0.
->
-> Если параметр ja_seceventlog.log (см. п.п.[2.3](#параметры-регистрации-событий-безопасности-компонентом)) в версии 2.0 был установлен в 'NONE', то после обновления до версии 3.x дополнительных действий по созданию фильтров не требуется.
->
-> Если параметр ja_seceventlog.log в версии 2.0 был установлен в 'ALL', то достаточно установить фильтр:
->
-> SELECT ja_seceventlog.create_filter(NULL, NULL, NULL, NULL, NULL, 'фильтр для всех событий');
->
-> Если в параметре ja_seceventlog.log в версии 2.0 были перечислены конкретные значения, то необходимо создать фильтры, подобные следующим:
->
-> − READ:
->
-> SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, 'для событий READ');
->
-> − WRITE:
->
-> SELECT ja_seceventlog.create_filter(NULL, 106148100, NULL, NULL, NULL, 'для событий WRITE');
->
-> − FUNCTION:
->
-> SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, 'для событий вызова функций');
->
-> − ROLE:
->
-> SELECT ja_seceventlog.create_filter(NULL, 105133100, NULL, NULL, NULL, 'для событий изменений прав доступа');
->
-> − DDL:
->
-> SELECT ja_seceventlog.create_filter(NULL, 106145100, NULL, NULL, NULL, 'для событий создания ресурса');
->
-> SELECT ja_seceventlog.create_filter(NULL, 106146100, NULL, NULL, NULL, 'для событий изменения ресурса');
->
-> SELECT ja_seceventlog.create_filter(NULL, 106147100, NULL, NULL, NULL, 'для событий удаления ресурса');
->
-> − MISC:
->
-> SELECT ja_seceventlog.create_filter(NULL, 106148100, NULL, NULL, NULL, 'для событий DISCARD');
->
-> SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, 'для событий FETCH, VACUUM, CHECKPOINT');
->
-> − MISC_SET:
->
-> SELECT ja_seceventlog.create_filter(NULL, 108152100, NULL, NULL, NULL, 'для событий SET');
->
-> SELECT ja_seceventlog.create_filter(NULL, 100105100, NULL, NULL, NULL, 'для событий SET ROLE');
+```
+dpkg -i jatoba6-ja-seceventlog_3.3.0-XXX_amd64.deb
+```
 
-## Параметр ja_seceventlog.max_filters
 
-> Параметр ja_seceventlog.max_filters определяет максимальное количество создаваемых и применяемых фильтров.
->
-> Допустимый диапазон значений параметра ja_seceventlog.max_filters от 6 до 1024.
->
-> ja_seceventlog.max_filters = 128
->
-> <img src="../docs/assets/images/com18.3.1/ja_seceventlog3.3/media/image2.png" style="width:0.25in;height:0.25in" />В случае превышения числа «ja_seceventlog.max_filters» пользователю отображается предупреждение при создании фильтра, а также при запуске/перезагрузке СУБД.
->
-> Если количество созданных фильтров больше, чем указано в
->
-> «ja_seceventlog.max_filters», компонент обработает только максимально допустимое количество (равное «ja_seceventlog.max_filters»).
->
-> Перед созданием нового фильтра рекомендуется выполнить следующий запрос:
->
-> SELECT COUNT(\*) \<=
->
-> current_setting('ja_seceventlog.max_filters')::integer FROM ja_seceventlog.filter;
->
-> В случае если результатом выполнения запроса будет значение FALSE, новый фильтр не поместится в активную память компонента и может потребоваться увеличение значения параметра «ja_seceventlog.max_filters»
->
-> Значение параметра ja_seceventlog.max_filters по умолчанию:
+После завершения обновления пакетов компонента «ja_SecEventLog» необходимо выполнить перезагрузку службы СУБД «Jatoba» и проверить статус работы:
+
+
+```
+systemctl stop jatoba-6 
+systemctl start jatoba-6 
+systemctl status jatoba-6
+```
+
+
+Расширение «ja_seceventlog» для СУБД «Jatoba» обновляется при помощи SQL-команды:
+
+
+```
+ALTER EXTENSION ja_seceventlog UPDATE TO '3.3';
+```
+
+
+### Настройка расширения «ja_seceventlog» после обновления с версии 2.0 до 3.x
+
+При обновлении версии расширения с версии 2.0 до 3.x в следующих параметрах произошли изменения.
+
+### Параметр ja_seceventlog.log
+
+После обновления расширения с версии 2.0 до 3.x необходимо установить значение параметров регистрации в журнале событий безопасности СУБД как это указано в п.п. [2.3](#параметры-регистрации-событий-безопасности-компонентом):
+
+
+```
+ja_seceventlog.log = 'ALL'
+```
+
+
+Создать фильтр для логирования всех событий безопасности:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, NULL, NULL, NULL, NULL, 'фильтр для всех событий');
+```
+
+:::info Дополнительная информация
+В случае задания данного фильтра, задание других фильтров не требуется.
+:::
+
+Указанные выше настройки позволяют регистрировать в журнал аудита все события информационной безопасности, как в версии расширения 2.0.
+
+Если параметр ja_seceventlog.log (см. п.п.[2.3](#параметры-регистрации-событий-безопасности-компонентом)) в версии 2.0 был установлен в 'NONE', то после обновления до версии 3.x дополнительных действий по созданию фильтров не требуется.
+
+Если параметр ja_seceventlog.log в версии 2.0 был установлен в 'ALL', то достаточно установить фильтр:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, NULL, NULL, NULL, NULL, 'фильтр для всех событий');
+```
+
+
+Если в параметре ja_seceventlog.log в версии 2.0 были перечислены конкретные значения, то необходимо создать фильтры, подобные следующим:
+
+− READ:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, 'для событий READ');
+```
+
+
+− WRITE:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, 106148100, NULL, NULL, NULL, 'для событий WRITE');
+```
+
+
+− FUNCTION:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, 'для событий вызова функций');
+```
+
+
+− ROLE:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, 105133100, NULL, NULL, NULL, 'для событий изменений прав доступа');
+```
+
+
+− DDL:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, 106145100, NULL, NULL, NULL, 'для событий создания ресурса');
+SELECT ja_seceventlog.create_filter(NULL, 106146100, NULL, NULL, NULL, 'для событий изменения ресурса');
+SELECT ja_seceventlog.create_filter(NULL, 106147100, NULL, NULL, NULL, 'для событий удаления ресурса');
+```
+
+− MISC:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, 106148100, NULL, NULL, NULL, 'для событий DISCARD');
+
+SELECT ja_seceventlog.create_filter(NULL, 106139100, NULL, NULL, NULL, 'для событий FETCH, VACUUM, CHECKPOINT');
+```
+
+
+− MISC_SET:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, 108152100, NULL, NULL, NULL, 'для событий SET');
+
+SELECT ja_seceventlog.create_filter(NULL, 100105100, NULL, NULL, NULL, 'для событий SET ROLE');
+```
+
+
+### Параметр ja_seceventlog.max_filters
+
+Параметр ja_seceventlog.max_filters определяет максимальное количество создаваемых и применяемых фильтров.
+
+Допустимый диапазон значений параметра ja_seceventlog.max_filters от 6 до 1024.
+
+
+```
+ja_seceventlog.max_filters = 128
+```
+
+
+:::info Дополнительная информация
+В случае превышения числа «ja_seceventlog.max_filters» пользователю отображается предупреждение при создании фильтра, а также при запуске/перезагрузке СУБД.
+
+Если  количество   созданных   фильтров   больше,   чем  указано  в
+«ja_seceventlog.max_filters», компонент обработает только максимально допустимое количество (равное «ja_seceventlog.max_filters»).
+Перед созданием нового фильтра рекомендуется выполнить следующий запрос:
+
+
+```sql
+SELECT COUNT(*) <=
+current_setting('ja_seceventlog.max_filters')::integer FROM ja_seceventlog.filter;
+```
+
+В случае если результатом выполнения запроса будет значение FALSE, новый фильтр не поместится в активную память компонента и может потребоваться увеличение значения параметра «ja_seceventlog.max_filters»
+:::
+
+Значение параметра ja_seceventlog.max_filters по умолчанию:
 
 - в версии 3.x – 128;
 
 - в версии 2.0 - параметр отсутствует.
 
-## Параметр ja_seceventlog.log_connections
+### Параметр ja_seceventlog.log_connections
 
-> Параметр ja_seceventlog.log_connections активирует регистрацию событий попыток подключения к серверу СУБД.
->
-> В версии 3.x параметр удален ja_seceventlog.log_connections, а управление регистрации попыток подключения возложено на параметр log_connections СУБД «Jatoba».
->
-> Значение параметра ja_seceventlog.log_connections по умолчанию:
+Параметр ja_seceventlog.log_connections активирует регистрацию событий попыток подключения к серверу СУБД.
 
-- в версии 3.x – параметр отсутствует;
+В версии 3.x параметр удален ja_seceventlog.log_connections, а управление регистрации попыток подключения возложено на параметр log_connections СУБД «Jatoba».
 
-- в версии 2.0 - off.
-
-> Если в файле postgresql.conf значение log_connections = on, то события подключений к СУБД будут регистрироваться при наличии следующих фильтров:
->
-> SELECT ja_seceventlog.create_filter(NULL, '100105100', NULL, NULL, NULL, 'успешное подключение');
->
-> SELECT ja_seceventlog.create_filter(NULL, '100107100', NULL, NULL, NULL, 'получение соединения');
-
-## Параметр ja_seceventlog.log_disconnections
-
-> Параметр включает ja_seceventlog.log_disconnections регистрацию событий завершения сеанса.
->
-> Значение параметра ja_seceventlog.log_disconnections по умолчанию:
+Значение параметра ja_seceventlog.log_connections по умолчанию:
 
 - в версии 3.x – параметр отсутствует;
 
 - в версии 2.0 - off.
 
-> Если в файле postgresql.conf значение log_disconnections = on, то события завершения работу с СУБД будут регистрироваться при наличии следующего фильтра:
->
-> SELECT ja_seceventlog.create_filter(NULL, '100106100', NULL, NULL, NULL, 'завершение сеанса');
+Если в файле postgresql.conf значение log_connections = on, то события подключений к СУБД будут регистрироваться при наличии следующих фильтров:
 
-## Параметр ja_seceventlog.log_catalog
 
-> В версии компонента 3.x, параметр «ja_seceventlog.log_catalog» исключен.
->
-> Если данный параметр был включен в версии 2.0, то происходила регистрация обращений к таблицам системного каталога.
->
-> ja_seceventlog.log_catalog = true
->
-> Значение параметра ja_seceventlog.log_catalog по умолчанию:
+```sql
+SELECT ja_seceventlog.create_filter(NULL, '100105100', NULL, NULL, NULL, 'успешное подключение');
+
+SELECT ja_seceventlog.create_filter(NULL, '100107100', NULL, NULL, NULL, 'получение соединения');
+```
+
+
+### Параметр ja_seceventlog.log_disconnections
+
+Параметр включает ja_seceventlog.log_disconnections регистрацию событий завершения сеанса.
+
+Значение параметра ja_seceventlog.log_disconnections по умолчанию:
+
+- в версии 3.x – параметр отсутствует;
+
+- в версии 2.0 - off.
+
+Если в файле postgresql.conf значение log_disconnections = on, то события завершения работу с СУБД будут регистрироваться при наличии следующего фильтра:
+
+
+```sql
+SELECT ja_seceventlog.create_filter(NULL, '100106100', NULL, NULL, NULL, 'завершение сеанса');
+```
+
+
+### Параметр ja_seceventlog.log_catalog
+
+В версии компонента 3.x, параметр «ja_seceventlog.log_catalog» исключен.
+
+Если данный параметр был включен в версии 2.0, то происходила регистрация обращений к таблицам системного каталога.
+
+
+```
+ja_seceventlog.log_catalog = true
+```
+
+
+Значение параметра ja_seceventlog.log_catalog по умолчанию:
 
 - в версии 3.x – параметр отсутствует;
 
 - в версии 2.0 – true.
 
-## Параметр ja_seceventlog.log_relation
+### Параметр ja_seceventlog.log_relation
 
-> Позволяет ja_seceventlog.log_relation включать/отключать отдельную запись журнала для каждого отношения (TABLE, VIEW, и т.д.), на которое ссылается оператор SELECT или DML.
->
-> Значение параметра ja_seceventlog.log_relation по умолчанию:
+Позволяет ja_seceventlog.log_relation включать/отключать отдельную запись журнала для каждого отношения (TABLE, VIEW, и т.д.), на которое ссылается оператор SELECT или DML.
+
+Значение параметра ja_seceventlog.log_relation по умолчанию:
 
 - в версии 3.x – off;
 
 - в версии 2.0 – off.
 
-> После обновления до версии 3.x при значении ja_seceventlog.log_relation = on необходимо добавить фильтры для объектов, например:
->
-> SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table1', NULL, 'все события для table1');
->
-> SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table2', NULL, 'все события для table2');
+После обновления до версии 3.x при значении ja_seceventlog.log_relation = on необходимо добавить фильтры для объектов, например:
 
-## Параметр ja_seceventlog.role
 
-> Данный параметр используется для аудита объектов БД.
->
-> В версии компонента 3.x, параметр «ja_seceventlog.role» исключен.
->
-> Команды SELECT, INSERT, UPDATE и DELETE для конкретного объекта будут регистрироваться в журнале событий безопасности, если они грантованы аудитору (той роли пользователей, для которой указано значение параметра role = 'auditor').
->
-> Значение параметра ja_seceventlog.role по умолчанию:
+```sql
+SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table1', NULL, 'все события для table1');
+
+SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table2', NULL, 'все события для table2');
+```
+
+
+### Параметр ja_seceventlog.role
+
+Данный параметр используется для аудита объектов БД.
+
+В версии компонента 3.x, параметр «ja_seceventlog.role» исключен.
+
+Команды SELECT, INSERT, UPDATE и DELETE для конкретного объекта будут регистрироваться в журнале событий безопасности, если они грантованы аудитору (той роли пользователей, для которой указано значение параметра role = 'auditor').
+
+Значение параметра ja_seceventlog.role по умолчанию:
 
 - в версии 3.x – исключен;
 
 - в версии 2.0 – '' (пустое).
 
-> Параметр ja_seceventlog.role при обновлении компонента до версии 3.X можно заменить фильтрами или использовать совместно с имеющимися фильтрами.
->
-> К примеру, в версии компонента 2.0 был назначен аудит объекта:
->
-> SET ja_seceventlog.role = 'auditor';
->
-> GRANT SELECT ON 'public.table1' TO auditor; GRANT INSERT ON 'public.table2' TO auditor;
->
-> В журнале событий безопасности регистрировались все запросы с SELECT для 'public.table1' и все запросы INSERT для 'public.table2'.
->
-> Тогда в версии компонента 3.x необходимо использовать один из вариантов:
+Параметр ja_seceventlog.role при обновлении компонента до версии 3.X можно заменить фильтрами или использовать совместно с имеющимися фильтрами.
+
+К примеру, в версии компонента 2.0 был назначен аудит объекта:
+
+
+```sql
+SET ja_seceventlog.role = 'auditor';
+
+GRANT SELECT ON 'public.table1' TO auditor; GRANT INSERT ON 'public.table2' TO auditor;
+```
+
+
+В журнале событий безопасности регистрировались все запросы с SELECT для 'public.table1' и все запросы INSERT для 'public.table2'.
+
+Тогда в версии компонента 3.x необходимо использовать один из вариантов:
 
 1)  Воспользоваться фильтрами следующего вида:
 
-> SELECT ja_seceventlog.create_filter('db1', '106139100', 'TABLE', 'public.table1', NULL, 'SELECT');
->
-> SELECT ja_seceventlog.create_filter('db1', '106148100', 'TABLE', 'public.table2', NULL, 'INSERT, UPDATE и DELETE');
->
-> Для использования данных фильтров необходимо установить параметр ja_seceventlog.log_relation = on (см. п.п. [4.3.6](#параметр-ja_seceventlog.log_relation)).
->
-> В фильтре название объекта БД, для которого необходимо регистрировать события, указывается совместно с именем схемы.
->
-> После настройки всех необходимых фильтров параметр role можно убрать из конфигурационного файла СУБД. Также можно отозвать выданные ранее полномочия выделенной роли аудитора из версии 2.0.
+
+```sql
+SELECT ja_seceventlog.create_filter('db1', '106139100', 'TABLE', 'public.table1', NULL, 'SELECT');
+
+SELECT ja_seceventlog.create_filter('db1', '106148100', 'TABLE', 'public.table2', NULL, 'INSERT, UPDATE и DELETE');
+```
+
+
+Для использования данных фильтров необходимо установить параметр ja_seceventlog.log_relation = on (см. п.п. [4.3.6](#параметр-ja_seceventlog.log_relation)).
+
+В фильтре название объекта БД, для которого необходимо регистрировать события, указывается совместно с именем схемы.
+
+После настройки всех необходимых фильтров параметр role можно убрать из конфигурационного файла СУБД. Также можно отозвать выданные ранее полномочия выделенной роли аудитора из версии 2.0.
 
 2)  Параметр ja_seceventlog.role можно использовать совместно с фильтрами следующего вида:
 
-> SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table1', NULL, 'все события для table1');
->
-> SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table2', NULL, 'все события для table2');
->
-> Для каждого объекта, для которого ведется аудит объекта необходимо создать соответствующий фильтр, аналогичный указанным выше.
 
-## Параметр ja_seceventlog.log_parameter
+```sql
+SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table1', NULL, 'все события для table1');
 
-> В версии 3.x параметр ja_seceventlog.log_parameter исключен из списка настраиваемых параметров. По умолчанию установлено значение = true означает: теперь ja_seceventlog-3.3 в описание события безопасности всегда вносит информацию о параметрах SQL-запроса, если таковые были использованы и заданы в запросе. Это касается атрибута события "Parameter". В него будут записываться имена и значения параметров. Длина значения параметра контролируется параметров ja_seceventlog.log_parameter_max_size.
->
-> При обновлении компонента ja_seceventlog до версии 3.x данный параметр должен быть исключен и конфигурационного файла postgresql.conf.
+SELECT ja_seceventlog.create_filter('db1', NULL, 'TABLE', 'public.table2', NULL, 'все события для table2');
+```
 
-## !Параметр ja_seceventlog.log_statement
 
-> В версии компонента 3.x, параметр «ja_seceventlog.log_statement» исключен. Значение параметра ja_seceventlog.log_statement по умолчанию:
+Для каждого объекта, для которого ведется аудит объекта необходимо создать соответствующий фильтр, аналогичный указанным выше.
+
+### Параметр ja_seceventlog.log_parameter
+
+В версии 3.x параметр ja_seceventlog.log_parameter исключен из списка настраиваемых параметров. По умолчанию установлено значение = true означает: теперь ja_seceventlog-3.3 в описание события безопасности всегда вносит информацию о параметрах SQL-запроса, если таковые были использованы и заданы в запросе. Это касается атрибута события "Parameter". В него будут записываться имена и значения параметров. Длина значения параметра контролируется параметров ja_seceventlog.log_parameter_max_size.
+
+При обновлении компонента ja_seceventlog до версии 3.x данный параметр должен быть исключен и конфигурационного файла postgresql.conf.
+
+### !Параметр ja_seceventlog.log_statement
+
+В версии компонента 3.x, параметр «ja_seceventlog.log_statement» исключен. Значение параметра ja_seceventlog.log_statement по умолчанию:
 
 - в версии 3.x – исключен;
 
 - в версии 2.0 – пустое.
 
-> Параметр указывает, будет ли протоколирование включать текст инструкции и параметры (если включено). В зависимости от требований журнал аудита может не требовать этого, и журналы становятся менее подробными.
->
-> ja_seceventlog.log_statement = on
->
-> При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.
+Параметр указывает, будет ли протоколирование включать текст инструкции и параметры (если включено). В зависимости от требований журнал аудита может не требовать этого, и журналы становятся менее подробными.
 
-## Параметр ja_seceventlog.log_statement_once
 
-> В версии компонента 3.x, параметр «ja_seceventlog.log_statement_once» исключен.
->
-> Параметр ja_seceventlog.log_statement_once предназначен для включения/выключения записи текста запроса (или его части) в событие журнала безопасности только один раз при обработке сложных запросов для подвыражений.
->
-> Значение параметра ja_seceventlog.log_statement_once по умолчанию:
+```
+ja_seceventlog.log_statement = on
+```
+
+
+При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.
+
+### Параметр ja_seceventlog.log_statement_once
+
+В версии компонента 3.x, параметр «ja_seceventlog.log_statement_once» исключен.
+
+Параметр ja_seceventlog.log_statement_once предназначен для включения/выключения записи текста запроса (или его части) в событие журнала безопасности только один раз при обработке сложных запросов для подвыражений.
+
+Значение параметра ja_seceventlog.log_statement_once по умолчанию:
 
 - в версии 3.x – исключен;
 
 - в версии 2.0 – off.
 
-> При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.
+При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.
 
-## Параметр ja_seceventlog.log_client
+### Параметр ja_seceventlog.log_client
 
-> Параметр «ja_seceventlog.log_client» предназначался для определения, будут ли сообщения журнала событий безопасности отображаться для клиентского процесса, например такого как psql.
->
-> В версии 3.Х параметр удален.
->
-> По умолчанию параметр был отключен.
->
-> При обновлении компонента ja_seceventlog до версии 3.x, если параметр использовался, то следует его удалить.
+Параметр «ja_seceventlog.log_client» предназначался для определения, будут ли сообщения журнала событий безопасности отображаться для клиентского процесса, например такого как psql.
 
-## Параметр ja_seceventlog.log_level
+В версии 3.Х параметр удален.
 
-> Параметр ja_seceventlog.log_level предназначался для указания уровня важности сообщений событий безопасности, которые передаются клиенту.
->
-> В версии 3.Х параметр удален.
->
-> При обновлении компонента ja_seceventlog до версии 3.Х, если параметр использовался, то следует его удалить.
+По умолчанию параметр был отключен.
 
-## Параметр ja_seceventlog.log_parameter_max_size
+При обновлении компонента ja_seceventlog до версии 3.x, если параметр использовался, то следует его удалить.
 
-> Параметр ja_seceventlog.log_parameter_max_size определяет максимальный размер (в байтах) параметров, которые могут быть записаны в журнал. Параметры, превышающие указанный размер, заменяются на \<long param suppressed\>. При значении 0 ограничение отключается, и регистрируются все параметры без обрезки. Данная настройка ограничивает длину записываемых значений для ja_seceventlog.log_parameter.
->
-> Значение параметра ja_seceventlog.log_level по умолчанию:
+### Параметр ja_seceventlog.log_level
+
+Параметр ja_seceventlog.log_level предназначался для указания уровня важности сообщений событий безопасности, которые передаются клиенту.
+
+В версии 3.Х параметр удален.
+
+При обновлении компонента ja_seceventlog до версии 3.Х, если параметр использовался, то следует его удалить.
+
+### Параметр ja_seceventlog.log_parameter_max_size
+
+Параметр ja_seceventlog.log_parameter_max_size определяет максимальный размер (в байтах) параметров, которые могут быть записаны в журнал. Параметры, превышающие указанный размер, заменяются на <long param suppressed>. При значении 0 ограничение отключается, и регистрируются все параметры без обрезки. Данная настройка ограничивает длину записываемых значений для ja_seceventlog.log_parameter.
+
+Значение параметра ja_seceventlog.log_level по умолчанию:
 
 - в версии 3.x – 0;
 
 - в версии 2.0 – 0.
 
-> При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.
+При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.
 
-## Параметр ja_seceventlog.log_rows
+### Параметр ja_seceventlog.log_rows
 
-> В версии компонента 3.x параметр ja_seceventlog.log_rows включен по умолчанию.
->
-> Атрибут с текстом выполняемого SQL-запроса будет всегда включаться в событие безопасности.
->
-> При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.
+В версии компонента 3.x параметр ja_seceventlog.log_rows включен по умолчанию.
 
-# УДАЛЕНИЕ КОМПОНЕНТА
+Атрибут с текстом выполняемого SQL-запроса будет всегда включаться в событие безопасности.
 
-## Удаление расширения
+При обновлении компонента ja_seceventlog до версии 3.x данный параметр не требует дополнительных действий в настройке.
 
-> Расширение удаляется SQL-командой:
->
-> DROP EXTENSION ja_seceventlog;
->
-> В разделе «Shared Library Preloading» конфигурационного файла «postgresql.conf» целесообразно закомментировать строку или удалить имя загружаемой библиотеки
->
-> «ja_seceventlog» из общего перечня загружаемых библиотек:
->
-> \#shared_preload_libraries = 'ja_seceventlog'
+## УДАЛЕНИЕ КОМПОНЕНТА
 
-## Удаление пакета
+### Удаление расширения
 
-> Компонент удаляется, для DEB систем, при помощи штатных средств ОС управления пакетами:
->
-> apt-get remove jatoba\*-ja-seceventlog
->
-> Компонент удаляется. для RPM систем, при помощи штатных средств ОС управления пакетами:
->
-> yum remove jatoba\*-ja_seceventlog\*
+Расширение удаляется SQL-командой:
 
-# ПРИЛОЖЕНИЕ 1
+
+```sql
+DROP EXTENSION ja_seceventlog;
+```
+
+
+В разделе «Shared Library Preloading» конфигурационного файла «postgresql.conf» целесообразно закомментировать строку или удалить имя загружаемой библиотеки
+
+«ja_seceventlog» из общего перечня загружаемых библиотек:
+
+
+```
+#shared_preload_libraries = 'ja_seceventlog'
+```
+
+
+### Удаление пакета
+
+Компонент удаляется, для DEB систем, при помощи штатных средств ОС управления пакетами:
+
+
+```
+apt-get remove jatoba*-ja-seceventlog
+```
+
+
+Компонент удаляется. для RPM систем, при помощи штатных средств ОС управления пакетами:
+
+
+```
+yum remove jatoba*-ja_seceventlog*
+```
+
+
+## ПРИЛОЖЕНИЕ 1
 
 (справочное)
 
-> Список типов объектов «object_type» компонента «ja_SecEventLog»:
+Список типов объектов «object_type» компонента «ja_SecEventLog»:
 
 - ACCESS METHOD;
 
@@ -1710,434 +1731,11 @@ ja_seceventlog.secevent_log и непосредственно связан с п
 
 - VIEW
 
-# ПЕРЕЧЕНЬ СОКРАЩЕНИЙ
+## ПЕРЕЧЕНЬ СОКРАЩЕНИЙ
 
-<table>
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 12%" />
-<col style="width: 71%" />
-</colgroup>
-<thead>
-<tr>
-<th><blockquote>
-<p>SQL</p>
-</blockquote></th>
-<th><blockquote>
-<p>–</p>
-</blockquote></th>
-<th><blockquote>
-<p>Structured Query Language</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><blockquote>
-<p>БД</p>
-</blockquote></td>
-<td><blockquote>
-<p>–</p>
-</blockquote></td>
-<td><blockquote>
-<p>База данных</p>
-</blockquote></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>ОС</p>
-</blockquote></td>
-<td><blockquote>
-<p>–</p>
-</blockquote></td>
-<td><blockquote>
-<p>Операционная система</p>
-</blockquote></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>СУБД</p>
-</blockquote></td>
-<td><blockquote>
-<p>–</p>
-</blockquote></td>
-<td><blockquote>
-<p>Система управления базами данных</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;"><blockquote>
-<p>Лист регистрации изменений</p>
-</blockquote></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2"><blockquote>
-<p>Изм.</p>
-</blockquote></td>
-<td colspan="4"><blockquote>
-<p>Номера листов (страниц)</p>
-</blockquote></td>
-<td rowspan="2" style="text-align: center;"><blockquote>
-<p>Всего листов (страниц) в документе</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
-<p>Номер документа</p>
-</blockquote></td>
-<td rowspan="2" style="text-align: center;"><blockquote>
-<p>Входящий номер сопроводите льного документа и</p>
-<p>дата</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
-<p>Подпись</p>
-</blockquote></td>
-<td rowspan="2"><blockquote>
-<p>Дата</p>
-</blockquote></td>
-</tr>
-<tr>
-<td><blockquote>
-<p>измене нных</p>
-</blockquote></td>
-<td><blockquote>
-<p>замене нных</p>
-</blockquote></td>
-<td><blockquote>
-<p>новых</p>
-</blockquote></td>
-<td><blockquote>
-<p>аннулир ованных</p>
-</blockquote></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Сокращение | Расшифровка                      |
+|------------|----------------------------------|
+| SQL        | Structured Query Language        |
+| БД         | База данных                      |
+| ОС         | Операционная система             |
+| СУБД       | Система управления базами данных |
