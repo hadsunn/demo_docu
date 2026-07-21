@@ -1,6 +1,6 @@
 ---
-title: Компонент pg_task
-sidebar_position: 3
+title: Компонент pg_task (test)
+sidebar_position: 6
 ---
 
 **АННОТАЦИЯ**
