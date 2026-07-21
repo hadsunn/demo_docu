@@ -54,13 +54,13 @@
     ],
     "description": "Insert a image for MD"
   },
-  "Wrap selection with code block minus2": {
+  "Wrap selection with sql code block": {
     "scope": "md",
     "prefix": "wraptag",
     "body": [
-    "```",
-    //"$TM_SELECTED_TEXT",
-    "${TM_SELECTED_TEXT/^.{2}(.*)$/$1/}",
+    "```sql",
+    "$TM_SELECTED_TEXT",
+    //"${TM_SELECTED_TEXT/^.{2}(.*)$/$1/}",
     "```"
     ],
     "description": "Wrap selected text with a tag (asks for tag name) and leave an empty line"
