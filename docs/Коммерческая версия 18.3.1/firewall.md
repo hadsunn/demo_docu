@@ -762,59 +762,9 @@ DROP EXTENSION sql_firewall
 
 ## ПЕРЕЧЕНЬ СОКРАЩЕНИЙ
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 8%" />
-<col style="width: 80%" />
-</colgroup>
-<thead>
-<tr>
-<th>
-<p>SQL</p>
-</th>
-<th>
-<p>–</p>
-</th>
-<th>
-<p>Structured Query Language – язык структурированных запросов</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<p>БД</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>База данных</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>ОС</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>Операционная система</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>СУБД</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>Система управления базами данных</p>
-</td>
-</tr>
-</tbody>
-</table>
-
+| Сокращение | Расшифровка                      |
+|------------|----------------------------------|
+| SQL        | Structured Query Language        |
+| БД         | База данных                      |
+| ОС         | Операционная система             |
+| СУБД       | Система управления базами данных |
