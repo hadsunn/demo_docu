@@ -1,3 +1,7 @@
+---
+title: Обеспечение работы с СУБД Oracle
+---
+
 **АННОТАЦИЯ**
 
 В документе приведены сведения, необходимые для установки и эксплуатации компонентов, обеспечивающих работу с СУБД «Oracle», таких как:
@@ -8928,7 +8932,7 @@ Oracle_FDW поддерживает операции INSERT, UPDATE и DELETE н
 
 По умолчанию oracle_fdw использует уровень изоляции «serializable», поэтому запросы, меняющие данные во внешних таблицах, могут привести к ошибке:
 
-ORA-08177: can't serialize access for this transaction
+> ORA-08177: can't serialize access for this transaction
 
 Такая ошибка может возникнуть при параллельном выполнении транзакций, особенно если они выполняются долго. Ошибки этого типа обозначены как SQLSTATE (40001). Приложение, которое использует Oracle_FDW должно заново отправить транзакцию, если произошла ошибка этого типа.
 
@@ -8952,9 +8956,11 @@ ORA-08177: can't serialize access for this transaction
 
 Пример команды:
 
-IMPORT FOREIGN SCHEMA <имя схемы Oracle> FROM SERVER oradb INTO
 
-<локальная схема> OPTIONS (case 'lower')
+```sql
+IMPORT FOREIGN SCHEMA <имя схемы Oracle> FROM SERVER oradb INTO <локальная схема> OPTIONS (case 'lower')
+```
+
 
 Правила использования операции:
 
@@ -9141,37 +9147,58 @@ IMPORT FOREIGN SCHEMA <имя схемы Oracle> FROM SERVER oradb INTO
 
 Для удаления компонента «orafce» потребуется авторизоваться в СУБД и выполнить команду:
 
+
+```sql
 DROP EXTENSION orafce;
+```
+
 
 В ОС GNU/Linux требуется выйти из psql и удалить пакет расширения, выполнив команду:
 
+```
+
 apt-get remove jatoba4-orafce
+```
+
 
 Для удаления компонента «pg_variables» потребуется авторизоваться в СУБД и выполнить команду:
 
+
+```sql
 DROP EXTENSION pg_variables;
+```
+
 
 В ОС GNU/Linux требуется выйти из psql и удалить пакет расширения, выполнив команду:
 
+
+```
 apt-get remove jatoba4-pg-variables
+```
+
 
 Для удаления компонента «oracle_fdw» потребуется авторизоваться в СУБД и выполнить команду:
 
+
+```sql
 DROP EXTENSION oracle_fdw;
+```
+
 
 В ОС GNU/Linux требуется выйти из psql и удалить пакет расширения, выполнив команду:
 
+
+```
 apt-get remove jatoba4-oracle-fdw
+```
+
 
 ### Удаление компонента при наличии зависимых от него объектов
 
 Для удаления компонента вместе со всеми зависимыми от него объектами потребуется авторизоваться в СУБД и выполнить команду:
 
-```
+```sql
 # DROP EXTENSION orafce cascade;
-```
-
-```
 # DROP EXTENSION pg_variables cascade; \# DROP EXTENSION oracle_fdw cascade;
 ```
 
@@ -9183,37 +9210,48 @@ apt-get remove jatoba4-oracle-fdw
 
 1)  В терминале войти в режим суперпользователя, выполнив команду:
 
+
+```
 sudo su
+```
+
 
 2)  Если команды sudo не существует – установить:
 
-su -l
 
+```
+su -l
 apt-get install sudo -y
+```
+
 
 3)  Выполнить обновление системы:
+4)  
+```
+sudo apt update && sudo apt upgrade –y
+sudo apt -s dist-upgrade
+sudo apt dist-upgrade
+```
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image153.png)
-
-- sudo apt update && sudo apt upgrade –y
-
-- sudo apt -s dist-upgrade
-
-- sudo apt dist-upgrade
 
 Рисунок П1.1 – Обновление системы
 
 4)  Создать папку localrepo в корневом каталоге:
 
+
+```
 mkdir /localrepo
+```
+
 
 5)  В созданную папку скопировать:
 
-    - каталог <pool>;
+    - каталог \<pool\>;
 
-    - каталог <dist>;
+    - каталог \<dist\>;
 
-    - файл <DEB-GPG-KEY-Jatoba>
+    - файл \<DEB-GPG-KEY-Jatoba\>
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image154.png)
 
@@ -9221,27 +9259,43 @@ mkdir /localrepo
 
 6)  Установить открытый ключ репозитория:
 
+```
+apt-key add /localrepo/DEB-GPG-KEY-Jatoba
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image155.png)
 
-apt-key add /localrepo/DEB-GPG-KEY-Jatoba
+
 
 Рисунок П1.3 – Установка открытого ключа репозитория
 
 7)  Добавить описание локального репозитория в систему:
 
+
+```
 nano /etc/apt/sources.list.d/jatoba-4.list
+```
+
 
 8)  Добавить в файл следующее содержимое и сохранить:
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image156.png)
 
+
+```
 deb file:///localrepo stable non-free
+```
+
 
 Рисунок П1.4 – Содержание файла «jatoba-4.list»
 
+```
+apt-get update
+```
+
 9)  Проиндексировать обновленное состояние репозитория:
 
-apt-get update
+
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image157.png)
 
@@ -9249,69 +9303,89 @@ apt-get update
 
 10) Установить основные пакеты СУБД «Jatoba»
 
+```
+apt-get install jatoba4-client jatoba4-contrib jatoba4-libs jatoba4-server
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image158.png)
 
-apt-get install jatoba4-client jatoba4-contrib jatoba4-libs jatoba4-server
+
 
 Рисунок П1.6 – Установка основных пакетов
 
-11) Скачать внешний пакет для поддержки работы компонента oracle-fdw
+11) Скачать внешний пакет для поддержки работы компонента oracle-fdw Пакет oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64 – Oracle® Instant Client версии 11.2 требуется для работы пакета jatoba4-oracle-fdw. Скачать его возможно по адресу: [<u>https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html</u>](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
 
-Пакет oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64 – Oracle® Instant Client версии
+Рисунок П1.7 – Страница загрузки пакета 
 
-11.2 требуется для работы пакета jatoba4-oracle-fdw. Скачать его возможно по адресу: [<u>https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html</u>](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
-
-Рисунок П1.7 – Страница загрузки пакета Скопировать пакет в директорию Download и перейти в нее.
+Скопировать пакет в директорию Download и перейти в нее.
 
 12) Установить утилиту преобразования пакетных форматов Alien
 
+```
+sudo apt-get install alien
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image160.png)
 
-sudo apt-get install alien
+
 
 Рисунок П1.8 – Установка утилиты Alien
 
 13) Установить пакет операционной системы libaio1
 
+
+```
 sudo apt-get install libaio1
+```
+
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image161.png)
 
 Рисунок П1.9 – Установка пакета операционной системы libaio1
 
-14) Установить пакет клиентских библиотек СУБД Oracle oracle-instantclient11.2-
+14) Установить пакет клиентских библиотек СУБД Oracle oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm
 
-basic-11.2.0.4.0-1.x86_64.rpm
+```
+sudo alien -i oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm
+```
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image162.png)
 
-sudo alien -i oracle-instantclient11.2-basic-11.2.0.4.0-
 
-1.x86_64.rpm
 
 Рисунок П1.10 – Установка пакет клиентских библиотек СУБД Oracle
 
 15) Выполнить конфигурирование установленной библиотеки
 
+```
+sudo sh -c "echo /usr/lib/oracle/11.2/client64/lib > \\
+/etc/ld.so.conf.d/oracle-instantclient.conf" 
+sudo ldconfig
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image163.png)
 
-sudo sh -c "echo /usr/lib/oracle/11.2/client64/lib > \\
 
-/etc/ld.so.conf.d/oracle-instantclient.conf" sudo ldconfig
 
 Рисунок П1.11 – Конфигурирование пакета
 
 16) Установить компонент Oracle_FDW
+17) 
+```
+apt-get install jatoba4-oracle-fdw
+```
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image164.png)
-
-apt-get install jatoba4-oracle-fdw
 
 Рисунок П1.12 – Установка СУБД с компонентом Oracle_FDW
 
 17) Установить компонент OraFCE
 
+
+```
 apt-get install jatoba4-orafce
+```
+
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image165.png)
 
@@ -9319,15 +9393,23 @@ apt-get install jatoba4-orafce
 
 18) Установить компонент pg_Variables
 
+```
+apt-get install jatoba4-pg-variables
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image166.png)
 
-apt-get install jatoba4-pg-variables
+
 
 Рисунок П1.14 – Установка СУБД с компонентом pg_Variables
 
 19) Убедиться в отсутствии ошибок зависимостей:
 
-for f in \$(LANG=C find /usr/jatoba-4 -type f -exec file {} \\ \| grep "ELF 64-bit LSB" \| awk 'BEGIN {FS=":"} { print \$1}' \| sort); do echo \$f; ldd \$f \| grep "not found"; done
+
+```
+for f in $(LANG=C find /usr/jatoba-4 -type f -exec file {} \; | grep "ELF 64-bit LSB" | awk 'BEGIN {FS=":"} { print $1}' | sort); do echo $f; ldd $f | grep "not found"; done
+```
+
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image167.png)
 
@@ -9335,492 +9417,100 @@ for f in \$(LANG=C find /usr/jatoba-4 -type f -exec file {} \\ \| grep "ELF 64-b
 
 20) Перейти в директорию исполняемых файлов СУБД:
 
+```
+cd /usr/jatoba-4/bin
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image168.png)
 
-cd /usr/jatoba-4/bin
+
 
 Рисунок П1.16 – Переход в каталог
 
 21) Инициализировать каталог данных СУБД при помощи команды:
 
+```
+./jatoba-setup initdb jatoba-4
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image169.png)
 
-./jatoba-setup initdb jatoba-4
+
 
 Рисунок П1.17 – Инициализация СУБД
 
 22) Добавить сервис в список автозапуска:
 
+```
+systemctl enable jatoba-4
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image170.png)
 
-systemctl enable jatoba-4
+
 
 Рисунок П1.18 – Добавление сервиса jatoba-4 а автозагрузку ОС
 
 23) Запустить службу:
 
+```
+systemctl start jatoba-4
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image171.png)
 
-systemctl start jatoba-4
+
 
 Рисунок П1.19 – Запуск службы jatoba-4
 
 24) Проверить статус службы:
 
+```
+systemctl status jatoba-4
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image172.png)
 
-systemctl status jatoba-4
+
 
 Рисунок П1.20 – Проверка статуса службы jatoba-4
 
 25) Установить пароль для пользователя СУБД postgres: Необходимо выйти из сессии root:
 
+
+```
 su – postgres
+```
+
 
 и зайти в СУБД:
 
+
+```
 psql
+```
+
 
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image173.png)
 
 Рисунок П1.21 – Вход в СУБД Выполнить SQL-команду установки пароля:
 
+```
+\password
+```
+
 ![](@site/docs/assets/images/com18.3.1/oracle/media/image174.png)
 
-\password
+
 
 Рисунок П1.22 – Установка пароля для пользователя СУБД postgres
 
 На этом этапе установка СУБД с компонентами обеспечения работы с СУБД Oracle и СУБД закончена.
 
 ## ПЕРЕЧЕНЬ СОКРАЩЕНИЙ
-
-<table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 8%" />
-<col style="width: 81%" />
-</colgroup>
-<thead>
-<tr>
-<th>
-<p>SQL</p>
-</th>
-<th>
-<p>–</p>
-</th>
-<th>
-<p>(Structured Query Language) — язык структурированных запросов</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<p>БД</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>База данных</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>ОС</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>Операционная система</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>СУБД</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>Система управления базами данных</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;">
-<p>Лист регистрации изменений</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2">
-<p>Изм.</p>
-</td>
-<td colspan="4">
-<p>Номера листов (страниц)</p>
-</td>
-<td rowspan="2" style="text-align: center;">
-<p>Всего листов (страниц) в документе</p>
-</td>
-<td rowspan="2">
-<p>Номер документа</p>
-</td>
-<td rowspan="2" style="text-align: center;">
-<p>Входящий номер сопроводите льного документа и</p>
-<p>дата</p>
-</td>
-<td rowspan="2">
-<p>Подпись</p>
-</td>
-<td rowspan="2">
-<p>Дата</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>измене нных</p>
-</td>
-<td>
-<p>замене нных</p>
-</td>
-<td>
-<p>новых</p>
-</td>
-<td>
-<p>аннулир ованных</p>
-</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Сокращение | Расшифровка                      |
+|------------|----------------------------------|
+| SQL        | Structured Query Language        |
+| БД         | База данных                      |
+| ОС         | Операционная система             |
+| СУБД       | Система управления базами данных |
