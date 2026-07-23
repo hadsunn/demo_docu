@@ -201,5 +201,12 @@
           "replace": "\n",
       },
 
-  }
+  },
+  "editor.wordBasedSuggestions": "off",
+    "editor.suggest.showWords": false,
+    "editor.suggest.showKeywords": false,
+    "editor.suggest.showClasses": false,
+    "editor.suggest.showFunctions": false,
+    "editor.suggest.showVariables": false,
+    "editor.suggest.showSnippets": true
 }
