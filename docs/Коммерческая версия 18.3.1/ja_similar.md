@@ -1,7 +1,9 @@
 ---
-title: Компонент «ja_Similar». Полнотекстовый поиск.
+title: Компонент «ja_Similar»
 toc_max_heading_level: 4
 ---
+
+# Компонент «ja_Similar». Полнотекстовый поиск.
 
 **Аннотация**
 
