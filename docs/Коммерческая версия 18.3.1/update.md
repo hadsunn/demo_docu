@@ -1,3 +1,8 @@
+---
+title: Руководство по обновлению
+toc_max_heading_level: 4
+---
+
 **АННОТАЦИЯ**
 
 Данный документ представляет собой руководство по обновлению защищенной системы управления базами данных «Jatoba» (далее по тексту – СУБД, СУБД «Jatoba»).
@@ -3834,35 +3839,54 @@ Reply: 10.88.1.161-ALIVE (Slave)
 
 2)  Запустить командную строку «от имени администратора».
 
-3)  Перейти в каталог, в котором расположены исполняемые файлы служб СУБД
+3)  Перейти в каталог, в котором расположены исполняемые файлы служб СУБД «Jatoba»:
 
-«Jatoba»:
 
+```
 cd "c:\Program Files\GIS\Jatoba\5\bin"
+```
+
 
 4)  Остановить службу компонента «jaDog» на резервном узле:
 
-sc stop JadogService
 
+```
+sc stop JadogService
+```
+
+:::info Дополнительная информация
 Выполнить остановку служб также возможно через приложение «Службы», входящее в состав ОС Microsoft Windows.
+:::
 
-5)  ![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+5)  Остановить службу компонента «jaDog» на главном узле:
 
+
+```
 sc stop JadogService
+```
+
 
 6)  Остановить службу СУБД «Jatoba» 5 на главном узле:
 
+
+```
 sc stop JatobaServer-5
+```
+
 
 7)  Остановить службу СУБД «Jatoba» 5 на резервном узле:
 
+
+```
 sc stop JatobaServer-5
+```
 
-После остановки кластера запускать службы СУБД «Jatoba» и компонента
+:::info Дополнительная информация
+После остановки кластера запускать службы СУБД «Jatoba» и компонента «jaDog» старой версии нельзя, так как это может привести к ошибкам в процессе обновления и миграции.
 
-![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+:::
 
-### Обновление до последней версии СУБД «Jatoba» 5 на узлах кластера
+#### Обновление до последней версии СУБД «Jatoba» 5 на узлах кластера
 
 Обновление кластера до последней версии СУБД «Jatoba» подразумевает установку последней версии СУБД «Jatoba» 5 (j5.7.1) в полном режиме без удаления предыдущей версии.
 
@@ -3876,31 +3900,45 @@ sc stop JatobaServer-5
 
 Необходимо обеспечить через приложение «Службы» (входит в состав ОС Microsoft Windows) отключение автозапуска служб СУБД «Jatoba» 5 (JatobaServer-5), а также компонента «jaDog» (JadogService), после чего перевести их в ручной режим запуска.
 
-Для внесения изменений в путь к каталогу данных БД необходимо запустить приложение «Редактор реестра», входящее в состав ОС Microsoft Windows. После запуска
-
-«Редактора реестра» перейти в ветку HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\JatobaServer-5
+Для внесения изменений в путь к каталогу данных БД необходимо запустить приложение «Редактор реестра», входящее в состав ОС Microsoft Windows. После запуска «Редактора реестра» перейти в ветку HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\JatobaServer-5
 
 В параметре ImagePath указать каталог данных БД data, который соответствовал в обновляемой версии СУБД «Jatoba». Если установка СУБД «Jatoba» выполнялась с указанием значений по умолчанию, то параметр принимает такое значение:
 
+
+```
 "C:\Program Files\GIS\Jatoba\5\bin\pg_ctl.exe" runservice -N "JatobaServer-5" -D "C:\Program Files\GIS\Jatoba\5\data" -e "JatobaServer-5" -w
+```
+
 
 При помощи приложения «Редактор реестра» выполнить удаление следующих веток:
 
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\JadogRunAs Service HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\JadogServi ce
+
+```
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\JadogRunAsService HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\JadogService
+```
+
 
 В конфигурационный файл (C:\Program Files\GIS\Jatoba\5\etc\jadog\jadog.cfg) обновленной СУБД «Jatoba» необходимо внести следующее изменение:
 
+
+```
 db_service_name = JatobaServer-5
+```
+
 
 После внесения изменений в конфигурационный файл jadog.cfg необходимо перезапустить главный и резервные узлы кластера при помощи перезагрузки ОС.
 
-### Настойка параметров кластера СУБД «Jatoba»
+#### Настойка параметров кластера СУБД «Jatoba»
 
 Для успешного выполнения настройки параметров кластера СУБД «Jatoba» конфигурационные файлы обновляемой версии не удалять.
 
 На каждом из узлов кластера сконфигурировать параметры компонента «Jadog» согласно документу 643.72410666.00067-08 98 02-01 «Компонент jaDog. Управление режимом работы узлов кластера».
 
+
+```
 "C:\Program Files\GIS\Jatoba\5\bin\jadog.exe" setup
+```
+
 
 Значения всех параметров должны быть идентичны предыдущей версии конфигурации компонента «jaDog»: такие как имя кластера, IP-адреса, порты, каталоги данных, слоты репликации, пользователи, пароли и т.д.
 
@@ -3920,7 +3958,7 @@ db_service_name = JatobaServer-5
 
 - пункт 12 «Save setting and setup jadog».
 
-### Формирование файла состояния кластера
+#### Формирование файла состояния кластера
 
 Необходимо обеспечить формирование файла состояния кластера C:\Program Files\GIS\Jatoba\5\etc\jadog\jadog_state.yml на каждом из узлов кластера.
 
@@ -3950,11 +3988,7 @@ db_service_name = JatobaServer-5
 
 - DBPort – сетевой порт СУБД;
 
-- SyncState – определяет является ли резервный узел синхронным (0 -
-
-асинхронный, это значение выставляется при миграции на новую версию компоненгта
-
-«jaDog», 1 - синхронный, не используется для миграции);
+- SyncState – определяет является ли резервный узел синхронным (0 - асинхронный, это значение выставляется при миграции на новую версию компоненгта «jaDog», 1 - синхронный, не используется для миграции);
 
 - PrimaryIP, PrimaryPort – IP-адрес, сетевой порт, с которого узел кластера реплицируется. Для главного узла кластера эти параметры всегда пустые. Для резервных узлов (не каскадных) – ip и port мастера. У каскадного узла – ip и port узла, с которого идет репликация.
 
@@ -3962,73 +3996,93 @@ db_service_name = JatobaServer-5
 
 В данном подразделе в примере приводится простой отказоустойчивый кластер из двух узлов. Тогда описание файла состояния будет выглядеть следующим образом:
 
+
+```
 cluster_nodes:
-
-Epoch: 0 Activated: true cluster_name: test Datacenters:
-
-\- Datacenter: DEFAULT SyncCount: 0
-
+Epoch: 0 
+Activated: true 
+cluster_name: test 
+Datacenters:
+- Datacenter: DEFAULT 
+SyncCount: 0
 nodes:
+    - ip: 10.88.1.154
+        port: 12345
+        ClusterState: 2
+        NodeState: 13 
+        ReplicationSlot: slot1 
+        NodeName: node1 
+        DBPort: 5432
+        SyncState: 0 PrimaryIP: "" PrimaryPort: ""
+        PublicIP: 10.88.1.100/24
+    - ip: 10.88.1.164
+        port: 12345
+        ClusterState: 3
+        NodeState: 13 
+        ReplicationSlot: slot2 
+        NodeName: node2 
+        DBPort: 5432
+        SyncState: 0
+        PrimaryIP: 10.88.1.154
+        PrimaryPort: 12345 PublicIP: 10.88.1.100/24
+```
 
-\- ip: 10.88.1.154
 
-port: 12345
 
-ClusterState: 2
-
-NodeState: 13 ReplicationSlot: slot1 NodeName: node1 DBPort: 5432
-
-SyncState: 0 PrimaryIP: "" PrimaryPort: ""
-
-PublicIP: 10.88.1.100/24
-
-\- ip: 10.88.1.164
-
-port: 12345
-
-ClusterState: 3
-
-NodeState: 13 ReplicationSlot: slot2 NodeName: node2 DBPort: 5432
-
-SyncState: 0
-
-PrimaryIP: 10.88.1.154
-
-PrimaryPort: 12345 PublicIP: 10.88.1.100/24
-
-### Запуск обновленного кластера
+#### Запуск обновленного кластера
 
 Для запуска обновлённого кластера необходимо выполнить следующие действия:
 
 1)  Запустить командную строку «от имени администратора».
 
-2)  Перейти в каталог, в котором расположены исполняемые файлы служб СУБД
+2)  Перейти в каталог, в котором расположены исполняемые файлы служб СУБД «Jatoba»:
 
-«Jatoba»:
 
+```
 cd "C:\Program Files\GIS\Jatoba\5\bin"
+```
+
 
 3)  Включить службу СУБД «Jatoba» 5 на главном узле:
 
-sc start JatobaServer-5
 
-![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+```
+sc start JatobaServer-5
+```
+
+:::info Дополнительная информация
+Выполнить запуск служб также возможно через приложение «Службы», входящее в состав ОС Microsoft Windows.
+:::
 
 4)  Включить службу СУБД «Jatoba» 5 на резервном узле:
 
+
+```
 sc start JatobaServer-5
+```
+
 
 5)  Включить службу компонента «jaDog» на главном узле:
 
+
+```
 sc start JadogService
+```
+
 
 6)  Включить службу компонента «jaDog» на резервном узле:
 
+
+```
 sc start JadogService
+```
 
+:::info Дополнительная информация
 После запуска основных компонентов на узлах обновленного кластера необходимо подождать от 1 до 5 минут.
+:::
 
-### ![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+
+#### Проверка статуса обновленного кластера
 
 Для проверки статуса обновленного кластера необходимо выполнить следующие действия:
 
@@ -4036,123 +4090,63 @@ sc start JadogService
 
 2)  На главном узле кластера необходимо убедится в наличии public ip с помощью команды:
 
+
+```
 ipconfig
+```
 
-3)  На главном узле подключиться к консоли управления jadog.exe компонентом
 
-«jaDog» и выполнить команду:
+3)  На главном узле подключиться к консоли управления jadog.exe компонентом «jaDog» и выполнить команду:
 
+
+```
 cluster
+```
+
 
 4)  Если пользователь, от имени которого выполняется запуск, не является администратором СУБД, то команду проверки состояния узлов кластера следует запускать в таком виде:
 
+
+```
 "C:\Program Files\GIS\Jatoba\5\bin\jadog_ctl.exe" -U user -p port -h host -W password
+```
+
 
 5)  Критерием корректного состояния узлов кластера должно быть сообщение:
 
-\+
 
-\|
-
-\+
-
-\|Connection state\|Replication type\|Write LSN \|Replication slot name\|Slot status\|Public IP\|Node status\|
-
-\|Datacenter: DEFAULT\|
-
-\|node1\|10.88.1.154:12345()\|Master(ACTIVE)\|t\|-
-
-\|0/2A00FAF8\|-\|f\|t\| \|
-
-\|node2\|10.88.1.164:12345()\|Slave(ACTIVE) \|t\|async
-
-\|0/2A00FAF8\|slot2\|t\|f\| \|
-
-\|10.88.1.100/24\|
-
-\+
-
-\+
-
-\+
-
-\+
-
-\|Datacenter\|STATUS\|
-
-\+ + +
-
-\|DEFAULT \|ACTIVE\|
-
-\+
-
-\|Node name
-
-\+
-
-\+
-
-\|Node
-
-\|State
-
-\+
-
-\+
-
-\|f
-
-\+
-
-\+
-
-\|t
-
-\+
-
-\+
-
-\|test
-
-\+
-
-\+
-
-\|Cluster name\|AutoFailover\|AutoDCFailover\|Public IP
-
-\+
-
-\+
-
-\+
-
-\+
-
-\+
-
-\+
-
-\+
-
-\|Jadog version\|3.0.0\|
-
-\+
-
+```
 Reply: (id = 1)
++-------------+-----+
+|Jadog version|3.0.0|
++-------------+-----+
++------------+------------+--------------+--------------+
+|Cluster name|AutoFailover|AutoDCFailover|Public IP |
++------------+------------+--------------+--------------+
+|test |t |f |10.88.1.100/24|
++------------+------------+--------------+--------------+
++----------+------+
+|Datacenter|STATUS|
++----------+------+
+|DEFAULT |ACTIVE|
++----------+------+
+|Node name |Node |State
+|Connection state|Replication type|Write LSN |Replication slot name|Slot status|Public IP|Node status|
+|Datacenter: DEFAULT|
+|node1|10.88.1.154:12345()|Master(ACTIVE)|t|-|0/2A00FAF8|-|f|t| |
+|node2|10.88.1.164:12345()|Slave(ACTIVE) |t|async|0/2A00FAF8|slot2|t|f| |
+```
 
-\+ +
 
 6)  Необходимо обеспечить через приложение «Службы» включение автозапуска службы JadogService компонента «jaDog».
 
 ### Методика обновления отказоустойчивого кластера СУБД «Jatoba» с мажорной версии 4 до мажорной версии 5
 
-В данном подразделе перечисляются процедуры обновления кластера версии СУБД
-
-«Jatoba» 4 (начиная с J4.5.2) с версией компонента «jaDog» 1.4.0 и 1.4.2 до последней версии СУБД «Jatoba» 5 (J5.7.1) c версией компонента «jaDog» 3.0.
+В данном подразделе перечисляются процедуры обновления кластера версии СУБД «Jatoba» 4 (начиная с J4.5.2) с версией компонента «jaDog» 1.4.0 и 1.4.2 до последней версии СУБД «Jatoba» 5 (J5.7.1) c версией компонента «jaDog» 3.0.
 
 В данном случае миграция СУБД «Jatoba» возможна только пересборкой кластера уже с использованием новой версии СУБД «Jatoba» 5.
 
-### Остановка кластера СУБД «Jatoba»
+#### Остановка кластера СУБД «Jatoba»
 
 Перед обновлением необходимо остановить кластер выполнив следующие действия:
 
@@ -4160,35 +4154,54 @@ Reply: (id = 1)
 
 2)  Запустить командную строку «от имени администратора».
 
-3)  Перейти в каталог, в котором расположены исполняемые файлы служб СУБД
+3)  Перейти в каталог, в котором расположены исполняемые файлы служб СУБД «Jatoba»:
 
-«Jatoba»:
 
+```
 cd "C:\Program Files\GIS\Jatoba\4\bin"
+```
+
 
 4)  Остановить службу компонента «jaDog» на резервном узле:
 
-sc stop JadogService
 
+```
+sc stop JadogService
+```
+
+:::info Дополнительная информация
 Выполнить остановку служб также возможно через приложение «Службы», входящее в состав ОС Microsoft Windows.
+:::
 
-5)  ![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+5)  Остановить службу компонента «jaDog» на главном узле:
 
+
+```
 sc stop JadogService
+```
+
 
 6)  Остановить службу СУБД «Jatoba» 4 на главном узле:
 
+
+```
 sc stop JatobaServer
+```
+
 
 7)  Остановить службу СУБД «Jatoba» 4 на резервном узле:
 
+
+```
 sc stop JatobaServer
+```
 
-После остановки кластера запускать службы СУБД «Jatoba» и компонента
+:::info Дополнительная информация
+После остановки кластера запускать службы СУБД «Jatoba» и компонента «jaDog» старой версии нельзя! Это может привести к ошибкам в процессе обновления и миграции.
 
-![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+:::
 
-### Обновление до последней версии СУБД «Jatoba» 5 на узлах кластера
+#### Обновление до последней версии СУБД «Jatoba» 5 на узлах кластера
 
 Обновление кластера до последней версии СУБД «Jatoba» подразумевает установку последней версии СУБД «Jatoba» 5 (j5.7.1) в полном режиме без удаления предыдущей версии.
 
@@ -4204,55 +4217,85 @@ sc stop JatobaServer
 
 На резервных узлах необходимо выполнить очистку от содержимого каталога данных. Запустить командную строку «от имени администратора» и выполнить команды:
 
-cd "C:\Program Files\GIS\Jatoba\5\data"
 
+```
+cd "C:\Program Files\GIS\Jatoba\5\data"
 rd "C:\Program Files\GIS\Jatoba\5\data" /s /q
+```
+
 
 Выполнить настройку конфигурационных файлов postgresql.conf, postgresql.auto.conf, pg_hba.conf, pg_ident.conf для кластера СУБД «Jatoba» 5 с параметрами для СУБД «Jatoba»
 
-4\. К обязательным параметрам относятся:
+4. К обязательным параметрам относятся:
 
-listen_addresses = '\*' wal_level = replica wal_log_hints = on
 
-В конфигурационном файле pg_hba.conf, на время проведения миграции, следует указать метод аутентификации trust для всех строк как для СУБД «Jatoba» 4, так и для СУБД
+```
+listen_addresses = '*' 
+wal_level = replica 
+wal_log_hints = on
+```
 
-«Jatoba» 5.
 
-![](@site/docs/assets/images/com18.3.1/update/media/image1.png)
+В конфигурационном файле pg_hba.conf, на время проведения миграции, следует указать метод аутентификации trust для всех строк как для СУБД «Jatoba» 4, так и для СУБД «Jatoba» 5.
 
-### Проверка совместимости СУБД
+:::warning Важная информация
+На данном этапе миграции кластера запускать СУБД «Jatoba» 5 запрещается!
+:::
 
-![](@site/docs/assets/images/com18.3.1/update/media/image1.png)
+#### Проверка совместимости СУБД
+
+:::warning Важная информация
+Проверка совместимости обновленной СУБД «Jatoba» выполняется только на главном узле кластера!
+:::
 
 1)  Запустить командную строку от имени пользователя postgres:
 
-![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+:::info Дополнительная информация
+Для того чтобы открыть от имени пользователя «postgres» необходимо нажать правой кнопкой мыши по ярлыку CMD – «Запуск от имени другого пользователя» или выполнить команду:
 
+```
 RUNAS /USER:postgres "CMD.EXE"
+```
+
+:::
 
 2)  Установить переменную системного окружения:
 
+
+```
 SET PATH=%PATH%;C:\Program Files\GIS\Jatoba\5\bin;C:\Program Files\GIS\Jatoba\5\lib;
+```
+
 
 3)  Перейти в домашний каталог текущего пользователя postgres:
 
+
+```
 cd "C:\Users\postgres"
+```
+
 
 4)  <span id="_bookmark95" class="anchor"></span>Выполнить запуск проверки возможности обновления СУБД:
 
+
+```
 "C:\Program Files\GIS\Jatoba\5\bin\pg_upgrade.exe" --old-datadir "C:\Program Files\GIS\Jatoba\4\data" --new-datadir "C:\Program Files\GIS\Jatoba\5\data" --old-bindir "C:\Program Files\GIS\Jatoba\4\bin" --new-bindir "C:\Program Files\GIS\Jatoba\5\bin" --check
+```
+
 
 5)  <span id="_bookmark96" class="anchor"></span>В результате выполнения предыдущей команды будет выведен список проверок и их статусов:
 
 Проведение проверок целостности
 
+
+```
 Checking cluster versions ok
 
 Checking database user is the install user ok
 
 Checking database connection settings ok
 
-Checking for prepared transactions ok Checking for system-defined composite types in user tables ok Checking for reg\* data types in user tables ok Checking for contrib/isn with bigint-passing mismatch ok Checking for incompatible "xid" data type ok
+Checking for prepared transactions ok Checking for system-defined composite types in user tables ok Checking for reg* data types in user tables ok Checking for contrib/isn with bigint-passing mismatch ok Checking for incompatible "xid" data type ok
 
 Checking for spgist indexes ok
 
@@ -4268,11 +4311,12 @@ Checking for prepared transactions ok
 
 Checking for new cluster tablespace directories ok
 
-\*Кластеры совместимы\*
+*Кластеры совместимы*
+```
 
 6)  В случае если все проверки совместимости пройдены успешно можно приступать к миграции данных. В противном случае необходимо выполнить рекомендации, которые будут указаны после выполнения проверки совместимости. После устранения возникших проблем совместимости повторить процедуры из шагов [4)](#_bookmark95)-[5)](#_bookmark96).
 
-### Миграция данных главного узла кластера
+#### Миграция данных главного узла кластера
 
 Миграция данных главного узла кластера может быть выполнена тремя способами:
 
@@ -4288,27 +4332,48 @@ Checking for new cluster tablespace directories ok
 
 Полная миграция выполняется при помощи команды:
 
+
+```
 "C:\Program Files\GIS\Jatoba\5\bin\pg_upgrade.exe" --old-datadir "C:\Program Files\GIS\Jatoba\4\data" --new-datadir "C:\Program Files\GIS\Jatoba\5\data" --old-bindir "C:\Program Files\GIS\Jatoba\4\bin" --new-bindir "C:\Program Files\GIS\Jatoba\5\bin"
+```
+
 
 Миграция с жесткими ссылками выполняется при помощи команды:
 
+
+```
 "C:\Program Files\GIS\Jatoba\5\bin\pg_upgrade.exe" --old-datadir "C:\Program Files\GIS\Jatoba\4\data" --new-datadir "C:\Program Files\GIS\Jatoba\5\data" --old-bindir "C:\Program Files\GIS\Jatoba\4\bin" --new-bindir "C:\Program Files\GIS\Jatoba\5\bin" --link
+```
+
 
 Миграция с клонированием файлов выполняется при помощи команды:
 
+
+```
 "C:\Program Files\GIS\Jatoba\5\bin\pg_upgrade.exe" --old-datadir "C:\Program Files\GIS\Jatoba\4\data" --new-datadir "C:\Program Files\GIS\Jatoba\5\data" --old-bindir "C:\Program Files\GIS\Jatoba\4\bin" --new-bindir "C:\Program Files\GIS\Jatoba\5\bin" --clone
+```
+
 
 Результатом выполнения перечисленных выше команд будет информационное сообщение:
 
+
+```
 Обновление завершено
+```
+
 
 Статистика оптимизатора СУБД «Jatoba» утилитой pg_upgrade при выполнении миграции данных не переносится. После запуска нового сервера для переноса статистики оптимизатора следует выполнить следующую команду:
 
+
+```
 C:/Program Files/GIS/Jatoba/5/bin/vacuumdb --all --analyze-in-stages
+```
 
-После того, как успешно выполнена миграция и запущен компонент кластера
 
-![](@site/docs/assets/images/com18.3.1/update/media/image1.png)
+:::warning Важная информация
+После того, как успешно выполнена миграция и запущен компонент кластера «jaDog» на СУБД «Jatoba» 5, обязательно необходимо выполнить рекомендуемые завершающие команды на главном узле. Исполняемые скрипты и журналы миграции расположены в каталоге C:\Users\postgres. Кроме удаления предыдущей версии кластера, его возможно удалить после того, как убедились, что СУБД «Jatoba» 5 с ПО работает корректно.
+
+:::
 
 После успешного выполнения миграции данных на главном узле кластера возможно удалить предыдущую версию СУБД «Jatoba» при помощи скрипта C:\Users\postgres\delete_old_cluster.bat или вручную.
 
@@ -4316,7 +4381,7 @@ C:/Program Files/GIS/Jatoba/5/bin/vacuumdb --all --analyze-in-stages
 
 использования жестких ссылок удалять предыдущую версию СУБД кластера можно, так как его уже невозможно будет использовать, только после восстановления из резервной копии.
 
-### Настройка метода аутентификации компонента «jaDog»
+#### Настройка метода аутентификации компонента «jaDog»
 
 На данном этапе необходимо вернуть предыдущий метод аутентификации в конфигурационном файле pg_hba.conf на главном узле кластера.
 
@@ -4324,15 +4389,12 @@ C:/Program Files/GIS/Jatoba/5/bin/vacuumdb --all --analyze-in-stages
 
 ### Методика обновления компонента «securityprofile»
 
-Данный подраздел содержит сведения о процедуре обновления компонента
+Данный подраздел содержит сведения о процедуре обновления компонента «securityprofile», входящего в состав СУБД «Jatoba».
 
-«securityprofile», входящего в состав СУБД «Jatoba».
+:::warning Важная информация
+При миграции или обновлении СУБД «Jatoba» с установленным компонентом «securityprofile» запрещено использовать утилиту pg_dump/pg_dumall. Миграция или обновление СУБД «Jatoba» с помощью утилиты pg_dump/pg_dumpall  выполняется  с  полным  удалением  расширения «securityprofile» и последующей его настройкой в новой версии СУБД «Jatoba».
 
-![](@site/docs/assets/images/com18.3.1/update/media/image1.png)
-
-«securityprofile» запрещено использовать утилиту pg_dump/pg_dumall. Миграция или обновление СУБД «Jatoba» с помощью утилиты pg_dump/pg_dumpall выполняется с полным удалением расширения
-
-«securityprofile» и последующей его настройкой в новой версии СУБД «Jatoba».
+:::
 
 В рамках данного раздела предоставляется информация об обновлении:
 
@@ -4441,13 +4503,9 @@ C:/Program Files/GIS/Jatoba/5/bin/vacuumdb --all --analyze-in-stages
 </tbody>
 </table>
 
-Для более старых версий компонента «securityprofile» требуется удаление из СУБД
+Для более старых версий компонента «securityprofile» требуется удаление из СУБД «Jatoba» расширения «securityprofile», последующая его установка и настройка в новой версии СУБД «Jatoba».
 
-«Jatoba» расширения «securityprofile», последующая его установка и настройка в новой версии СУБД «Jatoba».
-
-### Миграция компонента «securityprofile» на минорную версию СУБД
-
-**«Jatoba» 1 (J1.20.1) или мажорную версию СУБД «Jatoba» 4 (j4.9.1)**
+#### Миграция компонента «securityprofile» на минорную версию СУБД «Jatoba» 1 (J1.20.1) или мажорную версию СУБД «Jatoba» 4 (j4.9.1)
 
 Миграция возможна только с помощью утилиты pg_dump (pg_dumpall) с полным удалением расширения «securityprofile» и последующей его настройкой в новой версии СУБД «Jatoba» 1 или 4. Данное обстоятельство обусловлено невозможностью установить две версии СУБД «Jatoba» до версии J4.9.1 включительно на ОС Microsoft Windows.
 
@@ -4455,13 +4513,9 @@ C:/Program Files/GIS/Jatoba/5/bin/vacuumdb --all --analyze-in-stages
 
 Рекомендуется обновление до последних актуальных версий СУБД «Jatoba» 4 (J4.18.1), СУБД «Jatoba» 5 (J5.7.1) или СУБД «Jatoba» 6 (J6.9.1).
 
-### Миграция версии компонента «securityprofile» 1.2 или 1.3 в СУБД
+#### Миграция версии компонента «securityprofile» 1.2 или 1.3 в СУБД «Jatoba» 1 на версию компонента «securityprofile» 2.2 последней мажорной версии «Jatoba» 4 (j4.18.1), «Jatoba» 5 (j5.13.1) или «Jatoba» 6 (j6.6.1)
 
-**«Jatoba» 1 на версию компонента «securityprofile» 2.2 последней мажорной версии «Jatoba» 4 (j4.18.1), «Jatoba» 5 (j5.13.1) или «Jatoba» 6 (j6.6.1)**
-
-В данном пункте приводится пример миграции компонента «securityprofile» 1.2 или
-
-1.3 в СУБД «Jatoba» 1 на версию компонента «securityprofile» 2.2 последней мажорной версии «Jatoba» 4 (J4.18.1), «Jatoba» 5 (J5.13.1) или «Jatoba» 6 (J6.9.1).
+В данном пункте приводится пример миграции компонента «securityprofile» 1.2 или 1.3 в СУБД «Jatoba» 1 на версию компонента «securityprofile» 2.2 последней мажорной версии «Jatoba» 4 (J4.18.1), «Jatoba» 5 (J5.13.1) или «Jatoba» 6 (J6.9.1).
 
 Перед миграцией компонента «securityprofile» необходимо соблюсти следующие предварительные условия:
 
@@ -4471,49 +4525,54 @@ C:/Program Files/GIS/Jatoba/5/bin/vacuumdb --all --analyze-in-stages
 
 - настроена парольная политика securityprofile.
 
-### Подготовка к обновлению и миграции
+##### Подготовка к обновлению и миграции
 
 <span id="_bookmark104" class="anchor"></span>Подготовка к обновлению и миграции сводится к выполнению следующих действий:
 
 1)  В служебной БД, где установлено расширение «securityprofile» выполнить следующие подготовительные запросы:
 
-\#CREATE TABLE public.passhst as SELECT \* from securityprofile.password_history;
-
-```
-# CREATE TABLE public.sec_prof as SELECT \* from securityprofile.profiles;
-```
-
-```
-# CREATE TABLE public.acc as SELECT \* from securityprofile.accounts where accroleoid<>10;
+```sql
+#CREATE TABLE public.passhst as SELECT * from securityprofile.password_history;
+# CREATE TABLE public.sec_prof as SELECT * from securityprofile.profiles;
+# CREATE TABLE public.acc as SELECT * from securityprofile.accounts where accroleoid<>10;
 ```
 
 где в последнем запросе «10» – это OID пользователя postgres. Если в СУБД «Jatoba» в качестве суперпользователя используется не postgres, то в запросе нужно указать OID этого пользователя. Получить OID пользователя можно следующей командой:
 
+
+```sql
 SELECT OID FROM pg_roles where rolname='username';
-
-2)  Выполнить удаление расширения компонента «securityprofile» из СУБД
-
-«Jatoba» с использованием учетной записи суперпользователя БД при помощи запросов:
-
 ```
+
+
+2)  Выполнить удаление расширения компонента «securityprofile» из СУБД «Jatoba» с использованием учетной записи суперпользователя БД при помощи запросов:
+
+```sql
 # DROP EXTENSION securityprofile;
-```
-
-```
 # DROP SCHEMA if exists securityprofile cascade;
 ```
 
 3)  Далее необходимо остановить службу СУБД «Jatoba» 1 при помощи команды от имени администратора:
 
+
+```
 net stop JatobaServer
+```
 
+:::info Дополнительная информация
 Выполнить остановку служб также возможно через приложение «Службы», входящее в состав ОС Microsoft Windows.
+:::
 
-4)  ![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
 
-\#shared_preload_libraries = 'securityprofile'
+4)  В конфигурационном файле postgresql.conf закомментировать строку	с названием расширения securityprofile:
 
-### Выполнение миграции
+
+```
+#shared_preload_libraries = 'securityprofile'
+```
+
+
+##### Выполнение миграции
 
 Для завершения миграции требуется выполнить следующие действия:
 
@@ -4521,113 +4580,128 @@ net stop JatobaServer
 
 2)  Остановить службу через консоль «Службы» или командой от имени администратора сервера:
 
+
+```
 net stop JatobaServer-4
+```
+
 
 3)  Выполнить миграцию СУБД «Jatoba» (см. подробнее раздел [3](#обновление-субд-jatoba-на-ос-семейства-windows)).
 
 4)  В конфигурационном файле postgresql.conf раскомментировать строку с названием расширения securityprofile:
 
+
+```
 shared_preload_libraries = 'securityprofile'
+```
+
 
 5)  В конфигурационном файле postgresql.conf добавить строку с названием служебной БД, в которой будет установлено расширение «securityprofile»:
 
+
+```
 securityprofile.db_name = 'db_name'
+```
+
 
 6)  В случае если выполнялось обновление кластера с компонентом «jaDog», на главном узле выполняется запуск СУБД «Jatoba»:
 
-net start JatobaServer-4
 
+```
+net start JatobaServer-4
+```
+
+:::info Дополнительная информация
 Для СУБД «Jatoba», не входящей в кластер, достаточно выполнить команду из п. 6)
+:::
 
-7)  ![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+7)  После этого на резервном узле кластера также выполняется запуск СУБД «Jatoba»:
 
-«Jatoba»:
 
+```
 net start JatobaServer-4
+```
+
 
 8)  После запуска СУБД «Jatoba» на резервном узле кластера необходимо убедиться в том, что выполняется репликация данных между ним и главным узлом.
 
-### Установка расширения securityprofile
+##### Установка расширения securityprofile
 
 Для установки расширения «securityprofile» необходимо выполнить подключение суперпользователем СУБД «Jatoba». Если установка выполняется в рамках миграции кластера, то необходимо выполнить подключение к его главному узлу.
 
 Для установки расширения «securityprofile» необходимо выполнить следующие действия:
 
-1)  ![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+1)  После подключения выполнить установку расширения «securityprofile» при помощи выполнения запроса:
 
+
+```sql
 CREATE EXTENSION securityprofile;
+```
+
 
 2)  Выполнение следующих запросов необходимо для корректной работы расширения «securityprofile»:
 
-\#ALTER TABLE securityprofile.accounts alter COLUMN acclastlogintime set DEFAULT now();
 
-\#TRUNCATE securityprofile.profiles;
-
-```
+```sql
+#ALTER TABLE securityprofile.accounts alter COLUMN acclastlogintime set DEFAULT now();
+#TRUNCATE securityprofile.profiles;
 # INSERT INTO securityprofile.profiles SELECT \* from public.sec_prof;
-```
-
-```
 # INSERT INTO securityprofile.accounts SELECT \* from public.acc;
 ```
 
+:::info Дополнительная информация
 Если после выполнения предыдущего запроса возникает ошибка вида:
 
+```
 ERROR: duplicate key value violates unique constraint "accounts_pkey"
-
 ПОДРОБНОСТИ: Key (accroleoid)=(16384) already exists.
+```
 
 Это означает, что при выполнении условий из п. [4.5.2.1](#подготовка-к-обновлению-и-миграции) на шаге [0](#_bookmark104) не исключили суперпользователя SUPERUSER. Тогда запросы будут выглядеть так:
 
 ```
 # INSERT INTO securityprofile.accounts SELECT \* from public.acc where accroleoid<>16384;
-```
-
-```
-# INSERT INTO securityprofile.password_history SELECT
-```
-
-\* from public.passhst;
-
-```
+# INSERT INTO securityprofile.password_history SELECT * from public.passhst;
 # ALTER TABLE securityprofile.accounts alter COLUMN acclastlogintime DROP default;
-```
-
-```
 # SELECT securityprofile.synchronize();
 ```
+:::
 
 3)  После установки и настройки расширения securityprofile необходимо осуществить перезапуск СУБД «Jatoba» и дождаться выполнения команды (в случае миграции кластера команда выполняется как на главном, так и на резервном узлах):
 
+
+```
 net restart JatobaServer-4
+```
 
-4)  Проверить подключение пользователей к БД обновленной версии СУБД
 
-«Jatoba» с текущими паролями, а также работу клиентских приложений и т.д.
+4)  Проверить подключение пользователей к БД обновленной версии СУБД «Jatoba» с текущими паролями, а также работу клиентских приложений и т.д.
 
 5)  После успешной проверки подключений к БД возможно удаление предыдущей версии СУБД «Jatoba», в том числе каталога данных.
 
 ## ОБНОВЛЕНИЕ КОМПОНЕНТА JDV
 
-Компонент JDV должен быть временно отключен при выполнении обновления СУБД
+Компонент JDV должен быть временно отключен при выполнении обновления СУБД «Jatoba» до версии 18 включительно.
 
-«Jatoba» до версии 18 включительно.
+Для временного отключения компонента JDV необходимо проделать следующие шаги:
 
-Для временного отключения компонента JDV необходимо проделать следующие
+1)  подключиться к СУБД ролью «dv_owner» и выполнить команду деактивации компонента:
 
-шаги:
 
-1)  подключиться к СУБД ролью «dv_owner» и выполнить команду деактивации
-
-компонента:
-
+```sql
 SELECT jdv.jdv_deactivate();
+```
+
 
 2)  выполнить обновление СУБД «Jatoba» до версии 18 как это указано в п. [1.3](#обновление-субд-jatoba-до-версии-18) данного руководства;
 
 3)  подключиться ролью dv_owner и выполнить команду активации компонента:
 
+
+```sql
 SELECT jdv.jdv_activate();
+```
+
 
 ## МИГРАЦИЯ СУБД С ASTRA 1.8 НА REDOS 7.3
 
@@ -4637,11 +4711,15 @@ SELECT jdv.jdv_activate();
 
 При попытке использовать резервную копию БД, созданную в ОС Astra 1.8 (glibc 2.36), на сервере с ОС РедОС 7.3 (glibc 2.28), СУБД «Jatoba» выдаст следующее предупреждение:
 
+
+```
 ПРЕДУПРЕЖДЕНИЕ: несовпадение версии для правила сортировки в базе данных "postgres"
 
 DETAIL: База данных была создана с версией правила сортировки 2.36, но операционная система предоставляет версию 2.28.
 
 HINT: Перестройте все объекты в этой базе, задействующие основное правило сортировки, и выполните ALTER DATABASE postgres REFRESH COLLATION VERSION, либо соберите PostgreSQL с правильной версией библиотеки.
+
+```
 
 Это предупреждение критично, так как изменение правил сортировки может привести к повреждению индексов и непредсказуемому поведению приложений, которые полагаются на определенный порядок сортировки данных.
 
@@ -4655,457 +4733,33 @@ HINT: Перестройте все объекты в этой базе, зад�
 
 Для каждой базы данных необходимо выполнить следующую команду:
 
+
+```
 \c database_name
-
 REINDEX DATABASE database_name;
+```
 
-![](@site/docs/assets/images/com18.3.1/update/media/image2.png)
+:::info Дополнительная информация
+В БД с большим объемом информации данная операция может быть длительной и ресурсоемкой. Планируйте ее на время наименьшей нагрузки.
+:::
 
 2)  Обновление версии сортировки (REFRESH VERSION)
 
 После перестройки индексов необходимо обновить запись о версии collation в системном каталоге, чтобы устранить предупреждение.
 
+
+```sql
 ALTER DATABASE database_name REFRESH COLLATION VERSION;
+```
+
 
 ## ПЕРЕЧЕНЬ СОКРАЩЕНИЙ
 
-<table>
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 12%" />
-<col style="width: 71%" />
-</colgroup>
-<thead>
-<tr>
-<th>
-<p>БД</p>
-</th>
-<th>
-<p>–</p>
-</th>
-<th>
-<p>База данных</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<p>ОС</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>Операционная система</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>СУБД</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>Система управления базами данных</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>ТО</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>Техническое обслуживание</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>УЗ</p>
-</td>
-<td>
-<p>–</p>
-</td>
-<td>
-<p>Учетная запись</p>
-</td>
-</tr>
-</tbody>
-</table>
+| Сокращение | Расшифровка                      |
+|------------|----------------------------------|
+| ТО         | Техническое обслуживание         |
+| БД         | База данных                      |
+| ОС         | Операционная система             |
+| СУБД       | Система управления базами данных |
+| УЗ         | Учетная запись                   |
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="10" style="text-align: center;">
-<p>Лист регистрации изменений</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan="2">
-<p>Изм.</p>
-</td>
-<td colspan="4">
-<p>Номера листов (страниц)</p>
-</td>
-<td rowspan="2" style="text-align: center;">
-<p>Всего листов (страниц) в документе</p>
-</td>
-<td rowspan="2">
-<p>Номер документа</p>
-</td>
-<td rowspan="2" style="text-align: center;">
-<p>Входящий номер сопроводите льного документа и</p>
-<p>дата</p>
-</td>
-<td rowspan="2">
-<p>Подпись</p>
-</td>
-<td rowspan="2">
-<p>Дата</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>измене нных</p>
-</td>
-<td>
-<p>замене нных</p>
-</td>
-<td>
-<p>новых</p>
-</td>
-<td>
-<p>аннулир ованных</p>
-</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
