@@ -1,0 +1,1279 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-archive/jalog" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Компонент «ja_Log» | DocsAsCode</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/archive/jalog"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Компонент «ja_Log» | DocsAsCode"><meta data-rh="true" name="description" content="УТВЕРЖДЕН"><meta data-rh="true" property="og:description" content="УТВЕРЖДЕН"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/archive/jalog"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/archive/jalog" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/archive/jalog" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Компонент «ja_Log»","item":"https://hadsunn.github.io/demo_docu/archive/jalog"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.87635517.css">
+<script src="/demo_docu/assets/js/runtime~main.f08bf85f.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.82068ee4.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/"><span class="linkLabel_WmDU">Documentation As Code Test</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/demo_docu/Коммерческая версия 18.3.1"><span class="categoryLinkLabel_W154">Коммерческая версия 18.3.1</span></a><button aria-label="Expand sidebar category &#x27;Коммерческая версия 18.3.1&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/demo_docu/Jatoba Data Safe"><span class="categoryLinkLabel_W154">Jatoba Data Safe</span></a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/archive/pg_task"><span class="categoryLinkLabel_W154">archive</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/pg_task"><span class="linkLabel_WmDU">Компонент pg_task (test)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/install"><span class="linkLabel_WmDU">Руководство по установке (wip)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/JDS one page"><span class="linkLabel_WmDU">Jatoba Data Safe (MDX пример)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/jds211"><span class="linkLabel_WmDU">Компонент «Jatoba data safe» 2.11</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/archive/jalog"><span class="linkLabel_WmDU">Компонент «ja_Log»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/Images test copy"><span class="linkLabel_WmDU">Images test md</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/Images test"><span class="linkLabel_WmDU">Images test mdx</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/jalog3"><span class="linkLabel_WmDU">jalog3</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/mdx_figure"><span class="linkLabel_WmDU">mdx_figure</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/archive/monitoring"><span class="linkLabel_WmDU">Поддержка мониторинга</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/demo_docu/cert6.8.4,5.12.4,4.17.4"><span class="categoryLinkLabel_W154">Сертифицированные версии 6.8.4,5.12.4,4.17.4</span></a><button aria-label="Expand sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">archive</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Компонент «ja_Log»</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Компонент «ja_Log»</h1></header><table><colgroup>
+<col style="width:49%">
+<col style="width:50%">
+</colgroup><thead><tr><th style="text-align:center"><p>УТВЕРЖДЕН</p>
+<p>643.72410666.00067-08 98 01-ЛУ</p></th><th style="text-align:center"></th></tr></thead><tbody><tr><td colspan="2" style="text-align:center"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br>
+БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 12.<br>
+Централизованный сбор записей событий в СУБД.<br>
+Компонент «ja_Log»</strong></p></td></tr><tr><td colspan="2" style="text-align:center"><strong>643.72410666.00067-08 98 01-12</strong></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">Листов 52</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">2026</td></tr><tr><td style="text-align:center"></td><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения необходимые для установки и эксплуатации компонента централизованного сбора записей событий СУБД «ja_Log» (далее по тексту – компонент либо ja_Log).</p>
+<p>Степени важности примечаний, применяемые в документе:</p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p><strong>Важная информация</strong> – указания, требующие особого внимания</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p><strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</p></div></div>
+<p>Настоящее руководство предназначено для администраторов СУБД «Jatoba».</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:86%">
+<col style="width:2%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th style="text-align:left"><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
+<p>Например, СУБД «Jatoba» версии 5.x по умолчанию устанавливается в директорию ОС Linux – «/usr/jatoba-5/bin».</p>
+<p>Используется версия компонента — 2.1</p></th><th style="text-align:left"></th></tr></thead><tbody><tr><td style="text-align:center"><img decoding="async" loading="lazy" src="../assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></td><td colspan="2" style="text-align:left">Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="назначение-компонента">Назначение компонента<a href="#назначение-компонента" class="hash-link" aria-label="Direct link to Назначение компонента" title="Direct link to Назначение компонента" translate="no">​</a></h2>
+<p>Компонент «ja_Log» предназначен для централизованного сбора записей событий с целевых СУБД «Jatoba» в служебную СУБД «Jatoba data safe» (далее по тексту – JDS).</p>
+<p>Компонент работает по клиент-серверной технологии. Возможна клиент-серверная и локальная установка.</p>
+<p>При клиент-серверной установке на серверах целевых СУБД устанавливается агент компонента, а на сервере служебной СУБД серверная часть компонента. Передача данных осуществляется по протоколу Libpq или TLS.</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image3-f64f1b6c6e00377989b9721a61232789.png" width="1588" height="981" class="img_ev3q"></p>
+<p>Рисунок 1.1 – Схема работы компонента при клиент-серверной установке</p>
+<p>При локальной установке на сервере СУБД устанавливается агент и сервер компонента. Передача данных осуществляется по внутреннему интерфейсу.</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image4-67d062c908aa36bb79275a27fe1a8673.png" width="1221" height="617" class="img_ev3q"></p>
+<p>Рисунок 1.2 – Схема работы компонента при локальной установке</p>
+<p>Агент из каталога СУБД /LOG передает события безопасности серверу компонента, который их складывает в служебную БД.</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th style="text-align:left"><p>При установке сервера и агента на одном экземпляре БД необходимо избегать полного логирования всех операций log_statement = &#x27;all&#x27;, т.к. в таком случае файлы журналов будут накапливать как записи самих запросов, так и записи записей этих запросов в служебную таблицу компонента, что приведет к разрастанию этих файлов.</p>
+<p>Также необходимо избегать использования log_statement = &#x27;mod&#x27;, т.к. в этом случае будет выполняться журналирования всех INSERT-запросов, что также приведет к прогрессивному увеличению файлов журналов.</p></th></tr></thead><tbody></tbody></table>
+<p>Компонент организовывает секционирование таблицы журнала событий с секцией равной одним суткам. В расширении jalog применяется функция, которая на вход принимает дату и создает секцию для таблицы журнала событий соответствующего календарного дня. Секции таблицы журнала событий при помощи функции могут создаваться администратором СУБД как заранее, так и автоматически при вставке новых записей событий. При миграции с предыдущих версий компонента будет создана отдельная таблица, содержащая все предыдущие журналы событий, а также записи, по которым по каким-то причинам не определена секция в основной таблице журнала событий.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения" translate="no">​</a></h3>
+<p>В текущей реализации не поддерживается управление с помощью пользовательского веб-интерфейса для администраторов «Jatoba Data Safe». Управление осуществляется через корректировку управляющих параметров и конфигурационных файлов.</p>
+<p>При совместном использовании компонента управления режимом работы узлов кластера «ja_Dog» и компонента Централизованный сбор записей событий СУБД «ja_Log», рекомендуется хранить журналы аудита вне каталога данных.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-и-настройка">Установка и настройка<a href="#установка-и-настройка" class="hash-link" aria-label="Direct link to Установка и настройка" title="Direct link to Установка и настройка" translate="no">​</a></h2>
+<p>Установка модуля должна производиться от имени пользователя, обладающего административными привилегиями в системе. Компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-компонента-ja_log-в-ос-gnulinux">Установка компонента «ja_Log» в ОС GNU/Linux<a href="#установка-компонента-ja_log-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка компонента «ja_Log» в ОС GNU/Linux" title="Direct link to Установка компонента «ja_Log» в ОС GNU/Linux" translate="no">​</a></h3>
+<p>Установка компонента осуществляется в процессе установки СУБД «Jatoba», также компонент можно установить опционально после основной инсталляции СУБД.</p>
+<p>Установку компонента возможно провести двумя способами:</p>
+<ol>
+<li class=""></li>
+<li class=""></li>
+</ol>
+<p>установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:</p>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba&lt;ver&gt;-ja-log</p>
+</blockquote>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba&lt;ver&gt;-ja-log</p>
+</blockquote>
+<p>Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.</p>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba&lt;ver&gt;-ja-log</p>
+</blockquote>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba5-ja-log и т.п.</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="настройка-архитектуры-агент-сервер-на-ос-gnulinux">Настройка архитектуры агент-сервер на ОС GNU/Linux<a href="#настройка-архитектуры-агент-сервер-на-ос-gnulinux" class="hash-link" aria-label="Direct link to Настройка архитектуры агент-сервер на ОС GNU/Linux" title="Direct link to Настройка архитектуры агент-сервер на ОС GNU/Linux" translate="no">​</a></h2>
+<p>В разделе описывается настройка компонента ja_Log на ОС GNU Linux в архитектуре агент-сервер. В качестве примера используются 2 ЭВМ c ОС Ubuntu. Параметры, которых приведены в таблице Таблица 3.1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Имя ЭВМ</strong></th><th><strong>IP</strong></th><th><strong>Роль</strong></th></tr></thead><tbody><tr><td>u602doc-jds01</td><td>10.116.102.41</td><td>сервер</td></tr><tr><td>u602doc-jdog03</td><td>10.116.102.56</td><td>агент</td></tr></tbody></table>
+<p>Таблица 3.1 – Параметры ЭВМ</p>
+<p>Целесообразнее в качестве сервера использовать хост с установленным компонентом «Jatoba Data Safe» (JDS). Используемая СУБД считается служебной и в ней же будет располагаться БД с собранными событиями безопасности компонентом ja_Log.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="служебная-субд-конфигурирование-серверной-части-компонента">Служебная СУБД. Конфигурирование серверной части компонента<a href="#служебная-субд-конфигурирование-серверной-части-компонента" class="hash-link" aria-label="Direct link to Служебная СУБД. Конфигурирование серверной части компонента" title="Direct link to Служебная СУБД. Конфигурирование серверной части компонента" translate="no">​</a></h3>
+<p>Конфигурирование серверной части компонента потребует выполнения нижеописанных действий.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="создание-бд-и-установка-расширения">Создание БД и установка расширения<a href="#создание-бд-и-установка-расширения" class="hash-link" aria-label="Direct link to Создание БД и установка расширения" title="Direct link to Создание БД и установка расширения" translate="no">​</a></h4>
+<p>Авторизоваться в psql от имени привилегированного пользователя:</p>
+<blockquote>
+<p>psql -U postgres</p>
+</blockquote>
+<p>Создать отдельную БД для компонента:</p>
+<blockquote>
+<p>CREATE DATABASE ja_log;</p>
+</blockquote>
+<p>Подключиться к созданной БД и установить расширение «jalog» в служебную БД:</p>
+<blockquote>
+<p>\c ja_log</p>
+<p>ja_log=# CREATE EXTENSION jalog;</p>
+</blockquote>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th style="text-align:left"><p><strong>ВАЖНО!</strong> В случае совместной работы компонента «ja_Log» с SecurityProfile в одной СУБД, расширение «jalog» должно устанавливаться в ту же БД, в которую установлено расширение «securityprofile».</p>
+<p>Справочная информация по настройке SecurityProfile приведена в документе «Руководство администратора СУБД Jatoba» 643.72410666.00067-08 95 01</p></th></tr></thead><tbody></tbody></table>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image5-b4e3c3be7510751a320e37c0d852834b.png" width="617" height="265" class="img_ev3q"></p>
+<p>Рисунок 3.1 – Создание служебной БД и установка расширения</p>
+<p>Проверить установку расширения в служебной СУБД при помощи команды:</p>
+<blockquote>
+<p>\dx+ jalog</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image6-bf1b4d1c5cb2dc1f8bc910e2e9f1fff3.png" width="623" height="604" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Расширение может быть установлено в разделе «Ландшафт» компонента JDS.</p></div></div>
+<p>Рисунок 3.2 – Проверка установленного расширения</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="создание-технологической-учетной-записи">Создание технологической учетной записи<a href="#создание-технологической-учетной-записи" class="hash-link" aria-label="Direct link to Создание технологической учетной записи" title="Direct link to Создание технологической учетной записи" translate="no">​</a></h4>
+<p>После установки расширения компонента администратор создает технологическую учетную запись (УЗ) jalog_user, при помощи которой компонент выполняет свои функции в СУБД.</p>
+<p>Технологическая УЗ создается в рамках групповой роли jalog_role, у которой имеются права на доступ к схемам, процедурам и табличным пространствам компонента «ja_Log».</p>
+<p>Групповая роль jalog_role создается автоматически в процессе установки расширения компонента в БД. Для данной групповой роли автоматически назначаются права доступа владельца БД, схем, функций и процедур компонента «ja_Log».</p>
+<p>Создание технологической УЗ jalog_user осуществляется при помощи SQL-команды:</p>
+<blockquote>
+<p>SELECT jalog.add_jalog_user(&#x27;jalog_user&#x27;,&#x27;jalog_role&#x27;);</p>
+</blockquote>
+<p>Проверить успешность создания в СУБД технологической учетной записи jalog_user при помощи команды:</p>
+<blockquote>
+<p>\du</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image7-eb80174c20c3f56e973388791b6e182a.png" width="623" height="289" class="img_ev3q"></p>
+<p>Рисунок . – Список ролей БД</p>
+<p>В перечне пользователей должна быть созданная технологическая УЗ.</p>
+<p>Для установки пароля технологической УЗ для подключения к СУБД необходимо выполнить SQL-команду следующего синтаксиса:</p>
+<blockquote>
+<p>ALTER ROLE jalog_user WITH LOGIN PASSWORD [&#x27;password_jalog_user&#x27;];</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image8-67a373b2254507c08f607ab4f4114edd.png" width="623" height="94" class="img_ev3q"></p>
+<p>Рисунок . – Создание пароля технологической УЗ</p>
+<p>После создания пароля технологической УЗ необходимо убедится в том, что технологическая УЗ корректно наследует атрибуты групповой роли jalog_role с помощью следующей команды:</p>
+<blockquote>
+<p>\drg</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image9-2e67e7426c985cf06cc507ad807f2f37.png" width="630" height="184" class="img_ev3q"></p>
+<p>Рисунок 3.5 – Проверка наследования атрибутов групповой роли</p>
+<p>Для подключения к БД необходимо добавить параметры доступа технологической записи в конфигурационный файл /var/lib/jatoba/6/data/pg_hba.conf:</p>
+<blockquote>
+<p>host ja_log jalog_user 127.0.0.1/32 scram-sha-256</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image10-2e3bf0f6be13314f7991f169657e8952.png" width="914" height="409" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>В конфигурационном файле pg_hba.conf может указываться внешний IP-адрес сервера СУБД, на котором установлено расширение ja_Log и настроена технологическая запись пользователя.</p></div></div>
+<p>Рисунок 3.6 – Содержимое конфигурационного файла pg_hba.conf</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="создание-табличного-пространства-для-хранения-архивных-секций">Создание табличного пространства для хранения архивных секций<a href="#создание-табличного-пространства-для-хранения-архивных-секций" class="hash-link" aria-label="Direct link to Создание табличного пространства для хранения архивных секций" title="Direct link to Создание табличного пространства для хранения архивных секций" translate="no">​</a></h4>
+<p>Для хранения архивных секций необходимо создать отдельное табличное пространство.</p>
+<p>Для создания такого табличного пространства необходимо</p>
+<ol>
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Создать в ОС каталог для хранения данных табличного пространства:mkdir /var/lib/jatoba/6/ts_jalog_archive</p>
+</blockquote>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p>Пользователь postgres должен иметь права доступа на созданный каталог.</p></div></div>
+<ol start="2">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Авторизоваться в psql от имени привилегированного пользователя:psql -U postgres</p>
+</blockquote>
+<ol start="3">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Создать в БД табличное пространство для хранения архивных секцийCREATE TABLESPACE ts_jalog_archive LOCATION &#x27;/var/lib/jatoba/6/ts_jalog_archive&#x27;;</p>
+</blockquote>
+<ol start="4">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Предоставить права доступа для групповой роли jalog_role к созданному табличному пространству:GRANT CREATE ON TABLESPACE ts_jalog_archive TO jalog_role;</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image11-456a9d77429f37a889250eac7775313f.png" width="791" height="124" class="img_ev3q"></p>
+<p>Рисунок 3.7 – Предоставление групповой роли прав доступа к табличному пространству</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-параметров-jalog_serveryml">Установка параметров jalog_server.yml<a href="#установка-параметров-jalog_serveryml" class="hash-link" aria-label="Direct link to Установка параметров jalog_server.yml" title="Direct link to Установка параметров jalog_server.yml" translate="no">​</a></h4>
+<p>Запуск агента сервера сбора событий безопасности требует установки параметров в конфигурационном файле «jalog_server.yml».</p>
+<p>Для внесения изменений необходимо открыть конфигурационный файл «jalog_server.yml» в терминале ОС:</p>
+<blockquote>
+<p>nano /usr/jatoba-&lt;ver&gt;/etc/jalog/jalog_server.yml</p>
+</blockquote>
+<p>и указать следующие значения:</p>
+<blockquote>
+<p># Собственные параметры сервера</p>
+<p><strong>server:</strong></p>
+<p>listen_ip: 0.0.0.0 # IP-адрес, который прослушивает сервер</p>
+<p>listen_port: 10051 # Порт, который прослушивает сервер</p>
+<p># Параметры TLS</p>
+<p><strong>tls:</strong></p>
+<p># cert_file: # Путь до сертификата</p>
+<p># key_file: # Путь до файла ключа (только Linux)</p>
+<p># ca_file: # Путь до файла ca (только Linux)</p>
+<p># crl_file: # Путь до файла crl (только Linux)</p>
+<p># Параметры подключения к базе данных</p>
+<p><strong>database_params:</strong></p>
+<p>conn_string: host=127.0.0.1 user=jalog_user dbname=ja_log password=[пароль УЗ jalog_user] # Строка подключения к СУБД</p>
+<p># Параметры логирования</p>
+<p><strong>log:</strong></p>
+<p>path: &quot;/usr/jatoba-&lt;ver&gt;/var/log/jalog/&quot; # Путь к каталогу логов (Linux)</p>
+<p>filename: jalog_server # Шаблон для имени файлов логов</p>
+<p>level: info # Уровень логирования</p>
+<p>type: txt # Форматы файлов логов (txt, csv, json)</p>
+<p>filemode: 0600 # Параметр доступа к файлам логов (только Linux)</p>
+<p>rotation_age: 1d # Интервал ротации файлов логов по времени</p>
+<p>rotation_size: 10MB # Интервал ротации по объему файла логов</p>
+<p>truncate_on_rotation: false # Признак перезаписи файла логов</p>
+</blockquote>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Компонент jalog при установке в конфигурационном файле параметра «type: json» обеспечивает поддержку журналов событий PostgreSQL – PG-json.</p></div></div>
+<p>Параметр level может принимать следующие значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>fatal;error;warning;info;debug1;debug2;После установки параметров в файле jalog_server.yml можно устанавливать службы агентов компонента на серверах с целевыми СУБД (см. п.п. 3.2.3).</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-службы-jalog_server">Установка службы jalog_server<a href="#установка-службы-jalog_server" class="hash-link" aria-label="Direct link to Установка службы jalog_server" title="Direct link to Установка службы jalog_server" translate="no">​</a></h4>
+<p>На целевой СУБД устанавливается служба «jalog_server» от имени и с правами привилегированного пользователя.</p>
+<p>Перейти в директорию bin:</p>
+<blockquote>
+<p># cd /usr/jatoba-&lt;ver&gt;/bin/</p>
+</blockquote>
+<p>- Запустить утилиту установки компонента:</p>
+<blockquote>
+<p># ./jalog_setup.sh</p>
+</blockquote>
+<p>- Перейти в свойства службы и выбрать тип запуска: Автоматический и применить изменения. Выполнить отключение брандмауэра.</p>
+<p>Добавить сервис компонента в автозапуск:</p>
+<blockquote>
+<p># systemctl enable jalog_server</p>
+</blockquote>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="добавление-нового-агента-в-служебной-субд">Добавление нового агента в служебной СУБД<a href="#добавление-нового-агента-в-служебной-субд" class="hash-link" aria-label="Direct link to Добавление нового агента в служебной СУБД" title="Direct link to Добавление нового агента в служебной СУБД" translate="no">​</a></h4>
+<p>Авторизоваться в psql от имени привилегированного пользователя:</p>
+<blockquote>
+<p># su – postgres</p>
+<p>psql -U postgres</p>
+</blockquote>
+<p>Подключиться к базе данных ja_log:</p>
+<blockquote>
+<p>\c ja_log</p>
+</blockquote>
+<p>Добавить нового агента при помощи запроса:</p>
+<blockquote>
+<p>SELECT jalog.add_agent_task(&#x27;&lt;имя агента&gt;&#x27;, &#x27;/var/lib/jatoba/&lt;ver&gt;/data/log/jatoba-[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{6}.csv&#x27;);</p>
+</blockquote>
+<p>Имя файла журнала событий формируется по параметру log_filename в конфигурационном файле «postgresql.conf».</p>
+<blockquote>
+<p>log_filename = &#x27;jatoba-%a.log&#x27;</p>
+</blockquote>
+<p>Имя журнала файла событий безопасности указывается по маске.</p>
+<blockquote>
+<p>jatoba-....csv</p>
+</blockquote>
+<p>В представленном примере в имени файла журнала событий указано наименование СУБД и день недели, когда был сформирован файл, по параметру «%a». Соответственно от разделительного знака до разделительного знака перед расширением файла в маске имени файла SQL-команды устанавливается 3 точки. Специальный символ «.» обозначает ровно один символ в имени файла.</p>
+<p>Вид сформированного файла событий безопасности представлен на рисунке Рисунок 3.8.</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image12-d3e20064c4b09a2871e619d244a74977.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 3.8 – Сформированный файл событий безопасности СУБД</p>
+<p>Соотношение параметров и символов в имени файла регистрации событий представлено в таблице Таблица 3.2.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Параметры</strong></th><th></th><th style="text-align:center"><strong>Имя СУБД</strong></th><th style="text-align:center"><strong>Разделительный знак</strong></th><th style="text-align:center"><strong>День недели</strong></th><th style="text-align:center"><strong>Разделительный знак перед расширением</strong></th><th style="text-align:center"><strong>Расширение файла</strong></th></tr></thead><tbody><tr><td>postgresql.conf</td><td>log_filename</td><td style="text-align:center">jatoba</td><td style="text-align:center">-</td><td style="text-align:center">%a</td><td style="text-align:center"></td><td style="text-align:center">log</td></tr><tr><td>Имя файла в директории LOG СУБД</td><td></td><td style="text-align:center">jatoba</td><td style="text-align:center">-</td><td style="text-align:center">Wed</td><td style="text-align:center">.</td><td style="text-align:center">csv</td></tr><tr><td>Параметр в SQL-команде</td><td>key_text</td><td style="text-align:center">jatoba</td><td style="text-align:center">-</td><td style="text-align:center"></td><td style="text-align:center">.</td><td style="text-align:center">csv</td></tr></tbody></table>
+<p>Таблица 3.2 – Соотношение параметров и символов в имени файла регистрации событий</p>
+<p>Маска зависит от настроенного формата префикса для записей журнала. Например, для параметра log_filename = &#x27;jatoba-%Y-%m-%d_%H%M%S.log&#x27; при формировании задания стоит указать следующее значение параметра:</p>
+<blockquote>
+<p>jatoba-[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{6}.csv</p>
+</blockquote>
+<p>В этом случае имя файла журнала событий безопасности будет следующим:</p>
+<blockquote>
+<p>jatoba-2023-05-18_053315.csv</p>
+</blockquote>
+<p>Такое имя файла журнала событий образуется при использовании аббревиатуры элементов интервалов по стандарту ISO 8601. Расчет количества символов для маски в SQL-команде приведен в таблице Таблица 3.3.</p>
+<table style="width:100%"><caption><p>Таблица 3.3 – Количество символов в маске файла</p></caption><colgroup>
+<col style="width:33%">
+<col style="width:8%">
+<col style="width:4%">
+<col style="width:5%">
+<col style="width:3%">
+<col style="width:6%">
+<col style="width:3%">
+<col style="width:5%">
+<col style="width:3%">
+<col style="width:5%">
+<col style="width:5%">
+<col style="width:5%">
+<col style="width:3%">
+<col style="width:6%">
+</colgroup><thead><tr><th style="text-align:center"></th><th style="text-align:left"><blockquote>
+<p><strong>Имя СУБД</strong></p>
+</blockquote></th><th style="text-align:left"></th><th style="text-align:left"><blockquote>
+<p><strong>Годы</strong></p>
+</blockquote></th><th style="text-align:left"></th><th style="text-align:left"><blockquote>
+<p><strong>Месяцы </strong></p>
+</blockquote></th><th style="text-align:left"></th><th style="text-align:left"><blockquote>
+<p><strong>Дни</strong></p>
+</blockquote></th><th style="text-align:left"></th><th style="text-align:left"><blockquote>
+<p><strong>Часы</strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Минуты </strong></p>
+</blockquote></th><th style="text-align:left"><blockquote>
+<p><strong>Секунды</strong></p>
+</blockquote></th><th style="text-align:left"></th><th style="text-align:left"><blockquote>
+<p><strong>Расширение файла</strong></p>
+</blockquote></th></tr></thead><tbody><tr><td style="text-align:left"><strong>Аббревиатуры элементов интервалов по стандарту ISO 8601</strong></td><td style="text-align:center">jatoba</td><td style="text-align:center">-</td><td style="text-align:center">%Y</td><td style="text-align:center">-</td><td style="text-align:center">%m</td><td style="text-align:center">-</td><td style="text-align:center">%d</td><td style="text-align:center">_</td><td style="text-align:center">%H</td><td style="text-align:center">%M</td><td style="text-align:center">%S</td><td style="text-align:center">.</td><td style="text-align:center">csv</td></tr><tr><td style="text-align:left"><strong>Количество символов</strong></td><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">4</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">2</td><td style="text-align:center">2</td><td style="text-align:center">1</td><td style="text-align:center">0</td></tr><tr><td style="text-align:left"><strong>Итого символов</strong></td><td colspan="13" style="text-align:center">18</td></tr></tbody></table>
+<p>Таблица 3.3 – Количество символов в маске файла</p>
+<p>После добавления нового агента установленные параметры, внесенные в таблицу «jalog.key», возможно проверить командой:</p>
+<blockquote>
+<p>SELECT * from jalog.key;</p>
+</blockquote>
+<p>В колонке «status» установлен параметр «f» – (false), что означает, что параметр выключен.</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image13-acaa55d5456eb45de3a3e3812c330066.png" width="977" height="301" class="img_ev3q"></p>
+<p>Рисунок 3.9 – Добавление нового агента и проверка установленных параметров</p>
+<p>Активировать агента SQL-командой:</p>
+<blockquote>
+<p>SELECT jalog.turn_ON_task (&lt;key_id добавленного агента&gt;);</p>
+</blockquote>
+<p>при помощи которой устанавливается статус директивы в параметр «t» – (true).</p>
+<p>Далее необходимо убедиться, что агент активирован:</p>
+<blockquote>
+<p>SELECT * from jalog.key;</p>
+</blockquote>
+<p>В результате выполнения команды активации агента значение в колонке «status» сменится с «f» – (false) на «t» – (true).</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image14-9478b2811d7d2f7a81d12b196088c145.png" width="977" height="391" class="img_ev3q"></p>
+<p>Рисунок 3.10 Активация и проверка агента</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="запуск-сервера-на-служебной-субд">Запуск сервера на служебной СУБД<a href="#запуск-сервера-на-служебной-субд" class="hash-link" aria-label="Direct link to Запуск сервера на служебной СУБД" title="Direct link to Запуск сервера на служебной СУБД" translate="no">​</a></h4>
+<p>Запуск сервера на служебной СУБД выполняется при помощи команды:</p>
+<blockquote>
+<p># systemctl start jalog_server</p>
+</blockquote>
+<p>Убедиться, что служба успешно запущена:</p>
+<blockquote>
+<p># systemctl status jalog_server</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image15-d2dc4a48558531826242fedb56099321.png" width="896" height="319" class="img_ev3q"></p>
+<p>Рисунок 3.11 – Установка службы сервера компонента в ОС GNU/Linux</p>
+<p>В случае если служба сервера компонента не запускается необходимо проверить системный журнал на наличие ошибок при помощи команды:</p>
+<blockquote>
+<p># cat /var/log/syslog | grep jalog</p>
+</blockquote>
+<p>На данном шаге настройка службы сервера компонента в ОС GNU/Linux завершена.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="удаление-агента-в-служебной-субд">Удаление агента в служебной СУБД<a href="#удаление-агента-в-служебной-субд" class="hash-link" aria-label="Direct link to Удаление агента в служебной СУБД" title="Direct link to Удаление агента в служебной СУБД" translate="no">​</a></h4>
+<p>Авторизоваться в psql от имени привилегированного пользователя:</p>
+<blockquote>
+<p>psql -U postgres</p>
+</blockquote>
+<p>Подключиться к базе данных ja_log:</p>
+<blockquote>
+<p>\c ja_log</p>
+</blockquote>
+<p>Удаление агента производится по его идентификатору. Для получения идентификатора необходимо выполнить запрос:</p>
+<blockquote>
+<p>SELECT * from jalog.key;</p>
+</blockquote>
+<p>В столбце «key_id» определить номер агента, который требуется удалить.</p>
+<p>Удалить агента при помощи запросов:</p>
+<blockquote>
+<p>SELECT jalog.delete_agent_task(&lt;key_id выбранного агента&gt;);</p>
+</blockquote>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="функционал-ротации-журналов-служебной-субд">Функционал ротации журналов служебной СУБД<a href="#функционал-ротации-журналов-служебной-субд" class="hash-link" aria-label="Direct link to Функционал ротации журналов служебной СУБД" title="Direct link to Функционал ротации журналов служебной СУБД" translate="no">​</a></h4>
+<p>Для оптимизации ресурсов по хранению журналов администратор БД использует систему их ротации.</p>
+<p>Компонент «ja_Log» позволяет выполнять следующие процедуры:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>Контролировать глубину журнала на служебной СУБД;Перенос архивных журналов служебной СУБД в другое табличное пространство, например на более медленные носители информации;Удалять архивированные записи журнала служебной СУБД.Для того, чтобы перенести журнал служебной СУБД в другое табличное пространство (например созданное в п. 3.1.3) необходимо воспользоваться процедурой следующего синтаксиса:</p>
+<blockquote>
+<p>call jalog.rotation_hot_logs_days(0, [&#x27;date_point&#x27;]::date, [-hot_logs_days], [&#x27; target_tablespace&#x27;])</p>
+</blockquote>
+<p>где 0 – виртуальный идентификатор для журналирования; date_point – дата, начиная с которой необходимо переместить журналы в другое ТП. В качестве date_point можно указывать дату в формате YYYYMMDD. Значение null указывает на текущую дату; hot_logs_days – глубина перемещения в днях (значение всегда отрицательное); target_tablespace – табличное пространство для выполнения перемещения журналов служебной СУБД.</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><p>Для ротации архивных журналов служебной СУБД может быть использовано существующее табличное пространство. При установке расширения компоненту выдаются все необходимые права доступа ко всем существующим на тот момент табличным пространствам служебной СУБД. Назначаемые права доступа необходимы для корректного перемещения архивных журналов, выполнения функций и процедур.</p>
+<p>Если после установки расширения создается новое табличное пространство, которое будет использовано для ротации архивных журналов, то в этом случае для групповой роли jalog_role определяются права доступа к ему (см. пример в п. 3.1.3).</p></th></tr></thead><tbody></tbody></table>
+<p><strong>Пример:</strong></p>
+<blockquote>
+<p>\c ja_log</p>
+<p>call jalog.rotation_hot_logs_days(0, null, -7, &#x27;ts_jalog_archive&#x27;);</p>
+</blockquote>
+<p>Данный пример процедуры выполняет перемещение журналов служебной СУБД в табличное пространство ts_jalog_archive за последние 7 дней начиная с предыдущего дня.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Администратор при выполнении переноса журналов в другое табличное пространство должен оценивать объем журналов. В случае, если журнал содержит значительное количество информации, рекомендуется выполнять его поэтапный перенос используя параметры процедуры jalog.rotation_hot_logs_days.</p></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image16-fe67baa3d5a884c4647e254dd344fd9f.png" width="679" height="139" class="img_ev3q"></p>
+<p>Рисунок 3.12 – Перенос журналов служебной СУБД в другое табличное пространство</p>
+<p>Удаление архивированных журналов необходимо воспользоваться процедурой следующего синтаксиса:</p>
+<blockquote>
+<p>call jalog.truncate_max_logs_days(0, [&#x27;date_point&#x27;]::date, [-max_logs_days]);</p>
+</blockquote>
+<p>где 0 – виртуальный идентификатор для журналирования; date_point – дата, начиная с которой необходимо удалить архивированные журналы. В качестве date_point можно указывать дату в формате YYYYMMDD. Значение null указывает на текущую дату; max_logs_days – глубина удаления архивных журналов в днях (значение всегда отрицательное).</p>
+<p><strong>Пример:</strong></p>
+<blockquote>
+<p>\c ja_log</p>
+<p>call jalog.truncate_max_logs_days(0, null, -89);</p>
+</blockquote>
+<p>Данный пример процедуры выполняет удаление архивированных журналов, например при помощи процедуры jalog.rotation_hot_logs_days (см. выше), за последние 90 дней начиная с текущей даты.</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image17-c56cfddf240e9a32efe2ea4c0f2317a0.png" width="679" height="124" class="img_ev3q"></p>
+<p>Рисунок 3.13 – Удаление архивированных журналов служебной СУБД</p>
+<p>С целью автоматизации выполнения процедур ротации журналов служебной СУБД администратор может добавить процедуры в системную утилиту cron или в планировщик заданий СУБД (см. документа «Руководство по настройке. Часть 5. Планирование заданий СУБД. Компонент «pg_Task»» 643.72410666.00067-08 98 01-05).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="целевая-субд-конфигурирование-клиентской-части-компонента">Целевая СУБД. Конфигурирование клиентской части компонента<a href="#целевая-субд-конфигурирование-клиентской-части-компонента" class="hash-link" aria-label="Direct link to Целевая СУБД. Конфигурирование клиентской части компонента" title="Direct link to Целевая СУБД. Конфигурирование клиентской части компонента" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="добавление-в-список-логирования-на-целевой-субд">Добавление в список логирования на целевой СУБД<a href="#добавление-в-список-логирования-на-целевой-субд" class="hash-link" aria-label="Direct link to Добавление в список логирования на целевой СУБД" title="Direct link to Добавление в список логирования на целевой СУБД" translate="no">​</a></h4>
+<p>Добавление целевой СУБД в список логирования требует выполнения нижеописанных действий.</p>
+<p>Открыть конфигурационный файл СУБД postgresql.conf:</p>
+<blockquote>
+<p># nano /var/lib/jatoba/&lt;ver&gt;/data/postgresql.conf</p>
+</blockquote>
+<p>Изменить формат логов (значения менять в конце файла, а не в середине):</p>
+<blockquote>
+<p>log_destination = &#x27;csvlog&#x27;</p>
+<p>logging_collector = on</p>
+</blockquote>
+<p>Выполнить перезагрузку СУБД в терминале ОС:</p>
+<blockquote>
+<p># systemctl restart jatoba-&lt;ver&gt;</p>
+</blockquote>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="настройка-конфигурационного-файла-jalog_agentyml">Настройка конфигурационного файла jalog_agent.yml<a href="#настройка-конфигурационного-файла-jalog_agentyml" class="hash-link" aria-label="Direct link to Настройка конфигурационного файла jalog_agent.yml" title="Direct link to Настройка конфигурационного файла jalog_agent.yml" translate="no">​</a></h4>
+<p>Запуск агента сервера сбора событий безопасности требует установки параметров в конфигурационном файле.</p>
+<p>Требуется открыть файл конфигурационный файл jalog_agent.yml в терминале ОС:</p>
+<blockquote>
+<p># nano /usr/jatoba-&lt;ver&gt;/etc/jalog/jalog_agent.yml</p>
+</blockquote>
+<p>и указать следующие значения:</p>
+<blockquote>
+<p># Собственные параметры агента</p>
+<p>jalog_agent:</p>
+<p>hostname: u602doc-jdog03 # Уникальное имя агента</p>
+<p>ip: 10.116.102.56 # Ip-адрес агента</p>
+<p># port: 22345 # Порт агента</p>
+<p># task_puller_frequency: 15 # Частота запроса задач у сервера, в секундах</p>
+<p># task_execution_frequency: 5 # Частота проверки лог-файлов, в секундах</p>
+<p># max_logs_per_iteration: 1000 # Максимальное количество логов, которые обрабатываются за итерацию (10-1000)</p>
+<p># Параметры сервера, с которым работает агент</p>
+<p>jalog_server:</p>
+<p>ip: 10.116.102.41 # Ip-адрес сервера</p>
+<p>port: 10051 # Порт сервера</p>
+<p># Параметры TLS</p>
+<p>tls:</p>
+<p># cert_file: # Путь до сертификата</p>
+<p># key_file: # Путь до файла ключа (только Linux)</p>
+<p># ca_file: # Путь до файла ca (только Linux)</p>
+<p># crl_file: # Путь до файла crl (только Linux)</p>
+<p># Параметры логирования</p>
+<p>log:</p>
+<p>path: &quot;/usr/jatoba-&lt;ver&gt;/var/log/jalog/&quot; # Путь к каталогу логов (Linux)</p>
+<p>filename: jalog_agent # Шаблон для имени файлов логов</p>
+<p>level: info # Уровень логирования</p>
+<p>type: txt # Форматы файлов логов (txt, csv, json)</p>
+<p>filemode: 0600 # Параметр доступа к файлам логов (только Linux)</p>
+<p>rotation_age: 1d # Интервал ротации файлов логов по времени</p>
+<p>rotation_size: 10MB # Интервал ротации по объему файла логов</p>
+<p>truncate_on_rotation: false # Признак перезаписи файла логов</p>
+</blockquote>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Реальное значение параметра task_puller_frequency складывается из установки в конфигурационном файле jalog_agent.yml + задержка обработки jalog_agent в 10 секунд.</p></div></div>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-службы-jalog_agent">Установка службы jalog_agent<a href="#установка-службы-jalog_agent" class="hash-link" aria-label="Direct link to Установка службы jalog_agent" title="Direct link to Установка службы jalog_agent" translate="no">​</a></h4>
+<p>На целевой СУБД устанавливается служба «jalog_agent» от имени и с правами привилегированного пользователя.</p>
+<p>Установка службы jalog_agent выполняется после выполнения п.п. 3.1.3 на сервере служебной СУБД.</p>
+<p>Перейти в директорию bin:</p>
+<blockquote>
+<p># cd /usr/jatoba-&lt;ver&gt;/bin/</p>
+</blockquote>
+<p>Запустить утилиту установки компонента:</p>
+<blockquote>
+<p># ./jalog_setup.sh</p>
+</blockquote>
+<p>Перейти в свойства службы и выбрать тип запуска: Автоматический и применить изменения. Выполнить отключение брандмауэра.</p>
+<p>Только в GNU/Linux добавить сервис в автозапуск:</p>
+<blockquote>
+<p># systemctl enable jalog_agent</p>
+</blockquote>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="запуск-агента-на-целевой-субд">Запуск агента на целевой СУБД<a href="#запуск-агента-на-целевой-субд" class="hash-link" aria-label="Direct link to Запуск агента на целевой СУБД" title="Direct link to Запуск агента на целевой СУБД" translate="no">​</a></h4>
+<p>Запуск агента на целевой СУБД выполняется при помощи команды:</p>
+<blockquote>
+<p># systemctl start jalog_agent</p>
+</blockquote>
+<p>Убедиться, что служба успешно запущена:</p>
+<blockquote>
+<p># systemctl status jalog_agent</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image18-ecf7410ff4ffe0497eac2ccbb816e937.png" width="869" height="355" class="img_ev3q"></p>
+<p>Рисунок 3.14 – Установка службы агента компонента в ОС GNU/Linux</p>
+<p>В случае если служба сервера компонента не запускается необходимо проверить системный журнал на наличие ошибок при помощи команды:</p>
+<blockquote>
+<p># cat /var/log/syslog | grep jalog</p>
+</blockquote>
+<p>На данном шаге настройка службы агента компонента в ОС GNU/Linux завершена.</p>
+<p>Далее становится возможным подключение к служебной БД «ja_log» в компоненте JDS.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="структура-конфигурационных-файлов">Структура конфигурационных файлов<a href="#структура-конфигурационных-файлов" class="hash-link" aria-label="Direct link to Структура конфигурационных файлов" title="Direct link to Структура конфигурационных файлов" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="структура-конфигурационного-файла-сервера-jalog_serveryml">Структура конфигурационного файла сервера jalog_server.yml<a href="#структура-конфигурационного-файла-сервера-jalog_serveryml" class="hash-link" aria-label="Direct link to Структура конфигурационного файла сервера jalog_server.yml" title="Direct link to Структура конфигурационного файла сервера jalog_server.yml" translate="no">​</a></h3>
+<p>В файле jalog_server.yml присутствует следующая структура:</p>
+<blockquote>
+<p><strong># Собственные параметры сервера</strong></p>
+<p>server:</p>
+<p># listen_ip: 0.0.0.0 # IP-адрес, который прослушивает сервер</p>
+<p># listen_port: 10051 # Порт, который прослушивает сервер</p>
+<p><strong># Параметры TLS</strong></p>
+<p>tls:</p>
+<p># cert_file: &quot;/var/lib/jatoba/ssl_jalog/ja_log.crt&quot; # Путь до сертификата</p>
+<p># key_file: &quot;/var/lib/jatoba/ssl_jalog/ja_log.key&quot; # Путь до файла ключа</p>
+<p># ca_file: &quot;/var/lib/jatoba/ssl_jalog/root.crt&quot; # Путь до файла ca</p>
+<p># crl_file: &quot;/var/lib/jatoba/ssl_jalog/root.crl&quot; # Путь до файла crl</p>
+<p><strong># Параметры подключения к базе данных</strong></p>
+<p>database_params:</p>
+<p># conn_string: host=127.0.0.1 user=jalog_user dbname=ja_log password=[пароль УЗ jalog_user] # Строка подключения к СУБД</p>
+<p><strong># Параметры логирования</strong></p>
+<p>log:</p>
+<p># path: &quot;/usr/jatoba-&lt;ver&gt;/var/log/jalog/&quot;</p>
+<p># Путь к каталогу логов (Linux)</p>
+<p># filename: jalog_server # Шаблон для имени файлов логов</p>
+<p># level: info</p>
+<p># Уровень логирования</p>
+<p># type: txt # Форматы файлов логов (txt, csv, json)</p>
+<p># filemode: 0600 # Параметр доступа к файлам логов (только Linux)</p>
+<p># rotation_age: 1d # Интервал ротации файлов логов по времени</p>
+<p># rotation_size: 10MB # Интервал ротации по объему файла логов</p>
+<p># truncate_on_rotation: false # Признак перезаписи файла логов</p>
+</blockquote>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="собственные-параметры-сервера">Собственные параметры сервера<a href="#собственные-параметры-сервера" class="hash-link" aria-label="Direct link to Собственные параметры сервера" title="Direct link to Собственные параметры сервера" translate="no">​</a></h4>
+<p>Данный раздел конфигурационного файла jalog_server.yml определяет сетевые параметры сервера.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="listen_ip">listen_ip<a href="#listen_ip" class="hash-link" aria-label="Direct link to listen_ip" title="Direct link to listen_ip" translate="no">​</a></h5>
+<p>Числовой IP-адрес сервера для подключения агентов. Он должен быть представлен в стандартном формате адресов IPv4, например, 172.28.40.9.</p>
+<p>Значение по умолчанию – 0.0.0.0</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="listen_port">listen_port<a href="#listen_port" class="hash-link" aria-label="Direct link to listen_port" title="Direct link to listen_port" translate="no">​</a></h5>
+<p>Номер порта, по которому агенты подключаются к серверу.</p>
+<p>Значение по умолчанию – 10051</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметры-tls">Параметры TLS<a href="#параметры-tls" class="hash-link" aria-label="Direct link to Параметры TLS" title="Direct link to Параметры TLS" translate="no">​</a></h4>
+<p>Данный раздел конфигурационного файла jalog_server.yml определяет пути к каталогам, содержащим сертификаты и ключи SSL/TLS.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="cert_file">cert_file<a href="#cert_file" class="hash-link" aria-label="Direct link to cert_file" title="Direct link to cert_file" translate="no">​</a></h5>
+<p>Путь до файла сертификата, который агент ja_Log использует для подключения к СУБД.</p>
+<p>Значение по умолчанию не задано.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="key_file">key_file<a href="#key_file" class="hash-link" aria-label="Direct link to key_file" title="Direct link to key_file" translate="no">​</a></h5>
+<p>Путь до файла с ключом, который агент ja_Log использует для подключения к серверу.</p>
+<p>Значение по умолчанию не задано.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="ca_file">ca_file<a href="#ca_file" class="hash-link" aria-label="Direct link to ca_file" title="Direct link to ca_file" translate="no">​</a></h5>
+<p>Путь до сертификата центра сертификации, который агент ja_Log использует для подключения к серверу.</p>
+<p>Значение по умолчанию не задано.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="crl_file">crl_file<a href="#crl_file" class="hash-link" aria-label="Direct link to crl_file" title="Direct link to crl_file" translate="no">​</a></h5>
+<p>Путь до CRL файла, который агент ja_Log использует для подключения к серверу.</p>
+<p>Значение по умолчанию не задано.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметры-подключения-к-базе-данных">Параметры подключения к базе данных<a href="#параметры-подключения-к-базе-данных" class="hash-link" aria-label="Direct link to Параметры подключения к базе данных" title="Direct link to Параметры подключения к базе данных" translate="no">​</a></h4>
+<p>Раздел database_params конфигурационного файла jalog_server.yml определяет параметры подключения к базе данных компонента. Параметры подключения определяются в строке подключения conn_string.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="host">host<a href="#host" class="hash-link" aria-label="Direct link to host" title="Direct link to host" translate="no">​</a></h5>
+<p>IP-адрес БД, по которому выполняется подключение компонента ja_Log. Он должен быть представлен в стандартном формате адресов IPv4, например, 172.28.40.9.</p>
+<p>Значение по умолчанию – 127.0.0.1</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="user">user<a href="#user" class="hash-link" aria-label="Direct link to user" title="Direct link to user" translate="no">​</a></h5>
+<p>Имя пользователя СУБД Jatoba, используемое для подключения компонента ja_Log.</p>
+<p>Значение по умолчанию – ja_log.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="dbname">dbname<a href="#dbname" class="hash-link" aria-label="Direct link to dbname" title="Direct link to dbname" translate="no">​</a></h5>
+<p>Название БД, к которой подключается компонента ja_Log. Название БД определяется на этапе настройки компонента (см. 3.1.1).</p>
+<p>Значение по умолчанию – ja_log.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="password">password<a href="#password" class="hash-link" aria-label="Direct link to password" title="Direct link to password" translate="no">​</a></h5>
+<p>Пароль для доступа к БД, используемый в случае, когда компонент ja_Log настроен на аутентификацию по паролю.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="passfile">passfile<a href="#passfile" class="hash-link" aria-label="Direct link to passfile" title="Direct link to passfile" translate="no">​</a></h5>
+<p>Путь к расположению файла, в котором храняться пароли пользователей СУБД. По умолчанию это ~/.pgpass в домашнем каталоге СУБД.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="require_auth">require_auth<a href="#require_auth" class="hash-link" aria-label="Direct link to require_auth" title="Direct link to require_auth" translate="no">​</a></h5>
+<p>Параметр определяет метод аутентификации, который клиент требует от сервера. Если сервер не использует требуемый метод для аутентификации клиента или если обмен сообщениями аутентификации со стороны сервера не завершён, соединение не будет установлено. Доступные методы аутентификации – password, md5, none.</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="connect_timeout">connect_timeout<a href="#connect_timeout" class="hash-link" aria-label="Direct link to connect_timeout" title="Direct link to connect_timeout" translate="no">​</a></h5>
+<p>Максимальное время ожидания подключения в секундах (задаётся десятичным целым числом, например: 10). При нуле, отрицательном или не заданном значении ожидание будет бесконечным.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="структура-конфигурационного-файла-агента-jalog_agentyml">Структура конфигурационного файла агента jalog_agent.yml<a href="#структура-конфигурационного-файла-агента-jalog_agentyml" class="hash-link" aria-label="Direct link to Структура конфигурационного файла агента jalog_agent.yml" title="Direct link to Структура конфигурационного файла агента jalog_agent.yml" translate="no">​</a></h3>
+<p>В файле jalog_agent.yml присутствует следующая структура:</p>
+<blockquote>
+<p><strong># Параметры агента</strong></p>
+<p>jalog_agent:</p>
+<p>hostname: # Уникальное имя агента</p>
+<p>ip: # Ip-адрес агента</p>
+<p># port: 22345 # Порт агента</p>
+<p># task_puller_frequency: 15 # Частота запроса задач у сервера, в секундах</p>
+<p># task_execution_frequency: 5 # Частота проверки лог-файлов, в секундах</p>
+<p># max_logs_per_iteration: 1000 # Максимальное количество логов, которые обрабатываются за итерацию (10-1000)</p>
+<p><strong># Параметры сервера, с которым работает агент</strong></p>
+<p>jalog_server:</p>
+<p># ip: 127.0.0.1 # Ip-адрес сервера</p>
+<p># port: 10051 # Порт сервера</p>
+<p><strong># Параметры TLS</strong></p>
+<p>tls:</p>
+<p># cert_file: &quot;/var/lib/jatoba/ssl_jalog/ja_log_agent.crt&quot; # Путь до сертификата</p>
+<p># key_file: &quot;/var/lib/jatoba/ssl_jalog/ja_log_agent.key&quot; # Путь до файла ключа</p>
+<p># ca_file: &quot;/var/lib/jatoba/ssl_jalog/root.crt&quot; # Путь до файла ca</p>
+<p># crl_file: &quot;/var/lib/jatoba/ssl_jalog/root.crl&quot; # Путь до файла crl</p>
+<p><strong># Параметры логирования</strong></p>
+<p>log:</p>
+<p># path: &quot;/usr/jatoba-&lt;ver&gt;/var/log/jalog/&quot; # Путь к каталогу логов (Linux)</p>
+<p># filename: jalog_agent # Шаблон для имени файлов логов</p>
+<p># level: info # Уровень логирования</p>
+<p># type: txt # Форматы файлов логов (txt, csv, json)</p>
+<p># filemode: 0600 # Параметр доступа к файлам логов (только Linux)</p>
+<p># rotation_age: 1d # Интервал ротации файлов логов по времени</p>
+<p># rotation_size: 10MB # Интервал ротации по объему файла логов</p>
+<p># truncate_on_rotation: false # Признак перезаписи файла логов</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="настройка-tls-в-ос-gnulinux">Настройка TLS в ОС GNU/Linux<a href="#настройка-tls-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Настройка TLS в ОС GNU/Linux" title="Direct link to Настройка TLS в ОС GNU/Linux" translate="no">​</a></h2>
+<p>Настройка TLS/SSL соединений описана в документе «Руководство по безопасности».</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="обновление-компонента">Обновление компонента<a href="#обновление-компонента" class="hash-link" aria-label="Direct link to Обновление компонента" title="Direct link to Обновление компонента" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="обновление-компонента-в-ос-gnulinux-с-версии-12-до-версии-20">Обновление компонента в ОС GNU/Linux с версии 1.2 до версии 2.0<a href="#обновление-компонента-в-ос-gnulinux-с-версии-12-до-версии-20" class="hash-link" aria-label="Direct link to Обновление компонента в ОС GNU/Linux с версии 1.2 до версии 2.0" title="Direct link to Обновление компонента в ОС GNU/Linux с версии 1.2 до версии 2.0" translate="no">​</a></h3>
+<p>В случае обновления компонента с версии 1.2 до версии 2.0 в ОС GNU/Linux требуется:</p>
+<ol>
+<li class=""></li>
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Скопировать конфигурационные файлы версии 1.2;Остановить СУБД «Jatoba» и сервер компонента «ja_Log»:# systemctl stop jatoba-6 &amp;&amp; systemctl stop jalog_server</p>
+</blockquote>
+<ol start="3">
+<li class=""></li>
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Обновить локальный репозиторий СУБД «Jatoba»;Обновить пакет компонента;# apt-get install jatoba&lt;ver&gt;-ja-log</p>
+</blockquote>
+<ol start="5">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Запустить СУБД «Jatoba»:# systemctl start jatoba-6</p>
+</blockquote>
+<ol start="6">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Запустить скрипт migration.sql из служебной СУБД, который находится в каталоге /usr/jatoba-6/etc/jalog:psql -U postgres</p>
+<p>\c ja_log</p>
+<p>\i /usr/jatoba-&lt;ver&gt;/etc/jalog/migration.sql</p>
+</blockquote>
+<ol start="7">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Проверить версию расширения компонента (должна быть установлена версия 2.1):\dx</p>
+</blockquote>
+<ol start="8">
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Перейти в /usr/jatoba-&lt;ver&gt;/etc/jalog/ и проверить наличие конфигурационных файлов версии 2.0: jalog_server.yml на сервере служебной СУБД и jalog_agent.yml на сервере целевой СУБД;Выполнить настройку конфигурационных файлов согласно п.п. 3.1.3 и п.п. 3.2.2;На сервере служебной СУБД указать новый конфигурационный файл jalog_server.yml версии 2.0:# systemctl stop jalog_server</p>
+<p># systemctl edit --full jalog_server.service</p>
+<p>### Параметры запуска Jalog_server</p>
+<p>ExecStart=/usr/jatoba-&lt;ver&gt;/bin/jalog_server /usr/jatoba-6/etc/jalog/jalog_server.yml</p>
+<p># systemctl daemon-reload</p>
+<p># systemctl start jalog_server</p>
+<p># systemctl status jalog_server</p>
+</blockquote>
+<ol start="11">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>На сервере целевой СУБД указать новый конфигурационный файл jalog_agent.yml версии 2.0:# systemctl stop jalog_agent</p>
+<p># systemctl edit --full jalog_agent.service</p>
+<p>### Параметры запуска Jalog_agent</p>
+<p>ExecStart=/usr/jatoba-&lt;ver&gt;/bin/jalog_agent /usr/jatoba-6/etc/jalog/jalog_agent.yml</p>
+<p># systemctl daemon-reload</p>
+<p># systemctl start jalog_agent</p>
+<p># systemctl status jalog_agent</p>
+</blockquote>
+<ol start="12">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>На сервере служебной СУБД убедиться, что журналы событий предыдущей версии компонента будут присоединены в качестве секции в таблице jalog.logcsv_archivepsql -U postgres</p>
+<p>\c ja_log</p>
+<p>SELECT key_id, message FROM jalog.logcsv_archive ORDER BY key_id desc;</p>
+</blockquote>
+<ol start="13">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Проверить наличие секции в таблице jalog.logcsv\d+ jalog.logcsv</p>
+</blockquote>
+<ol start="14">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>На служебной СУБД проверить корректность передачи журналов событий с целевой СУБД в основную таблицу jalog.logcsvSELECT message FROM jalog.logcsv;</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="обновление-компонента-в-ос-gnulinux-с-версии-20-до-версии-2x">Обновление компонента в ОС GNU/Linux с версии 2.0 до версии 2.x<a href="#обновление-компонента-в-ос-gnulinux-с-версии-20-до-версии-2x" class="hash-link" aria-label="Direct link to Обновление компонента в ОС GNU/Linux с версии 2.0 до версии 2.x" title="Direct link to Обновление компонента в ОС GNU/Linux с версии 2.0 до версии 2.x" translate="no">​</a></h3>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p>При обновлении компонента с версии 2.0 до версии 2.x необходимо выполнить резервное копирование конфигурационных файлов jalog_server.yml (см. п. 4.1) и jalog_agent.yml (см. п. 4.2).</p></div></div>
+<p>В случае обновления компонента с версии 2.0 до версии 2.x в ОС GNU/Linux порядок действий аналогичен рассмотренному в п. 6.1 кроме:</p>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>шага 4, вместо которого необходимо выполнить команду в утилите psql:ALTER EXTENSION jalog UPDATE;</p>
+</blockquote>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>шагов 7, 8 и 9, вместо которых необходимо скопировать конфигурационные файлы служебной СУБД в каталог /usr/jatoba-6/etc/jalog/ и запустить компонент «ja_Log»:# systemctl start jalog_server</p>
+</blockquote>
+<p>А также скопировать конфигурационные файлы целевой СУБД в каталог /usr/jatoba-6/etc/jalog/ и запустить агент компонента «ja_Log»:</p>
+<blockquote>
+<p># systemctl start jalog_agent</p>
+</blockquote>
+<p>После успешного запуска служб компонента обновление компонента до версии 2.x считается выполненной.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="удаление-компонента-в-ос-gnulinux">Удаление компонента в ОС GNU/Linux<a href="#удаление-компонента-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Удаление компонента в ОС GNU/Linux" title="Direct link to Удаление компонента в ОС GNU/Linux" translate="no">​</a></h2>
+<p>На сервере с служебной СУБД авторизоваться в psql от имени привилегированного пользователя:</p>
+<blockquote>
+<p>psql -U postgres</p>
+</blockquote>
+<p>Подключиться к БД ja_log и выполнить удаление целевой СУБД из списка журналирования:</p>
+<blockquote>
+<p>#\c ja_log</p>
+<p>SELECT jalog.delete_agent_task(&lt;key_id агента&gt;);</p>
+</blockquote>
+<p>Убедиться в том, что агент удален:</p>
+<blockquote>
+<p>SELECT * from jalog.key;</p>
+</blockquote>
+<p>На сервере с целевой СУБД остановить службу компонента:</p>
+<blockquote>
+<p># systemctl stop jalog_agent</p>
+</blockquote>
+<p>Открыть конфигурационный файл postgresql.conf и задать формирование лога в формате, указанном по умолчанию:</p>
+<blockquote>
+<p>log_destination = &#x27;stderr&#x27;</p>
+</blockquote>
+<p>Сохранить изменения и выполнить перезагрузку целевой СУБД:</p>
+<blockquote>
+<p># systemctl stop jatoba-&lt;ver&gt;</p>
+<p># systemctl start jatoba-&lt;ver&gt;</p>
+</blockquote>
+<p>Подключиться к серверу со служебной СУБД и остановить службу:</p>
+<blockquote>
+<p># systemctl stop jalog_server</p>
+</blockquote>
+<p>Подключиться к служебной СУБД и удалить БД jalog со всем содержимым:</p>
+<blockquote>
+<p>drop database ja_log;</p>
+</blockquote>
+<p>Удаление пакета компонента осуществляется средствами пакетного менеджера ОС. Для этого необходимо использовать соответствующую пакетному менеджеру ОС команду удаления (remove, purge, erase и т.п.).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ошибки">Ошибки<a href="#ошибки" class="hash-link" aria-label="Direct link to Ошибки" title="Direct link to Ошибки" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="дублирование-сообщений-при-рассылке-уведомлений">Дублирование сообщений при рассылке уведомлений<a href="#дублирование-сообщений-при-рассылке-уведомлений" class="hash-link" aria-label="Direct link to Дублирование сообщений при рассылке уведомлений" title="Direct link to Дублирование сообщений при рассылке уведомлений" translate="no">​</a></h3>
+<p>Ошибка возникает при некорректной настройке клиента синхронизации времени.</p>
+<p>Ошибка устраняется на уровне ОС командами от имени привилегированного пользователя:</p>
+<blockquote>
+<p># apt purge ntp<br>
+# apt purge chrony<br>
+# timedatectl set-ntp true<br>
+# systemctl start systemd-timesyncd</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ошибка-при-выполнении-подключения-агента-к-серверу">Ошибка при выполнении подключения агента к серверу<a href="#ошибка-при-выполнении-подключения-агента-к-серверу" class="hash-link" aria-label="Direct link to Ошибка при выполнении подключения агента к серверу" title="Direct link to Ошибка при выполнении подключения агента к серверу" translate="no">​</a></h3>
+<p>В случае ошибки с настройками подключения агента к серверу компонента «jaLog» в журнале работы компонента будет отображаться следующая ошибка:</p>
+<blockquote>
+<p>2025-07-14 18:20:48 ERROR Cannot fetch tasks from jalog_server: Connection to address 10.116.102.54():10051 is failed. Reason: TCPSocket::connect::connection to 10.116.102.54:10051 failed. Error: 111. The next attempt will be in 15 seconds, Jalog ver. 2.0.0</p>
+</blockquote>
+<p>Для решения данной ошибки необходимо на узле, выполняющем роль сервера компонента «jaLog», убедится что служба «jalog_server» запущена и корректно работает:</p>
+<blockquote>
+<p># systemctl status jalog_server</p>
+<p>jalog_server.service - Jalog_server - Centralized logging server daemon</p>
+<p>Loaded: loaded (/etc/systemd/system/jalog_server.service; enabled; vendor preset: enabled)</p>
+<p>Active: active (running) since Tue 2025-07-15 10:02:23 MSK; 55s ago</p>
+<p>Main PID: 182838 (jalog_server)</p>
+<p>Tasks: 7 (limit: 4601)</p>
+<p>Memory: 2.6M</p>
+<p>CPU: 51ms</p>
+<p>CGroup: /system.slice/jalog_server.service</p>
+<p>└─182838 /usr/jatoba-6/bin/jalog_server /usr/jatoba-6/etc/jalog/jalog_server.yml</p>
+<p>июл 15 10:02:23 node1 systemd[1]: Started Jalog_server - Centralized logging server daemon.</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ошибка-при-подключении-компонента-jalog-к-субд-jatoba">Ошибка при подключении компонента «jaLog» к СУБД «Jatoba»<a href="#ошибка-при-подключении-компонента-jalog-к-субд-jatoba" class="hash-link" aria-label="Direct link to Ошибка при подключении компонента «jaLog» к СУБД «Jatoba»" title="Direct link to Ошибка при подключении компонента «jaLog» к СУБД «Jatoba»" translate="no">​</a></h3>
+<p>В случае ошибки с настройками подключения компонента «jaLog» к СУБД «Jatoba» в журнале работы компонента будет отображаться следующая ошибка:</p>
+<blockquote>
+<p>2025-07-14 18:27:17 ERROR Cannot load category reference: connection is failed: connection to server at &quot;127.0.0.1&quot;, port 5432 failed: fe_sendauth: no password supplied</p>
+<p>ConnInfo :host=127.0.0.1 user=postgres dbname=postgres, Jalog ver. 2.0.0</p>
+</blockquote>
+<p>Данная ошибка связана с тем, что для подключения компонента «jaLog» к СУБД «Jatoba» используется пароль пользователя postgres. Для выполнения успешного подключения необходимо указать пароль (password) в секции database_params:conn_string в конфигурационном файле jalog_server.yml, который располагается в каталоге /usr/jatoba-&lt;версия&gt;/etc/jalog/.</p>
+<p>Также необходимо проверить что в строке подключения к СУБД указан параметр dbname=ja_log.</p>
+<h2></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-1"><a href="#-1" class="hash-link" aria-label="Direct link to -1" title="Direct link to -1" translate="no">​</a></h3>
+<p><span id="_Toc222142662" class="anchor"></span>Пример установки СУБД «Jatoba» из локального репозитория для ОС UbuntuУстановка СУБД «Jatoba» из локального репозитория для ОС Ubuntu проводится в следующем порядке:</p>
+<ol>
+<li class=""></li>
+</ol>
+<blockquote>
+<p>В терминале войти в режим суперпользователя, выполнив команду:sudo su</p>
+</blockquote>
+<ol start="2">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Если команды sudo не существует – установить:su -l,</p>
+<p># apt-get install sudo -y</p>
+</blockquote>
+<ol start="3">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Выполнить обновление системы:# apt update &amp;&amp; sudo apt upgrade –y</p>
+<p># apt -s dist-upgrade</p>
+<p># apt dist-upgrade</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image19-7576545ed6fd1549180a920eed5552f1.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.1 – Обновление системы</p>
+<ol start="4">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Создать папку localrepo в корневом каталоге:# mkdir /localrepo</p>
+</blockquote>
+<ol start="5">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>В созданную папку скопировать:каталог &lt;pool&gt;</p>
+<p>каталог &lt;dist&gt;</p>
+<p>файл &lt;DEB-GPG-KEY-Jatoba&gt;</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image20-65f7fc41435a39d2cf38c8f5a61b113c.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.2 – Структура каталога «localrepo»</p>
+<ol start="6">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Установить открытый ключ репозитория:# apt-key add /localrepo/DEB-GPG-KEY-Jatoba</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image21-7099ed4e403b407465df64bc17ea5dda.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.3 – Установка открытого ключа репозитория</p>
+<ol start="7">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Добавить описание локального репозитория в систему:# nano /etc/apt/sources.list.d/jatoba-4.list</p>
+</blockquote>
+<ol start="8">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Вставить в файл следующее содержимое и сохранить:deb file:///localrepo stable non-free</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image22-9d0ac8c4dfb16b3e66a9ee82df6ad172.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.4 – Содержание файла «jatoba-4.list»</p>
+<ol start="9">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Проиндексировать обновленное состояние репозитория:# apt-get update</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image23-2543a710339cb3c137e65f77fee0e908.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.5 – Индексация репозитория</p>
+<ol start="10">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Установить СУБД Jatoba при помощи команды:# apt-get install jatoba4-client jatoba4-contrib jatoba4-libs jatoba4-server jatoba4-ja-log</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image24-d349740fb98152926beaa21f49905609.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.6 – Установка пакетов</p>
+<ol start="11">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Убедиться, что отсутствуют ошибки зависимостей:for f in $(LANG=C find /usr/jatoba-4 -type f -exec file {} \ | grep &quot;ELF 64-bit LSB&quot; | awk &#x27;BEGIN {FS=&quot;:&quot;} { print $1}&#x27; | sort); do echo $f; ldd $f | grep &quot;not found&quot;; done</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image25-f0c9cd6ce4fed1c820cce25e4cbe6019.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.7 – Проверка отсутствия ошибок зависимостей</p>
+<ol start="12">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Перейти в директорию исполняемых файлов СУБД:# cd /usr/jatoba-4/bin</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image26-e210921bb3218fba298b2421f60bac18.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.8 – Переход в каталог</p>
+<ol start="13">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Инициализировать каталог данных СУБД при помощи команды:# ./jatoba-setup initdb jatoba-4</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image27-e9ab55616a59deb57d0b8d7a764dddad.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.9 – Инициализация СУБД</p>
+<ol start="14">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Добавить сервис в список автозапуска:# systemctl enable jatoba-4</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image28-e2c2a44a9ca03b0c9144f6b7b7d4a56f.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.10 – Добавление сервиса jatoba-4 а автозагрузку ОС</p>
+<ol start="15">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Запустить службу:# systemctl start jatoba-4</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image29-d6d0ac70892f22cb5009db883ef3f6b2.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.11 – Запуск службы jatoba-4</p>
+<ol start="16">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Проверить статус службы:# systemctl status jatoba-4</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image30-c7e62af9578fa2a6ea2531992bda488d.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.12 – Проверка статуса службы jatoba-4</p>
+<ol start="17">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Авторизоваться в psql:# su – postgres</p>
+<p>psql</p>
+</blockquote>
+<ol start="18">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Установить пароль для пользователя СУБД «postgres»:\password</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image31-a96a39f85a91fd04777e0e0f02b7f7e3.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.13 – Установка пароля для пользователя ОС</p>
+<ol start="19">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Установить пароль для системного пользователя ОС «postgres»:# passwd postgres</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image32-6bb133f5cb1ba8a29e3d5a69a430487b.png" width="734" height="488" class="img_ev3q"></p>
+<p>Рисунок 8.14 – Установка пароля для пользователя СУБД</p>
+<p>На этом этапе установку СУБД с компонентом «ja_Log» можно считать оконченной.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-2"><a href="#-2" class="hash-link" aria-label="Direct link to -2" title="Direct link to -2" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-3"><a href="#-3" class="hash-link" aria-label="Direct link to -3" title="Direct link to -3" translate="no">​</a></h3>
+<p><span id="_Toc222142664" class="anchor"></span>Структура конфигурационного файла сервера jalog_server.ymlТаблица П.8.1 – Структура конфигурационного файла jalog_server.yml компонента «jaLog» ОС Linux</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Наименование параметра</strong></th><th style="text-align:center"><strong>Значение по умолчанию</strong></th><th><strong>Описание параметра</strong></th></tr></thead><tbody><tr><td><strong>server</strong></td><td style="text-align:center"></td><td><strong>Собственные параметры сервера ja_Log</strong></td></tr><tr><td>listen_ip</td><td style="text-align:center">0.0.0.0</td><td>IP-адрес, который прослушивает сервер</td></tr><tr><td>listen_port</td><td style="text-align:center">10051</td><td>Номер порта, по которому агенты подключаются к серверу</td></tr><tr><td><strong>tls</strong></td><td style="text-align:center"></td><td><strong>Параметры TLS</strong></td></tr><tr><td>cert_file</td><td style="text-align:center"></td><td>Путь до файла сертификата, который агент ja_Log использует для подключения к СУБД.</td></tr><tr><td>key_file</td><td style="text-align:center"></td><td>Путь до файла с ключом, который агент ja_Log использует для подключения к серверу.</td></tr><tr><td>ca_file</td><td style="text-align:center"></td><td>Путь до сертификата центра сертификации, который агент ja_Log использует для подключения к серверу</td></tr><tr><td>crl_file</td><td style="text-align:center"></td><td>Путь до CRL файла, который агент ja_Log использует для подключения к серверу</td></tr><tr><td><strong>database_params</strong></td><td style="text-align:center"></td><td><strong>Параметры подключения к базе данных</strong></td></tr><tr><td>conn_string</td><td style="text-align:center"></td><td>Строка с параметрами подключения компонента к БД</td></tr><tr><td><strong>log</strong></td><td style="text-align:center"></td><td><strong>Параметры ведения журналов работы</strong></td></tr><tr><td>path</td><td style="text-align:center">/usr/jatoba-&lt;ver&gt;/var/log/jalog/</td><td>Каталог хранения журналов работы</td></tr><tr><td>filename</td><td style="text-align:center">jalog_server</td><td>Шаблон названия файлов журналов</td></tr><tr><td>level</td><td style="text-align:center">info</td><td>Уровень детализации журналов</td></tr><tr><td>type</td><td style="text-align:center">txt</td><td>Тип файлов журналов (txt, csv, json)</td></tr><tr><td>filemode</td><td style="text-align:center">0600 (Linux)</td><td>Параметры доступа к файлам журнвло</td></tr><tr><td>rotation_age</td><td style="text-align:center">1d</td><td>Интервал ротации файлов журналов по времени</td></tr><tr><td>rotation_size</td><td style="text-align:center">10MB</td><td>Интервал ротации файлов журналов по размеру</td></tr><tr><td>truncate_on_rotation</td><td style="text-align:center">false</td><td>Признак перезаписи файла журнала</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-4"><a href="#-4" class="hash-link" aria-label="Direct link to -4" title="Direct link to -4" translate="no">​</a></h3>
+<p><span id="_Toc222142665" class="anchor"></span>Структура конфигурационного файла агента jalog_agent.ymlТаблица П.8.2 – Структура конфигурационного файла jalog_agent.yml компонента «jaLog» для ОС Linux</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Наименование параметра</strong></th><th><strong>Значение по умолчанию</strong></th><th><strong>Описание параметра</strong></th></tr></thead><tbody><tr><td><strong>jalog_agent</strong></td><td></td><td><strong>Параметры агента ja_Log</strong></td></tr><tr><td>hostname</td><td></td><td>Название узла, на котором установлен агент</td></tr><tr><td>ip</td><td></td><td>IP-адрес узла, на котором установлен агент</td></tr><tr><td>port</td><td>22345</td><td>Номер сетевого порта агента</td></tr><tr><td>task_puller_frequency</td><td>15</td><td>Частота запроса задач у сервера, в секундах</td></tr><tr><td>max_logs_per_iteration</td><td>1000</td><td>Максимальное количество журналов, которые обрабатываются за итерацию (10-1000)</td></tr><tr><td><strong>jalog_server</strong></td><td></td><td><strong>Параметры сервера ja_Log</strong></td></tr><tr><td>ip</td><td></td><td>IP-адрес сервера ja_Log</td></tr><tr><td>port</td><td>10051</td><td>Номер порта, по которому агенты подключаются к серверу</td></tr><tr><td><strong>tls</strong></td><td></td><td><strong>Параметры TLS</strong></td></tr><tr><td>cert_file</td><td></td><td>Путь до файла сертификата, который агент ja_Log использует для подключения к СУБД.</td></tr><tr><td>key_file</td><td></td><td>Путь до файла с ключом, который агент ja_Log использует для подключения к серверу.</td></tr><tr><td>ca_file</td><td></td><td>Путь до сертификата центра сертификации, который агент ja_Log использует для подключения к серверу</td></tr><tr><td>crl_file</td><td></td><td>Путь до CRL файла, который агент ja_Log использует для подключения к серверу</td></tr><tr><td><strong>log</strong></td><td></td><td><strong>Параметры ведения журналов работы</strong></td></tr><tr><td>path</td><td>/usr/jatoba-&lt;ver&gt;/var/log/jalog/</td><td>Каталог хранения журналов работы</td></tr><tr><td>filename</td><td>jalog_server</td><td>Шаблон названия файлов журналов</td></tr><tr><td>level</td><td>info</td><td>Уровень детализации журналов</td></tr><tr><td>type</td><td>txt</td><td>Тип файлов журналов (txt, csv, json)</td></tr><tr><td>filemode</td><td>0600 (Linux)</td><td>Параметры доступа к файлам журнвло</td></tr><tr><td>rotation_age</td><td>1d</td><td>Интервал ротации файлов журналов по времени</td></tr><tr><td>rotation_size</td><td>10MB</td><td>Интервал ротации файлов журналов по размеру</td></tr><tr><td>truncate_on_rotation</td><td>false</td><td>Признак перезаписи файла журнала</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-5"><a href="#-5" class="hash-link" aria-label="Direct link to -5" title="Direct link to -5" translate="no">​</a></h2>
+<p><span id="_Toc222142666" class="anchor"></span>Термины и определения<strong>Целевая СУБД</strong> – СУБД являющаяся целью мониторинга.</p>
+<p>При использовании компонента пользовательского веб-интерфейса для администраторов «Jatoba data safe», компонент ведет мониторинг, обслуживание и прочие действия отдельно установленных СУБД «Jatoba». Такие СУБД для компонента «Jatoba data safe» являются целевыми.</p>
+<p><strong>Служебная СУБД</strong> – СУБД, обслуживающая компонент «Jatoba data safe», и выполняющая служебные функции, такие как:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>обеспечение собственного функционирования;сбор событий безопасности с отдельно установленных СУБД «Jatoba».Таким образом СУБД обслуживающая компонент «Jatoba data safe» выполняет служебные функции и к ней применяется термин – «служебная СУБД».</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-6"><a href="#-6" class="hash-link" aria-label="Direct link to -6" title="Direct link to -6" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><span id="_Toc222142667" class="anchor"></span>Перечень сокращенийSQL</th><th>–</th><th>Structured Query Language — язык структурированных запросов</th></tr></thead><tbody><tr><td>БД</td><td>–</td><td>База данных</td></tr><tr><td>ОС</td><td>–</td><td>Операционная система</td></tr><tr><td>СУБД</td><td>–</td><td>Система управления базами данных</td></tr><tr><td>ЭВМ</td><td>–</td><td>Электронно-вычислительная машина</td></tr><tr><td>ДСЧ</td><td>–</td><td>Датчик случайных чисел</td></tr></tbody></table>
+<p>Тесты:</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><p>Для ротации архивных журналов служебной СУБД может быть использовано существующее табличное пространство. При установке расширения компоненту выдаются все необходимые права доступа ко всем существующим на тот момент табличным пространствам служебной СУБД. Назначаемые права доступа необходимы для корректного перемещения архивных журналов, выполнения функций и процедур.</p>
+<p>Если после установки расширения создается новое табличное пространство, которое будет использовано для ротации архивных журналов, то в этом случае для групповой роли jalog_role определяются права доступа к ему (см. пример в п. 3.1.3).</p></th></tr></thead><tbody></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/archive/jds211"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Компонент «Jatoba data safe» 2.11</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/archive/Images test copy"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Images test md</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#назначение-компонента" class="table-of-contents__link toc-highlight">Назначение компонента</a><ul><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li></ul></li><li><a href="#установка-и-настройка" class="table-of-contents__link toc-highlight">Установка и настройка</a><ul><li><a href="#установка-компонента-ja_log-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка компонента «ja_Log» в ОС GNU/Linux</a></li></ul></li><li><a href="#настройка-архитектуры-агент-сервер-на-ос-gnulinux" class="table-of-contents__link toc-highlight">Настройка архитектуры агент-сервер на ОС GNU/Linux</a><ul><li><a href="#служебная-субд-конфигурирование-серверной-части-компонента" class="table-of-contents__link toc-highlight">Служебная СУБД. Конфигурирование серверной части компонента</a></li><li><a href="#целевая-субд-конфигурирование-клиентской-части-компонента" class="table-of-contents__link toc-highlight">Целевая СУБД. Конфигурирование клиентской части компонента</a></li></ul></li><li><a href="#структура-конфигурационных-файлов" class="table-of-contents__link toc-highlight">Структура конфигурационных файлов</a><ul><li><a href="#структура-конфигурационного-файла-сервера-jalog_serveryml" class="table-of-contents__link toc-highlight">Структура конфигурационного файла сервера jalog_server.yml</a></li><li><a href="#структура-конфигурационного-файла-агента-jalog_agentyml" class="table-of-contents__link toc-highlight">Структура конфигурационного файла агента jalog_agent.yml</a></li></ul></li><li><a href="#настройка-tls-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Настройка TLS в ОС GNU/Linux</a></li><li><a href="#обновление-компонента" class="table-of-contents__link toc-highlight">Обновление компонента</a><ul><li><a href="#обновление-компонента-в-ос-gnulinux-с-версии-12-до-версии-20" class="table-of-contents__link toc-highlight">Обновление компонента в ОС GNU/Linux с версии 1.2 до версии 2.0</a></li><li><a href="#обновление-компонента-в-ос-gnulinux-с-версии-20-до-версии-2x" class="table-of-contents__link toc-highlight">Обновление компонента в ОС GNU/Linux с версии 2.0 до версии 2.x</a></li></ul></li><li><a href="#удаление-компонента-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Удаление компонента в ОС GNU/Linux</a></li><li><a href="#ошибки" class="table-of-contents__link toc-highlight">Ошибки</a><ul><li><a href="#дублирование-сообщений-при-рассылке-уведомлений" class="table-of-contents__link toc-highlight">Дублирование сообщений при рассылке уведомлений</a></li><li><a href="#ошибка-при-выполнении-подключения-агента-к-серверу" class="table-of-contents__link toc-highlight">Ошибка при выполнении подключения агента к серверу</a></li><li><a href="#ошибка-при-подключении-компонента-jalog-к-субд-jatoba" class="table-of-contents__link toc-highlight">Ошибка при подключении компонента «jaLog» к СУБД «Jatoba»</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
