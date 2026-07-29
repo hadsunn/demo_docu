@@ -213,7 +213,7 @@ title: Поддержка мониторинга
 
 Схема стенда представлена на рисунке Рисунок 2.1.
 
-![](./assets/images/monitoring/media/image3.png)
+![](../assets/images/monitoring/media/image3.png)
 
 Рисунок . – Схема стенда
 
@@ -1711,7 +1711,7 @@ rule_files:
 
 Схема стенда представлена на рисунке Рисунок 10.1.
 
-![](./assets/images/monitoring/media/image57.png)
+![](../assets/images/monitoring/media/image57.png)
 
 Рисунок . – Схема стенда мониторинга с кластером «ja_Hipe_Cluster»
 
@@ -1880,7 +1880,7 @@ rule_files:
 
 Схема стенда представлена на рисунке Рисунок 11.1.
 
-![](./assets/images/monitoring/media/image61.png)
+![](../assets/images/monitoring/media/image61.png)
 
 Рисунок . – Схема стенда мониторинга с кластером «jaDog»
 

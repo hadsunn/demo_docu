@@ -37,7 +37,7 @@ import image162 from '@site/docs/assets/images/jds-gfm/image16.png';
 <img src={require('@site/docs/assets/images/jds-gfm/image16.png').default} alt="Схема" />
 
 8
-![](./assets/images/jalog/media/image4.png)
+![](../assets/images/jalog/media/image4.png)
 
 
 

@@ -74,7 +74,7 @@ sidebar_position: 40
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
+<th style="text-align: center;"><img src="../assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
 <th style="text-align: left;"><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 6.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p>
 <p>Например, СУБД «Jatoba» версии 5.x по умолчанию устанавливается в директорию ОС Linux – «/usr/jatoba-5/bin».</p>
 <p>Используется версия компонента — 2.1</p></th>
@@ -83,7 +83,7 @@ sidebar_position: 40
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><img src="./assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></td>
+<td style="text-align: center;"><img src="../assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></td>
 <td colspan="2" style="text-align: left;">Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</td>
 </tr>
 </tbody>
@@ -97,13 +97,13 @@ sidebar_position: 40
 
 При клиент-серверной установке на серверах целевых СУБД устанавливается агент компонента, а на сервере служебной СУБД серверная часть компонента. Передача данных осуществляется по протоколу Libpq или TLS.
 
-![](./assets/images/jalog/media/image3.png)
+![](../assets/images/jalog/media/image3.png)
 
 Рисунок 1.1 – Схема работы компонента при клиент-серверной установке
 
 При локальной установке на сервере СУБД устанавливается агент и сервер компонента. Передача данных осуществляется по внутреннему интерфейсу.
 
-![](./assets/images/jalog/media/image4.png)
+![](../assets/images/jalog/media/image4.png)
 
 Рисунок 1.2 – Схема работы компонента при локальной установке
 
@@ -116,7 +116,7 @@ sidebar_position: 40
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></th>
+<th style="text-align: center;"><img src="../assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></th>
 <th style="text-align: left;"><p>При установке сервера и агента на одном экземпляре БД необходимо избегать полного логирования всех операций log_statement = 'all', т.к. в таком случае файлы журналов будут накапливать как записи самих запросов, так и записи записей этих запросов в служебную таблицу компонента, что приведет к разрастанию этих файлов.</p>
 <p>Также необходимо избегать использования log_statement = 'mod', т.к. в этом случае будет выполняться журналирования всех INSERT-запросов, что также приведет к прогрессивному увеличению файлов журналов.</p></th>
 </tr>
@@ -206,7 +206,7 @@ sidebar_position: 40
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></th>
+<th style="text-align: center;"><img src="../assets/images/jalog/media/image1.png" style="width:0.25139in;height:0.25139in" /></th>
 <th style="text-align: left;"><p><strong>ВАЖНО!</strong> В случае совместной работы компонента «ja_Log» с SecurityProfile в одной СУБД, расширение «jalog» должно устанавливаться в ту же БД, в которую установлено расширение «securityprofile».</p>
 <p>Справочная информация по настройке SecurityProfile приведена в документе «Руководство администратора СУБД Jatoba» 643.72410666.00067-08 95 01</p></th>
 </tr>
@@ -215,7 +215,7 @@ sidebar_position: 40
 </tbody>
 </table>
 
-![](./assets/images/jalog/media/image5.png)
+![](../assets/images/jalog/media/image5.png)
 
 Рисунок 3.1 – Создание служебной БД и установка расширения
 
@@ -223,7 +223,7 @@ sidebar_position: 40
 
 > \dx+ jalog
 
-![](./assets/images/jalog/media/image6.png)
+![](../assets/images/jalog/media/image6.png)
 
 
 :::info Дополнительная информация
@@ -248,7 +248,7 @@ sidebar_position: 40
 
 > \du
 
-![](./assets/images/jalog/media/image7.png)
+![](../assets/images/jalog/media/image7.png)
 
 Рисунок . – Список ролей БД
 
@@ -258,7 +258,7 @@ sidebar_position: 40
 
 > ALTER ROLE jalog_user WITH LOGIN PASSWORD \['password_jalog_user'\];
 
-![](./assets/images/jalog/media/image8.png)
+![](../assets/images/jalog/media/image8.png)
 
 Рисунок . – Создание пароля технологической УЗ
 
@@ -636,7 +636,7 @@ fatal;error;warning;info;debug1;debug2;После установки парам�
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
+<th style="text-align: center;"><img src="../assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
 <th><p>Для ротации архивных журналов служебной СУБД может быть использовано существующее табличное пространство. При установке расширения компоненту выдаются все необходимые права доступа ко всем существующим на тот момент табличным пространствам служебной СУБД. Назначаемые права доступа необходимы для корректного перемещения архивных журналов, выполнения функций и процедур.</p>
 <p>Если после установки расширения создается новое табличное пространство, которое будет использовано для ротации архивных журналов, то в этом случае для групповой роли jalog_role определяются права доступа к ему (см. пример в п. 3.1.3).</p></th>
 </tr>
@@ -1457,7 +1457,7 @@ IP-адрес БД, по которому выполняется подключ�
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="./assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
+<th style="text-align: center;"><img src="../assets/images/jalog/media/image2.png" style="width:0.25in;height:0.25in" /></th>
 <th><p>Для ротации архивных журналов служебной СУБД может быть использовано существующее табличное пространство. При установке расширения компоненту выдаются все необходимые права доступа ко всем существующим на тот момент табличным пространствам служебной СУБД. Назначаемые права доступа необходимы для корректного перемещения архивных журналов, выполнения функций и процедур.</p>
 <p>Если после установки расширения создается новое табличное пространство, которое будет использовано для ротации архивных журналов, то в этом случае для групповой роли jalog_role определяются права доступа к ему (см. пример в п. 3.1.3).</p></th>
 </tr>
