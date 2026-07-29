@@ -1,5 +1,6 @@
 ---
 title: Компонент «Jatoba data safe»
+toc_max_heading_level: 4
 ---
 
 # Компонент «Jatoba data safe». Пользовательский веб-интерфейс для администраторов.

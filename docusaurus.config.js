@@ -80,6 +80,10 @@ const config = {
     ({docs: {
         sidebar: {autoCollapseCategories: true,},
           },
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 4,
+      },
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Jatoba',
