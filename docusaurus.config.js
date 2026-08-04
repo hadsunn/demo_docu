@@ -66,6 +66,14 @@ const config = {
           sidebarPath: './sidebars_pg.js',
 	        routeBasePath: '/',
           remarkPlugins: [remarkFigureXref],
+          versions: {
+            '18.3.1': {
+              banner: 'none',
+            },
+            'test': {
+              banner: 'none',
+            },
+          },
         },
         blog: false,
         theme: {
@@ -98,6 +106,10 @@ const config = {
             label: 'Jatoba.ru',
             position: 'left',
           },
+          {
+            type: 'docsVersionDropdown',
+            versions: ['test', '18.3.1'],
+          }
         ],
       },
       footer: {

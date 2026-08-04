@@ -1,0 +1,690 @@
+---
+title: 9.2. Создание роли
+---
+
+Окно создание роли вызывается нажатием кнопки «Добавить» (Add),
+расположенной в правом верхнем углу окна. Окно включает в себя
+5 вкладок:
+
+  - «Основные параметры» (Main settings);
+
+  - «Атрибуты» (Attributes);
+
+  - «Роли и группы» (Roles and groups);
+
+  - «Привилегии» (Privileges);
+
+  - «SQL».
+
+### 9.2.1 Вкладка «Основные параметры» (Main settings);
+
+В вкладке «Основные параметры» выведены поля:
+
+  - «Имя» (Name);
+
+  - «Описание» (Description);
+
+  - «Пароль» (Password);
+
+  - «Подтверждение пароля» (Repeat
+password);
+
+:::warning Важная информация
+Ввод имени пользователя является обязательным.
+:::
+
+В поле «Имя» вводится имя создаваемой роли длиной не менее двух
+символов. Случайно вставленные символы пробела при генерации
+SQL-команды будут усечены.
+
+При вводе имени пользователя, становится доступной кнопка «Сохранить» и
+генерируется SQL-команда:
+
+```bash
+CREATE ROLE [user_name];
+```
+
+В поле «Описание» вводится описание создаваемой роли длиной до 255
+символов.
+
+:::info Дополнительная информация
+Ввод описания пользователя является обязательным.
+:::
+
+В поле «Пароль» вводится пароль для создаваемого пользователя длиной от
+6 до 50 символов.
+
+В поле «Подтверждение пароля» вводится идентичный пароль задаваемому.
+
+:::warning Важная информация
+Ввод пароля для роли может производится при создании роли.
+При редактировании роли функциональная возможность смены пароля недоступна.
+:::
+
+Нажатие кнопки «Сохранить» сгенерирует SQL-команду:
+
+```
+ALTER ROLE [name_role] PASSWORD [password role];
+```
+
+<img src={require('/docs/assets/images/jds-gfm/image47.png').default} alt="Описание" />
+Рисунок 9.2 – Вкладка «Основные параметры» (Main settings)
+
+### 9.2.2 Вкладка «Атрибуты»
+
+На вкладке «Атрибуты» (Attributes) выведены:
+
+  - флаги:
+
+  - SUPERUSER;
+
+  - INHERIT;
+
+  - CREATEROLE;
+
+  - CREATEDB;
+
+  - LOGIN;
+
+  - REPLICATION;
+
+  - BypassRls.
+
+  - поля:
+
+  - Квота соединений (Connection limit);
+
+  - Действительна до (Valid util).
+
+Установкой флагов назначаются атрибуты создаваемой
+роли.
+
+:::warning Важная информация
+Доступно назначение только тех атрибутов, которые назначены ассоциированной роли СУБД для пользователя JDS.
+:::
+
+<img src={require('/docs/assets/images/jds-gfm/image48.png').default} alt="Описание" />
+Рисунок 9.3 - Вкладка «Атрибуты» (Attributes)
+
+В поле «Квота соединений» устанавливается значение количества соединений
+для роли. Доступно установить значения приведенные в таблице Таблица
+9.1.
+
+> Таблица 9.1 – Допустимые значения квоты соединений
+
+| **Значение**              | **Описание**                                                      |
+| ------------------------- | ----------------------------------------------------------------- |
+| \-1                       | нет ограничений                                                   |
+| 0                         | соединение запрещено                                              |
+| Целое положительное число | Количество соединений                                             |
+
+:::info Дополнительная информация
+Ввод значения квоты соединений для роли не является обязательным.
+:::
+
+В поле «Действительна до» (Valid util) устанавливается дата и время
+действия роли, с точностью до минуты. Параметр используется для
+временных учетных записей.
+
+Ввод значения доступен через окно календаря или
+вручную.
+
+:::info Дополнительная информация
+Ввод даты и времени действия роли не является обязательным.
+:::
+
+### 9.2.3 Вкладка «Роли и группы» (Roles and groups)
+
+В вкладке «Роли и группы» отображаются два поля:
+
+  - «Участники группы»;
+
+  - «Входит в группы».
+
+При добавлении ролей в поле «Участники группы» роль станет «групповой» и
+включенные в нее роли унаследуют атрибуты и привилегии роли.
+
+Добавление участников группы выполняется нажатием кнопки «Добавить
+роль», которое вызовет окно добавления ролей (см. рис. Рисунок
+9.4). Выбор ролей выполняется, через поле поиска или вручную установкой
+флагов. Нажатие кнопки «Добавить» внесет выбранные роли в поле
+«Участники группы».
+
+<img src={require('/docs/assets/images/jds-gfm/image49.png').default} alt="Описание" />
+Рисунок 9.4 – Окно добавления ролей
+
+При добавлении роли в поле «Входит в группы» она станет участником
+«групповой роли» и унаследует атрибуты и привилегии роли в которую
+она входит.
+
+Добавление роли в группы выполняется нажатием кнопки «Добавить в
+группу», которое вызовет окно добавления ролей (см. рис. Рисунок
+9.4). Выбор ролей выполняется, через поле поиска или вручную установкой
+флагов. Нажатие кнопки «Добавить» внесет выбранные роли в поле «Входит
+в группы».
+
+Структура ролей в СУБД имеет иерархическую структуру и не допускает
+«закольцованности», т.е. в случае добавление вышестоящей роли в
+нижестоящую по иерархии, нижестоящая роль изменит свой статус и
+станет вышестоящей.
+
+**Например**
+
+Созданы роли:
+
+  - role_1;
+
+  - role_2;
+
+  - role_3.
+
+**Шаг 1.**
+
+Добавим роль «role_2» в состав роли «role_1» SQL-командой:
+
+```
+GRANT "role\_1" TO "role\_2";
+```
+
+Рисунок 9.5 – Выполнение SQL-команды добавления роли «role_2» в состав
+роли «role_1»
+
+После чего роль «role_1» станет групповой и образуется иерархия ролей.
+В иерархии ролей роль «role_1» займет первый уровень, а роль «role_2»
+займет второй уровень.
+
+Рисунок 9.6 – Иерархия ролей при шаге 1
+
+**Шаг 2.**
+
+На втором шаге групповую роль «role\_1» добавим в состав роли «role\_3»
+SQL-командой:
+
+```
+GRANT "role\_3" TO "role\_1";
+```
+
+Рисунок 9.7 – Выполнение SQL-команды добавления роли «role_1» в состав
+роли «role_3»
+
+После чего иерархия ролей изменится. Роль «role_3» станет групповой и
+займет первый уровень. На втором уровне иерархии в нее будет входить
+групповая роль «role_1». На третьем уровне иерархии находится простая
+роль «role_2», входящая в состав групповой роли «role_1», как
+представлено на рисунке Рисунок 9.8.
+
+Рисунок 9.8 – Иерархия ролей при шаге 2
+
+**Шаг 3.**
+
+На третьем шаге включим в состав роли «role\_2» третьего уровня,
+групповую роль «role\_3» первого уровня SQL-командой:
+
+```
+GRANT "role\_2" TO "role\_3";
+```
+
+Рисунок 9.9 - Выполнение SQL-команды добавления роли «role\_3» в состав
+роли «role\_2»
+
+Возникнет ошибка:
+
+> Ошибка при обновлении роли БД: Ошибка '0LP01: role "role\_2" is a
+> member of role "role\_3"' при выполнении SQL-команды 'GRANT "role\_2"
+> TO "role\_3";'\!
+
+<img src={require('/docs/assets/images/jds-gfm/image55.png').default} alt="Описание" />
+Рисунок 9.10 – Всплывающее сообщение об ошибке
+
+Ошибка возникнет из-за нарушения иерархии ролей.
+
+Рисунок 9.11 – Ошибка построения иерархии ролей. Закольцованность
+структуры
+
+:::info Дополнительная информация
+Действия по формированию групповых ролей не является обязательными.
+:::
+
+### 9.2.4 Вкладка «Привилегии» (Privileges)
+
+Во вкладке назначаются привилегии и системные привилегии пользователей
+на объекты СУБД.
+
+Объекты БД представлены в виде структурированного иерархического списка.
+
+Привилегии последовательно назначаются во всех БД, как на типы объектов,
+так и на сами объекты БД.
+
+Назначаемые привилегий представлены в таблице Таблица 9.2.
+
+Таблица 9.2 – Назначаемые привилегии
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Объекты доступа</strong></th>
+<th><strong>Привилегии пользователей</strong></th>
+<th><strong>Сокращенные аббревиатуры в DB roles</strong></th>
+<th><p><strong>Аббревиатуры в User Risk и Access Matrix</strong></p></th>
+<th><strong>Наименование привилегий и системных привилегий пользователей</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>БД</strong></td>
+<td>CONNECT</td>
+<td><strong>CnDB</strong></td>
+<td><strong>CnDB</strong></td>
+<td>CONNECT DATABASE</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>CREATE</td>
+<td><strong>CrDB</strong></td>
+<td><strong>CrDB</strong></td>
+<td>CREATE DATABASE</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>TEMPORARY</td>
+<td><strong>TDB</strong></td>
+<td><strong>TDB</strong></td>
+<td>TEMPORARY DATABASE</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><p><strong>Схема</strong></p>
+<p>(SCHEMA)</p></td>
+<td>CREATE</td>
+<td><strong>Cr</strong></td>
+<td><strong>CrSc</strong></td>
+<td>CREATE SCHEMA</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>USAGE</td>
+<td><strong>Us</strong></td>
+<td><strong>USc</strong></td>
+<td>USAGE SCHEMA</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Таблица</td>
+<td>SELECT</td>
+<td><strong>S</strong></td>
+<td><strong>STb</strong></td>
+<td>SELECT TABLE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>INSERT</td>
+<td><strong>In</strong></td>
+<td><strong>ITb</strong></td>
+<td>INSERT TABLE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>UPDATE</td>
+<td><strong>Up</strong></td>
+<td><strong>UpTb</strong></td>
+<td>UPDATE TABLE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>DELETE</td>
+<td><strong>D</strong></td>
+<td><strong>DTb</strong></td>
+<td>DELETE TABLE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>REFERENCES</td>
+<td><strong>R</strong></td>
+<td><strong>RTb</strong></td>
+<td>REFERENCES TABLE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>TRIGGER</td>
+<td><strong>Tr</strong></td>
+<td><strong>Tr</strong></td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>TRUNCATE</td>
+<td><strong>TrTb</strong></td>
+<td></td>
+<td>TRUNCATE TABLE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td><p>Представление</p>
+<p>(View)</p></td>
+<td>SELECT</td>
+<td><strong>S</strong></td>
+<td><strong>S</strong></td>
+<td>Select</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>INSERT</td>
+<td><strong>In</strong></td>
+<td><strong>In</strong></td>
+<td>Insert</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>UPDATE</td>
+<td><strong>Up</strong></td>
+<td><strong>UP</strong></td>
+<td>Update</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>DELETE</td>
+<td><strong>D</strong></td>
+<td><strong>D</strong></td>
+<td>Delete</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>REFERENCES</td>
+<td><strong>R</strong></td>
+<td><strong>R</strong></td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>TRIGGER</td>
+<td><strong>Tr</strong></td>
+<td><strong>Tr</strong></td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td><p>Мат.представления</p>
+<p>(Materialized View)</p></td>
+<td>SELECT</td>
+<td><strong>S</strong></td>
+<td><strong>S</strong></td>
+<td>Select</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>INSERT</td>
+<td><strong>In</strong></td>
+<td><strong>In</strong></td>
+<td>Insert</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>UPDATE</td>
+<td><strong>UP</strong></td>
+<td><strong>UP</strong></td>
+<td>Update</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>DELETE</td>
+<td><strong>D</strong></td>
+<td><strong>D</strong></td>
+<td>Delete</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>REFERENCES</td>
+<td><strong>R</strong></td>
+<td><strong>R</strong></td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>TRIGGER</td>
+<td><strong>Tr</strong></td>
+<td><strong>Tr</strong></td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td><p>Функция</p>
+<p>(FUNCTION)</p></td>
+<td>EXECUTE</td>
+<td><strong>E</strong></td>
+<td><strong>EFn</strong></td>
+<td>EXECUTE FUNCTION</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td><p>Последовательность</p>
+<p>(Sequence)</p></td>
+<td>SELECT</td>
+<td><strong>S</strong></td>
+<td><strong>SSq</strong></td>
+<td>SELECT SEQUENCE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>UPDATE</td>
+<td><strong>Up</strong></td>
+<td><strong>UpSq</strong></td>
+<td>UPDATE SEQUENCE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>USAGE</td>
+<td><strong>Us</strong></td>
+<td><strong>USq</strong></td>
+<td>USAGE SEQUENCE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Типы данных (TYPE)</td>
+<td>USAGE</td>
+<td><strong>Us</strong></td>
+<td><strong>UTy</strong></td>
+<td>USAGE TYPE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><p><strong>Языки</strong></p>
+<p>(LANGUAGE)</p></td>
+<td>USAGE</td>
+<td><strong>Us</strong></td>
+<td><strong>ULn</strong></td>
+<td>USAGE LANGUAGE</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>Foreign Server</strong></td>
+<td>USAGE</td>
+<td><strong>Us</strong></td>
+<td><strong>UFS</strong></td>
+<td>USAGE FOREIGN SERVER</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>Foreign Data Wrapper</strong></td>
+<td>USAGE</td>
+<td><strong>Us</strong></td>
+<td><strong>UFDW</strong></td>
+<td>USAGE FOREIGN DATA WRAPPER</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><p><strong>Табличное пространство</strong></p>
+<p>(Tablespace)</p></td>
+<td>USAGE</td>
+<td><strong>Us</strong></td>
+<td><strong>Us</strong></td>
+<td>Usage</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>CREATE</td>
+<td><strong>Cr</strong></td>
+<td><strong>CrTS</strong></td>
+<td>CREATE TABLESPACE</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>Large Objects</strong></td>
+<td>SELECT</td>
+<td><strong>S</strong></td>
+<td><strong>SLO</strong></td>
+<td>SELECT LARGE OBJECT</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>UPDATE</td>
+<td><strong>Up</strong></td>
+<td><strong>UpLO</strong></td>
+<td>UPDATE LARGE OBJECT</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+Требуемый объект доступно найти или по имени в строке поиска или
+спускаясь по списку объектов БД.
+
+Пиктограмма вызова окна назначения привилегий появляется при наведении
+курсора на правую сторону строки объекта.
+
+Для каждого из типов объектов и непосредственно объектов, окно
+назначения привилегий имеет собственный набор привилегий, как
+представлено в таблице Таблица 9.2.
+
+<img src={require('/docs/assets/images/jds-gfm/image57.png').default} alt="Описание" />
+Рисунок 9.12 – Окно назначение привилегий
+
+Привилегии устанавливаются или снимаются флагами в строке наименования
+привилегии.
+
+Флагами, расположенными в первой строке, устанавливаются или снимаются
+все доступные привилегии.
+
+Уже назначенные привилегии отображаются
+аббревиатурами.
+
+:::warning Важная информация
+Аббревиатуры в разделе «DB roles» частично отличаются от аббревиатур привилегий используемых в разделах JDS User Risk и Access Matrix.
+:::
+
+### 9.2.5 Назначения
+
+Вкладка предназначена для настройки доступа к целевой СУБД и сбора
+снимков и отчетов (см. р. 24).
+
+По умолчанию используется привилегированный пользователь СУБД
+«postgres». Вкладка активна для уже имеющейся роли с атрибутом Login.
+
+Для такой роли доступно назначение ее для:
+
+  - подключения к СУБД установив параметр «Суперпользователь»;
+
+  - подключения к серверу pg\_profile.
+
+<img src={require('/docs/assets/images/jds-gfm/image58.png').default} alt="Описание" />
+Рисунок 9.13 – Выбор назначения роли
+
+Выбрав назначение для новой роли назначение для роли «postgres»
+автоматически отзовется.
+
+Станут доступны настройки параметров аутентификации.
+
+Компонент pg_profile не поддерживает метод аутентификации по
+сертификатам и поэтому вкладка «SSL-сертификат» недоступна.
+
+<img src={require('/docs/assets/images/jds-gfm/image59.png').default} alt="Описание" />
+Рисунок 9.14 - Вкладка «Назначение ролей»
+
+Установив для роли назначение «Суперпользователь», станут доступны
+настройки аутентификации по паролю и по SSL-сертификату.
+
+<img src={require('/docs/assets/images/jds-gfm/image60.png').default} alt="Описание" />
+Рисунок 9.15 – Вкладка настройки аутентификации по SSL-сертификату
+
+:::info Дополнительная информация
+После регистрации СУБД в дереве инфраструктуры приложения JDS, в случае установки на этой СУБД экземпляра pg_profile, обязательно требуется выполнить переназначение «Сбор снимков производительности» на другую роль, не являющуюся ролью с правами SU (суперпользователь).
+Это переназначение необходимо выполнить по двум причинам:
+- только при назначении другой роли на «Сбор снимков производительности», будут назначены специфические привилегии (см. ниже пункт «Для назначения» Сбор снимков производительности);
+- выполнение требований ИБ, где необходимо минимизировать привилегии у роли, не требующей использования привилегии SU.
+:::
+
+### 9.2.6 Вкладка «SQL»
+
+В вкладке «SQL» отображаются сформированные SQL-команды доступные только
+для ознакомления.
+
+<img src={require('/docs/assets/images/jds-gfm/image61.png').default} alt="Описание" />
+Рисунок 9.16 – Вкладка «SQL»
+
+Команды формируются в логической последовательности выполнения.
+
+Пользователь создается после нажатия кнопки «Сохранить» (Save). При
+успешном выполнении будет выведено информационное сообщение.
+
+<img src={require('/docs/assets/images/jds-gfm/image62.png').default} alt="Описание" />
+Рисунок 9.17 – Сообщение о создании роли

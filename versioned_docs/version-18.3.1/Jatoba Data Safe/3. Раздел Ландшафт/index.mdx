@@ -1,0 +1,215 @@
+---
+title: 3. Раздел Ландшафт (Landscape)
+---
+
+:::info[Дополнительная информация]
+Подготовка хостов и развертывание СУБД «Jatoba», настройка SSH и SSL соединений, подключение хостов и СУБД к разделу «Ландшафт», описана в документе «Руководство по безопасности».
+:::
+
+Раздел «Ландшафт» предназначен для:
+
+  - получения общей информации о хосте СУБД;
+
+  - получения общей информации о СУБД;
+
+  - управления конфигурационными файлами СУБД;
+
+  - установки и управления расширениями СУБД.
+
+Доступен раздел в компоненте, только для пользователя с ролью
+«Администратор СУБД».
+
+Добавление элементов во вкладку «Обзор» имеет иерархическую структуру и
+требует аутентификационную информацию для SQL, SSL и SSH
+соединения.
+
+:::warning[Важная информация]
+Не рекомендуется добавлять в раздел «Ландшафт» служебную СУБД «Jatoba» используемую компонентом JDS, а также проводить операции со служебной БД.
+:::
+
+Управление хостом, в том числе и конфигурационными файлами требуют
+настройки SSH – соединения.
+
+Таблица 3.1 – Требуемые параметры для подключения целевой СУБД
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Уровень иерархии</strong></th>
+<th><strong>Параметр</strong></th>
+<th><strong>Значение</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Хост</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>IP-адрес или FQDN-имя </td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Имя учётной записи</td>
+<td>jdscontrol</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Порт для управления по SSH</td>
+<td>22</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Описание</td>
+<td>Произвольное</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>СУБД</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Элемент-родитель:</td>
+<td>IP-адрес хоста</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Тип элемента: *</td>
+<td>СУБД</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Название СУБД: *</td>
+<td>IP-адрес хоста и порт</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Имя сервиса *</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Порт *</td>
+<td>5432</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Папка data*</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Папка для резервных копий конфигурации: *</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Сертификат УЦ</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Описание</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Имя служебной БД *</td>
+<td>postgres</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Режим шифрования</td>
+<td>Disable/ Allow/ Prefer/ Require/ VerityCA/ VerityFull</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Проверять сертификат СУБД на отзыв:</td>
+<td>флаг</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Способ аутентификации</td>
+<td><p>Пароль/</p>
+<p>SSL-сертификат</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Пароль</td>
+<td>Имя роли администратора СУБД: *</td>
+<td>postgres</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Пароль *</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>SSL-сертификат</td>
+<td>Имя роли администратора СУБД: *</td>
+<td>postgres</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Сертификат пользователя: *</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Пароль закрытого ключа:</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Кластеры</strong></td>
+<td>Название</td>
+<td>Имя кластера</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Адрес</td>
+<td>Публичный IP-адрес</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Порт REST API</td>
+<td>54443 (Custom)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Сертификат пользователя</td>
+<td>Контейнер pfx</td>
+<td></td>
+</tr>
+</tbody>
+</table>
