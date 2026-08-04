@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-18.3.1 docs-doc-page docs-doc-id-cert6.8.4,5.12.4,4.17.4/pg_store_plans" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">pg_store_plans | DocsAsCode</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_store_plans"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="18.3.1"><meta data-rh="true" name="docusaurus_tag" content="docs-default-18.3.1"><meta data-rh="true" name="docsearch:version" content="18.3.1"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-18.3.1"><meta data-rh="true" property="og:title" content="pg_store_plans | DocsAsCode"><meta data-rh="true" name="description" content="УТВЕРЖДЕН"><meta data-rh="true" property="og:description" content="УТВЕРЖДЕН"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_store_plans"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_store_plans" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_store_plans" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Сертифицированные версии 6.8.4,5.12.4,4.17.4","item":"https://hadsunn.github.io/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/"},{"@type":"ListItem","position":2,"name":"pg_store_plans","item":"https://hadsunn.github.io/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_store_plans"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.87635517.css">
+<script src="/demo_docu/assets/js/runtime~main.f8fad964.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.c3e16d94.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a href="https://jatoba.ru" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Jatoba.ru<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="navbar__item dropdown dropdown--hoverable"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_store_plans">18.3.1</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/demo_docu/">test</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_store_plans">18.3.1</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/18.3.1"><span class="linkLabel_WmDU">Documentation As Code Test</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/demo_docu/18.3.1/Коммерческая версия 18.3.1"><span class="categoryLinkLabel_W154">Коммерческая версия 18.3.1</span></a><button aria-label="Expand sidebar category &#x27;Коммерческая версия 18.3.1&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/demo_docu/18.3.1/Jatoba Data Safe"><span class="categoryLinkLabel_W154">Jatoba Data Safe</span></a><button aria-label="Expand sidebar category &#x27;Jatoba Data Safe&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/demo_docu/18.3.1/archive/pg_task"><span class="categoryLinkLabel_W154">archive</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4"><span class="categoryLinkLabel_W154">Сертифицированные версии 6.8.4,5.12.4,4.17.4</span></a><button aria-label="Collapse sidebar category &#x27;Сертифицированные версии 6.8.4,5.12.4,4.17.4&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/1c"><span class="linkLabel_WmDU">1c</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/admin"><span class="linkLabel_WmDU">admin</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/container"><span class="linkLabel_WmDU">container</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/describe"><span class="linkLabel_WmDU">describe</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/explain"><span class="linkLabel_WmDU">explain</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/install"><span class="linkLabel_WmDU">install</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_compression"><span class="linkLabel_WmDU">ja_compression</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_csum"><span class="linkLabel_WmDU">ja_csum</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_hipe_cluster"><span class="linkLabel_WmDU">ja_hipe_cluster</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_inventory"><span class="linkLabel_WmDU">ja_inventory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_log"><span class="linkLabel_WmDU">ja_log</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_plan_manager"><span class="linkLabel_WmDU">ja_plan_manager</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_secevenlog"><span class="linkLabel_WmDU">ja_secevenlog</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_similar"><span class="linkLabel_WmDU">Компонент «ja_Similar»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/ja_sync"><span class="linkLabel_WmDU">ja_sync</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/jadog_3.3_1"><span class="linkLabel_WmDU">jadog_3.3_1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/jadog_3.3_2"><span class="linkLabel_WmDU">jadog_3.3_2</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/japooler"><span class="linkLabel_WmDU">japooler</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/jcs"><span class="linkLabel_WmDU">jcs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/jds2.7"><span class="linkLabel_WmDU">jds2.7</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/jdv"><span class="linkLabel_WmDU">jdv</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/monitoring"><span class="linkLabel_WmDU">monitoring</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/oracle"><span class="linkLabel_WmDU">oracle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_hint_plan"><span class="linkLabel_WmDU">pg_hint_plan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_probackup"><span class="linkLabel_WmDU">pg_probackup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_profile"><span class="linkLabel_WmDU">pg_profile</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_repack"><span class="linkLabel_WmDU">pg_repack</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_store_plans"><span class="linkLabel_WmDU">pg_store_plans</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_task"><span class="linkLabel_WmDU">pg_task</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_ulid"><span class="linkLabel_WmDU">pg_ulid</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pgbadger"><span class="linkLabel_WmDU">pgbadger</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pgsql-http"><span class="linkLabel_WmDU">pgsql-http</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/plspgsql"><span class="linkLabel_WmDU">plspgsql</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/postgis"><span class="linkLabel_WmDU">postgis</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/sec_functions"><span class="linkLabel_WmDU">sec_functions</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/sec_guide"><span class="linkLabel_WmDU">sec_guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/sql_firewall"><span class="linkLabel_WmDU">sql_firewall</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/tds_fdw"><span class="linkLabel_WmDU">tds_fdw</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/update"><span class="linkLabel_WmDU">update</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/user_guide"><span class="linkLabel_WmDU">user_guide</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4"><span>Сертифицированные версии 6.8.4,5.12.4,4.17.4</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">pg_store_plans</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 18.3.1</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:49%">
+<col style="width:50%">
+</colgroup><thead><tr><th style="text-align:center"><p>УТВЕРЖДЕН</p>
+<p>643.72410666.00067-07 98 01-ЛУ</p></th><th style="text-align:center"></th></tr></thead><tbody><tr><td colspan="2" style="text-align:center"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br>
+БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 32.<br>
+Контроль выполненных планов запросов.<br>
+Компонент «pg_store_plans»</strong></p></td></tr><tr><td colspan="2" style="text-align:center"><strong>643.72410666.00067-07 98 01-32</strong></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">Листов 34</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">2024</td></tr><tr><td style="text-align:center"></td><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонента «pg_store_plans» (далее по тексту – «компонент»), предназначенного для контроля выполнения запросов.</p>
+<p>Настоящее руководство предназначено для администраторов СУБД.</p>
+<p>Версия компонента — 1.8</p>
+<p>Степени важности примечаний, применяемые в документе:</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th><strong>Важная информация</strong> – указания, требующие особого внимания</th></tr></thead></table>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</th></tr></thead></table>
+<p><strong>СОДЕРЖАНИЕ</strong></p>
+<header><h1></h1></header>
+<p>[1. Назначение компонента <a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0" class="">4</a>](#назначение-компонента)</p>
+<p>[1.1. Условия применения <a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" class="">4</a>](#условия-применения)</p>
+<p>[2. Установка и настройка <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0" class="">5</a>](#установка-и-настройка)</p>
+<p>[2.1. Параметры конфигурации <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8" class="">6</a>](#параметры-конфигурации)</p>
+<p>[2.1.1. Параметр «pg_store_plans.max» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.max" class="">6</a>](#параметр-pg_store_plans.max)</p>
+<p>[2.1.2. Параметр «pg_store_plans.track» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.track" class="">8</a>](#параметр-pg_store_plans.track)</p>
+<p>[2.1.3. Параметр «pg_store_plans.plan_format» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.plan_format" class="">9</a>](#параметр-pg_store_plans.plan_format)</p>
+<p>[2.1.4. Параметр pg_store_plans.max_plan_length <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.max_plan_length" class="">11</a>](#параметр-pg_store_plans.max_plan_length)</p>
+<p>[2.1.5. Параметр «pg_store_plans.plan_storage» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.plan_storage" class="">12</a>](#параметр-pg_store_plans.plan_storage)</p>
+<p>[2.1.6. Параметр «pg_store_plans.min_duration» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.min_duration" class="">14</a>](#параметр-pg_store_plans.min_duration)</p>
+<p>[2.1.7. Параметр «pg_store_plans.log_analyze» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.log_analyze" class="">15</a>](#параметр-pg_store_plans.log_analyze)</p>
+<p>[2.1.8. Параметр «pg_store_plans.log_buffers» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.log_buffers" class="">17</a>](#параметр-pg_store_plans.log_buffers)</p>
+<p>[2.1.9. Параметр «pg_store_plans.log_timing» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.log_timing" class="">18</a>](#параметр-pg_store_plans.log_timing)</p>
+<p>[2.1.10. Параметр «pg_store_plans.log_triggers» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.log_triggers" class="">20</a>](#параметр-pg_store_plans.log_triggers)</p>
+<p>[2.1.11. Параметр «pg_store_plans.save» <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.save" class="">21</a>](#параметр-pg_store_plans.save)</p>
+<p>[3. Функциональные возможности компонента <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0" class="">24</a>](#функциональные-возможности-компонента)</p>
+<p>[3.1. +Представление «pg_store_plans» <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-pg_store_plans" class="">24</a>](#представление-pg_store_plans)</p>
+<p>[3.2. Представление «pg_store_plans_info» <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-pg_store_plans_info" class="">26</a>](#представление-pg_store_plans_info)</p>
+<p>[3.3. Функции компонента <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0" class="">26</a>](#функции-компонента)</p>
+<p>[3.3.1. Функция «pg_store_plans_reset» <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-pg_store_plans_reset" class="">26</a>](#функция-pg_store_plans_reset)</p>
+<p>[3.3.2. Функция «pg_store_plans» <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-pg_store_plans" class="">27</a>](#функция-pg_store_plans)</p>
+<p>[3.3.3. Функция «pg_store_plans_info» <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-pg_store_plans_info" class="">27</a>](#функция-pg_store_plans_info)</p>
+<p>[3.3.4. Функция «pg_store_hash_query» <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-pg_store_hash_query" class="">28</a>](#функция-pg_store_hash_query)</p>
+<p>[3.3.5. Функция «pg_store_plans_textplan» <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-pg_store_plans_textplan" class="">28</a>](#функция-pg_store_plans_textplan)</p>
+<p>[3.3.6. Функция «pg_store_plans_xmlplan» <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-pg_store_plans_xmlplan" class="">29</a>](#функция-pg_store_plans_xmlplan)</p>
+<p>[3.3.7. Функция «pg_store_plans_yamlplan» <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-pg_store_plans_yamlplan" class="">29</a>](#функция-pg_store_plans_yamlplan)</p>
+<p>[4. Пример вывода <a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0" class="">30</a>](#пример-вывода)</p>
+<p>[4.1. Создание тестовой таблицы <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B9-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B" class="">30</a>](#создание-тестовой-таблицы)</p>
+<p>[4.2. Вывод оценки качества плана <a href="#%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4-%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8-%D0%BA%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0" class="">31</a>](#вывод-оценки-качества-плана)</p>
+<p>[Перечень сокращений <a href="#_Toc154068517" class="">33</a>](#_Toc154068517)</p>
+<h1>Назначение компонента</h1>
+<p>Компонент «pg_store_plans» предназначен для контроля выполнения планов запросов статистическими методами всех операторов SQL, выполняемых сервером СУБД.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения" translate="no">​</a></h2>
+<p>Компонент «pg_store_plans» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционных систем Windows и GNU/Linux.</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th><p>В текущей реализации компонента не поддерживается управление через компонент пользовательского веб-интерфейса для администраторов<br>
+«Jatoba data safe».</p>
+<p>Ограничений по совместимости с другими компонентами нет.</p></th></tr></thead><tbody></tbody></table>
+<h1>Установка и настройка</h1>
+<p>Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+<p>Для установки компонента в разделе «Shared Library Preloading» конфигурационного файла «postgresql.conf» прописать следующую строку:</p>
+<blockquote>
+<p>shared_preload_libraries = &#x27;pg_store_plans&#x27;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image3.png" style="width:7.07469in;height:1.58261in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-17 23-05-01.png" class="img_ev3q">
+<p>Рисунок . – Параметры конфигурационного файла «postgresql.conf»</p>
+<p>Сохранив изменения и перезагрузив СУБД станет доступной установка расширения выполнением SQL-команды:</p>
+<blockquote>
+<p>CREATE EXTENSION pg_store_plans;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image4.png" style="width:7.04103in;height:1.93913in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-17 23-12-37.png" class="img_ev3q">
+<p>Рисунок . – Установка расширения «pg_store_plans»</p>
+<p>Корректность установки расширения выполняется SQL-командой</p>
+<blockquote>
+<p>\dx</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image5.png" style="width:7.07415in;height:2.14783in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-17 23-15-06.png" class="img_ev3q">
+<p>Рисунок . – Проверка установленных расширений</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметры-конфигурации">Параметры конфигурации<a href="#параметры-конфигурации" class="hash-link" aria-label="Direct link to Параметры конфигурации" title="Direct link to Параметры конфигурации" translate="no">​</a></h2>
+<p>Параметры конфигурации компонента имеют два способа установки:</p>
+<ul>
+<li class=""></li>
+</ul>
+<p>через конфигурационный файл «postgresql.conf», как представлено на рисунке Рисунок 2.4.<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image3.png" style="width:7.07697in;height:1.96522in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-17 23-05-01.png" class="img_ev3q"></p>
+<p>Рисунок . – Параметры конфигурации в конфигурационном файле «postgresql.conf»</p>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>через SQL-команды: ALTER SYSTEM SET [имя параметра конфигурации];</p>
+<p>SELECT pg_reload_conf();</p>
+</blockquote>
+<p>Параметры компонента устанавливаются от имени и с правами привилегированного пользователя postgres или с пользователя с атрибутом «SUPERUSER».</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansmax">Параметр «pg_store_plans.max»<a href="#параметр-pg_store_plansmax" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.max»" title="Direct link to Параметр «pg_store_plans.max»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.max» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.max (целое число)</p>
+</blockquote>
+<p>Значение по умолчанию — 1000</p>
+<p>Параметр «pg_store_plans.max» — это максимальное количество планов, отслеживаемых компонентом. Это максимальное количество строк в представлении «pg_store_plans» (см. п. 3.1).</p>
+<p>Параметр задается только при запуске сервера.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение «pg_store_plans.max» через SQL-команду</p>
+<blockquote>
+<p>SHOW pg_store_plans.max;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image6.png" style="width:6.95517in;height:1.76522in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 05-05-11.png" class="img_ev3q">
+<p>Рисунок . – Просмотр параметра по умолчанию</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным 10000, перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.max = 10000;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.max;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image7.png" style="width:7.08681in;height:3.13185in" class="img_ev3q">
+<p>Рисунок . – Установка параметра «pg_store_plans.max»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planstrack">Параметр «pg_store_plans.track»<a href="#параметр-pg_store_planstrack" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.track»" title="Direct link to Параметр «pg_store_plans.track»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.track» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.track (перечисление)</p>
+</blockquote>
+<p>Значение по умолчанию — «top».</p>
+<p>Параметр «pg_store_plans.track» указывает, какие операторы учитываются компонентом.</p>
+<p>Устанавливаются следующие значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+
+
+
+
+
+
+
+<table><thead><tr><th>«top» - отслеживание операторов верхнего уровня (выданные непосредственно клиентами);«all» - отслеживание вложенных операторов (например, операторы, вызываемые внутри функций);<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>При использовании значения «all» команды «CREATE EXTENSION» и «ALTER EXTENSION» игнорируются</th></tr></thead></table>
+<ul>
+<li class=""></li>
+</ul>
+<p>«none» - отключение сбора статистики операторов. <strong>Например</strong></p>
+<p>Просмотрим установленное значение «pg_store_plans.max» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.track;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image8.png" style="width:7.05125in;height:1.8087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 05-57-35.png" class="img_ev3q">
+<p>Рисунок . - Просмотр установленного значения параметра «pg_store_plans.max»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «all», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.track = &#x27;all&#x27;;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.track;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image9.png" style="width:7.08494in;height:3.18589in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 05-59-27.png" class="img_ev3q">
+<p>Рисунок . – Установка нового значения параметра «pg_store_plans.max»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansplan_format">Параметр «pg_store_plans.plan_format»<a href="#параметр-pg_store_plansplan_format" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.plan_format»" title="Direct link to Параметр «pg_store_plans.plan_format»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.plan_format» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.plan_format (перечисление)</p>
+</blockquote>
+<p>Значение по умолчанию — text.</p>
+<p>Параметр «pg_store_plans.plan_format» устанавливает форматы планов.</p>
+<p>Устанавливаются следующие значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+</ul>
+
+
+
+
+
+
+
+<table><thead><tr><th>«text»; «json»; «xml»; «yaml»; «raw». <img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Значение «raw» используется, когда требуется получить внутреннее представление, которое можно передать функция компонента</th></tr></thead></table>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.max» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.plan_format;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image10.png" style="width:7.12563in;height:1.8087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 07-00-10.png" class="img_ev3q">
+<p>Рисунок . – Просмотр значения параметра «pg_store_plans.max»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «raw», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.plan_format = &#x27;raw&#x27;;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.plan_format;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image11.png" style="width:6.96476in;height:3.1543in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 07-01-45.png" class="img_ev3q">
+<p>Рисунок . – Установка нового значения параметра «pg_store_plans.max»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansmax_plan_length">Параметр pg_store_plans.max_plan_length<a href="#параметр-pg_store_plansmax_plan_length" class="hash-link" aria-label="Direct link to Параметр pg_store_plans.max_plan_length" title="Direct link to Параметр pg_store_plans.max_plan_length" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.max_plan_length» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.max_plan_length (целое число)</p>
+</blockquote>
+<p>Значение по умолчанию — 5000</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Устанавливается только после значения «pg_store_plans.plan_format» (см. п. 2.1.3)</th></tr></thead></table>
+<p>Параметр «pg_store_plans.max_plan_length» устанавливает максимальную длину планов в необработанном (сокращенном формате JSON) для хранения в байтах. Этот параметр можно задать только при запуске сервера.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение «pg_store_plans.max_plan_length» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.max_plan_length;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image12.png" style="width:7.04065in;height:1.74783in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 07-32-01.png" class="img_ev3q">
+<p>Рисунок . – SQL-команда просмотра параметра «pg_store_plans.max_plan_length»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным 6000 SQL-командой:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.max_plan_length = 6000;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image13.png" style="width:7.1355in;height:1.08696in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 07-55-42.png" class="img_ev3q">
+<p>Рисунок . – SQL-команда установки нового значения параметра «pg_store_plans.max_plan_length»</p>
+<p>Перезагрузим СУБД.</p>
+<p>Проверим применение установленного параметра SQL-командой:</p>
+<blockquote>
+<p>SHOW pg_store_plans.max_plan_length;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image14.png" style="width:7.07898in;height:1.8087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 07-54-26.png" class="img_ev3q">
+<p>Рисунок . - SQL-команда просмотра нового значения параметра «pg_store_plans.max_plan_length»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansplan_storage">Параметр «pg_store_plans.plan_storage»<a href="#параметр-pg_store_plansplan_storage" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.plan_storage»" title="Direct link to Параметр «pg_store_plans.plan_storage»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.plan_storage» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.plan_storage (перечисление)</p>
+</blockquote>
+<p>Значение по умолчанию — «файл».</p>
+<p>Параметр «pg_store_plans.plan_storage» устанавливает метод хранения текстрв планов во время работы сервера.</p>
+<p>Устанавливаются следующие значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>«file» - хранение текстов планов сохраняются во временном файле;«shmem» - хранение текстов планов в памяти.<strong>Например</strong></p>
+<p>Просмотрим установленное значение «pg_store_plans.plan_storage» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.plan_storage;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image15.png" style="width:7.00175in;height:1.8in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 08-07-14.png" class="img_ev3q">
+<p>Рисунок . – SQL-команда установленного значения по умолчанию параметра «pg_store_plans.plan_storage»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «shmem» SQL-командой:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.plan_storage = &#x27;shmem&#x27;;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image16.png" style="width:7.11304in;height:1.10278in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 08-22-35.png" class="img_ev3q">
+<p>Рисунок . - SQL-команда установки нового значения параметра «pg_store_plans.plan_storage»</p>
+<p>Перезагрузим СУБД.</p>
+<p>Проверим применение установленного параметра SQL-командой:</p>
+<blockquote>
+<p>SHOW pg_store_plans.plan_storage;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image17.png" style="width:7.03517in;height:1.77391in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 08-13-53.png" class="img_ev3q">
+<p>Рисунок . – Просмотр установленного параметра «pg_store_plans.plan_storage»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansmin_duration">Параметр «pg_store_plans.min_duration»<a href="#параметр-pg_store_plansmin_duration" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.min_duration»" title="Direct link to Параметр «pg_store_plans.min_duration»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.min_duration» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.min_duration (целое число)</p>
+</blockquote>
+<p>Значение по умолчанию - «0».</p>
+<p>Параметр «pg_store_plans.min_duration» устанавливает минимальное время выполнения оператора в миллисекундах. Установленное значение по умолчанию регистрирует все планы.</p>
+<p>Например</p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.min_duration» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.min_duration;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image18.png" style="width:7.02506in;height:1.81739in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 21-57-53.png" class="img_ev3q">
+<p>Рисунок . – Просмотр текущего значения параметра «pg_store_plans.min_duration»</p>
+<p>Установим новое значение равным «1», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.min_duration = 1;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.min_duration;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image19.png" style="width:6.99021in;height:3.09565in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 22-01-33.png" class="img_ev3q">
+<p>Рисунок . – Установка нового значения параметра «pg_store_plans.min_duration»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planslog_analyze">Параметр «pg_store_plans.log_analyze»<a href="#параметр-pg_store_planslog_analyze" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.log_analyze»" title="Direct link to Параметр «pg_store_plans.log_analyze»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.log_analyze» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.log_analyze (логическое значение)</p>
+</blockquote>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>«on», «true», «yes», «1» – включен;«off», «false», «no», «0»- отключен.По умолчанию параметр отключен.</p>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.log_analyze» устанавливает включение в план вывода команды «EXPLAIN» с параметром «ANALYZE», а не только команду «EXPLAIN».</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.max» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.log_analyze;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image20.png" style="width:7.07567in;height:1.75652in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 22-18-39.png" class="img_ev3q">
+<p>Рисунок . – Просмотр значения по умолчанию параметра «pg_store_plans.log_analyze»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «on», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.log_analyze = on;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.log_analyze;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image21.png" style="width:7.0527in;height:3.13043in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 22-22-57.png" class="img_ev3q">
+<p>Рисунок . – Установка нового значения параметра «pg_store_plans.log_analyze»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planslog_buffers">Параметр «pg_store_plans.log_buffers»<a href="#параметр-pg_store_planslog_buffers" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.log_buffers»" title="Direct link to Параметр «pg_store_plans.log_buffers»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.log_buffers» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.log_buffers (логическое значение)</p>
+</blockquote>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>«on», «true», «yes», «1» – включен;«off», «false», «no», «0»- отключен.По умолчанию параметр отключен.</p>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.log_buffers» устанавливает включение в план вывода команду «EXPLAIN» с параметром «ANALYZE, BUFFERS», а не только команду «EXPLAIN». Значения, выводимые с параметром «BUFFERS», детализируют информацию на какие части запроса приходится большинство операций ввода-вывода.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.log_buffers» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.log_buffers;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image22.png" style="width:7.06087in;height:1.77618in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 23-25-34.png" class="img_ev3q">
+<p>Рисунок . – Вывод значения параметра «pg_store_plans.log_buffers» по умолчанию</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «on», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.log_buffers = on;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.log_buffers;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image23.png" style="width:6.96249in;height:3.12174in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 23-26-55.png" class="img_ev3q">
+<p>Рисунок . – Изменение параметра «pg_store_plans.log_buffers»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planslog_timing">Параметр «pg_store_plans.log_timing»<a href="#параметр-pg_store_planslog_timing" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.log_timing»" title="Direct link to Параметр «pg_store_plans.log_timing»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.log_timing» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.log_timing (логическое значение)</p>
+</blockquote>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>«on», «true», «yes», «1» – включен;«off», «false», «no», «0»- отключен.По умолчанию параметр включен.</p>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.log_timing» управляет включением/отключением записи точного времени выполнения для каждого узла выполнения. Его целесообразно использовать при включенном параметре «pg_store_plans.log_analyze» (см. п. 2.1.7).</p>
+<p>Запись временных показателей может значительно увеличить время выполнение запроса. Для отображения фактического отображения строк запроса, параметр отключается.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.log_timing» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.log_timing;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image24.png" style="width:7.17538in;height:1.8in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 23-58-23.png" class="img_ev3q">
+<p>Рисунок . – Отображение установленного значения параметра «pg_store_plans.log_timing» по умолчанию</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «off», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.log_timing = off;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.log_timing;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image25.png" style="width:7.00721in;height:3.14701in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 00-00-12.png" class="img_ev3q">
+<p>Рисунок . - Установка нового значения параметра«pg_store_plans.log_timing»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planslog_triggers">Параметр «pg_store_plans.log_triggers»<a href="#параметр-pg_store_planslog_triggers" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.log_triggers»" title="Direct link to Параметр «pg_store_plans.log_triggers»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.log_triggers» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.log_triggers (логическое значение)</p>
+</blockquote>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>«on», «true», «yes», «1» – включен;«off», «false», «no», «0»- отключен.По умолчанию параметр включен.</p>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.log_triggers» управляет включением/отключением записи выполнения триггера в записываемые планы.</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th>Параметр не функционирует при отключённом параметре «pg_store_plans.log_analyze» (см. п. 2.1.7)</th></tr></thead></table>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.log_triggers» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.log_buffers;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image26.png" style="width:7.01456in;height:1.85217in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 01-34-59.png" class="img_ev3q">
+<p>Рисунок . – Просмотр значения параметра «pg_store_plans.log_triggers» по умолчанию</p>
+<p>Установим новое значение равным «off», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.log_triggers = off;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.log_triggers;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image27.png" style="width:7.00281in;height:3.10435in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 01-38-22.png" class="img_ev3q">
+<p>Рисунок . - Изменение параметра «pg_store_plans.log_triggers»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planssave">Параметр «pg_store_plans.save»<a href="#параметр-pg_store_planssave" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.save»" title="Direct link to Параметр «pg_store_plans.save»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.save» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans.save (логическое значение)</p>
+</blockquote>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>«on», «true», «yes», «1» – включен;«off», «false», «no», «0»- отключен.По умолчанию параметр включен.</p>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.save» управляет включением/отключением записи статистики плана при выключении сервера СУБД.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.save» через SQL-команду:</p>
+<blockquote>
+<p>SHOW pg_store_plans.save;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image28.png" style="width:7.06087in;height:1.7784in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 02-07-25.png" class="img_ev3q">
+<p>Рисунок . – Просмотр значения по умолчанию параметра «pg_store_plans.save»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «off», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.save = off;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.save;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image29.png" style="width:7.01883in;height:3.17391in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 02-12-18.png" class="img_ev3q">
+<p>Рисунок . – Установка нового значения параметра «pg_store_plans.save»</p>
+<h1>Функциональные возможности компонента</h1>
+<p>В результате установки расширения сформируются два представления «pg_store_plans» (см. п. 3.1) и «pg_store_plans_info» (см п. 3.2).</p>
+<p>В представление «pg_store_plans» аккумулирует в себе основную информацию, а представление «pg_store_plans_info» содержит в себе статистику расширения «pg_store_plans».</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="представление-pg_store_plans">Представление «pg_store_plans»<a href="#представление-pg_store_plans" class="hash-link" aria-label="Direct link to Представление «pg_store_plans»" title="Direct link to Представление «pg_store_plans»" translate="no">​</a></h2>
+<p>В представление «pg_store_plans» аккумулирует в себе строки для:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>каждого набора идентификаторов БД;идентификаторов пользователей; идентификаторов запросов.Столбцы представления описаны в таблице Таблица 3.1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Название</strong></th><th><strong>Тип</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>userid</td><td>oid</td><td>OID пользователя, выполнившего оператор, получается из системного каталога «pg_authid.oid»</td></tr><tr><td>dbid</td><td>oid</td><td>OID базы данных, в которой был выполнен оператор получается из системного каталога «pg_database.oid»</td></tr><tr><td>queryid</td><td>int8</td><td>Идентификатор запроса, сгенерированный ядром. Если для параметра calculate_query_id установлено значение &quot;нет&quot;, pg_store_plan автоматически отключается</td></tr><tr><td>planid</td><td>int8</td><td>Хэш-код плана, вычисленный из нормализованного представления плана</td></tr><tr><td>plan</td><td>text</td><td>Текст репрезентативного плана. Формат задается параметром конфигурации pg_store_plans.plan_format.</td></tr><tr><td>calls</td><td>int8</td><td>Количество выполненных раз</td></tr><tr><td>total_time</td><td>float8</td><td>Общее время нахождения в выписке по плану, в миллисекундах</td></tr><tr><td>min_time</td><td>float8</td><td>Минимальное время</td></tr><tr><td>max_time</td><td>float8</td><td>Максимальное время</td></tr><tr><td>mean_time</td><td>float8</td><td>Среднее время</td></tr><tr><td>stddev_time</td><td>float8</td><td>Стандартное время</td></tr><tr><td>rows</td><td>int8</td><td>Общее количество строк, извлеченных или затронутых оператором с использованием плана</td></tr><tr><td>shared_blks_hit</td><td>int8</td><td>Общее количество попаданий в кэш общих блоков оператором, использующим план</td></tr><tr><td>shared_blks_read</td><td>int8</td><td>Общее количество общих блоков, прочитанных оператором с использованием плана</td></tr><tr><td>shared_blks_dirtied</td><td>int8</td><td>Общее количество общих блоков, загаженных оператором с использованием плана</td></tr><tr><td>shared_blks_written</td><td>int8</td><td>Общее количество общих блоков, записанных оператором с использованием плана</td></tr><tr><td>local_blks_hit</td><td>int8</td><td>Общее количество попаданий в локальный кэш блоков оператором, использующим план</td></tr><tr><td>local_blks_read</td><td>int8</td><td>Общее количество локальных блоков, прочитанных оператором с использованием плана</td></tr><tr><td>local_blks_dirtied</td><td>int8</td><td>Общее количество локальных блоков, загаженных оператором с использованием плана</td></tr><tr><td>local_blks_written</td><td>int8</td><td>Общее количество локальных блоков, записанных оператором с использованием плана</td></tr><tr><td>temp_blks_read</td><td>int8</td><td>Общее количество временных блоков, прочитанных оператором с использованием плана</td></tr><tr><td>temp_blks_written</td><td>int8</td><td>Общее количество временных блоков, записанных оператором с использованием плана</td></tr><tr><td>blk_read_time</td><td>float8</td><td>Общее время, затраченное оператором, использующим план, на чтение блоков, в миллисекундах (если включена функция track_io_timing, иначе ноль)</td></tr><tr><td>blk_write_time</td><td>float8</td><td>Общее время, затраченное оператором с использованием плана на запись блоков, в миллисекундах (если включена функция track_io_timing, иначе ноль)</td></tr><tr><td>temp_blk_read_time</td><td>float8</td><td>Общее время, затраченное оператором, использующим план, на чтение блоков временного файла, в миллисекундах (если включена функция track_io_timing, в противном случае ноль)</td></tr><tr><td>temp_blk_write_time</td><td>float8</td><td>Общее время, затраченное оператором с использованием плана на запись блоков временного файла, в миллисекундах (если включена функция track_io_timing, иначе ноль)</td></tr><tr><td>first_call</td><td>timestamp with time zone</td><td>Временная метка для последнего вызова запроса с использованием этого плана</td></tr><tr><td>last_call</td><td>timestamp with time zone</td><td>Отметка времени для последнего вызова запроса с использованием этого плана</td></tr></tbody></table>
+<p>Таблица . - Столбцы «pg_store_plans»</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="представление-pg_store_plans_info">Представление «pg_store_plans_info»<a href="#представление-pg_store_plans_info" class="hash-link" aria-label="Direct link to Представление «pg_store_plans_info»" title="Direct link to Представление «pg_store_plans_info»" translate="no">​</a></h2>
+<p>Статистика самого модуля «pg_store_plans» отслеживается и становится доступной через представление с именем «pg_store_plans_info». Это представление содержит только одну строку. Столбцы представления показаны в таблице Таблица 3.2.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Имя</strong></th><th><strong>Тип</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>dealloc</td><td>bigint</td><td>Общее количество раз, когда записи pg_store_plans о наименее выполняемых инструкциях были освобождены из-за того, что наблюдалось больше отдельных инструкций, чем в pg_store_plans.max</td></tr><tr><td>stats_reset</td><td>timestamp with time zone</td><td>Время последнего сброса всей статистики в представлении pg_store_plans</td></tr></tbody></table>
+<p>Таблица 3.2 - Столбцы «pg_store_plans_info»</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="функции-компонента">Функции компонента<a href="#функции-компонента" class="hash-link" aria-label="Direct link to Функции компонента" title="Direct link to Функции компонента" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_reset">Функция «pg_store_plans_reset»<a href="#функция-pg_store_plans_reset" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_reset»" title="Direct link to Функция «pg_store_plans_reset»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_reset» имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans_reset()returns void</p>
+</blockquote>
+<p>Функция сбрасывает всю статистику, собранную компонентом и выполняется от имени и с правами привилегированного пользователя postgres или с пользователя с атрибутом «SUPERUSER».</p>
+<p><strong>Например</strong></p>
+<p>Сброс статистики выполняется SQL-командой:</p>
+<blockquote>
+<p>SELECT pg_store_plans_reset();</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image30.png" style="width:7.05368in;height:1.52174in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 02-17-46.png" class="img_ev3q">
+<p>Рисунок . – SQL-команда выполнения сброса статистики</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans">Функция «pg_store_plans»<a href="#функция-pg_store_plans" class="hash-link" aria-label="Direct link to Функция «pg_store_plans»" title="Direct link to Функция «pg_store_plans»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans» служит для выводы одноименного представления «pg_store_plans» и имеет синтаксис вызова:</p>
+<blockquote>
+<p>SELECT pg_store_plans();</p>
+</blockquote>
+<p>При этом выведенная информация не будет структурирована и целесообразно вывести требуемые столбы.</p>
+<p>Например</p>
+<p>Выведем содержимое представления «pg_store_plans» с столбцами userid, dbid, queryid, planid. SQL-команда будет следующей:</p>
+<blockquote>
+<p>SELECT userid, dbid, queryid, planid from pg_store_plans;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image31.png" style="width:7.06277in;height:3.5913in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-20 02-24-25.png" class="img_ev3q">
+<p>Рисунок . – Вывод представления «pg_store_plans»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_info">Функция «pg_store_plans_info»<a href="#функция-pg_store_plans_info" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_info»" title="Direct link to Функция «pg_store_plans_info»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_info» предназначена для просмотра одноимённого представления.</p>
+<p><strong>Например</strong></p>
+<p>Просмотр содержания представления выполняется SQL-командой:</p>
+<blockquote>
+<p>SELECT pg_store_plans_info();</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image32.png" style="width:7.05339in;height:1.8087in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-18 03-48-47.png" class="img_ev3q">
+<p>Рисунок . - Просмотр содержания представления «pg_store_plans_info»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_hash_query">Функция «pg_store_hash_query»<a href="#функция-pg_store_hash_query" class="hash-link" aria-label="Direct link to Функция «pg_store_hash_query»" title="Direct link to Функция «pg_store_hash_query»" translate="no">​</a></h3>
+<p>Функция «pg_store_hash_query» вычисляет хеш-значение текста SQL-запроса и имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_hash_query (query text)</p>
+</blockquote>
+<p>Например</p>
+<p>Вычислим хеш-значение текста SQL-запроса в созданную таблицу «orders». Для этого в теле SQL запроса указывается вызываемая функция (допускается указать схему данных в которой она расположена) и текст SQL-запроса к таблице:</p>
+<blockquote>
+<p>SELECT public.pg_store_plans_hash_query(&#x27;select * FROM orders&#x27;);</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image33.png" style="width:7.07826in;height:1.77332in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 22-39-37.png" class="img_ev3q">
+<p>Рисунок . – Вызов функции «pg_store_hash_query»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_textplan">Функция «pg_store_plans_textplan»<a href="#функция-pg_store_plans_textplan" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_textplan»" title="Direct link to Функция «pg_store_plans_textplan»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_textplan» генерирует обычное текстовое представление из необработанного представления плана в «pg_store_plans», при установленном значении &#x27;raw&#x27; параметра «pg_store_plans.plan_formats» (см. п. 2.1.3).</p>
+<p>Поскольку текст плана результатов генерируется из представления json, он может немного отличаться от того, что вы получите непосредственно из команды «EXPLAIN».</p>
+<p>Функция имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans_textplan(query text) returns text</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_xmlplan">Функция «pg_store_plans_xmlplan»<a href="#функция-pg_store_plans_xmlplan" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_xmlplan»" title="Direct link to Функция «pg_store_plans_xmlplan»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_xmlplan» создает XML-представление из необработанного представления плана в «pg_store_plans», при установленном значении &#x27;raw&#x27; параметра «pg_store_plans.plan_formats» (см. п. 2.1.3).</p>
+<p>Функция имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans_xmlplan(query text) returns text</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_yamlplan">Функция «pg_store_plans_yamlplan»<a href="#функция-pg_store_plans_yamlplan" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_yamlplan»" title="Direct link to Функция «pg_store_plans_yamlplan»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_yamlplan» генерирует представление YAML из необработанного представления плана в «pg_store_plans», при установленном значении &#x27;raw&#x27; параметра «pg_store_plans.plan_formats» (см. п. 2.1.3).</p>
+<p>Функция имеет синтаксис:</p>
+<blockquote>
+<p>pg_store_plans_yamlplan(query text) returns text</p>
+</blockquote>
+<h1>Пример вывода</h1>
+<p>В качестве примера использования компонента будет использована тестовая таблица, к которой будет создан простейший план запроса. Данному плану запроса будет дана качественная оценка компонентом «pg_store_plans».</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="создание-тестовой-таблицы">Создание тестовой таблицы<a href="#создание-тестовой-таблицы" class="hash-link" aria-label="Direct link to Создание тестовой таблицы" title="Direct link to Создание тестовой таблицы" translate="no">​</a></h2>
+<p>В БД создать таблицу «orders»:</p>
+<blockquote>
+<p>CREATE TABLE orders(id serial PRIMARY KEY, customer_id integer NOT NULL, product text NOT NULL, price integer NOT NULL);</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image34.png" style="width:7.19792in;height:1.31476in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 06-36-26.png" class="img_ev3q">
+<p>Рисунок . – Создание таблицы «orders»</p>
+<p>Добавить 1000 записей в таблицу «orders»:</p>
+<blockquote>
+<p>INSERT INTO orders (customer_id, product, price)</p>
+<p>SELECT (random() * 3 + 1)::integer, &#x27;product&#x27;, (random() * 1000 + 1)::integer</p>
+<p>FROM generate_series(1, 1000);</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image35.png" style="width:7.125in;height:1.64968in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 06-36-54.png" class="img_ev3q">
+<p>Рисунок . – Команда добавления записей в таблицу</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="вывод-оценки-качества-плана">Вывод оценки качества плана<a href="#вывод-оценки-качества-плана" class="hash-link" aria-label="Direct link to Вывод оценки качества плана" title="Direct link to Вывод оценки качества плана" translate="no">​</a></h2>
+<p>Для вывода оценки качества плана потребуется:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>установить формат вывода (см. п. 2.1.3);перезагрузить конфигурацию СУБД;просмотреть установленные изменения;очистить имеющуюся статистику (см. п. 3.3.1) ;SQL – командами:</p>
+<blockquote>
+<p>ALTER SYSTEM SET pg_store_plans.plan_format = &#x27;text&#x27;;</p>
+<p>SELECT pg_reload_conf();</p>
+<p>SHOW pg_store_plans.plan_format;</p>
+<p>SELECT pg_store_plans_reset();</p>
+</blockquote>
+<p>В качестве запроса для анализа будет использоваться SQL-запрос к таблице «orders»:</p>
+<blockquote>
+<p>SELECT * FROM orders;</p>
+</blockquote>
+<p>Создать план запроса с опциями:</p>
+<ul>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>«ANALYZE», которая выполняет фактический запрос в реальном времени для сбора и подготовки плана выполнения;«SUMMARY» - добавляет итоговую информацию в план выполнения запроса;SQL – командой:</p>
+<blockquote>
+<p>EXPLAIN (ANALYZE, SUMMARY FALSE) SELECT * FROM orders;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image36.png" style="width:7.12576in;height:1.77391in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-19 06-56-24.png" class="img_ev3q">
+<p>Рисунок . – Сознание плана выполнения запроса</p>
+<p>Установить расширенный вывод в СУБД:</p>
+<blockquote>
+<p>\x</p>
+</blockquote>
+<p>Вывести характеристики плана выполнения запроса:</p>
+<blockquote>
+<p>SELECT</p>
+<p>queryid, plan, calls,<br>
+total_time, min_time,<br>
+max_time, mean_time, stddev_time<br>
+from pg_store_plans LIMIT 1;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/pg_store_plans/media/image37.png" style="width:7.07009in;height:3.08696in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5_1\Пользовательская документация\5.X_Draft\pic\Screenshot from 2023-12-21 04-37-47.png" class="img_ev3q">
+<p>Рисунок . – Вывод оценки выполнения плана запроса</p>
+<p>Вывод оценочной информации в SQL-запросе может дополняться строками из представления «pg_store_plans», приведенными в таблице Таблица 3.1.</p>
+<h1></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left"><span id="_Toc154068517" class="anchor"></span>Перечень сокращенийSQL</th><th>–</th><th>Structured Query Language</th></tr></thead><tbody><tr><td style="text-align:left">БД</td><td>–</td><td>База данных</td></tr><tr><td style="text-align:left">ОС</td><td>–</td><td>Операционная система</td></tr><tr><td style="text-align:left">СУБД</td><td>–</td><td>Система управления базами данных</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center">Лист регистрации изменений</th></tr></thead><tbody><tr><td rowspan="2" style="text-align:center">Изм.</td><td colspan="4" style="text-align:center">Номера листов (страниц)</td><td rowspan="2" style="text-align:center">Всего<br>
+листов (страниц)<br>
+в документе</td><td rowspan="2" style="text-align:center">Номер документа</td><td rowspan="2" style="text-align:center">Входящий номер сопроводительного документа и дата</td><td rowspan="2" style="text-align:center">Подпись</td><td rowspan="2" style="text-align:center">Дата</td></tr><tr><td style="text-align:center">измененных</td><td style="text-align:center">замененных</td><td style="text-align:center">новых</td><td style="text-align:center">аннулированных</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_repack"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">pg_repack</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/18.3.1/cert6.8.4,5.12.4,4.17.4/pg_task"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">pg_task</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#параметры-конфигурации" class="table-of-contents__link toc-highlight">Параметры конфигурации</a><ul><li><a href="#параметр-pg_store_plansmax" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.max»</a></li><li><a href="#параметр-pg_store_planstrack" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.track»</a></li><li><a href="#параметр-pg_store_plansplan_format" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.plan_format»</a></li><li><a href="#параметр-pg_store_plansmax_plan_length" class="table-of-contents__link toc-highlight">Параметр pg_store_plans.max_plan_length</a></li><li><a href="#параметр-pg_store_plansplan_storage" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.plan_storage»</a></li><li><a href="#параметр-pg_store_plansmin_duration" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.min_duration»</a></li><li><a href="#параметр-pg_store_planslog_analyze" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.log_analyze»</a></li><li><a href="#параметр-pg_store_planslog_buffers" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.log_buffers»</a></li><li><a href="#параметр-pg_store_planslog_timing" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.log_timing»</a></li><li><a href="#параметр-pg_store_planslog_triggers" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.log_triggers»</a></li><li><a href="#параметр-pg_store_planssave" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.save»</a></li></ul></li><li><a href="#представление-pg_store_plans" class="table-of-contents__link toc-highlight">Представление «pg_store_plans»</a></li><li><a href="#представление-pg_store_plans_info" class="table-of-contents__link toc-highlight">Представление «pg_store_plans_info»</a></li><li><a href="#функции-компонента" class="table-of-contents__link toc-highlight">Функции компонента</a><ul><li><a href="#функция-pg_store_plans_reset" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_reset»</a></li><li><a href="#функция-pg_store_plans" class="table-of-contents__link toc-highlight">Функция «pg_store_plans»</a></li><li><a href="#функция-pg_store_plans_info" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_info»</a></li><li><a href="#функция-pg_store_hash_query" class="table-of-contents__link toc-highlight">Функция «pg_store_hash_query»</a></li><li><a href="#функция-pg_store_plans_textplan" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_textplan»</a></li><li><a href="#функция-pg_store_plans_xmlplan" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_xmlplan»</a></li><li><a href="#функция-pg_store_plans_yamlplan" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_yamlplan»</a></li></ul></li><li><a href="#создание-тестовой-таблицы" class="table-of-contents__link toc-highlight">Создание тестовой таблицы</a></li><li><a href="#вывод-оценки-качества-плана" class="table-of-contents__link toc-highlight">Вывод оценки качества плана</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
