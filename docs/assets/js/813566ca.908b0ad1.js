@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkpgdoc_02=globalThis.webpackChunkpgdoc_02||[]).push([[6310],{24030(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"comm"}')}}]);

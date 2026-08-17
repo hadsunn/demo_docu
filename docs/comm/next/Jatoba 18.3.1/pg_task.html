@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-comm docs-version-current docs-doc-page docs-doc-id-Jatoba 18.3.1/pg_task" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Компонент «pg_Task» | DocsAsCode</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_task"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-comm-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-comm-current"><meta data-rh="true" property="og:title" content="Компонент «pg_Task» | DocsAsCode"><meta data-rh="true" name="description" content="АННОТАЦИЯ"><meta data-rh="true" property="og:description" content="АННОТАЦИЯ"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_task"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_task" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_task" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Компонент «pg_Task»","item":"https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_task"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.87635517.css">
+<script src="/demo_docu/assets/js/runtime~main.9c3f69b3.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.be9a3600.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/demo_docu/comm/next">Коммерческая версия</a><a class="navbar__item navbar__link" href="/demo_docu/cert">Сертифицированная версия</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/demo_docu/comm">18.4.1, 6.14.1, 5.18.1, 4.23.1</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/demo_docu/comm">18.4.1, 6.14.1, 5.18.1, 4.23.1</a></li><li><a class="dropdown__link" href="/demo_docu/comm/18.3.1,6.13.1,5.17.1,4.22.1/Jatoba 18.3.1/pg_task">18.3.1, 6.13.1, 5.17.1, 4.22.1</a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/comm/next/Jatoba 18.3.1/describe"><span class="categoryLinkLabel_W154">Jatoba 18.3.1</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/describe"><span class="linkLabel_WmDU">СУБД Jatoba. Описание применения</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/install"><span class="linkLabel_WmDU">Руководство по установке</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/1c"><span class="linkLabel_WmDU">Поддержка платформы 1С</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/admin"><span class="linkLabel_WmDU">Руководство администратора</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/container"><span class="linkLabel_WmDU">Инструкция по настройке и использованию контейнера</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/explain"><span class="linkLabel_WmDU">Поддержка мониторинга СУБД в части анализа запросов</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/firewall"><span class="linkLabel_WmDU">Компонент «SQL_Firewall»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_anonymizer"><span class="linkLabel_WmDU">Компонент «ja_Anonymizer». Маскирование данных.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_compression"><span class="linkLabel_WmDU">Компонент «ja_Compression»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_csum"><span class="linkLabel_WmDU">Компонент «ja_CSum»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_hipe_cluster"><span class="linkLabel_WmDU">Компонент «ja_Hipe_Cluster»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_hipe_cluster_migration"><span class="linkLabel_WmDU">Инструкция по миграции компонента «ja_Hipe_Cluster»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_inventory"><span class="linkLabel_WmDU">Компонент «ja_Inventory». Инвентаризация СУБД</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_plan_manager"><span class="linkLabel_WmDU">Компонент «ja_Plan_Manager»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_seceventlog3.3"><span class="linkLabel_WmDU">Компонент «ja_SecEventLog»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_similar"><span class="linkLabel_WmDU">Компонент «ja_Similar»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_sync_ldap1.3"><span class="linkLabel_WmDU">Компонент «ja_Sync_LDAP»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jadog_4.2_1"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 1.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jadog_4.2_2"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 2.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jadog_4.2_3"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 3.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jadog_secur"><span class="linkLabel_WmDU">Инструкция по безопасной настройке кластера «jaDog»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jalog"><span class="linkLabel_WmDU">Компонент «ja_Log»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/japooler"><span class="linkLabel_WmDU">Компонент «jaPooler»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jcs"><span class="linkLabel_WmDU">Компонент «Jatoba crypto access storage»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jds2.11"><span class="linkLabel_WmDU">Компонент «Jatoba data safe»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jdv"><span class="linkLabel_WmDU">Компонент «Jatoba data vault»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/map"><span class="linkLabel_WmDU">Карта документации</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/monitoring"><span class="linkLabel_WmDU">Поддержка мониторинга СУБД</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/oracle"><span class="linkLabel_WmDU">Обеспечение работы с СУБД Oracle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_hint_plan"><span class="linkLabel_WmDU">Компонент «pg_hint_plan»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_profile"><span class="linkLabel_WmDU">Компонент «pg_Profile»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_repack"><span class="linkLabel_WmDU">Компонент «pg_repack»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_store_plans"><span class="linkLabel_WmDU">Компонент «pg_store_plans»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_task"><span class="linkLabel_WmDU">Компонент «pg_Task»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_ulid"><span class="linkLabel_WmDU">Компонент «pg_ulid»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pgbadger"><span class="linkLabel_WmDU">Компонент «pgBadger»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pgsql-http"><span class="linkLabel_WmDU">Компонент «pgSQL-HTTP»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/plspgsql"><span class="linkLabel_WmDU">Компонент «PLsPgSQL»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/postgis"><span class="linkLabel_WmDU">Компонент «PostGIS»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/secur_func"><span class="linkLabel_WmDU">Реализация функций безопасности</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/secur_guide"><span class="linkLabel_WmDU">Руководство по безопасности</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/tds_fdw"><span class="linkLabel_WmDU">Компонент «TDS_FDW»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/timescale"><span class="linkLabel_WmDU">Расширение TimescaleDB</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/update"><span class="linkLabel_WmDU">Руководство по обновлению</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/user_guide"><span class="linkLabel_WmDU">Руководство пользователя</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/wal-g"><span class="linkLabel_WmDU">Компонент «wal-g». Архивация и восстановление данных.</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/next/Jatoba 4.22.1"><span class="linkLabel_WmDU">Jatoba 4.22.1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/next/Jatoba 5.17.1"><span class="linkLabel_WmDU">Jatoba 5.17.1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/next/Jatoba 6.13.1"><span class="linkLabel_WmDU">Jatoba 6.13.1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/next"><span class="linkLabel_WmDU">Описание</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role="alert"><div>This is unreleased documentation for <!-- -->DocsAsCode<!-- --> <b>В разработке</b> version.</div><div class="margin-top--md">For up-to-date documentation, see the <b><a href="/demo_docu/comm">latest version</a></b> (<!-- -->18.4.1, 6.14.1, 5.18.1, 4.23.1<!-- -->).</div></div><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Jatoba 18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Компонент «pg_Task»</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: В разработке</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Компонент «pg_Task». Планирование заданий СУБД</h1></header>
+<p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения, описывающие работу планировщика заданий системы управления базами данных (СУБД), компонента pg_Task. Настоящее руководство предназначено для администратора СУБД «Jatoba».</p>
+<p>Администратор СУБД «Jatoba» должен иметь навыки по работе с СУБД PostgreSQL или защищенной СУБД «Jatoba» (ООО «Газинформсервис»).</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра
+4.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p><p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:</p><p>–	ОС Windows – «C:\Program Files\GIS\Jatoba\5\bin»;</p><p>–	ОС Linux – «/usr/jatoba-6/bin».</p><p>Для СУБД «Jatoba» версии ядра 4/5/6/18 используется версия компонента — 2.0</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="назначение-компонента">НАЗНАЧЕНИЕ КОМПОНЕНТА<a href="#назначение-компонента" class="hash-link" aria-label="Direct link to НАЗНАЧЕНИЕ КОМПОНЕНТА" title="Direct link to НАЗНАЧЕНИЕ КОМПОНЕНТА" translate="no">​</a></h2>
+<p>Компонент pg_Task является планировщиком асинхронных задач.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функциональные-возможности">Функциональные возможности<a href="#функциональные-возможности" class="hash-link" aria-label="Direct link to Функциональные возможности" title="Direct link to Функциональные возможности" translate="no">​</a></h3>
+<p>Компонент позволяет организовать выполнение фоновых заданий на языке SQL в заданное время в заданной базе данных от заданного пользователя.</p>
+<p>Для своей работы в каждой базе данных, созданных в рамках сервера СУБД, компонент создает собственную таблицу для управления фоновыми заданиями.</p>
+<p>Результаты выполнения заданий сохраняются в текстовом виде в специальном поле таблицы заданий.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-и-настройка">УСТАНОВКА И НАСТРОЙКА<a href="#установка-и-настройка" class="hash-link" aria-label="Direct link to УСТАНОВКА И НАСТРОЙКА" title="Direct link to УСТАНОВКА И НАСТРОЙКА" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-компонента-на-ос-windows">Установка компонента на ОС Windows<a href="#установка-компонента-на-ос-windows" class="hash-link" aria-label="Direct link to Установка компонента на ОС Windows" title="Direct link to Установка компонента на ОС Windows" translate="no">​</a></h3>
+<p>Компонент устанавливается в составе СУБД «Jatoba» под управлением ОС Windows при первичной установке.</p>
+<p>а) в окне «Выбор типа установки» следует выбрать тип установки «Выборочная» (см. рис. <a href="#_bookmark4" class="">2.1</a>);</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image3-6b04d87428c714b5acb056c1cd834f9e.png" width="495" height="387" class="img_ev3q"></p>
+<p><span id="_bookmark4" class="anchor"></span>Рисунок 2.1 – Окно выбора типа установки</p>
+<p>б) в диалоговом окне (см. рис. <a href="#_bookmark5" class="">2.2</a>) выбрать «Планирование заданий СУБД»;</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image4-681423f28d548638ca6dec1fed49c240.png" width="495" height="387" class="img_ev3q"></p>
+<p><span id="_bookmark5" class="anchor"></span>Рисунок 2.2 – Выбор устанавливаемых компонент</p>
+<p>в) в открывшемся окне «Все готово к установке Jatoba» запустить процесс установки, нажав кнопку «Установить» (см. рис. <a href="#_bookmark6" class="">2.3</a>);</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image5-b8a5d429c98c5c5c2f76f6fb2f7cd031.png" width="498" height="390" class="img_ev3q"></p>
+<p><span id="_bookmark6" class="anchor"></span>Рисунок 2.3 – Окно «Все готово к установке Jatoba»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-компонента-ос-gnulinux">Установка компонента ОС GNU/Linux<a href="#установка-компонента-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка компонента ОС GNU/Linux" title="Direct link to Установка компонента ОС GNU/Linux" translate="no">​</a></h3>
+<p>Компонент устанавливается в составе СУБД «Jatoba». Его возможно установить при первичной установке, либо доустановить.</p>
+<p>Установку компонента возможно провести двумя способами:</p>
+<ol>
+<li class="">
+<p>установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;</p>
+</li>
+<li class="">
+<p>установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.</p>
+</li>
+</ol>
+<p>Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:</p>
+<ul>
+<li class="">для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">apt-get install jatoba4-pg-task</span><br></div></code></pre></div></div>
+<ul>
+<li class="">для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">yum install jatoba4-pg-task</span><br></div></code></pre></div></div>
+<p>Отдельного уточнения требуют операционные системы ALT Linux и openSUSE.</p>
+<ul>
+<li class="">ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">apt-get install jatoba4-pg-task</span><br></div></code></pre></div></div>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется. Например, jatoba1-pg-task и т.п.</p>
+<p>Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-компонента-в-субд">Установка компонента в СУБД<a href="#установка-компонента-в-субд" class="hash-link" aria-label="Direct link to Установка компонента в СУБД" title="Direct link to Установка компонента в СУБД" translate="no">​</a></h3>
+<p>Установка производится администратором базы данных. Для установки планировщика не требуется загрузка расширения, достаточно прописать в postgresql.conf:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">shared_preload_libraries = &#x27;pg_task&#x27;</span><br></div></code></pre></div></div>
+<p>В этом же файле можно по желанию добавить значение для пустой строки (параметр null в таблице <a href="#_bookmark9" class="">2.1</a>):</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_task.default_null = &#x27;\\N&#x27;</span><br></div></code></pre></div></div>
+<p>Можно также добавить список баз данных и пользователей, на которых должны выполняться задачи, в формате json-строки. Если БД и/или роли не существуют на текущий момент, то они будут созданы.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_task.json = &#x27;[{&quot;data&quot;:&quot;postgres&quot;}]&#x27;</span><br></div></code></pre></div></div>
+<p>Примеры:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_task.json= &#x27;[{&quot;data&quot;:&quot;db1&quot;, &quot;user&quot;:&quot;user1&quot;}, {&quot;data&quot;:&quot;db2&quot;, &quot;user&quot;:&quot;user2&quot;}]&#x27;</span><br></div></code></pre></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_task.json = &#x27;[{&quot;data&quot;:&quot;database1&quot;},{&quot;data&quot;:&quot;database2&quot;,&quot;user&quot;:&quot;username2&quot;},{&quot;data&quot;:&quot;database3&quot;,&quot;schema&quot;:&quot;schema3&quot;},{&quot;data&quot;:&quot;database4&quot;,&quot;table&quot;:&quot;table4&quot;},{&quot;data&quot;:&quot;database5&quot;,&quot;timeout&quot;:100}]&#x27;</span><br></div></code></pre></div></div>
+<p>Если эти данные не указать, по умолчанию планировщик создаст таблицы task во всех базах данных от имени пользователей баз данных и в схемах по умолчанию для этих пользователей.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Пользователь по умолчанию – postgres.</p><p>База данных по умолчанию – postgres.</p><p>Схема – public.</p></div></div>
+<p>Использование компонента доступно для пользователей, имеющих доступ к таблице task.</p>
+<p>После старта сервера планировщик создает, если еще не создана, таблицу задач со следующими столбцами (см. таблицу <a href="#_bookmark9" class="">2.1</a>):</p>
+<p><span id="_bookmark9" class="anchor"></span>Таблица 2.1 – Таблица задач</p>
+<table><colgroup>
+<col style="width:12%">
+<col style="width:15%">
+<col style="width:17%">
+<col style="width:20%">
+<col style="width:33%">
+</colgroup><thead><tr><th>
+<p><strong>Параметр</strong></p>
+</th><th style="text-align:center">
+<p><strong>Тип</strong></p>
+</th><th style="text-align:center">
+<p><strong>Обязательный</strong></p>
+<p><strong>(ненулевой)</strong></p>
+</th><th>
+<p><strong>Значение по</strong></p>
+<p><strong>умолчанию</strong></p>
+</th><th style="text-align:center">
+<p><strong>Описание</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>id</p>
+</td><td>
+<p>BIGSERIAL</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>autoincrement</p>
+</td><td>
+<p>первичный ключ</p>
+</td></tr><tr><td>
+<p>parent</p>
+</td><td>
+<p>BIGINT</p>
+</td><td style="text-align:center">
+<p>-</p>
+</td><td></td><td>
+<p>внешний ключ к родительской</p>
+<p>задаче (при необходимости)</p>
+</td></tr><tr><td>
+<p>plan</p>
+</td><td>
+<p>TIMESTAMP</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>CURRENT_TIME STAMP</p>
+</td><td>
+<p>запланированное время начала</p>
+<p>(по умолчанию – как можно быстрее)</p>
+</td></tr><tr><td>
+<p>start</p>
+</td><td>
+<p>TIMESTAMP</p>
+</td><td style="text-align:center">
+<p>-</p>
+</td><td></td><td>
+<p>фактическое время начала</p>
+</td></tr><tr><td>
+<p>stop</p>
+</td><td>
+<p>TIMESTAMP</p>
+</td><td style="text-align:center">
+<p>-</p>
+</td><td></td><td>
+<p>фактическое время остановки</p>
+</td></tr><tr><td>
+<p>active</p>
+</td><td>
+<p>INTERVAL</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>1 hour</p>
+</td><td>
+<p>период, в который задача</p>
+<p>исполняется</p>
+</td></tr><tr><td>
+<p>live</p>
+</td><td>
+<p>INTERVAL</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>0 sec</p>
+</td><td>
+<p>максимальное время жизни</p>
+<p>текущего рабочего процесса</p>
+</td></tr><tr><td>
+<p>repeat</p>
+</td><td>
+<p>INTERVAL</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>0 sec</p>
+</td><td>
+<p>интервал повторения задачи</p>
+</td></tr><tr><td>
+<p>timeout</p>
+</td><td>
+<p>INTERVAL</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>0 sec</p>
+</td><td>
+<p>позволяет ограничивать время</p>
+<p>выполнения задачи</p>
+</td></tr><tr><td>
+<p>count</p>
+</td><td>
+<p>INTEGER</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>0</p>
+</td><td>
+<p>количество одновременно</p>
+<p>выполняемых задач в группе</p>
+</td></tr><tr><td>
+<p>hash</p>
+</td><td>
+<p>INTEGER</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td></td><td>
+<p>хэш-сумма групповой задачи</p>
+</td></tr><tr><td>
+<p>max</p>
+</td><td>
+<p>INT</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>0</p>
+</td><td>
+<p>максимальное количество одновременно выполняемых</p>
+<p>задач в группе</p>
+</td></tr><tr><td>
+<p>pid</p>
+</td><td>
+<p>INT</p>
+</td><td style="text-align:center">
+<p>-</p>
+</td><td></td><td>
+<p>идентификатор процесса,</p>
+<p>выполняющего задачу</p>
+</td></tr><tr><td>
+<p>state</p>
+</td><td>
+<p>STATE</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>PLAN</p>
+</td><td>
+<p>статус задачи: PLAN, TAKE,</p>
+<p>WORK, DONE, FAIL, STOP</p>
+</td></tr><tr><td>
+<p>delete</p>
+</td><td>
+<p>BOOLEAN</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>true</p>
+</td><td>
+<p>удалять задачу автоматически</p>
+<p>после выполнения, если нет результата (вывод равен нулю)</p>
+</td></tr><tr><td>
+<p>drift</p>
+</td><td>
+<p>BOOLEAN</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>false</p>
+</td><td>
+<p>предотвращать ли отсчет</p>
+<p>времени при повторе задачи</p>
+</td></tr><tr><td>
+<p>header</p>
+</td><td>
+<p>BOOLEAN</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>true</p>
+</td><td>
+<p>флаг присоединения заголовка с названием колонок, если</p>
+<p>задача возвращает таблицу</p>
+</td></tr><tr><td>
+<p>string</p>
+</td><td>
+<p>BOOLEAN</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>true</p>
+</td><td>
+<p>флаг, отображающий, является</p>
+<p>ли результат вывода строковым типом</p>
+</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:12%">
+<col style="width:15%">
+<col style="width:17%">
+<col style="width:20%">
+<col style="width:33%">
+</colgroup><thead><tr><th>
+<p><strong>Параметр</strong></p>
+</th><th style="text-align:center">
+<p><strong>Тип</strong></p>
+</th><th style="text-align:center">
+<p><strong>Обязательный</strong></p>
+<p><strong>(ненулевой)</strong></p>
+</th><th>
+<p><strong>Значение по</strong></p>
+<p><strong>умолчанию</strong></p>
+</th><th style="text-align:center">
+<p><strong>Описание</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>delimiter</p>
+</td><td>
+<p>CHAR</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>\t</p>
+</td><td>
+<p>символ-разделитель,</p>
+<p>используемый для оформления строки результата (параметр output)</p>
+</td></tr><tr><td>
+<p>escape</p>
+</td><td>
+<p>CHAR</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td></td><td>
+<p>escape-символ, используемый для оформления строки</p>
+<p>результата</p>
+</td></tr><tr><td>
+<p>quote</p>
+</td><td>
+<p>CHAR</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td></td><td>
+<p>символ кавычек,</p>
+<p>используемый для оформления строки результата</p>
+</td></tr><tr><td>
+<p>data</p>
+</td><td>
+<p>TEXT</p>
+</td><td style="text-align:center">
+<p>-</p>
+</td><td></td><td>
+<p>пользовательская информация</p>
+</td></tr><tr><td>
+<p>error</p>
+</td><td>
+<p>TEXT</p>
+</td><td style="text-align:center">
+<p>-</p>
+</td><td></td><td>
+<p>текст ошибки</p>
+</td></tr><tr><td>
+<p>group</p>
+</td><td>
+<p>TEXT</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>group</p>
+</td><td>
+<p>групповая задача</p>
+</td></tr><tr><td>
+<p>input</p>
+</td><td>
+<p>TEXT</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td></td><td>
+<p>непосредственно сама задача</p>
+<p>для выполнения на языке SQL</p>
+</td></tr><tr><td>
+<p>null</p>
+</td><td>
+<p>TEXT</p>
+</td><td style="text-align:center">
+<p>+</p>
+</td><td>
+<p>\N</p>
+</td><td>
+<p>текст «пустого» значения, используется для оформления</p>
+<p>строки результата</p>
+</td></tr><tr><td>
+<p>output</p>
+</td><td>
+<p>TEXT</p>
+</td><td style="text-align:center">
+<p>-</p>
+</td><td></td><td>
+<p>полученный результат</p>
+<p>выполнения задачи</p>
+</td></tr><tr><td>
+<p>remote</p>
+</td><td>
+<p>TEXT</p>
+</td><td style="text-align:center">
+<p>-</p>
+</td><td></td><td>
+<p>подключение к удаленной базе</p>
+<p>данных (при необходимости)</p>
+</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="создание-задач-для-планировщика">СОЗДАНИЕ ЗАДАЧ ДЛЯ ПЛАНИРОВЩИКА<a href="#создание-задач-для-планировщика" class="hash-link" aria-label="Direct link to СОЗДАНИЕ ЗАДАЧ ДЛЯ ПЛАНИРОВЩИКА" title="Direct link to СОЗДАНИЕ ЗАДАЧ ДЛЯ ПЛАНИРОВЩИКА" translate="no">​</a></h2>
+<p>Планировщик запускает несколько фоновых рабочих процессов:</p>
+<ul>
+<li class="">
+<p>один для отслеживания изменений в конфигурационном файле и запуске/остановке при необходимости остальных фоновых процессов планировщика;</p>
+</li>
+<li class="">
+<p>по одному фоновому рабочему процессу для каждой базы для проверки запланированных задач в каждой базе и запуске при необходимости выполнения задач.</p>
+</li>
+</ul>
+<p>Для быстрого выполнения задачи нужно выполнить SQL-команду:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">INSERT INTO task (input) VALUES (&#x27;SELECT now()&#x27;);</span><br></div></code></pre></div></div>
+<ul>
+<li class="">input – задача, которую необходимо выполнить.</li>
+</ul>
+<p>Результат выполнения задачи планировщик записывает в столбец результата (output) в текстовом виде. Если в результате выполнения задачи будет несколько колонок, то pg_task создаст текстовую таблицу в колонке output.</p>
+<p>В результате выполнения задачи может быть несколько строк, все они добавятся в колонку результата.</p>
+<p>Для того, чтобы создать задачу и выполнить ее не сразу, а в определенное время, достаточно добавить в таблицу task следующую команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> task </span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">plan</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> input</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token function" style="color:#d73a49">now</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">+</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;5 min&#x27;</span><span class="token plain">::</span><span class="token keyword" style="color:#00009f">INTERVAL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;SELECT now()&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">
+<p>plan – планируемое время запуска задачи в стандартных форматах (например: &quot;now() + &#x27;5 min&#x27;::INTERVAL&quot; или, указав время, &quot;2021-09-01 00:00:00&quot;);</p>
+</li>
+<li class="">
+<p>input – задача, которую необходимо выполнить.</p>
+</li>
+</ul>
+<p>Для того, чтобы поставить задачу на периодическое исполнение, нужно записать в таблицу task следующую команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> task </span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">repeat</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> input</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;5 min&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;SELECT now()&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">
+<p>repeat – периодичность запуска задачи;</p>
+</li>
+<li class="">
+<p>input – задача которую необходимо выполнить.</p>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p>Если время исполнения задачи превышает период запуска задачи, то возможна ситуация, когда новая задача запустится до того, как закончится первая и задачи будут выполняться параллельно, что может вызвать некоторые проблемы.</p></div></div>
+<p>Для недопущения подобной ситуации, нужно правильно оценить время выполнения задачи, либо использовать опцию drift, которая будет отсчитывать время запуска последующей задачи от момента завершения первой задачи:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> task </span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">repeat</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> input</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> drift</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;5 min&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;SELECT now()&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">
+<p>repeat – периодичность запуска задачи;</p>
+</li>
+<li class="">
+<p>input – задача которую необходимо выполнить;</p>
+</li>
+<li class="">
+<p>drift – флаг, который указывает, отсчитывать ли время последующего запуска задачи от старта первой задачи (true) или от окончания первой задачи (false, по умолчанию).</p>
+</li>
+</ul>
+<p>При возникновении ошибки при выполнении задачи, она перехватывается и в текстовом виде записывается в колонку error, а задаче присваивается соответствующее состояние в колонке state.</p>
+<p>Например, выполнение команды:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> task </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">input</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;SELECT 1/0&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p>создаст запись в колонке error:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">....</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">sqlerror\33816706 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">message\division by zero</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">....</span><br></div></code></pre></div></div>
+<p>При необходимости параллельного выполнения нескольких задач – можно создать группы:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> task </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;group&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> max</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> input</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;group_1&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">2</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;SELECT 1&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> task </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;group&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> max</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> input</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;group_1&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">2</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;SELECT 2&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">
+<p>group – уникальное имя группы;</p>
+</li>
+<li class="">
+<p>max – количество параллельно исполняемых задач в группе;</p>
+</li>
+<li class="">
+<p>input – задача, которую необходимо выполнить.</p>
+</li>
+</ul>
+<p>Также можно увеличить количество параллельных задач для определенной группы:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> task </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;group&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> max</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> input</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;group_1&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">3</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;SELECT 3&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">группа group_1 имеет 3 параллельных задачи.</li>
+</ul>
+<p>Запуск задачи на удаленной базе данных:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> task </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">input</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> remote</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;SELECT now()&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;user=user host=host&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">
+<p>input – задача, которую необходимо выполнить;</p>
+</li>
+<li class="">
+<p>remote – данные для подключения к удаленной базе данных, входные параметры – user, password, host, port, dbname.</p>
+</li>
+</ul>
+<p>Все вышеуказанные примеры использования компонента можно комбинировать под конкретные цели.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="удаление-задачи">УДАЛЕНИЕ ЗАДАЧИ<a href="#удаление-задачи" class="hash-link" aria-label="Direct link to УДАЛЕНИЕ ЗАДАЧИ" title="Direct link to УДАЛЕНИЕ ЗАДАЧИ" translate="no">​</a></h2>
+<p>Для удаления задачи необходимо удалить строку (строки) конкретной задачи из таблицы task.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Проще всего идентифицировать строки по полям input, id, или parent.</p></div></div>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">DELETE FROM task WHERE id = 77;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DELETE FROM task WHERE parent = 77;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">DELETE FROM task WHERE input = &#x27;SELECT now()&#x27;;</span><br></div></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="удаление-компонента">УДАЛЕНИЕ КОМПОНЕНТА<a href="#удаление-компонента" class="hash-link" aria-label="Direct link to УДАЛЕНИЕ КОМПОНЕНТА" title="Direct link to УДАЛЕНИЕ КОМПОНЕНТА" translate="no">​</a></h2>
+<p>Для удаления компонента достаточно закомментировать в конфигурационном файле «postgresql.conf» строку:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">#shared_preload_libraries = &#x27;pg_task&#x27;</span><br></div></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="перечень-сокращений">ПЕРЕЧЕНЬ СОКРАЩЕНИЙ<a href="#перечень-сокращений" class="hash-link" aria-label="Direct link to ПЕРЕЧЕНЬ СОКРАЩЕНИЙ" title="Direct link to ПЕРЕЧЕНЬ СОКРАЩЕНИЙ" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Сокращение</th><th>Расшифровка</th></tr></thead><tbody><tr><td>SQL</td><td>Structured Query Language</td></tr><tr><td>БД</td><td>База данных</td></tr><tr><td>СУБД</td><td>Система управления базами данных</td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_store_plans"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Компонент «pg_store_plans»</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_ulid"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Компонент «pg_ulid»</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#назначение-компонента" class="table-of-contents__link toc-highlight">НАЗНАЧЕНИЕ КОМПОНЕНТА</a><ul><li><a href="#функциональные-возможности" class="table-of-contents__link toc-highlight">Функциональные возможности</a></li></ul></li><li><a href="#установка-и-настройка" class="table-of-contents__link toc-highlight">УСТАНОВКА И НАСТРОЙКА</a><ul><li><a href="#установка-компонента-на-ос-windows" class="table-of-contents__link toc-highlight">Установка компонента на ОС Windows</a></li><li><a href="#установка-компонента-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка компонента ОС GNU/Linux</a></li><li><a href="#установка-компонента-в-субд" class="table-of-contents__link toc-highlight">Установка компонента в СУБД</a></li></ul></li><li><a href="#создание-задач-для-планировщика" class="table-of-contents__link toc-highlight">СОЗДАНИЕ ЗАДАЧ ДЛЯ ПЛАНИРОВЩИКА</a></li><li><a href="#удаление-задачи" class="table-of-contents__link toc-highlight">УДАЛЕНИЕ ЗАДАЧИ</a></li><li><a href="#удаление-компонента" class="table-of-contents__link toc-highlight">УДАЛЕНИЕ КОМПОНЕНТА</a></li><li><a href="#перечень-сокращений" class="table-of-contents__link toc-highlight">ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer1</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/archive/install">test1</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer2</div><ul class="footer__items clean-list"></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer3</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Footer3-1<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

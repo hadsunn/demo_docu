@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-cert docs-version-current docs-doc-page docs-doc-id-cert6.8.4,5.12.4,4.17.4/tds_fdw" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">tds_fdw | DocsAsCode</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/tds_fdw"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-cert-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-cert-current"><meta data-rh="true" property="og:title" content="tds_fdw | DocsAsCode"><meta data-rh="true" name="description" content="УТВЕРЖДЕН"><meta data-rh="true" property="og:description" content="УТВЕРЖДЕН"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/tds_fdw"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/tds_fdw" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/tds_fdw" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"tds_fdw","item":"https://hadsunn.github.io/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/tds_fdw"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.87635517.css">
+<script src="/demo_docu/assets/js/runtime~main.9c3f69b3.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.be9a3600.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a class="navbar__item navbar__link" href="/demo_docu/comm">Коммерческая версия</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/demo_docu/cert">Сертифицированная версия</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/demo_docu/comm">18.4.1, 6.14.1, 5.18.1, 4.23.1</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/demo_docu/comm">18.4.1, 6.14.1, 5.18.1, 4.23.1</a></li><li><a class="dropdown__link" href="/demo_docu/comm/18.3.1,6.13.1,5.17.1,4.22.1">18.3.1, 6.13.1, 5.17.1, 4.22.1</a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/1c"><span class="categoryLinkLabel_W154">cert6.8.4,5.12.4,4.17.4</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/1c"><span class="linkLabel_WmDU">1c</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/admin"><span class="linkLabel_WmDU">admin</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/container"><span class="linkLabel_WmDU">container</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/describe"><span class="linkLabel_WmDU">describe</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/explain"><span class="linkLabel_WmDU">explain</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/install"><span class="linkLabel_WmDU">install</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_compression"><span class="linkLabel_WmDU">ja_compression</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_csum"><span class="linkLabel_WmDU">ja_csum</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_hipe_cluster"><span class="linkLabel_WmDU">ja_hipe_cluster</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_inventory"><span class="linkLabel_WmDU">ja_inventory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_log"><span class="linkLabel_WmDU">ja_log</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_plan_manager"><span class="linkLabel_WmDU">ja_plan_manager</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_secevenlog"><span class="linkLabel_WmDU">ja_secevenlog</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_similar"><span class="linkLabel_WmDU">Компонент «ja_Similar»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/ja_sync"><span class="linkLabel_WmDU">ja_sync</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/jadog_3.3_1"><span class="linkLabel_WmDU">jadog_3.3_1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/jadog_3.3_2"><span class="linkLabel_WmDU">jadog_3.3_2</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/japooler"><span class="linkLabel_WmDU">japooler</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/jcs"><span class="linkLabel_WmDU">jcs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/jds2.7"><span class="linkLabel_WmDU">jds2.7</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/jdv"><span class="linkLabel_WmDU">jdv</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/monitoring"><span class="linkLabel_WmDU">monitoring</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/oracle"><span class="linkLabel_WmDU">oracle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pg_hint_plan"><span class="linkLabel_WmDU">pg_hint_plan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pg_probackup"><span class="linkLabel_WmDU">pg_probackup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pg_profile"><span class="linkLabel_WmDU">pg_profile</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pg_repack"><span class="linkLabel_WmDU">pg_repack</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pg_store_plans"><span class="linkLabel_WmDU">pg_store_plans</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pg_task"><span class="linkLabel_WmDU">pg_task</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pg_ulid"><span class="linkLabel_WmDU">pg_ulid</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pgbadger"><span class="linkLabel_WmDU">pgbadger</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/pgsql-http"><span class="linkLabel_WmDU">pgsql-http</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/plspgsql"><span class="linkLabel_WmDU">plspgsql</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/postgis"><span class="linkLabel_WmDU">postgis</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/sec_functions"><span class="linkLabel_WmDU">sec_functions</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/sec_guide"><span class="linkLabel_WmDU">sec_guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/sql_firewall"><span class="linkLabel_WmDU">sql_firewall</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/tds_fdw"><span class="linkLabel_WmDU">tds_fdw</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/update"><span class="linkLabel_WmDU">update</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/user_guide"><span class="linkLabel_WmDU">user_guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/cert"><span class="linkLabel_WmDU">Сертифицированные версии 6.8.4,5.12.4,4.17.4</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">cert6.8.4,5.12.4,4.17.4</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">tds_fdw</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><table><colgroup>
+<col style="width:49%">
+<col style="width:50%">
+</colgroup><thead><tr><th style="text-align:center"><p>УТВЕРЖДЕН</p>
+<p>643.72410666.00067-07 98 01-ЛУ</p></th><th style="text-align:center"></th></tr></thead><tbody><tr><td colspan="2" style="text-align:center"><p>ЗАЩИЩЕННАЯ СИСТЕМА УПРАВЛЕНИЯ<br>
+БАЗАМИ ДАННЫХ «JATOBA»</p>
+<p><strong>Руководство по настройке. Часть 20. Обеспечение работы с СУБД MS SQL Server.<br>
+Компонент «TDS_FDW»</strong></p></td></tr><tr><td colspan="2" style="text-align:center"><strong>643.72410666.00067-07 98 01-20</strong></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">Листов 16</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td colspan="2" style="text-align:center">2024</td></tr><tr><td style="text-align:center"></td><td style="text-align:right">Литера О<sub>1</sub></td></tr></tbody></table>
+<p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонента «TDS_FDW» (далее по тексту – «компонент» или TDS_FDW), предназначенного для миграции БД на платформе Microsoft SQL Server в СУБД «Jatoba» и прямой доступ к СУБД на платформе Microsoft SQL Server (далее – MS SQL) из СУБД «Jatoba».</p>
+<p>Настоящее руководство предназначено для администраторов СУБД.</p>
+<p>Версия компонента — 2.0.3.</p>
+<p>Степени важности примечаний, применяемые в документе:</p>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/tds_fdw/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th><strong>Важная информация</strong> – указания, требующие особого внимания</th></tr></thead></table>
+
+
+
+
+
+
+
+<table><thead><tr><th><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/tds_fdw/media/image2.png" style="width:0.25in;height:0.25in" class="img_ev3q"></th><th><strong>Дополнительная информация</strong> – указания, позволяющие упростить работу с изделием</th></tr></thead></table>
+<p><strong>СОДЕРЖАНИЕ</strong></p>
+<header><h1></h1></header>
+<p>[1. Назначение компонента <a href="#%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0" class="">4</a>](#назначение-компонента)</p>
+<p>[1.1. Условия применения <a href="#%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" class="">5</a>](#условия-применения)</p>
+<p>[2. Установка и настройка <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0" class="">6</a>](#установка-и-настройка)</p>
+<p>[2.1. Установка компонента «TDS_FDW» в ОС GNU/Linux <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0-tds_fdw-%D0%B2-%D0%BE%D1%81-gnulinux" class="">6</a>](#установка-компонента-tds_fdw-в-ос-gnulinux)</p>
+<p>[2.2. Установка расширения «TDS_FDW» <a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-tds_fdw" class="">7</a>](#установка-расширения-tds_fdw)</p>
+<p>[3. Функциональные возможности компонента <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0" class="">8</a>](#функциональные-возможности-компонента)</p>
+<p>[3.1. Создание внешнего сервера <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B3%D0%BE-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B0" class="">8</a>](#создание-внешнего-сервера)</p>
+<p>[3.2. Создание внешней таблицы <a href="#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B" class="">9</a>](#создание-внешней-таблицы)</p>
+<p>[3.3. Задание сопоставления пользователей <a href="#%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%BE%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9" class="">11</a>](#задание-сопоставления-пользователей)</p>
+<p>[3.4. Импорт внешней схемы <a href="#%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B9-%D1%81%D1%85%D0%B5%D0%BC%D1%8B" class="">11</a>](#импорт-внешней-схемы)</p>
+<p>[3.5. Определение локальных переменных <a href="#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85" class="">12</a>](#определение-локальных-переменных)</p>
+<p>[3.6. Пример использования компонента <a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0" class="">12</a>](#пример-использования-компонента)</p>
+<p>[4. Удаление компонента <a href="#%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0" class="">14</a>](#удаление-компонента)</p>
+<p>[Перечень сокращений <a href="#_Toc215497267" class="">15</a>](#_Toc215497267)</p>
+<h1>Назначение компонента</h1>
+<p>Компонент «TDS_FDW» предназначен для импорта данных из БД MS SQL в<br>
+СУБД «Jatoba», который помогает сопоставить типы данных.</p>
+<p>Сопоставляемые типы данных приведены в таблице Таблица 1.1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>MS SQL</strong></th><th><strong>СУБД «Jatoba»</strong></th></tr></thead><tbody><tr><td>bingint</td><td>bingint</td></tr><tr><td>integer</td><td>integer</td></tr><tr><td>smallint</td><td>Smallint</td></tr><tr><td>Real</td><td>Real</td></tr><tr><td>Numeric(18,0)</td><td>Numeric(18,0)</td></tr><tr><td>Binary(10)</td><td>Bytea</td></tr><tr><td>Bit</td><td>Smallint</td></tr><tr><td>Char(8)</td><td>Character(8)</td></tr><tr><td>nchar(8)</td><td>Character(8)</td></tr><tr><td>Float</td><td>Double precision</td></tr><tr><td>Decimal(18,0)</td><td>Numeric(18,0)</td></tr><tr><td>Ntext</td><td>Text</td></tr><tr><td>Text</td><td>Text</td></tr><tr><td>Nvarchar(8)</td><td>Character varying(8)</td></tr><tr><td>Date</td><td>Date</td></tr><tr><td>Datetime</td><td>Timestamp without time zone</td></tr><tr><td>Time</td><td>Time without time zone</td></tr><tr><td>Timestamp</td><td>Bytea</td></tr><tr><td>Money</td><td>Money</td></tr><tr><td>Tinyint</td><td>Smallint</td></tr><tr><td>Smallmoney</td><td>money</td></tr></tbody></table>
+<p>Таблица 1.1 – Сопоставляемые типы данных</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения" translate="no">​</a></h2>
+<p>Компонент «TDS_FDW» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционных систем GNU/Linux.</p>
+<table><colgroup>
+<col style="width:11%">
+<col style="width:88%">
+</colgroup><thead><tr><th style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/tds_fdw/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></th><th style="text-align:left">Для сертифицированной версии СУБД «Jatoba» поддерживается работа только на ОС, указанных в формуляре на поставку!</th></tr></thead><tbody><tr><td style="text-align:center"><img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/tds_fdw/media/image1.png" style="width:0.25139in;height:0.25139in" class="img_ev3q"></td><td><p>В текущей реализации компонента не поддерживается управление через компонент пользовательского веб-интерфейса для администраторов<br>
+«Jatoba data safe».</p>
+<p>Ограничений по совместимости с другими компонентами нет.</p></td></tr></tbody></table>
+<h1>Установка и настройка</h1>
+<p>Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-компонента-tds_fdw-в-ос-gnulinux">Установка компонента «TDS_FDW» в ОС GNU/Linux<a href="#установка-компонента-tds_fdw-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка компонента «TDS_FDW» в ОС GNU/Linux" title="Direct link to Установка компонента «TDS_FDW» в ОС GNU/Linux" translate="no">​</a></h2>
+<p>Компонент устанавливается в составе СУБД «Jatoba». Его возможно установить при первичной установке либо доустановить.</p>
+<p>Установку компонента возможно провести двумя способами:</p>
+<ol>
+<li class=""></li>
+<li class=""></li>
+</ol>
+<blockquote>
+<p>установка из локального репозитория (CDROM) – производится из файлов, записанных на компакт-диск или скопированных с него;установка непосредственно из deb/rpm-файлов – производится опционально, по усмотрению пользователя.Перед установкой компонента необходимо установить библиотеки:</p>
+</blockquote>
+<ul>
+<li class=""></li>
+<li class=""></li>
+<li class=""></li>
+</ul>
+<p>«libsybdb5»;«freetds-dev»;«freetds-common».Для систем на основе пакетного менеджера APT команда установки библиотек следующая:</p>
+<blockquote>
+<p>apt-get install libsybdb5 freetds-dev freetds-common</p>
+</blockquote>
+<p>Компонент выполнен в виде отдельного deb или rpm-пакета. Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки немного отличается. Ниже приведены основные типы:</p>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты) команда установки следующая:apt-get install jatoba5-tds-fdw</p>
+</blockquote>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты) команда установки следующая:yum install jatoba5-tds-fdw</p>
+</blockquote>
+<p>Отдельного уточнения требуют операционные системы ALT Linux.</p>
+<ul>
+<li class=""></li>
+</ul>
+<blockquote>
+<p>ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов и для нее команда установки выглядит аналогично Debian:apt-get install jatoba5-tds-fdw</p>
+</blockquote>
+<p>Установка компонента в составе других версий СУБД «Jatoba» осуществляется аналогично. Отличие будет только в номере версии СУБД, в составе которой он распространяется.</p>
+<p>Удаление модуля также осуществляется средствами пакетного менеджера ОС. Вместо команды install нужно использовать соответствующую данному пакетному менеджеру команду удаления (remove, purge, erase и т.п.).</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-расширения-tds_fdw">Установка расширения «TDS_FDW»<a href="#установка-расширения-tds_fdw" class="hash-link" aria-label="Direct link to Установка расширения «TDS_FDW»" title="Direct link to Установка расширения «TDS_FDW»" translate="no">​</a></h2>
+<p>Расширение устанавливается при помощи SQL-команды:</p>
+<blockquote>
+<p>CREATE EXTENSION tds_fdw;</p>
+</blockquote>
+<img decoding="async" loading="lazy" src="../docs/assets/images/cert6.8.4,5.12.4,4.17.4/tds_fdw/media/image3.png" style="width:7.08597in;height:2.01042in" alt="C:\Users\kuznetsov-a\Documents\Jatoba_5\Пользовательская документация\PIC\Screenshot from 2023-07-13 07-05-26.png" class="img_ev3q">
+<p>Рисунок 2.1 – Команда установки расширения</p>
+<h1>Функциональные возможности компонента</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="создание-внешнего-сервера">Создание внешнего сервера<a href="#создание-внешнего-сервера" class="hash-link" aria-label="Direct link to Создание внешнего сервера" title="Direct link to Создание внешнего сервера" translate="no">​</a></h2>
+<p>Внешний сервер создается командой:</p>
+<p>CREATE SERVER mssql_svr</p>
+<p>FOREIGN DATA WRAPPER tds_fdw</p>
+<p>OPTIONS (servername &#x27;127.0.0.1&#x27;, port &#x27;1433&#x27;, database &#x27;tds_fdw_test&#x27;, tds_version &#x27;7.1&#x27;);</p>
+<p>Параметры команды приведены в таблице Таблица 3.1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Название параметра</strong></th><th style="text-align:center"><strong>Обязательный</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>servername</td><td style="text-align:center">+</td><td>адрес сервера внешней базы данных</td></tr><tr><td>port</td><td style="text-align:center">+</td><td>порт внешней базы данных</td></tr><tr><td>database</td><td style="text-align:center">–</td><td>название внешней базы данных</td></tr><tr><td>dbuse</td><td style="text-align:center">–</td><td>если параметр установлен в «0» (значение по умолчанию), подключение идет к базе данных, указанной в параметр «database»; если в «1» — подключение идет к базе данных, полученной через вызов метода «dbuse()»</td></tr><tr><td>language</td><td style="text-align:center">–</td><td>язык сообщений и локаль для даты (по умолчанию — «us_english»)</td></tr><tr><td>tds_version</td><td style="text-align:center">–</td><td>версия протокола TDS</td></tr><tr><td>msg_handler</td><td style="text-align:center">–</td><td>функция, использующаяся обработчиком сообщений TDS: «blackhole» (значение по умолчанию, сообщения TDS будут игнорироваться), «notice» (сообщения TDS будут выводиться как уведомления СУБД «Jatoba»)</td></tr><tr><td>fdw_startup_cost</td><td style="text-align:center">–</td><td>числовое значение стоимости запуска чтения информации с внешнего сервера</td></tr><tr><td>fdw_tuple_cost</td><td style="text-align:center">–</td><td>числовое значение стоимости чтения строк на внешнем сервере</td></tr></tbody></table>
+<p>Таблица 3.1 – Параметры команды создания внешнего сервера</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="создание-внешней-таблицы">Создание внешней таблицы<a href="#создание-внешней-таблицы" class="hash-link" aria-label="Direct link to Создание внешней таблицы" title="Direct link to Создание внешней таблицы" translate="no">​</a></h2>
+<p>Внешнюю таблицу можно определить четырьмя способами:</p>
+<ol>
+<li class=""></li>
+</ol>
+<p>С помощью названия таблицы:CREATE FOREIGN TABLE mssql_table (</p>
+<p>id integer,</p>
+<p>data varchar)</p>
+<p>SERVER mssql_svr</p>
+<p>OPTIONS (table_name &#x27;dbo.mytable&#x27;, row_estimate_method &#x27;showplan_all&#x27;);</p>
+<ol start="2">
+<li class=""></li>
+</ol>
+<p>С помощью названия схемы и названия таблицы:CREATE FOREIGN TABLE mssql_table (</p>
+<p>id integer,</p>
+<p>data varchar)</p>
+<p>SERVER mssql_svr</p>
+<p>OPTIONS (schema_name &#x27;dbo&#x27;, table_name &#x27;mytable&#x27;, row_estimate_method &#x27;showplan_all&#x27;);</p>
+<ol start="3">
+<li class=""></li>
+</ol>
+<p>С помощью запроса:CREATE FOREIGN TABLE mssql_table (</p>
+<p>id integer,</p>
+<p>data varchar)</p>
+<p>SERVER mssql_svr</p>
+<p>OPTIONS (query &#x27;SELECT * FROM dbo.mytable&#x27;, row_estimate_method &#x27;showplan_all&#x27;);</p>
+<ol start="4">
+<li class=""></li>
+</ol>
+<p>Указывая название столбца:CREATE FOREIGN TABLE mssql_table (</p>
+<p>id integer,</p>
+<p>col2 varchar OPTIONS (column_name &#x27;data&#x27;))</p>
+<p>SERVER mssql_svr</p>
+<p>OPTIONS (schema_name &#x27;dbo&#x27;, table_name &#x27;mytable&#x27;, row_estimate_method &#x27;showplan_all&#x27;);</p>
+<p>Параметры команды приведены в таблице Таблица 3.2.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Название параметра</strong></th><th><strong>Обязательный</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>query</td><td>+ (если не указан параметр «table_name»)</td><td>запрос, выполняющийся на внешней таблице</td></tr><tr><td>schema_name</td><td>–</td><td>название схемы (не обязательно указывать, если схема была указана в названии таблицы в параметре «query» или «table_name»)</td></tr><tr><td>table_name</td><td>+ (если не указан параметр «query»)</td><td>название внешней таблицы</td></tr><tr><td>match_column_names</td><td>–</td><td>сопоставлять ли названия столбцов таблицы Jatoba и внешней таблицы по названию (по умолчанию сопоставление идет по порядку)</td></tr><tr><td>use_remote_estimate</td><td>–</td><td>оценивать ли размер внешней таблицы через операцию, определяемую параметром «row_estimate_method» (если нет, то используется параметр «local_tuple_estimate»</td></tr><tr><td>local_tuple_estimate</td><td>–</td><td>числовая оценка количества строк во внешней таблице</td></tr><tr><td>row_estimate_method</td><td>–</td><td>метод, использующийся для оценки размера внешней таблицы: «execute» (по умолчанию) выполняет запрос к внешней таблице, «showplan_all» получает примерное количество строк используя функцию MS SQL «SET SHOWPLAN_ALL»</td></tr></tbody></table>
+<p>Таблица 3.2 – Параметры команды создания внешней таблицы</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="задание-сопоставления-пользователей">Задание сопоставления пользователей<a href="#задание-сопоставления-пользователей" class="hash-link" aria-label="Direct link to Задание сопоставления пользователей" title="Direct link to Задание сопоставления пользователей" translate="no">​</a></h2>
+<p>Соответствие пользователя задается командой:</p>
+<blockquote>
+<p>CREATE USER MAPPING FOR postgres</p>
+<p>SERVER mssql_svr</p>
+<p>OPTIONS (username &#x27;sa&#x27;, password &#x27;&#x27;);</p>
+</blockquote>
+<p>Параметры команды приведены в таблице Таблица 3.3.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Название параметра</strong></th><th><strong>Обязательный</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>username</td><td>+</td><td>имя пользователя внешнего сервера</td></tr><tr><td>password</td><td>+</td><td>пароль пользователя внешнего сервера</td></tr></tbody></table>
+<p>Таблица 3.3 – Параметры команды задания сопоставления пользователей</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="импорт-внешней-схемы">Импорт внешней схемы<a href="#импорт-внешней-схемы" class="hash-link" aria-label="Direct link to Импорт внешней схемы" title="Direct link to Импорт внешней схемы" translate="no">​</a></h2>
+<p>Используется команда</p>
+<blockquote>
+<p>IMPORT FOREIGN SCHEMA dbo</p>
+<p>EXCEPT (mssql_table)</p>
+<p>FROM SERVER mssql_svr</p>
+<p>INTO public</p>
+<p>OPTIONS (import_default &#x27;true&#x27;);</p>
+</blockquote>
+<p>Параметры команды приведены в таблице Таблица 3.4.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Название параметра</strong></th><th><strong>Обязательный</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>import_default</td><td>–</td><td>включать ли выражения столбца DEFAULT в определения внешних таблиц (по умолчанию выключено)</td></tr><tr><td>import_not_null</td><td>–</td><td>включать ли ограничения столбца NOT NULL в определения внешних таблиц (по умолчанию включено)</td></tr></tbody></table>
+<p>Таблица 3.4 – Параметры команды импорта внешней схемы</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="определение-локальных-переменных">Определение локальных переменных<a href="#определение-локальных-переменных" class="hash-link" aria-label="Direct link to Определение локальных переменных" title="Direct link to Определение локальных переменных" translate="no">​</a></h2>
+<p>Используется следующая команда:</p>
+<blockquote>
+<p>SET tds_fdw.show_finished_memory_stats=1;</p>
+</blockquote>
+<p>Локальные переменные, использующиеся компонентом, приведены в таблице Таблица 3.5.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Название</strong></th><th><strong>Описание</strong></th></tr></thead><tbody><tr><td>tds_fdw.show_before_row_memory_stats</td><td>выводить статистику контекста памяти в журнал СУБД «Jatoba» перед чтением каждой строки</td></tr><tr><td>tds_fdw.show_after_row_memory_stats</td><td>выводить статистику контекста памяти в журнал СУБД «Jatoba» после чтения каждой строки</td></tr><tr><td>tds_fdw.show_finished_memory_stats</td><td>выводить статистику контекста памяти в журнал СУБД «Jatoba» после завершения запроса</td></tr></tbody></table>
+<p>Таблица 3.5 – Локальные переменные компонента «TDS_FDW»</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="пример-использования-компонента">Пример использования компонента<a href="#пример-использования-компонента" class="hash-link" aria-label="Direct link to Пример использования компонента" title="Direct link to Пример использования компонента" translate="no">​</a></h2>
+<ol>
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Создать расширение с помощью команды:CREATE EXTENSION tds_fdw;</p>
+</blockquote>
+<ol start="2">
+<li class=""></li>
+</ol>
+<p>В СУБД «Jatoba» создать объект типа «FOREIGN SERVER».Это специальный объект, который позволяет через расширение tds_fdw получать доступ к данным MS SQL.</p>
+<blockquote>
+<p>CREATE SERVER mssql_srv</p>
+<p>FOREIGN DATA WRAPPER tds_fdw</p>
+<p>OPTIONS (servername ‘192.168.243.223’), port ‘1433’, database ‘aszp’;</p>
+</blockquote>
+<ol start="3">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Создать маппинг для созданного сервера, т.е. от имени и с правами какого пользователя будет проводиться подключение к MS SQL:CREATE USER MAPPING FOR postgres</p>
+<p>SERVER mssql_srv</p>
+<p>OPTIONS (user ‘slog’, password ‘p@ssword’);</p>
+</blockquote>
+<ol start="4">
+<li class=""></li>
+</ol>
+<blockquote>
+<p>Импортировать исходную схему «dbo» MS SQL в схему «public» СУБД «Jatoba»:IMPORT FOREIGN SCHEMA dbo FROM SERVER “mssql_srv” INTO public;</p>
+</blockquote>
+<p>В результате станет доступным просмотр созданных таблиц и импорт данных.</p>
+<h1>Удаление компонента</h1>
+<p>Удаление компонента проводится SQL-командой:</p>
+<blockquote>
+<p>DROP EXTENSION tds_fdw;</p>
+</blockquote>
+<h1></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left"><span id="_Toc215497267" class="anchor"></span>Перечень сокращенийMS SQL</th><th>–</th><th>Microsoft SQL Server</th></tr></thead><tbody><tr><td style="text-align:left">SQL</td><td>–</td><td>Structured Query Language</td></tr><tr><td style="text-align:left">TDS</td><td>–</td><td>Tabular Data Stream</td></tr><tr><td style="text-align:left">БД</td><td>–</td><td>База данных</td></tr><tr><td style="text-align:left">ОС</td><td>–</td><td>Операционная система</td></tr><tr><td style="text-align:left">СУБД</td><td>–</td><td>Система управления базами данных</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:5%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:8%">
+<col style="width:9%">
+<col style="width:12%">
+<col style="width:12%">
+<col style="width:13%">
+<col style="width:11%">
+<col style="width:9%">
+</colgroup><thead><tr><th colspan="10" style="text-align:center">Лист регистрации изменений</th></tr></thead><tbody><tr><td rowspan="2" style="text-align:center">Изм.</td><td colspan="4" style="text-align:center">Номера листов (страниц)</td><td rowspan="2" style="text-align:center">Всего<br>
+листов (страниц)<br>
+в документе</td><td rowspan="2" style="text-align:center">Номер документа</td><td rowspan="2" style="text-align:center">Входящий номер сопроводительного документа и дата</td><td rowspan="2" style="text-align:center">Подпись</td><td rowspan="2" style="text-align:center">Дата</td></tr><tr><td style="text-align:center">измененных</td><td style="text-align:center">замененных</td><td style="text-align:center">новых</td><td style="text-align:center">аннулированных</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/sql_firewall"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">sql_firewall</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/cert/cert6.8.4,5.12.4,4.17.4/update"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">update</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li><li><a href="#установка-компонента-tds_fdw-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка компонента «TDS_FDW» в ОС GNU/Linux</a></li><li><a href="#установка-расширения-tds_fdw" class="table-of-contents__link toc-highlight">Установка расширения «TDS_FDW»</a></li><li><a href="#создание-внешнего-сервера" class="table-of-contents__link toc-highlight">Создание внешнего сервера</a></li><li><a href="#создание-внешней-таблицы" class="table-of-contents__link toc-highlight">Создание внешней таблицы</a></li><li><a href="#задание-сопоставления-пользователей" class="table-of-contents__link toc-highlight">Задание сопоставления пользователей</a></li><li><a href="#импорт-внешней-схемы" class="table-of-contents__link toc-highlight">Импорт внешней схемы</a></li><li><a href="#определение-локальных-переменных" class="table-of-contents__link toc-highlight">Определение локальных переменных</a></li><li><a href="#пример-использования-компонента" class="table-of-contents__link toc-highlight">Пример использования компонента</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer1</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/archive/install">test1</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer2</div><ul class="footer__items clean-list"></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer3</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Footer3-1<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

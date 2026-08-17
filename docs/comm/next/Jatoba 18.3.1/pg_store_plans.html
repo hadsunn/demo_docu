@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-comm docs-version-current docs-doc-page docs-doc-id-Jatoba 18.3.1/pg_store_plans" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Компонент «pg_store_plans» | DocsAsCode</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_store_plans"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-comm-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-comm-current"><meta data-rh="true" property="og:title" content="Компонент «pg_store_plans» | DocsAsCode"><meta data-rh="true" name="description" content="АННОТАЦИЯ"><meta data-rh="true" property="og:description" content="АННОТАЦИЯ"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_store_plans"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_store_plans" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_store_plans" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Компонент «pg_store_plans»","item":"https://hadsunn.github.io/demo_docu/comm/next/Jatoba 18.3.1/pg_store_plans"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.87635517.css">
+<script src="/demo_docu/assets/js/runtime~main.9c3f69b3.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.be9a3600.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/demo_docu/comm/next">Коммерческая версия</a><a class="navbar__item navbar__link" href="/demo_docu/cert">Сертифицированная версия</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/demo_docu/comm">18.4.1, 6.14.1, 5.18.1, 4.23.1</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/demo_docu/comm">18.4.1, 6.14.1, 5.18.1, 4.23.1</a></li><li><a class="dropdown__link" href="/demo_docu/comm/18.3.1,6.13.1,5.17.1,4.22.1/Jatoba 18.3.1/pg_store_plans">18.3.1, 6.13.1, 5.17.1, 4.22.1</a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/comm/next/Jatoba 18.3.1/describe"><span class="categoryLinkLabel_W154">Jatoba 18.3.1</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/describe"><span class="linkLabel_WmDU">СУБД Jatoba. Описание применения</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/install"><span class="linkLabel_WmDU">Руководство по установке</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/1c"><span class="linkLabel_WmDU">Поддержка платформы 1С</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/admin"><span class="linkLabel_WmDU">Руководство администратора</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/container"><span class="linkLabel_WmDU">Инструкция по настройке и использованию контейнера</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/explain"><span class="linkLabel_WmDU">Поддержка мониторинга СУБД в части анализа запросов</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/firewall"><span class="linkLabel_WmDU">Компонент «SQL_Firewall»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_anonymizer"><span class="linkLabel_WmDU">Компонент «ja_Anonymizer». Маскирование данных.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_compression"><span class="linkLabel_WmDU">Компонент «ja_Compression»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_csum"><span class="linkLabel_WmDU">Компонент «ja_CSum»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_hipe_cluster"><span class="linkLabel_WmDU">Компонент «ja_Hipe_Cluster»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_hipe_cluster_migration"><span class="linkLabel_WmDU">Инструкция по миграции компонента «ja_Hipe_Cluster»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_inventory"><span class="linkLabel_WmDU">Компонент «ja_Inventory». Инвентаризация СУБД</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_plan_manager"><span class="linkLabel_WmDU">Компонент «ja_Plan_Manager»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_seceventlog3.3"><span class="linkLabel_WmDU">Компонент «ja_SecEventLog»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_similar"><span class="linkLabel_WmDU">Компонент «ja_Similar»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/ja_sync_ldap1.3"><span class="linkLabel_WmDU">Компонент «ja_Sync_LDAP»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jadog_4.2_1"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 1.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jadog_4.2_2"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 2.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jadog_4.2_3"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 3.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jadog_secur"><span class="linkLabel_WmDU">Инструкция по безопасной настройке кластера «jaDog»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jalog"><span class="linkLabel_WmDU">Компонент «ja_Log»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/japooler"><span class="linkLabel_WmDU">Компонент «jaPooler»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jcs"><span class="linkLabel_WmDU">Компонент «Jatoba crypto access storage»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jds2.11"><span class="linkLabel_WmDU">Компонент «Jatoba data safe»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/jdv"><span class="linkLabel_WmDU">Компонент «Jatoba data vault»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/map"><span class="linkLabel_WmDU">Карта документации</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/monitoring"><span class="linkLabel_WmDU">Поддержка мониторинга СУБД</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/oracle"><span class="linkLabel_WmDU">Обеспечение работы с СУБД Oracle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_hint_plan"><span class="linkLabel_WmDU">Компонент «pg_hint_plan»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_profile"><span class="linkLabel_WmDU">Компонент «pg_Profile»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_repack"><span class="linkLabel_WmDU">Компонент «pg_repack»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_store_plans"><span class="linkLabel_WmDU">Компонент «pg_store_plans»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_task"><span class="linkLabel_WmDU">Компонент «pg_Task»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_ulid"><span class="linkLabel_WmDU">Компонент «pg_ulid»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pgbadger"><span class="linkLabel_WmDU">Компонент «pgBadger»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/pgsql-http"><span class="linkLabel_WmDU">Компонент «pgSQL-HTTP»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/plspgsql"><span class="linkLabel_WmDU">Компонент «PLsPgSQL»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/postgis"><span class="linkLabel_WmDU">Компонент «PostGIS»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/secur_func"><span class="linkLabel_WmDU">Реализация функций безопасности</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/secur_guide"><span class="linkLabel_WmDU">Руководство по безопасности</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/tds_fdw"><span class="linkLabel_WmDU">Компонент «TDS_FDW»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/timescale"><span class="linkLabel_WmDU">Расширение TimescaleDB</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/update"><span class="linkLabel_WmDU">Руководство по обновлению</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/user_guide"><span class="linkLabel_WmDU">Руководство пользователя</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/next/Jatoba 18.3.1/wal-g"><span class="linkLabel_WmDU">Компонент «wal-g». Архивация и восстановление данных.</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/next/Jatoba 4.22.1"><span class="linkLabel_WmDU">Jatoba 4.22.1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/next/Jatoba 5.17.1"><span class="linkLabel_WmDU">Jatoba 5.17.1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/next/Jatoba 6.13.1"><span class="linkLabel_WmDU">Jatoba 6.13.1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/next"><span class="linkLabel_WmDU">Описание</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role="alert"><div>This is unreleased documentation for <!-- -->DocsAsCode<!-- --> <b>В разработке</b> version.</div><div class="margin-top--md">For up-to-date documentation, see the <b><a href="/demo_docu/comm">latest version</a></b> (<!-- -->18.4.1, 6.14.1, 5.18.1, 4.23.1<!-- -->).</div></div><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Jatoba 18.3.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Компонент «pg_store_plans»</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: В разработке</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Компонент «pg_store_plans». Контроль выполненных планов запросов</h1></header>
+<p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения, необходимые для установки и эксплуатации компонента «pg_store_plans» (далее по тексту – «компонент»), предназначенного для контроля выполнения запросов.</p>
+<p>Настоящее руководство предназначено для администраторов СУБД.</p>
+<p>Для СУБД «Jatoba» версий ядра 5 и 6 используется версия компонента – 1.8</p>
+<p>Для СУБД «Jatoba» версий ядра 18 используется версия компонента – 1.9</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="назначение-компонента">НАЗНАЧЕНИЕ КОМПОНЕНТА<a href="#назначение-компонента" class="hash-link" aria-label="Direct link to НАЗНАЧЕНИЕ КОМПОНЕНТА" title="Direct link to НАЗНАЧЕНИЕ КОМПОНЕНТА" translate="no">​</a></h2>
+<p>Компонент «pg_store_plans» предназначен для контроля выполнения планов запросов статистическими методами всех операторов SQL, выполняемых сервером СУБД.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения" translate="no">​</a></h3>
+<p>Компонент «pg_store_plans» может использоваться с СУБД «Jatoba» версий 5.x и выше, под управлением операционных систем GNU/Linux.</p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p>В текущей реализации компонента не поддерживается управление через компонент	пользовательского	веб-интерфейса	для	администраторов
+«Jatoba data safe».</p><p>Ограничений по совместимости с другими компонентами нет.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-и-настройка">УСТАНОВКА И НАСТРОЙКА<a href="#установка-и-настройка" class="hash-link" aria-label="Direct link to УСТАНОВКА И НАСТРОЙКА" title="Direct link to УСТАНОВКА И НАСТРОЙКА" translate="no">​</a></h2>
+<p>Установка компонента должна производится от имени пользователя, обладающего административными привилегиями в системе. Данный компонент штатным образом может быть установлен только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+<p>Для установки компонента в разделе «Shared Library Preloading» конфигурационного файла «postgresql.conf» прописать следующую строку:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">shared_preload_libraries = &#x27;pg_store_plans&#x27;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image3-ccbd473215769441ce47d4e80e9a6013.png" width="731" height="164" class="img_ev3q"></p>
+<p>Рисунок 2.1 – Параметры конфигурационного файла «postgresql.conf»</p>
+<p>Сохранив изменения и перезагрузив СУБД станет доступной установка расширения выполнением SQL-команды:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> EXTENSION pg_store_plans</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image4-03b925e014a1df1a83482d1318b66390.png" width="739" height="204" class="img_ev3q"></p>
+<p>Рисунок 2.2 – Установка расширения «pg_store_plans» Корректность установки расширения выполняется SQL-командой</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">\dx</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image5-73412a6598805b16f925d64b7eb8e529.png" width="861" height="262" class="img_ev3q"></p>
+<p>Рисунок 2.3 – Проверка установленных расширений</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметры-конфигурации">Параметры конфигурации<a href="#параметры-конфигурации" class="hash-link" aria-label="Direct link to Параметры конфигурации" title="Direct link to Параметры конфигурации" translate="no">​</a></h3>
+<p>Параметры конфигурации компонента имеют два способа установки:</p>
+<ul>
+<li class="">через конфигурационный файл «postgresql.conf», как представлено на рисунке <a href="#_bookmark4" class="">2.4</a>.</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image6-cadc77dc96585e551d372e7dcff8f4f9.png" width="731" height="203" class="img_ev3q"></p>
+<p><span id="_bookmark4" class="anchor"></span>Рисунок 2.4 – Параметры конфигурации в конфигурационном файле «postgresql.conf»</p>
+<ul>
+<li class="">через SQL-команды:</li>
+</ul>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">имя параметра конфигурации</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p>Параметры компонента устанавливаются от имени и с правами привилегированного пользователя postgres или с пользователя с атрибутом «SUPERUSER».</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansmax">Параметр «pg_store_plans.max»<a href="#параметр-pg_store_plansmax" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.max»" title="Direct link to Параметр «pg_store_plans.max»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.max» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.max (целое число)</span><br></div></code></pre></div></div>
+<p>Значение по умолчанию — 1000</p>
+<p>Параметр «pg_store_plans.max» — это максимальное количество планов, отслеживаемых компонентом, а также параметр ограничивает максимальное количество строк в представлении «pg_store_plans», описание которого приводится в п. <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-pg_store_plans" class="">3.1</a>.</p>
+<p>Параметр задается только при запуске сервера.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="например">Например<a href="#например" class="hash-link" aria-label="Direct link to Например" title="Direct link to Например" translate="no">​</a></h3>
+<p>Просмотрим установленное значение «pg_store_plans.max» через SQL-команду</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">max</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image7-6debc7a2baa7afa508cc8bc017974587.png" width="729" height="185" class="img_ev3q"></p>
+<p>Рисунок 2.5 – Просмотр параметра по умолчанию Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным 10000, перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">max </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">10000</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">max</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image8-3cc05100c83114ff832d2dd038508cee.jpeg" width="730" height="323" class="img_ev3q"></p>
+<p>Рисунок 2.6 – Установка параметра «pg_store_plans.max»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planstrack">Параметр «pg_store_plans.track»<a href="#параметр-pg_store_planstrack" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.track»" title="Direct link to Параметр «pg_store_plans.track»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.track» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.track (перечисление)</span><br></div></code></pre></div></div>
+<p>Значение по умолчанию — «top».</p>
+<p>Параметр «pg_store_plans.track» указывает, какие операторы учитываются компонентом.</p>
+<p>Устанавливаются следующие значения:</p>
+<ul>
+<li class="">
+<p>«top» - отслеживание операторов верхнего уровня (выданные непосредственно клиентами);</p>
+</li>
+<li class="">
+<p>«all» - отслеживание вложенных операторов (например, операторы, вызываемые внутри функций);</p>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>При использовании значения «all» команды «CREATE EXTENSION» и «ALTER EXTENSION» игнорируются</p></div></div>
+<ul>
+<li class="">«none» - отключение сбора статистики операторов.</li>
+</ul>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение «pg_store_plans.max» через SQL-команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">track</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image9-ff24c2581c1d5f95abbefc850cfdfc53.png" width="729" height="187" class="img_ev3q"></p>
+<p>Рисунок 2.7 - Просмотр установленного значения параметра «pg_store_plans.max»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «all», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">track </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;all&#x27;</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">track</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image10-9e6054f1b38bbb85bc6414c44f4d1c7e.png" width="731" height="329" class="img_ev3q"></p>
+<p>Рисунок 2.8 – Установка нового значения параметра «pg_store_plans.max»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansplan_format">Параметр «pg_store_plans.plan_format»<a href="#параметр-pg_store_plansplan_format" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.plan_format»" title="Direct link to Параметр «pg_store_plans.plan_format»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.plan_format» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.plan_format (перечисление)</span><br></div></code></pre></div></div>
+<p>Значение по умолчанию — text.</p>
+<p>Параметр «pg_store_plans.plan_format» устанавливает форматы планов. Устанавливаются следующие значения:</p>
+<ul>
+<li class="">
+<p>«text»;</p>
+</li>
+<li class="">
+<p>«json»;</p>
+</li>
+<li class="">
+<p>«xml»;</p>
+</li>
+<li class="">
+<p>«yaml»;</p>
+</li>
+<li class="">
+<p>«raw».</p>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Значение	«raw»	используется,	когда	требуется	получить	внутреннее представление, которое можно передать функция компонента</p></div></div>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.max» через SQL-команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">plan_format</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image11-19d1ee0fa6d49f802ddac12e6bb60d0f.png" width="732" height="186" class="img_ev3q"></p>
+<p>Рисунок 2.9 – Просмотр значения параметра «pg_store_plans.max» Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «raw», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">plan_format </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;raw&#x27;</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">plan_format</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image12-80c314200cd272aff2269c572cb662f1.png" width="730" height="331" class="img_ev3q"></p>
+<p>Рисунок 2.10 – Установка нового значения параметра «pg_store_plans.max»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansmax_plan_length">Параметр pg_store_plans.max_plan_length<a href="#параметр-pg_store_plansmax_plan_length" class="hash-link" aria-label="Direct link to Параметр pg_store_plans.max_plan_length" title="Direct link to Параметр pg_store_plans.max_plan_length" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.max_plan_length» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.max_plan_length (целое число)</span><br></div></code></pre></div></div>
+<p>Значение по умолчанию — 5000</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Устанавливается только после значения «pg_store_plans.plan_format» (см. п. 2.1.3)</p></div></div>
+<p>Параметр «pg_store_plans.max_plan_length» устанавливает максимальную длину планов в необработанном (сокращенном формате JSON) для хранения в байтах. Этот параметр можно задать только при запуске сервера.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение «pg_store_plans.max_plan_length» через SQL-команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">max_plan_length</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image13-ac1994f0837bda5f3ac73988aa950377.png" width="730" height="181" class="img_ev3q"></p>
+<p>Рисунок 2.11 – SQL-команда просмотра параметра «pg_store_plans.max_plan_length» Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным 6000 SQL-командой:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">max_plan_length </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">6000</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image14-2ce31030ddcedda00808bae407d82301.png" width="732" height="112" class="img_ev3q"></p>
+<p>Рисунок 2.12 – SQL-команда установки нового значения параметра «pg_store_plans.max_plan_length»</p>
+<p>Перезагрузим СУБД.</p>
+<p>Проверим применение установленного параметра SQL-командой:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">max_plan_length</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image15-4b4a698c96cc054884331cefda29ff2b.png" width="728" height="186" class="img_ev3q"></p>
+<p>Рисунок 2.13 - SQL-команда просмотра нового значения параметра «pg_store_plans.max_plan_length»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansplan_storage">Параметр «pg_store_plans.plan_storage»<a href="#параметр-pg_store_plansplan_storage" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.plan_storage»" title="Direct link to Параметр «pg_store_plans.plan_storage»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.plan_storage» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.plan_storage (перечисление)</span><br></div></code></pre></div></div>
+<p>Значение по умолчанию — «файл».</p>
+<p>Параметр «pg_store_plans.plan_storage» устанавливает метод хранения текстов планов во время работы сервера.</p>
+<p>Устанавливаются следующие значения:</p>
+<ul>
+<li class="">
+<p>«file» - хранение текстов планов сохраняются во временном файле;</p>
+</li>
+<li class="">
+<p>«shmem» - хранение текстов планов в памяти.</p>
+</li>
+</ul>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение «pg_store_plans.plan_storage» через SQL-команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">plan_storage</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image16-b354a64bb3b252526d1f228e2ff25832.png" width="731" height="188" class="img_ev3q"></p>
+<p>Рисунок 2.14 – SQL-команда установленного значения по умолчанию параметра «pg_store_plans.plan_storage»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «shmem» SQL-командой:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">plan_storage </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;shmem&#x27;</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image17-71e61290db4da1c3576454ab7f121455.png" width="732" height="113" class="img_ev3q"></p>
+<p>Рисунок 2.15 - SQL-команда установки нового значения параметра</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">«pg_store_plans.plan_storage»</span><br></div></code></pre></div></div>
+<p>Перезагрузим СУБД.</p>
+<p>Проверим применение установленного параметра SQL-командой:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">plan_storage</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image18-bb29373dbec90690c9ba3ef9f602d68c.png" width="734" height="185" class="img_ev3q"></p>
+<p>Рисунок 2.16 – Просмотр установленного параметра «pg_store_plans.plan_storage»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_plansmin_duration">Параметр «pg_store_plans.min_duration»<a href="#параметр-pg_store_plansmin_duration" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.min_duration»" title="Direct link to Параметр «pg_store_plans.min_duration»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.min_duration» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.min_duration (целое число)</span><br></div></code></pre></div></div>
+<p>Значение по умолчанию - «0».</p>
+<p>Параметр «pg_store_plans.min_duration» устанавливает минимальное время выполнения оператора в миллисекундах. Установленное значение по умолчанию регистрирует все планы.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.min_duration» через SQL-команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">min_duration</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image19-0baf14eba1c545ac0a3334817c9986a9.png" width="733" height="190" class="img_ev3q"></p>
+<p>Рисунок 2.17 – Просмотр текущего значения параметра «pg_store_plans.min_duration»</p>
+<p>Установим новое значение равным «1», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">min_duration </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">min_duration</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image20-183dc171092c0d974bc87c471e3938a1.png" width="734" height="325" class="img_ev3q"></p>
+<p>Рисунок 2.18 – Установка нового значения параметра «pg_store_plans.min_duration»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planslog_analyze">Параметр «pg_store_plans.log_analyze»<a href="#параметр-pg_store_planslog_analyze" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.log_analyze»" title="Direct link to Параметр «pg_store_plans.log_analyze»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.log_analyze» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.log_analyze (логическое значение)</span><br></div></code></pre></div></div>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class="">
+<p>«on», «true», «yes», «1» – включен;</p>
+</li>
+<li class="">
+<p>«off», «false», «no», «0»- отключен. По умолчанию параметр отключен.</p>
+</li>
+</ul>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.log_analyze» устанавливает включение в план вывода команды «EXPLAIN» с параметром «ANALYZE», а не только команду «EXPLAIN».</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.max» через SQL-команду:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SHOW pg_store_plans.log_analyze;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image21-c70db2de96629429cf0377493bdb4bd9.png" width="730" height="181" class="img_ev3q"></p>
+<p>Рисунок 2.19 – Просмотр значения по умолчанию параметра «pg_store_plans.log_analyze»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «on», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">log_analyze </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">on</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">log_analyze</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image22-fc8f6db477a2f78f6e976f812cfde623.png" width="730" height="324" class="img_ev3q"></p>
+<p>Рисунок 2.20 – Установка нового значения параметра «pg_store_plans.log_analyze»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planslog_buffers">Параметр «pg_store_plans.log_buffers»<a href="#параметр-pg_store_planslog_buffers" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.log_buffers»" title="Direct link to Параметр «pg_store_plans.log_buffers»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.log_buffers» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.log_buffers (логическое значение)</span><br></div></code></pre></div></div>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class="">
+<p>«on», «true», «yes», «1» – включен;</p>
+</li>
+<li class="">
+<p>«off», «false», «no», «0»- отключен. По умолчанию параметр отключен.</p>
+</li>
+</ul>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.log_buffers» устанавливает включение в план вывода команду «EXPLAIN» с параметром «ANALYZE, BUFFERS», а не только команду «EXPLAIN». Значения, выводимые с параметром «BUFFERS», детализируют информацию на какие части запроса приходится большинство операций ввода-вывода.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.log_buffers» через SQL-команду:</p>
+<div class="language-ыйд codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ыйд codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SHOW pg_store_plans.log_buffers;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image23-91b751ea0d1fe6e70518e5095cba5812.png" width="731" height="184" class="img_ev3q"></p>
+<p>Рисунок 2.21 – Вывод значения параметра «pg_store_plans.log_buffers» по умолчанию</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «on», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">log_buffers </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">on</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">log_buffers</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image24-1476e45cef845ded8656fdb03e394d28.png" width="729" height="327" class="img_ev3q"></p>
+<p>Рисунок 2.22 – Изменение параметра «pg_store_plans.log_buffers»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planslog_timing">Параметр «pg_store_plans.log_timing»<a href="#параметр-pg_store_planslog_timing" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.log_timing»" title="Direct link to Параметр «pg_store_plans.log_timing»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.log_timing» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.log_timing (логическое значение)</span><br></div></code></pre></div></div>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class="">
+<p>«on», «true», «yes», «1» – включен;</p>
+</li>
+<li class="">
+<p>«off», «false», «no», «0»- отключен. По умолчанию параметр включен.</p>
+</li>
+</ul>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.log_timing» управляет включением/отключением записи точного времени выполнения для каждого узла выполнения. Его целесообразно использовать при включенном параметре «pg_store_plans.log_analyze» (см. п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.log_analyze" class="">2.1.7</a>).</p>
+<p>Запись временных показателей может значительно увеличить время выполнение запроса. Для отображения фактического отображения строк запроса, параметр отключается.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.log_timing» через SQL-команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">log_timing</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image25-e286285973a8522c0e800cdd8ea7b0db.png" width="730" height="183" class="img_ev3q"></p>
+<p>Рисунок 2.23 – Отображение установленного значения параметра «pg_store_plans.log_timing» по умолчанию</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «off», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">log_timing </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">off</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">log_timing</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image26-7ddac87c8dc7fb17cb80fa5a608e076d.png" width="732" height="329" class="img_ev3q"></p>
+<p>Рисунок 2.24 - Установка нового значения параметра«pg_store_plans.log_timing»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planslog_triggers">Параметр «pg_store_plans.log_triggers»<a href="#параметр-pg_store_planslog_triggers" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.log_triggers»" title="Direct link to Параметр «pg_store_plans.log_triggers»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.log_triggers» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.log_triggers (логическое значение)</span><br></div></code></pre></div></div>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class="">
+<p>«on», «true», «yes», «1» – включен;</p>
+</li>
+<li class="">
+<p>«off», «false», «no», «0»- отключен. По умолчанию параметр включен.</p>
+</li>
+</ul>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.log_triggers» управляет включением/отключением записи выполнения триггера в записываемые планы.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Параметр	не	функционирует	при	отключённом	параметре «pg_store_plans.log_analyze»</p></div></div>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.log_triggers» через SQL-команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">log_buffers</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image27-fe736fe6d02ab0f29eef6bb21dfb0ec4.png" width="729" height="193" class="img_ev3q"></p>
+<p>Рисунок 2.25 – Просмотр значения параметра «pg_store_plans.log_triggers» по умолчанию</p>
+<p>Установим новое значение равным «off», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">ALTER SYSTEM SET pg_store_plans.log_triggers = off; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SELECT pg_reload_conf();</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SHOW pg_store_plans.log_triggers;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image28-e720f6f4b7f41daeb3f66ecd725438bf.png" width="733" height="325" class="img_ev3q"></p>
+<p>Рисунок 2.26 - Изменение параметра «pg_store_plans.log_triggers»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="параметр-pg_store_planssave">Параметр «pg_store_plans.save»<a href="#параметр-pg_store_planssave" class="hash-link" aria-label="Direct link to Параметр «pg_store_plans.save»" title="Direct link to Параметр «pg_store_plans.save»" translate="no">​</a></h3>
+<p>Параметр «pg_store_plans.save» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.save (логическое значение)</span><br></div></code></pre></div></div>
+<p>Устанавливаются значения:</p>
+<ul>
+<li class="">
+<p>«on», «true», «yes», «1» – включен;</p>
+</li>
+<li class="">
+<p>«off», «false», «no», «0»- отключен. По умолчанию параметр включен.</p>
+</li>
+</ul>
+<p>При выводе показываются значения «on»/«off».</p>
+<p>Параметр «pg_store_plans.save» управляет включением/отключением записи статистики плана при выключении сервера СУБД.</p>
+<p><strong>Например</strong></p>
+<p>Просмотрим установленное значение параметра «pg_store_plans.save» через SQL-команду:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token keyword" style="color:#00009f">save</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image29-6b84f298e384bef0860d957c8b80a1e2.png" width="731" height="184" class="img_ev3q"></p>
+<p>Рисунок 2.27 – Просмотр значения по умолчанию параметра «pg_store_plans.save»</p>
+<p>Значение параметра соответствует значению по умолчанию.</p>
+<p>Установим новое значение равным «off», перезагрузим конфигурацию СУБД и проверим применение установленного параметра SQL-командами:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token keyword" style="color:#00009f">save</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">off</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token keyword" style="color:#00009f">save</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image30-b2697e839f2c3a8e5621be48b7dd4e19.png" width="729" height="330" class="img_ev3q"></p>
+<p>Рисунок 2.28 – Установка нового значения параметра «pg_store_plans.save»</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="функциональные-возможности-компонента">ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА<a href="#функциональные-возможности-компонента" class="hash-link" aria-label="Direct link to ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА" title="Direct link to ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА" translate="no">​</a></h2>
+<p>В результате установки расширения сформируются два представления «pg_store_plans» (см. п. <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-pg_store_plans" class="">3.1</a>) и «pg_store_plans_info» (см п. <a href="#%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-pg_store_plans_info" class="">3.2</a>).</p>
+<p>В представление «pg_store_plans» аккумулирует в себе основную информацию, а представление «pg_store_plans_info» содержит в себе статистику расширения «pg_store_plans».</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="представление-pg_store_plans">Представление «pg_store_plans»<a href="#представление-pg_store_plans" class="hash-link" aria-label="Direct link to Представление «pg_store_plans»" title="Direct link to Представление «pg_store_plans»" translate="no">​</a></h3>
+<p>В представление «pg_store_plans» аккумулирует в себе строки для:</p>
+<ul>
+<li class="">
+<p>каждого набора идентификаторов БД;</p>
+</li>
+<li class="">
+<p>идентификаторов пользователей;</p>
+</li>
+<li class="">
+<p>идентификаторов запросов.</p>
+</li>
+</ul>
+<p>Столбцы представления описаны в таблице <a href="#_bookmark18" class="">3.1</a>.</p>
+<p><span id="_bookmark18" class="anchor"></span>Таблица 3.1 - Столбцы «pg_store_plans»</p>
+<table><colgroup>
+<col style="width:21%">
+<col style="width:11%">
+<col style="width:3%">
+<col style="width:29%">
+<col style="width:33%">
+</colgroup><thead><tr><th>
+<p><strong>Название</strong></p>
+</th><th colspan="2">
+<p><strong>Тип</strong></p>
+</th><th colspan="2">
+<p><strong>Описание</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>userid</p>
+</td><td colspan="2">
+<p>oid</p>
+</td><td colspan="2">
+<p>OID пользователя, выполнившего оператор, получается из системного каталога «pg_authid.oid»</p>
+</td></tr><tr><td>
+<p>dbid</p>
+</td><td colspan="2">
+<p>oid</p>
+</td><td colspan="2">
+<p>OID базы данных, в которой был выполнен оператор получается из системного каталога «pg_database.oid»</p>
+</td></tr><tr><td>
+<p>queryid</p>
+</td><td colspan="2">
+<p>int8</p>
+</td><td colspan="2" style="text-align:left">
+<p>Идентификатор запроса, сгенерированный ядром. Если для параметра calculate_query_id установлено значение &quot;нет&quot;, pg_store_plan автоматически отключается</p>
+</td></tr><tr><td>
+<p>planid</p>
+</td><td colspan="2">
+<p>int8</p>
+</td><td colspan="2">
+<p>Хэш-код плана, вычисленный из нормализованного представления плана</p>
+</td></tr><tr><td>
+<p>plan</p>
+</td><td colspan="2">
+<p>text</p>
+</td><td colspan="2">
+<p>Текст репрезентативного плана. Формат задается параметром конфигурации pg_store_plans.plan_format.</p>
+</td></tr><tr><td>
+<p>calls</p>
+</td><td colspan="2">
+<p>int8</p>
+</td><td colspan="2">
+<p>Количество выполненных раз</p>
+</td></tr><tr><td>
+<p>total_time</p>
+</td><td colspan="2">
+<p>float8</p>
+</td><td colspan="2">
+<p>Общее время нахождения в выписке по плану, в миллисекундах</p>
+</td></tr><tr><td>
+<p>min_time</p>
+</td><td colspan="2">
+<p>float8</p>
+</td><td colspan="2">
+<p>Минимальное время</p>
+</td></tr><tr><td>
+<p>max_time</p>
+</td><td colspan="2">
+<p>float8</p>
+</td><td colspan="2">
+<p>Максимальное время</p>
+</td></tr><tr><td>
+<p>mean_time</p>
+</td><td colspan="2">
+<p>float8</p>
+</td><td colspan="2">
+<p>Среднее время</p>
+</td></tr><tr><td>
+<p>stddev_time</p>
+</td><td colspan="2">
+<p>float8</p>
+</td><td colspan="2">
+<p>Стандартное время</p>
+</td></tr><tr><td>
+<p>rows</p>
+</td><td colspan="2">
+<p>int8</p>
+</td><td colspan="2">
+<p>Общее количество строк, извлеченных или затронутых оператором с использованием плана</p>
+</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:21%">
+<col style="width:15%">
+<col style="width:62%">
+</colgroup><thead><tr><th>
+<p><strong>Название</strong></p>
+</th><th>
+<p><strong>Тип</strong></p>
+</th><th>
+<p><strong>Описание</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>shared_blks_hit</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество попаданий в кэш общих блоков оператором, использующим план</p>
+</td></tr><tr><td>
+<p>shared_blks_read</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество общих блоков, прочитанных оператором с использованием плана</p>
+</td></tr><tr><td>
+<p>shared_blks_dirtied</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество общих блоков, загаженных оператором с использованием плана</p>
+</td></tr><tr><td>
+<p>shared_blks_written</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество общих блоков, записанных оператором с использованием плана</p>
+</td></tr><tr><td>
+<p>local_blks_hit</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество попаданий в локальный кэш блоков оператором, использующим план</p>
+</td></tr><tr><td>
+<p>local_blks_read</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество локальных блоков, прочитанных оператором с использованием плана</p>
+</td></tr><tr><td>
+<p>local_blks_dirtied</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество локальных блоков, загаженных оператором с использованием плана</p>
+</td></tr><tr><td>
+<p>local_blks_written</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество локальных блоков, записанных оператором с использованием плана</p>
+</td></tr><tr><td>
+<p>temp_blks_read</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество временных блоков, прочитанных оператором с использованием плана</p>
+</td></tr><tr><td>
+<p>temp_blks_written</p>
+</td><td>
+<p>int8</p>
+</td><td>
+<p>Общее количество временных блоков, записанных оператором с использованием плана</p>
+</td></tr><tr><td>
+<p>blk_read_time</p>
+</td><td>
+<p>float8</p>
+</td><td style="text-align:left">
+<p>Общее время, затраченное оператором, использующим план, на чтение блоков, в миллисекундах (если включена функция track_io_timing, иначе ноль)</p>
+<p><strong>До версии компонента 1.8 включительно</strong></p>
+</td></tr><tr><td>
+<p>blk_write_time</p>
+</td><td>
+<p>float8</p>
+</td><td style="text-align:left">
+<p>Общее время, затраченное оператором с использованием плана на запись блоков, в миллисекундах (если включена функция track_io_timing, иначе ноль)</p>
+<p><strong>До версии компонента 1.8 включительно</strong></p>
+</td></tr><tr><td>
+<p>shared_blk_read_time</p>
+</td><td>
+<p>float8</p>
+</td><td style="text-align:left">
+<p>Общее время, затраченное оператором на чтение разделяемых блоков, в миллисекундах (если включён track_io_timing, иначе ноль)</p>
+<p><strong>Начиная с версии компонента 1.9</strong></p>
+</td></tr><tr><td>
+<p>shared_blk_write_time</p>
+</td><td>
+<p>float8</p>
+</td><td style="text-align:left">
+<p>Общее время, затраченное оператором на запись разделяемых блоков, в миллисекундах (если включён track_io_timing, иначе ноль)</p>
+<p><strong>Начиная с версии компонента 1.9</strong></p>
+</td></tr><tr><td>
+<p>local_blk_read_time</p>
+</td><td>
+<p>float8</p>
+</td><td style="text-align:left">
+<p>Общее время, затраченное оператором на чтение локальных блоков, в миллисекундах (если включён track_io_timing, или ноль в противном случае). В версиях Postgres Pro ниже 17 всегда содержит ноль.</p>
+<p><strong>Начиная с версии компонента 1.9</strong></p>
+</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:21%">
+<col style="width:15%">
+<col style="width:62%">
+</colgroup><thead><tr><th>
+<p><strong>Название</strong></p>
+</th><th>
+<p><strong>Тип</strong></p>
+</th><th style="text-align:left">
+<p><strong>Описание</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>local_blk_write_time</p>
+</td><td>
+<p>float8</p>
+</td><td style="text-align:left">
+<p>Общее время, затраченное оператором на запись локальных блоков, в миллисекундах (если включён track_io_timing, или ноль в противном случае). В версиях Postgres Pro ниже 17 всегда содержит ноль.</p>
+<p><strong>Начиная с версии компонента 1.9</strong></p>
+</td></tr><tr><td>
+<p>temp_blk_read_time</p>
+</td><td>
+<p>float8</p>
+</td><td style="text-align:left">
+<p>Общее время, затраченное оператором, использующим план, на чтение блоков временного файла, в миллисекундах (если включена функция track_io_timing, в противном случае ноль)</p>
+</td></tr><tr><td>
+<p>temp_blk_write_time</p>
+</td><td>
+<p>float8</p>
+</td><td style="text-align:left">
+<p>Общее время, затраченное оператором с использованием плана на запись блоков временного файла, в миллисекундах (если включена функция track_io_timing, иначе ноль)</p>
+</td></tr><tr><td>
+<p>first_call</p>
+</td><td>
+<p>timestamp with time zone</p>
+</td><td style="text-align:left">
+<p>Временная метка для последнего вызова запроса с использованием этого плана</p>
+</td></tr><tr><td>
+<p>last_call</p>
+</td><td>
+<p>timestamp with time zone</p>
+</td><td style="text-align:left">
+<p>Отметка времени для последнего вызова запроса с использованием этого плана</p>
+</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="представление-pg_store_plans_info">Представление «pg_store_plans_info»<a href="#представление-pg_store_plans_info" class="hash-link" aria-label="Direct link to Представление «pg_store_plans_info»" title="Direct link to Представление «pg_store_plans_info»" translate="no">​</a></h3>
+<p>Статистика самого модуля «pg_store_plans» отслеживается и становится доступной через представление с именем «pg_store_plans_info». Это представление содержит только одну строку. Столбцы представления показаны в таблице <a href="#_bookmark20" class="">3.2</a>.</p>
+<p><span id="_bookmark20" class="anchor"></span>Таблица 3.2 - Столбцы «pg_store_plans_info»</p>
+<table><colgroup>
+<col style="width:10%">
+<col style="width:14%">
+<col style="width:75%">
+</colgroup><thead><tr><th>
+<p><strong>Имя</strong></p>
+</th><th>
+<p><strong>Тип</strong></p>
+</th><th style="text-align:left">
+<p><strong>Описание</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>dealloc</p>
+</td><td>
+<p>bigint</p>
+</td><td style="text-align:left">
+<p>Общее количество раз, когда записи pg_store_plans о наименее выполняемых инструкциях были освобождены из-за того, что наблюдалось больше отдельных инструкций, чем в pg_store_plans.max</p>
+</td></tr><tr><td>
+<p>stats_reset</p>
+</td><td>
+<p>timestamp with time zone</p>
+</td><td style="text-align:left">
+<p>Время последнего сброса всей статистики в представлении pg_store_plans</p>
+</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функции-компонента">Функции компонента<a href="#функции-компонента" class="hash-link" aria-label="Direct link to Функции компонента" title="Direct link to Функции компонента" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_reset">Функция «pg_store_plans_reset»<a href="#функция-pg_store_plans_reset" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_reset»" title="Direct link to Функция «pg_store_plans_reset»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_reset» имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans_reset()returns void</span><br></div></code></pre></div></div>
+<p>Функция сбрасывает всю статистику, собранную компонентом и выполняется от имени и с правами привилегированного пользователя postgres или с пользователя с атрибутом «SUPERUSER».</p>
+<p><strong>Например</strong></p>
+<p>Сброс статистики выполняется SQL-командой:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_store_plans_reset</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image31-2381e47f77100c1775588c435e4f8eda.png" width="858" height="185" class="img_ev3q"></p>
+<p>Рисунок 3.1 – SQL-команда выполнения сброса статистики</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans">Функция «pg_store_plans»<a href="#функция-pg_store_plans" class="hash-link" aria-label="Direct link to Функция «pg_store_plans»" title="Direct link to Функция «pg_store_plans»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans» служит для выводы одноименного представления «pg_store_plans» и имеет синтаксис вызова:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p>При этом выведенная информация не будет структурирована и целесообразно вывести требуемые столбы.</p>
+<p><strong>Например</strong></p>
+<p>Выведем содержимое представления «pg_store_plans» с столбцами userid, dbid, queryid, planid. SQL-команда будет следующей:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> userid</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> dbid</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> queryid</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> planid </span><span class="token keyword" style="color:#00009f">from</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image32-e425217efb7ca252b5dbf718d1014514.png" width="706" height="359" class="img_ev3q"></p>
+<p>Рисунок 3.2 – Вывод представления «pg_store_plans»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_info">Функция «pg_store_plans_info»<a href="#функция-pg_store_plans_info" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_info»" title="Direct link to Функция «pg_store_plans_info»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_info» предназначена для просмотра одноимённого представления.</p>
+<p><strong>Например</strong></p>
+<p>Просмотр содержания представления выполняется SQL-командой:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_store_plans_info</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image33-508b570fff58b00da8101475caba9e08.png" width="732" height="188" class="img_ev3q"></p>
+<p>Рисунок 3.3 - Просмотр содержания представления «pg_store_plans_info»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_hash_query">Функция «pg_store_hash_query»<a href="#функция-pg_store_hash_query" class="hash-link" aria-label="Direct link to Функция «pg_store_hash_query»" title="Direct link to Функция «pg_store_hash_query»" translate="no">​</a></h3>
+<p>Функция «pg_store_hash_query» вычисляет хеш-значение текста SQL-запроса и имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_hash_query (query text)</span><br></div></code></pre></div></div>
+<p><strong>Например</strong></p>
+<p>Вычислим хеш-значение текста SQL-запроса в созданную таблицу «orders». Для этого в теле SQL запроса указывается вызываемая функция (допускается указать схему данных в которой она расположена) и текст SQL-запроса к таблице:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SELECT public.pg_store_plans_hash_query(&#x27;select * FROM orders&#x27;);</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image34-80bb191a693e20315490a78ffd03a0ca.png" width="731" height="183" class="img_ev3q"></p>
+<p>Рисунок 3.4 – Вызов функции «pg_store_hash_query»</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_textplan">Функция «pg_store_plans_textplan»<a href="#функция-pg_store_plans_textplan" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_textplan»" title="Direct link to Функция «pg_store_plans_textplan»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_textplan» генерирует обычное текстовое представление из необработанного представления плана в «pg_store_plans», при установленном значении &#x27;raw&#x27; параметра «pg_store_plans.plan_formats» (см. п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.plan_format" class="">2.1.3</a>).</p>
+<p>Поскольку текст плана результатов генерируется из представления json, он может немного отличаться от того, что вы получите непосредственно из команды «EXPLAIN».</p>
+<p>Функция имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans_textplan(query text) returns text</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_xmlplan">Функция «pg_store_plans_xmlplan»<a href="#функция-pg_store_plans_xmlplan" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_xmlplan»" title="Direct link to Функция «pg_store_plans_xmlplan»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_xmlplan» создает XML-представление из необработанного представления плана в «pg_store_plans», при установленном значении &#x27;raw&#x27; параметра «pg_store_plans.plan_formats» (см. п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.plan_format" class="">2.1.3</a>).</p>
+<p>Функция имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans_xmlplan(query text) returns text</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функция-pg_store_plans_yamlplan">Функция «pg_store_plans_yamlplan»<a href="#функция-pg_store_plans_yamlplan" class="hash-link" aria-label="Direct link to Функция «pg_store_plans_yamlplan»" title="Direct link to Функция «pg_store_plans_yamlplan»" translate="no">​</a></h3>
+<p>Функция «pg_store_plans_yamlplan» генерирует представление YAML из необработанного представления плана в «pg_store_plans», при установленном значении &#x27;raw&#x27; параметра «pg_store_plans.plan_formats» (см. п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.plan_format" class="">2.1.3</a>).</p>
+<p>Функция имеет синтаксис:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans_yamlplan(query text) returns text</span><br></div></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="пример-вывода">ПРИМЕР ВЫВОДА<a href="#пример-вывода" class="hash-link" aria-label="Direct link to ПРИМЕР ВЫВОДА" title="Direct link to ПРИМЕР ВЫВОДА" translate="no">​</a></h2>
+<p>В качестве примера использования компонента будет использована тестовая таблица, к которой будет создан простейший план запроса. Данному плану запроса будет дана качественная оценка компонентом «pg_store_plans».</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="создание-тестовой-таблицы">Создание тестовой таблицы<a href="#создание-тестовой-таблицы" class="hash-link" aria-label="Direct link to Создание тестовой таблицы" title="Direct link to Создание тестовой таблицы" translate="no">​</a></h3>
+<p>В БД создать таблицу «orders»:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> orders</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    id </span><span class="token keyword" style="color:#00009f">serial</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    customer_id </span><span class="token keyword" style="color:#00009f">integer</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    product </span><span class="token keyword" style="color:#00009f">text</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    price </span><span class="token keyword" style="color:#00009f">integer</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image35-dc74399ba1b2212ef43562993e15f8fe.png" width="731" height="133" class="img_ev3q"></p>
+<p>Рисунок 4.1 – Создание таблицы «orders» Добавить 1000 записей в таблицу «orders»:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">INSERT INTO orders (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    customer_id, product, price)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    SELECT (</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        random() \* 3 + 1)::integer, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        &#x27;product&#x27;, </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">        (random() \* 1000 + 1)::integer</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    FROM generate_series(1, 1000);</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image36-a0c15e7bc3551e6c939e885f4d6368cd.png" width="729" height="169" class="img_ev3q"></p>
+<p>Рисунок 4.2 – Команда добавления записей в таблицу</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="вывод-оценки-качества-плана">Вывод оценки качества плана<a href="#вывод-оценки-качества-плана" class="hash-link" aria-label="Direct link to Вывод оценки качества плана" title="Direct link to Вывод оценки качества плана" translate="no">​</a></h3>
+<p>Для вывода оценки качества плана потребуется:</p>
+<ul>
+<li class="">
+<p>установить формат вывода (см. п. <a href="#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-pg_store_plans.plan_format" class="">2.1.3</a>);</p>
+</li>
+<li class="">
+<p>перезагрузить конфигурацию СУБД;</p>
+</li>
+<li class="">
+<p>просмотреть установленные изменения;</p>
+</li>
+<li class="">
+<p>очистить имеющуюся статистику (см. п. <a href="#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-pg_store_plans_reset" class="">3.3.1</a>) ; SQL – командами:</p>
+</li>
+</ul>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> SYSTEM </span><span class="token keyword" style="color:#00009f">SET</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">plan_format </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;text&#x27;</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_reload_conf</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SHOW</span><span class="token plain"> pg_store_plans</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">plan_format</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> pg_store_plans_reset</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p>В качестве запроса для анализа будет использоваться SQL-запрос к таблице «orders»:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> orders</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p>Создать план запроса с опциями:</p>
+<ul>
+<li class="">
+<p>«ANALYZE», которая выполняет фактический запрос в реальном времени для сбора и подготовки плана выполнения;</p>
+</li>
+<li class="">
+<p>«SUMMARY» - добавляет итоговую информацию в план выполнения запроса;</p>
+</li>
+</ul>
+<p>SQL – командой:</p>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">EXPLAIN</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">ANALYZE</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> SUMMARY </span><span class="token boolean" style="color:#36acaa">FALSE</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> orders</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image37-135e29d5cb1e7eedab1d8056ea964cb8.png" width="731" height="182" class="img_ev3q"></p>
+<p>Рисунок 4.3 – Сознание плана выполнения запроса</p>
+<p>Установить расширенный вывод в СУБД:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">\x</span><br></div></code></pre></div></div>
+<p>Вывести характеристики плана выполнения запроса:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">SELECT</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    queryid, plan, calls, total_time, min_time,</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    max_time, mean_time, stddev_time from pg_store_plans</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">LIMIT 1;</span><br></div></code></pre></div></div>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image38-ce73d505901f58b249836445aa617de4.png" width="849" height="371" class="img_ev3q"></p>
+<p>Рисунок 4.4 – Вывод оценки выполнения плана запроса</p>
+<p>Вывод оценочной информации в SQL-запросе может дополняться строками из представления «pg_store_plans», приведенными в таблице <a href="#_bookmark18" class="">3.1</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="обновление-компонента">ОБНОВЛЕНИЕ КОМПОНЕНТА<a href="#обновление-компонента" class="hash-link" aria-label="Direct link to ОБНОВЛЕНИЕ КОМПОНЕНТА" title="Direct link to ОБНОВЛЕНИЕ КОМПОНЕНТА" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="обновление-компонента-pg_store_plans-в-ос-gnulinux">Обновление компонента pg_store_plans в ОС GNU/Linux<a href="#обновление-компонента-pg_store_plans-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Обновление компонента pg_store_plans в ОС GNU/Linux" title="Direct link to Обновление компонента pg_store_plans в ОС GNU/Linux" translate="no">​</a></h3>
+<p>Предварительные условия: выполнено обновление СУБД «Jatoba» до версии 18 согласно документу «Руководство по обновлению СУБД Jatoba» 643.72410666.00067-08 93 01.</p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p>При обновлении СУБД «Jatoba» до версии 18 необходимо отключить функцию подсчета контрольных сумм при инициализации каталога данных. Сведения о процедурах обновления до СУБД «Jatoba» 18 изложены в документе «Руководство по обновлению» 643.72410666.00067-08 93 01</p></div></div>
+<p>Для обновления компонента pg_store_plans с версии 1.8 включительно до версии 1.9 необходимо выполнить следующие шаги:</p>
+<ol>
+<li class="">Остановить службу СУБД «Jatoba»:</li>
+</ol>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># systemctl stop jatoba-18</span><br></div></code></pre></div></div>
+<ol start="2">
+<li class="">Установить новую версию компонента командой:</li>
+</ol>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># apt install jatoba18-pg-store-plans</span><br></div></code></pre></div></div>
+<ol start="3">
+<li class="">В конфигурационный файл /var/lib/jatoba/18/data/postgresql.conf добавить параметры:</li>
+</ol>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">shared_preload_libraries = &#x27;pg_store_plans, pg_stat_statements&#x27; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.max = 10000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pg_store_plans.track = all</span><br></div></code></pre></div></div>
+<ol start="4">
+<li class="">Выполнить запуск обновлённой СУБД «Jatoba» 18:</li>
+</ol>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># systemctl start jatoba-18 &amp;&amp; systemctl status jatoba-18</span><br></div></code></pre></div></div>
+<ol start="5">
+<li class="">Обновить версию расширения в БД:</li>
+</ol>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">ALTER</span><span class="token plain"> EXTENSION pg_store_plans </span><span class="token keyword" style="color:#00009f">UPDATE</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p>На данном шаге обновление компонента pg_store_plans завершено.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="перечень-сокращений">ПЕРЕЧЕНЬ СОКРАЩЕНИЙ<a href="#перечень-сокращений" class="hash-link" aria-label="Direct link to ПЕРЕЧЕНЬ СОКРАЩЕНИЙ" title="Direct link to ПЕРЕЧЕНЬ СОКРАЩЕНИЙ" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Сокращение</th><th>Расшифровка</th></tr></thead><tbody><tr><td>SQL</td><td>Structured Query Language</td></tr><tr><td>БД</td><td>База данных</td></tr><tr><td>ОС</td><td>Операционная система</td></tr><tr><td>СУБД</td><td>Система управления базами данных</td></tr></tbody></table>
+
+<table></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_repack"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Компонент «pg_repack»</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/comm/next/Jatoba 18.3.1/pg_task"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Компонент «pg_Task»</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#назначение-компонента" class="table-of-contents__link toc-highlight">НАЗНАЧЕНИЕ КОМПОНЕНТА</a><ul><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li></ul></li><li><a href="#установка-и-настройка" class="table-of-contents__link toc-highlight">УСТАНОВКА И НАСТРОЙКА</a><ul><li><a href="#параметры-конфигурации" class="table-of-contents__link toc-highlight">Параметры конфигурации</a></li><li><a href="#параметр-pg_store_plansmax" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.max»</a></li><li><a href="#например" class="table-of-contents__link toc-highlight">Например</a></li><li><a href="#параметр-pg_store_planstrack" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.track»</a></li><li><a href="#параметр-pg_store_plansplan_format" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.plan_format»</a></li><li><a href="#параметр-pg_store_plansmax_plan_length" class="table-of-contents__link toc-highlight">Параметр pg_store_plans.max_plan_length</a></li><li><a href="#параметр-pg_store_plansplan_storage" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.plan_storage»</a></li><li><a href="#параметр-pg_store_plansmin_duration" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.min_duration»</a></li><li><a href="#параметр-pg_store_planslog_analyze" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.log_analyze»</a></li><li><a href="#параметр-pg_store_planslog_buffers" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.log_buffers»</a></li><li><a href="#параметр-pg_store_planslog_timing" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.log_timing»</a></li><li><a href="#параметр-pg_store_planslog_triggers" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.log_triggers»</a></li><li><a href="#параметр-pg_store_planssave" class="table-of-contents__link toc-highlight">Параметр «pg_store_plans.save»</a></li></ul></li><li><a href="#функциональные-возможности-компонента" class="table-of-contents__link toc-highlight">ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ КОМПОНЕНТА</a><ul><li><a href="#представление-pg_store_plans" class="table-of-contents__link toc-highlight">Представление «pg_store_plans»</a></li><li><a href="#представление-pg_store_plans_info" class="table-of-contents__link toc-highlight">Представление «pg_store_plans_info»</a></li><li><a href="#функции-компонента" class="table-of-contents__link toc-highlight">Функции компонента</a></li><li><a href="#функция-pg_store_plans_reset" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_reset»</a></li><li><a href="#функция-pg_store_plans" class="table-of-contents__link toc-highlight">Функция «pg_store_plans»</a></li><li><a href="#функция-pg_store_plans_info" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_info»</a></li><li><a href="#функция-pg_store_hash_query" class="table-of-contents__link toc-highlight">Функция «pg_store_hash_query»</a></li><li><a href="#функция-pg_store_plans_textplan" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_textplan»</a></li><li><a href="#функция-pg_store_plans_xmlplan" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_xmlplan»</a></li><li><a href="#функция-pg_store_plans_yamlplan" class="table-of-contents__link toc-highlight">Функция «pg_store_plans_yamlplan»</a></li></ul></li><li><a href="#пример-вывода" class="table-of-contents__link toc-highlight">ПРИМЕР ВЫВОДА</a><ul><li><a href="#создание-тестовой-таблицы" class="table-of-contents__link toc-highlight">Создание тестовой таблицы</a></li><li><a href="#вывод-оценки-качества-плана" class="table-of-contents__link toc-highlight">Вывод оценки качества плана</a></li></ul></li><li><a href="#обновление-компонента" class="table-of-contents__link toc-highlight">ОБНОВЛЕНИЕ КОМПОНЕНТА</a><ul><li><a href="#обновление-компонента-pg_store_plans-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Обновление компонента pg_store_plans в ОС GNU/Linux</a></li></ul></li><li><a href="#перечень-сокращений" class="table-of-contents__link toc-highlight">ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer1</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/archive/install">test1</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer2</div><ul class="footer__items clean-list"></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer3</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Footer3-1<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-comm docs-version-18.4.1,6.14.1,5.18.1,4.23.1 docs-doc-page docs-doc-id-Jatoba 18.4.1/pgbadger" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Компонент «pgBadger» | DocsAsCode</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hadsunn.github.io/demo_docu/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hadsunn.github.io/demo_docu/comm/Jatoba 18.4.1/pgbadger"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="18.4.1,6.14.1,5.18.1,4.23.1"><meta data-rh="true" name="docusaurus_tag" content="docs-comm-18.4.1,6.14.1,5.18.1,4.23.1"><meta data-rh="true" name="docsearch:version" content="18.4.1,6.14.1,5.18.1,4.23.1"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-comm-18.4.1,6.14.1,5.18.1,4.23.1"><meta data-rh="true" property="og:title" content="Компонент «pgBadger» | DocsAsCode"><meta data-rh="true" name="description" content="АННОТАЦИЯ"><meta data-rh="true" property="og:description" content="АННОТАЦИЯ"><link data-rh="true" rel="icon" href="/demo_docu/img/faviconV2.png"><link data-rh="true" rel="canonical" href="https://hadsunn.github.io/demo_docu/comm/Jatoba 18.4.1/pgbadger"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/comm/Jatoba 18.4.1/pgbadger" hreflang="en"><link data-rh="true" rel="alternate" href="https://hadsunn.github.io/demo_docu/comm/Jatoba 18.4.1/pgbadger" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Компонент «pgBadger»","item":"https://hadsunn.github.io/demo_docu/comm/Jatoba 18.4.1/pgbadger"}]}</script><link rel="stylesheet" href="/demo_docu/assets/css/styles.87635517.css">
+<script src="/demo_docu/assets/js/runtime~main.9c3f69b3.js" defer="defer"></script>
+<script src="/demo_docu/assets/js/main.be9a3600.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/demo_docu/img/jatoba.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/demo_docu/"><div class="navbar__logo"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/demo_docu/img/jatoba.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Jatoba</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/demo_docu/comm">Коммерческая версия</a><a class="navbar__item navbar__link" href="/demo_docu/cert">Сертифицированная версия</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/demo_docu/comm/Jatoba 18.4.1/pgbadger">18.4.1, 6.14.1, 5.18.1, 4.23.1</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/demo_docu/comm/Jatoba 18.4.1/pgbadger">18.4.1, 6.14.1, 5.18.1, 4.23.1</a></li><li><a class="dropdown__link" href="/demo_docu/comm/18.3.1,6.13.1,5.17.1,4.22.1">18.3.1, 6.13.1, 5.17.1, 4.22.1</a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm"><span class="linkLabel_WmDU">Описание</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/demo_docu/comm/Jatoba 18.4.1/describe"><span class="categoryLinkLabel_W154">Jatoba 18.4.1</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/describe"><span class="linkLabel_WmDU">СУБД Jatoba. Описание применения</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/install"><span class="linkLabel_WmDU">Руководство по установке</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/1c"><span class="linkLabel_WmDU">Поддержка платформы 1С</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/admin"><span class="linkLabel_WmDU">Руководство администратора</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/container"><span class="linkLabel_WmDU">Инструкция по настройке и использованию контейнера</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/explain"><span class="linkLabel_WmDU">Поддержка мониторинга СУБД в части анализа запросов</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/firewall"><span class="linkLabel_WmDU">Компонент «SQL_Firewall»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_anonymizer"><span class="linkLabel_WmDU">Компонент «ja_Anonymizer». Маскирование данных.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_compression"><span class="linkLabel_WmDU">Компонент «ja_Compression»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_csum"><span class="linkLabel_WmDU">Компонент «ja_CSum»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_hipe_cluster"><span class="linkLabel_WmDU">Компонент «ja_Hipe_Cluster»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_hipe_cluster_migration"><span class="linkLabel_WmDU">Инструкция по миграции компонента «ja_Hipe_Cluster»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_inventory"><span class="linkLabel_WmDU">Компонент «ja_Inventory». Инвентаризация СУБД</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_plan_manager"><span class="linkLabel_WmDU">Компонент «ja_Plan_Manager»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_seceventlog3.3"><span class="linkLabel_WmDU">Компонент «ja_SecEventLog»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_similar"><span class="linkLabel_WmDU">Компонент «ja_Similar»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/ja_sync_ldap1.3"><span class="linkLabel_WmDU">Компонент «ja_Sync_LDAP»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/jadog_4.2_1"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 1.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/jadog_4.2_2"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 2.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/jadog_4.2_3"><span class="linkLabel_WmDU">Компонент «jaDog». Руководство по настройке. Часть 3.</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/jadog_secur"><span class="linkLabel_WmDU">Инструкция по безопасной настройке кластера «jaDog»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/jalog"><span class="linkLabel_WmDU">Компонент «ja_Log»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/japooler"><span class="linkLabel_WmDU">Компонент «jaPooler»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/jcs"><span class="linkLabel_WmDU">Компонент «Jatoba crypto access storage»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/jds2.11"><span class="linkLabel_WmDU">Компонент «Jatoba data safe»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/jdv"><span class="linkLabel_WmDU">Компонент «Jatoba data vault»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/map"><span class="linkLabel_WmDU">Карта документации</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/monitoring"><span class="linkLabel_WmDU">Поддержка мониторинга СУБД</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/oracle"><span class="linkLabel_WmDU">Обеспечение работы с СУБД Oracle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/pg_hint_plan"><span class="linkLabel_WmDU">Компонент «pg_hint_plan»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/pg_profile"><span class="linkLabel_WmDU">Компонент «pg_Profile»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/pg_repack"><span class="linkLabel_WmDU">Компонент «pg_repack»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/pg_store_plans"><span class="linkLabel_WmDU">Компонент «pg_store_plans»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/pg_task"><span class="linkLabel_WmDU">Компонент «pg_Task»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/pg_ulid"><span class="linkLabel_WmDU">Компонент «pg_ulid»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/pgbadger"><span class="linkLabel_WmDU">Компонент «pgBadger»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/pgsql-http"><span class="linkLabel_WmDU">Компонент «pgSQL-HTTP»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/plspgsql"><span class="linkLabel_WmDU">Компонент «PLsPgSQL»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/postgis"><span class="linkLabel_WmDU">Компонент «PostGIS»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/secur_func"><span class="linkLabel_WmDU">Реализация функций безопасности</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/secur_guide"><span class="linkLabel_WmDU">Руководство по безопасности</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/tds_fdw"><span class="linkLabel_WmDU">Компонент «TDS_FDW»</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/timescale"><span class="linkLabel_WmDU">Расширение TimescaleDB</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/update"><span class="linkLabel_WmDU">Руководство по обновлению</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/user_guide"><span class="linkLabel_WmDU">Руководство пользователя</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/demo_docu/comm/Jatoba 18.4.1/wal-g"><span class="linkLabel_WmDU">Компонент «wal-g». Архивация и восстановление данных.</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/Jatoba 4.22.1"><span class="linkLabel_WmDU">Jatoba 4.22.1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/Jatoba 5.18.1"><span class="linkLabel_WmDU">Jatoba 5.17.1</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/demo_docu/comm/Jatoba 6.14.1"><span class="linkLabel_WmDU">Jatoba 6.13.1</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/demo_docu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Jatoba 18.4.1</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Компонент «pgBadger»</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 18.4.1, 6.14.1, 5.18.1, 4.23.1</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Компонент «pgBadger». Формирование отчетов по журналам СУБД.</h1></header>
+<p><strong>АННОТАЦИЯ</strong></p>
+<p>В документе приведены сведения, необходимые для формирования аналитической отчетности по заданным параметрам, для выявления потенциальных проблем с системой управления базами данных «Jatoba» (далее – СУБД «Jatoba»). Настоящее руководство предназначено для администратора СУБД «Jatoba».</p>
+<p>Администратор СУБД «Jatoba» должен иметь навыки по работе с системами управления  базами  данных  «PostgreSQL»  или  защищенной  СУБД  «Jatoba» (ООО «Газинформсервис»).</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Все примеры в данном документе приведены для СУБД «Jatoba» версии ядра 4.x, для других версий все шаги выполняются аналогично, разница состоит в именах директорий.</p><p>Например, СУБД «Jatoba» версии 6.x по умолчанию устанавливается в директорию:</p><p>–	ОС Windows – «C:\Program Files\GIS\Jatoba\6\bin»;</p><p>–	ОС Linux – «/usr/jatoba-6/bin».</p><p>Для СУБД «Jatoba» версии ядра 4/5/6/18 используется версия компонента — 13.1.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="назначение-компонента">НАЗНАЧЕНИЕ КОМПОНЕНТА<a href="#назначение-компонента" class="hash-link" aria-label="Direct link to НАЗНАЧЕНИЕ КОМПОНЕНТА" title="Direct link to НАЗНАЧЕНИЕ КОМПОНЕНТА" translate="no">​</a></h2>
+<p>«pgBadger» – компонент, обеспечивающий анализ журналов регистрации событий СУБД, в том числе событий безопасности, и формирование статистических отчетов и графиков на их основе.</p>
+<p>Компонент «pgBadger» позволяет выполнять обработку в части событий, содержащихся в журналах. С помощью параметров командной строки возможно установить такой режим работы компонента, при котором будет обрабатываться только заданный набор сообщений.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="функциональные-возможности-компонента">Функциональные возможности компонента<a href="#функциональные-возможности-компонента" class="hash-link" aria-label="Direct link to Функциональные возможности компонента" title="Direct link to Функциональные возможности компонента" translate="no">​</a></h3>
+<p>Компонент «pgBadger» обладает следующими функциональными возможностями:</p>
+<ul>
+<li class="">
+<p>сбор общих данных о работе СУБД из файлов регистрации событий, в том числе о сессиях пользователя (выполненные SQL-запросы), и предоставление данных администратору в виде HTML-отчетов;</p>
+</li>
+<li class="">
+<p>выявление проблемных мест в производительности СУБД;</p>
+</li>
+<li class="">
+<p>поиск и анализ запросов, подлежащих оптимизации.</p>
+</li>
+</ul>
+<p>При работе с данным компонентом администратор должен иметь доступ и обладать правами на чтение директории, в которой расположены файлы регистрации событий, и правами на чтение и запись в директорию сохранения отчетов. Допускается использование учетной записи администратора ОС (например, root для Linux) и системной учетной записи postgres.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="условия-применения">Условия применения<a href="#условия-применения" class="hash-link" aria-label="Direct link to Условия применения" title="Direct link to Условия применения" translate="no">​</a></h3>
+<p>Компонент «pgBadger» может использоваться совместно с СУБД «Jatoba» версий 4х и выше.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="требования-по-использованию">ТРЕБОВАНИЯ ПО ИСПОЛЬЗОВАНИЮ<a href="#требования-по-использованию" class="hash-link" aria-label="Direct link to ТРЕБОВАНИЯ ПО ИСПОЛЬЗОВАНИЮ" title="Direct link to ТРЕБОВАНИЯ ПО ИСПОЛЬЗОВАНИЮ" translate="no">​</a></h2>
+<p>Перед использованием компонента «pgBadger» необходимо выполнить установку динамического языка программирования Perl не ниже версии 5.14, с дополнительными компонентами, приведенными в таблице <a href="#_bookmark4" class="">2.1</a>.</p>
+<p><span id="_bookmark4" class="anchor"></span>Таблица 2.1 – Дополнительные компоненты Perl</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Компонент</th><th>Назначение</th></tr></thead><tbody><tr><td>Text::CSV_XS</td><td>Разбор файлов журналов в формате CSV</td></tr><tr><td>JSON::XS</td><td>Сериализация/десериализация JSON (для экспорта статистики в файл JSON)</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Установка данных компонентов осуществляется только при необходимости разбора файлов журналов в формате CSV и выгрузки статистики в формате JSON.</p></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p>Названия пакетов могут отличаться в различных дистрибутивах GNU/Linux. Для получения точного названия рекомендуется сверяться с данными подключенных репозиториев пакетов.</p></div></div>
+<p>Для установки на Debian-подобную систему используется команда:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo apt-get install libtext-csv-xs-perl libjson-xs-perl</span><br></div></code></pre></div></div>
+<p>Для установки на RedHat-подобную систему используется команда:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">sudo yum install perl-Text-CSV_XS perl-JSON-XS</span><br></div></code></pre></div></div>
+<p>Графическое отображение информации осуществляется с помощью библиотеки JavaScript с использованием веб-браузера.</p>
+<p>Поддерживается работа браузеров: Google Chrome, Mozilla Firefox, Microsoft Edge, Internet Explorer, Safari и др.</p>
+<p>Формат сжатого файла журнала определяется автоматически по расширению файла.</p>
+<p>Список расширений архивов и соответствующих им утилит представлен в таблице <a href="#_bookmark5" class="">2.2.</a></p>
+<p><span id="_bookmark5" class="anchor"></span>Таблица 2.2 – Список расширений и соответствующих им утилит</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Расширение архива</th><th>Используемая утилита</th></tr></thead><tbody><tr><td>gz</td><td>zcat</td></tr><tr><td>bz2</td><td>bzcat</td></tr><tr><td>lz4</td><td>lz4cat</td></tr><tr><td>zst</td><td>Zstdcat</td></tr><tr><td>Zip</td><td>unzip</td></tr><tr><td>Xz</td><td>xz</td></tr></tbody></table>
+<p>Если утилиты не найдены в директориях, заданных в переменные окружения PATH, воспользуйтесь опцией командной строки <strong>--zcat</strong> для изменения этого пути.</p>
+<p>Примеры:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">--zcat=&quot;/usr/local/bin/gunzip -c&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--zcat=&quot;/usr/local/bin/bzip2 -dc&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">--zcat=&quot;C:\tools\unzip -p&quot;</span><br></div></code></pre></div></div>
+<p>При использовании режима автоматического определения формата сжатия файлы gz, bz2, lz4, xz, zip или zstd можно смешивать.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Указание пользовательского значения для опции --zcat отключит возможность смешанного формата сжатия.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="установка-и-удаление">УСТАНОВКА И УДАЛЕНИЕ<a href="#установка-и-удаление" class="hash-link" aria-label="Direct link to УСТАНОВКА И УДАЛЕНИЕ" title="Direct link to УСТАНОВКА И УДАЛЕНИЕ" translate="no">​</a></h2>
+<p>Установка компонента «pgBadger» должна производиться от имени пользователя, обладающего административными привилегиями в системе.</p>
+<p>Компонент «pgBadger» может быть установлен штатным образом только с СУБД «Jatoba» (см. документ «Защищенная система управления базами данных «Jatoba». Руководство по установке).</p>
+<p>Для использования компонента отдельно от СУБД «Jatoba» потребуется установка вручную (данный режим официально не поддерживается разработчиком).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установкаудаление-в-ос-gnulinux">Установка/удаление в ОС GNU/Linux<a href="#установкаудаление-в-ос-gnulinux" class="hash-link" aria-label="Direct link to Установка/удаление в ОС GNU/Linux" title="Direct link to Установка/удаление в ОС GNU/Linux" translate="no">​</a></h3>
+<p>Компонент распространяется в составе СУБД в виде отдельного deb или rpm-пакета.</p>
+<p>Установка компонента осуществляется средствами пакетного менеджера ОС. Для разных типов пакетных менеджеров команда установки различается:</p>
+<ul>
+<li class="">для систем на основе пакетного менеджера APT (к таким системам относятся все ОС семейства Debian, использующие deb-пакеты):</li>
+</ul>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">apt</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">get install jatoba4</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">pgBadger</span><br></div></code></pre></div></div>
+<ul>
+<li class="">для систем на основе пакетных менеджеров YUM/DNF (к таким системам относятся все ОС семейства RedHat и вышедшие из нее, использующие rpm-пакеты):</li>
+</ul>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">yum install jatoba4</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">pgBadger</span><br></div></code></pre></div></div>
+<p>Установка компонента на ОС ALT Linux и openSUSE имеет следующие особенности:</p>
+<ul>
+<li class="">ALT Linux использует пакетный менеджер APT, но распространяется в виде rpm-пакетов, команда установки выглядит аналогично Debian:</li>
+</ul>
+<div class="language-sql codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-sql codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">apt</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">get install jatoba4</span><span class="token operator" style="color:#393A34">-</span><span class="token plain">pgBadger</span><br></div></code></pre></div></div>
+<p>Удаление компонента осуществляется средствами пакетного менеджера ОС. Синтаксис команды удаления аналогичен синтаксису команды установки (install), описанной выше. При этом нужно использовать команду удаления, соответствующую пакетному менеджеру: remove, purge, erase и т.п.</p>
+<p>Для получения детальной информации по пакетному менеджеру рекомендуется обратиться к документации по ОС.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установкаудаление-в-ос-microsoft-windows">Установка/удаление в ОС Microsoft Windows<a href="#установкаудаление-в-ос-microsoft-windows" class="hash-link" aria-label="Direct link to Установка/удаление в ОС Microsoft Windows" title="Direct link to Установка/удаление в ОС Microsoft Windows" translate="no">​</a></h3>
+<p>Компонент распространяется в составе инсталляционного msi-файла СУБД «Jatoba».</p>
+<p>При выборе режима установки «Полный», компонент «pgBadger» установится автоматически в составе СУБД.</p>
+<p>При выборе режима установки «Выборочный», для установки компонента «pgBadger» необходимо в списке компонент выбрать пункт «Анализ журналов сообщений (pgBadger)».</p>
+<p><img decoding="async" loading="lazy" src="/demo_docu/assets/images/image3-3dff919219952571450ccd5e30e8218d.png" width="495" height="387" class="img_ev3q"></p>
+<p>Рисунок 3.1 – Выбор компонента при установке</p>
+<p>Удаление компонента «pgBadger» доступно через инсталлятор СУБД «Jatoba» – компонент удалится при удалении СУБД «Jatoba». Также компонент возможно исключить из состава установленных компонент СУБД через управление приложениями в панели управления Microsoft Windows.</p>
+<p>Для получения детальной информации по установке/удалению программ в Microsoft Windows рекомендуется обратиться к документации по ОС.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="настройка-jatobapostgresql">НАСТРОЙКА JATOBA/POSTGRESQL<a href="#настройка-jatobapostgresql" class="hash-link" aria-label="Direct link to НАСТРОЙКА JATOBA/POSTGRESQL" title="Direct link to НАСТРОЙКА JATOBA/POSTGRESQL" translate="no">​</a></h2>
+<p>Перед началом работы необходимо включить журналирование SQL-запросов в файле <strong>postgresql.conf</strong>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">log_min_duration_statement = 0</span><br></div></code></pre></div></div>
+<p>Включение данного параметра позволит осуществлять регистрацию каждого запроса, длительность которого превышает заданное значение в миллисекундах.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>На высоко нагруженном сервере, для увеличения производительности СУБД, рекомендуется увеличить данное значение, чтобы регистрировать только длительные запросы.</p></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p>Компонент «pgBadger» поддерживает только определенную комбинацию значений	параметров	log_statement,	log_duration	и log_min_duration_statement в конфигурационном режиме. Подробное описание  приведено  в  разделе  «Журналирование  запросов»  данного уководства.</p></div></div>
+<p>Компонент «pgBadger» поддерживает любой пользовательский формат, заданный в параметре <strong>log_line_prefix</strong> файла <strong>postgresql.conf</strong>, если в нем указана временная управляющая последовательность (<strong>%t</strong>, <strong>%m</strong> или <strong>%n</strong>) и управляющая последовательность, связанная с процессом СУБД (<strong>%p</strong> или <strong>%c</strong>).</p>
+<p>Например, для формата журнала <strong>&#x27;stderr&#x27;</strong> префикс <strong>log_line_prefix</strong> должен принимать следующее минимальное значение:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">log_line_prefix = &#x27;%t [%p]:&#x27;</span><br></div></code></pre></div></div>
+<p>Префикс строки журнала может включать имя пользователя, имя базы данных, имя приложения и IP-адрес клиента:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">log_line_prefix = &#x27;%t [%p]: user=%u,db=%d,app=%a,client=%h&#x27;</span><br></div></code></pre></div></div>
+<p>Для формата файла журнала <strong>syslog</strong> используется следующий префикс:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">log_line_prefix = &#x27;user=%u,db=%d,app=%a,client=%h&#x27;</span><br></div></code></pre></div></div>
+<p>Префикс строки журнала для вывода <strong>stderr</strong> может принимать значение:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">log_line_prefix = &#x27;%t [%p]: db=%d,user=%u,app=%a, client=%h&#x27;</span><br></div></code></pre></div></div>
+<p>Для вывода журнала <strong>syslog</strong> используется следующий префикс:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">log_line_prefix = &#x27;db=%d,user=%u,app=%a,client=%h&#x27;</span><br></div></code></pre></div></div>
+<p>Для журналирования детальной информации о работе СУБД необходимо включить дополнительные параметры в конфигурационном файле <strong>postgresql.conf</strong>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">log_checkpoints = on </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_connections = on </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_disconnections = on </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_lock_waits = on </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_temp_files = 0</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_autovacuum_min_duration = 0 </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">log_error_verbosity = default</span><br></div></code></pre></div></div>
+<p>Компонент «pgBadger» не поддерживает обработку и разбор сообщений на других языках, кроме английского. Для этого необходимо установить параметр в конфигурационном файле <strong>postgresql.conf</strong>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">lc_messages=&#x27;en_US.UTF-8&#x27; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">lc_messages=&#x27;C&#x27;</span><br></div></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="опции-использования-компонента">ОПЦИИ ИСПОЛЬЗОВАНИЯ КОМПОНЕНТА<a href="#опции-использования-компонента" class="hash-link" aria-label="Direct link to ОПЦИИ ИСПОЛЬЗОВАНИЯ КОМПОНЕНТА" title="Direct link to ОПЦИИ ИСПОЛЬЗОВАНИЯ КОМПОНЕНТА" translate="no">​</a></h2>
+<p>В данном разделе приведены опции командной строки компонента «pgBadger» (см. таблицу <a href="#_bookmark11" class="">5.1</a>) и примеры запуска и использования данных опций.</p>
+<p><span id="_bookmark11" class="anchor"></span>Таблица 5.1 – Опции командной строки «pgBadger»</p>
+<table><colgroup>
+<col style="width:29%">
+<col style="width:70%">
+</colgroup><thead><tr><th style="text-align:center">
+<p><strong>Опция</strong></p>
+</th><th style="text-align:center">
+<p><strong>Назначение</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>-a | --average min</p>
+</td><td>
+<p>количество минут для построения усредненных графиков запросов</p>
+<p>и соединений. <em>По умолчанию –</em> 5 <em>минут</em></p>
+</td></tr><tr><td>
+<p>-A | --histo-average min</p>
+</td><td>
+<p>количество минут для построения усредненных гистограмм</p>
+<p>запросов. <em>По умолчанию –</em> 60 <em>минут</em></p>
+</td></tr><tr><td>
+<p>-b | --begin datetime</p>
+</td><td>
+<p>дата / время начала разбора данных в журнале (задается в формате</p>
+<p>метки времени (включает дату и время), либо только времени без указания даты)</p>
+</td></tr><tr><td>
+<p>-c | --dbclient host</p>
+</td><td>
+<p>отчет о записях только для данного клиентского узла</p>
+</td></tr><tr><td>
+<p>-C | --nocomment</p>
+</td><td>
+<p>удаление комментариев типа /* ... */ из запросов</p>
+</td></tr><tr><td>
+<p>-d | --dbname database</p>
+</td><td>
+<p>сообщение только о записях для данной базы данных</p>
+</td></tr><tr><td>
+<p>-D | --dns-resolv</p>
+</td><td>
+<p>замена IP-адресов клиентов их DNS-именами</p>
+<p>Это может сильно замедлить работу pgBadger.</p>
+</td></tr><tr><td>
+<p>-e | --end datetime</p>
+</td><td>
+<p>дата / время окончания анализа данных, разбираемых в журнале</p>
+<p>(формат значения см. п. <a href="#формат-значения-datetime" class="">5.1</a>)</p>
+</td></tr><tr><td>
+<p>-E | --explode</p>
+</td><td>
+<p>разбиение общего отчета на части; опция создает по одному отчету</p>
+<p>для каждой базы данных</p>
+</td></tr><tr><td>
+<p>f | --format logtype</p>
+</td><td>
+<p>явное указание формата файлов регистрации событий СУБД, когда pgBadger не может определить их формат автоматически.</p>
+<p>Возможные значения: syslog, syslog2, stderr, jsonlog, cvs, pgbouncer,</p>
+<p>logplex, rds и redshift</p>
+</td></tr><tr><td>
+<p>-G | --nograph</p>
+</td><td>
+<p>отключение графики при выводе HTML-отчета. <em>По умолчанию –</em></p>
+<p><em>включено</em></p>
+</td></tr><tr><td>
+<p>-h | --help</p>
+</td><td>
+<p>краткий вывод списка опций</p>
+</td></tr><tr><td>
+<p>-H | --html-outdir path</p>
+</td><td>
+<p>путь к директории, в которую сохраняется HTML-отчет. В</p>
+<p>инкрементальном режиме бинарные файлы (см. раздел <a href="#инкрементальные-отчеты" class="">8</a> и <a href="#бинарный-формат" class="">10</a>) остаются в каталоге, который определен опцией -O, --outdir</p>
+</td></tr><tr><td>
+<p>-i | --ident name</p>
+</td><td>
+<p>имя программы, используемое в качестве идентификатора syslog. <em>По</em></p>
+<p><em>умолчанию:</em> postgres</p>
+</td></tr><tr><td>
+<p>-I | --incremental</p>
+</td><td>
+<p>использование инкрементального режима. Отчеты будут</p>
+<p>генерироваться по дням в отдельном каталоге, необходимо задать параметр --outdir</p>
+</td></tr><tr><td>
+<p>-j | --jobs number</p>
+</td><td>
+<p>количество заданий для одновременного выполнения. <em>По умолчанию</em></p>
+<p><em>запускается одно задание</em></p>
+</td></tr><tr><td>
+<p>-J | --Jobs number</p>
+</td><td>
+<p>количество файлов журнала для параллельного разбора. <em>По</em></p>
+<p><em>умолчанию обрабатывается один файл</em></p>
+</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:29%">
+<col style="width:70%">
+</colgroup><thead><tr><th style="text-align:center">
+<p><strong>Опция</strong></p>
+</th><th style="text-align:center">
+<p><strong>Назначение</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>-l | --last-parsed file</p>
+</td><td>
+<p>разрешение инкрементального разбора журнала, используя</p>
+<p>последнее разобранное время и строку</p>
+</td></tr><tr><td>
+<p>-L | --logfile-list file</p>
+</td><td>
+<p>файл, содержащий список файлов журнала для разбора</p>
+</td></tr><tr><td>
+<p>-m | --maxlength size</p>
+</td><td>
+<p>максимальная длина запроса, которая будет ограничена заданным</p>
+<p>размером. <em>По умолчанию размер ограничения равен</em> 100000</p>
+</td></tr><tr><td>
+<p>-M | --no-multiline</p>
+</td><td>
+<p>сокращение размера отчета, опция не собирает данные о</p>
+<p>многострочных запросах</p>
+</td></tr><tr><td>
+<p>-n | --nohighlight<a href="#_bookmark12" class=""><sup>1</sup></a></p>
+</td><td>
+<p>отключение выделения кода SQL</p>
+</td></tr><tr><td>
+<p>-N | --appname name</p>
+</td><td>
+<p>составление отчета только по записям для заданного приложения</p>
+</td></tr><tr><td>
+<p>-o | --outfile filename</p>
+</td><td style="text-align:left">
+<p>определение имени файла для вывода. <em>По умолчанию зависит от формата вывода:</em> out.html<em>,</em> out.txt<em>,</em> out.bin<em>,</em> out.json <em>или</em> out.tsung. Опция может быть использована несколько раз для вывода</p>
+<p>нескольких форматов</p>
+</td></tr><tr><td>
+<p>-O | --outdir path</p>
+</td><td>
+<p>каталог, в котором будет сохранен файл вывода</p>
+</td></tr><tr><td>
+<p>-p | --prefix string</p>
+</td><td style="text-align:left">
+<p>значение пользовательского префикса log_line_prefix, которое определено в postgresql.conf</p>
+<p>Применяется только в случае, если не используется один из стандартных префиксов, указанных в документации pgBadger.</p>
+<p>Например, если префикс включает дополнительные переменные, такие как IP-клиента или имя приложения.</p>
+</td></tr><tr><td>
+<p>-P | --no-prettify</p>
+</td><td>
+<p>отключение форматирования SQL-запросов</p>
+</td></tr><tr><td>
+<p>-q | --quiet</p>
+</td><td>
+<p>запрет вывода информации, в том числе строки состояния</p>
+</td></tr><tr><td>
+<p>-Q | --query-numbering</p>
+</td><td>
+<p>добавление в вывод нумерации запросов при использовании опций</p>
+<p>--dump-all-queries или</p>
+<p>--normalized-only</p>
+</td></tr><tr><td>
+<p>-r | --remote-host ip</p>
+</td><td>
+<p>добавление хоста, на котором будет выполняться команда cat</p>
+<p>удаленного файла журнала для локального разбора файла</p>
+</td></tr><tr><td>
+<p>-R | --retention N</p>
+</td><td style="text-align:left">
+<p>количество недель для хранения в инкрементальном режиме. <em>По умолчанию</em> 0<em>, отключено</em></p>
+<p>Используется для установки количества недель для хранения данных в выходном каталоге. Более старые недели и дни автоматически удаляются из каталога.</p>
+</td></tr><tr><td>
+<p>-s | --sample number</p>
+</td><td>
+<p>количество выборок запроса для хранения. <em>По умолчанию:</em> 3</p>
+</td></tr><tr><td>
+<p>-S | --select-only</p>
+</td><td>
+<p>сообщение только о SELECT-запросах</p>
+</td></tr><tr><td>
+<p>-t | --top number</p>
+</td><td>
+<p>количество запросов для хранения / отображения. <em>По умолчанию:</em> 20</p>
+</td></tr><tr><td>
+<p>-T | --title string</p>
+</td><td>
+<p>изменение заголовка отчета HTML-страницы</p>
+</td></tr><tr><td>
+<p>-u | --dbuser username</p>
+</td><td>
+<p>отчет только по записям для указанного пользователя</p>
+</td></tr></tbody></table>
+<p><span id="_bookmark12" class="anchor"></span><sup>1</sup> данная опция поддерживается только в версии компонента 11.8</p>
+<table><colgroup>
+<col style="width:29%">
+<col style="width:70%">
+</colgroup><thead><tr><th style="text-align:center">
+<p><strong>Опция</strong></p>
+</th><th style="text-align:center">
+<p><strong>Назначение</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>-U | --exclude-user</p>
+<p>username</p>
+</td><td>
+<p>исключение записи для указанного пользователя из отчета. Может</p>
+<p>быть использовано несколько раз</p>
+</td></tr><tr><td>
+<p>-v | --verbose</p>
+</td><td>
+<p>включение режима просмотра или отладки. <em>По умолчанию отключен</em></p>
+</td></tr><tr><td>
+<p>-V | --version</p>
+</td><td>
+<p>версия pgBadger</p>
+</td></tr><tr><td>
+<p>-w | --watch-mode</p>
+</td><td>
+<p>сообщение только об ошибках</p>
+</td></tr><tr><td>
+<p>-W | --wide-char</p>
+</td><td>
+<p>кодирование HTML-вывода запросов в UTF8; позволяет избегать</p>
+<p>появления сообщения &quot;Wide character in print&quot;</p>
+</td></tr><tr><td>
+<p>-x | --extension</p>
+</td><td>
+<p>формат вывода. Значения: text, html, bin, json или tsung. <em>По</em></p>
+<p><em>умолчанию:</em> html</p>
+</td></tr><tr><td>
+<p>-X | --extra-files</p>
+</td><td>
+<p>в инкрементальном режиме позволяет pgBadger записывать CSS и JS</p>
+<p>файлы в выходной каталог в виде отдельных файлов</p>
+</td></tr><tr><td>
+<p>-z | --zcat exec_path</p>
+</td><td>
+<p>полный путь к программе zcat. Используется, если zcat, bzcat, или</p>
+<p>unzip не найдена</p>
+</td></tr><tr><td>
+<p>-Z | --timezone +/-XX</p>
+</td><td>
+<p>количество часов от GMT для данного часового пояса. Используется</p>
+<p>для корректировки даты / времени в графиках JavaScript</p>
+</td></tr><tr><td>
+<p>--pie-limit num</p>
+</td><td>
+<p>не выводить подписи на круговых диаграммах для значений меньше</p>
+<p>num (задается в процентах, <em>по умолчанию</em> 2)</p>
+</td></tr><tr><td>
+<p>--exclude-query regex</p>
+</td><td>
+<p>запрос, соответствующий заданному регулярному выражению,</p>
+<p>будет исключен из отчета. Может быть использован несколько раз</p>
+</td></tr><tr><td>
+<p>--exclude-file filename</p>
+</td><td>
+<p>путь к файлу, который содержит все регулярные выражения для исключения запросов из отчета. Допускается одно регулярное</p>
+<p>выражение на строку</p>
+</td></tr><tr><td>
+<p>--include-query regex</p>
+</td><td>
+<p>запрос, который не соответствует заданному регулярному выражению, будет исключен из отчета. Может быть использован</p>
+<p>несколько раз</p>
+</td></tr><tr><td>
+<p>--include-file filename</p>
+</td><td>
+<p>путь к файлу, содержащему все регулярные выражения для включения в отчет. Допускается одно регулярное выражение на</p>
+<p>строку</p>
+</td></tr><tr><td>
+<p>--disable-error</p>
+</td><td>
+<p>запрет формирования отчета об ошибках</p>
+</td></tr><tr><td>
+<p>--disable-hourly</p>
+</td><td>
+<p>запрет формирования почасового отчета</p>
+</td></tr><tr><td>
+<p>--disable-type</p>
+</td><td>
+<p>запрет формирования отчета о запросах по типу, базе данных или</p>
+<p>пользователю</p>
+</td></tr><tr><td>
+<p>--disable-query</p>
+</td><td>
+<p>запрет формирования отчета о запросах (медленные, самые частые,</p>
+<p>запросы по пользователям, по базам данных и т.п.)</p>
+</td></tr><tr><td>
+<p>--disable-session</p>
+</td><td>
+<p>запрет формирования отчета о сессиях</p>
+</td></tr><tr><td>
+<p>--disable-connection</p>
+</td><td>
+<p>запрет формирования отчета о соединениях</p>
+</td></tr><tr><td>
+<p>--disable-lock</p>
+</td><td>
+<p>запрет формирования отчета о блокировках</p>
+</td></tr><tr><td>
+<p>--disable-temporary</p>
+</td><td>
+<p>запрет формирования отчетов о временных событиях</p>
+</td></tr><tr><td>
+<p>--disable-checkpoint</p>
+</td><td>
+<p>запрет формирования отчета о контрольной точке / перезагрузке</p>
+</td></tr><tr><td>
+<p>--disable-autovacuum</p>
+</td><td>
+<p>запрет формирования отчета об автовакууме</p>
+</td></tr><tr><td>
+<p>--charset</p>
+</td><td>
+<p>установка используемой кодировки HTML. По умолчанию: UTF-8</p>
+</td></tr><tr><td>
+<p>--csv-separator</p>
+</td><td>
+<p>установка разделителя полей CSV, по умолчанию: <em>&quot;</em>,<em>&quot;</em></p>
+</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:29%">
+<col style="width:70%">
+</colgroup><thead><tr><th style="text-align:center">
+<p><strong>Опция</strong></p>
+</th><th style="text-align:center">
+<p><strong>Назначение</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>--exclude-time regex</p>
+</td><td>
+<p>любая временная метка, соответствующая заданному регулярному</p>
+<p>выражению, будет исключена из отчета. Может быть использована несколько раз</p>
+</td></tr><tr><td>
+<p>--include-time regex</p>
+</td><td>
+<p>только временная метка, соответствующая заданному регулярному</p>
+<p>выражению, будет включена в отчет. Может быть использована несколько раз</p>
+</td></tr><tr><td>
+<p>--exclude-db name</p>
+</td><td>
+<p>исключение записи журнала для указанной базы данных из отчета.</p>
+<p>Может быть использована несколько раз</p>
+</td></tr><tr><td>
+<p>--exclude-appname name</p>
+</td><td>
+<p>исключение записи журнала для указанного имени приложения из</p>
+<p>отчета. Может быть использована несколько раз</p>
+</td></tr><tr><td>
+<p>--exclude-line regex</p>
+</td><td>
+<p>исключение любой записи журнала, которая соответствует</p>
+<p>заданному регулярному выражению. Может быть использована несколько раз</p>
+</td></tr><tr><td>
+<p>--exclude-client name</p>
+</td><td>
+<p>исключение записи журнала для указанного IP-клиента. Может быть</p>
+<p>использована несколько раз</p>
+</td></tr><tr><td>
+<p>--anonymize</p>
+</td><td>
+<p>скрытие всех фиксированных данных в запросах</p>
+</td></tr><tr><td>
+<p>--noreport</p>
+</td><td>
+<p>запрет pgBadger создавать отчеты в инкрементальном режиме</p>
+</td></tr><tr><td>
+<p>--log-duration</p>
+</td><td>
+<p>обработка pgBadger записей журнала, созданных как с log_duration =</p>
+<p>on, так и с log_statement = &#x27;all&#x27;</p>
+</td></tr><tr><td>
+<p>--enable-checksum</p>
+</td><td>
+<p>добавление md5-суммы под каждым запросом</p>
+</td></tr><tr><td>
+<p>--journalctl command</p>
+</td><td>
+<p>добавление к списку файлов регистрации событий СУБД команду вызова системного журнала journalctl для включения его записей в</p>
+<p>отчет. <em>Например:</em> journalctl -u jatoba-1</p>
+</td></tr><tr><td>
+<p>--pid-dir path</p>
+</td><td>
+<p>путь, где должен храниться файл pid. <em>По умолчанию</em> /tmp</p>
+</td></tr><tr><td>
+<p>--prettify-json</p>
+</td><td>
+<p>форматирование вывода json</p>
+</td></tr><tr><td>
+<p>--month-report YYYY-MM</p>
+</td><td>
+<p>создание кумулятивного HTML-отчета за указанный месяц</p>
+</td></tr><tr><td>
+<p>--day-report YYYY-MM-</p>
+<p>DD</p>
+</td><td>
+<p>создание HTML-отчета за указанный день</p>
+</td></tr><tr><td>
+<p>--noexplain</p>
+</td><td>
+<p>не обрабатывать строки, сгенерированные auto_explain</p>
+</td></tr><tr><td>
+<p>--command CMD</p>
+</td><td>
+<p>получение записей журнала через стандартный ввод от вывода</p>
+<p>команды, указанной в параметре</p>
+</td></tr><tr><td>
+<p>--no-week</p>
+</td><td>
+<p>отмена еженедельных отчетов в инкрементальном режиме</p>
+</td></tr><tr><td>
+<p>--explain-url URL</p>
+</td><td>
+<p>переопределение URL-адреса графического инструмента для EXPLAIN. <em>По умолчанию:</em></p>
+<p><a href="http://explain.depesz.com/?is_public=0&amp;is_anon=0&amp;plan" target="_blank" rel="noopener noreferrer" class="">http://explain.depesz.com/?is_public=0&amp;is_anon=0&amp;plan=</a></p>
+</td></tr><tr><td>
+<p>--tempdir DIR</p>
+</td><td>
+<p>каталог, в который будут записываться временные файлы. <em>По</em></p>
+<p><em>умолчанию:</em> File::Spec-&gt;tmpdir() || &#x27;/tmp&#x27;</p>
+</td></tr><tr><td>
+<p>--no-process-info</p>
+</td><td>
+<p>запрет на изменение названия процесса при идентификации</p>
+<p>процесса pgBadger</p>
+</td></tr><tr><td>
+<p>--dump-all-queries</p>
+</td><td>
+<p>сброс всех запросов, найденных в лог-файле</p>
+</td></tr><tr><td>
+<p>--keep-comments</p>
+</td><td>
+<p>запрет на удаление комментариев из нормализованных запросов</p>
+</td></tr><tr><td>
+<p>--no-progressbar</p>
+</td><td>
+<p>отключение панели прогресса</p>
+</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="формат-значения-datetime">Формат значения datetime<a href="#формат-значения-datetime" class="hash-link" aria-label="Direct link to Формат значения datetime" title="Direct link to Формат значения datetime" translate="no">​</a></h3>
+<p>Формат <strong>datetime</strong> может быть задан в формате метки времени (включает дату и время) или в формате времени.</p>
+<p>Формат метка времени <strong>YYYY-MM-DD hh:mm:ss.SZ</strong>. Формат значения времени <strong>hh:mm:ss.SSSZZZ</strong>.</p>
+<p>YYYY – год, MM – месяц, DD – день, hh – час, mm – минут, ss – секунда, «.S» – миллисекунды, Z – часовой пояс, заданный в формате [+|-] hh[:mm[:ss]].</p>
+<p>Пример.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">2021-08-27 14:12:45.34567+03.</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ssh-опции">SSH опции<a href="#ssh-опции" class="hash-link" aria-label="Direct link to SSH опции" title="Direct link to SSH опции" translate="no">​</a></h3>
+<p>Компонент «pgBadger» способен анализировать удаленный файл журнала, используя SSH-соединение. При настройке SSH возможна поддержка аутентификации без пароля, при этом пароль заменяется сгенерированными ключами.</p>
+<p>Опция <strong>-r</strong> или <strong>--remote-host</strong> задает IP-адрес или имя хоста.</p>
+<p>В таблице <a href="#_bookmark15" class="">5.2</a> приведены дополнительные опции, позволяющие полностью контролировать SSH-соединение.</p>
+<p><span id="_bookmark15" class="anchor"></span>Таблица 5.2 – Дополнительные опции для контроля SSH-соединения</p>
+<table><colgroup>
+<col style="width:27%">
+<col style="width:72%">
+</colgroup><thead><tr><th style="text-align:center">
+<p><strong>Опция</strong></p>
+</th><th style="text-align:center">
+<p><strong>Назначение</strong></p>
+</th></tr></thead><tbody><tr><td>
+<p>--ssh-program ssh</p>
+</td><td>
+<p>путь к используемой SSH-программе. <em>По умолчанию:</em> ssh</p>
+</td></tr><tr><td>
+<p>--ssh-port port ssh</p>
+</td><td>
+<p>порт, используемый для соединения. <em>По умолчанию:</em> 22</p>
+</td></tr><tr><td>
+<p>--ssh-user name</p>
+</td><td>
+<p>имя пользователя, логин подключения. <em>По умолчанию: текущий</em></p>
+<p><em>пользователь</em></p>
+</td></tr><tr><td>
+<p>--ssh-identity file</p>
+</td><td>
+<p>путь к используемому файлу идентификации</p>
+</td></tr><tr><td>
+<p>--ssh-timeout second</p>
+</td><td>
+<p>время до отказа SSH-соединения. <em>По умолчанию</em> 10 <em>секунд</em></p>
+</td></tr><tr><td>
+<p>--ssh-option options</p>
+</td><td>
+<p>список опций -o, передаваемых SSH-программе. Всегда передаются опции (значение ConnectTimeout берется из параметра --ssh-timeout):</p>
+<p>-o ConnectTimeout=10</p>
+<p>-o PreferredAuthentications=hostbased,publickey</p>
+</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="примеры-использования">Примеры использования<a href="#примеры-использования" class="hash-link" aria-label="Direct link to Примеры использования" title="Direct link to Примеры использования" translate="no">​</a></h3>
+<p>В данном разделе приведены общие примеры синтаксиса некоторых опций и специальные примеры, направленные на решение конкретной задачи.</p>
+<p>Общие примеры синтаксиса:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger /var/log/jatoba.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger /var/log/jatoba.log.2.gz /var/log/jatoba.log.1.gz /var/log/jatoba.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger /var/log/jatoba/jatoba-2021-08-*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger --exclude-query=&quot;^(COPY\|COMMIT)&quot; /var/log/jatoba.log pgbadger -b &quot;2021-09-25 10:56:11&quot; -e &quot;2021-09-25 10:59:11&quot; /var/log/jatoba.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">cat /var/log/jatoba.log | pgbadger -</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger --prefix &#x27;%t [%p]: user=%u,db=%d,client=%h&#x27; /var/lib/jatoba/4/data/log/jatoba-2021-08-21* </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger --prefix &#x27;%m %u@%d %p %r %a : &#x27;/var/lib/jatoba/4/data/log/jatoba.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger --prefix &#x27;user=%u,db=%d,client=%h,appname=%a&#x27; /var/lib/jatoba/4/data/log/jatoba-2021-08-21*</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -j 8 /var/lib/jatoba/4/data/log/jatoba-10.1-main.log</span><br></div></code></pre></div></div>
+<p>Специальные примеры синтаксиса:</p>
+<p>− использование URL для удаленного файла журнала:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger &lt;http://10.96.1.50/var/log/jatoba/jatoba-10.1-main.log&gt; </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger ftp://username@10.96.1.50/jatoba-10.1-main.log </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger ssh://username@10.96.1.50/var/log/jatoba/jatoba-10.1-main.log*</span><br></div></code></pre></div></div>
+<p>− совместное использование локальных и удаленных журнальных файлов:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger /var/log/jatoba/jatoba-10.1-main.log ssh://[username@10.96.1.50/](mailto:username@10.96.1.50) var/log/ jatoba.log</span><br></div></code></pre></div></div>
+<ul>
+<li class="">создание XML-файла в формате Tsung сессий только с выборочными запросами:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -S -o sessions.tsung --prefix &#x27;%t [%p]: user=%u,db=%d &#x27; /var/lib/jatoba/4/data/log/jatoba.log</span><br></div></code></pre></div></div>
+<ul>
+<li class="">еженедельный отчет об ошибках по заданию cron:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">30 23 * * * 1 /usr/jatoba-4/bin/pgbadger -q -w /var/log/jatoba.log -o /var/reports/jatoba_errors.html</span><br></div></code></pre></div></div>
+<ul>
+<li class="">создание еженедельного отчета, используя инкрементальный режим (лог-файл и HTML-отчет обновляются каждую неделю):</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">0 4 * * * 1 /usr/jatoba-4/bin/pgbadger -q `find /var/log/ - mtime -7 -name &quot;jatoba.log*&quot;` -o /var/reports/jatoba_errors-`date +\%F`.html -l /var/reports/pgbadger_incremental_file.dat</span><br></div></code></pre></div></div>
+<ul>
+<li class="">использование автоматически генерируемых инкрементальных отчетов (генерирует ежедневный и еженедельный отчеты):</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">0 4 * * * /usr/jatoba-4/bin/pgbadger -I -q /var/log/jatoba/jatoba.log.1 -O /var/www/html/jatoba_reports/</span><br></div></code></pre></div></div>
+<ul>
+<li class="">указание периода в неделях, которые будут храниться в отчетах, в инкрементальном режиме:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">/usr/jatoba-4/bin/pgbadger --retention 2 -I -q /var/log/jatoba/jatoba.log.1 -O /var/www/html/jatoba_reports/</span><br></div></code></pre></div></div>
+<ul>
+<li class="">исключение из отчета периода, в который информация не собиралась (если в отчете есть параметр <strong>pg_dump</strong>). Например, <strong>pg_dump</strong> работает в 23:00 и 13:00 каждый день в течение получаса в сентябре 2021 года. Исключить этот период из отчета возможно следующим образом:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger --exclude-time &quot;2021-09-.* (23\|13):.*&quot; jatoba.log</span><br></div></code></pre></div></div>
+<p>Это поможет избежать появления COPY-запросов, генерируемых <strong>pg_dump</strong>, на вершине списка самых медленных запросов.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Параметр --exclude-appname &quot;pg_dump&quot; позволяет решить проблему появления COPY-запросов более простым способом.</p></div></div>
+<ul>
+<li class="">вывод <strong>journalctl</strong> может быть разобран, как файл журнала:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger --journalctl &#x27;journalctl -u jatoba-1.service’</span><br></div></code></pre></div></div>
+<ul>
+<li class="">вызов <strong>journalctl</strong> с удаленного хоста:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -r 10.96.1.50 --journalctl &#x27;journalctl -u jatoba-1.service&#x27;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">восстановление всех инкрементных HTML-отчетов (обновление всех файлов ресурсов JS и CSS):</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">rm /path/to/reports/*.js </span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">rm /path/to/reports/*.css</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -X -I -O /path/to/reports/ --rebuild</span><br></div></code></pre></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Необходимо использовать опцию <strong>-E</strong> или <strong>--explode</strong>, если ранее эти отчеты были построены с использованием этой опции.</p></div></div>
+<ul>
+<li class="">для создания кумулятивного отчета за месяц (добавление ссылки в название месяца представления календаря в инкрементальных отчетах) используется команда:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger --month-report 2021-05 –O /path/to/ incremantal/reports/</span><br></div></code></pre></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Необходимо использовать опцию <strong>-E</strong> или <strong>--explode</strong>, если ранее инкрементальные отчеты были построены с использованием этой опции.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="журналирование-запросов">ЖУРНАЛИРОВАНИЕ ЗАПРОСОВ<a href="#журналирование-запросов" class="hash-link" aria-label="Direct link to ЖУРНАЛИРОВАНИЕ ЗАПРОСОВ" title="Direct link to ЖУРНАЛИРОВАНИЕ ЗАПРОСОВ" translate="no">​</a></h2>
+<p>Журналирование запросов включает в себя параметры – <strong>log_min_duration_statement</strong>, <strong>log_duration</strong> и <strong>log_statement</strong>.</p>
+<p>При необходимости включения в статистику запросов продолжительности выполнения всех команд, время работы которых равно или превышает указанное количество миллисекунд, в параметре <strong>log_min_duration_statement</strong> необходимо установить значение равным 0 или больше. По умолчанию отключено (принимает значение «-1»).</p>
+<p>Для отображения длительности выполнения всех завершенных команд, нужно установить значение параметра <strong>log_duration = on</strong> в конфигурационном файле <strong>postgresql.conf</strong>.</p>
+<p>Значение параметра <strong>log_duration = on</strong> не означает одно и то же, что установка <strong>log_min_duration_statement = 0</strong>. При превышении значения <strong>log_min_duration_statement</strong> в журнал записывается текст запроса, а при включении данного параметра – нет.</p>
+<p>При <strong>log_duration = on</strong> и положительном значении <strong>log_min_duration_statement</strong> в журнал записывается длительность всех команд, а текст запросов – только для команд с длительностью, превысившей установленный в параметре предел.</p>
+<p>Для добавления отчета о наиболее распространенных запросах, нужно установить <strong>log_min_duration_statement</strong> в значение больше 0, либо включить <strong>log_statement</strong>.</p>
+<p>Включение log_min_duration_statement добавит отчеты о самых медленных запросах и запросах, которые заняли больше всего времени.</p>
+<p><img decoding="async" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAAA1VBMVEUAqv8AlOkAlOgAlOcAlOYAlOUAk+oAk+kAk+gAk+cAk+YAk+UAk+QAkuoAkukAkugAkucAkuYAkuUAkuQAkuMAkekAkegAkecAkeYAkeUAkeQAkdoAkO4AkOgAkOcAkOYAkOUAkOQAkOIAkN0Aj+8Aj+kAj+gAj+cAj+YAj+UAj+QAj+MAj+IAjusAjuUAjuEAjecAjPIAjOYAjOUAjOQAi+cAi+YAi9wAiukAit8Ah+gAh+EAheYAhOAAf/8Af+UAf98Af8wAceIAVf8AAP8AAH8AAACK0x6VAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAIa0lEQVRogdWaW2xc5RHHfzNn13EcmiupnXWApoQoqBBSkkLVFh645BFaqUkoKRQQDUIBO64gCGjrWFCQAo29dqAq6UWCpjThoahvhaa0VKqECIIEqqaQgAB7124SQhISX3bPTB+ci8/uer03R/T/9s18Z2b+e/acM/PNCLXESg+4+sCFYIsRW4LJZeALEeZhOgO1OkxHUDuCkwbZh/puQn8bjf+bV+fu5wUJaxWOVG2h3ZXZ6TmIfA/hfkTmV2zL6cX9CYaP/4HPLjxIh1g1oVVHrue/l4M/BX4pbg2oVv9jmTmiJ3DewW0drYk3KjVVWTCdA0uJ2WMg1yLUVep8Qjgj4DsZDh/mvvlvlnt5eeQ6D88kGGpD5acT7jXLoNqL2wD4IUyHCCRD6HHU6kHmINqI2XxU4xPac3+EbP1m2mZ9Wmq4pZPr6m9E/FUCWTQOGQeOg7yH0cNh205H84kJ7bb3NTBLVyPcg/giYNq4f2+39wj1KtY3DZQScmnkNvddRVz/hMjMwk45joV3gbxE67yDIF6S3agRIZk+F3wFGvwSYVrhbf4pHtxAyxf/MZHFicn1pG/HfCuBBvlKS+F08H72OTrPH5yYQIlo+2gqC4Lvo7IRNJGnDy0EW0vr/N8UM1OcXFf6dtR/nfc3cTPgBY5yLw8nDpQdfKn4WWou0+nB5buoRH9cM8ftzmIExye3+cOrCOKv5N0x90E8u5aW835XZeilI9m3BtWtiEyNyEMLsew1tJ3/aqHLCpPr2t9I0LA37xlzO0pWVtA277UahV06OtNXEvBnVGZEY/JPGRy6mA0L+nMvySfXeXgm8aHXIOet6HaUkOtYn3i97MA2DTQxNbsagmYI+ziS2cGPv5Qu205X6msE/AXR6VGFv8uxka/z4AWHx0o1z0Aw1JZPzAfJyoqKiHV/fCtTwz4k6BpNz4IuZtT10p26tWxb6xOvMyQrcM95eckizqlry90evXOdvUuJx3IyATPQW7mnaVvZwXT2f5s4fxxXb3yHlqYXy7ab7F9DYM+CRm9ORr5KW+Nbp5ZRZSx4LM+Q80JFxABitBTVe9hakd3Wpm2Y7sj3Z5H4z5B7MrUM5Nrobkth3FtRAABuy4vqRZZVYbsFLBWRmV9HMnXa5ii5dlfq/Km8JDikg9YqvmOi+c90OfpiaE0cwHxjRBZoHPWnaXeFU+Rmp+cgwSWRjaGf4JPhZyt2DoDvLqo221OV+UMjzxF6NH+V4Cuc038unP5bBjfh1jDGqaP2QzoWDFXl3OTponqhuH4idCwYIpA7TybtJ31aA1O4CUDZ4QFiD+SkWMcxebkqxwCtTb/HwgdOpmtn4GaYP0BLorIX1VgMNbyM+/HT61EeG9jhgdDTuwiJ/SdygfmbtDQtqyy7L4CuT84nGG5B+DLO+wx5D/cnPqyJbVxI9u8ikMsj4kx2cQxii/P2Gz01IwawfvZHwH01sxeBOJLuAX4bEcdjixW3yyLC0DIc7ts+OYFMEg717SC0TERmtkRBlkSE6r10LJ+4gv48oWP5CYSPIzLRJYpwYc7Wkkr4zx08J273hTHwRCTFNA7W3PET6UuYwi/AlyLs5jO9mweb3q6pD9Fo3OLzFM+pjzSo7tsWQbuSTG1jiu9B5VuonoPoN5lmu0mmtkF75RlKHnw4upQZing05RKyNfPXdVcrgd6cd0yhKgR6M913V5Y4F4J4Jmddp7iMRIROrGYOA35QPCArri8HLvGc9YgifiQiNOpr5hDJ/4aWpS/L15To0o8oSLRs0PDc2vnLcViuvhy4ReN2SSvO/uiuoLFmDs8mhGjcIvsUzSlLzObTvquB/ye072rAOS8ic9ujuEZrqkDjzGpefTZjqxpzmlcR5DRTVPcoZPfmbVbuBa++13ZW4AKef1aTye5VGpv3Y96Xc8FFJN+r3YtlMvFkag7uF0Vk5n00N+9TVklIyKZINQvT8GnXn90oK0RdcD0iZzpCZo7ZE6yScDT9UX8e0TOVgKqAbqX9gxp+8yYB7R/UY/6rSAakeoKMPg+nzlA+mXcID9+JXBiTBmZPKf9U+GxiZt0txCT6ZvfwX3zWdBBOkesQw2XdaA96DALaSabmVuzc7FhV+mJIpuYSl40RWWgZMtl1p6YgzmTlrYk3wHdGLWgCpafiAER3FdW7VzypgNCd15gU2cmPLjjtM1pyZPWhAmZWsqV/TUUBZOkuqvcJ9OMh2b8GYVWePNQHxy6j5Noa3yL0RyIyUcV9K53pK8sOoq3pRbLZ2woe7WXtNtY3j98kGQ8/T1+B+ta80+ps+OjYJgiU258b4jrur7Q/56txn49bH8cy2yvqz20+sJx4Zmdefy70dzmR358bp7Pa30jg43RWwxW0nXf2O6vd6SuAlwp3VvViNjTmdVYLl/nrmwZwu2F0amAMRKcTi73Clr7KnsFK0dN/M8Lf8oiFFpLN3FiIGEw0zZBM34HkfCRh9Jlx3cExa5n0aYYvaDf4yoLTDCp3cs+8CqYZTiGZvgP8mXHnUMw3cijxHB1Su4Oldq9nTuqW4nMospbW8YlBLSeIwnAtIi9XPUHk2esJgmeQYPwJoqzfSFui4HjGWJRe1mz6oIkp9X+fcPbL5V2cLRzu217SyXX7rgZmNZc++zU4fHWhsYxCKK9me/zDWTTUtRHITybca5ZBvBdkANODqA+BZ0DimNSfPKtpxKW0qb1s+CiD2c25r/tiqKwg3TKwFLPHEblm0uctPftXnIdonex5y1wkU8uQ4CmwS8Gn1mxSFhlE5B0yw+vG5orlorYzzrABleaKbY2eCGz6fMw452KlB3yjbyHx2GLMliC6BPeFuCQQpiNWh+sIzlHEU4jsw20PqnvIZPfyz+Z9tZxO/x/Rc2p9YH5JzgAAAABJRU5ErkJggg==" width="55" height="55" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Если для параметра log_statement установлено значение &#x27;all&#x27;, то при включении log_min_duration_statement запросы регистрироваться в журнал не будут.</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>При использовании log_min_duration_statement совместно с log_statement, текст SQL-запросов будет записываться только один раз (от использования log_statement) без дублирования в сообщении о длительности выполнения.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="параллельная-обработка">ПАРАЛЛЕЛЬНАЯ ОБРАБОТКА<a href="#параллельная-обработка" class="hash-link" aria-label="Direct link to ПАРАЛЛЕЛЬНАЯ ОБРАБОТКА" title="Direct link to ПАРАЛЛЕЛЬНАЯ ОБРАБОТКА" translate="no">​</a></h2>
+<p>Компонент «pgBadger» позволяет выполнять параллельную обработку одного или нескольких файлов журнала с помощью параметров <strong>-j N</strong> или <strong>–J N</strong> (например, <strong>pgbadger -j 8</strong>).</p>
+<p>В первом случае (<strong>-j N</strong>) каждый файл журнала разбивается на N частей и обрабатывается отдельным параллельным процессом. Данный режим рекомендуется для обработки файлов журнала большого объема.</p>
+<p>Во втором случае (<strong>–J N</strong>) каждый файл журнала целиком обрабатывается отдельным параллельным процессом (всего будет создано N параллельных процессов). Данный режим рекомендуется для обработки большого количества файлов, каждый из которых имеет сравнительно небольшой размер.</p>
+<p>Указанные режимы можно комбинировать (одновременная обработка сразу нескольких файлов, каждый из которых, в свою очередь, обрабатывается несколькими параллельными процессами).</p>
+<p>Значения N этих параметров определяется исходя из количества доступных ядер в системе. Использование значений N при параллельной обработке (в том числе при комбинировании режимов), превышающее количество ядер, приведет к потере скорости параллельной обработки.</p>
+<p>Ниже приведен пример параллельной обработки, выполненной разными способами:</p>
+<p>Вариант 1 – параллельная обработка, выполненная на сервере с 8 процессорами и одним файлом размером 9,5 ГБ:</p>
+<table><colgroup>
+<col style="width:20%">
+<col style="width:23%">
+<col style="width:18%">
+<col style="width:18%">
+<col style="width:18%">
+</colgroup><thead><tr><th>
+<p>Вариант</p>
+</th><th>
+<p>1 CPU</p>
+</th><th>
+<p>2 CPU</p>
+</th><th>
+<p>4 CPU</p>
+</th><th>
+<p>8 CPU</p>
+</th></tr></thead><tbody><tr><td>
+<p>-j</p>
+</td><td>
+<p>1h41m18</p>
+</td><td>
+<p>50m25</p>
+</td><td>
+<p>25m39</p>
+</td><td>
+<p>15m58</p>
+</td></tr><tr><td>
+<p>-J</p>
+</td><td>
+<p>1h41m18</p>
+</td><td>
+<p>54m28</p>
+</td><td>
+<p>41m16</p>
+</td><td>
+<p>34m45</p>
+</td></tr></tbody></table>
+<p>Вариант 2 – параллельная обработка, выполненная на сервере с 8 процессорами и 200 файлами журналов по 10 МБ каждый и общим объемом 2 ГБ:</p>
+<table><colgroup>
+<col style="width:20%">
+<col style="width:23%">
+<col style="width:18%">
+<col style="width:18%">
+<col style="width:18%">
+</colgroup><thead><tr><th>
+<p>Вариант</p>
+</th><th>
+<p>1 CPU</p>
+</th><th>
+<p>2 CPU</p>
+</th><th>
+<p>4 CPU</p>
+</th><th>
+<p>8 CPU</p>
+</th></tr></thead><tbody><tr><td>
+<p>-j</p>
+</td><td>
+<p>20m15</p>
+</td><td>
+<p>9m56</p>
+</td><td>
+<p>5m20</p>
+</td><td>
+<p>4m20</p>
+</td></tr><tr><td>
+<p>-J</p>
+</td><td>
+<p>20m15</p>
+</td><td>
+<p>9m49</p>
+</td><td>
+<p>5m00</p>
+</td><td>
+<p>2m40</p>
+</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Важная информация</div><div class="admonitionContent_BuS1"><p>При параллельной обработке компонентом «pgBadger» осуществляется генерация большого количества временных файлов в каталоге /tmp, которые будут автоматически удалены по завершению работы.</p><p>Удалять временные файлы в процессе работы утилиты нельзя.</p><p>Для идентификации файлов используется следующий шаблон в наименовании: tmp_pgBadgerXXXX.bin.</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Параллельная обработка не может использоваться со сжатыми файлами или CSV-файлами, а также, на платформе Windows.</p></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="инкрементальные-отчеты">ИНКРЕМЕНТАЛЬНЫЕ ОТЧЕТЫ<a href="#инкрементальные-отчеты" class="hash-link" aria-label="Direct link to ИНКРЕМЕНТАЛЬНЫЕ ОТЧЕТЫ" title="Direct link to ИНКРЕМЕНТАЛЬНЫЕ ОТЧЕТЫ" translate="no">​</a></h2>
+<p>Компонент «pgBadger» включает режим автоматического инкрементального отчета с помощью опции <strong>-I</strong> или <strong>--incremental</strong>.</p>
+<p>При работе в этом режиме утилита <strong>pgbadger</strong> генерирует один отчет в день и суммарный отчет в неделю. Сначала вывод осуществляется в двоичном формате в обязательный выходной каталог (см. опцию <strong>-O</strong> или <strong>--outdir</strong> из таблицы <a href="#_bookmark11" class="">5.1</a>), затем в формате HTML для ежедневных и еженедельных отчетов с основным индексным файлом.</p>
+<p>В главном индексном файле будет отображено выпадающее меню по неделям со ссылкой на каждый недельный отчет и ссылками на ежедневные отчеты каждой недели.</p>
+<p>Если запустить утилиту <strong>pgbadger</strong> следующим образом на основе ежедневно чередующихся файлов:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">0 4 * * * /usr/jatoba-4/bin/pgbadger -I -q /var/log/jatoba/jatoba.log.1 -O /var/www/html/jatoba_reports/</span><br></div></code></pre></div></div>
+<p>в результате работы будут получены все ежедневные и еженедельные отчеты за весь период работы.</p>
+<p>В этом режиме утилита <strong>pgbadger</strong> создаст автоматический инкрементный файл в выходном каталоге. Для изменения пути к данному файлу необходимо использовать опцию <strong>-l</strong>. Утилиту <strong>pgbadger</strong> можно запускать в режиме, при котором каждый день работы будет записываться в файл, предназначенный только для записей этого дня недели.</p>
+<p>Для экономии дискового пространства используется опция командной строки <strong>-X</strong> или <strong>--extra-files</strong>, чтобы компонент «pgBadger» записывал JavaScript и CSS в отдельные файлы в выходном каталоге. Затем эти ресурсы будут загружены с помощью тегов script и link.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ежемесячные-отчеты">ЕЖЕМЕСЯЧНЫЕ ОТЧЕТЫ<a href="#ежемесячные-отчеты" class="hash-link" aria-label="Direct link to ЕЖЕМЕСЯЧНЫЕ ОТЧЕТЫ" title="Direct link to ЕЖЕМЕСЯЧНЫЕ ОТЧЕТЫ" translate="no">​</a></h2>
+<p>По умолчанию компонент «pgBadger» в инкрементальном режиме рассчитывает только ежедневные и еженедельные отчеты.</p>
+<p>Для получения ежемесячного сводного отчета необходимо использовать отдельную команду.</p>
+<p>Например, чтобы построить отчет за август 2021 года необходимо воспользоваться командой:</p>
+<p>pgbadger -X --month-report 2021-08 /var/www/html/jatoba_reports/</p>
+<p>это добавит ссылку на название месяца в календарный вид инкрементных отчетов для просмотра ежемесячного отчета. Отчет за текущий месяц можно запускать ежедневно, при этом каждый раз он полностью перестраивается.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Дополнительная информация</div><div class="admonitionContent_BuS1"><p>Ежемесячный отчет не строится по умолчанию, так как занимает много времени из-за большого количества данных.</p></div></div>
+<p>Если отчеты, на основании которых строится месячный отчет (ежедневные или еженедельные), были построены с опцией <strong>-E</strong> (<strong>--explode</strong>), то данная опция должна быть использована при вызове pbadger для построения ежемесячного отчета:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -E -X --month-report 2021-08 -O /var/www/html/jatoba_reports/</span><br></div></code></pre></div></div>
+<p>То же самое происходит при использовании опции перестройки <strong>-R</strong> (<strong>--rebuild</strong>).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="бинарный-формат">БИНАРНЫЙ ФОРМАТ<a href="#бинарный-формат" class="hash-link" aria-label="Direct link to БИНАРНЫЙ ФОРМАТ" title="Direct link to БИНАРНЫЙ ФОРМАТ" translate="no">​</a></h2>
+<p>Используя бинарный формат можно создавать пользовательские инкрементальные и кумулятивные отчеты.</p>
+<p>Пример 1.</p>
+<p>При необходимости обновления отчета утилита <strong>pgbadger</strong> каждый час из ежедневного файла журнала СУБД, для генерации инкрементных файлов данных в двоичном формате, следует выполнять следующие команды:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger --last-parsed .pgbadger_last_state_file -o sunday/hourX.bin /var/lib/jatoba/4/data/log/jatoba-Sun.log</span><br></div></code></pre></div></div>
+<p>для генерации инкрементных файлов данных в двоичном формате. Затем сгенерировать HTML-отчет из этого двоичного файла командой:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger sunday/*.bin</span><br></div></code></pre></div></div>
+<p>Пример 2.</p>
+<p>При генерации одного файла журнала в час и необходимости перестроения отчетов при каждой ротации файла журнала необходимо выполнить следующие действия:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -o day1/hour01.bin /var/lib/jatoba/4/data/log/jatoba-2021-08-23_10.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -o day1/hour02.bin /var/lib/jatoba/4/data/log/jatoba-2021-08-23_11.log</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -o day1/hour03.bin /var/lib/jatoba/4/data/log/jatoba-2021-08-23_12.log</span><br></div></code></pre></div></div>
+<p>Для обновления HTML-отчета, например, каждый раз после создания нового двоичного файла нужно ввести следующую команду:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pgbadger -o day1_report.html day1/*.bin</span><br></div></code></pre></div></div>
+<p>и настроить команды в соответствии с конкретными потребностями.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="формат-json">ФОРМАТ JSON<a href="#формат-json" class="hash-link" aria-label="Direct link to ФОРМАТ JSON" title="Direct link to ФОРМАТ JSON" translate="no">​</a></h2>
+<p>Формирование отчета возможно в формате JSON через параметр <strong>-o</strong> (<strong>--output</strong>). Данный формат хорошо подходит для интеграции компонента «pgBadger» в другие системы мониторинга.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="отчеты-получаемые-с-помощью-компонента">ОТЧЕТЫ, ПОЛУЧАЕМЫЕ С ПОМОЩЬЮ КОМПОНЕНТА<a href="#отчеты-получаемые-с-помощью-компонента" class="hash-link" aria-label="Direct link to ОТЧЕТЫ, ПОЛУЧАЕМЫЕ С ПОМОЩЬЮ КОМПОНЕНТА" title="Direct link to ОТЧЕТЫ, ПОЛУЧАЕМЫЕ С ПОМОЩЬЮ КОМПОНЕНТА" translate="no">​</a></h2>
+<p>Компонент «pgBadger» собирает данные о SQL-запросах:</p>
+<table><colgroup>
+<col style="width:40%">
+<col style="width:59%">
+</colgroup><thead><tr><th>
+<p>Overall statistics</p>
+</th><th>
+<p>Общая статистика</p>
+</th></tr></thead><tbody><tr><td>
+<p>The most frequent waiting queries</p>
+</td><td>
+<p>Наиболее частые ожидающие запросы</p>
+</td></tr><tr><td>
+<p>Queries that waited the most</p>
+</td><td>
+<p>Запросы с наибольшим временем ожидания</p>
+</td></tr><tr><td>
+<p>Queries generating the most temporary files</p>
+</td><td>
+<p>Запросы, генерирующие больше всего временных файлов</p>
+</td></tr><tr><td>
+<p>Queries generating the largest temporary files</p>
+</td><td>
+<p>Запросы, генерирующие самые большие временные файлы</p>
+</td></tr><tr><td>
+<p>The slowest queries</p>
+</td><td>
+<p>Самые медленные запросы</p>
+</td></tr><tr><td>
+<p>Queries that took up the most time</p>
+</td><td>
+<p>Запросы, занимающие больше всего времени</p>
+</td></tr><tr><td>
+<p>The most frequent queries</p>
+</td><td>
+<p>Самые частые запросы</p>
+</td></tr><tr><td>
+<p>Histogram of query times</p>
+</td><td>
+<p>Гистограмма продолжительности запросов</p>
+</td></tr><tr><td>
+<p>Histogram of sessions times</p>
+</td><td>
+<p>Гистограмма продолжительности сессий</p>
+</td></tr><tr><td>
+<p>Users involved in top queries</p>
+</td><td>
+<p>Пользователи наиболее частых запросов</p>
+</td></tr><tr><td>
+<p>Applications involved in top queries</p>
+</td><td>
+<p>Приложения наиболее частых запросов</p>
+</td></tr><tr><td>
+<p>Queries generating the most cancellation</p>
+</td><td>
+<p>Запросы, вызывающие наибольшее количество отмен</p>
+</td></tr><tr><td>
+<p>Queries most cancelled</p>
+</td><td>
+<p>Наиболее частые отмененные запросы</p>
+</td></tr><tr><td>
+<p>The most time consuming prepare/bind queries</p>
+</td><td>
+<p>Самые трудоемкие запросы на подготовку/привязку параметров</p>
+</td></tr></tbody></table>
+<p>Доступны следующие отчеты с почасовыми графиками, разделенными на периоды по пять минут:</p>
+<table><colgroup>
+<col style="width:40%">
+<col style="width:59%">
+</colgroup><thead><tr><th>
+<p>SQL queries statistics</p>
+</th><th>
+<p>Статистика SQL-запросов</p>
+</th></tr></thead><tbody><tr><td>
+<p>Temporary file statistics</p>
+</td><td>
+<p>Статистика временных файлов</p>
+</td></tr><tr><td>
+<p>Checkpoints statistics</p>
+</td><td>
+<p>Статистика контрольных точек</p>
+</td></tr><tr><td>
+<p>Autovacuum and autoanalyze statistics</p>
+</td><td>
+<p>Статистика автовакуума и автоанализа</p>
+</td></tr></tbody></table>
+<table><colgroup>
+<col style="width:40%">
+<col style="width:59%">
+</colgroup><thead><tr><th>
+<p>Cancelled queries</p>
+</th><th>
+<p>Отмененные запросы</p>
+</th></tr></thead><tbody><tr><td>
+<p>Error events (panic, fatal, error and warning)</p>
+</td><td>
+<p>События ошибок (паника, фатальная ошибка, ошибка и предупреждение)</p>
+</td></tr><tr><td>
+<p>Error class distribution</p>
+</td><td>
+<p>Распределение классов ошибок</p>
+</td></tr></tbody></table>
+<p>Круговые диаграммы о распределении:</p>
+<table><colgroup>
+<col style="width:47%">
+<col style="width:52%">
+</colgroup><thead><tr><th>
+<p>Locks statistics</p>
+</th><th>
+<p>Статистика блокировок</p>
+</th></tr></thead><tbody><tr><td>
+<p>Queries by type (select/insert/update/delete)</p>
+</td><td>
+<p>Запросы по типу (выбрать/вставить/обновить/удалить)</p>
+</td></tr><tr><td>
+<p>Distribution of queries type per database/application</p>
+</td><td>
+<p>Распределение типов запросов по базе данных/приложению</p>
+</td></tr><tr><td>
+<p>Sessions per database/user/client/application</p>
+</td><td>
+<p>Сеансы для каждой базы данных/пользователей/клиентов/приложений</p>
+</td></tr><tr><td>
+<p>Connections per database/user/client/application</p>
+</td><td>
+<p>Количество подключений для каждой базы данных/пользователей/клиентов/приложений</p>
+</td></tr><tr><td>
+<p>Autovacuum and autoanalyze per table</p>
+</td><td>
+<p>Автовакуум и автоанализ по таблице</p>
+</td></tr><tr><td>
+<p>Queries per user and total duration per user</p>
+</td><td>
+<p>Запросы пользователя и общая продолжительность запросов пользователя</p>
+</td></tr></tbody></table>
+<p>Все диаграммы можно масштабировать и сохранять в формате PNG. Ко всем SQL-запросам автоматически применяется подсветка синтаксиса и выравнивание.</p>
+<p>Точность гистограммы настраивается с помощью ключа <strong>-A</strong>. По умолчанию в гистограммах отображается среднее значение каждого топ-запроса / ошибки, произошедшей за час, но возможно указать гранулярность вплоть до минут.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="перечень-сокращений">ПЕРЕЧЕНЬ СОКРАЩЕНИЙ<a href="#перечень-сокращений" class="hash-link" aria-label="Direct link to ПЕРЕЧЕНЬ СОКРАЩЕНИЙ" title="Direct link to ПЕРЕЧЕНЬ СОКРАЩЕНИЙ" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Сокращение</th><th>Расшифровка</th></tr></thead><tbody><tr><td>SQL</td><td>Structured Query Language</td></tr><tr><td>IP-адрес</td><td>Internet Protocol — уникальный числовой идентификатор устройства в компьютерной сети, работающей по протоколу TCP/IP</td></tr><tr><td>JSON</td><td>JavaScript Object Notation — текстовый формат обмена данными, основанный на JavaScript</td></tr><tr><td>SSH</td><td>Secure Shell — сетевой протокол прикладного уровня</td></tr><tr><td>БД</td><td>База данных</td></tr><tr><td>XML</td><td>eXtensible Markup Language — расширяемый язык разметки</td></tr><tr><td>ОС</td><td>Операционная система</td></tr><tr><td>СУБД</td><td>Система управления базами данных</td></tr></tbody></table></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/demo_docu/comm/Jatoba 18.4.1/pg_ulid"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Компонент «pg_ulid»</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/demo_docu/comm/Jatoba 18.4.1/pgsql-http"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Компонент «pgSQL-HTTP»</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#назначение-компонента" class="table-of-contents__link toc-highlight">НАЗНАЧЕНИЕ КОМПОНЕНТА</a><ul><li><a href="#функциональные-возможности-компонента" class="table-of-contents__link toc-highlight">Функциональные возможности компонента</a></li><li><a href="#условия-применения" class="table-of-contents__link toc-highlight">Условия применения</a></li></ul></li><li><a href="#требования-по-использованию" class="table-of-contents__link toc-highlight">ТРЕБОВАНИЯ ПО ИСПОЛЬЗОВАНИЮ</a></li><li><a href="#установка-и-удаление" class="table-of-contents__link toc-highlight">УСТАНОВКА И УДАЛЕНИЕ</a><ul><li><a href="#установкаудаление-в-ос-gnulinux" class="table-of-contents__link toc-highlight">Установка/удаление в ОС GNU/Linux</a></li><li><a href="#установкаудаление-в-ос-microsoft-windows" class="table-of-contents__link toc-highlight">Установка/удаление в ОС Microsoft Windows</a></li></ul></li><li><a href="#настройка-jatobapostgresql" class="table-of-contents__link toc-highlight">НАСТРОЙКА JATOBA/POSTGRESQL</a></li><li><a href="#опции-использования-компонента" class="table-of-contents__link toc-highlight">ОПЦИИ ИСПОЛЬЗОВАНИЯ КОМПОНЕНТА</a><ul><li><a href="#формат-значения-datetime" class="table-of-contents__link toc-highlight">Формат значения datetime</a></li><li><a href="#ssh-опции" class="table-of-contents__link toc-highlight">SSH опции</a></li><li><a href="#примеры-использования" class="table-of-contents__link toc-highlight">Примеры использования</a></li></ul></li><li><a href="#журналирование-запросов" class="table-of-contents__link toc-highlight">ЖУРНАЛИРОВАНИЕ ЗАПРОСОВ</a></li><li><a href="#параллельная-обработка" class="table-of-contents__link toc-highlight">ПАРАЛЛЕЛЬНАЯ ОБРАБОТКА</a></li><li><a href="#инкрементальные-отчеты" class="table-of-contents__link toc-highlight">ИНКРЕМЕНТАЛЬНЫЕ ОТЧЕТЫ</a></li><li><a href="#ежемесячные-отчеты" class="table-of-contents__link toc-highlight">ЕЖЕМЕСЯЧНЫЕ ОТЧЕТЫ</a></li><li><a href="#бинарный-формат" class="table-of-contents__link toc-highlight">БИНАРНЫЙ ФОРМАТ</a></li><li><a href="#формат-json" class="table-of-contents__link toc-highlight">ФОРМАТ JSON</a></li><li><a href="#отчеты-получаемые-с-помощью-компонента" class="table-of-contents__link toc-highlight">ОТЧЕТЫ, ПОЛУЧАЕМЫЕ С ПОМОЩЬЮ КОМПОНЕНТА</a></li><li><a href="#перечень-сокращений" class="table-of-contents__link toc-highlight">ПЕРЕЧЕНЬ СОКРАЩЕНИЙ</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer1</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/demo_docu/archive/install">test1</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer2</div><ul class="footer__items clean-list"></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Footer3</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Footer3-1<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
