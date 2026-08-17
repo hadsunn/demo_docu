@@ -13,6 +13,39 @@ const config = {
   },
   plugins: [
     [
+    '@docusaurus/plugin-content-docs',
+      {
+        id: 'comm',
+        path: 'docs-comm',
+        routeBasePath: 'comm',
+        sidebarPath: require.resolve('./sidebarsComm.js'),
+        versions: {
+          current: {
+            label: 'В разработке',
+            banner: 'unreleased',
+          },
+          '18.3.1,6.13.1,5.17.1,4.22.1': {
+            banner: 'none',
+            label: '18.3.1, 6.13.1, 5.17.1, 4.22.1',
+          },
+          '18.4.1,6.14.1,5.18.1,4.23.1': {
+            banner: 'none',
+            label: '18.4.1, 6.14.1, 5.18.1, 4.23.1',
+        }
+      },
+    },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'cert',
+        path: 'docs-cert',
+        routeBasePath: 'cert',
+        sidebarPath: require.resolve('./sidebarsCert.js'),
+      },
+    ],
+
+    [
     require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         indexDocs: true,
@@ -33,14 +66,11 @@ const config = {
     //v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // Set the production url of your site here
-  url: 'https://hadsunn.github.io',
+  url: 'https://hadsunn.github.io', // Set the production url of your site here
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/demo_docu/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'datagile', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
@@ -49,9 +79,6 @@ const config = {
   onBrokenMarkdownLinks: 'ignore',
   trailingSlash: false,
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -66,14 +93,14 @@ const config = {
           sidebarPath: './sidebars_pg.js',
 	        routeBasePath: '/',
           remarkPlugins: [remarkFigureXref],
-          versions: {
-            '18.3.1': {
-              banner: 'none',
-            },
-            'test': {
-              banner: 'none',
-            },
-          },
+          // versions: {
+          //   '18.3.1': {
+          //     banner: 'none',
+          //   },
+          //   'test': {
+          //     banner: 'none',
+          //   },
+          // },
         },
         blog: false,
         theme: {
@@ -101,47 +128,71 @@ const config = {
           src: 'img/jatoba.png',
         },
         items: [
+          // {
+          //   href: 'https://jatoba.ru',
+          //   label: 'Jatoba.ru',
+          //   position: 'left',
+          // },
           {
-            href: 'https://jatoba.ru',
-            label: 'Jatoba.ru',
+            type: 'doc',
+            docsPluginId: 'comm',
+            docId: 'index',
             position: 'left',
+            label: 'Коммерческая версия',
           },
           {
-            type: 'docsVersionDropdown',
-            versions: ['test', '18.3.1'],
-          }
+            type: 'doc',
+            docsPluginId: 'cert',
+            docId: 'index',
+            position: 'left',
+            label: 'Сертифицированная версия',
+          },
+          {
+          type: 'docsVersionDropdown',
+          docsPluginId: 'comm',
+          position: 'right',
+          dropdownActiveClassDisabled: true,
+          versions: [
+              '18.4.1,6.14.1,5.18.1,4.23.1',
+              '18.3.1,6.13.1,5.17.1,4.22.1'
+            ],
+          },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   docsPluginId: 'cert',
+          //   position: 'right',
+          // },
+          
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'right',
+          //   versions: [
+          //     '18.4.1,6.14.1,5.18.1,4.23.1',
+          //     '18.3.1,6.13.1,5.17.1,4.22.1'
+          //   ],
+          // }
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Footer1',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'test1',
+                to: '/archive/install',
               },
             ],
           },
           {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-            ],
+            title: 'Footer2',
           },
           {
-            title: 'More',
+            title: 'Footer3',
             items: [
               {
-                label: 'GitHub',
+                label: 'Footer3-1',
                 href: 'https://github.com/facebook/docusaurus',
               },
             ],
@@ -156,9 +207,4 @@ const config = {
     }),
 };
 
-
-
 export default config;
-//export default {
-//  plugins: [require.resolve('docusaurus-lunr-search')],
-//}
