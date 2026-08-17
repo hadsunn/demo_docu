@@ -208,5 +208,6 @@
     "editor.suggest.showClasses": false,
     "editor.suggest.showFunctions": false,
     "editor.suggest.showVariables": false,
-    "editor.suggest.showSnippets": true
+    "editor.suggest.showSnippets": true,
+    "git.ignoreLimitWarning": true
 }
