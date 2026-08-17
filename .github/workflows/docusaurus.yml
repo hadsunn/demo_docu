@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'docs/**'
+      - 'comm_versioned_docs/**'
+      - 'comm_versioned_sidebars/**'
       - 'docusaurus.config.js'
       - 'package.json'
       - 'package-lock.json'
