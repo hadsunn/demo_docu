@@ -2754,7 +2754,7 @@ title: Инструкция по настройке и использовани�
 sudo apt update
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image3.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image3.png)
 
 
 
@@ -2772,7 +2772,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image4.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image4.png)
 
 
 
@@ -2782,7 +2782,7 @@ sudo apt upgrade
 
 Платформа докера должна устанавливаться версии 20.10.12 или выше.
 
-![](@site/docs/assets/images/com18.3.1/container/media/image2.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image2.png)
 
 Альтернативный вариант (можно использовать для OS (DEB), которых нет в списке на сайте):
 
@@ -2792,7 +2792,7 @@ sudo apt install docker.io
 ```
 
 
-![](@site/docs/assets/images/com18.3.1/container/media/image5.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image5.png)
 
 Рисунок 3.3 - Установка платформы docker в ОС 
 
@@ -2802,7 +2802,7 @@ sudo apt install docker.io
 docker -v
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image6.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image6.png)
 
 
 
@@ -2863,7 +2863,7 @@ chmod +x setup.sh
 ```
 
 
-![](@site/docs/assets/images/com18.3.1/container/media/image7.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image7.png)
 
 Рисунок 3.5 – Выполнение команды chmod 
 
@@ -2873,7 +2873,7 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image8.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image8.png)
 
 
 
@@ -2887,7 +2887,7 @@ sudo docker images
 ```
 
 
-![](@site/docs/assets/images/com18.3.1/container/media/image9.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image9.png)
 
 Рисунок 3.7 – Вывод данных об образе
 
@@ -3116,7 +3116,7 @@ sudo docker images
 
 ### Запуск нового контейнера
 
-![](@site/docs/assets/images/com18.3.1/container/media/image1.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image1.png)
 
 :::warning Важная информация
 Изменить версию СУБД при использовании текущей версии контейнера невозможно.
@@ -3124,7 +3124,7 @@ sudo docker images
 
 В данном разделе описаны действия, которые необходимо сделать администратору, чтобы контейнер корректно запустился и инициализировал БД.
 
-![](@site/docs/assets/images/com18.3.1/container/media/image38_.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image38_.png)
 
 Рисунок 3.8 – Проверки, которые контейнер делает после запуска
 
@@ -3140,7 +3140,7 @@ sudo docker images
 
 1.  Проверить параметры в файле .env, находящийся в текущем каталоге:
 
-![](@site/docs/assets/images/com18.3.1/container/media/image21.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image21.png)
 
 ```
 # cd /home/admin1/Downloads/container/
@@ -3166,7 +3166,7 @@ chmod +x *.sh
 ./run.sh; ./log.sh
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image22.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image22.png)
 
 Рисунок 3.10 – Журнал событий контейнера после запуска скриптов «./run.sh; ./log.sh»
 
@@ -3184,7 +3184,7 @@ chmod +x *.sh
 sudo apt install docker-compose-v2 docker compose version
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image23.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image23.png)
 
 
 
@@ -3226,7 +3226,7 @@ docker volume list
 docker exec -it jatobadb /bin/bash
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image24.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image24.png)
 
 
 
@@ -3234,7 +3234,7 @@ docker exec -it jatobadb /bin/bash
 
 На данном этапе пользователь находится внутри встроенной операционной системы, от имени и с правами пользователя данной ОС «postgres», в которой доступен минимальный набор команд. Например, вывод списка каталогов.
 
-![](@site/docs/assets/images/com18.3.1/container/media/image25.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image25.png)
 
 Рисунок 3.13 - Вывод списка каталогов
 
@@ -3244,7 +3244,7 @@ docker exec -it jatobadb /bin/bash
 psql
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image26.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image26.png)
 
 Рисунок 3.14 – Запуск СУБД «Jatoba»
 
@@ -3304,7 +3304,7 @@ chmod +x <название скрипта>.sh
 # docker ps -a
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image27.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image27.png)
 
 Рисунок 4.1 – Вывод статуса контейнера В выводе статуса будут отражены столбцы:
 
@@ -3330,7 +3330,7 @@ chmod +x <название скрипта>.sh
 # docker volume list
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image28.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image28.png)
 
 
 
@@ -3346,7 +3346,7 @@ chmod +x <название скрипта>.sh
 ./stop.sh
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image29.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image29.png)
 
 Рисунок 4.3 – Команда остановки контейнера
 
@@ -3356,7 +3356,7 @@ chmod +x <название скрипта>.sh
 docker ps -a
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image30.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image30.png)
 
 Рисунок 4.4 – Вывод статуса остановленного контейнера
 
@@ -3364,7 +3364,7 @@ docker ps -a
 
 Запуск контейнера выполняется скриптом «start.sh», командой из корневого каталога контейнера в терминале ОС:
 
-![](@site/docs/assets/images/com18.3.1/container/media/image31.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image31.png)
 
 ```
 ./start.sh
@@ -3380,7 +3380,7 @@ docker ps -a
 ./restart.sh
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image32.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image32.png)
 
 Рисунок 4.6 – Выполнение команды перезапуска контейнера
 
@@ -3406,7 +3406,7 @@ docker ps -a
 ./log.sh
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image33.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image33.png)
 
 
 
@@ -3422,7 +3422,7 @@ docker ps -a
 ./remove.sh
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image34.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image34.png)
 
 Рисунок 4.8 – Удаление контейнера
 
@@ -3438,7 +3438,7 @@ docker volume rm postgresql-volume-data
 docker volume rm postgresql-volume-extensions
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image35.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image35.png)
 
 
 
@@ -3450,7 +3450,7 @@ docker volume rm postgresql-volume-extensions
 docker ps –a
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image36.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image36.png)
 
 
 
@@ -3637,7 +3637,7 @@ docker exec -it jatobadb psql -U postgres
 
 В данном примере подключение идет к контейнеру с названием jatobadb, в нем в интерактивном режиме запускается утилита psql под пользователем postgres.
 
-![](@site/docs/assets/images/com18.3.1/container/media/image37.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image37.png)
 
 Рисунок 7.1 - Запуск утилиты psql в контейнере
 
@@ -3663,7 +3663,7 @@ apt install jq
 # setup.sh script (show additional docker layers information) SHOW_DOCKER_OVERLAY_LAYERS_TABLE=true
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image38.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image38.png)
 
 
 
@@ -3675,7 +3675,7 @@ apt install jq
 bash ./setup.sh
 ```
 
-![](@site/docs/assets/images/com18.3.1/container/media/image39.png)
+![](@site/docs/assets/images/com18.4.1/container/media/image39.png)
 
 
 

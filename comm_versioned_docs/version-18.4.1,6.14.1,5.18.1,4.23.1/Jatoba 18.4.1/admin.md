@@ -1176,7 +1176,7 @@ Jadog – проприетарный протокол, используется 
 
 Схема подключения представлена на рисунке [3.1](#_bookmark17).
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image31_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image31_.png)
 
 <span id="_bookmark17" class="anchor"></span>Рисунок 3.1 – Интерфейсы подключения СУБД
 
@@ -1370,7 +1370,7 @@ DROP OWNED не удаляет табличные пространства и б
 
 ### Создание БД
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image176.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image176.png)
 
 Для создания базы данных сервер СУБД «Jatoba» должен быть развернут и запущен.
 
@@ -1815,7 +1815,7 @@ OpenSSL предоставляет набор шифров и алгоритмо
 # \dx
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image254.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image254.png)
 
 
 Рисунок 5.37 – Установка расширения «pwgen»
@@ -1837,7 +1837,7 @@ SELECT pwgen();
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image255.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image255.png)
 
 Рисунок 5.38 – Генерация пароля с параметрами по умолчанию 
 
@@ -1884,7 +1884,7 @@ SQL-команда генерации пароля со следующими х�
 # SELECT pwgen(10,2,2,1,1,'abcde','ABCDE','@!');
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image256.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image256.png)
 
 
 
@@ -1978,7 +1978,7 @@ SQL-команда генерации пароля со следующими х�
 # SELECT pwgen(pw_len =>10, pw_lc_char_cnt =>3, pw_num_cnt => 5);
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image257.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image257.png)
 
 
 
@@ -2007,7 +2007,7 @@ select pwgen() from generate_series(1, 10);
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image258.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image258.png)
 
 Рисунок 5.41 – Генерация множества паролей
 
@@ -2128,7 +2128,7 @@ log_truncate_on_rotation = on
 log_line_prefix = '%m [%p] '
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image542_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image542_.png)
 
 Рисунок 5.42 – Предустановленные параметры логирования
 
@@ -2836,7 +2836,7 @@ nano /var/lib/jatoba/<ver>/data/postgresql.conf
 shared_preload_libraries = 'pgaudit'
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image260.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image260.png)
 
 
 
@@ -2859,7 +2859,7 @@ CREATE EXTENSION pgaudit;
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image261.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image261.png)
 
 Рисунок 5.44 – Установка расширения «pgaudit»
 
@@ -3125,7 +3125,7 @@ psql -U postgres
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image262.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image262.png)
 
 Рисунок 5.45 – Установка параметра записи всех событий в журнал аудита
 
@@ -3445,7 +3445,7 @@ CREATE EXTENSION pgaudit;
 shared_preload_libraries = 'pgaudit, auditlogtofile'
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image546_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image546_.png)
 
 Рисунок 5.46 – Строка для загрузки библиотеки расширения «pgauditlogtofile»
 
@@ -3468,7 +3468,7 @@ shared_preload_libraries = 'pgaudit, auditlogtofile'
 SELECT pg_reload_conf();
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image264.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image264.png)
 
 
 
@@ -3481,7 +3481,7 @@ SELECT pg_reload_conf();
 CREATE EXTENSION pgauditlogtofile;
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image265.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image265.png)
 
 
 
@@ -3491,7 +3491,7 @@ CREATE EXTENSION pgauditlogtofile;
 
 Конфигурирование компонента проводится установкой параметров в конфигурационном файле postgresql.conf.
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image549_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image549_.png)
 
 Рисунок 5.49 – Параметры компонента «pgauditlogtofile»
 
@@ -3522,7 +3522,7 @@ pgaudit.log_directory = 'log'
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image267.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image267.png)
 
 Рисунок 5.50 – Установка прав на директорию
 
@@ -3586,7 +3586,7 @@ log_statement='all'
 log_mask_password=1
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image551_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image551_.png)
 
 Рисунок 5.51 – Параметры postgresql.conf обязательные для маскирования паролей 
 
@@ -3607,7 +3607,7 @@ SELECT pg_reload_conf ();
 SHOW log_mask_password;
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image269.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image269.png)
 
 
 
@@ -3624,7 +3624,7 @@ SHOW log_mask_password;
 CREATE USER user1 with password 'n123456';
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image270.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image270.png)
 
 
 
@@ -3632,7 +3632,7 @@ CREATE USER user1 with password 'n123456';
 
 В журнале аудита СУБД установленный пароль будет маскирован.
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image554_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image554_.png)
 
 Рисунок 5.54 – Журнал аудита СУБД с записью создания пользователя 
 
@@ -3649,19 +3649,19 @@ CREATE USER user1 with password 'n123456';
 ```
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image272.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image272.png)
 
 Рисунок 5.55 – Установка хэшированного пароля пользователя
 
 В журнале аудита СУБД установленный пароль в хэшированном формате будет маскирован.
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image556_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image556_.png)
 
 Рисунок 5.56 – Отображение хэшированного пароля пользователя
 
 При использовании компонента «ja_seceventlog» и сохранении событий безопасности в формате JSON, маскирование паролей будет выполняться.
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image557_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image557_.png)
 
 Рисунок 5.57 – Маскирование пароля при использовании компонента «ja_seceventlog»
 
@@ -3780,7 +3780,7 @@ C:\Program Files\GIS\Jatoba\<ver>\bin
     - если отсутствует диск Е то, через консоль диспетчера отказоустойчивости кластера, необходимо подключить диск E (см. рисунок [7.1](#_bookmark102)) к первому серверу;
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image71_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image71_.png)
 
 Рисунок 7.1 – Консоль диспетчера отказоустойчивости кластера. 
 
@@ -3791,7 +3791,7 @@ C:\Program Files\GIS\Jatoba\<ver>\bin
 - запустить установку СУБД «Jatoba» из дистрибутива. Во время установки указать путь к БД e:\pgbase (см. рисунок [7.2](#_bookmark103)), остальные параметры необходимо выбрать стандартно (пароль для пользователя postgres –должен быть доменный, локализация, порт и т.д.);
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image276.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image276.png)
 
 <span id="_bookmark103" class="anchor"></span>Рисунок 7.2 – Путь к каталогу БД
 
@@ -3815,25 +3815,25 @@ listen_addresses = '*'
 
 8)  Запустить диспетчер отказоустойчивого кластера. Добавить необходимую роль, как показано на рисунке [7.3](#_bookmark104).
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image73_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image73_.png)
 
 <span id="_bookmark104" class="anchor"></span>Рисунок 7.3– Добавление роли
 
 9)  Нажать на кнопку далее и выбрать службу JatobaServer, как показано на рисунке [7.4](#_bookmark105);
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image74_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image74_.png)
 
 <span id="_bookmark105" class="anchor"></span>Рисунок 7.4 – Выбор службы JatobaServer
 
 10) Нажать кнопку «Далее» и затем выбрать имя и IP-адреса точки подключения к СУБД «Jatoba» (см. пример на рисунке [7.5](#_bookmark106)).
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image279.jpeg)
+![](@site/docs/assets/images/com18.4.1/admin/media/image279.jpeg)
 
 <span id="_bookmark106" class="anchor"></span>Рисунок 7.5 – Выбор имя и IP-адреса точки подключения к Jatoba
 
 11) Нажать «Далее» и выбрать хранилище, на рисунке [7.6](#_bookmark107) – диск Е.
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image280.jpeg)
+![](@site/docs/assets/images/com18.4.1/admin/media/image280.jpeg)
 
 <span id="_bookmark107" class="anchor"></span>Рисунок 7.6 – Выбор хранилища
 
@@ -3886,7 +3886,7 @@ $pg_status = "C:\tmp\pg_status.txt"
 
 18) Добавить триггер, как показано на рисунке [7.7](#_bookmark108).
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image281.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image281.png)
 
 <span id="_bookmark108" class="anchor"></span>Рисунок 7.7 – Добавление триггера
 
@@ -3907,20 +3907,20 @@ C:\Windows\System32\WindowsPowerShell\v1.1\powershell.exe
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image282.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image282.png)
 
 <span id="_bookmark109" class="anchor"></span>Рисунок 7.8 – Путь к PowerShell. Путь к файлу скрипта
 
 20) Указать условия запуска, как показано на рисунке [7.9](#_bookmark110).
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image283.jpeg)
+![](@site/docs/assets/images/com18.4.1/admin/media/image283.jpeg)
 
 <span id="_bookmark110" class="anchor"></span>Рисунок 7.9 – Условия запуска
 
 21) Затем параметры, как показано на рисунке [7.10](#_bookmark111).
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image284.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image284.png)
 
 <span id="_bookmark111" class="anchor"></span>Рисунок 7.10 – Параметры
 
@@ -4028,7 +4028,7 @@ WAL – это журнал, в который попадают изменени
 При потоковой репликации с Главного сервера на Резервные передаются WAL файлы, которые при успешной проверке их контрольных сумм (CRC) применяются на Резервных узлах, за счет чего данные на Резервных узлах синхронизируются с данными на Главном сервере.
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image285.jpeg)
+![](@site/docs/assets/images/com18.4.1/admin/media/image285.jpeg)
 
 Рисунок 8.1 – Схема работы
 
@@ -4092,13 +4092,13 @@ wal_sender_panic_on_crc_error = on
 
 − сохраняет состояние сбалансированности и четности.
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image91_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image91_.png)
 
 Рисунок 9.1 – Структура B-Tree
 
 Когда выполняется поиск на основе этого индекса, он проходит вниз по дереву, чтобы найти ключ, по которому дерево построено, а затем возвращает искомые данные. Использование индекса гораздо быстрее, чем последовательное сканирование.
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image92_.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image92_.png)
 
 Рисунок 9.2 – K Nearest Neighbors для B-tree
 
@@ -4116,7 +4116,7 @@ wal_sender_panic_on_crc_error = on
 # EXPLAIN (costs off) SELECT \*, a <-> 50000 AS dist FROM test ORDER BY a <-> 50000 LIMIT 10;
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image358.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image358.png)
 
 Рисунок 9.3 – Создание плана запроса для тестовой таблицы 
 
@@ -4129,7 +4129,7 @@ wal_sender_panic_on_crc_error = on
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image359.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image359.png)
 
 Рисунок 9.4 – Создание плана запроса 
 
@@ -4142,7 +4142,7 @@ wal_sender_panic_on_crc_error = on
 # explain (costs off) SELECT *, a <-> 50000 AS dist FROM test ORDER BY a <-> 50000 LIMIT 10;
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image360.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image360.png)
 
 
 
@@ -4157,7 +4157,7 @@ wal_sender_panic_on_crc_error = on
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image361.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image361.png)
 
 Рисунок 9.6 – Создание плана запроса
 
@@ -4169,7 +4169,7 @@ wal_sender_panic_on_crc_error = on
 # \di+
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image362.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image362.png)
 
 
 
@@ -4294,7 +4294,7 @@ SELECT
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image363.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image363.png)
 
 Рисунок 9.8 – Список операторов дистанции
 
@@ -4322,7 +4322,7 @@ SELECT
 ```
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image364.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image364.png)
 
 Рисунок 9.9 – Вывод операторов дистанции для простых типов.
 
@@ -4342,7 +4342,7 @@ SELECT
 
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image365.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image365.png)
 
 Рисунок 9.10 – Вывод функций
 
@@ -8122,7 +8122,7 @@ psql -U postgres;
 ```
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image368.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image368.png)
 
 Рисунок 17.3 – Окно командной строки с ошибкой
 
@@ -8144,7 +8144,7 @@ psql -U postgres;
 
 − повторить вход в psql.
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image369.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image369.png)
 
 Рисунок 17.4 – Окно командной строки без ошибок
 
@@ -8164,7 +8164,7 @@ ja_seceventlog must be loaded via shared_preload_libraries
 SELECT pg_reload_conf ();
 ```
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image370.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image370.png)
 
 
 
@@ -8212,7 +8212,7 @@ SELECT jatoba_version();
 ```
 
 
-![](@site/docs/assets/images/com18.3.1/admin/media/image371.png)
+![](@site/docs/assets/images/com18.4.1/admin/media/image371.png)
 
 Рисунок 17.6 – Команда запроса версии изделия
 
