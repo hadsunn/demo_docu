@@ -80,7 +80,7 @@
           "Fix warnings", "Fix infos", "Fix warnings 2", "Fix images3", "Fix infos 2",
           "Fix images",  "Fix images3", "Fix images figure", "Fix code lines",
           "Fix <> escapes", "Fix _ escapes", "Fix /< escapes", "Fix /> escapes",
-          "Delete blockquotes", "Delete >", "Delete > v2"
+          "Delete blockquotes", "Delete >", "Delete > v2", "Delete 1page", "Delete first table"
         ]
       }
       
@@ -181,23 +181,28 @@
           "replace": "_",
       },
       "Fix jatoba escapes": {
-          /* пока не юзаем, * без экрана потом ломает текст */
           "find": "jatoba\\\\",
           "replace": "jatoba",
       },
       "Delete blockquotes": {
-          /* пока не юзаем, * без экрана потом ломает текст */
           "find": "<blockquote>|<\\/blockquote>",
           "replace": "",
       },
       "Delete >": {
-          /* пока не юзаем, * без экрана потом ломает текст */
           "find": "^> ",
           "replace": "",
       },
       "Delete > v2": {
-          /* пока не юзаем, * без экрана потом ломает текст */
           "find": "^>\\n",
+          "replace": "\n",
+      },
+      "Delete 1page": {
+          "find": "\\n<table>[\\s\\S]*?УТВЕРЖДЕН [\\s\\S]*?\\n\\n",
+          "replace": "\n",
+      },
+      "Delete first table": {
+          /* пока не юзаем, * без экрана потом ломает текст */
+          "find": "^\\| Подп.[\\s\\S]*?\\n\\n",
           "replace": "\n",
       },
 
