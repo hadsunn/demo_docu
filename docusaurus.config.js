@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import remarkFigureXref from './plugins/remark-figure-xref.js';
 
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -70,10 +71,11 @@ const config = {
   url: 'https://hadsunn.github.io', // Set the production url of your site here
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/demo_docu/',
+  baseUrl: isGitHubPages ? '/demo_docu/' : '/',
 
   organizationName: 'datagile', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'ignore',
   onBrokenAnchors: 'ignore',
