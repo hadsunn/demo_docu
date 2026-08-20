@@ -71,7 +71,7 @@ const config = {
   url: 'https://hadsunn.github.io', // Set the production url of your site here
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: isGitHubPages ? '/demo_docu/' : '/',
+  baseUrl: '/demo_docu/',
 
   organizationName: 'datagile', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
