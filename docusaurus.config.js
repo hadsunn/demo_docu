@@ -63,13 +63,14 @@ const config = {
     // plugins: [require.resolve('docusaurus-lunr-search')],
     // },
   future: {
+    // experimental_router: 'hash',
     //v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
   url: 'https://hadsunn.github.io', // Set the production url of your site here
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/demo_docu/',
+  baseUrl: '/',
 
   organizationName: 'datagile', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
