@@ -1,5 +1,7 @@
 ---
 title: Инструкция по настройке и использованию контейнера
+fgdfg: dfgdfgg
+dfgfg: dfgfg
 ---
 
 **АННОТАЦИЯ**
@@ -2782,15 +2784,15 @@ sudo apt upgrade
 
 Платформа докера должна устанавливаться версии 20.10.12 или выше.
 
-![](@site/docs/assets/images/com18.4.1/container/media/image2.png)
+:::info Дополнительная информация
+Подробная инструкция по установке находится на сайте разработчика по адресу: https://docs.docker.com/engine/install/
+:::
 
 Альтернативный вариант (можно использовать для OS (DEB), которых нет в списке на сайте):
-
 
 ```
 sudo apt install docker.io
 ```
-
 
 ![](@site/docs/assets/images/com18.4.1/container/media/image5.png)
 
@@ -3116,8 +3118,6 @@ sudo docker images
 
 ### Запуск нового контейнера
 
-![](@site/docs/assets/images/com18.4.1/container/media/image1.png)
-
 :::warning Важная информация
 Изменить версию СУБД при использовании текущей версии контейнера невозможно.
 :::
@@ -3140,15 +3140,14 @@ sudo docker images
 
 1.  Проверить параметры в файле .env, находящийся в текущем каталоге:
 
-![](@site/docs/assets/images/com18.4.1/container/media/image21.png)
-
 ```
 # cd /home/admin1/Downloads/container/
-```
-
-```
 # nano .env
 ```
+
+![](@site/docs/assets/images/com18.4.1/container/media/image21.png)
+
+
 
 Рисунок 3.9 – Файл «.env»
 
