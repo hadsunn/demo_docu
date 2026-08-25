@@ -3363,11 +3363,12 @@ docker ps -a
 
 Запуск контейнера выполняется скриптом «start.sh», командой из корневого каталога контейнера в терминале ОС:
 
-![](@site/docs/assets/images/com18.4.1/container/media/image31.png)
-
 ```
 ./start.sh
 ```
+
+![](@site/docs/assets/images/com18.4.1/container/media/image31.png)
+
 
 Рисунок 4.5 – Команда запуска контейнера
 
